@@ -1,0 +1,155 @@
+{
+    "properties": [], 
+    "externalReferences": [], 
+    "innerClasses": [], 
+    "interfaces": [], 
+    "constructors": [], 
+    "namespace": null, 
+    "name": "AccountBusinessStallsListingExtTest", 
+    "tableDeclaration": {
+        "type": "AccountBusinessStallsListingExtTest", 
+        "modifiers": [
+            "private", 
+            "testMethod"
+        ], 
+        "references": [], 
+        "location": {
+            "column": 15, 
+            "line": 2
+        }, 
+        "name": "AccountBusinessStallsListingExtTest"
+    }, 
+    "key": "01pp0000000E4qFAAS", 
+    "variables": [
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 23, 
+                "line": 8
+            }, 
+            "name": "accounts"
+        }, 
+        {
+            "type": "Opportunity", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 10
+            }, 
+            "name": "opp"
+        }, 
+        {
+            "type": "DescribeSObjectResult", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 38, 
+                "line": 18
+            }, 
+            "name": "cfrSchema"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 43, 
+                "line": 19
+            }, 
+            "name": "stallTypeInfo"
+        }, 
+        {
+            "type": "Id", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 20
+            }, 
+            "name": "rtId"
+        }, 
+        {
+            "type": "Stall__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 22
+            }, 
+            "name": "stall"
+        }, 
+        {
+            "type": "Id", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 25
+            }, 
+            "name": "prtId"
+        }, 
+        {
+            "type": "Stall__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 27
+            }, 
+            "name": "permStall"
+        }, 
+        {
+            "type": "StandardController", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 38, 
+                "line": 30
+            }, 
+            "name": "sc"
+        }, 
+        {
+            "type": "AccountBusinessStallsListingExt", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 41, 
+                "line": 31
+            }, 
+            "name": "controller"
+        }, 
+        {
+            "type": "PageReference", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 23, 
+                "line": 46
+            }, 
+            "name": "pr"
+        }
+    ], 
+    "id": "01pp0000000E4qFAAS", 
+    "methods": [
+        {
+            "modifiers": [
+                "private", 
+                "static", 
+                "testMethod"
+            ], 
+            "name": "Test_AccountBusinessStallsListingExt", 
+            "parameters": [], 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 26, 
+                "line": 6
+            }, 
+            "returnType": "void", 
+            "type": null
+        }
+    ]
+}

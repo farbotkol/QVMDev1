@@ -1,0 +1,20 @@
+{
+    "username": "luke.farbotko@qvmtest.com.developer", 
+    "project_name": "QVM", 
+    "org_url": "", 
+    "namespace": "", 
+    "metadata_container": "1dcp0000000Pn4lAAC", 
+    "environment": "sandbox", 
+    "workspace": "C:/MavensMate", 
+    "id": "48BUY09K9EXDPJUUT1BTCKZXB3UP2R0C", 
+    "subscription": [
+        "ApexClass", 
+        "ApexComponent", 
+        "ApexPage", 
+        "ApexTrigger", 
+        "CustomObject", 
+        "Layout", 
+        "Profile", 
+        "StaticResource"
+    ]
+}

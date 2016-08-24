@@ -1,0 +1,121 @@
+{
+    "properties": [
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "queryResponse", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 26, 
+                "line": 15
+            }, 
+            "type": "QueryResponse"
+        }
+    ], 
+    "externalReferences": [], 
+    "innerClasses": [
+        {
+            "properties": [
+                {
+                    "modifiers": [
+                        "public"
+                    ], 
+                    "name": "Customer", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 31, 
+                        "line": 9
+                    }, 
+                    "type": "LIST"
+                }, 
+                {
+                    "modifiers": [
+                        "public"
+                    ], 
+                    "name": "startPosition", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 21, 
+                        "line": 10
+                    }, 
+                    "type": "Integer"
+                }, 
+                {
+                    "modifiers": [
+                        "public"
+                    ], 
+                    "name": "maxResults", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 21, 
+                        "line": 11
+                    }, 
+                    "type": "Integer"
+                }
+            ], 
+            "externalReferences": [], 
+            "innerClasses": [], 
+            "interfaces": [], 
+            "constructors": [], 
+            "namespace": null, 
+            "name": "QueryResponse", 
+            "tableDeclaration": {
+                "type": "QueryResponse", 
+                "modifiers": [
+                    "public"
+                ], 
+                "references": [], 
+                "location": {
+                    "column": 15, 
+                    "line": 6
+                }, 
+                "name": "QueryResponse"
+            }, 
+            "key": null, 
+            "variables": [], 
+            "id": null, 
+            "methods": []
+        }
+    ], 
+    "interfaces": [], 
+    "constructors": [
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "QBOCustomerList", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 9, 
+                "line": 2
+            }, 
+            "type": null
+        }
+    ], 
+    "namespace": null, 
+    "name": "QBOCustomerList", 
+    "tableDeclaration": {
+        "type": "QBOCustomerList", 
+        "modifiers": [
+            "public", 
+            "with sharing"
+        ], 
+        "references": [], 
+        "location": {
+            "column": 27, 
+            "line": 1
+        }, 
+        "name": "QBOCustomerList"
+    }, 
+    "key": "01pp0000000EIcHAAW", 
+    "variables": [], 
+    "id": "01pp0000000EIcHAAW", 
+    "methods": []
+}

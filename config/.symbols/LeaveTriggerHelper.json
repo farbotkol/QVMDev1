@@ -1,0 +1,223 @@
+{
+    "properties": [], 
+    "externalReferences": [], 
+    "innerClasses": [], 
+    "interfaces": [], 
+    "constructors": [], 
+    "namespace": null, 
+    "name": "LeaveTriggerHelper", 
+    "tableDeclaration": {
+        "type": "LeaveTriggerHelper", 
+        "modifiers": [
+            "public", 
+            "with sharing"
+        ], 
+        "references": [], 
+        "location": {
+            "column": 27, 
+            "line": 1
+        }, 
+        "name": "LeaveTriggerHelper"
+    }, 
+    "key": "01pp0000000E55UAAS", 
+    "variables": [
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 61, 
+                "line": 5
+            }, 
+            "name": "leave"
+        }, 
+        {
+            "type": "Boolean", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 76, 
+                "line": 5
+            }, 
+            "name": "isDelete"
+        }, 
+        {
+            "type": "Set", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 9
+            }, 
+            "name": "oppset"
+        }, 
+        {
+            "type": "Set", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 14, 
+                "line": 10
+            }, 
+            "name": "dateset"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 11
+            }, 
+            "name": "oppsToUpdate"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 12
+            }, 
+            "name": "orderItemsToUpdate"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 27, 
+                "line": 13
+            }, 
+            "name": "leaveMap"
+        }, 
+        {
+            "type": "Leave__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 15
+            }, 
+            "name": "item"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 24
+            }, 
+            "name": "orderItems"
+        }, 
+        {
+            "type": "OrderItem", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 26
+            }, 
+            "name": "orderItem"
+        }, 
+        {
+            "type": "Leave__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 15, 
+                "line": 28
+            }, 
+            "name": "leaveItem"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 41
+            }, 
+            "name": "opps"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 46
+            }, 
+            "name": "oppMap"
+        }, 
+        {
+            "type": "Opportunity", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 49
+            }, 
+            "name": "opp"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 66
+            }, 
+            "name": "groupedResults"
+        }, 
+        {
+            "type": "AggregateResult", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 25, 
+                "line": 71
+            }, 
+            "name": "ar"
+        }, 
+        {
+            "type": "Opportunity", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 73
+            }, 
+            "name": "currOpp"
+        }
+    ], 
+    "id": "01pp0000000E55UAAS", 
+    "methods": [
+        {
+            "modifiers": [
+                "static", 
+                "public"
+            ], 
+            "name": "UpdateLeaveTakenThisYear", 
+            "parameters": [
+                {
+                    "type": "LIST", 
+                    "name": "leave"
+                }, 
+                {
+                    "type": "Boolean", 
+                    "name": "isDelete"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 5
+            }, 
+            "returnType": "void", 
+            "type": null
+        }
+    ]
+}

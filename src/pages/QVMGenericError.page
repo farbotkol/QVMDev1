@@ -1,0 +1,24 @@
+<apex:page showHeader="false" cache="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+
+	<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    
+
+	    <head>
+	      <title>Error</title>
+	      <apex:stylesheet value="{!URLFOR($Resource.SLDSQVM, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+	    </head>    
+
+		<body>   
+		    <div class="QVM"> 
+		    	<apex:panelGrid cellpadding="0" cellspacing="0" width="98%" border="0" columns="2" style="text-align: left;" 
+		    	id="theHeader">
+			    <apex:image url="{!$Resource.QVM_Logo}" style="align: left;" alt="QVM" width="150px;" height="75px;" title="QVM"/>	 
+			  	</apex:panelGrid>
+
+				<div class="slds-box slds-theme--error slds-align--absolute-center">
+				  <p><strong>ERROR : </strong>{!$Label.Generic_Error}</p>
+				</div>
+		     </div>   
+		  </body>
+	</html>
+
+</apex:page>

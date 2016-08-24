@@ -1,0 +1,1807 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"A",
+				"Account	[Sobject Name]"
+			],
+			[
+				"name",
+				"Name"
+			],
+			[
+				"QVM",
+				"QVM_LH_FEE_SETTING__c"
+			],
+			[
+				"iD",
+				"Id"
+			],
+			[
+				"I",
+				"Integer	[Standard Apex Class]"
+			],
+			[
+				"Pro",
+				"Product__c"
+			],
+			[
+				"re",
+				"RecordTypeid"
+			],
+			[
+				"B",
+				"Batch_Jobs__c	[Sobject Name]"
+			],
+			[
+				"ba",
+				"batchJobId"
+			],
+			[
+				"a",
+				"assert()"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"order",
+				"orderItem"
+			],
+			[
+				"O",
+				"OpportunityId"
+			],
+			[
+				"or",
+				"orderItem"
+			],
+			[
+				"p",
+				"PUBLIC put(ANY key, ANY value) 	String"
+			],
+			[
+				"Dat",
+				"Database	[Standard Apex Class]"
+			],
+			[
+				"Date",
+				"Datetime	[Standard Apex Class]"
+			],
+			[
+				"Sta",
+				"Stall__c	[Sobject Name]"
+			],
+			[
+				"Sa",
+				"Stall__c	[Sobject Name]"
+			],
+			[
+				"P",
+				"Pricebook2Id"
+			],
+			[
+				"get",
+				"PUBLIC get(ANY key) 	String"
+			],
+			[
+				"Order",
+				"OrderItem	[Sobject Name]"
+			],
+			[
+				"S",
+				"Status"
+			],
+			[
+				"E",
+				"EndDate 	"
+			],
+			[
+				"is",
+				"isInsert"
+			],
+			[
+				"i",
+				"item"
+			],
+			[
+				"Op",
+				"Opportunity	[Sobject Name]"
+			],
+			[
+				"Lea",
+				"Leave__c	[Sobject Name]"
+			],
+			[
+				"Mon",
+				"MondayTrader__c 	Lookup"
+			],
+			[
+				"Tues",
+				"TuesdayTrader__c 	Lookup"
+			],
+			[
+				"We",
+				"WednesdayTrader__c 	Lookup"
+			],
+			[
+				"W",
+				"wednesday"
+			],
+			[
+				"Thur",
+				"ThursdayTrader__c 	Lookup"
+			],
+			[
+				"f",
+				"Friday"
+			],
+			[
+				"Frid",
+				"FridayTrader__c 	Lookup"
+			],
+			[
+				"Sat",
+				"SaturdayTrader__c 	Lookup"
+			],
+			[
+				"ConTR",
+				"controller"
+			],
+			[
+				"sta",
+				"Stall__c"
+			],
+			[
+				"St",
+				"Stall__c	[Sobject Name]"
+			],
+			[
+				"Sun",
+				"SundayTrader__c 	Lookup"
+			],
+			[
+				"Fri",
+				"FridayTrader__c 	Lookup"
+			],
+			[
+				"fri",
+				"FridayTrader__c 	Lookup"
+			],
+			[
+				"thur",
+				"ThursdayTrader__c 	Lookup"
+			],
+			[
+				"th",
+				"ThursdayTrader__c 	Lookup"
+			],
+			[
+				"we",
+				"WednesdayTrader__c 	Lookup"
+			],
+			[
+				"T",
+				"TuesdayTrader__c 	Lookup"
+			],
+			[
+				"M",
+				"MondayTrader__c 	Lookup"
+			],
+			[
+				"m",
+				"MondayTrader__c 	Lookup"
+			],
+			[
+				"Pa",
+				"PageReference	[Standard Apex Class]"
+			],
+			[
+				"ex",
+				"extensions	(String)"
+			],
+			[
+				"w",
+				"width"
+			],
+			[
+				"in",
+				"input	Tag"
+			],
+			[
+				"Tra",
+				"tracking"
+			],
+			[
+				"sh",
+				"showHeader	(Boolean)"
+			],
+			[
+				"s",
+				"sidebar	(Boolean)"
+			],
+			[
+				"le",
+				"legacy"
+			],
+			[
+				"end",
+				"endsWith"
+			],
+			[
+				"c",
+				"Contact__c 	Lookup"
+			],
+			[
+				"Setup",
+				"SetupUtil"
+			],
+			[
+				"sys",
+				"System"
+			],
+			[
+				"RMSE",
+				"RMSEsbDto	[Custom Apex Class]"
+			],
+			[
+				"RMS",
+				"RMSWrapperCtrl	[Custom Apex Class]"
+			],
+			[
+				"remoteA",
+				"RemoteActionResponse"
+			],
+			[
+				"OCDR",
+				"OCDRHelper"
+			],
+			[
+				"responseO",
+				"responseObj"
+			],
+			[
+				"resp",
+				"response"
+			],
+			[
+				"ocdr",
+				"ocdrHelper"
+			],
+			[
+				"gr",
+				"grossAmount"
+			],
+			[
+				"STD",
+				"PUBLIC STD_PDT_CODE_ONLINEDRREC	String"
+			],
+			[
+				"rms",
+				"rmsGlobal"
+			],
+			[
+				"price",
+				"priceItems"
+			],
+			[
+				"date",
+				"DateTime"
+			],
+			[
+				"OnlineDir",
+				"onlineDrivingRecords"
+			],
+			[
+				"crea",
+				"PUBLIC createPDFAttachmentLink(String base64Str, String fileName, String token) 	String"
+			],
+			[
+				"pdf",
+				"pdfLink"
+			],
+			[
+				"tra",
+				"transactionToken"
+			],
+			[
+				"ret",
+				"returned"
+			],
+			[
+				"pr",
+				"priceItem"
+			],
+			[
+				"n",
+				"name"
+			],
+			[
+				"pu",
+				"purchase"
+			],
+			[
+				"o",
+				"oDR"
+			],
+			[
+				"cut",
+				"customer"
+			],
+			[
+				"cu",
+				"currentLicence"
+			],
+			[
+				"mo",
+				"mostRecentOffenceDate"
+			],
+			[
+				"d",
+				"PUBLIC demerits	Demerits"
+			],
+			[
+				"El",
+				"eligibility"
+			],
+			[
+				"dem",
+				"demerits"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "\n		String json = '{'+\n		'    \\\"BillAddr\\\": {'+\n		'        \\\"Line1\\\": \\\"123 Main Street\\\",'+\n		'        \\\"City\\\": \\\"Mountain View\\\",'+\n		'        \\\"Country\\\": \\\"USA\\\",'+\n		'        \\\"CountrySubDivisionCode\\\": \\\"CA\\\",'+\n		'        \\\"PostalCode\\\": \\\"94042\\\"'+\n		'    },'+\n		'    \\\"Notes\\\": \\\"Here are other details.\\\",'+\n		'    \\\"Title\\\": \\\"Mr\\\",'+\n		'    \\\"GivenName\\\": \\\"James13342\\\",'+\n		'    \\\"MiddleName\\\": \\\"B\\\",'+\n		'    \\\"FamilyName\\\": \\\"King13342\\\",'+\n		'    \\\"Suffix\\\": \\\"Jr\\\",'+\n		'    \\\"FullyQualifiedName\\\": \\\"King Groceries\\\",'+\n		'    \\\"CompanyName\\\": \\\"King Groceries13342\\\",'+\n		'    \\\"DisplayName\\\": \\\"King\\'s Groceries13e4\\\",'+\n		'    \\\"PrimaryPhone\\\": {'+\n		'        \\\"FreeFormNumber\\\": \\\"(555) 555-5555\\\"'+\n		'    },'+\n		'    \\\"PrimaryEmailAddr\\\": {'+\n		'        \\\"Address\\\": \\\"jdrew1334@myemail.com\\\"'+\n		'    }'+\n		'}';\n		QBOCustomer obj = QBOCustomer.parse(json);\n    \nHttpClient client = IntuitService.createClient();\n//string jsonResult=(String) client.jsonGet('query?query='+EncodingUtil.urlEncode('Select * from Customer', 'UTF-8'), String.class);    \nString  result=  (String)client.jsonPost('customer',obj, String.class);   \n\nsystem.debug('Result: ' + result);\n\nqvm_intuit_api__c config = qvm_intuit_api__c.getOrgDefaults();\n\n22:32:52:055 USER_DEBUG [125]|DEBUG|::::: header = OAuth oauth_consumer_key=\"qyprdf5ltQR3fLoNbAq8rVXp2Y3cxK\", oauth_token=\"qyprd3oZWqVyRifVuy2L6iz7KuyIvmgYdYz5qmIUy51NPKsB\", oauth_signature_method=\"HMAC-SHA1\", oauth_timestamp=\"1471955572\", oauth_nonce=\"5664749902940900741\", oauth_version=\"1.0\", Host=\"qbo.intuit.com\", Connection=\"Keep-Alive\", oauth_signature=\"Fvb8HU3Z1kxUrF6NIoAcPUt7Z9w%3D\"\n\n\n22:34:28:029 USER_DEBUG [125]|DEBUG|::::: header = OAuth oauth_consumer_key=\"qyprdf5ltQR3fLoNbAq8rVXp2Y3cxK\", oauth_token=\"qyprd3oZWqVyRifVuy2L6iz7KuyIvmgYdYz5qmIUy51NPKsB\", oauth_signature_method=\"HMAC-SHA1\", oauth_timestamp=\"1471955668\", oauth_nonce=\"7570108613709391991\", oauth_version=\"1.0\", Host=\"qbo.intuit.com\", Connection=\"Keep-Alive\", oauth_signature=\"m8803lQO7RXQneDQl6j6l5FYTBw%3D\"",
+			"settings":
+			{
+				"buffer_size": 2040,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/lukef/Downloads/test1qwe/test1qwe.apxc",
+			"settings":
+			{
+				"buffer_size": 15050,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/lukef/Downloads/test1qwe/test1qwe_Test.apxc",
+			"settings":
+			{
+				"buffer_size": 48337,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "public with sharing class QBOCRUDHelper {\n       \n    public QuickBooksConnector qbConnector { get; set; }\n    \n    public QBOCRUDHelper() {\n         qbConnector = new QuickBooksConnector();       \n    }\n    \n    \n    /*\n    eg\n    QBOCRUDHelper h = new QBOCRUDHelper();\n    QBOCustomerList cl = (QBOCustomerList)h.query('select * from Customer', QBOCustomerList.class);\n    system.debug('QBOCustomerList: ' + cl);\n    */\n     public object query(string query, type apexType) {\n         \n        query = query.replace(' ', '%20');\n        query = query.replace('*', '%2A');\n        Http h = new Http();\n        \n        HttpRequest req = new HttpRequest();\n        req.setMethod('GET');\n        req.setHeader('Authorization', 'OAuth '+UserInfo.getSessionId());\n        \n        req.setEndpoint(qbConnector.service.BaseURL__c + qbConnector.oaToken.Realm_Id__c + '/query?query=' + query);\n\n        req.setHeader('Accept', 'application/json;charset=UTF-8');\n        qbConnector.sign(req);\n        \n\n        HttpResponse res;\n         if(Test.isRunningTest()) {\n            res = new HttpResponse();\n        } else {\n            res = h.send(req); \n        }\n        \n        string responseString = res.getBody();\n         \n        System.debug('::::: Response = (' + res.getStatusCode() + ')' + res.getBody());\n        return System.JSON.deserialize(responseString, apexType);\n       \n    }\n\n    /*\n    eg\n\n    String json = '{'+\n    '    \\\"BillAddr\\\": {'+\n    '        \\\"Line1\\\": \\\"123 Main Street\\\",'+\n    '        \\\"City\\\": \\\"Mountain View\\\",'+\n    '        \\\"Country\\\": \\\"USA\\\",'+\n    '        \\\"CountrySubDivisionCode\\\": \\\"CA\\\",'+\n    '        \\\"PostalCode\\\": \\\"94042\\\"'+\n    '    },'+\n    '    \\\"Notes\\\": \\\"Here are other details.\\\",'+\n    '    \\\"Title\\\": \\\"Mr\\\",'+\n    '    \\\"GivenName\\\": \\\"James13342\\\",'+\n    '    \\\"MiddleName\\\": \\\"B\\\",'+\n    '    \\\"FamilyName\\\": \\\"King13342\\\",'+\n    '    \\\"Suffix\\\": \\\"Jr\\\",'+\n    '    \\\"FullyQualifiedName\\\": \\\"King Groceries134\\\",'+\n    '    \\\"CompanyName\\\": \\\"King Groceries12333\\\",'+\n    '    \\\"DisplayName\\\": \\\"King\\'s Groceries33333\\\",'+\n    '    \\\"PrimaryPhone\\\": {'+\n    '        \\\"FreeFormNumber\\\": \\\"(555) 555-5555\\\"'+\n    '    },'+\n    '    \\\"PrimaryEmailAddr\\\": {'+\n    '        \\\"Address\\\": \\\"jdrew13ww4@myemail.com\\\"'+\n    '    }'+\n    '}';\n    QBOCustomer obj = QBOCustomer.parse(json);\n    system.debug('customer: ' + system.JSON.serialize(obj, true));\n\n    QBOCRUDHelper h = new QBOCRUDHelper();\n    QBOCustomer cl = (QBOCustomer)h.upsertData('Customer',system.JSON.serialize(obj, true) ,QBOCustomer.class);\n    system.debug('QBOCustomerList: ' + cl);\n    */\n    public object upsertData(string objTable, string jsonObj, type apexType)\n    {\n        Http h = new Http();\n        \n        HttpRequest req = new HttpRequest();\n        req.setMethod('POST');\n        ///company/:companyId/customer\n        //req.setEndpoint('https://qbo.intuit.com/qbo1/resource/customer/v2/' + oaToken.Realm_Id__c);\n        req.setEndPoint(qbConnector.service.BaseURL__c + qbConnector.oaToken.Realm_Id__c + '/' + objTable);\n        req.setHeader('Content-Type', 'application/json');\n        req.setHeader('Accept', 'application/json');\n        //application/json;charset=UTF-8\n      \n       \n        qbConnector.sign(req);\n        req.setBody(jsonObj);\n        System.debug('::::: Request = ' + req);\n        \n        HttpResponse res;\n        if(Test.isRunningTest()) {\n            res = new HttpResponse();\n        } else {\n            res = h.send(req);\n        }\n        \n        String responseString = res.getBody();\n        \n        system.debug('$$$$$'+res);\n        System.debug('::::: response = ' + res.getbody());\n\n\n        return System.JSON.deserialize(responseString, apexType);\n    }\n}",
+			"file": "src/classes/QBOCRUDHelper.cls",
+			"file_size": 3737,
+			"file_write_time": 131164665693269282,
+			"settings":
+			{
+				"buffer_size": 3741,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "global class AccountsQBOUpsertBatch implements Database.Batchable<sObject>,  Database.AllowsCallouts {\n	\n	List<Account> customers;\n\n	\n	global AccountsQBOUpsertBatch(List<Account> items) {\n		customers = items;\n	}\n\n\n\n	global List<Account> start(Database.BatchableContext BC) {\n		return customers;\n\n	}\n\n   	global void execute(Database.BatchableContext BC, List<Account> scope) {\n   			/*\n	'    \\\"BillAddr\\\": {'+\n    '        \\\"Line1\\\": \\\"123 Main Street\\\",'+\n    '        \\\"City\\\": \\\"Mountain View\\\",'+\n    '        \\\"Country\\\": \\\"USA\\\",'+\n    '        \\\"CountrySubDivisionCode\\\": \\\"CA\\\",'+\n    '        \\\"PostalCode\\\": \\\"94042\\\"'+\n    '    },'+\n    '    \\\"Notes\\\": \\\"Here are other details.\\\",'+\n    '    \\\"Title\\\": \\\"Mr\\\",'+\n    '    \\\"GivenName\\\": \\\"James13342\\\",'+\n    '    \\\"MiddleName\\\": \\\"B\\\",'+\n    '    \\\"FamilyName\\\": \\\"King13342\\\",'+\n    '    \\\"Suffix\\\": \\\"Jr\\\",'+\n    '    \\\"FullyQualifiedName\\\": \\\"King Groceries134\\\",'+\n    '    \\\"CompanyName\\\": \\\"King Groceries12333\\\",'+\n    '    \\\"DisplayName\\\": \\\"King\\'s Groceries33333\\\",'+\n    '    \\\"PrimaryPhone\\\": {'+\n    '        \\\"FreeFormNumber\\\": \\\"(555) 555-5555\\\"'+\n    '    },'+\n    '    \\\"PrimaryEmailAddr\\\": {'+\n    '        \\\"Address\\\": \\\"jdrew13ww4@myemail.com\\\"'+\n    '    }'+\n    '}';*/\n    	System.debug('Accounts to be updated : ' + scope);\n   		List<Account> itemsToUpdateWithQBOId = new List<Account> ();\n \n   		QBOCRUDHelper crudHelper = new QBOCRUDHelper();\n   		for (Account so : scope)\n   		{\n   			QBOCustomer customer = new QBOCustomer();\n			if (so.Majik_AccountNo__c != null)\n			{\n				customer.CompanyName =  so.Majik_AccountNo__c ;\n			}\n\n			\n			customer.PrimaryTaxIdentifier = so.ABN__c;\n			customer.DisplayName = so.Name ;\n\n			\n   			QBOCustomerResponse customerResponse = (QBOCustomerResponse)crudHelper.upsertData( 'customer',  system.JSON.serialize(customer, true) , QBOCustomerResponse.class);\n\n\n\n   			if (acc.QuickBooks_Id__c == null)\n   			{\n   				Account acct = new Account(id=so.id,QuickBooks_Id__c=customerResponse.Customer.Id);   			\n   				itemsToUpdateWithQBOId.add(acct);\n   			}\n   		}\n\n   		if(itemsToUpdateWithQBOId.size()>0)\n   			Update itemsToUpdateWithQBOId;\n	\n	}\n	\n	global void finish(Database.BatchableContext BC) {\n		\n	}\n	\n}",
+			"file": "src/classes/AccountsQBOUpsertBatch.cls",
+			"file_size": 2250,
+			"file_write_time": 131164809766998824,
+			"settings":
+			{
+				"buffer_size": 2229,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/classes/OrderBuilderBatch.cls",
+			"settings":
+			{
+				"buffer_size": 960,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/classes/QBOCustomer.cls",
+			"settings":
+			{
+				"buffer_size": 7061,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/lukef/Downloads/JSON2Apex (3)/JSON2Apex_Test.apxc",
+			"settings":
+			{
+				"buffer_size": 1145,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/classes/QBOCustomerResponse.cls",
+			"settings":
+			{
+				"buffer_size": 130,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/classes/OrderBuilder.cls",
+			"settings":
+			{
+				"buffer_size": 11968,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "@isTest\npublic class TestDataFactory {\n    \n\n    public static List<Account> createAccountsWithOpps(Integer numAccts, Integer numOppsPerAcct, string recordType ) {\n\n        Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Opportunity; \n        Map<String,Schema.RecordTypeInfo> oppRecordTypeInfo = cfrSchema.getRecordTypeInfosByName(); \n\n        Id oppRecordTypeId = oppRecordTypeInfo.get(recordType).getRecordTypeId();\n\n        List<Account> accts = new List<Account>();\n        \n        for(Integer i=0;i<numAccts;i++) {\n            Account a = new Account(Name='TestAccount' + i);\n            accts.add(a);\n        }\n        insert accts;\n        \n        List<Opportunity> opps = new List<Opportunity>();\n        for (Integer j=0;j<numAccts;j++) {\n            Account acct = accts[j];\n            // For each account just inserted, add opportunities\n            for (Integer k=0;k<numOppsPerAcct;k++) {\n                opps.add(new Opportunity(Name=acct.Name + ' Opportunity ' + k,\n                                       RecordTypeid=oppRecordTypeId,\n                                       StageName='Prospecting',\n                                       CloseDate=System.today().addMonths(1),\n                                       AccountId=acct.Id,\n                                       Contracted_Leave__c=20,\n                                       Business_Status__c = 'Open',\n                                       pricebook2id=Test.getStandardPricebookId()));\n            }\n        }\n        // Insert all opportunities for all accounts.\n        insert opps;\n        \n        return accts;\n    }\n\n    public static Stall__c createSingleStall(Opportunity accBus)\n    {\n\n\n        Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Stall__c; \n        Map<String,Schema.RecordTypeInfo> stallTypeInfo = cfrSchema.getRecordTypeInfosByName(); \n        Id rtId = stallTypeInfo.get('Casual').getRecordTypeId();\n            \n        Stall__c stall = new Stall__c();\n        stall.RecordTypeid = rtId;\n        stall.ShedId__c = 'A' ;\n        stall.StallId__c = '1';\n\n        stall.StallId__c = '1';\n        stall.name = 'A1';\n\n        stall.FridayMultiplier__c = 1;\n        stall.FridayTrader__c = accBus.Id;\n        stall.IsActive__c = true;\n        stall.MondayTrader__c = accBus.Id;\n        stall.SaturdayMultiplier__c = 1;\n        stall.SaturdayTrader__c = accBus.Id;\n        stall.SundayMultiplier__c = 1;\n        stall.SundayTrader__c = accBus.Id;\n        stall.ThursdayMultiplier__c = 1;\n        stall.ThursdayTrader__c = accBus.Id;\n        stall.TuesdayMultiplier__c = 1;\n        stall.TuesdayTrader__c = accBus.Id;\n        stall.WednesdayMultiplier__c = 1;\n        stall.WednesdayTrader__c = accBus.Id; \n\n        Insert stall;\n\n        return stall;\n    }\n\n\n\n\n\n    public static Stall__c createSingleStallWithNoOpp()\n    {\n\n        Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Stall__c; \n        Map<String,Schema.RecordTypeInfo> stallTypeInfo = cfrSchema.getRecordTypeInfosByName(); \n        Id rtId = stallTypeInfo.get('Casual').getRecordTypeId();\n            \n\n\n        Stall__c stall = new Stall__c();\n        stall.RecordTypeid = rtId;\n        stall.ShedId__c = 'A' ;\n        stall.StallId__c = '1';\n\n        stall.StallId__c = '1';\n        stall.name = 'A1';\n\n        stall.FridayMultiplier__c = 1;\n        stall.IsActive__c = true;\n        stall.SaturdayMultiplier__c = 1;\n        stall.SundayMultiplier__c = 1;\n        stall.ThursdayMultiplier__c = 1;\n        stall.TuesdayMultiplier__c = 1;\n        stall.WednesdayMultiplier__c = 1;\n\n        Insert stall;\n\n        return stall;\n    }\n\n\n    public static Stall__c createPermStallWithNoOpp()\n    {\n\n        Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Stall__c; \n        Map<String,Schema.RecordTypeInfo> stallTypeInfo = cfrSchema.getRecordTypeInfosByName(); \n        Id rtId = stallTypeInfo.get('Permanent').getRecordTypeId();\n            \n\n\n        Stall__c stall = new Stall__c();\n        stall.RecordTypeid = rtId;\n        stall.ShedId__c = 'X' ;\n        stall.StallId__c = '1';\n\n        stall.StallId__c = '1';\n        stall.name = 'X1';\n\n        stall.Annual_Rent__c = 12000;\n\n        stall.FridayMultiplier__c = 1;\n        stall.IsActive__c = true;\n        stall.SaturdayMultiplier__c = 1;\n        stall.SundayMultiplier__c = 1;\n        stall.ThursdayMultiplier__c = 1;\n        stall.TuesdayMultiplier__c = 1;\n        stall.WednesdayMultiplier__c = 1;\n\n        Insert stall;\n\n        return stall;\n    }\n\n    public static Stall__c createPermStallWithOpp(Opportunity accBus)\n    {\n\n        Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Stall__c; \n        Map<String,Schema.RecordTypeInfo> stallTypeInfo = cfrSchema.getRecordTypeInfosByName(); \n        Id rtId = stallTypeInfo.get('Permanent').getRecordTypeId();\n            \n\n\n        Stall__c stall = new Stall__c();\n        stall.RecordTypeid = rtId;\n        stall.ShedId__c = 'X' ;\n        stall.StallId__c = '1';\n        stall.Tenant__c = accBus.Id; \n        stall.StallId__c = '1';\n        stall.Product__c = TestDataFactory.createPremStallProducts().Id;\n        stall.name = 'X1';\n\n        stall.Annual_Rent__c = 12000;\n        stall.MCC_1st_Qtr_Ins__c = 100;\n\n        stall.FridayMultiplier__c = 1;\n        stall.IsActive__c = true;\n        stall.SaturdayMultiplier__c = 1;\n        stall.SundayMultiplier__c = 1;\n        stall.ThursdayMultiplier__c = 1;\n        stall.TuesdayMultiplier__c = 1;\n        stall.WednesdayMultiplier__c = 1;\n\n        Insert stall;\n\n        return stall;\n    }\n\n\n\n\n    public static void createStallProductsAndGeneralPriceBook()\n    {\n\n            /*PriceBook2 pb = new PriceBook2();\n            pb.name = 'General Merchandise';\n            pb.isActive=true;\n            pb.IsStandard  = true;\n            insert pb;*/\n\n            List<Product2> productsToInsert = new List<Product2>();\n\n            Product2 prodMon= new Product2();\n            prodMon.name='Monday';\n            prodMon.ProductCode='Monday';\n            prodMon.isActive=true;\n            productsToInsert.add(prodMon);\n\n            Product2 prodTue= new Product2();\n            prodTue.name='Tuesday';\n            prodTue.ProductCode='Tuesday';\n            prodTue.isActive=true;\n            productsToInsert.add(prodTue);\n\n            Product2 prodWed= new Product2();\n            prodWed.name='Wednesday';\n            prodWed.ProductCode='Wednesday';\n            prodWed.isActive=true;\n            productsToInsert.add(prodWed);\n\n            Product2 prodThu= new Product2();\n            prodThu.name='Thursday';\n            prodThu.ProductCode='Thursday';\n            prodThu.isActive=true;\n            productsToInsert.add(prodThu);\n\n            Product2 prodFri= new Product2();\n            prodFri.name='Friday';\n            prodFri.ProductCode='Friday';\n            prodFri.isActive=true;\n            productsToInsert.add(prodFri);\n\n            Product2 prodSat = new Product2();\n            prodSat.name='Saturday';\n            prodSat.ProductCode='Saturday';\n            prodSat.isActive=true;\n            productsToInsert.add(prodSat);\n\n            Product2 prodSun= new Product2();\n            prodSun.name='Sunday';\n            prodSun.ProductCode='Sunday';\n            prodSun.isActive=true;\n            productsToInsert.add(prodSun);\n\n            insert productsToInsert;\n\n            List<PriceBookEntry> pbeToInsert = new List<PriceBookEntry>();\n\n            Id pricebookId = Test.getStandardPricebookId();\n\n            pbeToInsert.add(new PricebookEntry(pricebook2id=pricebookId, product2id=prodMon.id,unitprice=30, isActive=true));\n            pbeToInsert.add(new PricebookEntry(pricebook2id=pricebookId, product2id=prodTue.id,unitprice=30, isActive=true));\n            pbeToInsert.add(new PricebookEntry(pricebook2id=pricebookId, product2id=prodWed.id,unitprice=30, isActive=true));\n            pbeToInsert.add(new PricebookEntry(pricebook2id=pricebookId, product2id=prodThu.id,unitprice=30, isActive=true));\n            pbeToInsert.add(new PricebookEntry(pricebook2id=pricebookId, product2id=prodFri.id,unitprice=30, isActive=true));\n            pbeToInsert.add(new PricebookEntry(pricebook2id=pricebookId, product2id=prodSat.id,unitprice=30, isActive=true));\n            pbeToInsert.add(new PricebookEntry(pricebook2id=pricebookId, product2id=prodSun.id,unitprice=30, isActive=true));\n\n            insert pbeToInsert;\n\n            \n    }\n\n\n    public static Product2 createPremStallProducts()\n    {\n\n\n        \n\n        Product2 prod= new Product2();\n        prod.name='perm stall';\n        prod.ProductCode='perm stall';\n        prod.Family ='Permanent Stall';\n        prod.isActive=true;\n\n        insert prod;\n\n\n        Id pricebookId = Test.getStandardPricebookId();\n\n\n        PricebookEntry pbe = new PricebookEntry(pricebook2id=pricebookId, product2id=prod.id,unitprice=30, isActive=true);\n\n        insert pbe;\n\n        return prod;\n\n        \n    }\n\n\n\n\n    public static Batch_Jobs__c createSLBatchJob()\n    {\n\n        Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Batch_Jobs__c; \n        Map<String,Schema.RecordTypeInfo> BatchJobsTypeInfo = cfrSchema.getRecordTypeInfosByName(); \n        Id rtId = BatchJobsTypeInfo.get('New').getRecordTypeId();\n            \n        system.debug('TEST : ' + rtId);\n\n        Batch_Jobs__c bj = new Batch_Jobs__c();\n        bj.Batch_Type__c = 'SL';\n        bj.Process_Range__c = 'Month';\n        bj.Week_Month_Of__c = Date.today();\n        bj.RecordTypeid = rtId;\n\n        insert bj;\n\n        return bj;\n       \n    }\n\n\n    public static Batch_Jobs__c createLHBatchJob()\n    {\n\n        Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Batch_Jobs__c; \n        Map<String,Schema.RecordTypeInfo> BatchJobsTypeInfo = cfrSchema.getRecordTypeInfosByName(); \n        Id rtId = BatchJobsTypeInfo.get('New').getRecordTypeId();\n            \n        system.debug('TEST : ' + rtId);\n\n        Batch_Jobs__c bj = new Batch_Jobs__c();\n        bj.Batch_Type__c = 'LH';\n        bj.Process_Range__c = 'Month';\n        bj.Week_Month_Of__c = Date.today();\n        bj.RecordTypeid = rtId;\n\n        insert bj;\n\n        return bj;\n       \n    }\n\n    public static Batch_Jobs__c createMCCBatchJob()\n    {\n\n        Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Batch_Jobs__c; \n        Map<String,Schema.RecordTypeInfo> BatchJobsTypeInfo = cfrSchema.getRecordTypeInfosByName(); \n        Id rtId = BatchJobsTypeInfo.get('New').getRecordTypeId();\n            \n        system.debug('TEST : ' + rtId);\n\n        Batch_Jobs__c bj = new Batch_Jobs__c();\n        bj.Batch_Type__c = 'MCC 1st Qtr Ins';\n        //bj.Process_Range__c = 'Quarter';\n        bj.Week_Month_Of__c = Date.today();\n        bj.RecordTypeid = rtId;\n\n        insert bj;\n\n        return bj;\n       \n    }\n\n    public static void CreateQVM_LH_FEE_SETTING_Entries()\n    {\n\n        //CREATE Product and add to standard pricebook\n        Product2 prod= new Product2();\n        prod.name='a fee';\n        prod.ProductCode='fee';\n        prod.Family ='Permanent Stall';\n        prod.isActive=true;\n\n        insert prod;\n\n        //add to standard pricebook\n        Id pricebookId = Test.getStandardPricebookId();\n        PricebookEntry pbe = new PricebookEntry(pricebook2id=pricebookId, product2id=prod.id,unitprice=0, isActive=true);\n\n        insert pbe;\n\n\n\n        //List<QVM_LH_FEE_SETTING__c> settings = new List<QVM_LH_FEE_SETTING__c>();\n        QVM_LH_FEE_SETTING__c setting1 = new QVM_LH_FEE_SETTING__c();\n        setting1.Name = 'MCC 1st Qtr Ins';\n        setting1.Fee_Field__c = 'MCC_1st_Qtr_Ins__c';\n        setting1.PricebookEntryId__c = pbe.Id;\n\n        Insert setting1;\n\n\n    }\n\n\n\n}",
+			"file": "src/classes/TestDataFactory.cls",
+			"file_size": 11716,
+			"file_write_time": 131164262629870930,
+			"settings":
+			{
+				"buffer_size": 11715,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 490.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: Install Package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 659.0
+	},
+	"console":
+	{
+		"height": 377.0,
+		"history":
+		[
+			"Package Control: Install Package",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"Package Control: Install Package"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/MavensMate/QVM",
+		"/C/MavensMate/QVM/src",
+		"/C/MavensMate/QVM/src/classes",
+		"/C/MavensMate/QVM/src/triggers"
+	],
+	"file_history":
+	[
+		"/C/MavensMate/QVM/src/triggers/AccountTrigger.trigger",
+		"/C/Users/lukef/AppData/Roaming/Sublime Text 3/Packages/MavensMate/mavensmate.sublime-settings",
+		"/C/MavensMate/QVM/QVM.sublime-settings",
+		"/C/Users/lukef/AppData/Roaming/Sublime Text 3/Packages/User/mavensmate.sublime-settings",
+		"/C/MavensMate/QVM/src/classes/QuickBooksConnector.cls",
+		"/C/MavensMate/QVM/src/classes/QBOCustomerList.cls",
+		"/C/MavensMate/QVM/src/classes/QBOCustomerResponse.cls",
+		"/C/MavensMate/QVM/src/classes/QBOCustomer.cls",
+		"/C/MavensMate/QVM/src/classes/LeaveTriggerTest.cls",
+		"/C/MavensMate/QVM/src/classes/OrderBuilderBatch.cls",
+		"/C/Users/lukef/Downloads/CustomerList (1)/CustomerList_Test.apxc",
+		"/C/Users/lukef/Downloads/CustomerList (1)/CustomerList.apxc",
+		"/C/Users/lukef/Downloads/CustomerList/CustomerList_Test.apxc",
+		"/C/Users/lukef/Downloads/CustomerList/CustomerList.apxc",
+		"/C/MavensMate/QVM/src/classes/QBOCustomer_Test.cls",
+		"/C/MavensMate/QVM/src/classes/TestDataFactory.cls",
+		"/C/MavensMate/QVM/src/package.xml",
+		"/C/Users/lukef/Downloads/QBOCustomer (1)/QBOCustomer_Test.apxc",
+		"/C/MavensMate/QVM/src/classes/OrderBuilderTest.cls",
+		"/C/MavensMate/QVM/src/classes/OrderBuilder.cls",
+		"/C/Users/lukef/Downloads/QBOCustomer (1)/QBOCustomer.apxc",
+		"/C/Users/lukef/Downloads/QBOCustomer/QBOCustomer_Test.apxc",
+		"/C/Users/lukef/Downloads/QBOCustomer/QBOCustomer.apxc",
+		"/C/Users/lukef/Downloads/Customer/Customer_Test.apxc",
+		"/C/Users/lukef/Downloads/Customer/Customer.apxc",
+		"/C/MavensMate/QVM/src/classes/PriceBookUtils.cls",
+		"/C/MavensMate/QVM/src/classes/LeaveTriggerHelper.cls",
+		"/C/MavensMate/QVM/src/classes/AccountBusinessStallsListingExtTest.cls",
+		"/C/MavensMate/QVM/src/pages/AccountBusinessStallsListing.page",
+		"/C/MavensMate/QVM/src/pages/AccountBusinessPermStallsListing.page",
+		"/C/MavensMate/QVM/src/classes/AccountBusinessStallsListingExt.cls",
+		"/C/MavensMate/QVM/src/classes/ApplicationSubmissionExtension.cls",
+		"/C/MavensMate/QVM/config/.settings",
+		"/C/MavensMate/QVM/src/profiles/MarketingProfile.profile",
+		"/C/MavensMate/QVM/src/pages/StallsAvaliableToday.page",
+		"/C/MavensMate/QVM/src/classes/StallsAvaliableTodayControllerTest.cls",
+		"/C/MavensMate/QVM/src/classes/StallsAvaliableTodayController.cls",
+		"/C/Users/lukef/Downloads/salesforce-lightning-design-system/assets/styles/salesforce-lightning-design-system.css",
+		"/C/Users/lukef/Downloads/salesforce-lightning-design-system/assets/styles/salesforce-lightning-design-system-vf.css",
+		"/C/MavensMate/QVM/src/triggers/LeaveTrigger.trigger",
+		"/C/MavensMate/QVM/src/classes/AccountBusinessStallsListingExtTest.cls-meta.xml",
+		"/C/MavensMate/QVM/src/objects/Stall__c.object",
+		"/C/Users/lukef/Documents/seats/qvmmap/qvmman.html",
+		"/C/Users/lukef/Documents/seats/JSC Demo.html",
+		"/C/MavensMate/O/build/build.xml",
+		"/C/MavensMate/O/build/build.properties",
+		"/C/Users/lukef/Documents/QVM yellow.spcolor",
+		"/C/MavensMate/SFBackend/build.properties",
+		"/C/MavensMate/SFBackend/build.xml",
+		"/C/MavensMate/telstra POC/src/classes/APController.cls",
+		"/C/MavensMate/telstra POC/src/pages/MainController.page",
+		"/C/MavensMate/telstra POC/src/pages/AnnouncementAngularRoutingController.page",
+		"/C/Users/lukef/Desktop/COM/City of Melbourne home page.html",
+		"/C/MavensMate/telstra POC/src/components/APAdmin.component",
+		"/C/MavensMate/telstra POC/src/components/OrderTemplate.component",
+		"/C/MavensMate/telstra POC/src/components/BasketDetailComponent.component",
+		"/C/MavensMate/telstra POC/src/pages/BasketDetailController.page",
+		"/C/MavensMate/telstra POC/src/components/Announcement.component",
+		"/C/MavensMate/telstra POC/src/pages/index.page",
+		"/C/Users/lukef/Desktop/COM/Register.html",
+		"/C/MavensMate/telstra POC/src/pages/AddToCartController.page",
+		"/C/MavensMate/telstra POC/src/pages/AngularFactory.page",
+		"/C/MavensMate/telstra POC/src/triggers/UserTrigger.trigger",
+		"/C/MavensMate/telstra POC/src/triggers/AP_Profile_Maintenance_Trigger.trigger",
+		"/C/MavensMate/telstra POC/src/classes/APUtil.cls",
+		"/C/MavensMate/telstra POC/src/pages/DeliveryManagementController.page",
+		"/C/MavensMate/telstra POC/src/classes/APUtilities.cls",
+		"/C/Program Files/Sublime Text 3/Packages/MavensMate/sublime/lang/Visualforce.sublime-syntax",
+		"/C/MavensMate/telstra POC/src/components/Accessories.component",
+		"/C/MavensMate/telstra POC/src/pages/OrderTrackingController.page",
+		"/C/MavensMate/telstra POC/src/pages/AngularRouting.page",
+		"/C/MavensMate/telstra POC/src/components/OrderTrackingController.component",
+		"/C/MavensMate/telstra POC/src/package.xml",
+		"/C/MavensMate/telstra POC/src/components/OrderTracking.component",
+		"/C/MavensMate/telstra POC/src/classes/AP_Landing_PAge_Cntrl_Resmi.cls-meta.xml",
+		"/C/Users/lukef/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/lukef/AppData/Roaming/Sublime Text 3/Packages/User/JSON.sublime-settings",
+		"/C/MavensMate/telstra POC/src/pages/AP_LandingPage_Resmi_Test.page",
+		"/C/MavensMate/telstra POC/src/profiles/Admin.profile",
+		"/C/MavensMate/telstra POC/src/profiles/AP Partner Community Super User.profile",
+		"/C/MavensMate/telstra POC/src/components/NewExpressOrderComponent.component",
+		"/C/MavensMate/telstra POC/src/pages/NewExpressOrderController.page",
+		"/C/MavensMate/telstra POC/src/pages/ExpressOrderController.page",
+		"/C/MavensMate/telstra POC/src/classes/testwsra.cls",
+		"/C/MavensMate/telstra POC/telstra POC.sublime-settings",
+		"/C/MavensMate/telstra POC/src/pages/Accessoriescontroller.page",
+		"/C/MavensMate/telstra POC/src/pages/AccessoriesDetailController.page",
+		"/C/MavensMate/telstra POC/src/pages/Accessoriescontroller.page-meta.xml",
+		"/C/MavensMate/CBA_CALC/src/classes/QuotesControllerExtensionTest.cls",
+		"/C/MavensMate/CBA_CALC/src/classes/QuotesControllerExtension.cls",
+		"/C/MavensMate/CBA_CALC/src/package.xml",
+		"/C/MavensMate/CBA_CALC/src/pages/ApplicationRecalculatePage2.page",
+		"/C/MavensMate/CBA_CALC/src/classes/XMLToQuotes.cls",
+		"/C/MavensMate/CBA_CALC/src/classes/ApplicationRecalculateController.cls",
+		"/C/MavensMate/CBA_CALC/src/classes/ApplicationRecalculateController.cls-meta.xml",
+		"/C/MavensMate/CBA_CALC/src/pages/QuotesCalculator2.page",
+		"/C/MavensMate/CBA_CALC/src/classes/DocuSignAPISend.cls",
+		"/C/MavensMate/CBA_CALC/src/pages/QuotesCalculator.page",
+		"/C/MavensMate/CBA_CALC/src/classes/DocuSignAPISend_Test.cls",
+		"/C/MavensMate/CBA_CALC/src/pages/ApplicationRecalculatePage2.page-meta.xml",
+		"/C/MavensMate/CBA_CALC/src/pages/ApplicationRecalculatePage.page",
+		"/C/MavensMate/CBA_CALC/src/pages/QuotesCalculator.page-meta.xml",
+		"/C/MavensMate/CBA_CALC/src/pages/QuotesCalculatorPrint.page",
+		"/C/MavensMate/CBA_CALC/src/components/QuoteComponent.component",
+		"/C/MavensMate/CBA_CALC/src/objects/CalculatorFigures__c.object",
+		"/C/MavensMate/CBA_CALC/src/staticresources/RXP_CBACALC.resource",
+		"/C/MavensMate/CBA_CALC/src/classes/QuotesControllerExtension.cls-meta.xml",
+		"/C/MavensMate/CBA_CALC/src/pages/QuotesCalculatorPrint.page-meta.xml",
+		"/C/MavensMate/CBA_CALC/src/components/QuotesCalculatorLoadHelper.component",
+		"/C/MavensMate/CBA_CALC/src/pages/QuotesCalculatorPrint.page.xml",
+		"/C/MavensMate/CBA_CALC/src/objects/Quote__c.object",
+		"/C/Users/lukef/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/MavensMate/CBA_CALC/src/pages/QuotesCalculator2.page-meta.xml",
+		"/C/Users/lukef/Desktop/cba/RXP_CBACALC/tester.js",
+		"/C/Users/lukef/Desktop/cba/RXP_CBACALC/LoanProjection",
+		"/C/Users/lukef/Desktop/cba/RXP_CBACALC/calcUI.html",
+		"/C/MavensMate/ReplaceRego/src/classes/RMSWrapperCtrlTestUtil.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/RMSEsbDto.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/RMSReplaceRegCertificateHandler.cls",
+		"/C/Users/lukef/Downloads/testsize",
+		"/C/MavensMate/ReplaceRego/src/classes/rmsReplaceRegoCertTransactionInfo.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/Test_RMSReplaceRegCertificate.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/Mockable_Utilities.cls",
+		"/C/MavensMate/ReplaceRego/src/pages/index.page",
+		"/C/MavensMate/ReplaceRego/src/build.xml",
+		"/C/MavensMate/ReplaceRego/src/build.properties",
+		"/C/MavensMate/ReplaceRego/src/classes/SetupUtil.cls",
+		"/C/MavensMate/ReplaceRego/src/objects/ma_Constants__c.object"
+	],
+	"find":
+	{
+		"height": 43.0
+	},
+	"find_in_files":
+	{
+		"height": 117.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"PAYment",
+			"Mobi",
+			"PrimaryEmailAddr",
+			"PrimaryTaxIdentifier",
+			"abn",
+			"tool",
+			"QBOCustomer",
+			"TAX",
+			"createPermStallWithOpp",
+			"week",
+			"createPremStallProducts",
+			"oppMap",
+			"Cloud007",
+			"Farbotko",
+			"QVM",
+			"qvm",
+			"Multiplier__c",
+			"Trader__c",
+			",",
+			", currencyISOCode='AUD'",
+			"\"",
+			"	case ",
+			"hello",
+			"'006p0000002kWG0AAM'",
+			"Saturday",
+			"Friday",
+			"Thursday",
+			"Wednesday",
+			"Tuesday",
+			"left: 170px;",
+			" 20px",
+			"line-height: 100px;",
+			"\n}",
+			"\n",
+			"\n    ",
+			"\nLL",
+			"\n</a>",
+			"  ",
+			"    ",
+			"\"",
+			"        </a>",
+			"\"",
+			"7",
+			"column",
+			"First Class",
+			"</form",
+			"<form",
+			"form>",
+			"form",
+			"approv",
+			"getuser",
+			"factor",
+			"PlaceOrder",
+			"basket",
+			"account",
+			"UIPendingApprovals",
+			"synta",
+			".tab",
+			"ng-show=",
+			"LCT",
+			"Tax on",
+			"binding.",
+			"GetAccountSettingsList",
+			"CBA_CALC",
+			"gst on",
+			"break",
+			"Brokerage %",
+			"new",
+			"Helper.parseNumber(",
+			"data.CBACalculatorForm",
+			"LCTLimitLuxury__c",
+			"percent",
+			"input",
+			"IsSeasonal",
+			"input",
+			"&",
+			"j_id0:j_id1:quoteEdit:detail:data",
+			"this.Seasonal",
+			"init",
+			"NumberInstallments",
+			"Number of Rental Payments",
+			"Extra Payments",
+			" \n",
+			"for",
+			"loanProjectionLesse",
+			"$scope.TableLessee",
+			"Term (Months)",
+			"Residual Value (Inc. GST)",
+			"TotalAmountFinanced",
+			"ComputeTotalAmountFinanced",
+			"TotalAmountFinanced",
+			"835",
+			")];\n",
+			"ComputeAmortizationFactor",
+			"ComputeFromLesseeRate",
+			"Start Date",
+			"DDate",
+			"pDDate",
+			"summary",
+			"BLOCK",
+			"$scope.InAdvanced",
+			"BrokageAmount(",
+			"BrokageAmount",
+			"AmountFinanced",
+			"TotalAmountFinanced",
+			"ScheduledPaymentPerFreq",
+			"TotalInstallment",
+			"GSTPercentRate",
+			"TotalInstallment",
+			"Rental Amount",
+			"Total Amount of Interes",
+			"Total Amount of Interest (Payable under the contract)",
+			"TotalAmountRepayments",
+			"Repayment",
+			"TotalAmountRepayments",
+			"Total Amount of Repayments",
+			"ComputeDownPayment",
+			"ComputeFromDownPaymentPercent",
+			"ComputeFromDownPaymentPercent ",
+			"ComputeAmortizationFactor",
+			"DownPayment",
+			"this.",
+			"this.model.",
+			"ClosingBalanceRounded",
+			"OpeningBalanceRounded =",
+			"PrincipalRounded = ",
+			"InterestRounded",
+			">\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"Multiplier__c = 1;",
+			"Trader__c = accBus;",
+			"\\nstall.",
+			"\\n",
+			"/n",
+			"",
+			"'",
+			"if (dayOfWeek == ",
+			":accountBusiness.Id",
+			"Sunday",
+			"Saturday",
+			"Friday",
+			"Thursday",
+			"Wednesday",
+			"left: 370px;",
+			" 220px",
+			"line-height: 80px;",
+			"}",
+			"",
+			"LL",
+			"",
+			"    </a>",
+			"'",
+			"",
+			"try{ binding.",
+			"",
+			"formData",
+			"&amp;",
+			"$scope.AddPayments",
+			"$scope.",
+			"pDelayedPayment11",
+			"pSeasonal10",
+			"pTableLessee9",
+			"pResidualAmount",
+			"pInAdvanced",
+			"pTermInMonths",
+			"pLessorRateDiv12",
+			"pFrequencyPerPeriod",
+			"pRegularPaymentOverride",
+			"pTotalAmountFinanced2",
+			"pDDate1",
+			"",
+			" = function() {",
+			"0",
+			"",
+			"},",
+			": function() {",
+			"",
+			"showITC",
+			"$scope",
+			"LesseeRate",
+			";",
+			" = ",
+			"$scope.",
+			"FrequencyPerPeriod",
+			"NumberInstallments ",
+			"InAdvanced",
+			"ResidualAmount",
+			"AmountFinanced",
+			"DelayedPayment",
+			"FrequencyPerPeriod",
+			"TermInMonths",
+			"RentalPMT",
+			"",
+			"' + \\n",
+			"' +",
+			"'",
+			"2015-12-12",
+			"());",
+			"res.setBody(",
+			"",
+			"\\\"",
+			"\"",
+			"",
+			"\\\"",
+			"",
+			"\\\"",
+			"",
+			"\\\"",
+			"",
+			"\\\"",
+			"",
+			"\\\"",
+			"",
+			"\\\"",
+			"",
+			"\\\"",
+			"",
+			"\\\""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2040,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								839,
+								17
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/lukef/Downloads/test1qwe/test1qwe.apxc",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15050,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								568,
+								568
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/lukef/Downloads/test1qwe/test1qwe_Test.apxc",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 48337,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1734.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/classes/QBOCRUDHelper.cls",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3741,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2343,
+								2343
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 714.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/classes/AccountsQBOUpsertBatch.cls",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2229,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								142,
+								164
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/classes/OrderBuilderBatch.cls",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 960,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								75,
+								102
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/classes/QBOCustomer.cls",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7061,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3902,
+								3904
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 918.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/C/Users/lukef/Downloads/JSON2Apex (3)/JSON2Apex_Test.apxc",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1145,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								145,
+								1069
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/classes/QBOCustomerResponse.cls",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 130,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								108,
+								116
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/classes/OrderBuilder.cls",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11968,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7183,
+								7304
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 3315.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "src/classes/TestDataFactory.cls",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11715,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								21,
+								36
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 43.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.MavensMate-OutputPanel":
+	{
+		"height": 337.0
+	},
+	"output.find_results":
+	{
+		"height": 274.0
+	},
+	"pinned_build_system": "",
+	"project": "QVM.sublime-project",
+	"replace":
+	{
+		"height": 80.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"test",
+				"src\\classes\\TestDataFactory.cls"
+			],
+			[
+				"accountbusinessstallslistingext",
+				"src\\classes\\AccountBusinessStallsListingExt.cls"
+			],
+			[
+				"leave",
+				"src\\classes\\LeaveTriggerTest.cls"
+			],
+			[
+				"orde",
+				"src\\classes\\OrderBuilderTest.cls"
+			],
+			[
+				"order",
+				"src\\classes\\OrderBuilderBatch.cls"
+			],
+			[
+				"accountb",
+				"src\\classes\\AccountBusinessStallsListingExtTest.cls"
+			],
+			[
+				"acc",
+				"src\\classes\\AccountBusinessStallsListingExtTest.cls"
+			],
+			[
+				"",
+				"src\\classes\\OrderBuilder.cls"
+			],
+			[
+				"accountbus",
+				"src\\classes\\AccountBusinessStallsListingExtTest.cls"
+			],
+			[
+				"admin",
+				"src\\components\\APAdmin.component"
+			],
+			[
+				"temp",
+				"src\\components\\OrderTemplate.component"
+			],
+			[
+				"ind",
+				"src\\pages\\index.page"
+			],
+			[
+				"bask",
+				"src\\components\\BasketDetailComponent.component"
+			],
+			[
+				"mai",
+				"src\\pages\\MainController.page"
+			],
+			[
+				"index",
+				"src\\pages\\index.page"
+			],
+			[
+				"apu",
+				"src\\classes\\APUtilities.cls"
+			],
+			[
+				"templ",
+				"src\\components\\OrderTemplate.component"
+			],
+			[
+				"fact",
+				"src\\pages\\AngularFactory.page"
+			],
+			[
+				"print",
+				"src\\pages\\QuotesCalculatorPrint.page-meta.xml"
+			],
+			[
+				"pr",
+				"src\\pages\\QuotesCalculatorPrint.page"
+			],
+			[
+				"pro",
+				"LoanProjection.js"
+			],
+			[
+				"c",
+				"calcUI.html"
+			],
+			[
+				"rmswrappercrltestutil",
+				"src\\classes\\RMSWrapperCtrlTestUtil.cls"
+			],
+			[
+				"r",
+				"src\\classes\\RMSEsbDto.cls"
+			],
+			[
+				"rmsreplaceregcertificatehandler",
+				"src\\classes\\RMSReplaceRegCertificateHandler.cls"
+			],
+			[
+				"rmsreplacerego",
+				"src\\classes\\rmsReplaceRegoCertTransactionInfo.cls"
+			],
+			[
+				"rms",
+				"src\\classes\\RMSEsbDto.cls"
+			],
+			[
+				"mockable_utilities",
+				"src\\classes\\Mockable_Utilities.cls"
+			],
+			[
+				"rmswrapperctrltestutil",
+				"src\\classes\\RMSWrapperCtrlTestUtil.cls"
+			],
+			[
+				"test_rmsr",
+				"src\\classes\\Test_RMSReplaceRegCertificate.cls"
+			],
+			[
+				"inde",
+				"src\\pages\\index.page"
+			],
+			[
+				"setuputil",
+				"src\\classes\\SetupUtil.cls"
+			],
+			[
+				"ma_co",
+				"src\\objects\\ma_Constants__c.object"
+			],
+			[
+				"ma_con",
+				"src\\objects\\ma_Constants__c.object"
+			],
+			[
+				"moc",
+				"src\\classes\\Mockable_Utilities.cls"
+			],
+			[
+				"test_rms",
+				"src\\classes\\Test_RMSReplaceRegCertificate.cls"
+			],
+			[
+				"rmswr",
+				"src\\classes\\RMSWrapperCtrl.cls"
+			],
+			[
+				"userservicehandler",
+				"src\\classes\\UserServiceReqHandler.cls"
+			],
+			[
+				"userservice",
+				"src\\classes\\UserService.cls"
+			],
+			[
+				"rmsutil",
+				"src\\classes\\rmsUtil.cls"
+			],
+			[
+				"mock",
+				"src\\classes\\Mockable_Utilities.cls"
+			],
+			[
+				"rmsreplacelicencehandler",
+				"src\\classes\\RMSReplaceLicenceHandler.cls"
+			],
+			[
+				"rmswrapperctrl",
+				"src\\classes\\RMSWrapperCtrl.cls"
+			],
+			[
+				"rmsreplaceli",
+				"src\\classes\\RMSReplaceLicenceHandlerTest.cls"
+			],
+			[
+				"proper",
+				"build.properties"
+			],
+			[
+				"build",
+				"build.xml"
+			],
+			[
+				"rmsreplace",
+				"src\\classes\\RMSReplaceLicenceHandler.cls"
+			],
+			[
+				"rmsgl",
+				"src\\classes\\rmsGlobal.cls"
+			],
+			[
+				"setup",
+				"src\\classes\\SetupUtil.cls"
+			],
+			[
+				"rmsut",
+				"src\\classes\\rmsUtil.cls"
+			],
+			[
+				"rmswrapper",
+				"src\\classes\\RMSWrapperCtrl.cls"
+			],
+			[
+				"rmsrepla",
+				"src\\classes\\RMSReplaceLicenceHandler.cls"
+			],
+			[
+				"rmswrappertestui",
+				"src\\classes\\RMSWrapperCtrlTestUtil.cls"
+			],
+			[
+				"buid",
+				"build.xml"
+			],
+			[
+				"mocka",
+				"src\\classes\\Mockable_Utilities_502.cls"
+			],
+			[
+				"rmsesbdto",
+				"src\\classes\\RMSEsbDto.cls"
+			],
+			[
+				"rmsreplacehe",
+				"src\\classes\\RMSReplaceRegCertificateHandler.cls"
+			],
+			[
+				"rmspsppaymentservicev1",
+				"src\\classes\\rmsPSPPaymentServiceV1.cls"
+			],
+			[
+				"rmsreplacere",
+				"src\\classes\\RMSReplaceRegCertificateHandler.cls"
+			],
+			[
+				"bui",
+				"build.xml"
+			],
+			[
+				"test_rmsreplace",
+				"src\\classes\\Test_RMSReplaceRegCertificate.cls"
+			],
+			[
+				"properties",
+				"build.properties"
+			],
+			[
+				"bamboo",
+				"build_bamboo.properties"
+			],
+			[
+				"rmstransactionservice",
+				"src\\classes\\RMSTransactionService.cls"
+			],
+			[
+				"rmstransactionha",
+				"src\\classes\\rmsTransactionResHandlerTest.cls"
+			],
+			[
+				"rmscommonwrapper",
+				"src\\classes\\rmsCommonWrapper.cls"
+			],
+			[
+				"rmstransactionreshandler",
+				"src\\classes\\rmsTransactionResHandler.cls"
+			],
+			[
+				"rmsemailserv",
+				"src\\classes\\rmsEmailServ.cls"
+			],
+			[
+				"test_mrsr",
+				"src\\classes\\Test_RMSReplaceRegCertificate.cls"
+			],
+			[
+				"prope",
+				"build.properties"
+			],
+			[
+				"rmsgloba",
+				"src\\classes\\rmsGlobal.cls"
+			],
+			[
+				"rmstransactioninfobase",
+				"src\\classes\\rmsTransactionInfoBase.cls"
+			],
+			[
+				"rmsreplaceregocerttransactioninfo",
+				"src\\classes\\rmsReplaceRegoCertTransactionInfo.cls"
+			],
+			[
+				"rmswrap",
+				"src\\classes\\RMSWrapperCtrl.cls"
+			],
+			[
+				"rmsesbrego",
+				"src\\classes\\rmsEsbRegoServ.cls"
+			],
+			[
+				"rmsglo",
+				"src\\classes\\rmsGlobal.cls"
+			],
+			[
+				"rmsesbdt",
+				"src\\classes\\RMSEsbDto.cls"
+			],
+			[
+				"replacere",
+				"src\\classes\\RMSReplaceRegCertificateHandler.cls"
+			],
+			[
+				"rmsesb",
+				"deployment\\src\\classes\\rmsEsbErrorDetails.cls"
+			],
+			[
+				"rmsglobal",
+				"src\\classes\\rmsGlobal.cls"
+			],
+			[
+				"rmsesberrordetails",
+				"src\\classes\\rmsEsbErrorDetails.cls"
+			],
+			[
+				"rmsedbto",
+				"src\\classes\\RMSEsbDto.cls"
+			],
+			[
+				"mockable_utilities_502",
+				"src\\classes\\Mockable_Utilities_502.cls"
+			],
+			[
+				"rmsreplaceregcerttrans",
+				"src\\classes\\rmsReplaceRegoCertTransactionInfo.cls"
+			],
+			[
+				"rmsreceiptdatadetailsctrlv1",
+				"src\\classes\\rmsReceiptDataDetailsCtrlV1.cls"
+			],
+			[
+				"test_rmsre",
+				"src\\classes\\Test_RMSReplaceRegCertificate.cls"
+			],
+			[
+				"rmswra",
+				"src\\classes\\RMSWrapperCtrl.cls"
+			],
+			[
+				"test_rmsreplaceregcertificate",
+				"src\\classes\\Test_RMSReplaceRegCertificate.cls"
+			],
+			[
+				"rmstransactionreqhandler",
+				"src\\classes\\rmsTransactionReqHandler.cls"
+			],
+			[
+				"rmssessionlogsvc",
+				"src\\classes\\rmsSessionLogSvc.cls"
+			],
+			[
+				"rmstransactionhelper",
+				"src\\classes\\RMSTransactionHelper.cls"
+			],
+			[
+				"rmsfulfillmentrequestgenerator",
+				"src\\classes\\rmsFulfillmentRequestGenerator.cls"
+			],
+			[
+				"rmsuti",
+				"src\\classes\\rmsUtil.cls"
+			],
+			[
+				"rmsfreeregocheckhandler",
+				"src\\classes\\RMSFreeRegoCheckHandler.cls"
+			],
+			[
+				"rmstestutil",
+				"src\\classes\\rmsTestUtil.cls"
+			],
+			[
+				"rmsesbregoserv",
+				"src\\classes\\rmsEsbRegoServ.cls"
+			],
+			[
+				"rmssettings__c",
+				"src\\objects\\RMSSettings__c.object"
+			],
+			[
+				"product",
+				"src\\objects\\Product2.object"
+			],
+			[
+				"agency_transaction__c",
+				"src\\objects\\Agency_Transaction__c.object"
+			],
+			[
+				"rmswrapperctrl.",
+				"src\\classes\\RMSWrapperCtrl.cls-meta.xml"
+			],
+			[
+				"rmsremotertester",
+				"src\\pages\\rmsRemoterTester.page"
+			],
+			[
+				"agency_activity_notification.email",
+				"src\\email\\My_Account\\R2_Agency_Activity_Notification.email"
+			],
+			[
+				"mautil",
+				"src\\classes\\maUtil.cls"
+			],
+			[
+				"customercommunityloginuser.profile",
+				"src\\profiles\\Customer Community Login User.profile"
+			],
+			[
+				"ocdrcheckeligibilityhandler",
+				"src\\classes\\OCDRCheckEligibilityHandler.cls"
+			],
+			[
+				"testfreere",
+				"src\\classes\\Test_RMSFreeRegoCheckHandler.cls"
+			],
+			[
+				"rmssessionlog",
+				"src\\classes\\rmsSessionLog.cls"
+			],
+			[
+				"rmssessionlogdmn",
+				"src\\classes\\rmsSessionLogDmn.cls"
+			],
+			[
+				"requesthelper",
+				"src\\classes\\RequestHelper.cls"
+			],
+			[
+				"pspcancelpage",
+				"src\\pages\\pspCancelPage.page"
+			],
+			[
+				"pspreceiptpage",
+				"src\\pages\\pspReceiptPage.page"
+			],
+			[
+				"ocdr",
+				"src\\classes\\OCDRCheckEligibilityHandler.cls"
+			],
+			[
+				"rmsg",
+				"src\\classes\\rmsGlobal.cls"
+			],
+			[
+				"rmswsgettransactiondetails",
+				"src\\classes\\rmsWSGetTransactionDetails.cls"
+			],
+			[
+				"ocdrresponse",
+				"src\\reportTypes\\Participating_Businesses_and_Renewal_Responses.reportType"
+			],
+			[
+				"freerego",
+				"src\\classes\\RMSFreeRegoCheckHandler.cls"
+			],
+			[
+				"snswcust",
+				"src\\profiles\\SNSW Customer Community Login.profile"
+			],
+			[
+				"myservicenswaccountprofile.profile",
+				"src\\profiles\\My Service NSW Account Profile.profile"
+			],
+			[
+				"rmspspservicectrl",
+				"src\\classes\\rmsPSPServiceCtrl.cls"
+			],
+			[
+				"rmsrenewregotransactioninfo",
+				"src\\classes\\rmsRenewRegoTransactionInfo.cls"
+			],
+			[
+				"rmstransferregotransactioninfo",
+				"src\\classes\\rmsTransferRegoTransactionInfo.cls"
+			],
+			[
+				"rmsrenewlicencetransactioninfo",
+				"src\\classes\\rmsRenewLicenceTransactionInfo.cls"
+			],
+			[
+				"remoteactionresponse",
+				"src\\classes\\RemoteActionResponse.cls"
+			],
+			[
+				"esberrordetails",
+				"src\\classes\\ESBErrorDetails.cls"
+			],
+			[
+				"rmstransactionctrl",
+				"src\\classes\\rmsTransactionCtrl.cls"
+			],
+			[
+				"identifierservice",
+				"src\\classes\\IdentifierService.cls"
+			],
+			[
+				"madashboardctrl",
+				"src\\classes\\maDashboardCtrl.cls"
+			],
+			[
+				"r2_agency_activity_notification",
+				"src\\email\\My_Account\\R2_Agency_Activity_Notification.email"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 490.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 527.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 426.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

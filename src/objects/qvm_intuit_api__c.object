@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <customSettingsVisibility>Protected</customSettingsVisibility>
+    <description>OAuth and endpoint settings for connecting to the Intuit REST API for Quickbooks</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>AccessTokenRequestUrl__c</fullName>
+        <defaultValue>&quot;https://oauth.intuit.com/oauth/v1/get_access_token&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Access Token Request URL</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>ApiName__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <defaultValue>&quot;Intuit&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>API Name</label>
+        <length>30</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ConsumerKey__c</fullName>
+        <externalId>false</externalId>
+        <label>Consumer key</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConsumerSecret__c</fullName>
+        <externalId>false</externalId>
+        <label>ConsumerSecret</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Realm__c</fullName>
+        <externalId>false</externalId>
+        <label>Quickbooks Company ID</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RequestTokenUrl__c</fullName>
+        <defaultValue>&quot;https://oauth.intuit.com/oauth/v1/get_request_token&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Request token URL</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>ServiceBaseAddress__c</fullName>
+        <defaultValue>&quot;https://sandbox-quickbooks.api.intuit.com/v3/&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Service base address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>TokenValidForDays__c</fullName>
+        <description>Number of days an issued token is valid for.  Leave blank for unlimited.</description>
+        <externalId>false</externalId>
+        <label>Token valid for days</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UserAgent__c</fullName>
+        <defaultValue>&quot;qvm-salesforce/dev&quot;</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The user agent string sent in the HTTP requests to the API</inlineHelpText>
+        <label>User agent</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UserAuthorizationUrl__c</fullName>
+        <defaultValue>&quot;https://appcenter.intuit.com/Connect/Begin&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>User authorization URL</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <label>QVM Intuit QuickBooks API</label>
+</CustomObject>

@@ -1,0 +1,42 @@
+{
+    "properties": [], 
+    "externalReferences": [], 
+    "innerClasses": [], 
+    "interfaces": [], 
+    "constructors": [], 
+    "namespace": null, 
+    "name": "StallsAvaliableTodayController", 
+    "tableDeclaration": {
+        "type": "StallsAvaliableTodayController", 
+        "modifiers": [
+            "public", 
+            "with sharing"
+        ], 
+        "references": [], 
+        "location": {
+            "column": 27, 
+            "line": 1
+        }, 
+        "name": "StallsAvaliableTodayController"
+    }, 
+    "key": "01pp0000000E7AlAAK", 
+    "variables": [], 
+    "id": "01pp0000000E7AlAAK", 
+    "methods": [
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "getStallsAvaliableToday", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 25, 
+                "line": 4
+            }, 
+            "returnType": "LIST", 
+            "type": null
+        }
+    ]
+}

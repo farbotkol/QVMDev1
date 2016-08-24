@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>ConsumerKey__c</fullName>
+        <externalId>false</externalId>
+        <label>Consumer Key</label>
+        <length>150</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConsumerSecret__c</fullName>
+        <externalId>false</externalId>
+        <label>Consumer Secret</label>
+        <length>150</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DataSourcePayments__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Payments</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DataSourceQuickBooks__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>QuickBooks</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PaymentsIntuitReferred__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Intuit Referred</label>
+        <type>Checkbox</type>
+    </fields>
+    <label>QuickBooks OAuth Setting</label>
+    <pluralLabel>QuickBooks OAuth Settings</pluralLabel>
+</CustomObject>

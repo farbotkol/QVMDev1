@@ -1,0 +1,12 @@
+<apex:page controller="QuickBooksLoginController" action="{! completeAuthorization }">
+    <apex:form id="main_form">
+        <apex:pageBlock title="Quick Books">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Authorize" action="{! qbConnector.authorize }" />
+                <apex:commandButton value="Retrieve Accounts" action="{! qbConnector.retrieveAllQBAccounts }" />
+            </apex:pageBlockButtons>
+            <br/><br/>
+            responseBody={!qbConnector.responseString}<br/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

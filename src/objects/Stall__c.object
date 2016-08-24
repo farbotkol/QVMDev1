@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>A space in the market that is flexible. These spaces are in the sheds or out side.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>false</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>false</enableSharing>
+    <enableStreamingApi>false</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Annual_Rent__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Annual Rent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Area_Square_Meters__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Area Square Meters</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bond_Amount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Bond Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CWW_Annual_Parks__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>CWW Annual Parks</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CWW_Customer_No__c</fullName>
+        <externalId>false</externalId>
+        <label>CWW Customer No.</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CWW_Qtr_Drainage_Charge__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>CWW Qtr Drainage Charge</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CWW_Water_Usage__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>CWW Water Usage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Est_Rent_Review__c</fullName>
+        <externalId>false</externalId>
+        <label>Est. Rent Review</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FridayMultiplier__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>The Multiplier rate that will be added to the base rate for Friday</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Multiplier rate that will be added to the base rate for Friday</inlineHelpText>
+        <label>Friday Multiplier</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FridayTrader__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The opportunity (Account Business) allocated to this stall on Friday</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Account Business allocated to this stall on Friday</inlineHelpText>
+        <label>Friday Trader</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Friday Stalls</relationshipLabel>
+        <relationshipName>FridayStalls</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Frontage_Metres__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Frontage Metres</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guarantee_Amount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Guarantee Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>IsActive__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Select if this stall is still a valid stall</inlineHelpText>
+        <label>IsActive</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Lease_Commence__c</fullName>
+        <externalId>false</externalId>
+        <label>Lease Commenced</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Lease_Expiry__c</fullName>
+        <externalId>false</externalId>
+        <label>Lease Expiry</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Lease_Notification_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Lease Notification Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>MCC_1st_Qtr_Ins__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>MCC 1st Qtr Ins</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MCC_2nd_Qtr_Ins__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>MCC 2nd Qtr Ins</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MCC_3rd_Qtr_Ins__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>MCC 3rd Qtr Ins</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MCC_4th_Qtr_Ins__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>MCC 4th Qtr Ins</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MCC_Cust_No__c</fullName>
+        <externalId>false</externalId>
+        <label>MCC Cust No.</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Metered_Water__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Metered Water $</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MondayMultiplier__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>The Multiplier rate that will be added to the base rate for Monday</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Multiplier rate that will be added to the base rate for Monday</inlineHelpText>
+        <label>Monday Multiplier</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MondayTrader__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The opportunity (Account Business) allocated to this stall on Mondays</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Account Business allocated to this stall on Mondays</inlineHelpText>
+        <label>Monday Trader</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Monday Stalls</relationshipLabel>
+        <relationshipName>MondayStalls</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Monthly_Rent__c</fullName>
+        <externalId>false</externalId>
+        <formula>Annual_Rent__c / 12</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Monthly Rent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Option_Terms__c</fullName>
+        <externalId>false</externalId>
+        <label>Option Terms</label>
+        <picklist>
+            <picklistValues>
+                <fullName>3yrs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4yrs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5yrs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to determine the mapping to QB</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Product2.Family</field>
+                <operation>equals</operation>
+                <value>Permanent Stall</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Stalls</relationshipLabel>
+        <relationshipName>Stalls</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Rent_Adjustment__c</fullName>
+        <externalId>false</externalId>
+        <label>Rent Adjustment</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fixed 0%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fixed 4%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fixed 5%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Rent_Commenced__c</fullName>
+        <externalId>false</externalId>
+        <label>Rent Commenced</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Rent_Review_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Rent Review Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SaturdayMultiplier__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>The Multiplier rate that will be added to the base rate for Saturday</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Multiplier rate that will be added to the base rate for Saturday</inlineHelpText>
+        <label>Saturday Multiplier</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SaturdayTrader__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The opportunity (Account Business) allocated to this stall on Saturday</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Account Business allocated to this stall on Saturday</inlineHelpText>
+        <label>Saturday Trader</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Saturday Stalls</relationshipLabel>
+        <relationshipName>SaturdayStalls</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ShedId__c</fullName>
+        <externalId>false</externalId>
+        <label>Shed Id</label>
+        <length>50</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StallId__c</fullName>
+        <externalId>false</externalId>
+        <label>Stall Id</label>
+        <length>50</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SundayMultiplier__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>The Multiplier rate that will be added to the base rate for Sunday</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Multiplier rate that will be added to the base rate for Sunday</inlineHelpText>
+        <label>Sunday Multiplier</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SundayTrader__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The opportunity (Account Business) allocated to this stall on Sunday</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Account Business allocated to this stall on Sunday</inlineHelpText>
+        <label>Sunday Trader</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Sunday Stalls</relationshipLabel>
+        <relationshipName>SundayStalls</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Tenant__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Tenant</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Stalls (Tenant)</relationshipLabel>
+        <relationshipName>Perm_Stalls</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ThursdayMultiplier__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>The Multiplier rate that will be added to the base rate for Thursday</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Multiplier rate that will be added to the base rate for Thursday</inlineHelpText>
+        <label>Thursday Multiplier</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ThursdayTrader__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The opportunity (Account Business) allocated to this stall on Thursday</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Account Business allocated to this stall on Thursday</inlineHelpText>
+        <label>Thursday Trader</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Thursday Stalls</relationshipLabel>
+        <relationshipName>ThursdayStalls</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>TuesdayMultiplier__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>The Multiplier rate that will be added to the base rate for Tuesday</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Multiplier rate that will be added to the base rate for Tuesday</inlineHelpText>
+        <label>Tuesday Multiplier</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TuesdayTrader__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The opportunity (Account Business) allocated to this stall on Tuesday</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Account Business allocated to this stall on Tuesday</inlineHelpText>
+        <label>Tuesday Trader</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Tuesday Stalls</relationshipLabel>
+        <relationshipName>TuesdayStalls</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>WednesdayMultiplier__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>The Multiplier rate that will be added to the base rate for Wednesday</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Multiplier rate that will be added to the base rate for Wednesday</inlineHelpText>
+        <label>Wednesday Multiplier</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WednesdayTrader__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The opportunity (Account Business) allocated to this stall on Wednesday</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Account Business allocated to this stall on Wednesday</inlineHelpText>
+        <label>Wednesday Trader</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Wednesday Stalls</relationshipLabel>
+        <relationshipName>WednesdayStalls</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Stall</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>RECORDTYPE</columns>
+        <columns>NAME</columns>
+        <columns>TuesdayTrader__c</columns>
+        <columns>TuesdayMultiplier__c</columns>
+        <columns>ThursdayTrader__c</columns>
+        <columns>ThursdayMultiplier__c</columns>
+        <columns>FridayTrader__c</columns>
+        <columns>FridayMultiplier__c</columns>
+        <columns>SaturdayTrader__c</columns>
+        <columns>SaturdayMultiplier__c</columns>
+        <columns>SundayTrader__c</columns>
+        <columns>SundayMultiplier__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>IsActive__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Stall Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Stalls</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Casual</fullName>
+        <active>true</active>
+        <description>Stall locations that can change trader on a day to day basis</description>
+        <label>Casual</label>
+        <picklistValues>
+            <picklist>Option_Terms__c</picklist>
+            <values>
+                <fullName>3yrs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4yrs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5yrs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nil</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rent_Adjustment__c</picklist>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed 0%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed 4%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed 5%25</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Permanent</fullName>
+        <active>true</active>
+        <description>Permanent stall locationc</description>
+        <label>Permanent</label>
+        <picklistValues>
+            <picklist>Option_Terms__c</picklist>
+            <values>
+                <fullName>3yrs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4yrs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5yrs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nil</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rent_Adjustment__c</picklist>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed 0%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed 4%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed 5%25</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Annual_Rent__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IsActive__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

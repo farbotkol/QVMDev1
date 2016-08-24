@@ -1,0 +1,23 @@
+<apex:page controller="IntuitConfigController" >
+    <c:IntuitConnect ></c:IntuitConnect>
+    
+    <apex:form >
+        <apex:pageBlock title="Query Quickbooks">
+            <apex:pageMessages showDetail="true">
+            	
+            </apex:pageMessages>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Go" action="{!execute}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1" >
+                <apex:pageBlockSectionItem labelTitle="query">
+                     <apex:outputLabel value="Query" for="queryText"/>
+                	<apex:inputTextarea id="queryText" value="{!queryText}" rows="10" cols="120" title="Query"/>
+                </apex:pageBlockSectionItem>
+             </apex:pageBlockSection>
+    	</apex:pageBlock>
+    </apex:form>
+    <apex:outputPanel layout="block" style="font-weight:bold">
+        <apex:outputText id="jsonResult" value="{!jsonResult}"></apex:outputText>
+    </apex:outputPanel>
+</apex:page>

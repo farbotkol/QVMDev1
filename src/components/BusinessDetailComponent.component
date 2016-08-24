@@ -1,0 +1,44 @@
+<apex:component >
+<apex:attribute name="AppSub" description="AppSub" type="ApplicationSubmissionExtension" required="true"/>
+<apex:pageBlockSection columns="2" id="pbs1">
+    <apex:inputField value="{!AppSub.weblead.FirstName}" required="true"/>
+    <apex:inputField value="{!AppSub.weblead.Company}" required="true"/>
+    <apex:inputField value="{!AppSub.weblead.LastName}" required="true"/>   
+    <apex:inputField value="{!AppSub.weblead.ABN__c}" required="true"/>
+    <apex:inputField value="{!AppSub.weblead.Email}" required="true"/>
+    <apex:inputField value="{!AppSub.weblead.Phone}" required="true"/>
+    <apex:inputField value="{!AppSub.weblead.Street}" required="true"/>
+    <apex:inputField value="{!AppSub.weblead.City}" required="true"/>
+    <apex:inputField value="{!AppSub.weblead.State}" required="true"/>
+    <apex:inputField value="{!AppSub.weblead.PostalCode}" required="true"/>
+    <apex:inputField value="{!AppSub.weblead.Country}" required="true"/> 
+    <apex:inputField value="{!AppSub.weblead.Website }"/>        
+    <apex:inputField value="{!AppSub.weblead.Facebook__c}"/>
+    <apex:inputField value="{!AppSub.weblead.Twitter__c}"/> 
+    <apex:inputField value="{!AppSub.weblead.Instagram_Handle__c}"/>
+</apex:pageBlockSection><br></br><br></br>
+
+<apex:pageBlockSection rendered="{!$CurrentPage.parameters.type=='SpecialEvents'}" columns="1">
+    <apex:outputLabel value="{!$ObjectType.Lead.fields.Business_Experience__c.InlineHelpText}" style="font-weight: bold;"/><br></br>
+    <apex:inputField value="{!AppSub.weblead.Business_Experience__c }" html-rows="7" html-cols="80" required="true"/>
+    <apex:outputLabel value="{!$ObjectType.Lead.fields.Event_Organise__c.InlineHelpText}" style="font-weight: bold;"/><br></br>
+    <apex:inputField value="{!AppSub.weblead.Event_Organise__c }" required="true"/>
+    <apex:inputField value="{!AppSub.weblead.Nominated_Event_Organiser_FirstName__c }"/>
+    <apex:inputField value="{!AppSub.weblead.Nominated_Event_Organiser_LastName__c }"/>
+    <apex:inputField value="{!AppSub.weblead.Nominated_Event_Organiser_Phone__c }"/>
+    <apex:inputField value="{!AppSub.weblead.Nominated_Event_Organiser_Email__c }"/>
+
+    <h1 style="font-size:150%;align:center;">References </h1>
+    <apex:inputField value="{!AppSub.weblead.FirstName_Referece1__c }" style="width:35%;"/>
+    <apex:inputField value="{!AppSub.weblead.LastName_Reference1__c }" style="width:35%;"/>
+    <apex:inputField value="{!AppSub.weblead.Phone_of_Reference1__c }" style="width:35%;"/>
+    <apex:inputField value="{!AppSub.weblead.Email_Reference1__c }" style="width:35%;"/>
+    <apex:inputField value="{!AppSub.weblead.Position_Company_Reference1__c }" style="width:35%;"/>
+    <apex:inputField value="{!AppSub.weblead.FirstName_Referece2__c }" style="width:35%;"/>
+    <apex:inputField value="{!AppSub.weblead.LastName_Reference2__c }" style="width:35%;"/>
+    <apex:inputField value="{!AppSub.weblead.Phone_of_Reference2__c }" style="width:35%;"/>
+    <apex:inputField value="{!AppSub.weblead.Email_Reference2__c }" style="width:35%;"/>
+    <apex:inputField value="{!AppSub.weblead.Position_Company_Reference2__c }" style="width:35%;"/>        
+</apex:pageBlockSection>
+
+</apex:component>

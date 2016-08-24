@@ -1,0 +1,61 @@
+<apex:component >
+<apex:attribute name="AppSub" description="AppSub" type="ApplicationSubmissionExtension" required="true"/>
+    <apex:pageBlockSection rendered="{!$CurrentPage.parameters.type=='SpecialEvents'}" columns="1"> 
+        <h1 style="font-size:150%;align:center;">Event Details </h1>
+        
+        <apex:outputLabel value="{!$ObjectType.Lead.fields.Proposed_Date_Duration__c.InlineHelpText}" style="font-weight: bold;"/>
+        <apex:inputField value="{!AppSub.weblead.Proposed_Date_Duration__c}" html-rows="7" html-cols="80" required="true"/>
+        <apex:outputLabel value="{!$ObjectType.Lead.fields.Event_Theme__c.InlineHelpText}" style="font-weight: bold;"/>
+        <apex:inputField value="{!AppSub.weblead.Event_Theme__c}"  html-rows="7" html-cols="80" required="true"/>       
+        <apex:outputLabel value="{!$ObjectType.Lead.fields.No_Of_Stalls__c.InlineHelpText}" style="font-weight: bold;"/>
+        <apex:inputField value="{!AppSub.weblead.No_Of_Stalls__c}"  html-rows="7" html-cols="80" required="true"/>       
+        <apex:outputLabel value="{!$ObjectType.Lead.fields.Goods_And_Services__c.InlineHelpText}" style="font-weight: bold;"/>
+        <apex:inputField value="{!AppSub.weblead.Goods_And_Services__c}" html-rows="7" html-cols="80" required="true"/>
+        <apex:outputLabel value="{!$ObjectType.Lead.fields.Stall_Holder_Selection_Process__c.InlineHelpText}" style="font-weight: bold;"/>      
+        <apex:inputField value="{!AppSub.weblead.Stall_Holder_Selection_Process__c}"  html-rows="7" html-cols="80" required="true"/>    
+        <apex:outputLabel value="{!$ObjectType.Lead.fields.Electrial_Equipment__c.InlineHelpText}" style="font-weight: bold;"/>
+        <apex:inputField value="{!AppSub.weblead.Electrial_Equipment__c}"  html-rows="7" html-cols="80" required="true"/>
+        <apex:outputLabel value="{!$ObjectType.Lead.fields.Entertainment_Details__c.InlineHelpText}" style="font-weight: bold;"/>
+        <apex:inputField value="{!AppSub.weblead.Entertainment_Details__c}"  html-rows="7" html-cols="80" required="true"/>
+        <p><b>List the the equipment (if any) you will need to deliver your entertainment program.*</b></p>
+        <apex:inputField value="{!AppSub.weblead.Other_Equipments__c}"  html-rows="7"/>
+        
+        <h1 style="font-size:150%;align:center;">Marketing And Advertising</h1>
+        <apex:outputLabel value="{!$ObjectType.Lead.fields.Event_Concept__c.InlineHelpText}" style="font-weight: bold;"/>
+        <apex:inputField value="{!AppSub.weblead.Event_Concept__c}" html-rows="7" html-cols="80" required="true"/>
+        <apex:outputLabel value="{!$ObjectType.Lead.fields.Event_Description__c.InlineHelpText}" style="font-weight: bold;"/>
+        <apex:inputField value="{!AppSub.weblead.Event_Description__c}"  html-rows="7" html-cols="80" required="true"/>
+        <apex:outputLabel value="{!$ObjectType.Lead.fields.Event_Benefits__c.InlineHelpText}" style="font-weight: bold;"/>
+        <apex:inputField value="{!AppSub.weblead.Event_Benefits__c}"  html-rows="7" html-cols="80" required="true"/>
+        <apex:outputLabel value="{!$ObjectType.Lead.fields.Patrons_experience__c.InlineHelpText}" style="font-weight: bold;"/>
+        <apex:inputField value="{!AppSub.weblead.Patrons_experience__c}"  html-rows="7" html-cols="80" required="true"/>
+        <apex:outputLabel value="{!$ObjectType.Lead.fields.Sponsorship_Details__c.InlineHelpText}" style="font-weight: bold;"/>
+        <apex:inputField value="{!AppSub.weblead.Sponsorship_Details__c}"  html-rows="7" html-cols="80" required="true"/>
+
+        <h1 style="font-size:150%;align:center;">Budget</h1><br></br>
+        <h6 style="font-size:85%;">This section needs to be completed by applicants seeking sponsorship including in-kind from QVM</h6>
+
+        <p style="font-size:100%;"><br></br><b>What are your total anticipated operating expenses for the event</b><br></br><br></br></p>
+        <apex:inputFile style="width:100%" id="eventExpenseId" value="{!AppSub.eventExpenseBody}" filename="{!AppSub.EventExpense}" /> 
+        
+        <p style="font-size:100%;"><br></br><b>What is the total anticipated revenue from your event?</b><br></br><br></br></p>
+        <apex:inputFile style="width:100%" id="RevenueId" value="{!AppSub.RevenueBody}" filename="{!AppSub.Revenue}" /> 
+
+        <p style="font-size:100%;"><br></br><b>Please attach a copy of your budget showing any anticipated profit to this application</b><br></br><br></br></p>
+        <apex:inputFile style="width:100%" id="BudgetId" value="{!AppSub.BudgetBody}" filename="{!AppSub.Budget}" /> 
+
+        <apex:inputField value="{!AppSub.weblead.Additional_Information__c}" html-rows="7" html-cols="80"/> 
+      
+        <!--<apex:pageBlockSectionItem >-->
+           <apex:outputPanel id="acceptanceId1" >
+           <div align="left"><apex:inputField value="{!AppSub.weblead.Accept__c}" id="acceptTermsId"/>&nbsp;&nbsp;<b> {!$Label.ConfirmationQuestion}</b></div>          
+           </apex:outputPanel>           
+           <apex:outputPanel id="acceptanceId2" rendered="{!AppSub.acceptanceTextFlag }"> 
+           <apex:outputLink value="{!AppSub.termsAndConditionLink }" id="termsConditionId">Terms and Conditions</apex:outputLink>
+           </apex:outputPanel>           
+        <!--</apex:pageBlockSectionItem>-->
+       
+       
+    </apex:pageBlockSection>
+
+</apex:component>

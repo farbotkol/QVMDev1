@@ -1,0 +1,26 @@
+<apex:component controller="IntuitConnectController"> 
+    <apex:attribute name="quickbooksApi" description="Request access to the Quickbooks API"
+                    type="Boolean" required="false" default="true" />
+    <apex:attribute name="paymentsApi" description="Request access to the Payments API"
+                    type="Boolean" required="false" default="false" />
+    <apex:attribute name="intuitReferred" description="Options when requesting access to the payments API"
+                    type="Boolean" required="false" default="true" />
+    <apex:includeScript value="https://appcenter.intuit.com/Content/IA/intuit.ipp.anywhere-1.3.3.js"/>
+	
+    <apex:outputText value="<ipp:connectToIntuit></ipp:connectToIntuit>" escape="false" />
+    
+    
+    <script type="text/javascript">
+        intuit.ipp.anywhere.setup({
+            grantUrl: '{!grantUrl}',
+            datasources: {
+                quickbooks : {!quickbooksApi},
+                payments : {!paymentsApi}
+            },
+            paymentOptions:{
+                intuitReferred : {!intuitReferred}
+            }
+        });
+    </script>
+    
+</apex:component>

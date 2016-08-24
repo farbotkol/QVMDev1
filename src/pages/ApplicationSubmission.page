@@ -1,0 +1,76 @@
+<!--
+*****************************************************************************************
+Author:Resmi Ramakrishnan
+Date : 15/08/2016
+Description : VisualForce page for creating lead from public site.                  
+
+****************************************************************************************
+-->
+
+
+<apex:page standardController="Lead" extensions="ApplicationSubmissionExtension" title="Contact Us" showHeader="false" standardStylesheets="true">
+<apex:includeScript value="https://code.jquery.com/jquery-3.1.0.min.js" />
+<apex:pageMessages id="msgbox2"/> 
+<!-- css styles -->
+<style>
+  .p
+  {
+    font-size:20px;
+    colspan=3;
+    text-align: center;
+  }
+  .pa
+  {
+    font-size:160%;
+    border-top-style: double;
+    border-right-style:null;
+    border-bottom-style: double;
+    border-left-style: null;
+    border-width: 5px;
+    border-color:#C1C5C7;"
+  }
+ </style>
+
+
+<!-- JQuery which process when user click submit button from UI-->
+<script type="text/javascript">
+    j$ = jQuery.noConflict();
+    function confirmation()
+    {
+       // alert('inside the loop'+j$("input:checkbox[id$='acceptTermsId']").is(":checked"));
+        if(j$("input:checkbox[id$='acceptTermsId']").is(":checked") == false )
+        {   
+            alert('Please Accept the conditions before proceeding!!!!!!');                 
+            return false;
+        }
+        if(j$("input:checkbox[id$='acceptTermsId']").is(":checked") == true )
+        {
+            
+            return true;
+        }  
+    }  
+</script>
+
+
+<!--Adding Components for each application form -->    
+
+<apex:form id="formid" >
+  <apex:pageBlock id="pbid" >
+
+    <c:HeadingComponent />
+    <c:BusinessDetailComponent AppSub="{!theController}" />  
+    <c:ProductDetailComponentForStall AppSub="{!theController}"/>
+      <c:ProductDetailComForFoodPremises AppSub="{!theController}"/>
+      <c:ProductDetailCompForFruitVegitable AppSub="{!theController}"/>
+    <c:ProductDetailComForShopTenancy AppSub="{!theController}"/>
+    <c:ProductDetailComForBeanAlleyContainer AppSub="{!theController}"/>
+    <c:ProductDetailCmpNightMarketStalls AppSub="{!theController}"/>
+    <c:ProductDetailCmpNightMarketFoodVendor AppSub="{!theController}"/>
+    <c:EventDetailsSpecialEventComp AppSub="{!theController}" />
+</apex:pageBlock>
+    
+<div align="center" >
+  <apex:commandButton value="SUBMIT" action="{!saveLead}"  onclick="return confirmation()"/>
+</div>
+</apex:form>
+</apex:page>

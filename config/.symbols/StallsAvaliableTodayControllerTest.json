@@ -1,0 +1,65 @@
+{
+    "properties": [], 
+    "externalReferences": [], 
+    "innerClasses": [], 
+    "interfaces": [], 
+    "constructors": [], 
+    "namespace": null, 
+    "name": "StallsAvaliableTodayControllerTest", 
+    "tableDeclaration": {
+        "type": "StallsAvaliableTodayControllerTest", 
+        "modifiers": [
+            "private", 
+            "testMethod"
+        ], 
+        "references": [], 
+        "location": {
+            "column": 15, 
+            "line": 2
+        }, 
+        "name": "StallsAvaliableTodayControllerTest"
+    }, 
+    "key": "01pp0000000E7BFAA0", 
+    "variables": [
+        {
+            "type": "StallsAvaliableTodayController", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 34, 
+                "line": 9
+            }, 
+            "name": "ctl"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 10
+            }, 
+            "name": "stalls"
+        }
+    ], 
+    "id": "01pp0000000E7BFAA0", 
+    "methods": [
+        {
+            "modifiers": [
+                "private", 
+                "static", 
+                "testMethod"
+            ], 
+            "name": "test_getStallsAvaliableToday", 
+            "parameters": [], 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 4
+            }, 
+            "returnType": "void", 
+            "type": null
+        }
+    ]
+}

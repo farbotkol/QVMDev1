@@ -1,0 +1,7 @@
+<apex:page showHeader="false" title="{!Title}" cache="false" controller="ApiConnectController" action="{!init}">
+  <h1>Hello</h1>
+  <apex:pageMessages showDetail="true" rendered="true">
+  </apex:pageMessages>
+  <apex:messages rendered="true">
+  </apex:messages>
+</apex:page>

@@ -1,0 +1,39 @@
+<apex:page controller="StallsAvaliableTodayController" showHeader="false" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">    
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    
+
+    <head>
+      <META http-equiv="refresh" content="20"/>
+
+      <title>Stalls Avaliable Today</title>
+      <apex:stylesheet value="{!URLFOR($Resource.SLDSQVM, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+    </head>    
+
+  <body>    
+
+    <!-- REQUIRED SLDS WRAPPER -->
+    <div class="QVM">    
+
+      <!-- MASTHEAD -->
+      <h1 class="slds-text-heading--label slds-m-bottom--small">
+        Stalls Avaliable Today
+      </h1>
+      <!-- / MASTHEAD -->    
+
+      <!-- PRIMARY CONTENT WRAPPER -->
+      <div class="slds-grid slds-wrap">
+
+
+        <apex:repeat value="{!StallsAvaliableToday}" var="stall" id="theRepeat">
+          <apex:outputText value="{!stall.Name}" id="stall" style="width: 20%; font-size: 2.5vw" />
+        </apex:repeat>
+
+      </div>
+      <!-- / PRIMARY CONTENT WRAPPER -->    
+
+    </div>
+    <!-- / REQUIRED SLDS WRAPPER -->    
+
+  </body>
+</html>
+</apex:page>

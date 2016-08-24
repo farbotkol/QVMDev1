@@ -1,0 +1,845 @@
+{
+    "properties": [], 
+    "externalReferences": [], 
+    "innerClasses": [], 
+    "interfaces": [], 
+    "constructors": [], 
+    "namespace": null, 
+    "name": "OrderBuilder", 
+    "tableDeclaration": {
+        "type": "OrderBuilder", 
+        "modifiers": [
+            "global", 
+            "with sharing"
+        ], 
+        "references": [], 
+        "location": {
+            "column": 27, 
+            "line": 1
+        }, 
+        "name": "OrderBuilder"
+    }, 
+    "key": "01pp0000000E648AAC", 
+    "variables": [
+        {
+            "type": "Id", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 47, 
+                "line": 21
+            }, 
+            "name": "batchJobId"
+        }, 
+        {
+            "type": "Batch_Jobs__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 27
+            }, 
+            "name": "job"
+        }, 
+        {
+            "type": "RecordType", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 39
+            }, 
+            "name": "nextStepType"
+        }, 
+        {
+            "type": "RecordType", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 49
+            }, 
+            "name": "processType"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 52
+            }, 
+            "name": "opps"
+        }, 
+        {
+            "type": "RecordType", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 15, 
+                "line": 68
+            }, 
+            "name": "processType"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 71
+            }, 
+            "name": "opps"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 83
+            }, 
+            "name": "opps"
+        }, 
+        {
+            "type": "Date", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 63, 
+                "line": 102
+            }, 
+            "name": "startDate"
+        }, 
+        {
+            "type": "Date", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 79, 
+                "line": 102
+            }, 
+            "name": "endDate"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 106, 
+                "line": 102
+            }, 
+            "name": "opps"
+        }, 
+        {
+            "type": "Id", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 115, 
+                "line": 102
+            }, 
+            "name": "batchJobId"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 134, 
+                "line": 102
+            }, 
+            "name": "description"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 105
+            }, 
+            "name": "pricebookEntries"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 31, 
+                "line": 111
+            }, 
+            "name": "pricebookEntriesMap"
+        }, 
+        {
+            "type": "PricebookEntry", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 113
+            }, 
+            "name": "pb"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 11, 
+                "line": 115
+            }, 
+            "name": "val"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 15, 
+                "line": 120
+            }, 
+            "name": "ordersToCreate"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 122
+            }, 
+            "name": "oppMap"
+        }, 
+        {
+            "type": "Opportunity", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 124
+            }, 
+            "name": "opp"
+        }, 
+        {
+            "type": "Order", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 10, 
+                "line": 126
+            }, 
+            "name": "order"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 147
+            }, 
+            "name": "orderItemsToCreate"
+        }, 
+        {
+            "type": "Order", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 13, 
+                "line": 148
+            }, 
+            "name": "order"
+        }, 
+        {
+            "type": "Date", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 9, 
+                "line": 151
+            }, 
+            "name": "dateIndex"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 154
+            }, 
+            "name": "dayOfWeek"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 155
+            }, 
+            "name": "stalls"
+        }, 
+        {
+            "type": "Stall__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 185
+            }, 
+            "name": "stall"
+        }, 
+        {
+            "type": "OrderItem", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 193
+            }, 
+            "name": "ordItm"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 13, 
+                "line": 194
+            }, 
+            "name": "val"
+        }, 
+        {
+            "type": "OrderBuilderBatch", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 210
+            }, 
+            "name": "batch"
+        }, 
+        {
+            "type": "Date", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 67, 
+                "line": 224
+            }, 
+            "name": "startDate"
+        }, 
+        {
+            "type": "Date", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 83, 
+                "line": 224
+            }, 
+            "name": "endDate"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 110, 
+                "line": 224
+            }, 
+            "name": "opps"
+        }, 
+        {
+            "type": "Id", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 119, 
+                "line": 224
+            }, 
+            "name": "batchJobId"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 138, 
+                "line": 224
+            }, 
+            "name": "description"
+        }, 
+        {
+            "type": "Id", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 6, 
+                "line": 228
+            }, 
+            "name": "standardPriceBookId"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 230
+            }, 
+            "name": "pricebookEntries"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 28, 
+                "line": 234
+            }, 
+            "name": "pricebookEntriesMap"
+        }, 
+        {
+            "type": "PricebookEntry", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 23, 
+                "line": 237
+            }, 
+            "name": "pricebookEntry"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 15, 
+                "line": 244
+            }, 
+            "name": "ordersToCreate"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 246
+            }, 
+            "name": "oppMap"
+        }, 
+        {
+            "type": "Opportunity", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 248
+            }, 
+            "name": "opp"
+        }, 
+        {
+            "type": "Order", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 10, 
+                "line": 250
+            }, 
+            "name": "order"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 268
+            }, 
+            "name": "orderItemsToCreate"
+        }, 
+        {
+            "type": "Order", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 13, 
+                "line": 269
+            }, 
+            "name": "order"
+        }, 
+        {
+            "type": "Opportunity", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 271
+            }, 
+            "name": "opp"
+        }, 
+        {
+            "type": "Stall__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 272
+            }, 
+            "name": "stall"
+        }, 
+        {
+            "type": "OrderItem", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 15, 
+                "line": 274
+            }, 
+            "name": "ordItm"
+        }, 
+        {
+            "type": "OrderBuilderBatch", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 285
+            }, 
+            "name": "batch"
+        }, 
+        {
+            "type": "Date", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 47, 
+                "line": 296
+            }, 
+            "name": "startDate"
+        }, 
+        {
+            "type": "Date", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 63, 
+                "line": 296
+            }, 
+            "name": "endDate"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 90, 
+                "line": 296
+            }, 
+            "name": "opps"
+        }, 
+        {
+            "type": "Id", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 99, 
+                "line": 296
+            }, 
+            "name": "batchJobId"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 118, 
+                "line": 296
+            }, 
+            "name": "description"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 138, 
+                "line": 296
+            }, 
+            "name": "fieldName"
+        }, 
+        {
+            "type": "QVM_LH_FEE_SETTING__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 25, 
+                "line": 300
+            }, 
+            "name": "setting"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 15, 
+                "line": 302
+            }, 
+            "name": "ordersToCreate"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 304
+            }, 
+            "name": "oppMap"
+        }, 
+        {
+            "type": "Opportunity", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 306
+            }, 
+            "name": "opp"
+        }, 
+        {
+            "type": "Double", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 11, 
+                "line": 311
+            }, 
+            "name": "feeAmount"
+        }, 
+        {
+            "type": "Stall__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 312
+            }, 
+            "name": "stall"
+        }, 
+        {
+            "type": "Order", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 11, 
+                "line": 321
+            }, 
+            "name": "order"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 340
+            }, 
+            "name": "orderItemsToCreate"
+        }, 
+        {
+            "type": "Order", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 13, 
+                "line": 341
+            }, 
+            "name": "order"
+        }, 
+        {
+            "type": "Opportunity", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 343
+            }, 
+            "name": "opp"
+        }, 
+        {
+            "type": "Stall__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 344
+            }, 
+            "name": "stall"
+        }, 
+        {
+            "type": "OrderItem", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 348
+            }, 
+            "name": "ordItm"
+        }, 
+        {
+            "type": "OrderBuilderBatch", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 363
+            }, 
+            "name": "batch"
+        }
+    ], 
+    "id": "01pp0000000E648AAC", 
+    "methods": [
+        {
+            "modifiers": [
+                "static", 
+                "webService", 
+                "global"
+            ], 
+            "name": "GenerateOrders", 
+            "parameters": [
+                {
+                    "type": "Id", 
+                    "name": "batchJobId"
+                }
+            ], 
+            "visibility": "GLOBAL", 
+            "references": [], 
+            "location": {
+                "column": 29, 
+                "line": 21
+            }, 
+            "returnType": "Boolean", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "static", 
+                "public"
+            ], 
+            "name": "GenerateOrdersFromAllocatedStalls", 
+            "parameters": [
+                {
+                    "type": "Date", 
+                    "name": "startDate"
+                }, 
+                {
+                    "type": "Date", 
+                    "name": "endDate"
+                }, 
+                {
+                    "type": "LIST", 
+                    "name": "opps"
+                }, 
+                {
+                    "type": "Id", 
+                    "name": "batchJobId"
+                }, 
+                {
+                    "type": "String", 
+                    "name": "description"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 102
+            }, 
+            "returnType": "Boolean", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "static", 
+                "public"
+            ], 
+            "name": "GenerateOrdersFromAllocatedPermStalls", 
+            "parameters": [
+                {
+                    "type": "Date", 
+                    "name": "startDate"
+                }, 
+                {
+                    "type": "Date", 
+                    "name": "endDate"
+                }, 
+                {
+                    "type": "LIST", 
+                    "name": "opps"
+                }, 
+                {
+                    "type": "Id", 
+                    "name": "batchJobId"
+                }, 
+                {
+                    "type": "String", 
+                    "name": "description"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 224
+            }, 
+            "returnType": "Boolean", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "static", 
+                "public"
+            ], 
+            "name": "GenerateFeeOrders", 
+            "parameters": [
+                {
+                    "type": "Date", 
+                    "name": "startDate"
+                }, 
+                {
+                    "type": "Date", 
+                    "name": "endDate"
+                }, 
+                {
+                    "type": "LIST", 
+                    "name": "opps"
+                }, 
+                {
+                    "type": "Id", 
+                    "name": "batchJobId"
+                }, 
+                {
+                    "type": "String", 
+                    "name": "description"
+                }, 
+                {
+                    "type": "String", 
+                    "name": "fieldName"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 296
+            }, 
+            "returnType": "Boolean", 
+            "type": null
+        }
+    ]
+}

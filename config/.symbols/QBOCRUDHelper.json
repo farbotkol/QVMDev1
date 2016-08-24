@@ -1,0 +1,239 @@
+{
+    "properties": [
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "qbConnector", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 32, 
+                "line": 3
+            }, 
+            "type": "QuickBooksConnector"
+        }
+    ], 
+    "externalReferences": [], 
+    "innerClasses": [], 
+    "interfaces": [], 
+    "constructors": [
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "QBOCRUDHelper", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 5
+            }, 
+            "type": null
+        }
+    ], 
+    "namespace": null, 
+    "name": "QBOCRUDHelper", 
+    "tableDeclaration": {
+        "type": "QBOCRUDHelper", 
+        "modifiers": [
+            "public", 
+            "with sharing"
+        ], 
+        "references": [], 
+        "location": {
+            "column": 27, 
+            "line": 1
+        }, 
+        "name": "QBOCRUDHelper"
+    }, 
+    "key": "01pp0000000EIRiAAO", 
+    "variables": [
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 33, 
+                "line": 16
+            }, 
+            "name": "query"
+        }, 
+        {
+            "type": "Type", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 45, 
+                "line": 16
+            }, 
+            "name": "apexType"
+        }, 
+        {
+            "type": "Http", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 14, 
+                "line": 20
+            }, 
+            "name": "h"
+        }, 
+        {
+            "type": "HttpRequest", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 22
+            }, 
+            "name": "req"
+        }, 
+        {
+            "type": "HttpResponse", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 32
+            }, 
+            "name": "res"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 39
+            }, 
+            "name": "responseString"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 37, 
+                "line": 80
+            }, 
+            "name": "objTable"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 54, 
+                "line": 80
+            }, 
+            "name": "jsonObj"
+        }, 
+        {
+            "type": "Type", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 68, 
+                "line": 80
+            }, 
+            "name": "apexType"
+        }, 
+        {
+            "type": "Http", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 14, 
+                "line": 82
+            }, 
+            "name": "h"
+        }, 
+        {
+            "type": "HttpRequest", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 84
+            }, 
+            "name": "req"
+        }, 
+        {
+            "type": "HttpResponse", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 98
+            }, 
+            "name": "res"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 105
+            }, 
+            "name": "responseString"
+        }
+    ], 
+    "id": "01pp0000000EIRiAAO", 
+    "methods": [
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "query", 
+            "parameters": [
+                {
+                    "type": "String", 
+                    "name": "query"
+                }, 
+                {
+                    "type": "Type", 
+                    "name": "apexType"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 16
+            }, 
+            "returnType": "Object", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "upsertData", 
+            "parameters": [
+                {
+                    "type": "String", 
+                    "name": "objTable"
+                }, 
+                {
+                    "type": "String", 
+                    "name": "jsonObj"
+                }, 
+                {
+                    "type": "Type", 
+                    "name": "apexType"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 80
+            }, 
+            "returnType": "Object", 
+            "type": null
+        }
+    ]
+}

@@ -1,0 +1,115 @@
+{
+    "properties": [], 
+    "externalReferences": [], 
+    "innerClasses": [], 
+    "interfaces": [], 
+    "constructors": [], 
+    "namespace": null, 
+    "name": "QBOCustomer_Test", 
+    "tableDeclaration": {
+        "type": "QBOCustomer_Test", 
+        "modifiers": [
+            "public", 
+            "testMethod"
+        ], 
+        "references": [], 
+        "location": {
+            "column": 14, 
+            "line": 6
+        }, 
+        "name": "QBOCustomer_Test"
+    }, 
+    "key": "01pp0000000EHeqAAG", 
+    "variables": [
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 10, 
+                "line": 10
+            }, 
+            "name": "json"
+        }, 
+        {
+            "type": "QBOCustomer", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 15, 
+                "line": 49
+            }, 
+            "name": "r"
+        }, 
+        {
+            "type": "BillAddr", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 53
+            }, 
+            "name": "objBillAddr"
+        }, 
+        {
+            "type": "QBOCustomer", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 15, 
+                "line": 64
+            }, 
+            "name": "objRoot"
+        }, 
+        {
+            "type": "PrimaryPhone", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 28, 
+                "line": 90
+            }, 
+            "name": "objPrimaryPhone"
+        }, 
+        {
+            "type": "MetaData", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 95
+            }, 
+            "name": "objMetaData"
+        }, 
+        {
+            "type": "PrimaryEmailAddr", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 32, 
+                "line": 101
+            }, 
+            "name": "objPrimaryEmailAddr"
+        }
+    ], 
+    "id": "01pp0000000EHeqAAG", 
+    "methods": [
+        {
+            "modifiers": [
+                "private", 
+                "static", 
+                "testMethod"
+            ], 
+            "name": "testParse", 
+            "parameters": [], 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 25, 
+                "line": 9
+            }, 
+            "returnType": "void", 
+            "type": null
+        }
+    ]
+}

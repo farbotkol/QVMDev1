@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Batch_Type__c</fullName>
+        <description>The type of Licence that will be processed for this batch. Currently there are three types (SL(Monthy), PE (Weekly), LH(Monthy)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>SL = Stall Licence
+PE = Pre Existing
+LH = Licence Holder</inlineHelpText>
+        <label>Batch Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>SL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MCC 1st Qtr Ins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MCC 2nd Qtr Ins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MCC 3rd Qtr Ins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MCC 4th Qtr Ins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CWW Annual Parks</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CWW Qtr Drainage Charge</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CWW Water Usage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Metered Water $</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>From_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( TEXT(Process_Range__c) = &quot;Month&quot; , DATE(YEAR(Week_Month_Of__c),MONTH(Week_Month_Of__c) ,01),IF (TEXT(Process_Range__c) = &quot;Week&quot;,(Week_Month_Of__c - MOD( Week_Month_Of__c - DATE(1900, 1, 7), 7))+ 1,Week_Month_Of__c) )</formula>
+        <label>From Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Process_Range__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Are you processing for a month or a week</inlineHelpText>
+        <label>Process Range</label>
+        <picklist>
+            <controllingField>Batch_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Month</fullName>
+                <default>false</default>
+                <controllingFieldValues>LH</controllingFieldValues>
+                <controllingFieldValues>SL</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Week</fullName>
+                <default>false</default>
+                <controllingFieldValues>PE</controllingFieldValues>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>To_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( TEXT(Process_Range__c) = &quot;Month&quot; , IF( 
+MONTH( Week_Month_Of__c ) = 12, 
+DATE( YEAR( Week_Month_Of__c ), 12, 31 ), 
+DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1 
+), IF(TEXT(Process_Range__c) = &quot;Week&quot;,(Week_Month_Of__c - MOD( Week_Month_Of__c - DATE(1900, 1, 7), 7))+ 7 ,Week_Month_Of__c) )</formula>
+        <label>To Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Week_Month_Of__c</fullName>
+        <defaultValue>Today()</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Any date that falls in the week or month that will be processes</inlineHelpText>
+        <label>Week / Month Of</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Batch Jobs</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Batch_Type__c</columns>
+        <columns>Process_Range__c</columns>
+        <columns>From_Date__c</columns>
+        <columns>To_Date__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>B-{0000000}</displayFormat>
+        <label>Batch Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Batch Jobs</pluralLabel>
+    <recordTypes>
+        <fullName>Invoices_Generated</fullName>
+        <active>true</active>
+        <label>Invoices Generated</label>
+        <picklistValues>
+            <picklist>Batch_Type__c</picklist>
+            <values>
+                <fullName>CWW Annual Parks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CWW Qtr Drainage Charge</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CWW Water Usage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 1st Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 2nd Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 3rd Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 4th Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Metered Water %24</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Process_Range__c</picklist>
+            <values>
+                <fullName>Month</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Week</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>New</fullName>
+        <active>true</active>
+        <description>A batch that has not been submitted</description>
+        <label>New</label>
+        <picklistValues>
+            <picklist>Batch_Type__c</picklist>
+            <values>
+                <fullName>CWW Annual Parks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CWW Qtr Drainage Charge</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CWW Water Usage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 1st Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 2nd Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 3rd Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 4th Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Metered Water %24</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Process_Range__c</picklist>
+            <values>
+                <fullName>Month</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Week</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Orders_Generated</fullName>
+        <active>true</active>
+        <label>Orders Generated</label>
+        <picklistValues>
+            <picklist>Batch_Type__c</picklist>
+            <values>
+                <fullName>CWW Annual Parks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CWW Qtr Drainage Charge</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CWW Water Usage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 1st Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 2nd Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 3rd Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 4th Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Metered Water %24</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Process_Range__c</picklist>
+            <values>
+                <fullName>Month</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Week</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Processing_Invoices</fullName>
+        <active>true</active>
+        <label>Processing Invoices</label>
+        <picklistValues>
+            <picklist>Batch_Type__c</picklist>
+            <values>
+                <fullName>CWW Annual Parks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CWW Qtr Drainage Charge</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CWW Water Usage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 1st Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 2nd Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 3rd Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 4th Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Metered Water %24</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Process_Range__c</picklist>
+            <values>
+                <fullName>Month</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Week</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Processing_Orders</fullName>
+        <active>true</active>
+        <label>Processing Orders</label>
+        <picklistValues>
+            <picklist>Batch_Type__c</picklist>
+            <values>
+                <fullName>CWW Annual Parks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CWW Qtr Drainage Charge</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CWW Water Usage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 1st Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 2nd Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 3rd Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 4th Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Metered Water %24</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Process_Range__c</picklist>
+            <values>
+                <fullName>Month</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Week</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Generate_Orders</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Generate Orders</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&apos;/soap/ajax/31.0/connection.js&apos;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/31.0/apex.js&quot;)}
+
+
+   
+sforce.apex.execute(&quot;OrderBuilder&quot;,&quot;GenerateOrders&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;});
+
+
+window.location.reload();</url>
+    </webLinks>
+</CustomObject>

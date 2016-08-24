@@ -1,0 +1,827 @@
+{
+    "properties": [], 
+    "externalReferences": [], 
+    "innerClasses": [], 
+    "interfaces": [], 
+    "constructors": [], 
+    "namespace": null, 
+    "name": "TestDataFactory", 
+    "tableDeclaration": {
+        "type": "TestDataFactory", 
+        "modifiers": [
+            "public", 
+            "testMethod"
+        ], 
+        "references": [], 
+        "location": {
+            "column": 14, 
+            "line": 2
+        }, 
+        "name": "TestDataFactory"
+    }, 
+    "key": "01pp0000000E4qKAAS", 
+    "variables": [
+        {
+            "type": "Integer", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 64, 
+                "line": 5
+            }, 
+            "name": "numAccts"
+        }, 
+        {
+            "type": "Integer", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 82, 
+                "line": 5
+            }, 
+            "name": "numOppsPerAcct"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 105, 
+                "line": 5
+            }, 
+            "name": "recordType"
+        }, 
+        {
+            "type": "DescribeSObjectResult", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 38, 
+                "line": 7
+            }, 
+            "name": "cfrSchema"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 43, 
+                "line": 8
+            }, 
+            "name": "oppRecordTypeInfo"
+        }, 
+        {
+            "type": "Id", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 10
+            }, 
+            "name": "oppRecordTypeId"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 23, 
+                "line": 12
+            }, 
+            "name": "accts"
+        }, 
+        {
+            "type": "Integer", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 14
+            }, 
+            "name": "i"
+        }, 
+        {
+            "type": "Account", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 15
+            }, 
+            "name": "a"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 27, 
+                "line": 20
+            }, 
+            "name": "opps"
+        }, 
+        {
+            "type": "Integer", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 21
+            }, 
+            "name": "j"
+        }, 
+        {
+            "type": "Account", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 22
+            }, 
+            "name": "acct"
+        }, 
+        {
+            "type": "Integer", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 26, 
+                "line": 24
+            }, 
+            "name": "k"
+        }, 
+        {
+            "type": "Opportunity", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 58, 
+                "line": 41
+            }, 
+            "name": "accBus"
+        }, 
+        {
+            "type": "DescribeSObjectResult", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 38, 
+                "line": 45
+            }, 
+            "name": "cfrSchema"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 43, 
+                "line": 46
+            }, 
+            "name": "stallTypeInfo"
+        }, 
+        {
+            "type": "Id", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 47
+            }, 
+            "name": "rtId"
+        }, 
+        {
+            "type": "Stall__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 49
+            }, 
+            "name": "stall"
+        }, 
+        {
+            "type": "DescribeSObjectResult", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 38, 
+                "line": 84
+            }, 
+            "name": "cfrSchema"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 43, 
+                "line": 85
+            }, 
+            "name": "stallTypeInfo"
+        }, 
+        {
+            "type": "Id", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 86
+            }, 
+            "name": "rtId"
+        }, 
+        {
+            "type": "Stall__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 90
+            }, 
+            "name": "stall"
+        }, 
+        {
+            "type": "DescribeSObjectResult", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 38, 
+                "line": 115
+            }, 
+            "name": "cfrSchema"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 43, 
+                "line": 116
+            }, 
+            "name": "stallTypeInfo"
+        }, 
+        {
+            "type": "Id", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 117
+            }, 
+            "name": "rtId"
+        }, 
+        {
+            "type": "Stall__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 121
+            }, 
+            "name": "stall"
+        }, 
+        {
+            "type": "Opportunity", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 63, 
+                "line": 144
+            }, 
+            "name": "accBus"
+        }, 
+        {
+            "type": "DescribeSObjectResult", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 38, 
+                "line": 147
+            }, 
+            "name": "cfrSchema"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 43, 
+                "line": 148
+            }, 
+            "name": "stallTypeInfo"
+        }, 
+        {
+            "type": "Id", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 149
+            }, 
+            "name": "rtId"
+        }, 
+        {
+            "type": "Stall__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 153
+            }, 
+            "name": "stall"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 28, 
+                "line": 190
+            }, 
+            "name": "productsToInsert"
+        }, 
+        {
+            "type": "Product2", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 192
+            }, 
+            "name": "prodMon"
+        }, 
+        {
+            "type": "Product2", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 198
+            }, 
+            "name": "prodTue"
+        }, 
+        {
+            "type": "Product2", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 204
+            }, 
+            "name": "prodWed"
+        }, 
+        {
+            "type": "Product2", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 210
+            }, 
+            "name": "prodThu"
+        }, 
+        {
+            "type": "Product2", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 216
+            }, 
+            "name": "prodFri"
+        }, 
+        {
+            "type": "Product2", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 222
+            }, 
+            "name": "prodSat"
+        }, 
+        {
+            "type": "Product2", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 228
+            }, 
+            "name": "prodSun"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 34, 
+                "line": 236
+            }, 
+            "name": "pbeToInsert"
+        }, 
+        {
+            "type": "Id", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 238
+            }, 
+            "name": "pricebookId"
+        }, 
+        {
+            "type": "Product2", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 260
+            }, 
+            "name": "prod"
+        }, 
+        {
+            "type": "Id", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 269
+            }, 
+            "name": "pricebookId"
+        }, 
+        {
+            "type": "PricebookEntry", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 272
+            }, 
+            "name": "pbe"
+        }, 
+        {
+            "type": "DescribeSObjectResult", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 38, 
+                "line": 287
+            }, 
+            "name": "cfrSchema"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 43, 
+                "line": 288
+            }, 
+            "name": "BatchJobsTypeInfo"
+        }, 
+        {
+            "type": "Id", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 289
+            }, 
+            "name": "rtId"
+        }, 
+        {
+            "type": "Batch_Jobs__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 23, 
+                "line": 293
+            }, 
+            "name": "bj"
+        }, 
+        {
+            "type": "DescribeSObjectResult", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 38, 
+                "line": 309
+            }, 
+            "name": "cfrSchema"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 43, 
+                "line": 310
+            }, 
+            "name": "BatchJobsTypeInfo"
+        }, 
+        {
+            "type": "Id", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 311
+            }, 
+            "name": "rtId"
+        }, 
+        {
+            "type": "Batch_Jobs__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 23, 
+                "line": 315
+            }, 
+            "name": "bj"
+        }, 
+        {
+            "type": "DescribeSObjectResult", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 38, 
+                "line": 330
+            }, 
+            "name": "cfrSchema"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 43, 
+                "line": 331
+            }, 
+            "name": "BatchJobsTypeInfo"
+        }, 
+        {
+            "type": "Id", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 332
+            }, 
+            "name": "rtId"
+        }, 
+        {
+            "type": "Batch_Jobs__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 23, 
+                "line": 336
+            }, 
+            "name": "bj"
+        }, 
+        {
+            "type": "Product2", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 352
+            }, 
+            "name": "prod"
+        }, 
+        {
+            "type": "Id", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 361
+            }, 
+            "name": "pricebookId"
+        }, 
+        {
+            "type": "PricebookEntry", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 362
+            }, 
+            "name": "pbe"
+        }, 
+        {
+            "type": "QVM_LH_FEE_SETTING__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 31, 
+                "line": 369
+            }, 
+            "name": "setting1"
+        }
+    ], 
+    "id": "01pp0000000E4qKAAS", 
+    "methods": [
+        {
+            "modifiers": [
+                "static", 
+                "public"
+            ], 
+            "name": "createAccountsWithOpps", 
+            "parameters": [
+                {
+                    "type": "Integer", 
+                    "name": "numAccts"
+                }, 
+                {
+                    "type": "Integer", 
+                    "name": "numOppsPerAcct"
+                }, 
+                {
+                    "type": "String", 
+                    "name": "recordType"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 33, 
+                "line": 5
+            }, 
+            "returnType": "LIST", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "static", 
+                "public"
+            ], 
+            "name": "createSingleStall", 
+            "parameters": [
+                {
+                    "type": "Opportunity", 
+                    "name": "accBus"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 28, 
+                "line": 41
+            }, 
+            "returnType": "Stall__c", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "static", 
+                "public"
+            ], 
+            "name": "createSingleStallWithNoOpp", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 28, 
+                "line": 81
+            }, 
+            "returnType": "Stall__c", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "static", 
+                "public"
+            ], 
+            "name": "createPermStallWithNoOpp", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 28, 
+                "line": 112
+            }, 
+            "returnType": "Stall__c", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "static", 
+                "public"
+            ], 
+            "name": "createPermStallWithOpp", 
+            "parameters": [
+                {
+                    "type": "Opportunity", 
+                    "name": "accBus"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 28, 
+                "line": 144
+            }, 
+            "returnType": "Stall__c", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "static", 
+                "public"
+            ], 
+            "name": "createStallProductsAndGeneralPriceBook", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 181
+            }, 
+            "returnType": "void", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "static", 
+                "public"
+            ], 
+            "name": "createPremStallProducts", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 28, 
+                "line": 254
+            }, 
+            "returnType": "Product2", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "static", 
+                "public"
+            ], 
+            "name": "createSLBatchJob", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 33, 
+                "line": 284
+            }, 
+            "returnType": "Batch_Jobs__c", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "static", 
+                "public"
+            ], 
+            "name": "createLHBatchJob", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 33, 
+                "line": 306
+            }, 
+            "returnType": "Batch_Jobs__c", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "static", 
+                "public"
+            ], 
+            "name": "createMCCBatchJob", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 33, 
+                "line": 327
+            }, 
+            "returnType": "Batch_Jobs__c", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "static", 
+                "public"
+            ], 
+            "name": "CreateQVM_LH_FEE_SETTING_Entries", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 348
+            }, 
+            "returnType": "void", 
+            "type": null
+        }
+    ]
+}
