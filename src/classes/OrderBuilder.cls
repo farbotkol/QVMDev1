@@ -17,13 +17,13 @@ List<Opportunity> opps = [select Id, Name, accountid, pricebook2id
 
 
 */
-
+	// Launching pad
 	Webservice  static boolean GenerateOrders(Id batchJobId)
 	{
 		//
 
 		system.debug('Processing batchJobId: ' + batchJobId);
-
+		// get current batch job
 		Batch_Jobs__c job = [SELECT Batch_Type__c,From_Date__c,Id,Name,Process_Range__c
 							,RecordType.Name,To_Date__c,Week_Month_Of__c , Description__c
 							FROM Batch_Jobs__c 
@@ -35,7 +35,7 @@ List<Opportunity> opps = [select Id, Name, accountid, pricebook2id
 		//system.debug('processType: ' + processType);
 
 
-
+		// get the Processing_Orders rec type to set batch as
 	    RecordType nextStepType = [SELECT DeveloperName,Id,Name,SobjectType FROM RecordType
 							WHERE SobjectType = 'Batch_Jobs__c' and DeveloperName = 'Processing_Orders' LIMIT 1] ;
 	
@@ -43,12 +43,15 @@ List<Opportunity> opps = [select Id, Name, accountid, pricebook2id
 
 		update job;
 
-
+		// SLs and PEs need leave processed LHs do not
 		if (job.Batch_Type__c  == 'SL' || job.Batch_Type__c  == 'PE')
 		{
-	    	RecordType processType = [SELECT DeveloperName,Id,Name,SobjectType FROM RecordType
+            
+            // GET THE record type that  matchs the  batch type
+	    	RecordType processType =  [SELECT DeveloperName,Id,Name,SobjectType FROM RecordType
 							WHERE SobjectType = 'Opportunity' and DeveloperName = :job.Batch_Type__c LIMIT 1];
 
+            // GET THE Opps (acc bus) with a record type that  matchs the  batch type
 			List<Opportunity> opps = [select Id, Name, accountid, pricebook2id
 	                          ,(select id from MondayStalls__r)
 	                          ,(select id from TuesdayStalls__r)
@@ -60,6 +63,8 @@ List<Opportunity> opps = [select Id, Name, accountid, pricebook2id
 	                          from opportunity
 	                          where RecordTypeId = :processType.Id
 	                          and Business_Status__c = 'Open'];
+            
+            
 
 	         GenerateOrdersFromAllocatedStalls(job.From_Date__c, job.To_Date__c, opps , batchJobId, job.Description__c) ;               
 		}
@@ -101,11 +106,13 @@ List<Opportunity> opps = [select Id, Name, accountid, pricebook2id
 	*/
 	public static boolean GenerateOrdersFromAllocatedStalls(Date startDate, Date endDate, List<Opportunity> opps, id batchJobId, string description)
 	{
-		
+		// GET ALL ACTIVE PRICE BOOK ENTRIES TO USE LATER
 		list<PricebookEntry> pricebookEntries = [SELECT  Id,ProductCode,IsActive,Name,Pricebook2Id,Product2Id,UnitPrice,UseStandardPrice 
 		                                 FROM PricebookEntry
 										 WHERE  IsActive = true];
 
+        // create map of leave to ref here 
+        
 		system.debug('pricebookEntries  : ' + pricebookEntries);								 
 
 		map<string, PricebookEntry> pricebookEntriesMap =  new map<string, PricebookEntry>();
@@ -140,7 +147,7 @@ List<Opportunity> opps = [select Id, Name, accountid, pricebook2id
 			ordersToCreate.add(order);
 		}
 
-		Insert ordersToCreate; 
+	 	Insert ordersToCreate;
 
 		//Orders orders = [select id from Orders where ] ;
 
@@ -182,6 +189,8 @@ List<Opportunity> opps = [select Id, Name, accountid, pricebook2id
 					stalls = oppMap.get(order.OpportunityId).SundayStalls__r;
 				}	
 
+                
+                // here we need to handle leave requirments
 				for (Stall__c stall : stalls)
 				{
 					system.debug('order : ' + order.Id); 
@@ -191,13 +200,17 @@ List<Opportunity> opps = [select Id, Name, accountid, pricebook2id
 					system.debug('PricebookEntryId :' + pricebookEntriesMap.get(dayOfWeek + (String)oppMap.get(order.OpportunityId).Pricebook2Id ).Id); 
 					// create an order line
 					OrderItem ordItm =new OrderItem();
+                    // detirmine the key to use to get the prive book entry for this day
 					String val = dayOfWeek + (String)oppMap.get(order.OpportunityId).Pricebook2Id ; 
+                    
+                    String leaveKey =  dateIndex + (String)order.OpportunityId; 
 					ordItm.Date__c = dateIndex;
 					ordItm.PricebookEntryId = pricebookEntriesMap.get(val).Id;// + (String)oppMap.get(oppMap).Pricebook2Id
 					ordItm.OrderId = order.Id;
 					ordItm.UnitPrice =  pricebookEntriesMap.get(val).UnitPrice;
 					ordItm.Quantity = 1;
 					ordItm.Stall__c = stall.Id;
+                    //ordItm.On_Leave__c = true or false;
 					orderItemsToCreate.add(ordItm);
 
 				}
