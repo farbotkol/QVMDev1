@@ -17,6 +17,11 @@ public with sharing class QBOCRUDHelper {
          
         query = query.replace(' ', '%20');
         query = query.replace('*', '%2A');
+        query = query.replace('\'', '%27');
+        query = query.replace('=', '%3D');
+        query = query.replace(',', '%2C'); 
+
+         system.debug('query: ' + query);
         Http h = new Http();
         
         HttpRequest req = new HttpRequest();
@@ -39,7 +44,14 @@ public with sharing class QBOCRUDHelper {
         string responseString = res.getBody();
          
         System.debug('::::: Response = (' + res.getStatusCode() + ')' + res.getBody());
-        return System.JSON.deserialize(responseString, apexType);
+        //return System.JSON.deserialize(responseString, apexType);
+         
+        if (res.getStatusCode() == 200) {
+            System.debug(':::::System.JSON.deserialize(responseString, apexType)' + System.JSON.deserialize(responseString, apexType));
+            return System.JSON.deserialize(responseString, apexType);
+        }else{
+            return System.JSON.deserialize(responseString, QBOError.class);
+        }
        
     }
 
@@ -67,7 +79,13 @@ public with sharing class QBOCRUDHelper {
         string responseString = res.getBody();
          
         System.debug('::::: Response = (' + res.getStatusCode() + ')' + res.getBody());
-        return System.JSON.deserialize(responseString, apexType);
+        
+        if (res.getStatusCode() == 200) {
+            return System.JSON.deserialize(responseString, apexType);
+        }else{
+            return System.JSON.deserialize(responseString, QBOError.class);
+        }
+        //return System.JSON.deserialize(responseString, apexType);
        
     }
 
@@ -134,8 +152,14 @@ public with sharing class QBOCRUDHelper {
         
         system.debug('$$$$$'+res);
         System.debug('::::: response = ' + res.getbody());
-
-
-        return System.JSON.deserialize(responseString, apexType);
+		
+        // Check if for errors, if there are errors then return a QBOError instead of expected apexType
+		if (res.getStatusCode() == 200) {
+            return System.JSON.deserialize(responseString, apexType);
+        }else{
+            return System.JSON.deserialize(responseString, QBOError.class);
+        }
+          
+        
     }
 }

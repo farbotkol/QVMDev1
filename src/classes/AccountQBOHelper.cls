@@ -1,6 +1,6 @@
 public class AccountQBOHelper {
 	
-
+	
     
   	// FUTURES TEND TO OCCURE FASTER THEN BATCHES, THERE IS ONLY A Small number of items use the furture
     @future  (callout=true)
@@ -23,7 +23,8 @@ public class AccountQBOHelper {
        AccountQBOUpsert(accounts);    
     }
 
-
+	
+    	
     // add Trader accounts to QBO
     public static boolean AccountQBOUpsert(List<Account> scope)
     {
@@ -66,7 +67,7 @@ public class AccountQBOHelper {
 			QBOCustomerResponse customerResponse;
            
             string paymentType =  (String)paymentTypeMap.get(so.Def_Payment_Type__c );
-            
+            Object response;
             QBOCustomer.PaymentMethodRef paymentMethodRef = new QBOCustomer.PaymentMethodRef();
             if (paymentType != null && paymentType != '')
             {
@@ -76,7 +77,16 @@ public class AccountQBOHelper {
 
             if (so.QuickBooks_Id__c  == null){
                 System.debug('NEW system.JSON.serialize(customer, true): ' + system.JSON.serialize(customer, true));
-   				 customerResponse = (QBOCustomerResponse)crudHelper.upsertData( 'customer?minorversion=4',  system.JSON.serialize(customer, true) , QBOCustomerResponse.class);
+                response = crudHelper.upsertData( 'customer?minorversion=4',  system.JSON.serialize(customer, true) , QBOCustomerResponse.class);
+                if (response instanceof QBOError){
+                    //log the error and move to next account
+                    ErrorLogHelper.LogAccountError(so, (QBOError)response);
+                    continue;
+                }else{
+                    customerResponse = (QBOCustomerResponse)response;//crudHelper.upsertData( 'customer?minorversion=4',  system.JSON.serialize(customer, true) , QBOCustomerResponse.class);
+                }
+                 
+   				 
             }else{
                 customer.Id =  so.QuickBooks_Id__c ;
                 // need to get syncTocken
@@ -84,7 +94,18 @@ public class AccountQBOHelper {
                 System.debug('READ customerResponse: ' + customerResponse);
                 customer.SyncToken = customerResponse.Customer.SyncToken;
                 System.debug('UPDATE system.JSON.serialize(customer, true): ' + system.JSON.serialize(customer, true));
-                customerResponse = (QBOCustomerResponse)crudHelper.upsertData( 'customer?operation=update&minorversion=4',  system.JSON.serialize(customer, true) , QBOCustomerResponse.class);
+                //customerResponse = (QBOCustomerResponse)crudHelper.upsertData( 'customer?operation=update&minorversion=4',  system.JSON.serialize(customer, true) , QBOCustomerResponse.class);
+            
+            	response = crudHelper.upsertData( 'customer?operation=update&minorversion=4',  system.JSON.serialize(customer, true) , QBOCustomerResponse.class);
+                if (response instanceof QBOError){
+                    //log the error and move to next account
+                    ErrorLogHelper.LogAccountError(so, (QBOError)response);
+                    continue;
+                }else{
+                    customerResponse = (QBOCustomerResponse)response;//crudHelper.upsertData( 'customer?minorversion=4',  system.JSON.serialize(customer, true) , QBOCustomerResponse.class);
+                }
+            
+            
             }
 			System.debug('Quick books response : ' + customerResponse);
             System.debug('current object val : ' + so.QuickBooks_Id__c);
@@ -169,12 +190,21 @@ public class AccountQBOHelper {
             
             supplier.BillAddr = billAddr  ; 
 			SupplierResponse supplierResp;
-           
+            Object response;
             //string paymentType =  (String)paymentTypeMap.get(so.Def_Payment_Type__c );
 
             if (so.QuickBooks_Id__c  == null){
                 System.debug('NEW system.JSON.serialize(supplier, true): ' + system.JSON.serialize(supplier, true));
-   				 supplierResp = (SupplierResponse)crudHelper.upsertData( 'vendor?minorversion=4',  system.JSON.serialize(supplier, true) , SupplierResponse.Class);
+   				//supplierResp = (SupplierResponse)crudHelper.upsertData( 'vendor?minorversion=4',  system.JSON.serialize(supplier, true) , SupplierResponse.Class);
+
+                response = crudHelper.upsertData( 'vendor?minorversion=4',  system.JSON.serialize(supplier, true) , SupplierResponse.Class);
+                if (response instanceof QBOError){
+                    //log the error and move to next account
+                    ErrorLogHelper.LogAccountError(so, (QBOError)response);
+                    continue;
+                }else{
+                    supplierResp = (SupplierResponse)response;
+                }
             }else{
                 supplier.Id =  so.QuickBooks_Id__c ;
                 // need to get syncTocken
@@ -182,7 +212,16 @@ public class AccountQBOHelper {
                 System.debug('READ supplierResp: ' + supplierResp);
                 supplier.SyncToken = supplierResp.Vendor.SyncToken;
                 System.debug('UPDATE system.JSON.serialize(customer, true): ' + system.JSON.serialize(supplier, true));
-                supplierResp = (SupplierResponse)crudHelper.upsertData( 'vendor?operation=update&minorversion=4',  system.JSON.serialize(supplier, true) , SupplierResponse.class);
+                //supplierResp = (SupplierResponse)crudHelper.upsertData( 'vendor?operation=update&minorversion=4',  system.JSON.serialize(supplier, true) , SupplierResponse.class);
+                
+                response = crudHelper.upsertData( 'vendor?operation=update&minorversion=4',  system.JSON.serialize(supplier, true) , SupplierResponse.class);
+                if (response instanceof QBOError){
+                    //log the error and move to next account
+                    ErrorLogHelper.LogAccountError(so, (QBOError)response);
+                    continue;
+                }else{
+                    supplierResp = (SupplierResponse)response;
+                }
             }
 			System.debug('Quick books response : ' + supplierResp);
             System.debug('current object val : ' + so.QuickBooks_Id__c);

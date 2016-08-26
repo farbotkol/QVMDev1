@@ -255,6 +255,15 @@
         <fields>Paid__c</fields>
         <relatedList>Invoice__c.Account__c</relatedList>
     </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Type__c</fields>
+        <fields>Message__c</fields>
+        <fields>Detail__c</fields>
+        <fields>Code__c</fields>
+        <fields>CREATED_DATE</fields>
+        <relatedList>Error_Log__c.Account__c</relatedList>
+    </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

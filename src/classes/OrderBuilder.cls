@@ -1,22 +1,5 @@
 global with sharing class OrderBuilder {
-    /*public OrderBuilder() {
-        
-    }*/
 
-/*
-List<Opportunity> opps = [select Id, Name, accountid, pricebook2id
-                          ,(select id from MondayStalls__r)
-                          ,(select id from TuesdayStalls__r)
-                          ,(select id from WednesdayStalls__r)
-                          ,(select id from ThursdayStalls__r)
-                          ,(select id from FridayStalls__r)
-                          ,(select id from SaturdayStalls__r)
-                          ,(select id from SundayStalls__r)
-                          from opportunity
-                          where id = '006p0000002kWG0AAM'];
-
-
-*/
     // Launching pad
     Webservice  static boolean GenerateOrders(Id batchJobId)
     {
@@ -29,11 +12,7 @@ List<Opportunity> opps = [select Id, Name, accountid, pricebook2id
                             FROM Batch_Jobs__c 
                             WHERE Id = :batchJobId LIMIT 1];
 
-
-
-
         //system.debug('processType: ' + processType);
-
 
         // get the Processing_Orders rec type to set batch as
         RecordType nextStepType = [SELECT DeveloperName,Id,Name,SobjectType FROM RecordType
