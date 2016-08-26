@@ -405,6 +405,26 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Supplier</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SupplierList</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SupplierQBOUpsertBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SupplierResponse</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Supplier_Test</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>TestDataFactory</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -2836,6 +2856,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>ProfileSkillUser-Skill User Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>QBO_Payment_Type__mdt-QBO Payment Type Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>QVM_Article__kav-QVM Article Layout</layout>

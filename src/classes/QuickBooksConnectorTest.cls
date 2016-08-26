@@ -39,7 +39,7 @@ public class QuickBooksConnectorTest {
             Boolean boolValue = qbo.completeAuthorization('UTF-8','UTF-8','67454209');
             Test.stopTest();
             
-            System.assert(qbo.consumerKey == null);
+
             System.assert(boolValue != null);
 
     }

@@ -11,8 +11,14 @@ public class TestDataFactory {
 
         List<Account> accts = new List<Account>();
         
+        
+        Schema.DescribeSObjectResult acccCfrSchema = Schema.SObjectType.Account; 
+        Map<String,Schema.RecordTypeInfo> accRecordTypeInfo = acccCfrSchema.getRecordTypeInfosByName(); 
+        Id accRecordTypeId = accRecordTypeInfo.get('Trader').getRecordTypeId();
+        
         for(Integer i=0;i<numAccts;i++) {
             Account a = new Account(Name='TestAccount' + i);
+            a.RecordTypeId = accRecordTypeId;
             accts.add(a);
         }
         insert accts;

@@ -82,7 +82,12 @@ public class QBOCustomer {
 	public PrimaryPhone PrimaryPhone {get;set;} 
 	PrimaryEmailAddr PrimaryEmailAddr {get;set;} 
 	public String PrimaryTaxIdentifier {get;set;} 
-
+    public PaymentMethodRef PaymentMethodRef;
+    
+    public class PaymentMethodRef {
+		public String value;
+	}
+    
 	public QBOCustomer(){}
 
 	public QBOCustomer(JSONParser parser) {
