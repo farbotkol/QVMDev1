@@ -101,6 +101,10 @@ public class QBOInvoice {
 	@AuraEnabled public BillEmail BillEmail {get;set;} 
 	@AuraEnabled public Double Balance {get;set;} 
 	@AuraEnabled public Double HomeBalance {get;set;} 
+    @AuraEnabled public boolean overdue {
+        get{if(Date.today() > Date.valueOf(DueDate.substring(0,10))) overdue = true; return overdue;}
+        set;
+    } 
 
     public QBOInvoice() {}
     

@@ -3,6 +3,6 @@ public with sharing class QBOCustomerResponse {
 		
 	}
 
-
+	@AuraEnabled
 	public QBOCustomer Customer {get;set;} 
 }

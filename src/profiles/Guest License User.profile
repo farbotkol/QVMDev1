@@ -97,6 +97,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>CustomerBalanceController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>DataFactoryForTestClass</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -246,6 +250,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>InvoiceBuilder</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>InvoiceBuilderBatch</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -2756,6 +2764,10 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Batch_Jobs__c-Batch Jobs Layout</layout>
+        <recordType>Batch_Jobs__c.Error_Processing_Invoices</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Batch_Jobs__c-Batch Jobs Layout</layout>
         <recordType>Batch_Jobs__c.Invoices_Generated</recordType>
     </layoutAssignments>
     <layoutAssignments>
@@ -3135,6 +3147,11 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>ApiToken__c.Intuit</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Batch_Jobs__c.Error_Processing_Invoices</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>

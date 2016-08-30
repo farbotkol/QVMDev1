@@ -94,6 +94,7 @@
     </layoutSections>
     <relatedLists>
         <fields>ORDERS.ORDER_NUMBER</fields>
+        <fields>OPPORTUNITY.NAME</fields>
         <fields>SALES.ACCOUNT.NAME</fields>
         <fields>ORDERS.STATUS</fields>
         <fields>ORDERS.TOTAL_AMOUNT</fields>

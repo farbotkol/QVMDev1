@@ -202,6 +202,70 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
     </nameField>
     <pluralLabel>Batch Jobs</pluralLabel>
     <recordTypes>
+        <fullName>Error_Processing_Invoices</fullName>
+        <active>true</active>
+        <description>If errors occur during the processing of the invoices then give ability to run  processing on orders that failed (ie orders with no qboId)</description>
+        <label>Error Processing Invoices</label>
+        <picklistValues>
+            <picklist>Batch_Type__c</picklist>
+            <values>
+                <fullName>CWW Annual Parks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CWW Qtr Drainage Charge</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CWW Water Usage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 1st Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 2nd Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 3rd Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 4th Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Metered Water %24</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Process_Range__c</picklist>
+            <values>
+                <fullName>Month</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Week</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
         <fullName>Invoices_Generated</fullName>
         <active>true</active>
         <label>Invoices Generated</label>
@@ -517,8 +581,37 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
             </values>
         </picklistValues>
     </recordTypes>
-    <searchLayouts/>
+    <searchLayouts>
+        <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Batch_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Process_Range__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>From_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>To_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Week_Month_Of__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Generate_Invoices</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Generate Invoices</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&apos;/soap/ajax/31.0/connection.js&apos;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/31.0/apex.js&quot;)} 
+
+
+
+sforce.apex.execute(&quot;InvoiceBuilder&quot;,&quot;GenerateInvoiceFromOrder&quot;,{orderId:&quot;{!Order.Id}&quot;}); 
+
+
+
+
+window.location.reload();</url>
+    </webLinks>
     <webLinks>
         <fullName>Generate_Orders</fullName>
         <availability>online</availability>

@@ -1,4 +1,4 @@
-public class InvoicesController {
+public without sharing class InvoicesController {
     @AuraEnabled
     public static List<QBOInvoice> getInvoices() {
         
@@ -8,7 +8,7 @@ public class InvoicesController {
         String customerRef = [SELECT QuickBooks_Id__c FROM Account
      				WHERE ID in
      				(SELECT AccountId FROM User WHERE Id = '005p0000000uK5d')].QuickBooks_Id__c;
-        //: userinfo.getUserId() 
+        // : userinfo.getUserId()
         String queryString = 'select Id,DocNumber,TxnDate,DueDate,TotalAmt,Balance from INVOICE where CustomerRef =\'' + String.escapeSingleQuotes(customerRef)+'\'';
         
         System.debug(queryString);

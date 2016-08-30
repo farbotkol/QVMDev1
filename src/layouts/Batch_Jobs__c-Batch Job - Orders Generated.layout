@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customButtons>Generate_Invoices</customButtons>
     <excludeButtons>Clone</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
@@ -80,6 +81,7 @@
     </layoutSections>
     <relatedLists>
         <fields>ORDERS.ORDER_NUMBER</fields>
+        <fields>OPPORTUNITY.NAME</fields>
         <fields>SALES.ACCOUNT.NAME</fields>
         <fields>ORDERS.STATUS</fields>
         <fields>ORDERS.TOTAL_AMOUNT</fields>
