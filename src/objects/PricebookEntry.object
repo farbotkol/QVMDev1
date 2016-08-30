@@ -45,6 +45,27 @@
         <fullName>ProductCode</fullName>
     </fields>
     <fields>
+        <fullName>Sku_Override__c</fullName>
+        <description>Override the products Sku at the price book entry level</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Override the products Sku at the price book entry level</inlineHelpText>
+        <label>Sku Override</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sku__c</fullName>
+        <externalId>false</externalId>
+        <formula>BLANKVALUE(Sku_Override__c , Product2.SKU__c  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sku</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>StandardPrice</fullName>
     </fields>
     <fields>

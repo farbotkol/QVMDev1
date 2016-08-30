@@ -25,9 +25,20 @@ public class InvoicesController {
         else 
         {
             System.debug('Yah!! : '  + (QBOInvoiceList)res); 
+            System.debug('PP Yah!! : '  + ((QBOInvoiceList)res).queryResponse.invoice);
             return ((QBOInvoiceList)res).queryResponse.invoice;
-        } 
+        }               
+    }
+    
+    //@AuraEnabled
+    /*public static PageReference viewInvoicePDF(String objectType, String invoiceId) {
         
-      
-    } 
+        PageReference viewPdf = new PageReference('/apex/ViewPDF');
+        viewPdf.getParameters().put('objectType',objectType);
+        viewPdf.getParameters().put('invoiceId',invoiceId);
+        viewPdf.setRedirect(true); 
+        return viewPdf;
+    }*/
+    
+ 
 }

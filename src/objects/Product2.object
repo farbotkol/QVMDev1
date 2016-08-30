@@ -90,8 +90,30 @@
         <fullName>ProductCode</fullName>
         <trackHistory>false</trackHistory>
     </fields>
+    <fields>
+        <fullName>SKU__c</fullName>
+        <description>QBO Product code</description>
+        <externalId>true</externalId>
+        <inlineHelpText>QBO Product code</inlineHelpText>
+        <label>SKU</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
     <listViews>
         <fullName>AllProducts</fullName>
+        <columns>PRODUCT2.NAME</columns>
+        <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
+        <columns>PRODUCT2.DESCRIPTION</columns>
+        <columns>PRODUCT2.FAMILY</columns>
+        <columns>PRODUCT2.CREATED_DATE</columns>
+        <columns>PRODUCT2.LAST_UPDATE</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <columns>PRODUCT2.ACTIVE</columns>
+        <columns>SKU__c</columns>
         <filterScope>Everything</filterScope>
         <label>All Products</label>
     </listViews>

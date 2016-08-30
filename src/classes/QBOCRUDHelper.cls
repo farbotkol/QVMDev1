@@ -3,7 +3,8 @@ public with sharing class QBOCRUDHelper {
     public QuickBooksConnector qbConnector { get; set; }
     
     public QBOCRUDHelper() {
-         qbConnector = new QuickBooksConnector();       
+        qbConnector = new QuickBooksConnector();       
+        qbConnector.fixToken();
     }
     
     
@@ -20,6 +21,7 @@ public with sharing class QBOCRUDHelper {
         query = query.replace('\'', '%27');
         query = query.replace('=', '%3D');
         query = query.replace(',', '%2C'); 
+        query = query.replace('!', '%21'); 
 
          system.debug('query: ' + query);
         Http h = new Http();
@@ -28,12 +30,11 @@ public with sharing class QBOCRUDHelper {
         req.setMethod('GET');
         req.setHeader('Authorization', 'OAuth '+UserInfo.getSessionId());
         
-        req.setEndpoint(qbConnector.service.BaseURL__c + qbConnector.oaToken.Realm_Id__c + '/query?query=' + query);
+        req.setEndpoint(qbConnector.service.BaseURL__c + qbConnector.oaToken.Realm_Id__c + '/query?query=' + query + '&minorversion=4');
 
         req.setHeader('Accept', 'application/json;charset=UTF-8');
         qbConnector.sign(req);
-        
-
+       
         HttpResponse res;
          if(Test.isRunningTest()) {
             res = new HttpResponse();
@@ -67,7 +68,6 @@ public with sharing class QBOCRUDHelper {
 
         req.setHeader('Accept', 'application/json;charset=UTF-8');
         qbConnector.sign(req);
-        
 
         HttpResponse res;
          //if(Test.isRunningTest()) {
@@ -88,7 +88,35 @@ public with sharing class QBOCRUDHelper {
         //return System.JSON.deserialize(responseString, apexType);
        
     }
+    
+    public blob pdf1(string objType, string invoiceId) {
+        System.debug('PP objType  '+objType);
+        System.debug('PP invoiceId  '+invoiceId);
+        //QuickBooksConnector qbConnector = new QuickBooksConnector();
+        Http h = new Http();
+        
+        HttpRequest req = new HttpRequest();
+        req.setMethod('GET');
+        req.setHeader('Authorization', 'OAuth '+UserInfo.getSessionId());
+        
+        req.setEndpoint(qbConnector.service.BaseURL__c + qbConnector.oaToken.Realm_Id__c + '/' + objType + '/' + invoiceId + '/pdf');
 
+        req.setHeader('Accept', 'application/pdf');
+        qbConnector.sign(req);
+        
+
+        HttpResponse res;
+        res = h.send(req); 
+        
+        blob responseBlob = res.getBodyAsBlob(); //Blob.valueOf(res.getBody());
+         
+        System.debug('::::: Response = (' + res.getStatusCode() + ')' + res.getBody());
+        System.debug('PP resp  '+res);
+        //System.debug('PP resp string '+responseString);
+        return responseBlob;
+       
+    }
+	
     /*
     eg
 

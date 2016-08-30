@@ -52,6 +52,8 @@ public with sharing class QuickBooksConnector {
         //callbackUrl =
          //   EncodingUtil.urlEncode('http://' + ApexPages.currentPage().getHeaders().get('Host') +
            //     '/QuickBooksLogin', 'UTF-8');
+        
+        System.debug(':::::  callbackUrl:  ' + service.CallbackUrl__c );
         callbackUrl=EncodingUtil.urlEncode(service.CallbackUrl__c ,'UTF-8');
         Http h = new Http();
         HttpRequest req = new HttpRequest();
@@ -67,11 +69,11 @@ public with sharing class QuickBooksConnector {
         
         HttpResponse res = NULL;
         
-        if(Test.isRunningTest()) {
-            res = new HttpResponse();
-        } else {
+        //if(Test.isRunningTest()) {
+       //     res = new HttpResponse();
+       // } else {
             res = h.send(req);
-        }
+        //}
         
         responseString = res.getBody();
         System.debug('::::: Response from request token request: (' + res.getStatusCode() + ')' + res.getBody());
@@ -91,6 +93,7 @@ public with sharing class QuickBooksConnector {
         
         insert oaToken;
         
+        system.debug('oaToken.Token__c: '  + oaToken.Token__c);
         String authorizePage = service.Authorization_URL__c + '?oauth_token=' +
             EncodingUtil.urlDecode(oaToken.Token__c, 'UTF-8') + '&oauth_consumer_key=' +
             service.Consumer_Key__c;
@@ -110,8 +113,11 @@ public with sharing class QuickBooksConnector {
          //   (tokenSecret != NULL ? tokenSecret : '')));
 
         
+        //Blob sig = Crypto.generateMac('HmacSHA1', Blob.valueOf(s), Blob.valueOf(service.Consumer_Secret__c + '&' +
+            //(oaToken.Secret__c != NULL ? oaToken.Secret__c : '')));
+        
         Blob sig = Crypto.generateMac('HmacSHA1', Blob.valueOf(s), Blob.valueOf(service.Consumer_Secret__c + '&' +
-            (oaToken.Secret__c != NULL ? oaToken.Secret__c : '')));
+            (tokenSecret != NULL ? tokenSecret : '')));
         
         signature = EncodingUtil.urlEncode(EncodingUtil.base64encode(sig), 'UTF-8');
         
@@ -206,9 +212,14 @@ public with sharing class QuickBooksConnector {
         parameters.clear();
         parameters.put('oauth_consumer_key', service.Consumer_Key__c);
         
+        system.debug('tocken');
+         if(this.token != NULL) {
+            parameters.put('oauth_token', this.token);
+        }
+        /*
         if(oaToken.Token__c != NULL) {
             parameters.put('oauth_token', oaToken.Token__c);
-        }
+        }*/
         
         if(verifier != NULL) {
             parameters.put('oauth_verifier', verifier);
@@ -318,6 +329,18 @@ public with sharing class QuickBooksConnector {
         
         return str.substring(index, index + 1);
     }
+    
+	public void fixToken()
+    {
+        verifier = NULL;
+        callbackUrl = NULL;
+        
+        token = oaToken.Token__c;
+        tokenSecret = oaToken.Secret__c;
+        consumerKey = service.Consumer_Key__c;
+        consumerSecret = service.Consumer_Secret__c;
+    }
+    
     
     public void retrieveAllQBAccounts() {
         verifier = NULL;

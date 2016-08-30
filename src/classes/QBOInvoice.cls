@@ -21,8 +21,8 @@ public class QBOInvoice {
 	}
 
 	public class BillAddr {
-		public String Id {get;set;} 
-		public String CountrySubDivisionCode {get;set;} 
+		@AuraEnabled public String Id {get;set;} 
+		@AuraEnabled public String CountrySubDivisionCode {get;set;} 
 
 		public BillAddr(JSONParser parser) {
 			while (parser.nextToken() != JSONToken.END_OBJECT) {
@@ -43,11 +43,13 @@ public class QBOInvoice {
 		}
 	}
 	
-	public class CurrencyRef {
-		public String value {get;set;} 
-		public String name {get;set;} 
+	public class Reference {
+		@AuraEnabled public String value {get;set;} 
+		@AuraEnabled public String name {get;set;} 
 
-		public CurrencyRef(JSONParser parser) {
+        public Reference() {}
+        
+		public Reference(JSONParser parser) {
 			while (parser.nextToken() != JSONToken.END_OBJECT) {
 				if (parser.getCurrentToken() == JSONToken.FIELD_NAME) {
 					String text = parser.getText();
@@ -57,7 +59,7 @@ public class QBOInvoice {
 						} else if (text == 'name') {
 							name = parser.getText();
 						} else {
-							System.debug(LoggingLevel.WARN, 'CurrencyRef consuming unrecognized property: '+text);
+							System.debug(LoggingLevel.WARN, 'Reference consuming unrecognized property: '+text);
 							consumeObject(parser);
 						}
 					}
@@ -66,40 +68,42 @@ public class QBOInvoice {
 		}
 	}
 	
-	public Integer Deposit {get;set;} 
-	public Boolean AllowIPNPayment {get;set;} 
-	public Boolean AllowOnlinePayment {get;set;} 
-	public Boolean AllowOnlineCreditCardPayment {get;set;} 
-	public Boolean AllowOnlineACHPayment {get;set;} 
-	public String domain {get;set;} 
-	public Boolean sparse {get;set;} 
-	public String Id {get;set;} 
-	public String SyncToken {get;set;} 
-	public MetaData MetaData {get;set;} 
-	public List<CustomField> CustomField {get;set;} 
-	public String DocNumber {get;set;} 
-	public String TxnDate {get;set;} 
-	public CurrencyRef CurrencyRef {get;set;} 
-	public Integer ExchangeRate {get;set;} 
-	public String PrivateNote {get;set;} 
-	public List<LinkedTxn> LinkedTxn {get;set;} 
-	public List<Line> Line {get;set;} 
-	public TxnTaxDetail TxnTaxDetail {get;set;} 
-	public CurrencyRef CustomerRef {get;set;} 
-	public TaxCodeRef CustomerMemo {get;set;} 
-	public BillAddr BillAddr {get;set;} 
-	public BillAddr ShipAddr {get;set;} 
-	public TaxCodeRef SalesTermRef {get;set;} 
-	public String DueDate {get;set;} 
-	public String GlobalTaxCalculation {get;set;} 
-	public Double TotalAmt {get;set;} 
-	public Double HomeTotalAmt {get;set;} 
-	public String PrintStatus {get;set;} 
-	public String EmailStatus {get;set;} 
-	public BillEmail BillEmail {get;set;} 
-	public Double Balance {get;set;} 
-	public Double HomeBalance {get;set;} 
+    @AuraEnabled public Integer Deposit {get;set;} 
+    @AuraEnabled public Boolean AllowIPNPayment {get;set;} 
+    @AuraEnabled public Boolean AllowOnlinePayment {get;set;} 
+    @AuraEnabled public Boolean AllowOnlineCreditCardPayment {get;set;}
+    @AuraEnabled public Boolean AllowOnlineACHPayment {get;set;} 
+    @AuraEnabled public String domain {get;set;} 
+    @AuraEnabled public Boolean sparse {get;set;} 
+	@AuraEnabled public String Id {get;set;} 
+	@AuraEnabled public String SyncToken {get;set;} 
+	@AuraEnabled public MetaData MetaData {get;set;} 
+	@AuraEnabled public List<CustomField> CustomField {get;set;} 
+	@AuraEnabled public String DocNumber {get;set;} 
+	@AuraEnabled public String TxnDate {get;set;} 
+	@AuraEnabled public Reference CurrencyRef {get;set;} 
+	@AuraEnabled public Integer ExchangeRate {get;set;} 
+	@AuraEnabled public String PrivateNote {get;set;} 
+	@AuraEnabled public List<LinkedTxn> LinkedTxn {get;set;} 
+	@AuraEnabled public List<Line> Line {get;set;} 
+	@AuraEnabled public TxnTaxDetail TxnTaxDetail {get;set;} 
+	@AuraEnabled public Reference CustomerRef {get;set;} 
+	@AuraEnabled public TaxCodeRef CustomerMemo {get;set;} 
+	@AuraEnabled public BillAddr BillAddr {get;set;} 
+	@AuraEnabled public BillAddr ShipAddr {get;set;} 
+	@AuraEnabled public TaxCodeRef SalesTermRef {get;set;} 
+	@AuraEnabled public String DueDate {get;set;} 
+	@AuraEnabled public String GlobalTaxCalculation {get;set;} 
+	@AuraEnabled public Double TotalAmt {get;set;} 
+	@AuraEnabled public Double HomeTotalAmt {get;set;} 
+	@AuraEnabled public String PrintStatus {get;set;} 
+	@AuraEnabled public String EmailStatus {get;set;} 
+	@AuraEnabled public BillEmail BillEmail {get;set;} 
+	@AuraEnabled public Double Balance {get;set;} 
+	@AuraEnabled public Double HomeBalance {get;set;} 
 
+    public QBOInvoice() {}
+    
 	public QBOInvoice(JSONParser parser) {
 		while (parser.nextToken() != JSONToken.END_OBJECT) {
 			if (parser.getCurrentToken() == JSONToken.FIELD_NAME) {
@@ -135,7 +139,7 @@ public class QBOInvoice {
 					} else if (text == 'TxnDate') {
 						TxnDate = parser.getText();
 					} else if (text == 'CurrencyRef') {
-						CurrencyRef = new CurrencyRef(parser);
+						CurrencyRef = new Reference(parser);
 					} else if (text == 'ExchangeRate') {
 						ExchangeRate = parser.getIntegerValue();
 					} else if (text == 'PrivateNote') {
@@ -153,7 +157,7 @@ public class QBOInvoice {
 					} else if (text == 'TxnTaxDetail') {
 						TxnTaxDetail = new TxnTaxDetail(parser);
 					} else if (text == 'CustomerRef') {
-						CustomerRef = new CurrencyRef(parser);
+						CustomerRef = new Reference(parser);
 					} else if (text == 'CustomerMemo') {
 						CustomerMemo = new TaxCodeRef(parser);
 					} else if (text == 'BillAddr') {
@@ -190,25 +194,28 @@ public class QBOInvoice {
 	}
 	
 	public class SalesItemLineDetail {
-		public CurrencyRef ItemRef {get;set;} 
-		public CurrencyRef ClassRef {get;set;} 
-		public Integer UnitPrice {get;set;} 
-		public Integer Qty {get;set;} 
-		public TaxCodeRef TaxCodeRef {get;set;} 
+		@AuraEnabled public Reference ItemRef {get;set;} 
+		@AuraEnabled public Reference ClassRef {get;set;} 
+		@AuraEnabled public Decimal UnitPrice {get;set;} 
+		@AuraEnabled public Decimal Qty {get;set;} 
+		@AuraEnabled public TaxCodeRef TaxCodeRef {get;set;} 
+        @AuraEnabled public String ServiceDate {get;set;}
 
+        public SalesItemLineDetail() {}
+        
 		public SalesItemLineDetail(JSONParser parser) {
 			while (parser.nextToken() != JSONToken.END_OBJECT) {
 				if (parser.getCurrentToken() == JSONToken.FIELD_NAME) {
 					String text = parser.getText();
 					if (parser.nextToken() != JSONToken.VALUE_NULL) {
 						if (text == 'ItemRef') {
-							ItemRef = new CurrencyRef(parser);
+							ItemRef = new Reference(parser);
 						} else if (text == 'ClassRef') {
-							ClassRef = new CurrencyRef(parser);
+							ClassRef = new Reference(parser);
 						} else if (text == 'UnitPrice') {
-							UnitPrice = parser.getIntegerValue();
+							UnitPrice = parser.getDecimalValue();
 						} else if (text == 'Qty') {
-							Qty = parser.getIntegerValue();
+							Qty = parser.getDecimalValue();
 						} else if (text == 'TaxCodeRef') {
 							TaxCodeRef = new TaxCodeRef(parser);
 						} else {
@@ -222,9 +229,9 @@ public class QBOInvoice {
 	}
 	
 	public class TaxLine {
-		public Double Amount {get;set;} 
-		public String DetailType {get;set;} 
-		public TaxLineDetail TaxLineDetail {get;set;} 
+		@AuraEnabled public Double Amount {get;set;} 
+		@AuraEnabled public String DetailType {get;set;} 
+		@AuraEnabled public TaxLineDetail TaxLineDetail {get;set;} 
 
 		public TaxLine(JSONParser parser) {
 			while (parser.nextToken() != JSONToken.END_OBJECT) {
@@ -248,16 +255,18 @@ public class QBOInvoice {
 	}
 	
 	public class Line {
-		public String Id {get;set;} 
-		public Integer LineNum {get;set;} 
-		public String Description {get;set;} 
-		public Double Amount {get;set;} 
-		public String DetailType {get;set;} 
-		public SalesItemLineDetail SalesItemLineDetail {get;set;} 
-		public SubTotalLineDetail SubTotalLineDetail {get;set;} 
-		public DiscountLineDetail DiscountLineDetail {get;set;} 
+		@AuraEnabled public String Id {get;set;} 
+		@AuraEnabled public Integer LineNum {get;set;} 
+		@AuraEnabled public String Description {get;set;} 
+		@AuraEnabled public Double Amount {get;set;} 
+		@AuraEnabled public String DetailType {get;set;} 
+		@AuraEnabled public SalesItemLineDetail SalesItemLineDetail {get;set;} 
+		@AuraEnabled public SubTotalLineDetail SubTotalLineDetail {get;set;} 
+		@AuraEnabled public DiscountLineDetail DiscountLineDetail {get;set;} 
 
-		public Line(JSONParser parser) {
+        public Line() {}
+        
+        public Line(JSONParser parser) {
 			while (parser.nextToken() != JSONToken.END_OBJECT) {
 				if (parser.getCurrentToken() == JSONToken.FIELD_NAME) {
 					String text = parser.getText();
@@ -289,9 +298,9 @@ public class QBOInvoice {
 	}
 	
 	public class DiscountLineDetail {
-		public Boolean PercentBased {get;set;} 
-		public Integer DiscountPercent {get;set;} 
-		public CurrencyRef DiscountAccountRef {get;set;} 
+		@AuraEnabled public Boolean PercentBased {get;set;} 
+		@AuraEnabled public Integer DiscountPercent {get;set;} 
+		@AuraEnabled public Reference DiscountAccountRef {get;set;} 
 
 		public DiscountLineDetail(JSONParser parser) {
 			while (parser.nextToken() != JSONToken.END_OBJECT) {
@@ -303,7 +312,7 @@ public class QBOInvoice {
 						} else if (text == 'DiscountPercent') {
 							DiscountPercent = parser.getIntegerValue();
 						} else if (text == 'DiscountAccountRef') {
-							DiscountAccountRef = new CurrencyRef(parser);
+							DiscountAccountRef = new Reference(parser);
 						} else {
 							System.debug(LoggingLevel.WARN, 'DiscountLineDetail consuming unrecognized property: '+text);
 							consumeObject(parser);
@@ -315,8 +324,9 @@ public class QBOInvoice {
 	}
 	
 	public class TaxCodeRef {
-		public String value {get;set;} 
+		@AuraEnabled public String value {get;set;} 
 
+        public TaxCodeRef() {}
 		public TaxCodeRef(JSONParser parser) {
 			while (parser.nextToken() != JSONToken.END_OBJECT) {
 				if (parser.getCurrentToken() == JSONToken.FIELD_NAME) {
@@ -352,8 +362,8 @@ public class QBOInvoice {
 	}
 	
 	public class MetaData {
-		public String CreateTime {get;set;} 
-		public String LastUpdatedTime {get;set;} 
+		@AuraEnabled public String CreateTime {get;set;} 
+		@AuraEnabled public String LastUpdatedTime {get;set;} 
 
 		public MetaData(JSONParser parser) {
 			while (parser.nextToken() != JSONToken.END_OBJECT) {
@@ -375,10 +385,10 @@ public class QBOInvoice {
 	}
 	
 	public class TaxLineDetail {
-		public TaxCodeRef TaxRateRef {get;set;} 
-		public Boolean PercentBased {get;set;} 
-		public Integer TaxPercent {get;set;} 
-		public Double NetAmountTaxable {get;set;} 
+		@AuraEnabled public TaxCodeRef TaxRateRef {get;set;} 
+		@AuraEnabled public Boolean PercentBased {get;set;} 
+		@AuraEnabled public Integer TaxPercent {get;set;} 
+		@AuraEnabled public Double NetAmountTaxable {get;set;} 
 
 		public TaxLineDetail(JSONParser parser) {
 			while (parser.nextToken() != JSONToken.END_OBJECT) {
@@ -404,10 +414,10 @@ public class QBOInvoice {
 	}
 	
 	public class CustomField {
-		public String DefinitionId {get;set;} 
-		public String Name {get;set;} 
-		public String Type_Z {get;set;} // in json: Type
-		public String StringValue {get;set;} 
+		@AuraEnabled public String DefinitionId {get;set;} 
+		@AuraEnabled public String Name {get;set;} 
+		@AuraEnabled public String Type_Z {get;set;} // in json: Type
+		@AuraEnabled public String StringValue {get;set;} 
 
 		public CustomField(JSONParser parser) {
 			while (parser.nextToken() != JSONToken.END_OBJECT) {
@@ -433,7 +443,7 @@ public class QBOInvoice {
 	}
 	
 	public class BillEmail {
-		public String Address {get;set;} 
+		@AuraEnabled public String Address {get;set;} 
 
 		public BillEmail(JSONParser parser) {
 			while (parser.nextToken() != JSONToken.END_OBJECT) {
@@ -453,8 +463,8 @@ public class QBOInvoice {
 	}
 	
 	public class LinkedTxn {
-		public String TxnId {get;set;} 
-		public String TxnType {get;set;} 
+		@AuraEnabled public String TxnId {get;set;} 
+		@AuraEnabled public String TxnType {get;set;} 
 
 		public LinkedTxn(JSONParser parser) {
 			while (parser.nextToken() != JSONToken.END_OBJECT) {
@@ -476,8 +486,8 @@ public class QBOInvoice {
 	}
 	
 	public class TxnTaxDetail {
-		public Double TotalTax {get;set;} 
-		public List<TaxLine> TaxLine {get;set;} 
+		@AuraEnabled public Double TotalTax {get;set;} 
+		@AuraEnabled public List<TaxLine> TaxLine {get;set;} 
 
 		public TxnTaxDetail(JSONParser parser) {
 			while (parser.nextToken() != JSONToken.END_OBJECT) {
