@@ -10,7 +10,7 @@ trigger AccountTrigger on Account (before insert, before update, before delete, 
         RecordType SupplierType =  [SELECT DeveloperName,Id,Name,SobjectType FROM RecordType
                             WHERE SobjectType = 'Account' and DeveloperName = 'Supplier' LIMIT 1];
         
- 
+  
        
         List<Account> accountToUpsertToQBO = new List<Account>();//trader
         List<Id> accountToUpsertToQBOIds = new List<Id>();//trader

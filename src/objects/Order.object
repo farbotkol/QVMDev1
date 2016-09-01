@@ -245,6 +245,7 @@
         <fullName>AllOrders</fullName>
         <columns>ORDERS.CREATED_DATE</columns>
         <columns>ORDERS.ORDER_NUMBER</columns>
+        <columns>SALES.ACCOUNT.NAME</columns>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ORDERS.EFFECTIVE_DATE</columns>
         <columns>ORDERS.END_DATE</columns>
@@ -256,6 +257,49 @@
         <filterScope>Everything</filterScope>
         <label>All Orders</label>
     </listViews>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Accounts_Payable</fullName>
+        <active>true</active>
+        <description>Accounts Payable - POs</description>
+        <label>Accounts Payable</label>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Activated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Error</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Accounts_Receivable</fullName>
+        <active>true</active>
+        <description>Accounts Receivable - Invoices</description>
+        <label>Accounts Receivable</label>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Activated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Error</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
     <searchLayouts>
         <customTabListAdditionalFields>ORDERS.ORDER_NUMBER</customTabListAdditionalFields>
         <customTabListAdditionalFields>SALES.ACCOUNT.NAME</customTabListAdditionalFields>
@@ -268,6 +312,42 @@
         <searchResultsAdditionalFields>ORDERS.ORDER_NUMBER</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Create_Invoice</fullName>
+        <availability>online</availability>
+        <description>Create invoice in QBO</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Create Invoice</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&apos;/soap/ajax/31.0/connection.js&apos;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/31.0/apex.js&quot;)} 
+
+
+
+sforce.apex.execute(&quot;InvoiceBuilder&quot;,&quot;GenerateInvoiceFromOrder&quot;,{orderId:&quot;{!Order.Id}&quot;}); 
+
+
+
+
+window.location.reload();</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_Purchase_Order</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Create Purchase Order</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&apos;/soap/ajax/31.0/connection.js&apos;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/31.0/apex.js&quot;)} 
+
+sforce.apex.execute(&quot;POBuilder&quot;,&quot;GeneratePurchaseOrder&quot;,{orderId:&quot;{!Order.Id}&quot;}); 
+
+window.location.reload();</url>
+    </webLinks>
     <webLinks>
         <fullName>Open_Invoice_PDF</fullName>
         <availability>online</availability>
@@ -288,6 +368,25 @@
         <url>/apex/ViewPDF?objectType=invoice&amp;invoiceId={!Order.QuickBooksId__c}</url>
     </webLinks>
     <webLinks>
+        <fullName>Open_PO_in_QuickBooks</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Open PO in QuickBooks</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://sandbox.qbo.intuit.com/app/purchaseorder?txnId={!Order.QuickBooksId__c}</url>
+    </webLinks>
+    <webLinks>
         <fullName>Open_in_QuickBooks</fullName>
         <availability>online</availability>
         <displayType>link</displayType>
@@ -298,7 +397,7 @@
         <height>600</height>
         <isResizable>true</isResizable>
         <linkType>url</linkType>
-        <masterLabel>Open in QuickBooks</masterLabel>
+        <masterLabel>Open Inovice in QuickBooks</masterLabel>
         <openType>newWindow</openType>
         <position>none</position>
         <protected>false</protected>

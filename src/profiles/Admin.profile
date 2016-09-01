@@ -269,6 +269,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>LeaveCreditNoteBuilder</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>LeaveCreditNoteBuilderBatch</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>LeaveTriggerHelper</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -357,11 +365,19 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>POBuilder</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>PriceBookUtils</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>QBOCRUDHelper</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>QBOCreditMemoResponse</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -410,6 +426,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>QBOProductList_Test</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>QBOPurchaseOrderResponse</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>QBOPurchaseOrderResponse_Test</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -2215,6 +2239,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>OrderItem.Batch_Jobs__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>OrderItem.Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2249,6 +2278,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>OrderItem.QuickBooksId__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>OrderItem.QuoteLineItemId</field>
         <readable>false</readable>
@@ -2261,6 +2295,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>OrderItem.Stall__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>OrderItem.Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2764,6 +2803,18 @@
         <recordType>Batch_Jobs__c.Invoices_Generated</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Batch_Jobs__c-Batch Job - Leave Credit Notes Generated</layout>
+        <recordType>Batch_Jobs__c.Leave_Credit_Notes_Generated</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Batch_Jobs__c-Batch Job - New Leave  Credit Notes</layout>
+        <recordType>Batch_Jobs__c.Error_Processing_Leave_Credit_Notes</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Batch_Jobs__c-Batch Job - New Leave  Credit Notes</layout>
+        <recordType>Batch_Jobs__c.New_Leave_Credit_Notes</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Batch_Jobs__c-Batch Job - Orders Generated</layout>
         <recordType>Batch_Jobs__c.Error_Processing_Invoices</recordType>
     </layoutAssignments>
@@ -2776,6 +2827,10 @@
         <recordType>Batch_Jobs__c.Processing_Invoices</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Batch_Jobs__c-Batch Job - Processing Leave Credit Notes</layout>
+        <recordType>Batch_Jobs__c.Processing_Leave_Credit_Notes</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Batch_Jobs__c-Batch Job - Processing Orders</layout>
         <recordType>Batch_Jobs__c.Processing_Orders</recordType>
     </layoutAssignments>
@@ -2784,7 +2839,7 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Batch_Jobs__c-Batch Jobs Layout</layout>
-        <recordType>Batch_Jobs__c.New</recordType>
+        <recordType>Batch_Jobs__c.New_OrdersInvoices</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Campaign-Campaign Layout</layout>
@@ -2912,10 +2967,18 @@
         <layout>OpportunityLineItem-Opportunity Product Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Order-Order Layout</layout>
+        <layout>Order-Order Layout - AP</layout>
+        <recordType>Order.Accounts_Payable</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>OrderItem-Order Product Layout</layout>
+        <layout>Order-Order Layout - AR</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Order-Order Layout - AR</layout>
+        <recordType>Order.Accounts_Receivable</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>OrderItem-Order Product Layout - AR</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Pricebook2-Price Book Layout</layout>
@@ -3408,32 +3471,53 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Batch_Jobs__c.Error_Processing_Invoices</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Batch_Jobs__c.Error_Processing_Leave_Credit_Notes</recordType>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Batch_Jobs__c.Invoices_Generated</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Batch_Jobs__c.Leave_Credit_Notes_Generated</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Batch_Jobs__c.New_Leave_Credit_Notes</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
-        <recordType>Batch_Jobs__c.New</recordType>
+        <personAccountDefault>true</personAccountDefault>
+        <recordType>Batch_Jobs__c.New_OrdersInvoices</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Batch_Jobs__c.Orders_Generated</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Batch_Jobs__c.Processing_Invoices</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Batch_Jobs__c.Processing_Leave_Credit_Notes</recordType>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Batch_Jobs__c.Processing_Orders</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
@@ -3494,6 +3578,16 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Opportunity.SL</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Order.Accounts_Payable</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Order.Accounts_Receivable</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>

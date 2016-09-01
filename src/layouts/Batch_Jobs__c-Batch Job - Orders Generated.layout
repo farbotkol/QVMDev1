@@ -87,6 +87,17 @@
         <fields>ORDERS.TOTAL_AMOUNT</fields>
         <relatedList>Order.Batch_Job__c</relatedList>
     </relatedLists>
+    <relatedLists>
+        <fields>Product2</fields>
+        <fields>Quantity</fields>
+        <fields>UnitPrice</fields>
+        <fields>ListPrice</fields>
+        <fields>TotalPrice</fields>
+        <fields>QuickBooksId__c</fields>
+        <fields>Leave__c</fields>
+        <fields>Status__c</fields>
+        <relatedList>OrderItem.Batch_Jobs__c</relatedList>
+    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>

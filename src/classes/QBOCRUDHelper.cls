@@ -22,6 +22,7 @@ public with sharing class QBOCRUDHelper {
         query = query.replace('=', '%3D');
         query = query.replace(',', '%2C'); 
         query = query.replace('!', '%21'); 
+        query = query.replace('<', '%3C');
 
          system.debug('query: ' + query);
         Http h = new Http();

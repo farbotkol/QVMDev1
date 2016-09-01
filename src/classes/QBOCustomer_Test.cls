@@ -5,101 +5,76 @@
 @IsTest
 public class QBOCustomer_Test {
 	
-	// This test method should give 100% coverage
-	static testMethod void testParse() {
+	static testMethod void testParse1() {
 		String json = '{'+
 		'    \"Taxable\": false,'+
 		'    \"BillAddr\": {'+
-		'        \"Id\": \"3\",'+
-		'        \"Line1\": \"12 Ocean Dr.\",'+
-		'        \"City\": \"Half Moon Bay\",'+
-		'        \"CountrySubDivisionCode\": \"CA\",'+
-		'        \"PostalCode\": \"94213\",'+
-		'        \"Lat\": \"37.4307072\",'+
-		'        \"Long\": \"-122.4295234\"'+
+		'      \"Id\": \"606\",'+
+		'      \"Line1\": \"31 Queens St\",'+
+		'      \"City\": \"Melbourne\",'+
+		'      \"Country\": \"sdg\",'+
+		'      \"CountrySubDivisionCode\": \"Australia Select One\",'+
+		'      \"PostalCode\": \"3000\"'+
+		'    },'+
+		'    \"ShipAddr\": {'+
+		'      \"Id\": \"607\",'+
+		'      \"Line1\": \"redhdf\",'+
+		'      \"City\": \"fshfh\",'+
+		'      \"Country\": \"sfh\",'+
+		'      \"CountrySubDivisionCode\": \"sfh\",'+
+		'      \"PostalCode\": \"dfsg\"'+
 		'    },'+
 		'    \"Job\": false,'+
 		'    \"BillWithParent\": false,'+
-		'    \"Balance\": 85.0,'+
-		'    \"BalanceWithJobs\": 85.0,'+
-		'    \"PreferredDeliveryMethod\": \"Print\",'+
+		'    \"PaymentMethodRef\": {'+
+		'      \"value\": \"4\"'+
+		'    },'+
+		'    \"Balance\": 0,'+
+		'    \"BalanceWithJobs\": 0,'+
+		'    \"CurrencyRef\": {'+
+		'      \"value\": \"AUD\",'+
+		'      \"name\": \"Australian Dollar\"'+
+		'    },'+
+		'    \"PreferredDeliveryMethod\": \"None\",'+
+		'    \"PrimaryTaxIdentifier\": \"XXXX37357\",'+
 		'    \"domain\": \"QBO\",'+
 		'    \"sparse\": false,'+
-		'    \"Id\": \"2\",'+
-		'    \"SyncToken\": \"3\",'+
+		'    \"Id\": \"216\",'+
+		'    \"SyncToken\": \"1\",'+
 		'    \"MetaData\": {'+
-		'        \"CreateTime\": \"2014-09-11T16:49:28-07:00\",'+
-		'        \"LastUpdatedTime\": \"2015-07-23T11:07:55-07:00\"'+
+		'      \"CreateTime\": \"2016-08-31T20:32:23-07:00\",'+
+		'      \"LastUpdatedTime\": \"2016-08-31T20:35:30-07:00\"'+
 		'    },'+
-		'    \"GivenName\": \"Bill\",'+
-		'    \"MiddleName\": \"Mac\",'+
-		'    \"FamilyName\": \"Lucchini\",'+
-		'    \"FullyQualifiedName\": \"Bill\'s Windsurf Shop\",'+
-		'    \"CompanyName\": \"Bill\'s Windsurf Shop\",'+
-		'    \"DisplayName\": \"Bill\'s Windsurf Shop\",'+
-		'    \"PrintOnCheckName\": \"Bill\'s Wind Surf Shop\",'+
+        '    \"Title\": \"Mr\",'+
+		'    \"GivenName\": \"mm\",'+
+		'    \"MiddleName\": \"mm\",'+
+		'    \"FamilyName\": \"mm\",'+
+		'    \"Suffix\": \"mm\",'+
+		'    \"FullyQualifiedName\": \"resmi 123\",'+
+		'    \"CompanyName\": \"246543643\",'+
+		'    \"DisplayName\": \"resmi 123\",'+
+		'    \"PrintOnCheckName\": \"246543643\",'+
 		'    \"Active\": true,'+
 		'    \"PrimaryPhone\": {'+
-		'        \"FreeFormNumber\": \"(415) 444-6538\"'+
+		'      \"FreeFormNumber\": \"2436426\"'+
+		'    },'+
+		'    \"AlternatePhone\": {'+
+		'      \"FreeFormNumber\": \"34q64\"'+
+		'    },'+
+		'    \"Mobile\": {'+
+		'      \"FreeFormNumber\": \"343\"'+
+		'    },'+
+		'    \"Fax\": {'+
+		'      \"FreeFormNumber\": \"345\"'+
 		'    },'+
 		'    \"PrimaryEmailAddr\": {'+
-		'        \"Address\": \"Surf@Intuit.com\"'+
-		'    }'+
-		'}';
-		QBOCustomer r = QBOCustomer.parse(json);
-		System.assert(r != null);
-
-		json = '{\"TestAMissingObject\": { \"TestAMissingArray\": [ { \"TestAMissingProperty\": \"Some Value\" } ] } }';
-		QBOCustomer.BillAddr objBillAddr = new QBOCustomer.BillAddr(System.JSON.createParser(json));
-		System.assert(objBillAddr != null);
-		System.assert(objBillAddr.Id == null);
-		System.assert(objBillAddr.Line1 == null);
-		System.assert(objBillAddr.City == null);
-		System.assert(objBillAddr.CountrySubDivisionCode == null);
-		System.assert(objBillAddr.PostalCode == null);
-		System.assert(objBillAddr.Lat == null);
-		System.assert(objBillAddr.Long_Z == null);
-
-		json = '{\"TestAMissingObject\": { \"TestAMissingArray\": [ { \"TestAMissingProperty\": \"Some Value\" } ] } }';
-		QBOCustomer objRoot = new QBOCustomer(System.JSON.createParser(json));
-		System.assert(objRoot != null);
-		System.assert(objRoot.Taxable == null);
-		System.assert(objRoot.BillAddr == null);
-		System.assert(objRoot.Job == null);
-		System.assert(objRoot.BillWithParent == null);
-		System.assert(objRoot.Balance == null);
-		System.assert(objRoot.BalanceWithJobs == null);
-		System.assert(objRoot.PreferredDeliveryMethod == null);
-		System.assert(objRoot.domain == null);
-		System.assert(objRoot.sparse == null);
-		System.assert(objRoot.Id == null);
-		System.assert(objRoot.SyncToken == null);
-		System.assert(objRoot.MetaData == null);
-		System.assert(objRoot.GivenName == null);
-		System.assert(objRoot.MiddleName == null);
-		System.assert(objRoot.FamilyName == null);
-		System.assert(objRoot.FullyQualifiedName == null);
-		System.assert(objRoot.CompanyName == null);
-		System.assert(objRoot.DisplayName == null);
-		System.assert(objRoot.PrintOnCheckName == null);
-		System.assert(objRoot.Active == null);
-		System.assert(objRoot.PrimaryPhone == null);
-		System.assert(objRoot.PrimaryEmailAddr == null);
-
-		json = '{\"TestAMissingObject\": { \"TestAMissingArray\": [ { \"TestAMissingProperty\": \"Some Value\" } ] } }';
-		QBOCustomer.PrimaryPhone objPrimaryPhone = new QBOCustomer.PrimaryPhone(System.JSON.createParser(json));
-		System.assert(objPrimaryPhone != null);
-		System.assert(objPrimaryPhone.FreeFormNumber == null);
-
-		json = '{\"TestAMissingObject\": { \"TestAMissingArray\": [ { \"TestAMissingProperty\": \"Some Value\" } ] } }';
-		QBOCustomer.MetaData objMetaData = new QBOCustomer.MetaData(System.JSON.createParser(json));
-		System.assert(objMetaData != null);
-		System.assert(objMetaData.CreateTime == null);
-		System.assert(objMetaData.LastUpdatedTime == null);
-
-		json = '{\"TestAMissingObject\": { \"TestAMissingArray\": [ { \"TestAMissingProperty\": \"Some Value\" } ] } }';
-		QBOCustomer.PrimaryEmailAddr objPrimaryEmailAddr = new QBOCustomer.PrimaryEmailAddr(System.JSON.createParser(json));
-		System.assert(objPrimaryEmailAddr != null);
-		System.assert(objPrimaryEmailAddr.Address == null);
-	}
+		'      \"Address\": \"resmi@m.com\"'+
+		'    },'+
+		'    \"WebAddr\": {'+
+		'      \"URI\": \"http://4326\"'+
+        '    }'+
+		'  }';
+		QBOCustomer obj = QBOCustomer.parse(json);
+		System.assert(obj != null);
+    }
 }

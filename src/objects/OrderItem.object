@@ -38,6 +38,19 @@
         <fullName>AvailableQuantity</fullName>
     </fields>
     <fields>
+        <fullName>Batch_Jobs__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The batch job that processd the credit note for the flagged leave</description>
+        <externalId>false</externalId>
+        <label>Batch Jobs</label>
+        <referenceTo>Batch_Jobs__c</referenceTo>
+        <relationshipLabel>Order Products</relationshipLabel>
+        <relationshipName>Leave_Cretits</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Date__c</fullName>
         <defaultValue>TODAY()</defaultValue>
         <description>The date the order items was for</description>
@@ -99,6 +112,16 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>QuickBooksId__c</fullName>
+        <externalId>true</externalId>
+        <label>QuickBooksId</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>QuoteLineItemId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
@@ -118,6 +141,29 @@
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Activated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Error</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>TotalPrice</fullName>

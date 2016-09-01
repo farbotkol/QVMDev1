@@ -7,6 +7,15 @@ public class Supplier {
 		public String CountrySubDivisionCode;
 		public String PostalCode;
 	}
+    
+    public class ShipAddr {
+		public String Id;
+		public String Line1;
+		public String City;
+		public String Country;
+		public String CountrySubDivisionCode;
+		public String PostalCode;
+	}
 
 	public class CurrencyRef {
 		public String value;
@@ -14,6 +23,7 @@ public class Supplier {
 	}
 
 	public BillAddr BillAddr;
+    public ShipAddr ShipAddr;
 	public String TaxIdentifier;
 	public TermRef TermRef;
 	public Double Balance;

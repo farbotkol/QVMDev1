@@ -15,9 +15,15 @@ public class QBOProductList {
 		public String value;
 		public String name;
 	}
+    
+    public class PurchaseTaxCodeRef {
+		public String value;
+		public String name;
+	}
 
 	public class Item {
 		public SalesTaxCodeRef SalesTaxCodeRef;
+        public PurchaseTaxCodeRef PurchaseTaxCodeRef;
 		public Boolean sparse;
 		public String Id;
         public String Sku;

@@ -36,7 +36,7 @@ global class InvoiceBuilder {
         
         
         
-        return GenerateInvoiceFromOrders(orders, '');
+        return GenerateInvoiceFromOrders(orders, NULL);
     }
     
     
@@ -74,11 +74,12 @@ global class InvoiceBuilder {
                    
                     QBOInvoice.Line line = new QBOInvoice.Line();
                     line.Amount = oi.Total__c;
+                    line.Description = '';
                     if (oi.Stall__r != null)
                     {
                         line.Description = oi.Stall__r.Name + ' ';
                     } 
-                    if (oi.Stall__r != null)
+                    if (oi.Description != null)
                     {
                         line.Description += oi.Description;  
                     }
@@ -170,18 +171,21 @@ global class InvoiceBuilder {
     
     public static void SetOrderRecordType(String DeveloperName, Id batchJobId)
     {
-        
-         Batch_Jobs__c job = [SELECT Batch_Type__c,From_Date__c,Id,Name,Process_Range__c
-                             ,RecordType.Name,To_Date__c,Week_Month_Of__c 
-                             FROM Batch_Jobs__c 
-                             WHERE Id = :batchJobId LIMIT 1];
-        
-        RecordType nextStepType = [SELECT DeveloperName,Id,Name,SobjectType FROM RecordType
-                                   WHERE SobjectType = 'Batch_Jobs__c' and DeveloperName = :DeveloperName LIMIT 1] ;
-        
-        job.RecordTypeId = nextStepType.Id;
-        
-        update job;
+         if (batchJobId != null)
+         {
+             Batch_Jobs__c job = [SELECT Batch_Type__c,From_Date__c,Id,Name,Process_Range__c
+                                 ,RecordType.Name,To_Date__c,Week_Month_Of__c 
+                                 FROM Batch_Jobs__c 
+                                 WHERE Id = :batchJobId LIMIT 1];
+            
+            RecordType nextStepType = [SELECT DeveloperName,Id,Name,SobjectType FROM RecordType
+                                       WHERE SobjectType = 'Batch_Jobs__c' and DeveloperName = :DeveloperName LIMIT 1] ;
+            
+            job.RecordTypeId = nextStepType.Id;
+            
+            update job;
+         }
+             
     }
     
     

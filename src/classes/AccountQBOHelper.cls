@@ -13,7 +13,7 @@ public class AccountQBOHelper {
                                       ,Id,Industry,IsCustomerPortal,IsDeleted,Jigsaw,JigsawCompanyId,LastActivityDate
                                       ,LastModifiedById,LastModifiedDate,LastReferencedDate,LastViewedDate
                                       ,Majik_AccountNo__c,MasterRecordId,Mobile_Phone__c,Name,NumberOfEmployees
-                                      ,OwnerId,ParentId,Phone,PhotoUrl,Primary_Contact__c,QuickBooks_Id__c
+                                      ,OwnerId,ParentId,Phone,PhotoUrl,Primary_Contact__c,Primary_Contact__r.Email,QuickBooks_Id__c
                                       ,RecordTypeId,ShippingAddress,ShippingCity,ShippingCountry
                                       ,ShippingGeocodeAccuracy,ShippingLatitude,ShippingLongitude,ShippingPostalCode,ShippingState
                                       ,ShippingStreet,SicDesc,SystemModstamp,Trader_Status__c,Trading_Name__c,Type,Website 
@@ -48,22 +48,56 @@ public class AccountQBOHelper {
 			{
 				customer.CompanyName =  so.Majik_AccountNo__c ;
 			}
+            else// new change
+            {
+               customer.CompanyName =  ''; 
+            }
 
 			
 			customer.PrimaryTaxIdentifier = so.ABN__c;
 			customer.DisplayName = so.Name ;
-            QBOCustomer.PrimaryPhone phone = new QBOCustomer.PrimaryPhone();
+            QBOCustomer.Phone phone = new QBOCustomer.Phone();
             phone.FreeFormNumber = so.Phone;
             customer.PrimaryPhone = phone  ; 
             
+            // mobile
+            QBOCustomer.Phone mobile = new QBOCustomer.Phone();
+            mobile.FreeFormNumber = so.Mobile_Phone__c;
+            customer.Mobile = mobile  ; 
             
-            QBOCustomer.BillAddr billAddr = new QBOCustomer.BillAddr();
+            //Primary EmailAddress
+            QBOCustomer.PrimaryEmailAddr pEmail = new QBOCustomer.PrimaryEmailAddr();
+            pEmail.Address = so.Primary_Contact__r.Email;
+            customer.PrimaryEmailAddr = pEmail  ; 
+            
+            //WebAddress
+            QBOCustomer.WebAddr webAddress = new QBOCustomer.WebAddr();
+            webAddress.URI = so.Website;
+            customer.WebAddr = webAddress  ; 
+        
+            
+            // Billing Address
+            QBOCustomer.Address billAddr = new QBOCustomer.Address();
             billAddr.Line1 = so.BillingStreet;
             billAddr.City = so.BillingCity;
-            billAddr.CountrySubDivisionCode = so.BillingCountry  + ' ' + so.BillingState;
-            billAddr.PostalCode = so.BillingPostalCode ;
+            billAddr.CountrySubDivisionCode =  so.BillingState;
+            billAddr.country = so.BillingCountry;
+            billAddr.PostalCode = so.BillingPostalCode ;            
+            customer.BillAddr = billAddr  ;
             
-            customer.BillAddr = billAddr  ; 
+            //Shipping Address
+            QBOCustomer.Address ShipAddr = new QBOCustomer.Address();
+            ShipAddr.Line1 = so.ShippingStreet;
+            ShipAddr.City = so.ShippingCity;
+            ShipAddr.CountrySubDivisionCode =  so.ShippingState;
+            ShipAddr.PostalCode = so.ShippingPostalCode  ;            
+            ShipAddr.country = so.ShippingCountry ;
+            customer.ShipAddr = ShipAddr;
+            
+            
+            
+         
+            
 			QBOCustomerResponse customerResponse;
            
             string paymentType =  (String)paymentTypeMap.get(so.Def_Payment_Type__c );
@@ -139,7 +173,7 @@ public class AccountQBOHelper {
                                       ,Id,Industry,IsCustomerPortal,IsDeleted,Jigsaw,JigsawCompanyId,LastActivityDate
                                       ,LastModifiedById,LastModifiedDate,LastReferencedDate,LastViewedDate
                                       ,Majik_AccountNo__c,MasterRecordId,Mobile_Phone__c,Name,NumberOfEmployees
-                                      ,OwnerId,ParentId,Phone,PhotoUrl,Primary_Contact__c,QuickBooks_Id__c
+                                      ,OwnerId,ParentId,Phone,PhotoUrl,Primary_Contact__c,Primary_Contact__r.Email,QuickBooks_Id__c
                                       ,RecordTypeId,ShippingAddress,ShippingCity,ShippingCountry
                                       ,ShippingGeocodeAccuracy,ShippingLatitude,ShippingLongitude,ShippingPostalCode,ShippingState
                                       ,ShippingStreet,SicDesc,SystemModstamp,Trader_Status__c,Trading_Name__c,Type,Website 
@@ -173,19 +207,47 @@ public class AccountQBOHelper {
 			{
 				supplier.CompanyName =  so.Majik_AccountNo__c ;
 			}
-
+            else// new change
+            {
+               supplier.CompanyName =  ''; 
+            }
 			
 			supplier.TaxIdentifier = so.ABN__c;
 			supplier.DisplayName = so.Name ;
             Supplier.PrimaryPhone phone = new Supplier.PrimaryPhone();
             phone.FreeFormNumber = so.Phone;
-            supplier.PrimaryPhone = phone  ; 
+            supplier.PrimaryPhone = phone  ;
             
+             // mobile
+            Supplier.PrimaryPhone mobile = new Supplier.PrimaryPhone();
+            mobile.FreeFormNumber = so.Mobile_Phone__c;
+            Supplier.Mobile = mobile;
             
+            //Primary EmailAddress
+            Supplier.PrimaryEmailAddr pEmail = new Supplier.PrimaryEmailAddr();
+            pEmail.Address = so.Primary_Contact__r.Email;
+            Supplier.PrimaryEmailAddr = pEmail  ;
+            
+            //WebAddress
+            Supplier.WebAddr webAddress = new Supplier.WebAddr();
+            webAddress.URI = so.Website;
+            Supplier.WebAddr = webAddress  ;
+            
+             //Shipping Address
+            Supplier.ShipAddr ShipAddr = new Supplier.ShipAddr();
+            ShipAddr.Line1 = so.ShippingStreet;
+            ShipAddr.City = so.ShippingCity;
+            ShipAddr.CountrySubDivisionCode = so.ShippingState;
+            ShipAddr.country = so.ShippingCountry;
+            ShipAddr.PostalCode = so.ShippingPostalCode  ;            
+            Supplier.ShipAddr = ShipAddr;
+            
+            //billing
             Supplier.BillAddr billAddr = new Supplier.BillAddr();
             billAddr.Line1 = so.BillingStreet;
             billAddr.City = so.BillingCity;
-            billAddr.CountrySubDivisionCode = so.BillingCountry  + ' ' + so.BillingState;
+            billAddr.CountrySubDivisionCode =    so.BillingState;
+            billAddr.country = so.BillingCountry;
             billAddr.PostalCode = so.BillingPostalCode ;
             
             supplier.BillAddr = billAddr  ; 

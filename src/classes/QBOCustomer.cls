@@ -6,215 +6,78 @@
 // was auto selected for you.
 
 public class QBOCustomer {
-	public static void consumeObject(JSONParser parser) {
-		Integer depth = 0;
-		do {
-			JSONToken curr = parser.getCurrentToken();
-			if (curr == JSONToken.START_OBJECT || 
-				curr == JSONToken.START_ARRAY) {
-				depth++;
-			} else if (curr == JSONToken.END_OBJECT ||
-				curr == JSONToken.END_ARRAY) {
-				depth--;
-			}
-		} while (depth > 0 && parser.nextToken() != null);
+	
+	public class Address {
+		public String Id;
+		public String Line1;
+		public String City;
+		public String Country;
+		public String CountrySubDivisionCode;
+		public String PostalCode;
 	}
 
-	public class BillAddr {
-		public String Id {get;set;} 
-		public String Line1 {get;set;} 
-		public String City {get;set;} 
-		public String CountrySubDivisionCode {get;set;} 
-		public String PostalCode {get;set;} 
-		public String Lat {get;set;} 
-		public String Long_Z {get;set;} // in json: Long
-		
-        public BillAddr() {}
-		public BillAddr(JSONParser parser) {
-			while (parser.nextToken() != JSONToken.END_OBJECT) {
-				if (parser.getCurrentToken() == JSONToken.FIELD_NAME) {
-					String text = parser.getText();
-					if (parser.nextToken() != JSONToken.VALUE_NULL) {
-						if (text == 'Id') {
-							Id = parser.getText();
-						} else if (text == 'Line1') {
-							Line1 = parser.getText();
-						} else if (text == 'City') {
-							City = parser.getText();
-						} else if (text == 'CountrySubDivisionCode') {
-							CountrySubDivisionCode = parser.getText();
-						} else if (text == 'PostalCode') {
-							PostalCode = parser.getText();
-						} else if (text == 'Lat') {
-							Lat = parser.getText();
-						} else if (text == 'Long') {
-							Long_Z = parser.getText();
-						} else {
-							System.debug(LoggingLevel.WARN, 'BillAddr consuming unrecognized property: '+text);
-							consumeObject(parser);
-						}
-					}
-				}
-			}
-		}
+	public class CurrencyRef {
+		public String value;
+		public String name;
 	}
-	
-	public Boolean Taxable {get;set;} 
-	public BillAddr BillAddr {get;set;} 
-	public Boolean Job {get;set;} 
-	public Boolean BillWithParent {get;set;} 
-	public Double Balance {get;set;} 
-	public Double BalanceWithJobs {get;set;} 
-	public String PreferredDeliveryMethod {get;set;} 
-	public String domain {get;set;} 
-	public Boolean sparse {get;set;} 
-	public String Id {get;set;} 
-	public String SyncToken {get;set;} 
-	public MetaData MetaData {get;set;} 
-	public String GivenName {get;set;} 
-	public String MiddleName {get;set;} 
-	public String FamilyName {get;set;} 
-	public String FullyQualifiedName {get;set;} 
-	public String CompanyName {get;set;} 
-	public String DisplayName {get;set;} 
-	public String PrintOnCheckName {get;set;} 
-	public Boolean Active {get;set;} 
-	public PrimaryPhone PrimaryPhone {get;set;} 
-	PrimaryEmailAddr PrimaryEmailAddr {get;set;} 
-	public String PrimaryTaxIdentifier {get;set;} 
-    public PaymentMethodRef PaymentMethodRef;
-    
-    public class PaymentMethodRef {
+
+	public Boolean Taxable;
+	public Address BillAddr;
+	public Address ShipAddr;
+	public Boolean Job;
+	public Boolean BillWithParent;
+	public PaymentMethodRef PaymentMethodRef;
+	public Double Balance;
+	public Double BalanceWithJobs;
+	public CurrencyRef CurrencyRef;
+	public String PreferredDeliveryMethod;
+	public String PrimaryTaxIdentifier;
+	public String domain;
+	public Boolean sparse;
+	public String Id;
+	public String SyncToken;
+	public MetaData MetaData;
+	public String FullyQualifiedName;
+	public String CompanyName;
+	public String DisplayName;
+	public String PrintOnCheckName;
+	public Boolean Active;
+	public Phone PrimaryPhone;
+	public Phone AlternatePhone;
+	public Phone Mobile;
+	public Phone Fax;
+	public PrimaryEmailAddr PrimaryEmailAddr;
+	public WebAddr WebAddr;
+    public String Title;
+    public String GivenName;
+    public String MiddleName;
+    public String FamilyName;
+    public String Suffix;
+
+
+	public class Phone {
+		public String FreeFormNumber;
+	}
+
+	public class PaymentMethodRef {
 		public String value;
 	}
-    
-	public QBOCustomer(){}
 
-	public QBOCustomer(JSONParser parser) {
-		while (parser.nextToken() != JSONToken.END_OBJECT) {
-			if (parser.getCurrentToken() == JSONToken.FIELD_NAME) {
-				String text = parser.getText();
-				if (parser.nextToken() != JSONToken.VALUE_NULL) {
-					if (text == 'Taxable') {
-						Taxable = parser.getBooleanValue();
-					} else if (text == 'BillAddr') {
-						BillAddr = new BillAddr(parser);
-					} else if (text == 'Job') {
-						Job = parser.getBooleanValue();
-					} else if (text == 'BillWithParent') {
-						BillWithParent = parser.getBooleanValue();
-					} else if (text == 'Balance') {
-						Balance = parser.getDoubleValue();
-					} else if (text == 'BalanceWithJobs') {
-						BalanceWithJobs = parser.getDoubleValue();
-					} else if (text == 'PreferredDeliveryMethod') {
-						PreferredDeliveryMethod = parser.getText();
-					} else if (text == 'domain') {
-						domain = parser.getText();
-					} else if (text == 'sparse') {
-						sparse = parser.getBooleanValue();
-					} else if (text == 'Id') {
-						Id = parser.getText();
-					} else if (text == 'SyncToken') {
-						SyncToken = parser.getText();
-					} else if (text == 'MetaData') {
-						MetaData = new MetaData(parser);
-					} else if (text == 'GivenName') {
-						GivenName = parser.getText();
-					} else if (text == 'MiddleName') {
-						MiddleName = parser.getText();
-					} else if (text == 'FamilyName') {
-						FamilyName = parser.getText();
-					} else if (text == 'FullyQualifiedName') {
-						FullyQualifiedName = parser.getText();
-					} else if (text == 'CompanyName') {
-						CompanyName = parser.getText();
-					} else if (text == 'DisplayName') {
-						DisplayName = parser.getText();
-					} else if (text == 'PrintOnCheckName') {
-						PrintOnCheckName = parser.getText();
-					} else if (text == 'Active') {
-						Active = parser.getBooleanValue();
-					} else if (text == 'PrimaryPhone') {
-						PrimaryPhone = new PrimaryPhone(parser);
-					} else if (text == 'PrimaryEmailAddr') {
-						PrimaryEmailAddr = new PrimaryEmailAddr(parser);
-					}else if (text == 'PrimaryTaxIdentifier') {
-						PrimaryTaxIdentifier = parser.getText();
-					} else {
-						System.debug(LoggingLevel.WARN, 'Root consuming unrecognized property: '+text);
-						consumeObject(parser);
-					}
-				}
-			}
-		}
-	}
-	
-	public class PrimaryPhone {
-		public String FreeFormNumber {get;set;} 
-	    public PrimaryPhone(){}
-		public PrimaryPhone(JSONParser parser) {
-			while (parser.nextToken() != JSONToken.END_OBJECT) {
-				if (parser.getCurrentToken() == JSONToken.FIELD_NAME) {
-					String text = parser.getText();
-					if (parser.nextToken() != JSONToken.VALUE_NULL) {
-						if (text == 'FreeFormNumber') {
-							FreeFormNumber = parser.getText();
-						} else {
-							System.debug(LoggingLevel.WARN, 'PrimaryPhone consuming unrecognized property: '+text);
-							consumeObject(parser);
-						}
-					}
-				}
-			}
-		}
-	}
-	
 	public class MetaData {
-		public String CreateTime {get;set;} 
-		public String LastUpdatedTime {get;set;} 
-
-		public MetaData(JSONParser parser) {
-			while (parser.nextToken() != JSONToken.END_OBJECT) {
-				if (parser.getCurrentToken() == JSONToken.FIELD_NAME) {
-					String text = parser.getText();
-					if (parser.nextToken() != JSONToken.VALUE_NULL) {
-						if (text == 'CreateTime') {
-							CreateTime = parser.getText();
-						} else if (text == 'LastUpdatedTime') {
-							LastUpdatedTime = parser.getText();
-						} else {
-							System.debug(LoggingLevel.WARN, 'MetaData consuming unrecognized property: '+text);
-							consumeObject(parser);
-						}
-					}
-				}
-			}
-		}
+		public String CreateTime;
+		public String LastUpdatedTime;
 	}
-	
+
 	public class PrimaryEmailAddr {
-		public String Address {get;set;} 
-
-		public PrimaryEmailAddr(JSONParser parser) {
-			while (parser.nextToken() != JSONToken.END_OBJECT) {
-				if (parser.getCurrentToken() == JSONToken.FIELD_NAME) {
-					String text = parser.getText();
-					if (parser.nextToken() != JSONToken.VALUE_NULL) {
-						if (text == 'Address') {
-							Address = parser.getText();
-						} else {
-							System.debug(LoggingLevel.WARN, 'PrimaryEmailAddr consuming unrecognized property: '+text);
-							consumeObject(parser);
-						}
-					}
-				}
-			}
-		}
+		public String Address;
 	}
-	
+
+	public class WebAddr {
+		public String URI;
+	}
+
 	
 	public static QBOCustomer parse(String json) {
-		return new QBOCustomer(System.JSON.createParser(json));
+		return (QBOCustomer) System.JSON.deserialize(json, QBOCustomer.class);
 	}
 }

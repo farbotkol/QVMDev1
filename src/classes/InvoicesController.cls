@@ -7,15 +7,17 @@ public without sharing class InvoicesController {
         
         String customerRef = [SELECT QuickBooks_Id__c FROM Account
      				WHERE ID in
-     				(SELECT AccountId FROM User WHERE Id = '005p0000000uK5d')].QuickBooks_Id__c;
-        // : userinfo.getUserId()
+     				(SELECT AccountId FROM User WHERE Id = :userinfo.getUserId())].QuickBooks_Id__c;
+        //  '005p0000000uK5d'
         String queryString = 'select Id,DocNumber,TxnDate,DueDate,TotalAmt,Balance from INVOICE where CustomerRef =\'' + String.escapeSingleQuotes(customerRef)+'\'';
         
         System.debug(queryString);
         
-        QBOInvoiceList qbo = new QBOInvoiceList();
+        //QBOInvoiceList qbo = new QBOInvoiceList();
         
         Object res =  crudHelper.query(queryString, QBOInvoiceList.Class); 
+        
+       
         
         if (res instanceof QBOError)
         {
@@ -26,7 +28,17 @@ public without sharing class InvoicesController {
         {
             System.debug('Yah!! : '  + (QBOInvoiceList)res); 
             System.debug('PP Yah!! : '  + ((QBOInvoiceList)res).queryResponse.invoice);
-            return ((QBOInvoiceList)res).queryResponse.invoice;
+            List<QBOInvoice> invs = ((QBOInvoiceList)res).queryResponse.invoice;
+            List<QBOInvoice> invsToShow = new List<QBOInvoice>();
+            for (QBOInvoice item : invs)
+            {
+                if(Date.today() > Date.valueOf(item.DueDate.substring(0,10)))
+                {
+                    item.overdue = true; 
+                }
+                invsToShow.add(item);
+            }
+            return invsToShow;
         }               
     }
     
