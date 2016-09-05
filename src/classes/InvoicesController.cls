@@ -11,7 +11,7 @@ public without sharing class InvoicesController {
         //  '005p0000000uK5d'
         String queryString = 'select Id,DocNumber,TxnDate,DueDate,TotalAmt,Balance from INVOICE where CustomerRef =\'' + String.escapeSingleQuotes(customerRef)+'\'';
         
-        System.debug(queryString);
+        System.debug('InvoicesController queryString :' + queryString);
         
         //QBOInvoiceList qbo = new QBOInvoiceList();
         

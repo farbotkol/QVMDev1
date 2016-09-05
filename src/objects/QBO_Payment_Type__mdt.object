@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This holds a mapping of the &apos;Def Payment Type&apos; field values in accounts object to the Payment Types in Quickbooks</description>
+    <fields>
+        <fullName>QBO_Id__c</fullName>
+        <description>The id of the payment type in quickbooks</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The id of the payment type in quickbooks</inlineHelpText>
+        <label>QBO Id</label>
+        <length>10</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>QBO Payment Type</label>
+    <pluralLabel>QBO Payment Types</pluralLabel>
+</CustomObject>

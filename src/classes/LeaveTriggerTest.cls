@@ -8,7 +8,7 @@ private class LeaveTriggerTest {
             system.debug('hi there');
             HTTPResponse res = new HTTPResponse();
             res.setStatusCode(200);
-           
+            
             
             String json = '{'+
                 '  \"Customer\": {'+
@@ -76,10 +76,12 @@ private class LeaveTriggerTest {
                           from opportunity
                           ];
 
+		RecordType processType =  [SELECT DeveloperName,Id,Name,SobjectType FROM RecordType
+                            WHERE SobjectType = 'Opportunity' and DeveloperName = 'SL' LIMIT 1];
 
-
+		
         //boolean result = OrderBuilder.GenerateOrders(job.Id );
-        boolean result = OrderBuilder.GenerateOrdersFromAllocatedStalls( Date.today(),Date.today() + 6, opps, job.Id, '' );
+        boolean result = OrderBuilder.GenerateOrdersFromAllocatedStalls( Date.today(),Date.today() + 6, opps, job.Id,'', processType.Id );
        
         Test.stopTest();
         

@@ -13,6 +13,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>AccountTriggerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>AccountsQBOUpsertBatch</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -98,6 +102,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>CustomerBalanceController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CustomerBalanceControllerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -261,6 +269,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>InvoicesControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>LeadConfirmationCommunityController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -274,6 +286,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>LeaveCreditNoteBuilderBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>LeaveCreditNoteBuilderTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -385,6 +401,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>QBOCustomerBalanceDetail</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>QBOCustomerBalanceDetail_Test</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>QBOCustomerList</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -481,6 +505,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>StatementController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Supplier</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -530,6 +558,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>UuidTests</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ViewPDFControllerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -2199,6 +2231,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Order.PO_Approved__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Order.PoDate</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -3199,6 +3236,10 @@
     </pageAccesses>
     <pageAccesses>
         <apexPage>ViewPDF</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>ViewStatement</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
     <recordTypeVisibilities>

@@ -564,6 +564,25 @@
         <filterScope>Mine</filterScope>
         <label>My Accounts</label>
     </listViews>
+    <listViews>
+        <fullName>SMS_View</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>ACCOUNT.ADDRESS1_STATE</columns>
+        <columns>Trading_Name__c</columns>
+        <columns>Majik_AccountNo__c</columns>
+        <columns>Mobile_Phone__c</columns>
+        <columns>ACCOUNT.RECORDTYPE</columns>
+        <columns>ACCOUNT.TYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Mobile_Phone__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>SMS View</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
     <recordTypes>
         <fullName>Supplier</fullName>

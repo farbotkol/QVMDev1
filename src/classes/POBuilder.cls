@@ -1,6 +1,7 @@
 global class POBuilder {
 
-     Webservice static boolean GeneratePurchaseOrder(Id orderId)
+    @future  (callout=true)
+    Webservice static void GeneratePurchaseOrder(Id orderId)
     {
 
         List<Order> orders = [SELECT Account.QuickBooks_Id__c,Batch_Job__c,Description,EffectiveDate
@@ -11,7 +12,7 @@ global class POBuilder {
                        FROM Order 
                        WHERE Id = :orderId];
 
-        return GeneratePurchaseOrders(orders);
+        GeneratePurchaseOrders(orders);
     }
     
     public static boolean GeneratePurchaseOrders(List<Order> orders)

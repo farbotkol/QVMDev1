@@ -167,6 +167,15 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>PO_Approved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checked if the order has been approved as a PO</description>
+        <externalId>false</externalId>
+        <label>PO Approved</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>PoDate</fullName>
         <trackHistory>true</trackHistory>
     </fields>

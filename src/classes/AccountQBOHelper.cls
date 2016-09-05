@@ -13,7 +13,10 @@ public class AccountQBOHelper {
                                       ,Id,Industry,IsCustomerPortal,IsDeleted,Jigsaw,JigsawCompanyId,LastActivityDate
                                       ,LastModifiedById,LastModifiedDate,LastReferencedDate,LastViewedDate
                                       ,Majik_AccountNo__c,MasterRecordId,Mobile_Phone__c,Name,NumberOfEmployees
-                                      ,OwnerId,ParentId,Phone,PhotoUrl,Primary_Contact__c,Primary_Contact__r.Email,QuickBooks_Id__c
+                                      ,OwnerId,ParentId,Phone,PhotoUrl,Primary_Contact__c,
+                                      Primary_Contact__r.Salutation,Primary_Contact__r.FirstName,Primary_Contact__r.MiddleName, 
+                                      Primary_Contact__r.LastName,Primary_Contact__r.Suffix,  
+                                      Primary_Contact__r.Email,QuickBooks_Id__c
                                       ,RecordTypeId,ShippingAddress,ShippingCity,ShippingCountry
                                       ,ShippingGeocodeAccuracy,ShippingLatitude,ShippingLongitude,ShippingPostalCode,ShippingState
                                       ,ShippingStreet,SicDesc,SystemModstamp,Trader_Status__c,Trading_Name__c,Type,Website 
@@ -58,7 +61,14 @@ public class AccountQBOHelper {
 			customer.DisplayName = so.Name ;
             QBOCustomer.Phone phone = new QBOCustomer.Phone();
             phone.FreeFormNumber = so.Phone;
-            customer.PrimaryPhone = phone  ; 
+            customer.PrimaryPhone = phone  ;
+            
+            // Name details
+            customer.Title = so.Primary_Contact__r.Salutation;
+            customer.GivenName = so.Primary_Contact__r.FirstName;
+            customer.MiddleName = so.Primary_Contact__r.MiddleName;
+            customer.FamilyName = so.Primary_Contact__r.LastName;
+            customer.Suffix = so.Primary_Contact__r.Suffix;
             
             // mobile
             QBOCustomer.Phone mobile = new QBOCustomer.Phone();
@@ -173,7 +183,10 @@ public class AccountQBOHelper {
                                       ,Id,Industry,IsCustomerPortal,IsDeleted,Jigsaw,JigsawCompanyId,LastActivityDate
                                       ,LastModifiedById,LastModifiedDate,LastReferencedDate,LastViewedDate
                                       ,Majik_AccountNo__c,MasterRecordId,Mobile_Phone__c,Name,NumberOfEmployees
-                                      ,OwnerId,ParentId,Phone,PhotoUrl,Primary_Contact__c,Primary_Contact__r.Email,QuickBooks_Id__c
+                                      ,OwnerId,ParentId,Phone,PhotoUrl,Primary_Contact__c,
+                                      Primary_Contact__r.Salutation,Primary_Contact__r.FirstName,Primary_Contact__r.MiddleName, 
+                                      Primary_Contact__r.LastName,Primary_Contact__r.Suffix, 
+                                      Primary_Contact__r.Email,QuickBooks_Id__c
                                       ,RecordTypeId,ShippingAddress,ShippingCity,ShippingCountry
                                       ,ShippingGeocodeAccuracy,ShippingLatitude,ShippingLongitude,ShippingPostalCode,ShippingState
                                       ,ShippingStreet,SicDesc,SystemModstamp,Trader_Status__c,Trading_Name__c,Type,Website 
@@ -217,6 +230,13 @@ public class AccountQBOHelper {
             Supplier.PrimaryPhone phone = new Supplier.PrimaryPhone();
             phone.FreeFormNumber = so.Phone;
             supplier.PrimaryPhone = phone  ;
+            
+             // Name details
+            supplier.Title = so.Primary_Contact__r.Salutation;
+            supplier.GivenName = so.Primary_Contact__r.FirstName;
+            supplier.MiddleName = so.Primary_Contact__r.MiddleName;
+            supplier.FamilyName = so.Primary_Contact__r.LastName;
+            supplier.Suffix = so.Primary_Contact__r.Suffix;
             
              // mobile
             Supplier.PrimaryPhone mobile = new Supplier.PrimaryPhone();

@@ -141,11 +141,11 @@ public class QBOInvoice_Test {
 		System.assert(objBillAddr.CountrySubDivisionCode == null);
 
 		json = '{\"TestAMissingObject\": { \"TestAMissingArray\": [ { \"TestAMissingProperty\": \"Some Value\" } ] } }';
-		QBOInvoice.CurrencyRef objCurrencyRef = new QBOInvoice.CurrencyRef(System.JSON.createParser(json));
+		QBOInvoice.Reference objCurrencyRef = new QBOInvoice.Reference(System.JSON.createParser(json));
 		System.assert(objCurrencyRef != null);
 		System.assert(objCurrencyRef.value == null);
 		System.assert(objCurrencyRef.name == null);
-
+ 
 		json = '{\"TestAMissingObject\": { \"TestAMissingArray\": [ { \"TestAMissingProperty\": \"Some Value\" } ] } }';
 		QBOInvoice objRoot = new QBOInvoice(System.JSON.createParser(json));
 		System.assert(objRoot != null);

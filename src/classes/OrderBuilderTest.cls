@@ -57,7 +57,7 @@ private class OrderBuilderTest {
         Batch_Jobs__c job = TestDataFactory.createSLBatchJob();
         Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Batch_Jobs__c; 
         Map<String,Schema.RecordTypeInfo> BatchJobsTypeInfo = cfrSchema.getRecordTypeInfosByName(); 
-        Id rtId = BatchJobsTypeInfo.get('New').getRecordTypeId();
+        Id rtId = BatchJobsTypeInfo.get('New Orders/Invoices').getRecordTypeId();
             
         system.debug('TEST : ' + rtId);
 

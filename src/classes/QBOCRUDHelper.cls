@@ -37,11 +37,11 @@ public with sharing class QBOCRUDHelper {
         qbConnector.sign(req);
        
         HttpResponse res;
-         if(Test.isRunningTest()) {
-            res = new HttpResponse();
-        } else {
+        //if(Test.isRunningTest()) {
+        //    res = new HttpResponse();
+        //} else {
             res = h.send(req); 
-        }
+        //}
         
         string responseString = res.getBody();
          
@@ -54,6 +54,44 @@ public with sharing class QBOCRUDHelper {
         }else{
             return System.JSON.deserialize(responseString, QBOError.class);
         }
+       
+    }
+    
+    /*
+     * 
+     * QBOCRUDHelper h = new QBOCRUDHelper();
+     * h.report('CustomerBalanceDetail','customer=207&arpaid=All',QBOCustomerBalanceDetail.class);
+     */
+    public object report(string reportType, string paramSting, type apexType) {
+         
+        Http h = new Http();
+        
+        HttpRequest req = new HttpRequest();
+        req.setMethod('GET');
+        req.setHeader('Authorization', 'OAuth '+UserInfo.getSessionId());
+        
+        req.setEndpoint(qbConnector.service.BaseURL__c + qbConnector.oaToken.Realm_Id__c + '/reports/' + reportType + '?' + paramSting + '&minorversion=4');
+
+        req.setHeader('Accept', 'application/json;charset=UTF-8');
+        qbConnector.sign(req);
+
+        HttpResponse res;
+         //if(Test.isRunningTest()) {
+        //    res = new HttpResponse();
+        //} else {
+            res = h.send(req); 
+        //}
+        
+        string responseString = res.getBody();
+         
+        System.debug('::::: Response = (' + res.getStatusCode() + ')' + res.getBody());
+        
+        if (res.getStatusCode() == 200) {
+            return System.JSON.deserialize(responseString, apexType);
+        }else{
+            return System.JSON.deserialize(responseString, QBOError.class);
+        }
+        //return System.JSON.deserialize(responseString, apexType);
        
     }
 

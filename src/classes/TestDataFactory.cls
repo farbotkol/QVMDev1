@@ -292,7 +292,7 @@ public class TestDataFactory {
 
         Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Batch_Jobs__c; 
         Map<String,Schema.RecordTypeInfo> BatchJobsTypeInfo = cfrSchema.getRecordTypeInfosByName(); 
-        Id rtId = BatchJobsTypeInfo.get('New').getRecordTypeId();
+        Id rtId = BatchJobsTypeInfo.get('New Orders/Invoices').getRecordTypeId();
             
         system.debug('TEST : ' + rtId);
 
@@ -314,12 +314,33 @@ public class TestDataFactory {
 
         Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Batch_Jobs__c; 
         Map<String,Schema.RecordTypeInfo> BatchJobsTypeInfo = cfrSchema.getRecordTypeInfosByName(); 
-        Id rtId = BatchJobsTypeInfo.get('New').getRecordTypeId();
+        Id rtId = BatchJobsTypeInfo.get('New Orders/Invoices').getRecordTypeId();
             
         system.debug('TEST : ' + rtId);
 
         Batch_Jobs__c bj = new Batch_Jobs__c();
         bj.Batch_Type__c = 'LH';
+        bj.Process_Range__c = 'Month';
+        bj.Week_Month_Of__c = Date.today();
+        bj.RecordTypeid = rtId;
+
+        insert bj;
+
+        return bj;
+       
+    }
+    
+    public static Batch_Jobs__c createSLBatchJobLCN()
+    {
+
+        Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Batch_Jobs__c; 
+        Map<String,Schema.RecordTypeInfo> BatchJobsTypeInfo = cfrSchema.getRecordTypeInfosByName(); 
+        Id rtId = BatchJobsTypeInfo.get('New Leave Credit Notes').getRecordTypeId();
+            
+        system.debug('TEST : ' + rtId);
+
+        Batch_Jobs__c bj = new Batch_Jobs__c();
+        bj.Batch_Type__c = 'SL';
         bj.Process_Range__c = 'Month';
         bj.Week_Month_Of__c = Date.today();
         bj.RecordTypeid = rtId;
@@ -335,7 +356,7 @@ public class TestDataFactory {
 
         Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Batch_Jobs__c; 
         Map<String,Schema.RecordTypeInfo> BatchJobsTypeInfo = cfrSchema.getRecordTypeInfosByName(); 
-        Id rtId = BatchJobsTypeInfo.get('New').getRecordTypeId();
+        Id rtId = BatchJobsTypeInfo.get('New Orders/Invoices').getRecordTypeId();
             
         system.debug('TEST : ' + rtId);
 
@@ -409,7 +430,36 @@ public class TestDataFactory {
         insert oaToken;
         
     }
+    
+    /*
+      * @description       This method is using to create supplier accounts.                       
+      * @param             NA 
+      * @return            List<Account>
+      * @throws            NA
+    */  
+    public static List<Account> createSupplierAccounts( Integer numAccts )
+    {
+        //Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Opportunity; 
+        //Map<String,Schema.RecordTypeInfo> oppRecordTypeInfo = cfrSchema.getRecordTypeInfosByName(); 
 
+       // Id oppRecordTypeId = oppRecordTypeInfo.get(recordType).getRecordTypeId();
 
+        List<Account> accts = new List<Account>();
+        
+        
+        Schema.DescribeSObjectResult acccCfrSchema = Schema.SObjectType.Account; 
+        Map<String,Schema.RecordTypeInfo> accRecordTypeInfo = acccCfrSchema.getRecordTypeInfosByName(); 
+        Id accRecordTypeId = accRecordTypeInfo.get('Supplier').getRecordTypeId();
+        
+        for(Integer i=0;i<numAccts;i++) 
+		{
+            Account a = new Account(Name='TestAccount' + i);
+            a.RecordTypeId = accRecordTypeId;
+            accts.add(a);
+        }
+        insert accts;
+        
+        return accts;
+  }
 
 }
