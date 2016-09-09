@@ -1,6 +1,6 @@
 global with sharing class OrderBuilder {
 
-    // Launching pad
+    
     Webservice  static boolean GenerateOrders(Id batchJobId)
     {
         //

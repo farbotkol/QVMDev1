@@ -1,36 +1,37 @@
 <apex:component >    
        <apex:pageBlockSection rendered="{!$CurrentPage.parameters.type=='MerchandiseStall'}" columns="1">
            <p class="p"><b>APPLY FOR A SPECIALLY MERCHANDISE STALL</b></p>
-           <p class="p">Expression of Interest for Queen Victoria Market for Speciality Stalls</p><br/> 
+           <p class="p"><b>Expression of Interest for Queen Victoria Market for Speciality Stalls</b></p> 
         </apex:pageBlockSection>
         <apex:pageBlockSection rendered="{!$CurrentPage.parameters.type=='FoodTrading'}" columns="1">
         <p class="p"><b>APPLY FOR A FOOD PREMISES</b></p>
-        <p class="p">Expression of Interest for Queen Victoria Market for Food Trading</p><br/> 
+        <p class="p"><b>Expression of Interest for Queen Victoria Market for Food Trading</b></p>
         </apex:pageBlockSection> 
         <apex:pageBlockSection rendered="{!$CurrentPage.parameters.type=='RetailTenancy'}" columns="1">
         <p class="p"><b>APPLY FOR Retail Tenancy</b></p> 
-        <p class="p">Expression of Interest for Queen Victoria Market for Retail Tenancy</p><br/> 
+        <p class="p"><b>Expression of Interest for Queen Victoria Market for Retail Tenancy</b></p> 
         </apex:pageBlockSection>
         <apex:pageBlockSection rendered="{!$CurrentPage.parameters.type=='FruitAndVegetableTrading'}" columns="1">
         <p class="p"><b>APPLY FOR A FRUIT AND VEGETABLE STALL</b></p>
-        <p class="p">Expression of Interest for Queen Victoria Market for Fruit and Vegetable Trading</p><br/>     
+        <p class="p"><b>Expression of Interest for Queen Victoria Market for Fruit and Vegetable Trading</b></p>     
         </apex:pageBlockSection>
         <apex:pageBlockSection rendered="{!$CurrentPage.parameters.type=='ModularRetailUnit'}" columns="1">
-        <p class="p"><b>APPLY FOR A STRING BEAN ALLEY CONTAINER</b></p>
-        <p class="p">Expression of Interest for Queen Victoria Market for String Bean Alley Containers</p><br/> </apex:pageBlockSection>
+        <p class="p"><b>APPLY FOR A MODULAR UNIT</b></p>
+        <p class="p"><b>Expression of Interest for Queen Victoria Market for Modular Units</b></p>
+        </apex:pageBlockSection>
 
         <apex:pageBlockSection rendered="{!$CurrentPage.parameters.type=='NightMarketSpecialityStalls'}" columns="1">
         <p class="p"><b>{!$Label.NightMarketForStalls}</b></p>
-        <p class="p">{!$Label.NightMarketForStallsDescription}</p><br/> 
+        <p class="p"><b>{!$Label.NightMarketForStallsDescription}</b></p> 
         </apex:pageBlockSection>
 
         <apex:pageBlockSection rendered="{!$CurrentPage.parameters.type=='NightMarketFoodVendor'}" columns="1">
         <p class="p"><b>{!$Label.NightMarketFood_VendorsHeading}</b></p>
-        <p class="p">{!$Label.NightMarketFood_VendorsHeadingDescription}</p><br/> 
+        <p class="p"><b>{!$Label.NightMarketFood_VendorsHeadingDescription}</b></p> 
         </apex:pageBlockSection>
 
         <apex:pageBlockSection rendered="{!$CurrentPage.parameters.type=='SpecialEvents'}" columns="1">
         <p class="p"><b>{!$Label.SpecialEventHeading}</b></p>
-        <p class="p">{!$Label.SpecialityEventDescription}</p><br/> 
+        <p class="p"><b>{!$Label.SpecialityEventDescription}</b></p> 
         </apex:pageBlockSection>
 </apex:component>

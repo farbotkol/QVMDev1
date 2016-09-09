@@ -462,4 +462,187 @@ public class TestDataFactory {
         return accts;
   }
 
+  /*
+      * @description       Test method to create a Lead.                       
+      * @param             NA 
+      * @return            Lead Object
+      * @throws            NA
+    */  
+    public static Lead CreateLead()
+    {
+        Lead leadRecord = new Lead();
+        leadRecord.LastName='TestLastName';
+        leadRecord.FirstName='TestFirstName';
+        leadRecord.Company='TestCompany';
+        leadRecord.Status='New Application';             
+        return leadRecord ;   
+    }
+    /*
+      * @description       Test method to create a Lead with No Identity Files.                       
+      * @param             NA 
+      * @return            Lead Object
+      * @throws            NA
+    */  
+    public static Lead createLeadWithNoAustralianLicense()
+    {
+        Lead leadRecord = new Lead();
+        leadRecord.LastName='TestLastName';
+        leadRecord.FirstName='TestFirstName';
+        leadRecord.Company='TestCompany';
+        leadRecord.Status='New Application';             
+        return leadRecord ;   
+    }
+    
+    /*
+      * @description       This method creates test user for unit testing.                           
+      * @param             lastName , profileId, roleId, emailAddress    
+      * @return            User - Returns the user object
+      * @throws            NA
+    */
+    public static User createUser(String lastName,Id profileId,String emailAddress)
+    {
+        User usr = new User(alias = lastName, email= emailAddress,
+                            emailencodingkey = Constants.ENCODE_KEY, lastname = lastName,
+                            timezonesidkey = Constants.TIME_ZONE,
+                            languagelocalekey = Constants.LOCALE_KEY,
+                            localesidkey = Constants.LOCALE_KEY, profileid = profileId,
+                            username = lastName + System.currentTimeMillis() + Constants.USER_POSTFIX );
+        return usr;      
+    } 
+    /*
+      * @description       This method creates custom setting data for QVM_Web_Form_Config__c name is MerchandiseStall .                           
+      * @param             NA  
+      * @return            NA
+      * @throws            NA
+    */
+    public static QVM_Web_Form_Config__c createCustomSettingMerchandiseStall()
+    {
+      QVM_Web_Form_Config__c csWebFormObj = new QVM_Web_Form_Config__c ();
+      csWebFormObj.Name = 'MerchandiseStall';
+      csWebFormObj.Is_Linked_To_Campaign__c = false; 
+      csWebFormObj.CampaignId__c   = null;        
+      csWebFormObj.leadRecordTypeId__c = Schema.SObjectType.Lead.getRecordTypeInfosByName().get('QVM Property Management').getRecordTypeId();
+      csWebFormObj.LeadSource__c = 'Website';
+      csWebFormObj.OpportunityRecordTypeId__c = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get('SL').getRecordTypeId();
+      csWebFormObj.Minimum_Number_Of_Images_Required__c = 0;
+      csWebFormObj.Maximum_Number_Of_Images_Required__c = 2;
+      csWebFormObj.Terms_And_Conditions_URL__c  = null;
+      return csWebFormObj;
+    }
+    /*
+      * @description       This method creates custom setting data for QVM_Web_Form_Config__c name is FruitAndVegetableTrading.                           
+      * @param             NA  
+      * @return            NA
+      * @throws            NA
+    */
+    public static QVM_Web_Form_Config__c createCustomSettingFruitAndVegetableTrading()
+    {
+      QVM_Web_Form_Config__c csWebFormObj = new QVM_Web_Form_Config__c ();
+      csWebFormObj.Name = 'FruitAndVegetableTrading';
+      csWebFormObj.Is_Linked_To_Campaign__c = false; 
+      csWebFormObj.CampaignId__c   = null;        
+      csWebFormObj.leadRecordTypeId__c = Schema.SObjectType.Lead.getRecordTypeInfosByName().get('QVM Property Management').getRecordTypeId();
+      csWebFormObj.LeadSource__c = 'Website';
+      csWebFormObj.OpportunityRecordTypeId__c = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get('SL').getRecordTypeId();
+      csWebFormObj.Minimum_Number_Of_Images_Required__c = 0;
+      csWebFormObj.Maximum_Number_Of_Images_Required__c = 2;
+      csWebFormObj.Terms_And_Conditions_URL__c  = null;
+      return csWebFormObj;
+    }  
+    /*
+      * @description       This method creates LeadObject with all required data for Application Submission.                           
+      * @param             NA  
+      * @return            Lead Object
+      * @throws            NA
+    */
+    public static Lead createLeadWithallRequiredData()
+    {
+        Lead leadRecord = new Lead();
+        leadRecord.LastName='TestLastName';
+        leadRecord.FirstName='TestFirstName';
+        leadRecord.Company='TestCompany';
+        leadRecord.Status='New Application'; 
+        leadRecord.Email = 'resmi.ramakrishnan@rxpservices.com';                    
+        return leadRecord ; 
+    }
+   /*
+      * @description       This method is using to create Campaign
+      * @param             NA  
+      * @return            NA
+      * @throws            NA
+    */
+    public static Campaign createCampaign()
+    {     
+         Campaign s = new Campaign ( Name = 'TestCampaign' );
+         return s;
+    }
+    /*
+      * @description       This method creates custom setting data for QVM_Web_Form_Config__c name is NightMarketSpecialityStalls.                           
+      * @param             NA  
+      * @return            NA
+      * @throws            NA
+    */
+    public static QVM_Web_Form_Config__c createCustomSettingNightMarketSpecialityStalls()
+    {
+      QVM_Web_Form_Config__c csWebFormObj = new QVM_Web_Form_Config__c ();
+      csWebFormObj.Name = 'NightMarketSpecialityStalls';
+      csWebFormObj.Is_Linked_To_Campaign__c = true; 
+      
+      Campaign  newCampaign = createCampaign();
+      csWebFormObj.CampaignId__c   = newCampaign.id;        
+      csWebFormObj.leadRecordTypeId__c = Schema.SObjectType.Lead.getRecordTypeInfosByName().get('QVM Events').getRecordTypeId();
+      csWebFormObj.LeadSource__c = 'Website';
+      csWebFormObj.OpportunityRecordTypeId__c = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get('Events').getRecordTypeId();
+      csWebFormObj.Minimum_Number_Of_Images_Required__c = 3;
+      csWebFormObj.Maximum_Number_Of_Images_Required__c = 5;
+      csWebFormObj.Terms_And_Conditions_URL__c  = 'www.qvm.com.au';
+      return csWebFormObj;
+    }
+    /*
+      * @description       This method creates custom setting data for QVM_Web_Form_Config__c name is SpecialEvents.                           
+      * @param             NA  
+      * @return            NA
+      * @throws            NA
+    */
+    public static QVM_Web_Form_Config__c createCustomSettingSpecialEvents()
+    {
+      QVM_Web_Form_Config__c csWebFormObj = new QVM_Web_Form_Config__c ();
+      csWebFormObj.Name = 'SpecialEvents';
+      csWebFormObj.Is_Linked_To_Campaign__c = true; 
+      
+      Campaign  newCampaign = createCampaign();
+      
+      csWebFormObj.CampaignId__c   = newCampaign.id;        
+      csWebFormObj.leadRecordTypeId__c = Schema.SObjectType.Lead.getRecordTypeInfosByName().get('QVM Events').getRecordTypeId();
+      csWebFormObj.LeadSource__c = 'Website';
+      csWebFormObj.OpportunityRecordTypeId__c = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get('Other Events').getRecordTypeId();
+      csWebFormObj.Minimum_Number_Of_Images_Required__c = 0;
+      csWebFormObj.Maximum_Number_Of_Images_Required__c = 0;
+      csWebFormObj.Terms_And_Conditions_URL__c  = 'www.qvm.com.au';
+      return csWebFormObj;
+    }/*
+      * @description       This method creates custom setting data for QVM_Web_Form_Config__c name is NightMarketFoodVendor.                           
+      * @param             NA  
+      * @return            NA
+      * @throws            NA
+    */
+    public static QVM_Web_Form_Config__c createCustomSettingNightMarketFoodVendor()
+    {
+      QVM_Web_Form_Config__c csWebFormObj = new QVM_Web_Form_Config__c ();
+      csWebFormObj.Name = 'NightMarketFoodVendor';
+      csWebFormObj.Is_Linked_To_Campaign__c = true; 
+
+      Campaign  newCampaign = createCampaign();
+      csWebFormObj.CampaignId__c   = newCampaign.id; 
+                
+      csWebFormObj.leadRecordTypeId__c = Schema.SObjectType.Lead.getRecordTypeInfosByName().get('QVM Events').getRecordTypeId();
+      csWebFormObj.LeadSource__c = 'Website';
+      csWebFormObj.OpportunityRecordTypeId__c = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get('Events').getRecordTypeId();
+      csWebFormObj.Minimum_Number_Of_Images_Required__c = 3;
+      csWebFormObj.Maximum_Number_Of_Images_Required__c = 5;
+      csWebFormObj.Terms_And_Conditions_URL__c  = null;
+      return csWebFormObj;
+    }
+
+
 }

@@ -1,7 +1,7 @@
 public class ErrorLogHelper {
 
     // Log account errors
-    public static void LogAccountError(Account account, QBOError errors){
+    public static List<Error_Log__c>  LogAccountError(Account account, QBOError errors){
         
         List<Error_Log__c> errorLogs = new List<Error_Log__c>();
         for (QBOError.Error err : errors.Fault.Error){
@@ -14,8 +14,8 @@ public class ErrorLogHelper {
             
             errorLogs.add(errorLog);
         }
-        
-        INSERT errorLogs;
+        //
+        return  errorLogs;
         
     }
     

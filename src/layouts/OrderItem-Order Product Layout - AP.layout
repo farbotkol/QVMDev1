@@ -109,10 +109,12 @@
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <multilineLayoutFields>Date__c</multilineLayoutFields>
+    <multilineLayoutFields>Stall__c</multilineLayoutFields>
     <multilineLayoutFields>Product2Id</multilineLayoutFields>
-    <multilineLayoutFields>Description</multilineLayoutFields>
     <multilineLayoutFields>Quantity</multilineLayoutFields>
     <multilineLayoutFields>UnitPrice</multilineLayoutFields>
+    <multilineLayoutFields>ListPrice</multilineLayoutFields>
+    <multilineLayoutFields>Description</multilineLayoutFields>
     <multilineLayoutFields>OrderId</multilineLayoutFields>
     <relatedLists>
         <fields>NAME</fields>

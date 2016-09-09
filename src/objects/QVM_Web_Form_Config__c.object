@@ -63,7 +63,7 @@
         <description>Id of the Opportunity record type to which this lead will be associated when it&apos;s converted.</description>
         <externalId>false</externalId>
         <label>OpportunityRecordTypeId</label>
-        <length>15</length>
+        <length>25</length>
         <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
@@ -81,7 +81,7 @@
         <fullName>leadRecordTypeId__c</fullName>
         <externalId>false</externalId>
         <label>leadRecordTypeId</label>
-        <length>15</length>
+        <length>25</length>
         <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>

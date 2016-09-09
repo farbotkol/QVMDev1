@@ -23,6 +23,13 @@ public with sharing class QBOCRUDHelper {
         query = query.replace(',', '%2C'); 
         query = query.replace('!', '%21'); 
         query = query.replace('<', '%3C');
+        query = query.replace('>', '%3E');
+        query = query.replace('(', '%28');
+        query = query.replace(')', '%29');
+        query = query.replace('\\', '%5C'); 
+        query = query.replace('/', '%2F'); 
+         query = query.replace('&', '%26');
+          query = query.replace('@', '%40');
 
          system.debug('query: ' + query);
         Http h = new Http();
@@ -34,6 +41,7 @@ public with sharing class QBOCRUDHelper {
         req.setEndpoint(qbConnector.service.BaseURL__c + qbConnector.oaToken.Realm_Id__c + '/query?query=' + query + '&minorversion=4');
 
         req.setHeader('Accept', 'application/json;charset=UTF-8');
+         req.setTimeOut(120000);
         qbConnector.sign(req);
        
         HttpResponse res;
@@ -44,14 +52,21 @@ public with sharing class QBOCRUDHelper {
         //}
         
         string responseString = res.getBody();
+         system.debug('responseString ' + responseString);
          
         System.debug('::::: Response = (' + res.getStatusCode() + ')' + res.getBody());
         //return System.JSON.deserialize(responseString, apexType);
          
-        if (res.getStatusCode() == 200) {
+        if (res.getStatusCode() == 200) 
+        {
+            system.debug('before1');
             System.debug(':::::System.JSON.deserialize(responseString, apexType)' + System.JSON.deserialize(responseString, apexType));
+            system.debug('after1');
             return System.JSON.deserialize(responseString, apexType);
-        }else{
+        }
+         else
+         {
+             system.debug('before2');
             return System.JSON.deserialize(responseString, QBOError.class);
         }
        
@@ -73,6 +88,7 @@ public with sharing class QBOCRUDHelper {
         req.setEndpoint(qbConnector.service.BaseURL__c + qbConnector.oaToken.Realm_Id__c + '/reports/' + reportType + '?' + paramSting + '&minorversion=4');
 
         req.setHeader('Accept', 'application/json;charset=UTF-8');
+        req.setTimeOut(120000);
         qbConnector.sign(req);
 
         HttpResponse res;
@@ -106,6 +122,8 @@ public with sharing class QBOCRUDHelper {
         req.setEndpoint(qbConnector.service.BaseURL__c + qbConnector.oaToken.Realm_Id__c + '/' + objType + '/' + objId + '?minorversion=4');
 
         req.setHeader('Accept', 'application/json;charset=UTF-8');
+        req.setTimeOut(120000);
+        
         qbConnector.sign(req);
 
         HttpResponse res;
@@ -122,7 +140,16 @@ public with sharing class QBOCRUDHelper {
         if (res.getStatusCode() == 200) {
             return System.JSON.deserialize(responseString, apexType);
         }else{
-            return System.JSON.deserialize(responseString, QBOError.class);
+            //return System.JSON.deserialize(responseString, QBOError.class);
+            if (res.getBody().contains('The request limit was reached'))
+                {
+                    QBOCRUDHelper.sleep(30);
+                    return read( objType, objId, apexType);
+                }
+                else 
+                {
+                     return System.JSON.deserialize(responseString, QBOError.class);
+                }
         }
         //return System.JSON.deserialize(responseString, apexType);
        
@@ -141,6 +168,7 @@ public with sharing class QBOCRUDHelper {
         req.setEndpoint(qbConnector.service.BaseURL__c + qbConnector.oaToken.Realm_Id__c + '/' + objType + '/' + invoiceId + '/pdf');
 
         req.setHeader('Accept', 'application/pdf');
+        req.setTimeOut(120000);
         qbConnector.sign(req);
         
 
@@ -192,41 +220,68 @@ public with sharing class QBOCRUDHelper {
     */
     public object upsertData(string objTable, string jsonObj, type apexType)
     {
-        Http h = new Http();
-        
-        HttpRequest req = new HttpRequest();
-        req.setMethod('POST');
-        ///company/:companyId/customer
-        //req.setEndpoint('https://qbo.intuit.com/qbo1/resource/customer/v2/' + oaToken.Realm_Id__c);
-        req.setEndPoint(qbConnector.service.BaseURL__c + qbConnector.oaToken.Realm_Id__c + '/' + objTable);
-        req.setHeader('Content-Type', 'application/json');
-        req.setHeader('Accept', 'application/json');
-        //application/json;charset=UTF-8
-      
-       
-        qbConnector.sign(req);
-        req.setBody(jsonObj);
-        System.debug('::::: Request = ' + req);
-        
-        HttpResponse res;
-        //if(Test.isRunningTest()) {
-        //    res = new HttpResponse();
-        //} else { 
-            res = h.send(req);
-       // }
-        
-        String responseString = res.getBody();
-        
-        system.debug('$$$$$'+res);
-        System.debug('::::: response = ' + res.getbody());
-		
-        // Check if for errors, if there are errors then return a QBOError instead of expected apexType
-		if (res.getStatusCode() == 200) {
-            return System.JSON.deserialize(responseString, apexType);
-        }else{
-            return System.JSON.deserialize(responseString, QBOError.class);
+        try
+        {
+            Http h = new Http();
+            
+            HttpRequest req = new HttpRequest();
+            req.setMethod('POST');
+            ///company/:companyId/customer
+            //req.setEndpoint('https://qbo.intuit.com/qbo1/resource/customer/v2/' + oaToken.Realm_Id__c);
+            req.setEndPoint(qbConnector.service.BaseURL__c + qbConnector.oaToken.Realm_Id__c + '/' + objTable);
+            req.setHeader('Content-Type', 'application/json');
+            req.setHeader('Accept', 'application/json');
+            //application/json;charset=UTF-8
+            req.setTimeOut(120000);
+           
+            qbConnector.sign(req);
+            req.setBody(jsonObj);
+            System.debug('::::: Request = ' + req);
+            
+            HttpResponse res;
+            //if(Test.isRunningTest()) {
+            //    res = new HttpResponse();
+            //} else { 
+                res = h.send(req);
+           // }
+            
+            String responseString = res.getBody();
+            
+            system.debug('$$$$$'+res);
+            System.debug('::::: response = ' + res.getbody());
+            
+            // Check if for errors, if there are errors then return a QBOError instead of expected apexType
+            if (res.getStatusCode() == 200) {
+                return System.JSON.deserialize(responseString, apexType);
+            }else{
+                if (res.getBody().contains('The request limit was reached'))
+                {
+                    QBOCRUDHelper.sleep(30);
+                    return upsertData( objTable,  jsonObj,  apexType);
+                }
+                else 
+                {
+                     return System.JSON.deserialize(responseString, QBOError.class);
+                }
+               
+            }
+        }
+        catch(Exception ex)
+        {
+            return System.JSON.deserialize(ex.getMessage(), QBOError.class);
         }
           
         
     }
+    
+    public static void sleep(Integer sleepSeconds) {
+        Long startTS = System.currentTimeMillis();
+        HttpRequest req = new HttpRequest();
+        req.setEndpoint('http://1.cuzillion.com/bin/resource.cgi?sleep=' + (sleepSeconds));
+        req.setMethod('GET');
+        Http http = new Http();
+        req.setTimeOut(120000);
+        HTTPResponse res = http.send(req);
+        
+    }  
 }

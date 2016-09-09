@@ -442,6 +442,41 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Lifestyle_Groups__c</fullName>
+        <externalId>false</externalId>
+        <label>Lifestyle Groups</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Volume/Budget</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contempory/Modern</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Classic/Traditional</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Iconic/Licensed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trend/Urban</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ethically sustainable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>Loss_Reason__c</fullName>
         <externalId>false</externalId>
         <label>Loss Reason</label>
@@ -544,27 +579,521 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Permitted_Use_Sub_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Permitted Use Sub-Category</label>
+        <picklist>
+            <controllingField>Permitted_Use__c</controllingField>
+            <picklistValues>
+                <fullName>Mens</fullName>
+                <default>false</default>
+                <controllingFieldValues>Apparel</controllingFieldValues>
+                <controllingFieldValues>Footwear</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ladies</fullName>
+                <default>false</default>
+                <controllingFieldValues>Apparel</controllingFieldValues>
+                <controllingFieldValues>Footwear</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mixed</fullName>
+                <default>false</default>
+                <controllingFieldValues>Apparel</controllingFieldValues>
+                <controllingFieldValues>Footwear</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sports</fullName>
+                <default>false</default>
+                <controllingFieldValues>Apparel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hosiery/Socks/Underwear</fullName>
+                <default>false</default>
+                <controllingFieldValues>Apparel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Children&apos;s</fullName>
+                <default>false</default>
+                <controllingFieldValues>Apparel</controllingFieldValues>
+                <controllingFieldValues>Footwear</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Themed/Novelty</fullName>
+                <default>false</default>
+                <controllingFieldValues>Apparel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Services</fullName>
+                <default>false</default>
+                <controllingFieldValues>Apparel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Garden</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hardware</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hardware</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Automotive</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hardware</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Plants</fullName>
+                <default>false</default>
+                <controllingFieldValues>Botantical</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Flower</fullName>
+                <default>false</default>
+                <controllingFieldValues>Botantical</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Children</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hats/Gloves/Scarfs</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fashion Accessories</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Eyewear</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fashion Accessories</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jewellery</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fashion Accessories</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Belts</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fashion Accessories</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bags/Wallets</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fashion Accessories</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hair</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fashion Accessories</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cards/Wrap</fullName>
+                <default>false</default>
+                <controllingFieldValues>Paper Products</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stationary</fullName>
+                <default>false</default>
+                <controllingFieldValues>Paper Products</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Party Product</fullName>
+                <default>false</default>
+                <controllingFieldValues>Paper Products</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Books</fullName>
+                <default>false</default>
+                <controllingFieldValues>Paper Products</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Australian</fullName>
+                <default>false</default>
+                <controllingFieldValues>Souvenirs</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vintage</fullName>
+                <default>false</default>
+                <controllingFieldValues>Souvenirs</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Signage</fullName>
+                <default>false</default>
+                <controllingFieldValues>Souvenirs</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>International</fullName>
+                <default>false</default>
+                <controllingFieldValues>Souvenirs</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Handheld</fullName>
+                <default>false</default>
+                <controllingFieldValues>Technology</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Computer</fullName>
+                <default>false</default>
+                <controllingFieldValues>Technology</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Software</fullName>
+                <default>false</default>
+                <controllingFieldValues>Technology</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service</fullName>
+                <default>false</default>
+                <controllingFieldValues>Technology</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pets and Accessories</fullName>
+                <default>false</default>
+                <controllingFieldValues>Livestock/Pets</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Poultry</fullName>
+                <default>false</default>
+                <controllingFieldValues>Livestock/Pets</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cosmetics</fullName>
+                <default>false</default>
+                <controllingFieldValues>Personal Care/Health</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Personal Care</fullName>
+                <default>false</default>
+                <controllingFieldValues>Personal Care/Health</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fragrances</fullName>
+                <default>false</default>
+                <controllingFieldValues>Personal Care/Health</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Soft</fullName>
+                <default>false</default>
+                <controllingFieldValues>Toys</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Games/Puzzles</fullName>
+                <default>false</default>
+                <controllingFieldValues>Toys</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Construction/remote</fullName>
+                <default>false</default>
+                <controllingFieldValues>Toys</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Educational</fullName>
+                <default>false</default>
+                <controllingFieldValues>Toys</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Secondhand</fullName>
+                <default>false</default>
+                <controllingFieldValues>Toys</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cookware</fullName>
+                <default>false</default>
+                <controllingFieldValues>Homewares</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tabletop</fullName>
+                <default>false</default>
+                <controllingFieldValues>Homewares</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bathroom</fullName>
+                <default>false</default>
+                <controllingFieldValues>Homewares</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Storage</fullName>
+                <default>false</default>
+                <controllingFieldValues>Homewares</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Decorator</fullName>
+                <default>false</default>
+                <controllingFieldValues>Homewares</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Outdoor</fullName>
+                <default>false</default>
+                <controllingFieldValues>Homewares</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Soft Furnishing</fullName>
+                <default>false</default>
+                <controllingFieldValues>Homewares</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Small Electrical Appliances</fullName>
+                <default>false</default>
+                <controllingFieldValues>Homewares</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Novelty</fullName>
+                <default>false</default>
+                <controllingFieldValues>Homewares</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fabrics</fullName>
+                <default>false</default>
+                <controllingFieldValues>Materials/Craft Products</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Haberdashery</fullName>
+                <default>false</default>
+                <controllingFieldValues>Materials/Craft Products</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Craft</fullName>
+                <default>false</default>
+                <controllingFieldValues>Materials/Craft Products</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deli</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fresh Food</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Butcher</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fresh Food</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fish/Seafood</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fresh Food</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bakery</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fresh Food</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Patisserie</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fresh Food</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nuts/Dried Food</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fresh Food</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fruit/Veg</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fresh Food</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Eggs/Poultry</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fresh Food</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wine</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fresh Food</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Grocery</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fresh Food</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Café</fullName>
+                <default>false</default>
+                <controllingFieldValues>Prepared Food</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Food Court</fullName>
+                <default>false</default>
+                <controllingFieldValues>Prepared Food</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Away/Open Air</fullName>
+                <default>false</default>
+                <controllingFieldValues>Prepared Food</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Smoking</fullName>
+                <default>false</default>
+                <controllingFieldValues>Non-Consumables</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Camping</fullName>
+                <default>false</default>
+                <controllingFieldValues>Travel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Luggage and Accessories</fullName>
+                <default>false</default>
+                <controllingFieldValues>Travel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Promotional Stands</fullName>
+                <default>false</default>
+                <controllingFieldValues>Travel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Engraving</fullName>
+                <default>false</default>
+                <controllingFieldValues>Services</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Health/Wellbeing</fullName>
+                <default>false</default>
+                <controllingFieldValues>Services</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Eye testing</fullName>
+                <default>false</default>
+                <controllingFieldValues>Services</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Charactatures</fullName>
+                <default>false</default>
+                <controllingFieldValues>Artists-Self Designed and Made</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Photographer</fullName>
+                <default>false</default>
+                <controllingFieldValues>Artists-Self Designed and Made</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Painting and Drawing</fullName>
+                <default>false</default>
+                <controllingFieldValues>Artists-Self Designed and Made</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jeweller</fullName>
+                <default>false</default>
+                <controllingFieldValues>Artists-Self Designed and Made</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Medium</fullName>
+                <default>false</default>
+                <controllingFieldValues>Artists-Self Designed and Made</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NightMarket Food</fullName>
+                <default>false</default>
+                <controllingFieldValues>Events</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NightMarket General</fullName>
+                <default>false</default>
+                <controllingFieldValues>Events</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <controllingFieldValues>Events</controllingFieldValues>
+                <controllingFieldValues>Livestock/Pets</controllingFieldValues>
+                <controllingFieldValues>Other</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>Permitted_Use__c</fullName>
         <externalId>false</externalId>
         <label>Permitted Use</label>
         <picklist>
             <picklistValues>
-                <fullName>Regional Producers&apos; Market                                  </fullName>
+                <fullName>Apparel</fullName>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
-                <fullName>QVM Internal                                    </fullName>
+                <fullName>Hardware</fullName>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
-                <fullName>Red Meat.                                                   </fullName>
+                <fullName>Botantical</fullName>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
-                <fullName>Food</fullName>
+                <fullName>Footwear</fullName>
                 <default>false</default>
             </picklistValues>
-            <restrictedPicklist>true</restrictedPicklist>
+            <picklistValues>
+                <fullName>Fashion Accessories</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paper Products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Souvenirs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Livestock/Pets</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Personal Care/Health</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Toys</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Homewares</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Materials/Craft Products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fresh Food</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prepared Food</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non-Consumables</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Travel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Artists-Self Designed and Made</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Events</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
             <sorted>false</sorted>
         </picklist>
         <trackFeedHistory>false</trackFeedHistory>
@@ -863,13 +1392,28 @@
         <type>Number</type>
         <unique>false</unique>
     </fields>
+    <fields>
+        <fullName>sfxId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>sfxId</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
     <listViews>
         <fullName>AllOpportunities</fullName>
+        <columns>Majik_AccountNo__c</columns>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ACCOUNT.NAME</columns>
+        <columns>Trading_Name__c</columns>
         <columns>OPPORTUNITY.RECORDTYPE</columns>
         <columns>OPPORTUNITY.TYPE</columns>
         <columns>OPPORTUNITY.LEAD_SOURCE</columns>
+        <columns>Permitted_Use__c</columns>
         <columns>CORE.USERS.FULL_NAME</columns>
         <filterScope>Everything</filterScope>
         <label>All Account Businesses</label>
@@ -1035,6 +1579,33 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Lifestyle_Groups__c</picklist>
+            <values>
+                <fullName>Classic%2FTraditional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contempory%2FModern</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethically sustainable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Iconic%2FLicensed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trend%2FUrban</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Volume%2FBudget</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Loss_Reason__c</picklist>
             <values>
                 <fullName>Lost to Competitor</fullName>
@@ -1058,21 +1629,28 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Permitted_Use_Sub_Category__c</picklist>
+            <values>
+                <fullName>NightMarket Food</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NightMarket General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Permitted_Use__c</picklist>
             <values>
-                <fullName>Food</fullName>
+                <fullName>Events</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>QVM Internal %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Red Meat%2E %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0%C2%A0</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Regional Producers%27 Market %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0</fullName>
+                <fullName>Other</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1250,6 +1828,33 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Lifestyle_Groups__c</picklist>
+            <values>
+                <fullName>Classic%2FTraditional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contempory%2FModern</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethically sustainable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Iconic%2FLicensed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trend%2FUrban</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Volume%2FBudget</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Loss_Reason__c</picklist>
             <values>
                 <fullName>Lost to Competitor</fullName>
@@ -1273,21 +1878,404 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Permitted_Use_Sub_Category__c</picklist>
+            <values>
+                <fullName>Australian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Automotive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bags%2FWallets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bakery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bathroom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Books</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Butcher</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Café</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Camping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cards%2FWrap</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Charactatures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Children</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Children%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Computer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construction%2Fremote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cookware</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cosmetics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Craft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decorator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deli</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Educational</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eggs%2FPoultry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engraving</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eye testing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eyewear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fabrics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fish%2FSeafood</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flower</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food Court</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fragrances</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fruit%2FVeg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Games%2FPuzzles</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Garden</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Grocery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Haberdashery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Handheld</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hats%2FGloves%2FScarfs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health%2FWellbeing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hosiery%2FSocks%2FUnderwear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>International</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jeweller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jewellery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ladies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Luggage and Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Novelty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nuts%2FDried Food</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outdoor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Painting and Drawing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Party Product</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patisserie</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pets and Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photographer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Poultry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promotional Stands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondhand</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Electrical Appliances</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Smoking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soft Furnishing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Software</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sports</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stationary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tabletop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Away%2FOpen Air</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Themed%2FNovelty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vintage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wine</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Permitted_Use__c</picklist>
             <values>
-                <fullName>Food</fullName>
+                <fullName>Apparel</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>QVM Internal %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0</fullName>
+                <fullName>Artists-Self Designed and Made</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Red Meat%2E %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0%C2%A0</fullName>
+                <fullName>Botantical</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Regional Producers%27 Market %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0</fullName>
+                <fullName>Fashion Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Footwear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fresh Food</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hardware</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Homewares</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Livestock%2FPets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Materials%2FCraft Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Consumables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal Care%2FHealth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prepared Food</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Souvenirs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Toys</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1465,6 +2453,33 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Lifestyle_Groups__c</picklist>
+            <values>
+                <fullName>Classic%2FTraditional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contempory%2FModern</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethically sustainable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Iconic%2FLicensed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trend%2FUrban</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Volume%2FBudget</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Loss_Reason__c</picklist>
             <values>
                 <fullName>Lost to Competitor</fullName>
@@ -1488,21 +2503,404 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Permitted_Use_Sub_Category__c</picklist>
+            <values>
+                <fullName>Australian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Automotive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bags%2FWallets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bakery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bathroom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Books</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Butcher</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Café</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Camping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cards%2FWrap</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Charactatures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Children</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Children%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Computer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construction%2Fremote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cookware</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cosmetics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Craft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decorator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deli</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Educational</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eggs%2FPoultry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engraving</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eye testing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eyewear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fabrics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fish%2FSeafood</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flower</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food Court</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fragrances</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fruit%2FVeg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Games%2FPuzzles</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Garden</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Grocery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Haberdashery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Handheld</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hats%2FGloves%2FScarfs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health%2FWellbeing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hosiery%2FSocks%2FUnderwear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>International</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jeweller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jewellery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ladies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Luggage and Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Novelty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nuts%2FDried Food</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outdoor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Painting and Drawing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Party Product</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patisserie</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pets and Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photographer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Poultry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promotional Stands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondhand</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Electrical Appliances</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Smoking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soft Furnishing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Software</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sports</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stationary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tabletop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Away%2FOpen Air</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Themed%2FNovelty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vintage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wine</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Permitted_Use__c</picklist>
             <values>
-                <fullName>Food</fullName>
+                <fullName>Apparel</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>QVM Internal %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0</fullName>
+                <fullName>Artists-Self Designed and Made</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Red Meat%2E %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0%C2%A0</fullName>
+                <fullName>Botantical</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Regional Producers%27 Market %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0</fullName>
+                <fullName>Fashion Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Footwear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fresh Food</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hardware</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Homewares</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Livestock%2FPets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Materials%2FCraft Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Consumables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal Care%2FHealth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prepared Food</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Souvenirs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Toys</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1680,6 +3078,33 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Lifestyle_Groups__c</picklist>
+            <values>
+                <fullName>Classic%2FTraditional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contempory%2FModern</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethically sustainable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Iconic%2FLicensed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trend%2FUrban</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Volume%2FBudget</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Loss_Reason__c</picklist>
             <values>
                 <fullName>Lost to Competitor</fullName>
@@ -1703,21 +3128,28 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Permitted_Use_Sub_Category__c</picklist>
+            <values>
+                <fullName>NightMarket Food</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NightMarket General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Permitted_Use__c</picklist>
             <values>
-                <fullName>Food</fullName>
+                <fullName>Events</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>QVM Internal %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Red Meat%2E %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0%C2%A0</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Regional Producers%27 Market %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0</fullName>
+                <fullName>Other</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1895,6 +3327,33 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Lifestyle_Groups__c</picklist>
+            <values>
+                <fullName>Classic%2FTraditional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contempory%2FModern</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethically sustainable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Iconic%2FLicensed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trend%2FUrban</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Volume%2FBudget</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Loss_Reason__c</picklist>
             <values>
                 <fullName>Lost to Competitor</fullName>
@@ -1918,21 +3377,404 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Permitted_Use_Sub_Category__c</picklist>
+            <values>
+                <fullName>Australian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Automotive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bags%2FWallets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bakery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bathroom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Books</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Butcher</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Café</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Camping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cards%2FWrap</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Charactatures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Children</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Children%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Computer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construction%2Fremote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cookware</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cosmetics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Craft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decorator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deli</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Educational</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eggs%2FPoultry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engraving</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eye testing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eyewear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fabrics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fish%2FSeafood</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flower</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food Court</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fragrances</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fruit%2FVeg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Games%2FPuzzles</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Garden</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Grocery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Haberdashery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Handheld</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hats%2FGloves%2FScarfs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health%2FWellbeing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hosiery%2FSocks%2FUnderwear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>International</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jeweller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jewellery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ladies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Luggage and Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Novelty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nuts%2FDried Food</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outdoor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Painting and Drawing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Party Product</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patisserie</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pets and Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photographer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Poultry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promotional Stands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondhand</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Electrical Appliances</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Smoking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soft Furnishing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Software</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sports</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stationary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tabletop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Away%2FOpen Air</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Themed%2FNovelty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vintage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wine</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Permitted_Use__c</picklist>
             <values>
-                <fullName>Food</fullName>
+                <fullName>Apparel</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>QVM Internal %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0</fullName>
+                <fullName>Artists-Self Designed and Made</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Red Meat%2E %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0%C2%A0</fullName>
+                <fullName>Botantical</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Regional Producers%27 Market %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0</fullName>
+                <fullName>Fashion Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Footwear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fresh Food</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hardware</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Homewares</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Livestock%2FPets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Materials%2FCraft Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Consumables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal Care%2FHealth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prepared Food</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Souvenirs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Toys</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2110,6 +3952,33 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Lifestyle_Groups__c</picklist>
+            <values>
+                <fullName>Classic%2FTraditional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contempory%2FModern</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethically sustainable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Iconic%2FLicensed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trend%2FUrban</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Volume%2FBudget</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Loss_Reason__c</picklist>
             <values>
                 <fullName>Lost to Competitor</fullName>
@@ -2133,21 +4002,404 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Permitted_Use_Sub_Category__c</picklist>
+            <values>
+                <fullName>Australian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Automotive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bags%2FWallets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bakery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bathroom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Books</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Butcher</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Café</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Camping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cards%2FWrap</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Charactatures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Children</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Children%27s</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Computer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construction%2Fremote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cookware</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cosmetics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Craft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decorator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deli</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Educational</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eggs%2FPoultry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engraving</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eye testing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eyewear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fabrics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fish%2FSeafood</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flower</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food Court</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fragrances</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fruit%2FVeg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Games%2FPuzzles</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Garden</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Grocery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Haberdashery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Handheld</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hats%2FGloves%2FScarfs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health%2FWellbeing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hosiery%2FSocks%2FUnderwear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>International</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jeweller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jewellery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ladies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Luggage and Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Novelty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nuts%2FDried Food</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outdoor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Painting and Drawing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Party Product</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patisserie</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pets and Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photographer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Poultry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promotional Stands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondhand</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Electrical Appliances</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Smoking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soft Furnishing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Software</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sports</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stationary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tabletop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Away%2FOpen Air</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Themed%2FNovelty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vintage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wine</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Permitted_Use__c</picklist>
             <values>
-                <fullName>Food</fullName>
+                <fullName>Apparel</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>QVM Internal %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0</fullName>
+                <fullName>Artists-Self Designed and Made</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Red Meat%2E %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0%C2%A0</fullName>
+                <fullName>Botantical</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Regional Producers%27 Market %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0 %C2%A0</fullName>
+                <fullName>Fashion Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Footwear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fresh Food</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hardware</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Homewares</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Livestock%2FPets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Materials%2FCraft Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Consumables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paper Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal Care%2FHealth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prepared Food</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Souvenirs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Toys</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

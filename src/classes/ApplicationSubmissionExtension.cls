@@ -11,18 +11,8 @@ public without sharing class ApplicationSubmissionExtension
 {
      public Lead weblead {get;set;} 
      public Id recId {get;set; }
-     public String selectedType{get;set;}    
+     //public String selectedType{get;set;}    
 
-    /* public string fileName1 {  get;set; }
-     public Blob fileBody1 {    get;set;  }
-     public string fileName2 {  get;set; }
-     public Blob fileBody2 {    get;set;  }    
-     public string imagename3 {get;set;}
-     public Blob imagebody3 {get;set;}
-     public string imagename4 {get;set;}
-     public Blob imagebody4 {get;set;}
-     public string imagename5 {get;set;}
-     public Blob imagebody5 {get;set;}*/
      
      private Integer intMinimumImages;
      private Integer intMaximumImages;
@@ -50,10 +40,11 @@ public without sharing class ApplicationSubmissionExtension
      
      public ApplicationSubmissionExtension theController{get;set;}
      private String urlParameter;
-     private QVM_Web_Form_Config__c qvmWebConfigObj;
+     public QVM_Web_Form_Config__c qvmWebConfigObj{get;set;}
      
      public Boolean acceptanceTextFlag{get;set;}
      public String  termsAndConditionLink {get;set;}
+     public String acceptanceText{get;set;}
      
      
 
@@ -65,17 +56,19 @@ public without sharing class ApplicationSubmissionExtension
     */ 
     public ApplicationSubmissionExtension(ApexPages.StandardController stdController) 
     {
-        weblead = (Lead)stdController.getRecord();       
+        weblead = (Lead)stdController.getRecord();      
         recId = stdController.getRecord().Id; 
         isDisplay=true;
         this.theController = this;
         urlParameter = ApexPages.currentPage().getParameters().get('type');
         
         
+        
         qvmWebConfigObj = [ SELECT Is_Linked_To_Campaign__c, CampaignId__c, leadRecordTypeId__c,
                                  LeadSource__c, OpportunityRecordTypeId__c, Minimum_Number_Of_Images_Required__c,
                                  Maximum_Number_Of_Images_Required__c,Terms_And_Conditions_URL__c  
                                  FROM QVM_Web_Form_Config__c where Name =: urlParameter LIMIT 1 ];
+      
                                  
         intMinimumImages = Integer.valueOf( qvmWebConfigObj.Minimum_Number_Of_Images_Required__c);
         intMaximumImages = Integer.valueOf( qvmWebConfigObj.Maximum_Number_Of_Images_Required__c);
@@ -89,11 +82,13 @@ public without sharing class ApplicationSubmissionExtension
         if( qvmWebConfigObj.Terms_And_Conditions_URL__c  == null )
         {
            acceptanceTextFlag = false;
+           acceptanceText = Label.ConfirmationQuestion;
         }
         else
         {
           acceptanceTextFlag = true; 
           termsAndConditionLink = qvmWebConfigObj.Terms_And_Conditions_URL__c;
+          acceptanceText = Label.Event_Confirmation_Question;
         }        
     }
 
@@ -107,7 +102,7 @@ public without sharing class ApplicationSubmissionExtension
     public PageReference saveLead()
     {
          try 
-         {                          
+         {                         
              if( weblead != null )
              {               
                 if( !checkIdentityFilesRequired())
@@ -115,77 +110,19 @@ public without sharing class ApplicationSubmissionExtension
                     return null; 
                 }
                 
+                
                 if( ! validateImageFileInput( intMinimumImages  ))
                 {
                     return null;
                 }
+                
                 setLeadFieldsBeforeInsert(); 
-                insert weblead;
+                insert weblead; 
                
              }
-
              // This method is for inserting image list.
              insertImageList();
-             
-
-             // Image Attachment starts---------------         
-              /*if(fileBody1 != null && fileName1 != null)
-             {
-                Attachment myAttachment  = new Attachment();
-                myAttachment.Body = fileBody1;
-                myAttachment.Name = fileName1;
-                myAttachment.ParentId = weblead.id;
-                if( myAttachment != null)
-                {
-                  insert myAttachment; 
-                }
                          
-             }
-             if(fileBody2 != null && fileName2 != null)
-             {
-                Attachment myAttachment  = new Attachment();
-                myAttachment.Body = fileBody2;
-                myAttachment.Name = fileName2;
-                myAttachment.ParentId = weblead.id;
-                if( myAttachment != null)
-                {
-                  insert myAttachment; 
-                }          
-             }
-             if( imagebody3 !=null && imagename3 != null )
-             {
-                Attachment myAttachment = new Attachment();
-                myAttachment.Body = imagebody3;
-                myAttachment.Name = imagename3;
-                myAttachment.ParentId = weblead.id;
-                if( myAttachment != null )
-                {
-                    insert myAttachment;
-                }
-              }
-              if( imagebody4 !=null && imagename4 != null )
-              {
-                Attachment myAttachment = new Attachment();
-                myAttachment.Body = imagebody4;
-                myAttachment.Name = imagename4;
-                myAttachment.ParentId = weblead.id;
-                if( myAttachment != null )
-                {
-                    insert myAttachment;
-                }
-              }
-              if( imagebody5 !=null && imagename5 != null )
-              {
-                Attachment myAttachment = new Attachment();
-                myAttachment.Body = imagebody5;
-                myAttachment.Name = imagename5;
-                myAttachment.ParentId = weblead.id;
-                if( myAttachment != null )
-                {
-                    insert myAttachment;
-                }
-              }*/
-             // Image Attachment Ends -------------------
 
              if(fileBody3 != null && fileName3 != null)
              {
@@ -213,7 +150,14 @@ public without sharing class ApplicationSubmissionExtension
              {
                 Attachment myAttachment  = new Attachment();
                 myAttachment.Body = fileBody5;
-                myAttachment.Name = fileName5;
+                if( urlParameter == 'NightMarketFoodVendor')
+                {
+                    myAttachment.Name = 'Certificate of Currency Covering'+ getFileNameExtension(fileName5);
+                }
+                else
+                {
+                   myAttachment.Name = 'Certificate of Food Act Registration'+ getFileNameExtension(fileName5);
+                }
                 myAttachment.ParentId = weblead.id;
                 if( myAttachment != null)
                 {
@@ -224,7 +168,15 @@ public without sharing class ApplicationSubmissionExtension
              {
                 Attachment myAttachment  = new Attachment();
                 myAttachment.Body = fileBody6;
-                myAttachment.Name = fileName6;
+                if( urlParameter == 'NightMarketFoodVendor')
+                {
+                    myAttachment.Name = 'Certificate of Food Registration'+getFileNameExtension(fileName6);
+                }
+                else
+                {
+                    myAttachment.Name = 'Food Safety Supervisor Certificate' +getFileNameExtension(fileName6);
+                }
+                
                 myAttachment.ParentId = weblead.id;
                 if( myAttachment != null)
                 {

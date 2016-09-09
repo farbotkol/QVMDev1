@@ -1,10 +1,10 @@
 trigger AccountTrigger on Account (before insert, before update, before delete, after insert, after update, after delete, after undelete) {
 
     
-	if(System.IsBatch() == false && System.isFuture() == false)
+    if(System.IsBatch() == false && System.isFuture() == false)
     {
         
-       	RecordType traderType =  [SELECT DeveloperName,Id,Name,SobjectType FROM RecordType
+        RecordType traderType =  [SELECT DeveloperName,Id,Name,SobjectType FROM RecordType
                             WHERE SobjectType = 'Account' and DeveloperName = 'Trader' LIMIT 1];
         
         RecordType SupplierType =  [SELECT DeveloperName,Id,Name,SobjectType FROM RecordType
@@ -48,6 +48,8 @@ trigger AccountTrigger on Account (before insert, before update, before delete, 
             {
                 AccountsQBOUpsertBatch batch = new AccountsQBOUpsertBatch(accountToUpsertToQBO); 
                 database.executebatch(batch,30);    
+                //system.scheduleBatch(batch, 'QBO Customer UPSERT', , scopeSize)
+                //system.sch
             }
         }
         if(supplierToUpsertToQBO.size()>0)

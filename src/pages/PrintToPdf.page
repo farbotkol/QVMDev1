@@ -1,0 +1,112 @@
+<!--<apex:page controller="PrintToPDFController" renderAs="pdf" showHeader="false" sidebar="false" >
+<apex:detail relatedList="false"/> 
+<iframe width="100%" height="1000px" src="/{!orderId}/p"></iframe>
+</apex:page>
+<apex:page controller="PrintToPDFController" showHeader="false" applyHtmlTag="false" applyBodyTag="false" renderAs="pdf" standardStylesheets="true">
+<html>
+<head>
+<style>
+body {font-family:sans-serif;font-size:12px;}
+table {width:100%;border-collapse:collapse;}
+table tr td {border:1px solid #999;padding:4px;}
+div.printHeader, a.navSkipLink {display: none;}
+.hiddenlink {color: #000; text-decoration: none; cursor: text;} 
+a[href]:after {                
+color:#000;
+text-decoration: none;
+cursor: text;
+background-color:inherit;
+}
+
+.customLinks {
+Display: none;
+}
+</style>
+</head>
+<apex:outputText value="{!PrintableView}" escape="false" />
+</html>
+</apex:page>-->
+<apex:page standardController="Order" renderAs="pdf" extensions="PrintToPDFController" standardStylesheets="false" showHeader="false" applyBodyTag="false" applyHtmlTag="false">
+    <html>
+        <head>
+            <style>
+                @page {
+                size: letter;
+                margin: 25mm;
+                @top-center {
+                content: "Order Details";
+                font-family: sans-serif;
+                font-size: 20px;
+                }
+                @bottom-center {
+                content: "Page " counter(page) " of " counter(pages);
+                }
+                }
+                .page-break {
+                display:block;
+                page-break-after:always;
+                }
+                body {
+                font-family: sans-serif;
+                font-size: 10px;
+                }
+                .italicText 
+                { 
+                font-style: italic; 
+                font-weight: bold
+                }
+            </style>
+        </head>
+        <apex:form >
+            <table width="75%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <th>Order Number : </th><td>{!Order.OrderNumber}</td>
+                </tr>
+                <tr>
+                    <th>Account Name : </th><td>{!Order.Account.Name}</td> 
+                </tr>
+                <tr>
+                    <th>Order Start Date : </th><td><apex:outputText value="{0,date,MM/dd/yy}"><apex:param value="{!Order.EffectiveDate}"/></apex:outputText></td>
+                </tr>
+                <tr>
+                    <th>Description      : </th><td>{!Order.Description}</td>
+                </tr>
+                <tr>
+                    <th>Order Amount     : </th><td>{!Order.TotalAmount}</td>
+                </tr>
+                <tr>
+                    <th>Shipping Address : </th><td>{!Order.ShippingStreet} {!Order.ShippingCity} {!Order.ShippingState} {!Order.ShippingCountry} {!Order.ShippingPostalCode}</td>
+                </tr>
+                <tr>
+                    <th> </th>
+                </tr>
+            </table>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <th style="font: bold 15px" align="center">Order Products</th>
+                </tr>
+            </table>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td style="font: bold 12px">Product</td>
+                    <td style="font: bold 12px">Stall</td>
+                    <td style="font: bold 12px">Date</td>
+                    <td style="font: bold 12px">Line Description</td>
+                    <td style="font: bold 12px">Quantity</td>
+                    <td style="font: bold 12px" align="right">Total Price</td>
+                </tr>
+                                
+                <apex:repeat value="{!orderItems}" var="v">
+                    <tr>
+                        <td>{!v.PricebookEntry.Product2.Name}</td>
+                        <td>{!v.Stall__r.Name}</td>
+                        <td><apex:outputText value="{0,date,MM/dd/yy}"><apex:param value="{!v.Date__c}"/></apex:outputText></td>
+                        <td>{!v.Description}</td>
+                        <td>{!v.Quantity}</td>
+                        <td align="right">{!v.Formula_Total__c}</td>
+                    </tr>
+                </apex:repeat>
+            </table>
+        </apex:form>
+    </html>
+</apex:page>

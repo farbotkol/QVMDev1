@@ -81,12 +81,13 @@
         <style>CustomLinks</style>
     </layoutSections>
     <multilineLayoutFields>Product2Id</multilineLayoutFields>
-    <multilineLayoutFields>ListPrice</multilineLayoutFields>
-    <multilineLayoutFields>UnitPrice</multilineLayoutFields>
     <multilineLayoutFields>Quantity</multilineLayoutFields>
+    <multilineLayoutFields>UnitPrice</multilineLayoutFields>
     <multilineLayoutFields>Subtotal</multilineLayoutFields>
+    <multilineLayoutFields>ListPrice</multilineLayoutFields>
     <multilineLayoutFields>Discount</multilineLayoutFields>
     <multilineLayoutFields>TotalPrice</multilineLayoutFields>
+    <multilineLayoutFields>Description</multilineLayoutFields>
     <multilineLayoutFields>QuoteId</multilineLayoutFields>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>

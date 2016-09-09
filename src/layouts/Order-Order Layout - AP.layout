@@ -82,6 +82,9 @@
             <layoutItems>
                 <customLink>Open_PO_in_QuickBooks</customLink>
             </layoutItems>
+            <layoutItems>
+                <customLink>Print_To_PDF</customLink>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns/>
         <layoutColumns/>
@@ -125,11 +128,15 @@
     </layoutSections>
     <relatedLists>
         <fields>Product2</fields>
+        <fields>ProductCode</fields>
+        <fields>Stall__c</fields>
         <fields>Date__c</fields>
         <fields>Description</fields>
         <fields>Quantity</fields>
-        <fields>UnitPrice</fields>
         <fields>TotalPrice</fields>
+        <fields>Leave__c</fields>
+        <fields>Total__c</fields>
+        <fields>Formula_Total__c</fields>
         <relatedList>RelatedOrderItemList</relatedList>
         <sortField>Date__c</sortField>
         <sortOrder>Asc</sortOrder>
@@ -149,13 +156,16 @@
         <fields>Comments</fields>
         <relatedList>RelatedProcessHistoryList</relatedList>
     </relatedLists>
-    <relatedObjects>ContractId</relatedObjects>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Transaction__c.Order__c</relatedList>
+    </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00hp0000000FOQO</masterLabel>
+        <masterLabel>00hp0000000RDdM</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

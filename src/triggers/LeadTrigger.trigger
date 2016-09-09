@@ -18,16 +18,16 @@ trigger LeadTrigger on Lead (after update) {
     }
 
     if(updatedOppLeads.size()>0){ 
-        Map<Id, Opportunity> oppMap = new Map<Id, Opportunity>(); 	
+        Map<Id, Opportunity> oppMap = new Map<Id, Opportunity>();   
 
-    	for(Lead l : updatedOppLeads.values()){
-    		Opportunity opp = new Opportunity(id=l.ConvertedOpportunityId, Primary_Contact__c =l.ConvertedContactId);
-    		oppMap.put(l.ConvertedOpportunityId, opp);
-    	} 
+        for(Lead l : updatedOppLeads.values()){
+            Opportunity opp = new Opportunity(id=l.ConvertedOpportunityId, Primary_Contact__c =l.ConvertedContactId);
+            oppMap.put(l.ConvertedOpportunityId, opp);
+        } 
 
         if(oppMap.size()>0){
             update oppMap.values();
-        }   	
+        }       
     }
 
     if(updatedAccountLeads.size()>0){   

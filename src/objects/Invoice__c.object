@@ -110,6 +110,17 @@
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Invoice_Nbr__c</fullName>
+        <externalId>false</externalId>
+        <label>Invoice Nbr</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Invoice_Status__c</fullName>
         <externalId>false</externalId>
         <label>Invoice Status</label>
@@ -120,6 +131,22 @@
             </picklistValues>
             <picklistValues>
                 <fullName>Incomplete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>O</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U</fullName>
                 <default>false</default>
             </picklistValues>
             <restrictedPicklist>true</restrictedPicklist>
@@ -153,6 +180,17 @@
         <unique>true</unique>
     </fields>
     <fields>
+        <fullName>Paid_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Paid Amount</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>Paid__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -179,6 +217,10 @@
         <picklist>
             <picklistValues>
                 <fullName>GSTE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GSTI</fullName>
                 <default>false</default>
             </picklistValues>
             <restrictedPicklist>true</restrictedPicklist>
@@ -210,9 +252,27 @@
         <trackTrending>false</trackTrending>
         <type>Currency</type>
     </fields>
+    <fields>
+        <fullName>sfxId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>sfxId</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
     <label>Invoice</label>
     <listViews>
         <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Due_Date__c</columns>
+        <columns>Invoice_Date__c</columns>
+        <columns>Invoice_Status__c</columns>
+        <columns>Paid__c</columns>
+        <columns>Total__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>

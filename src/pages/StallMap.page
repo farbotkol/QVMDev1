@@ -1,0 +1,18 @@
+<apex:page controller="StallMapController">
+    <head>
+        <title>QVM Map</title>
+        <style>
+            .floorplan,
+            .room {border: 1px solid #ee7538;}
+            
+            .floorplan {background: #ebecec;height: 4000px;position: relative;width: 2000px;}
+            
+            .room {background: #fff;color: #000;display: block;font-family: Arial;position: absolute;text-align: center;font-size: 11px;}
+            
+            .room:hover {background: #ee7538;color: #fff;}
+        </style>
+    </head>
+    <apex:form >
+        <apex:outputtext value="{!buildTable}" escape="false" id="tblHTML"/>
+    </apex:form>
+</apex:page>

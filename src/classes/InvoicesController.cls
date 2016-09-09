@@ -1,13 +1,22 @@
 public without sharing class InvoicesController {
     @AuraEnabled
+    public static String getCustomerReference(){
+        
+        String customerRef = [SELECT QuickBooks_Id__c FROM Account
+                    WHERE ID in
+                    (SELECT AccountId FROM User WHERE Id = :userinfo.getUserId())].QuickBooks_Id__c;
+        
+        return customerRef;
+    }
+    
+    
+    @AuraEnabled
     public static List<QBOInvoice> getInvoices() {
         
         
         QBOCRUDHelper crudHelper = new QBOCRUDHelper();
         
-        String customerRef = [SELECT QuickBooks_Id__c FROM Account
-     				WHERE ID in
-     				(SELECT AccountId FROM User WHERE Id = :userinfo.getUserId())].QuickBooks_Id__c;
+        String customerRef = InvoicesController.getCustomerReference();
         //  '005p0000000uK5d'
         String queryString = 'select Id,DocNumber,TxnDate,DueDate,TotalAmt,Balance from INVOICE where CustomerRef =\'' + String.escapeSingleQuotes(customerRef)+'\'';
         

@@ -48,7 +48,7 @@
                 <field>Primary_Contact__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Permitted_Use__c</field>
             </layoutItems>
             <layoutItems>
@@ -91,6 +91,14 @@
                 <behavior>Edit</behavior>
                 <field>Size__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Permitted_Use_Sub_Category__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Lifestyle_Groups__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -106,7 +114,7 @@
                 <field>OwnerId</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>Pricebook2Id</field>
             </layoutItems>
             <layoutItems>

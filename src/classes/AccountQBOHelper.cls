@@ -1,6 +1,40 @@
-public class AccountQBOHelper {
+global class AccountQBOHelper {
 	
-	
+    Webservice  static string GetAccountQBOUrl(Id recID)
+    {
+        String qboUrl = GetQBOUrl();
+
+        Account acc = [SELECT RecordType.Name,QuickBooks_Id__c FROM Account WHERE Id = :recID];
+        if(acc != null ){
+            If(acc.RecordType.Name.equals('Trader')){
+                return qboUrl+'/app/customerdetail?nameId='+acc.QuickBooks_Id__c;
+            }
+            else if(acc.RecordType.Name.equals('Supplier')){
+                return qboUrl+'/app/vendordetail?nameId='+acc.QuickBooks_Id__c;
+            }
+            else
+                return null;
+        }
+        else
+            return null;
+    }
+    
+    Webservice  static string GetInvoiceQBOUrl(Id qbID)
+    {
+        System.debug('JJJ'+qbID);
+        String qboUrl = GetQBOUrl();
+        String qboId = [SELECT QuickBooksId__c FROM Order WHERE Id = :qbID].QuickBooksId__c;
+        if(qboId != null ){            
+            return qboUrl+'/app/invoice?txnId='+qboId;            
+        }
+        else
+            return null;
+    }
+    
+    Webservice  static string GetQBOUrl(){
+        String qboUrl = [SELECT QuickBooks_URL__c FROM OAuthService__c LIMIT 1].QuickBooks_URL__c;
+        return qboUrl;
+    }
     
   	// FUTURES TEND TO OCCURE FASTER THEN BATCHES, THERE IS ONLY A Small number of items use the furture
     @future  (callout=true)
@@ -40,6 +74,7 @@ public class AccountQBOHelper {
   
         System.debug('Accounts to be updated : ' + scope);
    		List<Account> itemsToUpdateWithQBOId = new List<Account> ();
+        List<Error_Log__c> errorsToInsert = new List<Error_Log__c> ();
  
    		QBOCRUDHelper crudHelper = new QBOCRUDHelper();
    		for (Account so : scope)
@@ -55,8 +90,7 @@ public class AccountQBOHelper {
             {
                customer.CompanyName =  ''; 
             }
-
-			
+            
 			customer.PrimaryTaxIdentifier = so.ABN__c;
 			customer.DisplayName = so.Name ;
             QBOCustomer.Phone phone = new QBOCustomer.Phone();
@@ -83,8 +117,7 @@ public class AccountQBOHelper {
             //WebAddress
             QBOCustomer.WebAddr webAddress = new QBOCustomer.WebAddr();
             webAddress.URI = so.Website;
-            customer.WebAddr = webAddress  ; 
-        
+            customer.WebAddr = webAddress  ;      
             
             // Billing Address
             QBOCustomer.Address billAddr = new QBOCustomer.Address();
@@ -103,11 +136,7 @@ public class AccountQBOHelper {
             ShipAddr.PostalCode = so.ShippingPostalCode  ;            
             ShipAddr.country = so.ShippingCountry ;
             customer.ShipAddr = ShipAddr;
-            
-            
-            
-         
-            
+
 			QBOCustomerResponse customerResponse;
            
             string paymentType =  (String)paymentTypeMap.get(so.Def_Payment_Type__c );
@@ -124,7 +153,8 @@ public class AccountQBOHelper {
                 response = crudHelper.upsertData( 'customer?minorversion=4',  system.JSON.serialize(customer, true) , QBOCustomerResponse.class);
                 if (response instanceof QBOError){
                     //log the error and move to next account
-                    ErrorLogHelper.LogAccountError(so, (QBOError)response);
+                    //ErrorLogHelper.LogAccountError(so, (QBOError)response);
+                    errorsToInsert.addAll(ErrorLogHelper.LogAccountError(so, (QBOError)response));
                     continue;
                 }else{
                     customerResponse = (QBOCustomerResponse)response;//crudHelper.upsertData( 'customer?minorversion=4',  system.JSON.serialize(customer, true) , QBOCustomerResponse.class);
@@ -143,12 +173,11 @@ public class AccountQBOHelper {
             	response = crudHelper.upsertData( 'customer?operation=update&minorversion=4',  system.JSON.serialize(customer, true) , QBOCustomerResponse.class);
                 if (response instanceof QBOError){
                     //log the error and move to next account
-                    ErrorLogHelper.LogAccountError(so, (QBOError)response);
+                    errorsToInsert.addAll(ErrorLogHelper.LogAccountError(so, (QBOError)response));
                     continue;
                 }else{
                     customerResponse = (QBOCustomerResponse)response;//crudHelper.upsertData( 'customer?minorversion=4',  system.JSON.serialize(customer, true) , QBOCustomerResponse.class);
                 }
-            
             
             }
 			System.debug('Quick books response : ' + customerResponse);
@@ -166,6 +195,8 @@ public class AccountQBOHelper {
 
    		if(itemsToUpdateWithQBOId.size()>0)
    			Update itemsToUpdateWithQBOId;
+        if( errorsToInsert.size()>0)
+        	Insert errorsToInsert;
         
         return true;//add handle exceptions and put value in a log
         

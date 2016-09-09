@@ -1,2 +1,62 @@
-<apex:page >
+<apex:page standardController="Account" extensions="StatementController" renderAs="pdf" standardStylesheets="false" showHeader="false" applyBodyTag="false" applyHtmlTag="false">
+    <html>
+        <head>
+            <style>
+                @page {
+                size: letter;
+                margin: 25mm;
+                @top-center {
+                content: "Transaction Statement";
+                }
+                @bottom-center {
+                content: "Page " counter(page) " of " counter(pages);
+                }
+                }
+                .page-break {
+                display:block;
+                page-break-after:always;
+                }
+                body {
+                font-family: Arial Unicode MS;
+                font-size: 10px;
+                }
+            </style>
+        </head>
+        <apex:form >
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <th>Customer Name : {!customerName}</th>
+                    <th align="right">Report Date : {!reportDate}</th>                    
+                </tr>
+            </table>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <th>Date</th>
+                    <th>Transaction Type</th>
+                    <th>Document Number</th>
+                    <th>Due Date</th>
+                    <th align="center">Amount</th>
+                    <th align="center">Open Balance</th>
+                    <th align="center">Balance</th>
+                </tr>
+                
+                <apex:repeat value="{!Statements}" var="v">
+                    <tr>
+                        <td>{!v.tx_date}</td>
+                        <td>{!v.txn_type}</td>
+                        <td>{!v.doc_num}</td>
+                        <td>{!v.due_date}</td>
+                        <td align="right">{!v.subt_home_amount}</td>
+                        <td align="right">{!v.subt_home_open_bal}</td>
+                        <td align="right">{!v.rbal_home_open_bal}</td>
+                    </tr>
+                </apex:repeat>
+            </table>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <th align="right">Total : {!total}</th>                    
+                </tr>
+            </table>
+        </apex:form>
+    </html>
 </apex:page>

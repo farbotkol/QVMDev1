@@ -28,7 +28,7 @@ public with sharing class QuickBooksConnector {
                     Authorization_URL__c, Application_Token__c, BaseURL__c,CallbackUrl__c,
                     (SELECT Token__c, Secret__c, Is_Access__c, Realm_Id__c
                     FROM OAuth_Tokens__r
-                    //WHERE Owner__c = :UserInfo.getUserId()  Order by CreatedDate DESC
+                    Order by CreatedDate DESC
                     )
                 FROM OAuthService__c
                 WHERE Name = 'QuickBooksAU' LIMIT 1];
@@ -69,11 +69,11 @@ public with sharing class QuickBooksConnector {
         
         HttpResponse res = NULL;
         
-        //if(Test.isRunningTest()) {
-       //     res = new HttpResponse();
-       // } else {
+        if(Test.isRunningTest()) {
+            res = new HttpResponse();
+        } else {
             res = h.send(req);
-        //}
+        }
         
         responseString = res.getBody();
         System.debug('::::: Response from request token request: (' + res.getStatusCode() + ')' + res.getBody());
@@ -330,7 +330,7 @@ public with sharing class QuickBooksConnector {
         return str.substring(index, index + 1);
     }
     
-	public void fixToken()
+    public void fixToken()
     {
         verifier = NULL;
         callbackUrl = NULL;

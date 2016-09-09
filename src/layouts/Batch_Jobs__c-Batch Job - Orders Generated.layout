@@ -37,6 +37,10 @@
                 <behavior>Edit</behavior>
                 <field>Description__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Due_Before__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -97,6 +101,17 @@
         <fields>Leave__c</fields>
         <fields>Status__c</fields>
         <relatedList>OrderItem.Batch_Jobs__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Account__c</fields>
+        <fields>Balance__c</fields>
+        <fields>Customer_Reference__c</fields>
+        <fields>DocNumber__c</fields>
+        <fields>TotalAmount__c</fields>
+        <fields>TxnDate__c</fields>
+        <fields>DueDate__c</fields>
+        <relatedList>Transaction__c.Batch_Jobs__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

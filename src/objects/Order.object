@@ -254,7 +254,6 @@
         <fullName>AllOrders</fullName>
         <columns>ORDERS.CREATED_DATE</columns>
         <columns>ORDERS.ORDER_NUMBER</columns>
-        <columns>SALES.ACCOUNT.NAME</columns>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ORDERS.EFFECTIVE_DATE</columns>
         <columns>ORDERS.END_DATE</columns>
@@ -282,10 +281,6 @@
                 <fullName>Draft</fullName>
                 <default>false</default>
             </values>
-            <values>
-                <fullName>Error</fullName>
-                <default>false</default>
-            </values>
         </picklistValues>
     </recordTypes>
     <recordTypes>
@@ -301,10 +296,6 @@
             </values>
             <values>
                 <fullName>Draft</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Error</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -399,6 +390,23 @@ window.location.reload();</url>
         <fullName>Open_in_QuickBooks</fullName>
         <availability>online</availability>
         <displayType>link</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Open Inovice in QuickBooks</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&apos;/soap/ajax/31.0/connection.js&apos;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/31.0/apex.js&quot;)}
+
+
+
+var qboURL = sforce.apex.execute(&quot;AccountQBOHelper&quot;,&quot;GetInvoiceQBOUrl&quot;,{qbID:&quot;{!Order.Id}&quot;});
+
+window.open(qboURL);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Print_To_PDF</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
         <encodingKey>UTF-8</encodingKey>
         <hasMenubar>false</hasMenubar>
         <hasScrollbars>true</hasScrollbars>
@@ -406,12 +414,12 @@ window.location.reload();</url>
         <height>600</height>
         <isResizable>true</isResizable>
         <linkType>url</linkType>
-        <masterLabel>Open Inovice in QuickBooks</masterLabel>
+        <masterLabel>Print To PDF</masterLabel>
         <openType>newWindow</openType>
         <position>none</position>
         <protected>false</protected>
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
-        <url>https://sandbox.qbo.intuit.com/app/invoice?txnId={!Order.QuickBooksId__c}</url>
+        <url>/apex/PrintToPdf?Id={!Order.Id}</url>
     </webLinks>
 </CustomObject>

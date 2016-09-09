@@ -129,6 +129,14 @@ OR https://qb.sbfinance.intuit.com/v3/company/  for prod</inlineHelpText>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>QuickBooks_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>QuickBooks URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
         <fullName>Request_Token_URL__c</fullName>
         <externalId>false</externalId>
         <label>Request Token URL</label>
@@ -137,6 +145,17 @@ OR https://qb.sbfinance.intuit.com/v3/company/  for prod</inlineHelpText>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sfxId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>sfxId</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
     </fields>
     <label>OAuthService</label>
     <listViews>

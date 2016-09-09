@@ -21,27 +21,11 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>ApiConnectController</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>ApplicationSubmissionExtension</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>ApplicationSubmissionExtensionTest</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>ArgumentException</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>ArgumentNullException</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>Assert</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -54,10 +38,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ChangePasswordControllerTest</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>Clock</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -97,10 +77,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>CustomController</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>CustomerBalanceController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -113,10 +89,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>Debug</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>ErrorLogHelper</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -126,134 +98,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ForgotPasswordControllerTest</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>HttpClient</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>HttpClientTests</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>HttpContent</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>HttpContentFactoryTests</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>HttpContentType</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>HttpContentTypeTests</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>HttpHeaders</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>HttpMessageHandler</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>HttpMethod</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>HttpMethodTests</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>HttpParameter</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>HttpParameterFormat</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>HttpParameterFormatTests</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>HttpParameterList</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>HttpParameterListTests</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>HttpParameterTests</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>HttpRequestDispatcher</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>HttpRequestHeader</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>HttpRequestHeaders</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>HttpRequestMessage</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>HttpResponseHeaders</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>HttpResponseMessage</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>IHttpClientExtension</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>IHttpRequestDispatcher</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>INonceGenerator</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>Intuit</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>IntuitConfigController</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>IntuitConnectController</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>IntuitService</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>IntuitServiceTests</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>IntuitTests</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>InvalidOperationException</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -301,71 +145,11 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>LightningForgotPasswordController</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>LightningLoginFormController</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>LightningSelfRegisterController</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>Log</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>MediaType</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>MessageFormat</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>MockHttpRequestDispatcher</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>MockHttpRequestDispatcherTestFuxture</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>MockHttpRequestDispatcherTests</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>MyProfilePageController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>MyProfilePageControllerTest</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>NonceGenerator</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>NonceGeneratorTests</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>OAuth1</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>OAuth1TestFixture</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>OAuth1Tests</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>OAuthException</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -385,7 +169,23 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>PaymentBuilder</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PaymentBuilderBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PaymentGenerator</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>PriceBookUtils</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PrintToPDFController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -445,6 +245,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>QBOPaymentResponse</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>QBOPaymentResponse_Test</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>QBOProductList</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -458,6 +266,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>QBOPurchaseOrderResponse_Test</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>QBOStatement</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -477,10 +289,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>QuickbooksException</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>SiteLoginController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -494,6 +302,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>SiteRegisterControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>StallMapController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -533,34 +345,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>TestHelpers</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>TriggerHelper</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>UriBuilder</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>UriBuilderTestFixture</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>UriBuilderTests</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>Uuid</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>UuidTests</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>ViewPDFControllerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -590,6 +374,21 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.BSB_Number__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Bank_Account_Number__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Bank_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account.BillingAddress</field>
         <readable>true</readable>
@@ -603,6 +402,11 @@
         <editable>true</editable>
         <field>Account.Description</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.E_Mail__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -675,6 +479,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.SMS_Opt_Out__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account.ShippingAddress</field>
         <readable>true</readable>
@@ -692,6 +501,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Site</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Supplier_Approved__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -721,27 +535,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ApiToken__c.ApiName__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ApiToken__c.ProviderData__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ApiToken__c.Realm__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ApiToken__c.Status__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>ApiToken__c.TokenSecret__c</field>
+        <field>Account.sfxId__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -831,6 +625,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Batch_Jobs__c.Due_Before__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Batch_Jobs__c.From_Date__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -843,6 +642,11 @@
         <editable>false</editable>
         <field>Batch_Jobs__c.To_Date__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Batch_Jobs__c.Week_Month_Of__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -1181,6 +985,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Contact.sfxId__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.smagicinteract__SMSOptOut__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Contract.ActivatedById</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1315,9 +1129,9 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Invoice__c.Account__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -1336,6 +1150,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Invoice__c.Invoice_Nbr__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Invoice__c.Invoice_Status__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1347,6 +1166,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Invoice__c.Magik_Invoice_Number__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Invoice__c.Paid_Amount__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1375,9 +1199,14 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
+        <field>Invoice__c.sfxId__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Lead.ABN__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -1781,6 +1610,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Lead.smagicinteract__SMSOptOut__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Leave__c.Override__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1826,17 +1660,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>OAuthService__c.QuickBooks_URL__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>OAuthService__c.Request_Token_URL__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>OAuthToken__mdt.Realm__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>OAuthToken__mdt.TokenSecret__c</field>
+        <field>OAuthService__c.sfxId__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1905,9 +1739,9 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Opportunity.Contracted_Leave__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -2015,6 +1849,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Lifestyle_Groups__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Loss_Reason__c</field>
         <readable>true</readable>
@@ -2042,6 +1881,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Perm_Stall__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Permitted_Use_Sub_Category__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2115,9 +1959,14 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Opportunity.Uplift_Factor__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.sfxId__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -2346,12 +2195,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Pricebook2.sfxId__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>PricebookEntry.Sku_Override__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>PricebookEntry.Sku__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>PricebookEntry.sfxId__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2376,6 +2235,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Product2.sfxId__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>QVM_Article__kav.Article__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -2392,21 +2256,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>QVM_Article__kav.Attachment3__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>QuickBooks_OAuth_Setting__mdt.DataSourcePayments__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>QuickBooks_OAuth_Setting__mdt.DataSourceQuickBooks__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>QuickBooks_OAuth_Setting__mdt.PaymentsIntuitReferred__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2620,9 +2469,9 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Stall__c.FridayMultiplier__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -2637,6 +2486,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Stall__c.Guarantee_Amount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Stall__c.Height__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2657,6 +2511,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Stall__c.Lease_Notification_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Stall__c.Left__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Stall__c.Line_Height__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2690,9 +2554,9 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Stall__c.MondayMultiplier__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -2730,9 +2594,9 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Stall__c.SaturdayMultiplier__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -2740,9 +2604,9 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Stall__c.SundayMultiplier__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -2755,9 +2619,9 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Stall__c.ThursdayMultiplier__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -2765,9 +2629,14 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
+        <field>Stall__c.Top__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Stall__c.TuesdayMultiplier__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -2775,13 +2644,18 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Stall__c.WednesdayMultiplier__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>Stall__c.WednesdayTrader__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Stall__c.Width__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2826,57 +2700,74 @@
         <recordType>Account.Trader</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>ApiToken__c-Intuit %28Quickbooks%29 Token Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>ApiToken__c-Intuit %28Quickbooks%29 Token Layout</layout>
-        <recordType>ApiToken__c.Intuit</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Asset-Asset Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Batch_Jobs__c-Batch Job - Finding Invoices</layout>
+        <recordType>Batch_Jobs__c.Finding_Invoices</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Batch_Jobs__c-Batch Job - Invoices Found</layout>
+        <recordType>Batch_Jobs__c.Invoices_Found</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Batch_Jobs__c-Batch Job - Invoices Generated</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Batch_Jobs__c-Batch Job - Invoices Generated</layout>
+        <recordType>Batch_Jobs__c.Error_Processing_Invoices</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Batch_Jobs__c-Batch Job - Invoices Generated</layout>
+        <recordType>Batch_Jobs__c.Error_Processing_Leave_Credit_Notes</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Batch_Jobs__c-Batch Job - Invoices Generated</layout>
         <recordType>Batch_Jobs__c.Invoices_Generated</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Batch_Jobs__c-Batch Job - Leave Credit Notes Generated</layout>
+        <layout>Batch_Jobs__c-Batch Job - Invoices Generated</layout>
         <recordType>Batch_Jobs__c.Leave_Credit_Notes_Generated</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Batch_Jobs__c-Batch Job - New Leave  Credit Notes</layout>
-        <recordType>Batch_Jobs__c.Error_Processing_Leave_Credit_Notes</recordType>
+        <layout>Batch_Jobs__c-Batch Job - Invoices Generated</layout>
+        <recordType>Batch_Jobs__c.New</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Batch_Jobs__c-Batch Job - New Leave  Credit Notes</layout>
+        <layout>Batch_Jobs__c-Batch Job - Invoices Generated</layout>
         <recordType>Batch_Jobs__c.New_Leave_Credit_Notes</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Batch_Jobs__c-Batch Job - Orders Generated</layout>
-        <recordType>Batch_Jobs__c.Error_Processing_Invoices</recordType>
+        <layout>Batch_Jobs__c-Batch Job - Invoices Generated</layout>
+        <recordType>Batch_Jobs__c.New_OrdersInvoices</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Batch_Jobs__c-Batch Job - Orders Generated</layout>
+        <layout>Batch_Jobs__c-Batch Job - Invoices Generated</layout>
+        <recordType>Batch_Jobs__c.New_Payments</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Batch_Jobs__c-Batch Job - Invoices Generated</layout>
         <recordType>Batch_Jobs__c.Orders_Generated</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Batch_Jobs__c-Batch Job - Processing Invoices</layout>
+        <layout>Batch_Jobs__c-Batch Job - Invoices Generated</layout>
         <recordType>Batch_Jobs__c.Processing_Invoices</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Batch_Jobs__c-Batch Job - Processing Leave Credit Notes</layout>
+        <layout>Batch_Jobs__c-Batch Job - Invoices Generated</layout>
         <recordType>Batch_Jobs__c.Processing_Leave_Credit_Notes</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Batch_Jobs__c-Batch Job - Processing Orders</layout>
+        <layout>Batch_Jobs__c-Batch Job - Invoices Generated</layout>
         <recordType>Batch_Jobs__c.Processing_Orders</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Batch_Jobs__c-Batch Jobs Layout</layout>
+        <layout>Batch_Jobs__c-Batch Job - Payments Generated</layout>
+        <recordType>Batch_Jobs__c.Payments_Generated</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Batch_Jobs__c-Batch Jobs Layout</layout>
-        <recordType>Batch_Jobs__c.New_OrdersInvoices</recordType>
+        <layout>Batch_Jobs__c-Batch Job - Processing Payments</layout>
+        <recordType>Batch_Jobs__c.Processing_Payment</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Campaign-Campaign Layout</layout>
@@ -2935,10 +2826,7 @@
         <layout>Idea-Idea Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Invoice__c-Invoice Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Knowledge__kav-Knowledge Layout</layout>
+        <layout>Invoice__c-QV Internal</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Lead-Lead Layout</layout>
@@ -2959,16 +2847,10 @@
         <layout>Leave__c-Leave Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>LinkedArticle-Linked Article Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Macro-Macro Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>OAuthService__c-OAuthService Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>OAuthToken__mdt-OAuth Token Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>OAuth_Token__c-OAuth Token Layout</layout>
@@ -3004,18 +2886,18 @@
         <layout>OpportunityLineItem-Opportunity Product Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Order-Order Layout - AR</layout>
+        <layout>Order-Order Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Order-Order Layout - AR</layout>
+        <layout>Order-Order Layout</layout>
         <recordType>Order.Accounts_Payable</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Order-Order Layout - AR</layout>
+        <layout>Order-Order Layout</layout>
         <recordType>Order.Accounts_Receivable</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>OrderItem-Order Product Layout - AR</layout>
+        <layout>OrderItem-Order Product Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Pricebook2-Price Book Layout</layout>
@@ -3042,9 +2924,6 @@
         <layout>QVM_Article__kav-QVM Article Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>QuickBooks_OAuth_Setting__mdt-QuickBooks OAuth Setting Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Quote-Quote Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -3061,17 +2940,20 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Stall__c-Permanent Stall Layout</layout>
-        <recordType>Stall__c.Permanent</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Stall__c-Stall Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Stall__c-Stall Layout</layout>
+        <layout>Stall__c-Permanent Stall Layout</layout>
         <recordType>Stall__c.Casual</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Stall__c-Permanent Stall Layout</layout>
+        <recordType>Stall__c.Permanent</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Task-Task Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Transaction__c-Payment Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>User-User Layout</layout>
@@ -3093,9 +2975,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkThanks-Thanks Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>app_api_oauth__mdt-App API OAuth setting Layout</layout>
     </layoutAssignments>
     <objectPermissions>
         <allowCreate>false</allowCreate>
@@ -3245,10 +3124,6 @@
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>ApiConnect</apexPage>
-        <enabled>false</enabled>
-    </pageAccesses>
-    <pageAccesses>
         <apexPage>ApplicationSubmission</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
@@ -3285,6 +3160,10 @@
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
+        <apexPage>ExpressionOfInterest</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>FileNotFound</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
@@ -3305,15 +3184,15 @@
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>IntuitConfig</apexPage>
-        <enabled>false</enabled>
-    </pageAccesses>
-    <pageAccesses>
         <apexPage>LeadConfirmationForSite</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
         <apexPage>MyProfilePage</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>PrintToPdf</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
@@ -3341,6 +3220,10 @@
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
+        <apexPage>StallMap</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>StallsAvaliableToday</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
@@ -3364,6 +3247,10 @@
         <apexPage>ViewStatement</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
+    <pageAccesses>
+        <apexPage>WebToLead</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.Supplier</recordType>
@@ -3375,29 +3262,34 @@
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
-        <default>true</default>
-        <recordType>ApiToken__c.Intuit</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
         <default>false</default>
         <recordType>Batch_Jobs__c.Error_Processing_Invoices</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Batch_Jobs__c.Error_Processing_Leave_Credit_Notes</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Batch_Jobs__c.Finding_Invoices</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Batch_Jobs__c.Invoices_Found</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Batch_Jobs__c.Invoices_Generated</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Batch_Jobs__c.Leave_Credit_Notes_Generated</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
@@ -3405,28 +3297,43 @@
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
-        <default>true</default>
+        <default>false</default>
         <recordType>Batch_Jobs__c.New_OrdersInvoices</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Batch_Jobs__c.New_Payments</recordType>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Batch_Jobs__c.Orders_Generated</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Batch_Jobs__c.Payments_Generated</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Batch_Jobs__c.Processing_Invoices</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Batch_Jobs__c.Processing_Leave_Credit_Notes</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Batch_Jobs__c.Processing_Orders</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Batch_Jobs__c.Processing_Payment</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
@@ -3502,12 +3409,12 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Stall__c.Casual</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
-        <default>true</default>
+        <default>false</default>
         <recordType>Stall__c.Permanent</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
         <tab>standard-DuplicateRecordSet</tab>

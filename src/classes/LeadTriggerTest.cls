@@ -14,11 +14,11 @@ private class LeadTriggerTest
         try
         {
              Profile prof = [SELECT Id FROM Profile WHERE Name =: Constants.ADMIN_PROFILE LIMIT 1];
-             User adminUser = DataFactoryForTestClass.createUser('Admin',prof.id,'admin@advdev.org');
+             User adminUser = TestDataFactory.createUser('Admin',prof.id,'admin@advdev.org');
              system.runAs( adminUser )
              {
                 Test.startTest();
-                leadObj = DataFactoryForTestClass.CreateLead( );  
+                leadObj = TestDataFactory.CreateLead( );  
                      
                 
                 if( leadObj != null )
@@ -36,8 +36,13 @@ private class LeadTriggerTest
                 
                 Opportunity convertedOpp = [SELECT id,Primary_Contact__c  FROM Opportunity  where id=:leadObj.ConvertedOpportunityId LIMIT 1];
                 System.assertEquals( convertedOpp.Primary_Contact__c, leadObj.ConvertedContactId);             
+                
+                
+                Account convertedAccount = [SELECT id,Primary_Contact__c FROM Account where id =: leadObj.ConvertedAccountId LIMIT 1];
+                System.assertEquals( convertedAccount.Primary_Contact__c , leadObj.ConvertedContactId);   
+                
                 Test.stopTest();
-              }
+             }
          }
          catch( Exception Ex )
          {

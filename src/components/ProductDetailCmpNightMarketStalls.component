@@ -22,33 +22,7 @@
         <apex:outputPanel id="thePanel" layout="block" style="align:center;">
                 
                 <p style="font-size:120%;"><br></br><b>Please upload a minimum of three different images of your proposed product/s*</b></p><br></br>
-
-                <!--<p><br></br><b>Product Image #1*</b><br></br><br></br></p>
-                <apex:inputFile style="width:100%" id="fileToUpload1" value="{!AppSub.fileBody1}" filename="{!AppSub.fileName1}" /> 
-                
-                <p>Accepted file types: jpg, png, pdf</p>
-                <p>These will be used for promotional material</p>
-
-                <p><br></br><b>Product Image #2*</b><br></br><br></br></p>
-                <apex:inputFile style="width:100%" id="fileToUpload2" value="{!AppSub.fileBody2}" filename="{!AppSub.fileName2}" /> 
-                <p style="font-size:80%;">Accepted file types: jpg, png, pdf</p>
-                <p style="font-size:90%;">These will be used for promotional material</p>
-
-                <p><br></br><b>Product Image #3*</b><br></br><br></br></p>
-                <apex:inputFile style="width:100%" id="imageupload3" value="{!AppSub.imagebody3}" filename="{!AppSub.imagename3}" /> 
-                <p style="font-size:80%;">Accepted file types: jpg, png, pdf</p>
-                <p style="font-size:90%;">These will be used for promotional material</p>
-
-                <p><br></br><b>Product Image #4*</b><br></br><br></br></p>
-                <apex:inputFile style="width:100%" id="imageupload4" value="{!AppSub.imagebody4}" filename="{!AppSub.imagename4}" /> 
-                <p style="font-size:80%;">Accepted file types: jpg, png, pdf</p>
-                <p style="font-size:90%;">These will be used for promotional material</p>
-
-                <p><br></br><b>Product Image #5*</b><br></br><br></br></p>
-                <apex:inputFile style="width:100%" id="imageupload5" value="{!AppSub.imagebody5}" filename="{!AppSub.imagename5}" /> 
-                <p style="font-size:80%;">Accepted file types: jpg, png, pdf</p>
-                <p style="font-size:90%;">These will be used for promotional material</p>-->
-                
+                               
                 <apex:variable var="count" value="{!1}"/>
                 <apex:repeat value="{!AppSub.newAttachments}" var="newAtt">
                 <apex:pageBlockSection columns="1">
@@ -64,9 +38,7 @@
                 <apex:variable var="count" value="{!count + 1}"/>
                </apex:repeat>
                 
-                
-
-         
+                         
                 <p style="font-size:100%;"><br></br><b>Please upload an Australian Drivers Licence or passport*</b><br></br><br></br></p>
                 <apex:inputFile style="width:100%" id="fileToUpload4" value="{!AppSub.fileBody4}" filename="{!AppSub.fileName4}" /><br></br><br></br><br></br>               
        </apex:outputPanel>
@@ -75,25 +47,26 @@
        <apex:inputField value="{!AppSub.weblead.Product_Distribution__c}" required="true"/>
 
        <p style="font-size:100%;"><br></br><b>Indicate your preferred stall location (1st, 2nd and 3rd)*</b><br></br><br></br></p>
-       <!--<apex:inputField value="{!AppSub.weblead.Island_Stall_Standard__c}"/>
-       <apex:inputField value="{!AppSub.weblead.Island_Stall_Corner__c}"/>
-       <apex:inputField value="{!AppSub.weblead.L_Shed_stalls_and_laneway__c}"/>
-       <apex:inputField value="{!AppSub.weblead.Casual__c}"/>      
-       <apex:inputField value="{!AppSub.weblead.Readers_Masseurs__c}"/>-->
+      
        
        <apex:inputField value="{!AppSub.weblead.X1st_Stall_Location_Preference__c}"/>
        <apex:inputField value="{!AppSub.weblead.X2nd_Stall_Location_Preference__c}"/>
        <apex:inputField value="{!AppSub.weblead.X3rd_Stall_Location_Preference__c}"/>
        <apex:inputField value="{!AppSub.weblead.Additional_Information__c}" style="width:50%;"/><br></br>
+       
+       
+       <p style="font-size:160%;border-top-style: double;border-right-style:null;border-bottom-style: double;border-left-style: null;border-width: 5px;border-color:#C1C5C7;">
+           <br></br><b>TERMS AND CONDITIONS(if accepted)</b><br></br><br></br>
+        </p><br></br><br></br>
 
-       <!--<apex:pageBlockSectionItem >-->
+  
            <apex:outputPanel id="acceptanceId1" >
-           <div align="left"><apex:inputField value="{!AppSub.weblead.Accept__c}" id="acceptTermsId"/>&nbsp;&nbsp;<b> {!$Label.ConfirmationQuestion}</b></div>          
+           <div align="left"><apex:inputField value="{!AppSub.weblead.Accept__c}" id="acceptTermsId"/>&nbsp;&nbsp;<b> {!AppSub.acceptanceText } </b></div>          
            </apex:outputPanel>           
            <apex:outputPanel id="acceptanceId2" rendered="{!AppSub.acceptanceTextFlag }"> 
-           <apex:outputLink value="{!AppSub.termsAndConditionLink }" id="termsConditionId">Terms and Conditions</apex:outputLink>
+           <apex:outputLink value="{!AppSub.termsAndConditionLink }" id="termsConditionId" target="_blank">Terms and Conditions</apex:outputLink>
            </apex:outputPanel>           
-    <!--   </apex:pageBlockSectionItem>-->
+ 
 
     </apex:pageBlockSection>
 

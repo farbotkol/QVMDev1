@@ -71,7 +71,16 @@
     <fields>
         <fullName>Formula_Total__c</fullName>
         <externalId>false</externalId>
-        <formula>UnitPrice *  Quantity *   CASE( PricebookEntry.Product2.ProductCode , &apos;Monday&apos;,  Stall__r.MondayMultiplier__c, &apos;Tuesday&apos;,  Stall__r.TuesdayMultiplier__c , &apos;Wednesday&apos;,  Stall__r.WednesdayMultiplier__c , &apos;Thursday&apos;,  Stall__r.ThursdayMultiplier__c, &apos;Friday&apos;,  Stall__r.FridayMultiplier__c, &apos;Saturday&apos;,  Stall__r.SaturdayMultiplier__c, &apos;Sunday&apos;,  Stall__r.SundayMultiplier__c,1)*  Order.Opportunity.Uplift_Factor__c</formula>
+        <formula>UnitPrice  * 
+Quantity * 
+CASE( PricebookEntry.Product2.ProductCode , 
+   &apos;Monday&apos;, BLANKVALUE(Stall__r.MondayMultiplier__c,1), 
+   &apos;Tuesday&apos;, BLANKVALUE(Stall__r.TuesdayMultiplier__c,1) , 
+   &apos;Wednesday&apos;, BLANKVALUE(Stall__r.WednesdayMultiplier__c,1) , 
+   &apos;Thursday&apos;, BLANKVALUE(Stall__r.ThursdayMultiplier__c,1), 
+   &apos;Friday&apos;, BLANKVALUE(Stall__r.FridayMultiplier__c,1), 
+   &apos;Saturday&apos;, BLANKVALUE(Stall__r.SaturdayMultiplier__c,1), 
+   &apos;Sunday&apos;, BLANKVALUE(Stall__r.SundayMultiplier__c,1),1) *   BLANKVALUE(Order.Opportunity.Uplift_Factor__c, 1)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Formula Total</label>
         <precision>18</precision>

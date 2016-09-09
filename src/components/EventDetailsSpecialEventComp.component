@@ -45,15 +45,17 @@
         <apex:inputFile style="width:100%" id="BudgetId" value="{!AppSub.BudgetBody}" filename="{!AppSub.Budget}" /> 
 
         <apex:inputField value="{!AppSub.weblead.Additional_Information__c}" html-rows="7" html-cols="80"/> 
+        
+        <p style="font-size:160%;border-top-style: double;border-right-style:null;border-bottom-style: double;border-left-style: null;border-width: 5px;border-color:#C1C5C7;">
+           <br></br><b>TERMS AND CONDITIONS(if accepted)</b><br></br><br></br>
+        </p><br></br><br></br>
       
-        <!--<apex:pageBlockSectionItem >-->
            <apex:outputPanel id="acceptanceId1" >
-           <div align="left"><apex:inputField value="{!AppSub.weblead.Accept__c}" id="acceptTermsId"/>&nbsp;&nbsp;<b> {!$Label.ConfirmationQuestion}</b></div>          
+           <div align="left"><apex:inputField value="{!AppSub.weblead.Accept__c}" id="acceptTermsId"/>&nbsp;&nbsp;<b>{!AppSub.acceptanceText }</b></div>          
            </apex:outputPanel>           
            <apex:outputPanel id="acceptanceId2" rendered="{!AppSub.acceptanceTextFlag }"> 
-           <apex:outputLink value="{!AppSub.termsAndConditionLink }" id="termsConditionId">Terms and Conditions</apex:outputLink>
+           <apex:outputLink value="{!AppSub.termsAndConditionLink }" id="termsConditionId" target="_blank">Terms and Conditions</apex:outputLink>
            </apex:outputPanel>           
-        <!--</apex:pageBlockSectionItem>-->
        
        
     </apex:pageBlockSection>

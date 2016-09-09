@@ -65,6 +65,15 @@
         <type>Default</type>
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Account_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>Phone</fields>
+        <fields>BillingAddress</fields>
+        <fields>Website</fields>
+        <fields>OwnerId</fields>
+        <label>Account Compact Layout</label>
+    </compactLayouts>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>true</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -136,6 +145,36 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>BSB_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>BSB Number</label>
+        <length>7</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bank_Account_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Bank Account Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bank_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Bank Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>BillingAddress</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -173,6 +212,15 @@
     <fields>
         <fullName>Description</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>E_Mail__c</fullName>
+        <externalId>false</externalId>
+        <label>E-Mail</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Email</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Fax</fullName>
@@ -341,13 +389,10 @@
     </fields>
     <fields>
         <fullName>Majik_AccountNo__c</fullName>
+        <displayFormat>QVM-{000000}</displayFormat>
         <externalId>true</externalId>
         <label>Majik AccountNo</label>
-        <length>18</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>AutoNumber</type>
     </fields>
     <fields>
         <fullName>Mobile_Phone__c</fullName>
@@ -447,6 +492,15 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>SMS_Opt_Out__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Created by SMS Magic</description>
+        <externalId>false</externalId>
+        <label>SMS Opt Out</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>ShippingAddress</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -461,6 +515,14 @@
     <fields>
         <fullName>Site</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Supplier_Approved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Supplier Approved</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>TickerSymbol</fullName>
@@ -547,17 +609,46 @@
         <fullName>Website</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
+    <fields>
+        <fullName>sfxId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>sfxId</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
     <listViews>
         <fullName>AllAccounts</fullName>
         <columns>ACCOUNT.NAME</columns>
-        <columns>ACCOUNT.RECORDTYPE</columns>
         <columns>ACCOUNT.ADDRESS1_STATE</columns>
         <columns>ACCOUNT.PHONE1</columns>
+        <columns>ACCOUNT.TYPE</columns>
         <columns>CORE.USERS.FIRST_NAME</columns>
         <columns>CORE.USERS.LAST_NAME</columns>
         <columns>QuickBooks_Id__c</columns>
+        <columns>ACCOUNT.LAST_UPDATE</columns>
         <filterScope>Everything</filterScope>
         <label>All Accounts</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Accounts_Missing_QBO_Ids</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>ACCOUNT.ADDRESS1_STATE</columns>
+        <columns>ACCOUNT.PHONE1</columns>
+        <columns>ACCOUNT.TYPE</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>QuickBooks_Id__c</columns>
+        <columns>ACCOUNT.LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>QuickBooks_Id__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>All Accounts Missing QBO Ids</label>
     </listViews>
     <listViews>
         <fullName>MyAccounts</fullName>
@@ -567,16 +658,21 @@
     <listViews>
         <fullName>SMS_View</fullName>
         <columns>ACCOUNT.NAME</columns>
-        <columns>ACCOUNT.ADDRESS1_STATE</columns>
         <columns>Trading_Name__c</columns>
         <columns>Majik_AccountNo__c</columns>
         <columns>Mobile_Phone__c</columns>
+        <columns>SMS_Opt_Out__c</columns>
         <columns>ACCOUNT.RECORDTYPE</columns>
         <columns>ACCOUNT.TYPE</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Mobile_Phone__c</field>
             <operation>notEqual</operation>
+        </filters>
+        <filters>
+            <field>SMS_Opt_Out__c</field>
+            <operation>equals</operation>
+            <value>0</value>
         </filters>
         <label>SMS View</label>
         <sharedTo>
@@ -1173,6 +1269,7 @@
         <customTabListAdditionalFields>Majik_AccountNo__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.TYPE</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.PHONE1</customTabListAdditionalFields>
+        <listViewButtons>Send_Bulk_SMS</listViewButtons>
         <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Trading_Name__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Majik_AccountNo__c</lookupDialogsAdditionalFields>
@@ -1203,6 +1300,13 @@
         <searchResultsAdditionalFields>ACCOUNT.PHONE1</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>BSB_Number_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(  AND( LEN( BSB_Number__c )  &gt; 0, LEN( BSB_Number__c ) &lt;= 7 ), (OR(NOT(ISNUMBER(LEFT( BSB_Number__c , 3)) ),  NOT( ISNUMBER( RIGHT( BSB_Number__c , 3) ) ),  NOT( MID( BSB_Number__c , 4, 1)  =  &apos;-&apos; )    )))</errorConditionFormula>
+        <errorDisplayField>BSB_Number__c</errorDisplayField>
+        <errorMessage>Please enter a valid BSB number [XXX-XXX where X is a number]</errorMessage>
+    </validationRules>
     <webLinks>
         <fullName>GoogleMaps</fullName>
         <availability>online</availability>
@@ -1259,5 +1363,157 @@
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
         <url>http://www.google.com/search?q={!Account_Name}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Open_in_QuickBooks</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Open in QuickBooks</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&apos;/soap/ajax/31.0/connection.js&apos;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/31.0/apex.js&quot;)} 
+
+
+
+var qboURL = sforce.apex.execute(&quot;AccountQBOHelper&quot;,&quot;GetAccountQBOUrl&quot;,{recID:&quot;{!Account.Id}&quot;});
+
+
+
+window.open(qboURL);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Send_Bulk_SMS</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Send Bulk SMS</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+function loadJqueryDynamically(){ 
+
+var newscript = document.createElement(&apos;script&apos;); 
+newscript.type = &apos;text/javascript&apos;; 
+newscript.async = false; 
+newscript.src = &apos;{!URLFOR(&apos;/resource/smagicinteract__smJQuery/js/jquery-1.10.2.js&apos;)}&apos;; 
+(document.getElementsByTagName(&apos;head&apos;)[0]||document.getElementsByTagName(&apos;body&apos;)[0]).appendChild(newscript); 
+
+var newscript1 = document.createElement(&apos;script&apos;); 
+newscript1.type = &apos;text/javascript&apos;; 
+newscript1.async = false; 
+newscript1.src = &apos;{!URLFOR(&apos;/resource/smagicinteract__smJQuery/js/jquery-ui-1.10.4.custom.min.js&apos;)} &apos;; 
+(document.getElementsByTagName(&apos;head&apos;)[0]||document.getElementsByTagName(&apos;body&apos;)[0]).appendChild(newscript1); 
+
+var newscript2 = document.createElement(&apos;script&apos;); 
+newscript2.type = &apos;text/javascript&apos;; 
+newscript2.async = false; 
+newscript2.src = &apos;{!URLFOR(&apos;/resource/smagicinteract__sendSMSJS&apos;)}&apos;; 
+(document.getElementsByTagName(&apos;head&apos;)[0]||document.getElementsByTagName(&apos;body&apos;)[0]).appendChild(newscript2); 
+newscript2.onload = showPage; 
+
+} 
+
+
+loadJqueryDynamically(); 
+
+function showPage() { 
+
+var records = {!GETRECORDIDS($ObjectType.Contact)}; 
+if (records[0] == null) 
+{ 
+alert(&quot;Please select at least one Account.&quot;) 
+} 
+else{ 
+var packagePrefix = &quot;smagicinteract__&quot;; 
+var recordType = &quot;Account&quot;; 
+var recordIds = &quot;&quot;; 
+var nameField = &apos;Name&apos;; 
+var mobileField = &apos;Mobile_Phone__c&apos;; 
+var optOutField = &apos;SMS_Opt_Out__c&apos;; 
+var optOutDefaultValue = &apos;yes&apos;; 
+var smsType = &apos;&apos;; 
+var userId = &apos;{!$User.Id}&apos;; 
+var elementIdVar = &apos;&apos;; 
+var showUserDropDown = false; 
+var dialogTitle = &apos;&apos;; 
+var queryString = &apos;&apos;; 
+
+for (var n in records) { 
+if(n == &apos;remove&apos; || n == &apos;indexOf&apos;) continue; 
+recordIds = recordIds + records[n]; 
+
+if (n != records.length-1) { 
+recordIds = recordIds + &quot;,&quot;; 
+} 
+} 
+
+var cssUrl = &apos;{!URLFOR(&apos;/resource/smagicinteract__smJQuery/css/sm-theme/jquery-ui-1.10.4.custom.min.css&apos;)}&apos;; 
+
+var unrelatedObjectAPIName = &apos;&apos;; 
+
+if({!$Permission.smagicinteract__AllowToSendBulkMessage}) { 
+sendSMS(recordType, recordIds, userId, nameField, mobileField, optOutField, optOutDefaultValue, smsType, elementIdVar, packagePrefix, showUserDropDown, dialogTitle, cssUrl, unrelatedObjectAPIName); 
+} 
+else { 
+alert(&apos;You cannot Send SMS. Please contact system admin&apos;); 
+} 
+
+} 
+
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Send_SMS</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Send SMS</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+{!REQUIRESCRIPT(&apos;/resource/smagicinteract__smJQuery/js/jquery-1.10.2.js&apos;)} 
+{!REQUIRESCRIPT(&apos;/resource/smagicinteract__smJQuery/js/jquery-ui-1.10.4.custom.min.js&apos;)} 
+{!REQUIRESCRIPT(&quot;/resource/smagicinteract__sendSMSJS&quot;)} 
+
+var packagePrefix = &quot;smagicinteract__&quot;; 
+var recordType = &apos;Account&apos;; 
+var idToUpdate = &apos;{!Account.Id}&apos;
+var nameField = &apos;Name&apos;; 
+var mobileField = &apos;Mobile_Phone__c&apos;; 
+var optOutField = &apos;SMS_Opt_Out__c&apos;;
+var optOutDefaultValue = &apos;yes&apos;;
+var smsType = &apos;&apos;; 
+var userId = &apos;{!$User.Id}&apos;; 
+var elementIdVar = &apos;&apos;; 
+var showUserDropDown = false; 
+var dialogTitle = &apos;&apos;;
+var cssUrl = &apos;{!URLFOR(&apos;/resource/smagicinteract__smJQuery/css/sm-theme/jquery-ui-1.10.4.custom.min.css&apos;)}&apos;;
+var unrelatedObjectAPIName = &apos;&apos;;
+
+sendSMS(recordType, idToUpdate, userId, nameField, mobileField, optOutField, optOutDefaultValue, smsType, elementIdVar, packagePrefix, showUserDropDown, dialogTitle, cssUrl, unrelatedObjectAPIName);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>View_Statement</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>View Statement</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/ViewStatement?customerRef={!Account.QuickBooks_Id__c}</url>
     </webLinks>
 </CustomObject>

@@ -520,23 +520,8 @@
         </sharedTo>
     </listViews>
     <listViews>
-        <fullName>Property_Queue_Case</fullName>
-        <columns>CASES.CASE_NUMBER</columns>
-        <columns>CASES.STATUS</columns>
-        <columns>CASES.PRIORITY</columns>
-        <columns>CASES.TYPE</columns>
-        <columns>Sub_Type__c</columns>
-        <columns>ACCOUNT.NAME</columns>
-        <columns>NAME</columns>
-        <columns>CONTACT.ACCOUNT</columns>
-        <columns>CASES.SUBJECT</columns>
-        <columns>CASES.LAST_UPDATE_DATE_ONLY</columns>
+        <fullName>Property_Department_Queue_Case</fullName>
         <filterScope>Queue</filterScope>
-        <filters>
-            <field>CASES.STATUS</field>
-            <operation>notEqual</operation>
-            <value>Closed</value>
-        </filters>
         <label>Property Department Queue</label>
         <queue>Property_Department_Queue</queue>
         <sharedTo>

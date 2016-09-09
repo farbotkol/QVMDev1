@@ -49,7 +49,7 @@ global class LeaveCreditNoteBuilder {
                 custRef.value = item.Order.Account.QuickBooks_Id__c;
                 invoice.CustomerRef = custRef;
                 invoice.PrivateNote = item.Description;
-                invoice.DocNumber = 'LCN--'+item.OrderItemNumber;
+               // invoice.DocNumber = item.OrderItemNumber + 'LCN';
                 invoice.TxnDate = ((DateTime)Date.today()).format('YYYY-MM-dd');
                 
                 

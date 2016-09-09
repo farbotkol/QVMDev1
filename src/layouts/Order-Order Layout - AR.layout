@@ -78,6 +78,9 @@
             <layoutItems>
                 <customLink>Open_Invoice_PDF</customLink>
             </layoutItems>
+            <layoutItems>
+                <customLink>Print_To_PDF</customLink>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns/>
         <layoutColumns/>
@@ -121,11 +124,13 @@
     </layoutSections>
     <relatedLists>
         <fields>Product2</fields>
+        <fields>Stall__c</fields>
         <fields>Date__c</fields>
         <fields>Description</fields>
         <fields>Quantity</fields>
-        <fields>UnitPrice</fields>
-        <fields>TotalPrice</fields>
+        <fields>Total__c</fields>
+        <fields>Leave__c</fields>
+        <fields>Status__c</fields>
         <relatedList>RelatedOrderItemList</relatedList>
         <sortField>Date__c</sortField>
         <sortOrder>Asc</sortOrder>
@@ -142,13 +147,16 @@
         <fields>Comments</fields>
         <relatedList>RelatedProcessHistoryList</relatedList>
     </relatedLists>
-    <relatedObjects>ContractId</relatedObjects>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Transaction__c.Order__c</relatedList>
+    </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h28000004x9ne</masterLabel>
+        <masterLabel>00hp0000000RDdN</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
