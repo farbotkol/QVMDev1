@@ -4,6 +4,13 @@ public class TestDataFactory {
 
     public static List<Account> createAccountsWithOpps(Integer numAccts, Integer numOppsPerAcct, string recordType ) {
 
+        Id PriceBookId = Test.getStandardPricebookId();
+        if(recordType == 'SL' || recordType == 'PE' ) 
+        {
+            PriceBook2 PriceBook = [select Id from PriceBook2 where Name = 'General Merchandise'limit 1];
+            PriceBookId = PriceBook.Id;
+        }
+        
         Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Opportunity; 
         Map<String,Schema.RecordTypeInfo> oppRecordTypeInfo = cfrSchema.getRecordTypeInfosByName(); 
 
@@ -35,7 +42,7 @@ public class TestDataFactory {
                                        AccountId=acct.Id,
                                        Contracted_Leave__c=20,
                                        Business_Status__c = 'Open',
-                                       pricebook2id=Test.getStandardPricebookId()));
+                                       pricebook2id=PriceBookId));
             }
         }
         // Insert all opportunities for all accounts.
@@ -187,11 +194,18 @@ public class TestDataFactory {
     public static void createStallProductsAndGeneralPriceBook()
     {
 
-            /*PriceBook2 pb = new PriceBook2();
+            PriceBook2 pb = new PriceBook2();
             pb.name = 'General Merchandise';
             pb.isActive=true;
-            pb.IsStandard  = true;
-            insert pb;*/
+            pb.SLPE__c = true;
+            //pb.IsStandard  = true;
+            insert pb;
+        
+            
+        
+            //PriceBook2 pb = PriceBookUtils.getStdPriceBook();
+            
+            //update pb;
 
             List<Product2> productsToInsert = new List<Product2>();
 
@@ -241,7 +255,7 @@ public class TestDataFactory {
 
             List<PriceBookEntry> pbeToInsert = new List<PriceBookEntry>();
 
-             Id pricebookId = Test.getStandardPricebookId();
+            Id pricebookId = Test.getStandardPricebookId();
 
             pbeToInsert.add(new PricebookEntry(pricebook2id=pricebookId, product2id=prodMon.id,unitprice=30, isActive=true));
             pbeToInsert.add(new PricebookEntry(pricebook2id=pricebookId, product2id=prodTue.id,unitprice=30, isActive=true));
@@ -252,7 +266,19 @@ public class TestDataFactory {
             pbeToInsert.add(new PricebookEntry(pricebook2id=pricebookId, product2id=prodSun.id,unitprice=30, isActive=true));
 
             insert pbeToInsert;
+        
+        	pbeToInsert.clear();
+        
+        	pricebookId = pb.Id;
+       		pbeToInsert.add(new PricebookEntry(pricebook2id=pricebookId, product2id=prodMon.id,unitprice=30, isActive=true));
+            pbeToInsert.add(new PricebookEntry(pricebook2id=pricebookId, product2id=prodTue.id,unitprice=30, isActive=true));
+            pbeToInsert.add(new PricebookEntry(pricebook2id=pricebookId, product2id=prodWed.id,unitprice=30, isActive=true));
+            pbeToInsert.add(new PricebookEntry(pricebook2id=pricebookId, product2id=prodThu.id,unitprice=30, isActive=true));
+            pbeToInsert.add(new PricebookEntry(pricebook2id=pricebookId, product2id=prodFri.id,unitprice=30, isActive=true));
+            pbeToInsert.add(new PricebookEntry(pricebook2id=pricebookId, product2id=prodSat.id,unitprice=30, isActive=true));
+            pbeToInsert.add(new PricebookEntry(pricebook2id=pricebookId, product2id=prodSun.id,unitprice=30, isActive=true));
 
+			insert pbeToInsert;
             
     }
 

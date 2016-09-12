@@ -48,7 +48,7 @@ public class LeaveCreditNoteBuilderTest {
         
         TestDataFactory.CreateOAuthServiceEntries();
         Test.setMock(HttpCalloutMock.class, new Mock());
-        
+        TestDataFactory.createStallProductsAndGeneralPriceBook();
         List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1, 'SL');
         TestDataFactory.createStallProductsAndGeneralPriceBook();
         Opportunity opp = [select id, name, Stall__c from Opportunity limit 1];

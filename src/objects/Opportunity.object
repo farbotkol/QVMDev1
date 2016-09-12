@@ -21,10 +21,6 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>Follow</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
     </actionOverrides>
@@ -107,6 +103,7 @@
             <restrictedPicklist>true</restrictedPicklist>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
@@ -135,6 +132,7 @@
         <externalId>false</externalId>
         <inlineHelpText>Days that this casual trader are contracted to trade</inlineHelpText>
         <label>Casual Trading Days</label>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>MultiselectPicklist</type>
@@ -472,6 +470,7 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
@@ -503,6 +502,7 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
@@ -1001,6 +1001,7 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
@@ -1096,6 +1097,7 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
@@ -1280,6 +1282,7 @@
             <restrictedPicklist>true</restrictedPicklist>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>MultiselectPicklist</type>
@@ -1415,6 +1418,7 @@
         <columns>OPPORTUNITY.LEAD_SOURCE</columns>
         <columns>Permitted_Use__c</columns>
         <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
         <filterScope>Everything</filterScope>
         <label>All Account Businesses</label>
     </listViews>
@@ -4525,5 +4529,12 @@
         <errorConditionFormula>Leave_Remaining_Monday__c &lt; 0</errorConditionFormula>
         <errorDisplayField>Leave_Taken_Monday__c</errorDisplayField>
         <errorMessage>There is not enough Monday leave remaining for the year</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SL_PE_PRICEBOOK_MATCH</fullName>
+        <active>true</active>
+        <errorConditionFormula>(RecordType.Name = &apos;SL&apos; || RecordType.Name = &apos;PE&apos;) &amp;&amp; Pricebook2.SLPE__c &lt;&gt; true</errorConditionFormula>
+        <errorDisplayField>Pricebook2Id</errorDisplayField>
+        <errorMessage>Price book not a valid Monday to Sunday option</errorMessage>
     </validationRules>
 </CustomObject>

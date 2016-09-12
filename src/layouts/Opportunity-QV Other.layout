@@ -9,6 +9,10 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Business_Status__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Majik_AccountNo__c</field>
             </layoutItems>
             <layoutItems>
@@ -21,6 +25,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Trading_Name__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Primary_Contact__c</field>
             </layoutItems>
             <layoutItems>
@@ -29,23 +37,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Business_Status__c</field>
+                <field>Start_Date__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Uplift_Factor__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Contracted_Leave__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Trading_Name__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Stall_Fee__c</field>
+                <behavior>Required</behavior>
+                <field>CloseDate</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -63,15 +59,11 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>RecordTypeId</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>OwnerId</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Last_Inv_Date__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Start_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
@@ -82,20 +74,20 @@
                 <field>Probability</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>CloseDate</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Site_No__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Season_Fee__c</field>
+                <field>Stall_Or_Product_Concept__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Stall_Or_Product_Concept__c</field>
+                <field>Stall_Fee__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Season_Fee__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -202,6 +194,15 @@
         </quickActionListItems>
     </quickActionList>
     <relatedLists>
+        <fields>ORDERS.ORDER_NUMBER</fields>
+        <fields>ORDERS.STATUS</fields>
+        <fields>ORDERS.EFFECTIVE_DATE</fields>
+        <fields>ORDERS.TOTAL_AMOUNT</fields>
+        <fields>Total__c</fields>
+        <fields>Batch_Job__c</fields>
+        <relatedList>RelatedOrderList</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>NAME</fields>
         <fields>Invoice_Status__c</fields>
         <fields>Invoice_Date__c</fields>
@@ -212,20 +213,15 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>Leave_Date__c</fields>
-        <fields>Override__c</fields>
-        <fields>UPDATEDBY_USER</fields>
-        <fields>LAST_UPDATE</fields>
-        <relatedList>Leave__c.Account_Business__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
         <fields>Annual_Rent__c</fields>
         <fields>Monthly_Rent__c</fields>
         <fields>Lease_Commence__c</fields>
         <fields>Lease_Expiry__c</fields>
         <fields>Bond_Amount__c</fields>
         <relatedList>Stall__c.Tenant__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <relatedList>RelatedFileList</relatedList>
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedNoteList</relatedList>
@@ -256,7 +252,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00hp0000000JKCt</masterLabel>
+        <masterLabel>00h28000004h70P</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

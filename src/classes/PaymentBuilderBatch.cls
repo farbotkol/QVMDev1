@@ -12,11 +12,13 @@ global class PaymentBuilderBatch implements Database.Batchable<sObject>
 {
     List<Transaction__c> transList = new List<Transaction__c>();
     Id batchJob;
+    integer transactionCount =0;
     
     global PaymentBuilderBatch( List<Transaction__c> items_i, ID batchJobId ) 
     {
 		transList = items_i;
         batchJob = batchJobId;
+        transactionCount = transList.size();
 	}
     global List<Transaction__c> start( Database.BatchableContext BC ) 
     {
@@ -34,12 +36,13 @@ global class PaymentBuilderBatch implements Database.Batchable<sObject>
         // Getting Record Type - Found  Invoices.
         ID foundRecordTypeID = Schema.SObjectType.Batch_Jobs__c.getRecordTypeInfosByName().get('Invoices Found').getRecordTypeId();
         
-        Batch_Jobs__c batchJobObj = [SELECT id  FROM Batch_Jobs__c where id =:batchJob LIMIT 1];
+        Batch_Jobs__c batchJobObj = [SELECT id,Transaction_Count__c  FROM Batch_Jobs__c where id =:batchJob LIMIT 1];
          
          if( batchJobObj != null )
          {
             // Changing Record Type Id to Found invoices.
             batchJobObj.RecordTypeId =  foundRecordTypeID;
+            batchJobObj.Transaction_Count__c = transactionCount;
             update batchJobObj;
          }
     }

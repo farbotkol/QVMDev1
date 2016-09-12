@@ -21,10 +21,6 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>Follow</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
     </actionOverrides>
@@ -177,6 +173,17 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Friday_Active_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Friday Active Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Frontage_Metres__c</fullName>
@@ -378,6 +385,17 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Monday_Active_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Monday Active Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>Monthly_Rent__c</fullName>
         <externalId>false</externalId>
         <formula>Annual_Rent__c / 12</formula>
@@ -418,6 +436,7 @@
             <restrictedPicklist>true</restrictedPicklist>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
@@ -469,6 +488,7 @@
             <restrictedPicklist>true</restrictedPicklist>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
@@ -520,6 +540,17 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Saturday_Active_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Saturday Active Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>ShedId__c</fullName>
@@ -574,6 +605,17 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Sunday_Active_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Sunday Active Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>Tenant__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -615,6 +657,17 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Thursday_Active_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Thursday Active Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Top__c</fullName>
@@ -659,6 +712,17 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Tuesday_Active_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Tuesday Active Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>WednesdayMultiplier__c</fullName>
         <defaultValue>1</defaultValue>
         <description>The Multiplier rate that will be added to the base rate for Wednesday</description>
@@ -687,6 +751,17 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Wednesday_Active_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Wednesday Active Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Width__c</fullName>

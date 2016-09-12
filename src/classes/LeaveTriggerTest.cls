@@ -47,15 +47,14 @@ private class LeaveTriggerTest {
     
     
     @isTest static void TestLeaveTrigger() {
-    
+    	TestDataFactory.createStallProductsAndGeneralPriceBook();
         TestDataFactory.CreateOAuthServiceEntries();
         
         Test.setMock(HttpCalloutMock.class, new Mock());
         Test.startTest();
+       
         List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1, 'SL');
 
-
-        TestDataFactory.createStallProductsAndGeneralPriceBook();
 
         Opportunity opp = [select id, name, Stall__c from Opportunity limit 1];
         TestDataFactory.createSingleStall(opp);

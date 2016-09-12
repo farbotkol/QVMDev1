@@ -218,7 +218,7 @@ global with sharing class OrderBuilder {
 
         OrderBuilderBatch batch = new OrderBuilderBatch(orderItemsToCreate,  batchJobId); 
 
-        database.executebatch(batch,35);
+        database.executebatch(batch,150);
 
         //Insert orderItemsToCreate;
 
@@ -293,7 +293,7 @@ global with sharing class OrderBuilder {
         }
         OrderBuilderBatch batch = new OrderBuilderBatch(orderItemsToCreate,  batchJobId); 
 
-        database.executebatch(batch,35);
+        database.executebatch(batch,150);
 
         return true;
     }
@@ -371,7 +371,7 @@ global with sharing class OrderBuilder {
 
         OrderBuilderBatch batch = new OrderBuilderBatch(orderItemsToCreate,  batchJobId); 
 
-        database.executebatch(batch,35);
+        database.executebatch(batch,150);
 
         return true;
     }

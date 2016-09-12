@@ -21,6 +21,10 @@
                 <behavior>Edit</behavior>
                 <field>Description__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Transaction_Count__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -72,6 +76,7 @@
         <fields>TotalAmount__c</fields>
         <fields>TxnDate__c</fields>
         <fields>DueDate__c</fields>
+        <fields>Type__c</fields>
         <relatedList>Transaction__c.Batch_Jobs__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>

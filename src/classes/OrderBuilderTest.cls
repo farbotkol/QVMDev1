@@ -45,11 +45,13 @@ private class OrderBuilderTest {
     }
     
     @isTest static void TestGenerateOrdersSL() {
+        
+        TestDataFactory.createStallProductsAndGeneralPriceBook();
         List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1, 'SL');
 
         TestDataFactory.CreateOAuthServiceEntries();
         Test.setMock(HttpCalloutMock.class, new Mock());
-        TestDataFactory.createStallProductsAndGeneralPriceBook();
+        
 
         Opportunity opp = [select id, name, Stall__c from Opportunity limit 1];
         TestDataFactory.createSingleStall(opp);

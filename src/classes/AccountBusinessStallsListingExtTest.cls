@@ -46,7 +46,7 @@ private class Mock implements HttpCalloutMock {
     
 
     @isTest static  void Test_AccountBusinessStallsListingExt() {
-
+		TestDataFactory.createStallProductsAndGeneralPriceBook();
         TestDataFactory.CreateOAuthServiceEntries();
         Test.setMock(HttpCalloutMock.class, new Mock());
         Test.startTest();
