@@ -65,6 +65,17 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Sku__c</fullName>
+        <description>If the Pricebook Entry and product do not have a Sku then this will be used as the default product</description>
+        <externalId>false</externalId>
+        <label>Sku</label>
+        <length>50</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>sfxId__c</fullName>
         <caseSensitive>false</caseSensitive>
         <externalId>true</externalId>
@@ -80,6 +91,7 @@
         <columns>PRICEBOOK2.NAME</columns>
         <columns>PRICEBOOK2.DESCRIPTION</columns>
         <columns>PRICEBOOK2.LAST_UPDATE</columns>
+        <columns>Sku__c</columns>
         <columns>PRICEBOOK2.IS_ACTIVE</columns>
         <filterScope>Everything</filterScope>
         <label>All Price Books</label>

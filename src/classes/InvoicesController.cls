@@ -5,7 +5,7 @@ public without sharing class InvoicesController {
         String customerRef = [SELECT QuickBooks_Id__c FROM Account
                     WHERE ID in
                     (SELECT AccountId FROM User WHERE Id = :userinfo.getUserId())].QuickBooks_Id__c;
-        
+        system.debug('xxxxxx: ' + customerRef);
         return customerRef;
     }
     

@@ -26,7 +26,11 @@ public with sharing class AccountBusinessStallsListingExt
     public List<Stall__c> getStallsFromQuery()
     {
        return [SELECT FridayTrader__c,MondayTrader__c,Name,SaturdayTrader__c
-                                        ,SundayTrader__c,ThursdayTrader__c,TuesdayTrader__c,WednesdayTrader__c FROM Stall__c
+                                        ,SundayTrader__c,ThursdayTrader__c,TuesdayTrader__c,WednesdayTrader__c
+               					,Friday_Active_Price__c,Monday_Active_Price__c,Saturday_Active_Price__c
+               					,Sunday_Active_Price__c,Thursday_Active_Price__c,Tuesday_Active_Price__c
+               					,Wednesday_Active_Price__c
+               					FROM Stall__c
                                 where MondayTrader__c=  :accountBusiness.Id    or
                                 TuesdayTrader__c=   :accountBusiness.Id    or
                                 WednesdayTrader__c =    :accountBusiness.Id    or

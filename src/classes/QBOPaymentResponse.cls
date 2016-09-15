@@ -4,7 +4,7 @@
 // The supplied json has fields with names that are reserved words in apex
 // and so can only be parsed with explicitly generated code, this option
 // was auto selected for you.
-public class QBOPaymentResponse
+global class QBOPaymentResponse
 {
 	public static void consumeObject(JSONParser parser) {
 		Integer depth = 0;
@@ -89,7 +89,7 @@ public class QBOPaymentResponse
 		}
 	}
 	
-	public class Payment {
+	global class Payment {
 		public CustomerRef CustomerRef {get;set;} 
 		public DepositToAccountRef DepositToAccountRef {get;set;} 
 		public DepositToAccountRef PaymentMethodRef {get;set;} 
@@ -295,6 +295,11 @@ public class QBOPaymentResponse
 	public class LinkedTxn {
 		public String TxnId {get;set;} 
 		public String TxnType {get;set;} 
+        
+        public LinkedTxn()
+        {
+            
+        }
 
 		public LinkedTxn(JSONParser parser) {
 			while (parser.nextToken() != JSONToken.END_OBJECT) {

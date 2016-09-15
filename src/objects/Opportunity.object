@@ -130,6 +130,7 @@
     <fields>
         <fullName>Casual_Trading_Days__c</fullName>
         <externalId>false</externalId>
+        <globalPicklist>Trading_Days</globalPicklist>
         <inlineHelpText>Days that this casual trader are contracted to trade</inlineHelpText>
         <label>Casual Trading Days</label>
         <required>false</required>

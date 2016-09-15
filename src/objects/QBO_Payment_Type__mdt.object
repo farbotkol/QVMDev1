@@ -5,6 +5,7 @@
         <fullName>QBO_Id__c</fullName>
         <description>The id of the payment type in quickbooks</description>
         <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
         <inlineHelpText>The id of the payment type in quickbooks</inlineHelpText>
         <label>QBO Id</label>
         <length>10</length>
@@ -14,4 +15,5 @@
     </fields>
     <label>QBO Payment Type</label>
     <pluralLabel>QBO Payment Types</pluralLabel>
+    <visibility>Public</visibility>
 </CustomObject>

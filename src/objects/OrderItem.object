@@ -136,6 +136,19 @@ CASE( PricebookEntry.Product2.ProductCode ,
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Signed_Total__c</fullName>
+        <description>Turns Leave lines into negative values</description>
+        <externalId>false</externalId>
+        <formula>IF( Leave__c , -1 *  Total__c ,Total__c  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Signed Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>Stall__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>

@@ -60,6 +60,27 @@
     <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>AccountId</fullName>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 OR (2 AND 3)</booleanFilter>
+            <errorMessage>Account Supplier has not been approved for Purchase Orders</errorMessage>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Trader</value>
+            </filterItems>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Supplier</value>
+            </filterItems>
+            <filterItems>
+                <field>Account.Supplier_Approved__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
@@ -343,6 +364,30 @@ window.location.reload();</url>
 sforce.apex.execute(&quot;POBuilder&quot;,&quot;GeneratePurchaseOrder&quot;,{orderId:&quot;{!Order.Id}&quot;}); 
 
 window.location.reload();</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Order</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>New Order</masterLabel>
+        <openType>sidebar</openType>
+        <page>NewOrder</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Purchase_Order</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>New Purchase Order</masterLabel>
+        <openType>sidebar</openType>
+        <page>NewOrder</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
     </webLinks>
     <webLinks>
         <fullName>Open_Invoice_PDF</fullName>

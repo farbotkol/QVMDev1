@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>QVM_Header</letterhead>
+    <name>Event Lead - Auto Response</name>
+    <style>formalLetter</style>
+    <subject>EOI Application - AUTO RESPONE</subject>
+    <textOnly>Dear {!Lead.Name}
+
+Thank you for submitting your application.
+
+We will endeavor to notify every applicant of the outcome as soon as possible.
+
+Sincerely,
+Event Department
+Queen Victoria Market</textOnly>
+    <type>html</type>
+</EmailTemplate>

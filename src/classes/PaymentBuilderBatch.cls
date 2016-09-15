@@ -1,48 +1,55 @@
-/*
-*****************************************************************************************
-Author: Resmi Ramakrishnan
-Date  : 07/09/2016
-Description : This is the batch class for PaymentBuilder.                  
-
-****************************************************************************************
-*/
-
-
-global class PaymentBuilderBatch implements Database.Batchable<sObject>
+global class PaymentBuilderBatch implements Database.Batchable<sObject>, Database.AllowsCallouts
 {
-    List<Transaction__c> transList = new List<Transaction__c>();
+    List<Payment__c> payments = new List<Payment__c>();
     Id batchJob;
-    integer transactionCount =0;
-    
-    global PaymentBuilderBatch( List<Transaction__c> items_i, ID batchJobId ) 
+        
+    global PaymentBuilderBatch(List<Payment__c> payments_a, ID batchJobId ) 
     {
-		transList = items_i;
+		payments = payments_a;
         batchJob = batchJobId;
-        transactionCount = transList.size();
 	}
-    global List<Transaction__c> start( Database.BatchableContext BC ) 
+    global List<Payment__c> start( Database.BatchableContext BC ) 
     {
-        system.debug('Inside start');
-		return transList;
-
+		return payments;
 	}
-    global void execute(Database.BatchableContext BC, List<sObject> scope) 
+    global void execute(Database.BatchableContext BC, List<Payment__c>   scope) 
     {
-         Schema.SObjectField f = Transaction__c.Fields.Invoice_QuickBookId__c;
-         Database.UpsertResult [] cr = Database.upsert((List<Transaction__c>)scope, f, false);
+        QBOCRUDHelper crudHelper = new QBOCRUDHelper();	
+        List<Payment__c> paymentsToUpdate = new List<Payment__c>();
+                
+        for(Payment__c payment:scope) 
+        {
+            QBOPaymentResponse paymentResponse;
+            Object response = crudHelper.upsertData('payment', payment.PaymentJson__c, QBOPaymentResponse.class)  ;
+            
+            if (response instanceof QBOError)
+            {
+                //log the error and move to next account
+                system.debug('Opp error :');
+                //ErrorLogHelper.LogAccountError(so, (QBOError)response);
+                continue;
+            }
+            else
+            {
+                paymentResponse = (QBOPaymentResponse)response;
+                payment.QuickBook_Id__c = paymentResponse.Payment.Id;
+                paymentsToUpdate.add(payment);
+            }    
+        }
+        insert  paymentsToUpdate;
+        // loop through the results now to process the payments in qbo
 	}
     global void finish(Database.BatchableContext BC)
     {
-        // Getting Record Type - Found  Invoices.
-        ID foundRecordTypeID = Schema.SObjectType.Batch_Jobs__c.getRecordTypeInfosByName().get('Invoices Found').getRecordTypeId();
+        // Getting Record Type - Payments Generated.
+        ID paymentgeneratedRecordTypeID = Schema.SObjectType.Batch_Jobs__c.getRecordTypeInfosByName().get('Payments Generated').getRecordTypeId();
         
         Batch_Jobs__c batchJobObj = [SELECT id,Transaction_Count__c  FROM Batch_Jobs__c where id =:batchJob LIMIT 1];
          
          if( batchJobObj != null )
          {
-            // Changing Record Type Id to Found invoices.
-            batchJobObj.RecordTypeId =  foundRecordTypeID;
-            batchJobObj.Transaction_Count__c = transactionCount;
+            // Changing Record Type Id to Payments Generated.
+            batchJobObj.RecordTypeId =  paymentgeneratedRecordTypeID;
             update batchJobObj;
          }
     }

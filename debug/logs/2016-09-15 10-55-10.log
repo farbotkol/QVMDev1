@@ -1,0 +1,175 @@
+38.0 APEX_CODE,FINEST;APEX_PROFILING,FINEST;CALLOUT,FINEST;DB,FINEST;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,FINER;WORKFLOW,FINER
+10:55:10.0 (519818)|USER_INFO|[EXTERNAL]|00528000004DSFj|resmi.ramakrishnan@qvmtest.com.devmerge|Australian Eastern Standard Time|GMT+10:00
+10:55:10.0 (556369)|EXECUTION_STARTED
+10:55:10.0 (560547)|CODE_UNIT_STARTED|[EXTERNAL]|066p00000004sPO|VF: /apex/DownloadABAFilePage
+10:55:10.0 (11743456)|VF_APEX_CALL_START|[EXTERNAL]|01pp0000000EVMb|DownloadABAFileController <init>
+10:55:10.0 (11777134)|SYSTEM_MODE_ENTER|true
+10:55:10.0 (12170676)|HEAP_ALLOCATE|[72]|Bytes:3
+10:55:10.0 (12264739)|HEAP_ALLOCATE|[77]|Bytes:152
+10:55:10.0 (12294919)|HEAP_ALLOCATE|[342]|Bytes:408
+10:55:10.0 (12328218)|HEAP_ALLOCATE|[355]|Bytes:408
+10:55:10.0 (12360609)|HEAP_ALLOCATE|[467]|Bytes:48
+10:55:10.0 (12407749)|HEAP_ALLOCATE|[139]|Bytes:6
+10:55:10.0 (12512117)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:164
+10:55:10.0 (12554165)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:16
+10:55:10.0 (12562051)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:2
+10:55:10.0 (12582163)|METHOD_ENTRY|[1]|01pp0000000EVMb|DownloadABAFileController.DownloadABAFileController()
+10:55:10.0 (12589086)|STATEMENT_EXECUTE|[1]
+10:55:10.0 (12598082)|STATEMENT_EXECUTE|[1]
+10:55:10.0 (12609285)|METHOD_EXIT|[1]|DownloadABAFileController
+10:55:10.0 (12619682)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:28
+10:55:10.0 (12642930)|VARIABLE_SCOPE_BEGIN|[10]|this|DownloadABAFileController|true|false
+10:55:10.0 (12720182)|VARIABLE_ASSIGNMENT|[10]|this|{}|0x26cb56
+10:55:10.0 (12726519)|VARIABLE_SCOPE_BEGIN|[10]|stdController|ApexPages.StandardController|true|false
+10:55:10.0 (12885522)|VARIABLE_ASSIGNMENT|[10]|stdController|"StandardController [null]"|0x3d8dd8fc
+10:55:10.0 (12895814)|STATEMENT_EXECUTE|[1]
+10:55:10.0 (12898370)|STATEMENT_EXECUTE|[3]
+10:55:10.0 (12900642)|STATEMENT_EXECUTE|[4]
+10:55:10.0 (12902418)|STATEMENT_EXECUTE|[5]
+10:55:10.0 (12904416)|STATEMENT_EXECUTE|[6]
+10:55:10.0 (12906344)|STATEMENT_EXECUTE|[7]
+10:55:10.0 (12908337)|STATEMENT_EXECUTE|[8]
+10:55:10.0 (12919887)|HEAP_ALLOCATE|[12]|Bytes:6
+10:55:10.0 (12980725)|STATEMENT_EXECUTE|[11]
+10:55:10.0 (12984381)|STATEMENT_EXECUTE|[12]
+10:55:10.0 (21717455)|HEAP_ALLOCATE|[12]|Bytes:12
+10:55:10.0 (21787219)|VARIABLE_ASSIGNMENT|[12]|this.batchlobObj|{"s":1,"v":{"Id":"a01p0000002pSpRAAU","RecordTypeId":"012p0000000CggNAAS"}}|0x26cb56
+10:55:10.0 (21792558)|STATEMENT_EXECUTE|[13]
+10:55:10.0 (21859108)|HEAP_ALLOCATE|[13]|Bytes:12
+10:55:10.0 (22027525)|VARIABLE_ASSIGNMENT|[13]|this.recId|"a01p0000002pSpRAAU"|0x26cb56
+10:55:10.0 (22034866)|STATEMENT_EXECUTE|[14]
+10:55:10.0 (22056905)|METHOD_ENTRY|[14]|01pp0000000EVMb|DownloadABAFileController.FormatStrings()
+10:55:10.0 (22089412)|VARIABLE_SCOPE_BEGIN|[30]|this|DownloadABAFileController|true|false
+10:55:10.0 (22247650)|VARIABLE_ASSIGNMENT|[30]|this|{"batchlobObj":"0x4d7d527f","recId":"a01p0000002pSpRAAU"}|0x26cb56
+10:55:10.0 (22258386)|STATEMENT_EXECUTE|[31]
+10:55:10.0 (22259770)|STATEMENT_EXECUTE|[32]
+10:55:10.0 (22327921)|HEAP_ALLOCATE|[32]|Bytes:17
+10:55:10.0 (22458897)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"batchlobObj":"0x4d7d527f","recId":"a01p0000002pSpRAAU"}|0x26cb56
+10:55:10.0 (22466683)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"                 "
+10:55:10.0 (22475117)|VARIABLE_ASSIGNMENT|[6]|this.emptyString17|"                 "|0x26cb56
+10:55:10.0 (22483291)|STATEMENT_EXECUTE|[33]
+10:55:10.0 (22517371)|HEAP_ALLOCATE|[33]|Bytes:7
+10:55:10.0 (22645760)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"batchlobObj":"0x4d7d527f","emptyString17":"                 ","recId":"a01p0000002pSpRAAU"}|0x26cb56
+10:55:10.0 (22653175)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"       "
+10:55:10.0 (22661576)|VARIABLE_ASSIGNMENT|[7]|this.emptyString7|"       "|0x26cb56
+10:55:10.0 (22669204)|STATEMENT_EXECUTE|[34]
+10:55:10.0 (22673005)|HEAP_ALLOCATE|[34]|Bytes:2
+10:55:10.0 (22785037)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"batchlobObj":"0x4d7d527f","emptyString17":"                 ","emptyString7":"       ","recId":"a01p0000002pSpRAAU"}|0x26cb56
+10:55:10.0 (22794093)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"\r\n"
+10:55:10.0 (22802108)|VARIABLE_ASSIGNMENT|[8]|this.newLine|"\r\n"|0x26cb56
+10:55:10.0 (22810949)|METHOD_EXIT|[14]|01pp0000000EVMb|DownloadABAFileController.FormatStrings()
+10:55:10.0 (22838431)|VF_APEX_CALL_END|DownloadABAFileController <init>
+10:55:10.0 (22962558)|VF_APEX_CALL_START|[EXTERNAL]|01pp0000000EVMb|DownloadABAFileController invoke(fetch)
+10:55:10.0 (22992263)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:28
+10:55:10.0 (23003091)|VARIABLE_SCOPE_BEGIN|[17]|this|DownloadABAFileController|true|false
+10:55:10.0 (23113090)|VARIABLE_ASSIGNMENT|[17]|this|{"batchlobObj":"0x4d7d527f","emptyString17":"                 ","emptyString7":"       ","newLine":"\r\n","recId":"a01p0000002pSpRAAU"}|0x26cb56
+10:55:10.0 (23120982)|STATEMENT_EXECUTE|[18]
+10:55:10.0 (23122550)|STATEMENT_EXECUTE|[19]
+10:55:10.0 (23123500)|STATEMENT_EXECUTE|[20]
+10:55:10.0 (23124837)|STATEMENT_EXECUTE|[21]
+10:55:10.0 (23128389)|HEAP_ALLOCATE|[21]|Bytes:200
+10:55:10.0 (23137384)|HEAP_ALLOCATE|[21]|Bytes:4
+10:55:10.0 (23163028)|HEAP_ALLOCATE|[50]|Bytes:5
+10:55:10.0 (23179412)|HEAP_ALLOCATE|[56]|Bytes:5
+10:55:10.0 (23187774)|HEAP_ALLOCATE|[64]|Bytes:7
+10:55:10.0 (24212647)|SOQL_EXECUTE_BEGIN|[21]|Aggregations:0|SELECT Financial_Institution__c, Name_Of_User__c, User_Identification_Number__c, Description__c, Date_to_be_Processed__c FROM Qvm_ABA_File_Generator__c WHERE Name = 'ABA File Header Generator' LIMIT 1
+10:55:10.0 (24223022)|LIMIT_USAGE|[21]|SOQL|1|100
+10:55:10.0 (24229963)|LIMIT_USAGE|[21]|AGGS|0|300
+10:55:10.0 (29850396)|SOQL_EXECUTE_END|[21]|Rows:1
+10:55:10.0 (29863108)|LIMIT_USAGE|[21]|SOQL_ROWS|1|50000
+10:55:10.0 (29884145)|HEAP_ALLOCATE|[21]|Bytes:8
+10:55:10.0 (29907617)|HEAP_ALLOCATE|[21]|Bytes:254
+10:55:10.0 (30043925)|HEAP_ALLOCATE|[21]|Bytes:8
+10:55:10.0 (30061557)|HEAP_ALLOCATE|[21]|Bytes:51
+10:55:10.0 (30182943)|HEAP_ALLOCATE|[21]|Bytes:28
+10:55:10.0 (30375486)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"batchlobObj":"0x4d7d527f","emptyString17":"                 ","emptyString7":"       ","newLine":"\r\n","recId":"a01p0000002pSpRAAU"}|0x26cb56
+10:55:10.0 (30404476)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|{"s":1,"v":{"Financial_Institutio (4 more) ...":"NAB","Name_Of_User__c":"Queen Victoria Marke (1 more) ...","User_Identification_ (9 more) ...":128006,"Description__c":"TEST","Date_to_be_Processed (3 more) ...":170316,"Id":"a0bp0000001ZYpaAAG"}}|0x69c6e198
+10:55:10.0 (30425434)|VARIABLE_ASSIGNMENT|[5]|this.qvmABAFileObj|{"s":1,"v":{"Financial_Institutio (4 more) ...":"NAB","Name_Of_User__c":"Queen Victoria Marke (1 more) ...","User_Identification_ (9 more) ...":128006,"Description__c":"TEST","Date_to_be_Processed (3 more) ...":170316,"Id":"a0bp0000001ZYpaAAG"}}|0x26cb56
+10:55:10.0 (30476058)|VF_APEX_CALL_END|DownloadABAFileController invoke(fetch)
+10:55:10.0 (31885138)|VF_APEX_CALL_START|[EXTERNAL]|01pp0000000EVMb|DownloadABAFileController get(emptyString17)
+10:55:10.0 (31899705)|SYSTEM_MODE_ENTER|true
+10:55:10.0 (31922116)|VF_APEX_CALL_START|[EXTERNAL]|01pp0000000EVMb|emptyString17
+10:55:10.0 (31936884)|VF_APEX_CALL_END|emptyString17
+10:55:10.0 (31953212)|VF_APEX_CALL_END|DownloadABAFileController get(emptyString17)
+10:55:10.0 (32081560)|VF_APEX_CALL_START|[EXTERNAL]|01pp0000000EVMb|DownloadABAFileController get(qvmABAFileObj)
+10:55:10.0 (32090440)|SYSTEM_MODE_ENTER|true
+10:55:10.0 (32103502)|VF_APEX_CALL_START|[EXTERNAL]|01pp0000000EVMb|qvmABAFileObj
+10:55:10.0 (32115419)|VF_APEX_CALL_END|qvmABAFileObj
+10:55:10.0 (32129682)|VF_APEX_CALL_END|DownloadABAFileController get(qvmABAFileObj)
+10:55:10.0 (32288915)|VF_APEX_CALL_START|[EXTERNAL]|01pp0000000EVMb|DownloadABAFileController get(emptyString7)
+10:55:10.0 (32296759)|SYSTEM_MODE_ENTER|true
+10:55:10.0 (32309259)|VF_APEX_CALL_START|[EXTERNAL]|01pp0000000EVMb|emptyString7
+10:55:10.0 (32320952)|VF_APEX_CALL_END|emptyString7
+10:55:10.0 (32335277)|VF_APEX_CALL_END|DownloadABAFileController get(emptyString7)
+10:55:10.0 (32951711)|VF_APEX_CALL_START|[EXTERNAL]|01pp0000000EVMb|DownloadABAFileController get(newLine)
+10:55:10.0 (32963771)|SYSTEM_MODE_ENTER|true
+10:55:10.0 (32985170)|VF_APEX_CALL_START|[EXTERNAL]|01pp0000000EVMb|newLine
+10:55:10.0 (33002717)|VF_APEX_CALL_END|newLine
+10:55:10.0 (33020109)|VF_APEX_CALL_END|DownloadABAFileController get(newLine)
+10:55:10.36 (36674009)|CUMULATIVE_LIMIT_USAGE
+10:55:10.36 (36674009)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+10:55:10.36 (36674009)|TOTAL_EMAIL_RECIPIENTS_QUEUED|0
+10:55:10.36 (36674009)|STATIC_VARIABLE_LIST|
+  char[]:DigitTens:0
+  long:serialVersionUID:0
+  long:serialVersionUID:0
+  String:_sfdcAdditionalCodeLocations:0
+  double:MAX_VALUE:0
+  Boolean:FALSE:0
+  long:serialVersionUID:0
+  double:MIN_VALUE:0
+  int:SIZE:0
+  double:NEGATIVE_INFINITY:0
+  int:MAX_VALUE:0
+  String:__sfdcProperties:0
+  char[]:digits:0
+  String:_sfdcSuppressedCodeLocations:0
+  double:NaN:0
+  Boolean:TRUE:0
+  int:MIN_VALUE:0
+  char[]:DigitOnes:0
+  int:BYTES:0
+  int:MIN_EXPONENT:0
+  int[]:sizeTable:0
+  int:MAX_EXPONENT:0
+  String:_sfdcAdditionalCodeLocations:0
+  int:SIZE:0
+  double:POSITIVE_INFINITY:0
+  double:MIN_NORMAL:0
+  int:BYTES:0
+
+10:55:10.36 (36674009)|CUMULATIVE_LIMIT_USAGE_END
+
+10:55:10.0 (36873038)|CODE_UNIT_FINISHED|VF: /apex/DownloadABAFilePage
+10:55:10.0 (38199118)|EXECUTION_FINISHED
+10:55:10.40 (40827521)|CUMULATIVE_PROFILING_BEGIN
+10:55:10.40 (40827521)|CUMULATIVE_PROFILING|SOQL operations|
+Class.DownloadABAFileController.fetch: line 21, column 1: [SELECT Financial_Institution__c,Name_Of_User__c,
+                             User_Identification_Number__c,Description__c,Date_to_be_Processed__c 
+                             FROM Qvm_ABA_File_Generator__c where Name = 'ABA File Header Generator' LIMIT 1]: executed 2 times in 7 ms
+
+10:55:10.40 (40827521)|CUMULATIVE_PROFILING|No profiling information for SOSL operations
+10:55:10.40 (40827521)|CUMULATIVE_PROFILING|No profiling information for DML operations
+10:55:10.40 (40827521)|CUMULATIVE_PROFILING|method invocations|
+Class.DownloadABAFileController.<init>: line 12, column 1: global SObject getRecord(): executed 1 time in 9 ms
+External entry point: public void fetch(): executed 1 time in 7 ms
+Class.DownloadABAFileController.FormatStrings: line 33, column 1: public String rightPad(Integer): executed 2 times in 1 ms
+Class.DownloadABAFileController.<init>: line 14, column 1: public void FormatStrings(): executed 1 time in 1 ms
+Class.DownloadABAFileController.FormatStrings: line 32, column 1: public String rightPad(Integer): executed 2 times in 0 ms
+Class.DownloadABAFileController.FormatStrings: line 34, column 1: public void __sfdc_newLine(String): executed 1 time in 0 ms
+Class.DownloadABAFileController.<init>: line 13, column 1: global SObject getRecord(): executed 1 time in 0 ms
+
+10:55:10.40 (40827521)|CUMULATIVE_PROFILING_END

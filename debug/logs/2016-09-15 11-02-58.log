@@ -1,0 +1,88 @@
+38.0 APEX_CODE,FINEST;APEX_PROFILING,FINEST;CALLOUT,FINEST;DB,FINEST;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,FINER;WORKFLOW,FINER
+11:02:56.0 (341685)|USER_INFO|[EXTERNAL]|00528000004DSFj|resmi.ramakrishnan@qvmtest.com.devmerge|Australian Eastern Standard Time|GMT+10:00
+11:02:56.0 (381938)|EXECUTION_STARTED
+11:02:56.0 (386734)|CODE_UNIT_STARTED|[EXTERNAL]|066p00000004sPO|VF: /apex/DownloadABAFilePage
+11:02:56.0 (29501956)|VF_APEX_CALL_START|[EXTERNAL]|01pp0000000EVMb|DownloadABAFileController <init>
+11:02:56.0 (29527857)|SYSTEM_MODE_ENTER|true
+11:02:56.0 (30154464)|HEAP_ALLOCATE|[72]|Bytes:3
+11:02:56.0 (30196287)|HEAP_ALLOCATE|[77]|Bytes:152
+11:02:56.0 (30210689)|HEAP_ALLOCATE|[342]|Bytes:408
+11:02:56.0 (30227519)|HEAP_ALLOCATE|[355]|Bytes:408
+11:02:56.0 (30243296)|HEAP_ALLOCATE|[467]|Bytes:48
+11:02:56.0 (30273097)|HEAP_ALLOCATE|[139]|Bytes:6
+11:02:56.0 (30295533)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:188
+11:02:56.0 (30300839)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:20
+11:02:56.0 (30303578)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:2
+11:02:56.0 (30319490)|METHOD_ENTRY|[1]|01pp0000000EVMb|DownloadABAFileController.DownloadABAFileController()
+11:02:56.0 (30323970)|STATEMENT_EXECUTE|[1]
+11:02:56.0 (30328198)|STATEMENT_EXECUTE|[1]
+11:02:56.0 (30334689)|METHOD_EXIT|[1]|DownloadABAFileController
+11:02:56.0 (30390071)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:32
+11:02:56.0 (30410906)|VARIABLE_SCOPE_BEGIN|[14]|this|DownloadABAFileController|true|false
+11:02:56.0 (30506164)|VARIABLE_ASSIGNMENT|[14]|this|{}|0x16fd713c
+11:02:56.0 (30514097)|VARIABLE_SCOPE_BEGIN|[14]|stdController|ApexPages.StandardController|true|false
+11:02:56.0 (30653950)|VARIABLE_ASSIGNMENT|[14]|stdController|"StandardController [null]"|0x10f8fef5
+11:02:56.0 (30662195)|STATEMENT_EXECUTE|[1]
+11:02:56.0 (30663636)|STATEMENT_EXECUTE|[3]
+11:02:56.0 (30664634)|STATEMENT_EXECUTE|[4]
+11:02:56.0 (30665584)|STATEMENT_EXECUTE|[5]
+11:02:56.0 (30666420)|STATEMENT_EXECUTE|[8]
+11:02:56.0 (30667306)|STATEMENT_EXECUTE|[9]
+11:02:56.0 (30668181)|STATEMENT_EXECUTE|[10]
+11:02:56.0 (30669174)|STATEMENT_EXECUTE|[11]
+11:02:56.0 (30678009)|HEAP_ALLOCATE|[16]|Bytes:6
+11:02:56.0 (30725026)|STATEMENT_EXECUTE|[15]
+11:02:56.0 (30727274)|STATEMENT_EXECUTE|[16]
+11:02:56.0 (38113315)|HEAP_ALLOCATE|[16]|Bytes:12
+11:02:56.0 (38168621)|VARIABLE_ASSIGNMENT|[16]|this.batchlobObj|{"s":1,"v":{"Id":"a01p0000002pSpRAAU","RecordTypeId":"012p0000000CggNAAS"}}|0x16fd713c
+11:02:56.0 (38173169)|STATEMENT_EXECUTE|[17]
+11:02:56.0 (38218160)|HEAP_ALLOCATE|[17]|Bytes:12
+11:02:56.0 (38340194)|VARIABLE_ASSIGNMENT|[17]|this.recId|"a01p0000002pSpRAAU"|0x16fd713c
+11:02:56.0 (38344625)|STATEMENT_EXECUTE|[18]
+11:02:56.0 (38370757)|METHOD_ENTRY|[18]|01pp0000000EVMb|DownloadABAFileController.FormatStrings()
+11:02:56.0 (38402861)|VARIABLE_SCOPE_BEGIN|[34]|this|DownloadABAFileController|true|false
+11:02:56.0 (38511201)|VARIABLE_ASSIGNMENT|[34]|this|{"batchlobObj":"0x478eed96","recId":"a01p0000002pSpRAAU"}|0x16fd713c
+11:02:56.0 (38522642)|STATEMENT_EXECUTE|[35]
+11:02:56.0 (38524103)|STATEMENT_EXECUTE|[36]
+11:02:56.0 (39516423)|HEAP_ALLOCATE|[36]|Bytes:17
+11:02:56.0 (39651944)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"batchlobObj":"0x478eed96","recId":"a01p0000002pSpRAAU"}|0x16fd713c
+11:02:56.0 (39663143)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"                 "
+11:02:56.0 (39671793)|VARIABLE_ASSIGNMENT|[8]|this.emptyString17|"                 "|0x16fd713c
+11:02:56.0 (39679285)|STATEMENT_EXECUTE|[37]
+11:02:56.0 (39939635)|HEAP_ALLOCATE|[37]|Bytes:7
+11:02:56.0 (40062420)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"batchlobObj":"0x478eed96","emptyString17":"                 ","recId":"a01p0000002pSpRAAU"}|0x16fd713c
+11:02:56.0 (40073810)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"       "
+11:02:56.0 (40081972)|VARIABLE_ASSIGNMENT|[9]|this.emptyString7|"       "|0x16fd713c
+11:02:56.0 (40089196)|STATEMENT_EXECUTE|[38]
+11:02:56.0 (40092762)|HEAP_ALLOCATE|[38]|Bytes:2
+11:02:56.0 (40232685)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"batchlobObj":"0x478eed96","emptyString17":"                 ","emptyString7":"       ","recId":"a01p0000002pSpRAAU"}|0x16fd713c
+11:02:56.0 (40245761)|VARIABLE_ASSIGNMENT|[EXTERNAL]|value|"\r\n"
+11:02:56.0 (40254573)|VARIABLE_ASSIGNMENT|[10]|this.newLine|"\r\n"|0x16fd713c
+11:02:56.0 (40262050)|STATEMENT_EXECUTE|[39]
+11:02:56.0 (40376421)|VARIABLE_ASSIGNMENT|[EXTERNAL]|this|{"batchlobObj":"0x478eed96","emptyString17":"                 ","emptyString7":"       ","newLine":"\r\n","recId":"a01p0000002pSpRAAU"}|0x16fd713c
+11:02:56.0 (40413106)|HEAP_ALLOCATE|[50]|Bytes:5
+11:02:56.0 (40432862)|HEAP_ALLOCATE|[56]|Bytes:5
+11:02:56.0 (40440824)|HEAP_ALLOCATE|[64]|Bytes:7
+11:02:56.0 (40507985)|EXCEPTION_THROWN|[39]|System.NullPointerException: Attempt to de-reference a null object
+11:02:56.0 (40602822)|HEAP_ALLOCATE|[39]|Bytes:41
+11:02:56.0 (40616502)|METHOD_EXIT|[18]|01pp0000000EVMb|DownloadABAFileController.FormatStrings()
+11:02:56.0 (40686872)|FATAL_ERROR|System.NullPointerException: Attempt to de-reference a null object
+
+Class.DownloadABAFileController.FormatStrings: line 39, column 1
+Class.DownloadABAFileController.<init>: line 18, column 1
+11:02:56.0 (40754279)|VF_APEX_CALL_END|DownloadABAFileController <init>
+11:02:56.57 (57337674)|CUMULATIVE_PROFILING_BEGIN
+11:02:56.57 (57337674)|CUMULATIVE_PROFILING|No profiling information for SOQL operations
+11:02:56.57 (57337674)|CUMULATIVE_PROFILING|No profiling information for SOSL operations
+11:02:56.57 (57337674)|CUMULATIVE_PROFILING|No profiling information for DML operations
+11:02:56.57 (57337674)|CUMULATIVE_PROFILING|method invocations|
+External entry point: public void <init>(ApexPages.StandardController): executed 1 time in 10 ms
+Class.DownloadABAFileController.<init>: line 16, column 1: global SObject getRecord(): executed 1 time in 8 ms
+Class.DownloadABAFileController.<init>: line 18, column 1: public void FormatStrings(): executed 1 time in 2 ms
+Class.DownloadABAFileController.FormatStrings: line 36, column 1: public String rightPad(Integer): executed 2 times in 1 ms
+Class.DownloadABAFileController.FormatStrings: line 37, column 1: public String rightPad(Integer): executed 2 times in 1 ms
+Class.DownloadABAFileController.<init>: line 17, column 1: global SObject getRecord(): executed 1 time in 0 ms
+Class.DownloadABAFileController.FormatStrings: line 38, column 1: public void __sfdc_newLine(String): executed 1 time in 0 ms
+Class.DownloadABAFileController.FormatStrings: line 39, column 1: public Qvm_ABA_File_Generator__c __sfdc_qvmABAFileObj(): executed 1 time in 0 ms
+
+11:02:56.57 (57337674)|CUMULATIVE_PROFILING_END

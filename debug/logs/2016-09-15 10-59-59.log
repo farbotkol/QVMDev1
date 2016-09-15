@@ -1,0 +1,412 @@
+31.0 APEX_CODE,FINEST;APEX_PROFILING,FINEST;CALLOUT,FINEST;DB,FINEST;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,FINER;WORKFLOW,FINER
+10:59:58.0 (693902)|USER_INFO|[EXTERNAL]|00528000004DSLv|luke.farbotko@qvmtest.com.devmerge|Australian Eastern Standard Time|GMT+10:00
+10:59:58.0 (733787)|EXECUTION_STARTED
+10:59:58.0 (740046)|CODE_UNIT_STARTED|[EXTERNAL]|06628000006WtnP|VF: /apex/AccountBusinessStallsListing
+10:59:58.0 (21205345)|VF_APEX_CALL_START|[EXTERNAL]|01p2800000APKxi|AccountBusinessStallsListingExt <init>
+10:59:58.0 (21231329)|SYSTEM_MODE_ENTER|true
+10:59:58.0 (21923383)|HEAP_ALLOCATE|[72]|Bytes:3
+10:59:58.0 (21983188)|HEAP_ALLOCATE|[77]|Bytes:152
+10:59:58.0 (22003284)|HEAP_ALLOCATE|[342]|Bytes:408
+10:59:58.0 (22026021)|HEAP_ALLOCATE|[355]|Bytes:408
+10:59:58.0 (22047475)|HEAP_ALLOCATE|[467]|Bytes:48
+10:59:58.0 (22079377)|HEAP_ALLOCATE|[139]|Bytes:6
+10:59:58.0 (22101994)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:228
+10:59:58.0 (22106536)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:54
+10:59:58.0 (22121472)|METHOD_ENTRY|[1]|01p2800000APKxi|AccountBusinessStallsListingExt.AccountBusinessStallsListingExt()
+10:59:58.0 (22131444)|STATEMENT_EXECUTE|[1]
+10:59:58.0 (22140578)|STATEMENT_EXECUTE|[1]
+10:59:58.0 (22175513)|HEAP_ALLOCATE|[50]|Bytes:5
+10:59:58.0 (22199561)|HEAP_ALLOCATE|[56]|Bytes:5
+10:59:58.0 (22207680)|HEAP_ALLOCATE|[64]|Bytes:7
+10:59:58.0 (22232923)|SYSTEM_MODE_ENTER|false
+10:59:58.0 (22253044)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:5
+10:59:58.0 (22262351)|SYSTEM_MODE_EXIT|false
+10:59:58.0 (22271984)|METHOD_EXIT|[1]|AccountBusinessStallsListingExt
+10:59:58.0 (22327501)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:44
+10:59:58.0 (22346906)|VARIABLE_SCOPE_BEGIN|[17]|this|AccountBusinessStallsListingExt|true|false
+10:59:58.0 (22448660)|VARIABLE_ASSIGNMENT|[17]|this|{}|0x129a30bb
+10:59:58.0 (22455994)|VARIABLE_SCOPE_BEGIN|[17]|stdController|ApexPages.StandardController|true|false
+10:59:58.0 (22600784)|VARIABLE_ASSIGNMENT|[17]|stdController|"StandardController [null]"|0xadc22b7
+10:59:58.0 (22615002)|SYSTEM_MODE_ENTER|false
+10:59:58.0 (22620821)|HEAP_ALLOCATE|[19]|Bytes:5
+10:59:58.0 (22625702)|STATEMENT_EXECUTE|[1]
+10:59:58.0 (22628521)|HEAP_ALLOCATE|[19]|Bytes:5
+10:59:58.0 (22630785)|STATEMENT_EXECUTE|[4]
+10:59:58.0 (22632708)|STATEMENT_EXECUTE|[6]
+10:59:58.0 (22634014)|STATEMENT_EXECUTE|[7]
+10:59:58.0 (22635276)|STATEMENT_EXECUTE|[8]
+10:59:58.0 (22636529)|STATEMENT_EXECUTE|[9]
+10:59:58.0 (22637923)|STATEMENT_EXECUTE|[10]
+10:59:58.0 (22639304)|STATEMENT_EXECUTE|[11]
+10:59:58.0 (22640610)|STATEMENT_EXECUTE|[12]
+10:59:58.0 (22641900)|STATEMENT_EXECUTE|[13]
+10:59:58.0 (22643114)|STATEMENT_EXECUTE|[14]
+10:59:58.0 (22652072)|HEAP_ALLOCATE|[19]|Bytes:6
+10:59:58.0 (22679520)|STATEMENT_EXECUTE|[18]
+10:59:58.0 (22681998)|STATEMENT_EXECUTE|[19]
+10:59:58.0 (70286787)|HEAP_ALLOCATE|[19]|Bytes:12
+10:59:58.0 (70399910)|VARIABLE_ASSIGNMENT|[19]|this.accountBusiness|{"s":1,"v":{"Id":"006p0000001ePkaAAE","RecordTypeId":"01228000000R97wAAC"}}|0x129a30bb
+10:59:58.0 (70415297)|SYSTEM_MODE_EXIT|false
+10:59:58.0 (70449052)|VF_APEX_CALL_END|AccountBusinessStallsListingExt <init>
+10:59:58.0 (71866323)|VF_APEX_CALL_START|[EXTERNAL]|01p2800000APKxi|AccountBusinessStallsListingExt get(StallsFromQuery)
+10:59:58.0 (71882411)|SYSTEM_MODE_ENTER|true
+10:59:58.0 (71908159)|VF_APEX_CALL_START|[EXTERNAL]|01p2800000APKxi|AccountBusinessStallsListingExt invoke(getStallsFromQuery)
+10:59:58.0 (71957394)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:44
+10:59:58.0 (71973219)|VARIABLE_SCOPE_BEGIN|[26]|this|AccountBusinessStallsListingExt|true|false
+10:59:58.0 (72012995)|VARIABLE_ASSIGNMENT|[26]|this|{"accountBusiness":"0x61924aca"}|0x129a30bb
+10:59:58.0 (72033910)|SYSTEM_MODE_ENTER|false
+10:59:58.0 (72042792)|HEAP_ALLOCATE|[28]|Bytes:5
+10:59:58.0 (72052855)|STATEMENT_EXECUTE|[27]
+10:59:58.0 (72054982)|STATEMENT_EXECUTE|[28]
+10:59:58.0 (72059985)|HEAP_ALLOCATE|[28]|Bytes:551
+10:59:58.0 (72075420)|HEAP_ALLOCATE|[28]|Bytes:4
+10:59:58.0 (72088229)|HEAP_ALLOCATE|[28]|Bytes:7
+10:59:58.0 (72142549)|HEAP_ALLOCATE|[28]|Bytes:7
+10:59:58.0 (72157678)|HEAP_ALLOCATE|[28]|Bytes:7
+10:59:58.0 (72168587)|HEAP_ALLOCATE|[28]|Bytes:7
+10:59:58.0 (72179076)|HEAP_ALLOCATE|[28]|Bytes:7
+10:59:58.0 (72189392)|HEAP_ALLOCATE|[28]|Bytes:7
+10:59:58.0 (72199537)|HEAP_ALLOCATE|[28]|Bytes:7
+10:59:58.0 (82315214)|SOQL_EXECUTE_BEGIN|[28]|Aggregations:0|SELECT FridayTrader__c, MondayTrader__c, Name, SaturdayTrader__c, SundayTrader__c, ThursdayTrader__c, TuesdayTrader__c, WednesdayTrader__c, Friday_Active_Price__c, Monday_Active_Price__c, Saturday_Active_Price__c, Sunday_Active_Price__c, Thursday_Active_Price__c, Tuesday_Active_Price__c, Wednesday_Active_Price__c FROM Stall__c WHERE (MondayTrader__c = :tmpVar1 OR TuesdayTrader__c = :tmpVar2 OR WednesdayTrader__c = :tmpVar3 OR ThursdayTrader__c = :tmpVar4 OR FridayTrader__c = :tmpVar5 OR SaturdayTrader__c = :tmpVar6 OR SundayTrader__c = :tmpVar7)
+10:59:58.0 (82334077)|LIMIT_USAGE|[28]|SOQL|1|100
+10:59:58.0 (82344165)|LIMIT_USAGE|[28]|AGGS|0|300
+10:59:58.0 (118753618)|SOQL_EXECUTE_END|[28]|Rows:4
+10:59:58.0 (118770231)|LIMIT_USAGE|[28]|SOQL_ROWS|4|50000
+10:59:58.0 (118792888)|HEAP_ALLOCATE|[28]|Bytes:20
+10:59:58.0 (118841739)|HEAP_ALLOCATE|[28]|Bytes:2170
+10:59:58.0 (118900251)|HEAP_ALLOCATE|[28]|Bytes:20
+10:59:58.0 (118925709)|SYSTEM_MODE_EXIT|false
+10:59:58.0 (118950340)|VF_APEX_CALL_END|AccountBusinessStallsListingExt invoke(getStallsFromQuery)
+10:59:58.0 (118975435)|VF_APEX_CALL_END|AccountBusinessStallsListingExt get(StallsFromQuery)
+10:59:58.0 (136072179)|VF_APEX_CALL_START|[EXTERNAL]|01p2800000APKxi|AccountBusinessStallsListingExt get(monday)
+10:59:58.0 (136093161)|SYSTEM_MODE_ENTER|true
+10:59:58.0 (136111704)|VF_APEX_CALL_START|[EXTERNAL]|01p2800000APKxi|monday
+10:59:58.0 (136133106)|VF_APEX_CALL_END|monday
+10:59:58.0 (136151476)|VF_APEX_CALL_END|AccountBusinessStallsListingExt get(monday)
+10:59:58.0 (136300037)|VF_APEX_CALL_START|[EXTERNAL]|01p2800000APKxi|AccountBusinessStallsListingExt get(tuesday)
+10:59:58.0 (136309076)|SYSTEM_MODE_ENTER|true
+10:59:58.0 (136320408)|VF_APEX_CALL_START|[EXTERNAL]|01p2800000APKxi|tuesday
+10:59:58.0 (136331742)|VF_APEX_CALL_END|tuesday
+10:59:58.0 (136346274)|VF_APEX_CALL_END|AccountBusinessStallsListingExt get(tuesday)
+10:59:58.0 (136456913)|VF_APEX_CALL_START|[EXTERNAL]|01p2800000APKxi|AccountBusinessStallsListingExt get(wednesday)
+10:59:58.0 (136466104)|SYSTEM_MODE_ENTER|true
+10:59:58.0 (136477515)|VF_APEX_CALL_START|[EXTERNAL]|01p2800000APKxi|wednesday
+10:59:58.0 (136489276)|VF_APEX_CALL_END|wednesday
+10:59:58.0 (136503633)|VF_APEX_CALL_END|AccountBusinessStallsListingExt get(wednesday)
+10:59:58.0 (136612998)|VF_APEX_CALL_START|[EXTERNAL]|01p2800000APKxi|AccountBusinessStallsListingExt get(thursday)
+10:59:58.0 (136622007)|SYSTEM_MODE_ENTER|true
+10:59:58.0 (136633445)|VF_APEX_CALL_START|[EXTERNAL]|01p2800000APKxi|thursday
+10:59:58.0 (136644286)|VF_APEX_CALL_END|thursday
+10:59:58.0 (136658673)|VF_APEX_CALL_END|AccountBusinessStallsListingExt get(thursday)
+10:59:58.0 (136773772)|VF_APEX_CALL_START|[EXTERNAL]|01p2800000APKxi|AccountBusinessStallsListingExt get(friday)
+10:59:58.0 (136782479)|SYSTEM_MODE_ENTER|true
+10:59:58.0 (136793779)|VF_APEX_CALL_START|[EXTERNAL]|01p2800000APKxi|friday
+10:59:58.0 (136804407)|VF_APEX_CALL_END|friday
+10:59:58.0 (136818559)|VF_APEX_CALL_END|AccountBusinessStallsListingExt get(friday)
+10:59:58.0 (136925888)|VF_APEX_CALL_START|[EXTERNAL]|01p2800000APKxi|AccountBusinessStallsListingExt get(saturday)
+10:59:58.0 (136934804)|SYSTEM_MODE_ENTER|true
+10:59:58.0 (136945517)|VF_APEX_CALL_START|[EXTERNAL]|01p2800000APKxi|saturday
+10:59:58.0 (136967222)|VF_APEX_CALL_END|saturday
+10:59:58.0 (136992199)|VF_APEX_CALL_END|AccountBusinessStallsListingExt get(saturday)
+10:59:58.0 (137113824)|VF_APEX_CALL_START|[EXTERNAL]|01p2800000APKxi|AccountBusinessStallsListingExt get(sunday)
+10:59:58.0 (137123419)|SYSTEM_MODE_ENTER|true
+10:59:58.0 (137134297)|VF_APEX_CALL_START|[EXTERNAL]|01p2800000APKxi|sunday
+10:59:58.0 (137145178)|VF_APEX_CALL_END|sunday
+10:59:58.0 (137159186)|VF_APEX_CALL_END|AccountBusinessStallsListingExt get(sunday)
+10:59:58.0 (137633305)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.MondayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.MondayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (138595945)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (138637757)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Monday', '#{stall.Id}')
+10:59:58.0 (138757395)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (138798664)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.MondayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (138951507)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (138962922)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.MondayTrader__c = Record.Id, stall.Monday_Active_Price__c, '')}
+10:59:58.0 (139111407)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (139186473)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.TuesdayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.TuesdayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (139477762)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (139513335)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Tuesday', '#{stall.Id}')
+10:59:58.0 (139612920)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (139654599)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.TuesdayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (139870398)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (139886182)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.TuesdayTrader__c = Record.Id, stall.Tuesday_Active_Price__c, '')}
+10:59:58.0 (140118874)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (140231139)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.WednesdayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.WednesdayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (140673038)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (140710422)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Wednesday', '#{stall.Id}')
+10:59:58.0 (140784598)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (140818954)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.WednesdayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (140972479)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (140983545)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.WednesdayTrader__c = Record.Id, stall.Wednesday_Active_Price__c, '')}
+10:59:58.0 (141131864)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (141206401)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.ThursdayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.ThursdayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (141416358)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (141445893)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Thursday', '#{stall.Id}')
+10:59:58.0 (141515591)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (141548568)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.ThursdayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (141707880)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (141718818)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.ThursdayTrader__c = Record.Id, stall.Thursday_Active_Price__c, '')}
+10:59:58.0 (141975836)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (142050638)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.FridayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.FridayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (142315168)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (142343688)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Friday', '#{stall.Id}')
+10:59:58.0 (142413330)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (142446209)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.FridayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (142593549)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (142604748)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.FridayTrader__c = Record.Id, stall.Friday_Active_Price__c, '')}
+10:59:58.0 (142754552)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (142827189)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SaturdayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.SaturdayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (143093148)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (143122219)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Saturday', '#{stall.Id}')
+10:59:58.0 (143191466)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (143224394)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SaturdayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (143373260)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (143383968)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SaturdayTrader__c = Record.Id, stall.Saturday_Active_Price__c, '')}
+10:59:58.0 (143529224)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (143601671)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SundayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.SundayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (143812184)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (143860432)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Sunday', '#{stall.Id}')
+10:59:58.0 (143938880)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (143972271)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SundayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (144132769)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (144144311)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SundayTrader__c = Record.Id, stall.Sunday_Active_Price__c, '')}
+10:59:58.0 (144427841)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (144735581)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.MondayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.MondayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (144942092)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (144970268)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Monday', '#{stall.Id}')
+10:59:58.0 (145035671)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (145068225)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.MondayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (145209437)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (145220090)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.MondayTrader__c = Record.Id, stall.Monday_Active_Price__c, '')}
+10:59:58.0 (145356443)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (145427250)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.TuesdayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.TuesdayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (145631712)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (145660121)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Tuesday', '#{stall.Id}')
+10:59:58.0 (145729575)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (145761638)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.TuesdayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (145903237)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (145913965)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.TuesdayTrader__c = Record.Id, stall.Tuesday_Active_Price__c, '')}
+10:59:58.0 (146050824)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (146121892)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.WednesdayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.WednesdayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (146325777)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (146353390)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Wednesday', '#{stall.Id}')
+10:59:58.0 (146417358)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (146449133)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.WednesdayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (146591120)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (146601725)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.WednesdayTrader__c = Record.Id, stall.Wednesday_Active_Price__c, '')}
+10:59:58.0 (146744495)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (146814572)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.ThursdayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.ThursdayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (146975528)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (147011470)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Thursday', '#{stall.Id}')
+10:59:58.0 (147082560)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (147114702)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.ThursdayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (147258373)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (147269364)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.ThursdayTrader__c = Record.Id, stall.Thursday_Active_Price__c, '')}
+10:59:58.0 (147465659)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (147535571)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.FridayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.FridayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (147743312)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (147770643)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Friday', '#{stall.Id}')
+10:59:58.0 (147837458)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (147869647)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.FridayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (148010682)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (148022098)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.FridayTrader__c = Record.Id, stall.Friday_Active_Price__c, '')}
+10:59:58.0 (148159041)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (148229032)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SaturdayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.SaturdayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (148432390)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (148459641)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Saturday', '#{stall.Id}')
+10:59:58.0 (148523726)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (148554432)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SaturdayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (148701199)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (148711857)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SaturdayTrader__c = Record.Id, stall.Saturday_Active_Price__c, '')}
+10:59:58.0 (148853418)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (148922651)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SundayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.SundayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (149069127)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (149097687)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Sunday', '#{stall.Id}')
+10:59:58.0 (149161529)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (149193984)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SundayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (149335699)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (149346150)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SundayTrader__c = Record.Id, stall.Sunday_Active_Price__c, '')}
+10:59:58.0 (149539671)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (149821979)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.MondayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.MondayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (150040834)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (150069431)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Monday', '#{stall.Id}')
+10:59:58.0 (150133143)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (150164470)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.MondayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (150303327)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (150313880)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.MondayTrader__c = Record.Id, stall.Monday_Active_Price__c, '')}
+10:59:58.0 (150450886)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (150519999)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.TuesdayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.TuesdayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (150743482)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (150788285)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Tuesday', '#{stall.Id}')
+10:59:58.0 (150856894)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (150888439)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.TuesdayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (151029097)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (151040081)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.TuesdayTrader__c = Record.Id, stall.Tuesday_Active_Price__c, '')}
+10:59:58.0 (151178179)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (151247252)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.WednesdayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.WednesdayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (151463160)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (151490782)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Wednesday', '#{stall.Id}')
+10:59:58.0 (151554931)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (151585682)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.WednesdayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (151733568)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (151744244)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.WednesdayTrader__c = Record.Id, stall.Wednesday_Active_Price__c, '')}
+10:59:58.0 (151889019)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (151958892)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.ThursdayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.ThursdayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (152106507)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (152134551)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Thursday', '#{stall.Id}')
+10:59:58.0 (152198625)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (152229590)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.ThursdayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (152370797)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (152381270)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.ThursdayTrader__c = Record.Id, stall.Thursday_Active_Price__c, '')}
+10:59:58.0 (152592781)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (152665979)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.FridayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.FridayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (152872747)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (152900187)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Friday', '#{stall.Id}')
+10:59:58.0 (152964152)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (152995470)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.FridayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (153135998)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (153147282)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.FridayTrader__c = Record.Id, stall.Friday_Active_Price__c, '')}
+10:59:58.0 (153284734)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (153353752)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SaturdayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.SaturdayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (153556500)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (153583230)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Saturday', '#{stall.Id}')
+10:59:58.0 (153647328)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (153683001)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SaturdayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (153825672)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (153838839)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SaturdayTrader__c = Record.Id, stall.Saturday_Active_Price__c, '')}
+10:59:58.0 (153977778)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (154046808)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SundayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.SundayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (154191371)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (154218721)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Sunday', '#{stall.Id}')
+10:59:58.0 (154281890)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (154312840)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SundayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (154453459)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (154463816)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SundayTrader__c = Record.Id, stall.Sunday_Active_Price__c, '')}
+10:59:58.0 (154658796)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (154941502)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.MondayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.MondayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (155143421)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (155171519)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Monday', '#{stall.Id}')
+10:59:58.0 (155235689)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (155267007)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.MondayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (155407086)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (155417716)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.MondayTrader__c = Record.Id, stall.Monday_Active_Price__c, '')}
+10:59:58.0 (155554195)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (155622322)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.TuesdayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.TuesdayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (155829932)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (155859397)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Tuesday', '#{stall.Id}')
+10:59:58.0 (155924138)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (155956002)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.TuesdayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (156097953)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (156108929)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.TuesdayTrader__c = Record.Id, stall.Tuesday_Active_Price__c, '')}
+10:59:58.0 (156245694)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (156314202)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.WednesdayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.WednesdayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (156517659)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (156545108)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Wednesday', '#{stall.Id}')
+10:59:58.0 (156609606)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (156640413)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.WednesdayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (156786868)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (156797428)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.WednesdayTrader__c = Record.Id, stall.Wednesday_Active_Price__c, '')}
+10:59:58.0 (156938348)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (157006778)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.ThursdayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.ThursdayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (157152682)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (157179951)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Thursday', '#{stall.Id}')
+10:59:58.0 (157243222)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (157274618)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.ThursdayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (157444793)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (157455500)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.ThursdayTrader__c = Record.Id, stall.Thursday_Active_Price__c, '')}
+10:59:58.0 (157675636)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (157745440)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.FridayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.FridayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (157953199)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (157980079)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Friday', '#{stall.Id}')
+10:59:58.0 (158043962)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (158075675)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.FridayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (158215475)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (158226115)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.FridayTrader__c = Record.Id, stall.Friday_Active_Price__c, '')}
+10:59:58.0 (158362574)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (158431574)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SaturdayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.SaturdayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (158635657)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (158666651)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Saturday', '#{stall.Id}')
+10:59:58.0 (158731106)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (158762445)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SaturdayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (158903217)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (158913497)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SaturdayTrader__c = Record.Id, stall.Saturday_Active_Price__c, '')}
+10:59:58.0 (159050968)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (159120188)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SundayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.SundayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}
+10:59:58.0 (159266296)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (159293535)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|updateStall('Sunday', '#{stall.Id}')
+10:59:58.0 (159356824)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (159406099)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SundayTrader__c = Record.Id, '$', '')}
+10:59:58.0 (159546712)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (159557032)|VF_EVALUATE_FORMULA_BEGIN|06628000006WtnP|#{If(stall.SundayTrader__c = Record.Id, stall.Sunday_Active_Price__c, '')}
+10:59:58.0 (159755788)|VF_EVALUATE_FORMULA_END
+10:59:58.0 (161373212)|VF_SERIALIZE_VIEWSTATE_BEGIN|06628000006WtnP
+10:59:58.0 (171115232)|VF_SERIALIZE_VIEWSTATE_END
+10:59:58.177 (177963442)|CUMULATIVE_LIMIT_USAGE
+10:59:58.177 (177963442)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 4 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+10:59:58.177 (177963442)|TOTAL_EMAIL_RECIPIENTS_QUEUED|0
+10:59:58.177 (177963442)|STATIC_VARIABLE_LIST|
+  char[]:DigitTens:0
+  long:serialVersionUID:0
+  long:serialVersionUID:0
+  String:_sfdcAdditionalCodeLocations:0
+  String:_sfdcAdditionalCodeLocations:0
+  double:MAX_VALUE:0
+  Boolean:FALSE:0
+  long:serialVersionUID:0
+  double:MIN_VALUE:0
+  int:SIZE:0
+  double:NEGATIVE_INFINITY:0
+  int:MAX_VALUE:0
+  char[]:digits:0
+  double:NaN:0
+  Boolean:TRUE:0
+  String:__sfdcProperties:0
+  int:MIN_VALUE:0
+  char[]:DigitOnes:0
+  int:BYTES:0
+  int:MIN_EXPONENT:0
+  int[]:sizeTable:0
+  int:MAX_EXPONENT:0
+  int:SIZE:0
+  double:POSITIVE_INFINITY:0
+  double:MIN_NORMAL:0
+  int:BYTES:0
+
+10:59:58.177 (177963442)|CUMULATIVE_LIMIT_USAGE_END
+
+10:59:58.0 (178173847)|CODE_UNIT_FINISHED|VF: /apex/AccountBusinessStallsListing
+10:59:58.0 (179414915)|EXECUTION_FINISHED
+10:59:58.182 (182120138)|CUMULATIVE_PROFILING_BEGIN
+10:59:58.182 (182120138)|CUMULATIVE_PROFILING|SOQL operations|
+Class.AccountBusinessStallsListingExt.getStallsFromQuery: line 28, column 1: [SELECT FridayTrader__c,MondayTrader__c,Name,SaturdayTrader__c
+                                        ,SundayTrader__c,ThursdayTrader__c,TuesdayTrader__c,WednesdayTrader__c
+               					,Friday_Active_Price__c,Monday_Active_Price__c,Saturday_Active_Price__c
+               					,Sunday_Active_Price__c,Thursday_Active_Price__c,Tuesday_Active_Price__c
+               					,Wednesday_Active_Price__c
+               					FROM Stall__c
+                                where MondayTrader__c=  :accountBusiness.Id    or
+                                TuesdayTrader__c=   :accountBusiness.Id    or
+                                WednesdayTrader__c =    :accountBusiness.Id    or
+                                ThursdayTrader__c=  :accountBusiness.Id    or
+                                FridayTrader__c =   :accountBusiness.Id    or
+                                SaturdayTrader__c =  :accountBusiness.Id    or
+                                SundayTrader__c =  :accountBusiness.Id]: executed 1 time in 47 ms
+
+10:59:58.182 (182120138)|CUMULATIVE_PROFILING|No profiling information for SOSL operations
+10:59:58.182 (182120138)|CUMULATIVE_PROFILING|No profiling information for DML operations
+10:59:58.182 (182120138)|CUMULATIVE_PROFILING|method invocations|
+Class.AccountBusinessStallsListingExt.<init>: line 19, column 1: global SObject getRecord(): executed 1 time in 48 ms
+External entry point: public List<Stall__c> getStallsFromQuery(): executed 1 time in 47 ms
+
+10:59:58.182 (182120138)|CUMULATIVE_PROFILING_END

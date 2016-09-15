@@ -1,0 +1,132 @@
+37.0 APEX_CODE,FINEST;APEX_PROFILING,FINEST;CALLOUT,FINEST;DB,FINEST;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,FINER;WORKFLOW,FINER
+11:45:32.0 (607129)|USER_INFO|[EXTERNAL]|00528000004DSLv|luke.farbotko@qvmtest.com.devmerge|Australian Eastern Standard Time|GMT+10:00
+11:45:32.0 (643459)|EXECUTION_STARTED
+11:45:32.0 (649914)|CODE_UNIT_STARTED|[EXTERNAL]|01pp000000002Ri|PaymentBuilder.changeRecordTypegeneratePayments
+11:45:32.0 (762790)|VARIABLE_SCOPE_BEGIN|[13]|PaymentBuilder.MAXRESULTS|Integer|false|true
+11:45:32.0 (1009317)|VARIABLE_SCOPE_BEGIN|[12]|PaymentBuilder.transactionListToInsert|List<Transaction__c>|true|true
+11:45:32.0 (1169032)|HEAP_ALLOCATE|[72]|Bytes:3
+11:45:32.0 (1224418)|HEAP_ALLOCATE|[77]|Bytes:152
+11:45:32.0 (1241865)|HEAP_ALLOCATE|[342]|Bytes:408
+11:45:32.0 (1258939)|HEAP_ALLOCATE|[355]|Bytes:408
+11:45:32.0 (1273826)|HEAP_ALLOCATE|[467]|Bytes:48
+11:45:32.0 (1305057)|HEAP_ALLOCATE|[139]|Bytes:6
+11:45:32.0 (1321226)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:20
+11:45:32.0 (1325805)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:73
+11:45:32.0 (1339969)|METHOD_ENTRY|[10]|01pp000000002Ri|PaymentBuilder.PaymentBuilder()
+11:45:32.0 (1346904)|STATEMENT_EXECUTE|[10]
+11:45:32.0 (1353094)|STATEMENT_EXECUTE|[10]
+11:45:32.0 (1354570)|STATEMENT_EXECUTE|[12]
+11:45:32.0 (1362666)|HEAP_ALLOCATE|[12]|Bytes:4
+11:45:32.0 (1505877)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+11:45:32.0 (1572108)|VARIABLE_ASSIGNMENT|[12]|PaymentBuilder.transactionListToInsert|{"s":1,"v":[]}|0x275258b9
+11:45:32.0 (1580040)|STATEMENT_EXECUTE|[13]
+11:45:32.0 (1595080)|HEAP_ALLOCATE|[13]|Bytes:4
+11:45:32.0 (1609586)|VARIABLE_ASSIGNMENT|[13]|PaymentBuilder.MAXRESULTS|300
+11:45:32.0 (1620702)|METHOD_EXIT|[10]|PaymentBuilder
+11:45:32.0 (1629283)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+11:45:32.0 (1643115)|VARIABLE_SCOPE_BEGIN|[312]|batchJobId|Id|false|false
+11:45:32.0 (1753624)|VARIABLE_ASSIGNMENT|[312]|batchJobId|"a01p0000002pYiaAAE"
+11:45:32.0 (1769828)|STATEMENT_EXECUTE|[313]
+11:45:32.0 (1771785)|STATEMENT_EXECUTE|[314]
+11:45:32.0 (1773225)|STATEMENT_EXECUTE|[315]
+11:45:32.0 (1774396)|STATEMENT_EXECUTE|[316]
+11:45:32.0 (1778550)|HEAP_ALLOCATE|[316]|Bytes:13
+11:45:32.0 (1817227)|HEAP_ALLOCATE|[50]|Bytes:5
+11:45:32.0 (1842590)|HEAP_ALLOCATE|[56]|Bytes:5
+11:45:32.0 (1850851)|HEAP_ALLOCATE|[64]|Bytes:7
+11:45:32.0 (2775963)|HEAP_ALLOCATE|[316]|Bytes:4
+11:45:32.0 (2821172)|LIMIT_USAGE|[316]|RECORD_TYPE_DESCRIBES|1|100
+11:45:32.0 (5050590)|HEAP_ALLOCATE|[316]|Bytes:72
+11:45:32.0 (5059816)|HEAP_ALLOCATE|[316]|Bytes:18
+11:45:32.0 (5216237)|HEAP_ALLOCATE|[316]|Bytes:4
+11:45:32.0 (5223002)|VARIABLE_SCOPE_BEGIN|[316]|processingRecordTypeID|Id|false|false
+11:45:32.0 (5282672)|VARIABLE_ASSIGNMENT|[316]|processingRecordTypeID|"012p0000000CggDAAS"
+11:45:32.0 (5288737)|STATEMENT_EXECUTE|[317]
+11:45:32.0 (5293486)|HEAP_ALLOCATE|[317]|Bytes:71
+11:45:32.0 (5304478)|HEAP_ALLOCATE|[317]|Bytes:4
+11:45:32.0 (5314802)|HEAP_ALLOCATE|[317]|Bytes:7
+11:45:32.0 (5682855)|SOQL_EXECUTE_BEGIN|[317]|Aggregations:0|SELECT id, Due_Before__c FROM Batch_Jobs__c WHERE id = :tmpVar1 LIMIT 1
+11:45:32.0 (5689710)|LIMIT_USAGE|[317]|SOQL|1|100
+11:45:32.0 (5695855)|LIMIT_USAGE|[317]|AGGS|0|300
+11:45:32.0 (18436266)|SOQL_EXECUTE_END|[317]|Rows:1
+11:45:32.0 (18452486)|LIMIT_USAGE|[317]|SOQL_ROWS|1|50000
+11:45:32.0 (18477511)|HEAP_ALLOCATE|[317]|Bytes:8
+11:45:32.0 (18500687)|HEAP_ALLOCATE|[317]|Bytes:50
+11:45:32.0 (18615695)|HEAP_ALLOCATE|[317]|Bytes:8
+11:45:32.0 (18637906)|HEAP_ALLOCATE|[317]|Bytes:39
+11:45:32.0 (18759090)|HEAP_ALLOCATE|[317]|Bytes:12
+11:45:32.0 (18771084)|VARIABLE_SCOPE_BEGIN|[317]|batchJobObj|Batch_Jobs__c|true|false
+11:45:32.0 (18837313)|VARIABLE_ASSIGNMENT|[317]|batchJobObj|{"s":1,"v":{"Id":"a01p0000002pYiaAAE","Due_Before__c":"2016-12-01T00:00:00.000Z"}}|0x4c31d65d
+11:45:32.0 (18845093)|STATEMENT_EXECUTE|[318]
+11:45:32.0 (18912813)|HEAP_ALLOCATE|[318]|Bytes:-4
+11:45:32.0 (18925851)|VARIABLE_ASSIGNMENT|[318]|this.RecordTypeId|"012p0000000CggDAAS"|0x4c31d65d
+11:45:32.0 (18930099)|STATEMENT_EXECUTE|[319]
+11:45:32.0 (18977686)|HEAP_ALLOCATE|[319]|Bytes:8
+11:45:32.0 (18992003)|DML_BEGIN|[319]|Op:Update|Type:Batch_Jobs__c|Rows:1
+11:45:32.0 (19002687)|LIMIT_USAGE|[319]|DML|1|150
+11:45:32.0 (19010844)|LIMIT_USAGE|[319]|DML_ROWS|1|10000
+11:45:32.0 (19033343)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+11:45:32.0 (51704270)|DML_END|[319]
+11:45:32.55 (55012455)|CUMULATIVE_LIMIT_USAGE
+11:45:32.55 (55012455)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+11:45:32.55 (55012455)|TOTAL_EMAIL_RECIPIENTS_QUEUED|0
+11:45:32.55 (55012455)|STATIC_VARIABLE_LIST|
+  char[]:DigitTens:0
+  long:serialVersionUID:0
+  String:_sfdcAdditionalCodeLocations:0
+  long:serialVersionUID:0
+  double:MAX_VALUE:0
+  Boolean:FALSE:0
+  long:serialVersionUID:0
+  double:MIN_VALUE:0
+  int:SIZE:0
+  double:NEGATIVE_INFINITY:0
+  int:MAX_VALUE:0
+  char[]:digits:0
+  double:NaN:0
+  Boolean:TRUE:0
+  String:_sfdcSuppressedCodeLocations:0
+  int:MIN_VALUE:0
+  char[]:DigitOnes:0
+  int:BYTES:0
+  List<Transaction__c>:_static_transactionListToInsert:0
+  int:MIN_EXPONENT:0
+  int[]:sizeTable:0
+  int:MAX_EXPONENT:0
+  int:SIZE:0
+  double:POSITIVE_INFINITY:0
+  double:MIN_NORMAL:0
+  Integer:_static_MAXRESULTS:0
+  int:BYTES:0
+
+11:45:32.55 (55012455)|CUMULATIVE_LIMIT_USAGE_END
+
+11:45:32.0 (55185715)|CODE_UNIT_FINISHED|PaymentBuilder.changeRecordTypegeneratePayments
+11:45:32.0 (56755622)|EXECUTION_FINISHED
+11:45:32.61 (61076462)|CUMULATIVE_PROFILING_BEGIN
+11:45:32.61 (61076462)|CUMULATIVE_PROFILING|SOQL operations|
+Class.PaymentBuilder.changeRecordTypegeneratePayments: line 317, column 1: [SELECT id, Due_Before__c  FROM Batch_Jobs__c where id =:batchJobId LIMIT 1]: executed 1 time in 13 ms
+
+11:45:32.61 (61076462)|CUMULATIVE_PROFILING|No profiling information for SOSL operations
+11:45:32.61 (61076462)|CUMULATIVE_PROFILING|DML operations|
+Class.PaymentBuilder.changeRecordTypegeneratePayments: line 319, column 1: Update: Batch_Jobs__c: executed 1 time in 32 ms
+
+11:45:32.61 (61076462)|CUMULATIVE_PROFILING|method invocations|
+External entry point: webService static void changeRecordTypegeneratePayments(Id): executed 1 time in 50 ms
+Class.PaymentBuilder.changeRecordTypegeneratePayments: line 316, column 1: global Schema.DescribeSObjectResult getDescribe(): executed 2 times in 1 ms
+Class.PaymentBuilder: line 12, column 1: global public List<Transaction__c>(): executed 1 time in 0 ms
+
+11:45:32.61 (61076462)|CUMULATIVE_PROFILING_END

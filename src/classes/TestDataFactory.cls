@@ -7,7 +7,7 @@ public class TestDataFactory {
         Id PriceBookId = Test.getStandardPricebookId();
         if(recordType == 'SL' || recordType == 'PE' ) 
         {
-            PriceBook2 PriceBook = [select Id from PriceBook2 where Name = 'General Merchandise'limit 1];
+            PriceBook2 PriceBook = [select Id from PriceBook2 where Name = 'General Merchandise' limit 1];
             PriceBookId = PriceBook.Id;
         }
         
@@ -42,7 +42,8 @@ public class TestDataFactory {
                                        AccountId=acct.Id,
                                        Contracted_Leave__c=20,
                                        Business_Status__c = 'Open',
-                                       pricebook2id=PriceBookId));
+                                       pricebook2id=PriceBookId,
+                                       Uplift_Factor__c=1));
             }
         }
         // Insert all opportunities for all accounts.
@@ -198,6 +199,7 @@ public class TestDataFactory {
             pb.name = 'General Merchandise';
             pb.isActive=true;
             pb.SLPE__c = true;
+            pb.Sku__c = '0000000';
             //pb.IsStandard  = true;
             insert pb;
         
@@ -337,7 +339,7 @@ public class TestDataFactory {
 
     public static Batch_Jobs__c createLHBatchJob()
     {
-
+		
         Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Batch_Jobs__c; 
         Map<String,Schema.RecordTypeInfo> BatchJobsTypeInfo = cfrSchema.getRecordTypeInfosByName(); 
         Id rtId = BatchJobsTypeInfo.get('New Orders/Invoices').getRecordTypeId();
@@ -375,6 +377,46 @@ public class TestDataFactory {
 
         return bj;
        
+    }
+    
+    public static List<OrderItem> createOrderItemWithLeave(Integer numOrderItems, String recordType)
+    {
+        List<OrderItem> oi = new List<OrderItem>();
+        //TestDataFactory.createStallProductsAndGeneralPriceBook();
+		List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1, 'SL');
+        Stall__c stallObj = TestDataFactory.createSingleStallWithNoOpp();
+        Id PriceBookId = Test.getStandardPricebookId();
+        if(recordType == 'SL' || recordType == 'PE' ) 
+        {
+            PriceBook2 PriceBook = [select Id from PriceBook2 where Name = 'General Merchandise' limit 1];
+            PriceBookId = PriceBook.Id;
+        }
+        List<PricebookEntry>  prods = [SELECT Id,UnitPrice FROM PricebookEntry where PriceBook2Id = :PriceBookId];
+        Opportunity opp = [SELECT ID FROM Opportunity LIMIT 1];
+        Order orderObj = new Order();
+        orderObj.OpportunityId = opp.Id;
+        orderObj.AccountId = accounts.get(0).Id;
+        orderObj.Status = 'Draft';
+        orderObj.EffectiveDate = Date.today();
+        orderObj.PriceBook2Id = PriceBookId;
+        insert orderObj;
+        
+        System.debug('PriceBookId '+PriceBookId);
+        //System.debug('ProdId '+prod.Id);
+        for(Integer i=0;i<numOrderItems;i++) {
+            OrderItem item = new OrderItem();
+            item.Leave__c = True;
+            item.Date__c = Date.today();
+            item.OrderId = orderObj.Id;
+            item.Stall__c = stallObj.Id;  
+            item.PricebookEntryId = prods[0].Id; 
+            item.Quantity = 1; 
+            item.UnitPrice = 123; 
+            oi.add(item);
+        }
+        insert oi;
+        return oi;
+        
     }
 
     public static Batch_Jobs__c createMCCBatchJob()

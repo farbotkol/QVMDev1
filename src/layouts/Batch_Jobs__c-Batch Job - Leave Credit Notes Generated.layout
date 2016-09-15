@@ -15,35 +15,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Batch_Type__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Process_Range__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Required</behavior>
-                <field>Week_Month_Of__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>From_Date__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>To_Date__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Description__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Due_Before__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Transaction_Count__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -98,25 +70,13 @@
         <fields>Status__c</fields>
         <relatedList>OrderItem.Batch_Jobs__c</relatedList>
     </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>Account__c</fields>
-        <fields>Balance__c</fields>
-        <fields>Customer_Reference__c</fields>
-        <fields>DocNumber__c</fields>
-        <fields>TotalAmount__c</fields>
-        <fields>TxnDate__c</fields>
-        <fields>DueDate__c</fields>
-        <fields>Type__c</fields>
-        <relatedList>Transaction__c.Batch_Jobs__c</relatedList>
-    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00hp0000000FOP6</masterLabel>
+        <masterLabel>00hp0000000RDdI</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

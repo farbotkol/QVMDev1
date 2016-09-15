@@ -1,0 +1,120 @@
+38.0 APEX_CODE,FINEST;APEX_PROFILING,FINEST;CALLOUT,FINEST;DB,FINEST;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,FINER;WORKFLOW,FINER
+11:45:20.0 (94647)|USER_INFO|[EXTERNAL]|00528000004DSLv|luke.farbotko@qvmtest.com.devmerge|Australian Eastern Standard Time|GMT+10:00
+11:45:20.0 (131634)|EXECUTION_STARTED
+11:45:20.0 (136831)|CODE_UNIT_STARTED|[EXTERNAL]|01pp0000000EU9R|TransactionBuilderBatch
+11:45:20.0 (42673239)|HEAP_ALLOCATE|[72]|Bytes:3
+11:45:20.0 (42746248)|HEAP_ALLOCATE|[77]|Bytes:152
+11:45:20.0 (42769341)|HEAP_ALLOCATE|[342]|Bytes:408
+11:45:20.0 (42792370)|HEAP_ALLOCATE|[355]|Bytes:408
+11:45:20.0 (42814009)|HEAP_ALLOCATE|[467]|Bytes:48
+11:45:20.0 (42843598)|HEAP_ALLOCATE|[139]|Bytes:6
+11:45:20.0 (44329357)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:84692
+11:45:20.0 (47502561)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:11
+11:45:20.0 (47529541)|SYSTEM_METHOD_ENTRY|[15]|BatchableContextImpl.BatchableContextImpl()
+11:45:20.0 (47538767)|STATEMENT_EXECUTE|[15]
+11:45:20.0 (47565431)|SYSTEM_METHOD_EXIT|[15]|BatchableContextImpl
+11:45:20.0 (47572559)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:12
+11:45:20.0 (47577431)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+11:45:20.0 (47584005)|VARIABLE_SCOPE_BEGIN|[31]|this|Database.BatchableContextImpl|true|false
+11:45:20.0 (47646959)|VARIABLE_ASSIGNMENT|[31]|this|{}|0x6e3d5a9
+11:45:20.0 (47651209)|VARIABLE_SCOPE_BEGIN|[31]|jobId|Id|false|false
+11:45:20.0 (47726714)|VARIABLE_ASSIGNMENT|[31]|jobId|"707p000000A3IfxAAF"
+11:45:20.0 (47731946)|VARIABLE_SCOPE_BEGIN|[31]|childJobId|Id|false|false
+11:45:20.0 (47742591)|VARIABLE_ASSIGNMENT|[31]|childJobId|null
+11:45:20.0 (48706753)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:52
+11:45:20.0 (48715664)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:11
+11:45:20.0 (48718253)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+11:45:20.0 (48728341)|METHOD_ENTRY|[9]|01pp0000000EU9R|TransactionBuilderBatch.TransactionBuilderBatch()
+11:45:20.0 (48735294)|STATEMENT_EXECUTE|[9]
+11:45:20.0 (48743513)|STATEMENT_EXECUTE|[9]
+11:45:20.0 (48749336)|METHOD_EXIT|[9]|TransactionBuilderBatch
+11:45:20.0 (48754180)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:16
+11:45:20.0 (48756461)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:12
+11:45:20.0 (48773259)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:204
+11:45:20.0 (48778684)|VARIABLE_SCOPE_BEGIN|[27]|this|TransactionBuilderBatch|true|false
+11:45:20.0 (48857035)|VARIABLE_ASSIGNMENT|[27]|this|{"batchJob":"a01p0000002pYiaAAE","transactionCount":259,"transList":"0x47301a"}|0x2a987416
+11:45:20.0 (48866745)|VARIABLE_SCOPE_BEGIN|[27]|BC|Database.BatchableContext|true|false
+11:45:20.0 (48918475)|VARIABLE_ASSIGNMENT|[27]|BC|{"jobId":"707p000000A3IfxAAF"}|0x6e3d5a9
+11:45:20.0 (48923553)|VARIABLE_SCOPE_BEGIN|[27]|scope|List<SObject>|true|false
+11:45:20.0 (48942008)|VARIABLE_ASSIGNMENT|[27]|scope|{"s":1,"v":"List of size 50 too large to display"}|0x2c713ebc
+11:45:20.0 (48955752)|STATEMENT_EXECUTE|[28]
+11:45:20.0 (48957452)|STATEMENT_EXECUTE|[29]
+11:45:20.0 (48958731)|STATEMENT_EXECUTE|[30]
+11:45:20.0 (48960140)|STATEMENT_EXECUTE|[31]
+11:45:20.0 (48967554)|HEAP_ALLOCATE|[29]|Bytes:14
+11:45:20.0 (48971546)|HEAP_ALLOCATE|[29]|Bytes:22
+11:45:20.0 (48994383)|HEAP_ALLOCATE|[50]|Bytes:5
+11:45:20.0 (49017009)|HEAP_ALLOCATE|[56]|Bytes:5
+11:45:20.0 (49039466)|HEAP_ALLOCATE|[64]|Bytes:7
+11:45:20.0 (49309739)|VARIABLE_SCOPE_BEGIN|[31]|f|Schema.SObjectField|true|false
+11:45:20.0 (49356387)|VARIABLE_ASSIGNMENT|[31]|f|"common.apex.runtime.impl.ApexFieldToken@445f2ea9"|0x445f2ea9
+11:45:20.0 (49363015)|STATEMENT_EXECUTE|[32]
+11:45:20.0 (49472417)|DML_BEGIN|[32]|Op:Upsert|Type:Transaction__c|Rows:50
+11:45:20.0 (49491704)|LIMIT_USAGE|[32]|DML|1|150
+11:45:20.0 (49502759)|LIMIT_USAGE|[32]|DML_ROWS|50|10000
+11:45:20.0 (49517087)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:204
+11:45:20.0 (380730658)|DML_END|[32]
+11:45:20.0 (380897931)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:204
+11:45:20.0 (380950203)|HEAP_ALLOCATE|[32]|Bytes:204
+11:45:20.0 (380981629)|VARIABLE_SCOPE_BEGIN|[32]|cr|List<Database.UpsertResult>|true|false
+11:45:20.0 (381023361)|VARIABLE_ASSIGNMENT|[32]|cr|{"s":1,"v":"List of size 50 too large to display"}|0x28b1e5de
+11:45:20.392 (392632688)|CUMULATIVE_LIMIT_USAGE
+11:45:20.392 (392632688)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 200
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 60000
+  Maximum heap size: 0 out of 12000000
+  Number of callouts: 0 out of 0
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 0
+  Number of queueable jobs added to the queue: 0 out of 1
+  Number of Mobile Apex push calls: 0 out of 10
+
+11:45:20.392 (392632688)|TOTAL_EMAIL_RECIPIENTS_QUEUED|0
+11:45:20.392 (392632688)|STATIC_VARIABLE_LIST|
+  char[]:DigitTens:0
+  long:serialVersionUID:0
+  long:serialVersionUID:0
+  String:_sfdcAdditionalCodeLocations:0
+  double:MAX_VALUE:0
+  Boolean:FALSE:0
+  long:serialVersionUID:0
+  double:MIN_VALUE:0
+  int:SIZE:0
+  String:_sfdcAdditionalCodeLocations:0
+  double:NEGATIVE_INFINITY:0
+  int:MAX_VALUE:0
+  char[]:digits:0
+  double:NaN:0
+  Boolean:TRUE:0
+  String:__sfdcParameterizedTypes:0
+  String:_sfdcSuppressedCodeLocations:0
+  String:_sfdcAdditionalCodeLocations:0
+  int:MIN_VALUE:0
+  char[]:DigitOnes:0
+  int:BYTES:0
+  int:MIN_EXPONENT:0
+  int[]:sizeTable:0
+  int:MAX_EXPONENT:0
+  int:SIZE:0
+  double:POSITIVE_INFINITY:0
+  double:MIN_NORMAL:0
+  int:BYTES:0
+
+11:45:20.392 (392632688)|CUMULATIVE_LIMIT_USAGE_END
+
+11:45:20.0 (392838123)|CODE_UNIT_FINISHED|TransactionBuilderBatch
+11:45:20.0 (394460484)|EXECUTION_FINISHED
+11:45:20.477 (477992825)|CUMULATIVE_PROFILING_BEGIN
+11:45:20.477 (477992825)|CUMULATIVE_PROFILING|No profiling information for SOQL operations
+11:45:20.477 (477992825)|CUMULATIVE_PROFILING|No profiling information for SOSL operations
+11:45:20.477 (477992825)|CUMULATIVE_PROFILING|DML operations|
+Class.TransactionBuilderBatch.execute: line 32, column 1: com.salesforce.api.Database.upsert(List<Transaction__c>, Schema.SObjectField, Boolean): executed 1 time in 332 ms
+
+11:45:20.477 (477992825)|CUMULATIVE_PROFILING|method invocations|
+External entry point: global void execute(Database.BatchableContext, List<SObject>): executed 1 time in 332 ms
+
+11:45:20.477 (477992825)|CUMULATIVE_PROFILING_END

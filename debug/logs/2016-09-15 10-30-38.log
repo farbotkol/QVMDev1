@@ -1,0 +1,146 @@
+38.0 APEX_CODE,FINEST;APEX_PROFILING,FINEST;CALLOUT,FINEST;DB,FINEST;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,FINER;WORKFLOW,FINER
+10:30:38.0 (496971)|USER_INFO|[EXTERNAL]|005p0000000MSbo|priyanka.manoharan@rxpservices.com.devmerge|Australian Eastern Standard Time|GMT+10:00
+10:30:38.0 (549792)|EXECUTION_STARTED
+10:30:38.0 (556420)|CODE_UNIT_STARTED|[EXTERNAL]|01pp0000000ETpq|LeaveController.getAccountBusiness
+10:30:38.0 (704397)|HEAP_ALLOCATE|[72]|Bytes:3
+10:30:38.0 (746842)|HEAP_ALLOCATE|[77]|Bytes:152
+10:30:38.0 (762448)|HEAP_ALLOCATE|[342]|Bytes:408
+10:30:38.0 (781455)|HEAP_ALLOCATE|[355]|Bytes:408
+10:30:38.0 (800122)|HEAP_ALLOCATE|[467]|Bytes:48
+10:30:38.0 (828507)|HEAP_ALLOCATE|[139]|Bytes:6
+10:30:38.0 (897969)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:6
+10:30:38.0 (902790)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+10:30:38.0 (916856)|METHOD_ENTRY|[1]|01pp0000000ETpq|LeaveController.LeaveController()
+10:30:38.0 (920886)|STATEMENT_EXECUTE|[1]
+10:30:38.0 (925815)|STATEMENT_EXECUTE|[1]
+10:30:38.0 (963953)|HEAP_ALLOCATE|[50]|Bytes:5
+10:30:38.0 (998726)|HEAP_ALLOCATE|[56]|Bytes:5
+10:30:38.0 (1009726)|HEAP_ALLOCATE|[64]|Bytes:7
+10:30:38.0 (1027013)|SYSTEM_MODE_ENTER|true
+10:30:38.0 (1046066)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:5
+10:30:38.0 (1053018)|SYSTEM_MODE_EXIT|true
+10:30:38.0 (1064472)|METHOD_EXIT|[1]|LeaveController
+10:30:38.0 (1072704)|SYSTEM_MODE_ENTER|false
+10:30:38.0 (1083544)|SYSTEM_MODE_ENTER|true
+10:30:38.0 (1087234)|HEAP_ALLOCATE|[11]|Bytes:5
+10:30:38.0 (1091140)|STATEMENT_EXECUTE|[9]
+10:30:38.0 (1092578)|STATEMENT_EXECUTE|[11]
+10:30:38.0 (1104399)|METHOD_ENTRY|[11]|01pp0000000ETpq|LeaveController.getAccountId()
+10:30:38.0 (1125280)|HEAP_ALLOCATE|[4]|Bytes:5
+10:30:38.0 (1128989)|STATEMENT_EXECUTE|[3]
+10:30:38.0 (1130329)|STATEMENT_EXECUTE|[4]
+10:30:38.0 (1132801)|HEAP_ALLOCATE|[4]|Bytes:46
+10:30:38.0 (1141611)|HEAP_ALLOCATE|[4]|Bytes:4
+10:30:38.0 (1151112)|HEAP_ALLOCATE|[4]|Bytes:7
+10:30:38.0 (1186061)|HEAP_ALLOCATE|[4]|Bytes:85
+10:30:38.0 (1198650)|SYSTEM_METHOD_ENTRY|[1]|UserInfo.UserInfo()
+10:30:38.0 (1201428)|STATEMENT_EXECUTE|[1]
+10:30:38.0 (1209533)|SYSTEM_METHOD_EXIT|[1]|UserInfo
+10:30:38.0 (1219549)|METHOD_ENTRY|[4]||System.UserInfo.getUserId()
+10:30:38.0 (1258757)|METHOD_EXIT|[4]||System.UserInfo.getUserId()
+10:30:38.0 (2867126)|SOQL_EXECUTE_BEGIN|[4]|Aggregations:0|SELECT AccountId FROM User WHERE Id = :tmpVar1
+10:30:38.0 (2884673)|LIMIT_USAGE|[4]|SOQL|1|100
+10:30:38.0 (2893731)|LIMIT_USAGE|[4]|AGGS|0|300
+10:30:38.0 (6279536)|SOQL_EXECUTE_END|[4]|Rows:1
+10:30:38.0 (6291751)|LIMIT_USAGE|[4]|SOQL_ROWS|1|50000
+10:30:38.0 (6309232)|HEAP_ALLOCATE|[4]|Bytes:8
+10:30:38.0 (6326589)|HEAP_ALLOCATE|[4]|Bytes:29
+10:30:38.0 (6459764)|HEAP_ALLOCATE|[4]|Bytes:8
+10:30:38.0 (6475647)|HEAP_ALLOCATE|[4]|Bytes:30
+10:30:38.0 (6613365)|HEAP_ALLOCATE|[4]|Bytes:8
+10:30:38.0 (6670512)|HEAP_ALLOCATE|[4]|Bytes:18
+10:30:38.0 (6679491)|VARIABLE_SCOPE_BEGIN|[4]|accId|String|false|false
+10:30:38.0 (6721920)|VARIABLE_ASSIGNMENT|[4]|accId|"005p0000000MSboAAG"
+10:30:38.0 (6726694)|STATEMENT_EXECUTE|[6]
+10:30:38.0 (6729845)|HEAP_ALLOCATE|[6]|Bytes:15
+10:30:38.0 (6745641)|METHOD_EXIT|[11]|01pp0000000ETpq|LeaveController.getAccountId()
+10:30:38.0 (6751362)|VARIABLE_SCOPE_BEGIN|[11]|accId|String|false|false
+10:30:38.0 (6757659)|VARIABLE_ASSIGNMENT|[11]|accId|"001p000000DSVcL"
+10:30:38.0 (6760320)|STATEMENT_EXECUTE|[12]
+10:30:38.0 (6761485)|STATEMENT_EXECUTE|[13]
+10:30:38.0 (6764109)|HEAP_ALLOCATE|[13]|Bytes:304
+10:30:38.0 (6773430)|HEAP_ALLOCATE|[13]|Bytes:4
+10:30:38.0 (12028796)|SOQL_EXECUTE_BEGIN|[13]|Aggregations:1|SELECT Id, Name, Leave_Remaining_Monday__c, Leave_Remaining_Tuesday__c, Leave_Remaining_Wednesday__c, Leave_Remaining_Thursday__c, Leave_Remaining_Friday__c, Leave_Remaining_Saturday__c, Leave_Remaining_Sunday__c, (SELECT id, Name, Leave_Date__c FROM Leave__r) FROM Opportunity WHERE AccountId = :tmpVar1
+10:30:38.0 (12047338)|LIMIT_USAGE|[13]|SOQL|2|100
+10:30:38.0 (12057210)|LIMIT_USAGE|[13]|AGGS|1|300
+10:30:38.0 (38297812)|SOQL_EXECUTE_END|[13]|Rows:3
+10:30:38.0 (38327085)|LIMIT_USAGE|[13]|SOQL_ROWS|18|50000
+10:30:38.0 (38345242)|HEAP_ALLOCATE|[13]|Bytes:16
+10:30:38.0 (38410272)|HEAP_ALLOCATE|[13]|Bytes:3131
+10:30:38.0 (38506801)|HEAP_ALLOCATE|[13]|Bytes:16
+10:30:38.0 (38525741)|VARIABLE_SCOPE_BEGIN|[13]|accBusiness|List<Opportunity>|true|false
+10:30:38.0 (38688283)|VARIABLE_ASSIGNMENT|[13]|accBusiness|{"s":1,"v":[{"s":2,"v":{"Id":"006p0000003Y9K0AAK","Name":"Test AccBusiness2","Leave_Remaining_Mond (5 more) ...":3,"Leave_Remaining_Tues (6 more) ...":2,"Leave_Remaining_Wedn (8 more) ...":1,"Leave_Remaining_Thur (7 more) ...":1,"Leave_Remaining_Frid (5 more) ...":2,"Leave_Remaining_Satu (7 more) ...":3,"Leave_Remaining_Sund (5 more) ...":3,"Leave__r":[{"s":3,"v":{"Account_Business__c":"006p0000003Y9K0AAK","Id":"a02p0000002kJsQAAU","Name":"L-000000016","Leave_Date__c":"2016-09-14T00:00:00.000Z"}},{"s":4,"v":{"Account_Business__c":"006p0000003Y9K0AAK","Id":"a02p0000002kJsVAAU","Name":"L-000000017","Leave_Date__c":"2016-09-16T00:00:00.000Z"}},{"s":5,"v":{"Account_Business__c":"006p0000003Y9K0AAK","Id":"a02p0000002kL9gAAE","Name":"L-000000020","Leave_Date__c":"2016-09-21T00:00:00.000Z"}},{"s":6,"v":{"Account_Business__c":"006p0000003Y9K0AAK","Id":"a02p0000002kOE3AAM","Name":"L-000000025","Leave_Date__c":"2016-09-15T00:00:00.000Z"}},{"s":7,"v":{"Account_Business__c":"006p0000003Y9K0AAK","Id":"a02p0000002kOH2AAM","Name":"L-000000027","Leave_Date__c":"2016-09-15T00:00:00.000Z"}},{"s":8,"v":{"Account_Business__c":"006p0000003Y9K0AAK","Id":"a02p0000002kOHCAA2","Name":"L-000000028","Leave_Date__c":"2016-09-27T00:00:00.000Z"}}]}},{"s":9,"v":{"Id":"006p0000003Y9KAAA0","Name":"Test AccBusiness3","Leave_Remaining_Mond (5 more) ...":0,"Leave_Remaining_Tues (6 more) ...":0,"Leave_Remaining_Wedn (8 more) ...":0,"Leave_Remaining_Thur (7 more) ...":-2,"Leave_Remaining_Frid (5 more) ...":0,"Leave_Remaining_Satu (7 more) ...":-1,"Leave_Remaining_Sund (5 more) ...":-2,"Leave__r":[{"s":10,"v":{"Account_Business__c":"006p0000003Y9KAAA0","Id":"a02p0000002kJsaAAE","Name":"L-000000018","Leave_Date__c":"2016-09-17T00:00:00.000Z"}},{"s":11,"v":{"Account_Business__c":"006p0000003Y9KAAA0","Id":"a02p0000002kOGJAA2","Name":"L-000000026","Leave_Date__c":"2016-09-25T00:00:00.000Z"}},{"s":12,"v":{"Account_Business__c":"006p0000003Y9KAAA0","Id":"a02p0000002kNUXAA2","Name":"L-000000024","Leave_Date__c":"2016-09-15T00:00:00.000Z"}},{"s":13,"v":{"Account_Business__c":"006p0000003Y9KAAA0","Id":"a02p0000002kJspAAE","Name":"L-000000019","Leave_Date__c":"2016-09-18T00:00:00.000Z"}},{"s":14,"v":{"Account_Business__c":"006p0000003Y9KAAA0","Id":"a02p0000002kNQ1AAM","Name":"L-000000022","Leave_Date__c":"2016-09-22T00:00:00.000Z"}}]}},{"s":15,"v":{"Id":"006p0000003Y9JvAAK","Name":"Test AccountBusiness (1 more) ...","Leave_Remaining_Mond (5 more) ...":3,"Leave_Remaining_Tues (6 more) ...":3,"Leave_Remaining_Wedn (8 more) ...":4,"Leave_Remaining_Thur (7 more) ...":3,"Leave_Remaining_Frid (5 more) ...":4,"Leave_Remaining_Satu (7 more) ...":4,"Leave_Remaining_Sund (5 more) ...":4,"Leave__r":[{"s":16,"v":{"Account_Business__c":"006p0000003Y9JvAAK","Id":"a02p0000002kJsLAAU","Name":"L-000000015","Leave_Date__c":"2016-09-19T00:00:00.000Z"}},{"s":17,"v":{"Account_Business__c":"006p0000003Y9JvAAK","Id":"a02p0000002kJsBAAU","Name":"L-000000014","Leave_Date__c":"2016-09-15T00:00:00.000Z"}},{"s":18,"v":{"Account_Business__c":"006p0000003Y9JvAAK","Id":"a02p0000002kNQ6AAM","Name":"L-000000023","Leave_Date__c":"2016-09-27T00:00:00.000Z"}}]}}]}|0x59be9e5a
+10:30:38.0 (38708463)|STATEMENT_EXECUTE|[19]
+10:30:38.0 (38714302)|HEAP_ALLOCATE|[19]|Bytes:12
+10:30:38.0 (38907412)|HEAP_ALLOCATE|[19]|Bytes:823
+10:30:38.0 (38931126)|HEAP_ALLOCATE|[19]|Bytes:835
+10:30:38.0 (38964166)|USER_DEBUG|[19]|DEBUG|accBusiness (Opportunity:{Id=006p0000003Y9K0AAK, Name=Test AccBusiness2, Leave_Remaining_Monday__c=3, Leave_Remaining_Tuesday__c=2, Leave_Remaining_Wednesday__c=1, Leave_Remaining_Thursday__c=1, Leave_Remaining_Friday__c=2, Leave_Remaining_Saturday__c=3, Leave_Remaining_Sunday__c=3}, Opportunity:{Id=006p0000003Y9KAAA0, Name=Test AccBusiness3, Leave_Remaining_Monday__c=0, Leave_Remaining_Tuesday__c=0, Leave_Remaining_Wednesday__c=0, Leave_Remaining_Thursday__c=-2, Leave_Remaining_Friday__c=0, Leave_Remaining_Saturday__c=-1, Leave_Remaining_Sunday__c=-2}, Opportunity:{Id=006p0000003Y9JvAAK, Name=Test AccountBusiness1, Leave_Remaining_Monday__c=3, Leave_Remaining_Tuesday__c=3, Leave_Remaining_Wednesday__c=4, Leave_Remaining_Thursday__c=3, Leave_Remaining_Friday__c=4, Leave_Remaining_Saturday__c=4, Leave_Remaining_Sunday__c=4})
+10:30:38.0 (38978306)|STATEMENT_EXECUTE|[20]
+10:30:38.0 (38979889)|STATEMENT_EXECUTE|[21]
+10:30:38.0 (38984672)|SYSTEM_MODE_EXIT|true
+10:30:38.0 (39607240)|SYSTEM_MODE_EXIT|false
+10:30:38.39 (39657210)|CUMULATIVE_LIMIT_USAGE
+10:30:38.39 (39657210)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 2 out of 100
+  Number of query rows: 18 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+10:30:38.39 (39657210)|TOTAL_EMAIL_RECIPIENTS_QUEUED|0
+10:30:38.39 (39657210)|STATIC_VARIABLE_LIST|
+  char[]:DigitTens:0
+  long:serialVersionUID:0
+  long:serialVersionUID:0
+  String:_sfdcAdditionalCodeLocations:0
+  double:MAX_VALUE:0
+  Boolean:FALSE:0
+  long:serialVersionUID:0
+  String:_sfdcSuppressedCodeLocations:0
+  double:MIN_VALUE:0
+  int:SIZE:0
+  double:NEGATIVE_INFINITY:0
+  int:MAX_VALUE:0
+  String:_sfdcAdditionalCodeLocations:0
+  char[]:digits:0
+  double:NaN:0
+  Boolean:TRUE:0
+  int:MIN_VALUE:0
+  char[]:DigitOnes:0
+  int:BYTES:0
+  int:MIN_EXPONENT:0
+  int[]:sizeTable:0
+  int:MAX_EXPONENT:0
+  int:SIZE:0
+  double:POSITIVE_INFINITY:0
+  double:MIN_NORMAL:0
+  int:BYTES:0
+
+10:30:38.39 (39657210)|CUMULATIVE_LIMIT_USAGE_END
+
+10:30:38.0 (39802753)|CODE_UNIT_FINISHED|LeaveController.getAccountBusiness
+10:30:38.0 (41887471)|EXECUTION_FINISHED
+10:30:38.46 (46149986)|CUMULATIVE_PROFILING_BEGIN
+10:30:38.46 (46149986)|CUMULATIVE_PROFILING|SOQL operations|
+Class.LeaveController.getAccountBusiness: line 13, column 1: [SELECT Id,Name,Leave_Remaining_Monday__c,Leave_Remaining_Tuesday__c,Leave_Remaining_Wednesday__c,
+                                             Leave_Remaining_Thursday__c,Leave_Remaining_Friday__c,Leave_Remaining_Saturday__c,Leave_Remaining_Sunday__c
+                                             , (select id, Name,Leave_Date__c from Leave__r)
+                                             FROM Opportunity
+                                             WHERE AccountId  = :accId]: executed 1 time in 32 ms
+
+10:30:38.46 (46149986)|CUMULATIVE_PROFILING|No profiling information for SOSL operations
+10:30:38.46 (46149986)|CUMULATIVE_PROFILING|No profiling information for DML operations
+10:30:38.46 (46149986)|CUMULATIVE_PROFILING|method invocations|
+External entry point: public static List<Opportunity> getAccountBusiness(): executed 1 time in 39 ms
+Class.LeaveController.getAccountId: line 4, column 1: global static String getUserId(): executed 2 times in 5 ms
+Class.LeaveController.getAccountBusiness: line 11, column 1: public static String getAccountId(): executed 1 time in 5 ms
+Class.LeaveController.getAccountBusiness: line 19, column 1: public static String valueOf(Object): executed 2 times in 1 ms
+
+10:30:38.46 (46149986)|CUMULATIVE_PROFILING_END

@@ -58,7 +58,7 @@
     <fields>
         <fullName>Sku__c</fullName>
         <externalId>false</externalId>
-        <formula>BLANKVALUE(Sku_Override__c , Product2.SKU__c  )</formula>
+        <formula>BLANKVALUE(Sku_Override__c , BLANKVALUE(Product2.SKU__c,  Pricebook2.Sku__c) )</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Sku</label>
         <required>false</required>

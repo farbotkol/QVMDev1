@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Date_to_be_Processed__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Must be numeric in the formal of DDMMYY. Must be a valid date. Zero filled.</inlineHelpText>
+        <label>Date to be Processed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Description of entries on file e.g. &quot;PAYROLL&quot;</inlineHelpText>
+        <label>Description</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Financial_Institution__c</fullName>
+        <description>Name of User&apos;s Financial Institution</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Must be approved Financial Institution abbreviation. Bank of Queensland&apos;s abbreviation is BQL, Westpac&apos;s abbreviation is &quot;WBC&quot;. Consult your Bank for correct abbreviation.</inlineHelpText>
+        <label>Financial Institution</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Name_Of_User__c</fullName>
+        <description>Name of Use supplying file.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Must be User Preferred Specification as advised by User&apos;s FI. Left justified, blank filled. All coded character set valid. Must not be all blanks.</inlineHelpText>
+        <label>Name Of User</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_Identification_Number__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Must be User Identification Number which is allocated by APCA. Must be numeric, right justified, zero filled.</inlineHelpText>
+        <label>User Identification Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Qvm ABA File Generator</label>
+    <visibility>Public</visibility>
+</CustomObject>

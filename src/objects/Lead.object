@@ -1451,6 +1451,7 @@ MID(TEXT( Campaign__r.EndDate ), 9, 2)&amp;&quot;/&quot;&amp; MID(TEXT( Campaign
     <fields>
         <fullName>X1st_Stall_Location_Preference__c</fullName>
         <externalId>false</externalId>
+        <globalPicklist>Preferred_Stall_Locations</globalPicklist>
         <label>1st Stall Location Preference</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -1460,6 +1461,7 @@ MID(TEXT( Campaign__r.EndDate ), 9, 2)&amp;&quot;/&quot;&amp; MID(TEXT( Campaign
     <fields>
         <fullName>X2nd_Stall_Location_Preference__c</fullName>
         <externalId>false</externalId>
+        <globalPicklist>Preferred_Stall_Locations</globalPicklist>
         <label>2nd Stall Location Preference</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -1469,6 +1471,7 @@ MID(TEXT( Campaign__r.EndDate ), 9, 2)&amp;&quot;/&quot;&amp; MID(TEXT( Campaign
     <fields>
         <fullName>X3rd_Stall_Location_Preference__c</fullName>
         <externalId>false</externalId>
+        <globalPicklist>Preferred_Stall_Locations</globalPicklist>
         <label>3rd Stall Location Preference</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>

@@ -1,11 +1,11 @@
-<apex:page controller="StallMapController">
+<apex:page controller="StallMapController" sidebar="false" showHeader="false">
     <head>
         <title>QVM Map</title>
         <style>
             .floorplan,
             .room {border: 1px solid #ee7538;}
             
-            .floorplan {background: #ebecec;height: 4000px;position: relative;width: 2000px;}
+            .floorplan {background: #ebecec;height: 5500px;position: relative;width: 5000px;}
             
             .room {background: #fff;color: #000;display: block;font-family: Arial;position: absolute;text-align: center;font-size: 11px;}
             

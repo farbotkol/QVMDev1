@@ -1,0 +1,80 @@
+38.0 APEX_CODE,FINEST;APEX_PROFILING,FINEST;CALLOUT,FINEST;DB,FINEST;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,FINER;WORKFLOW,FINER
+10:46:18.0 (339954)|USER_INFO|[EXTERNAL]|00528000004DSLv|luke.farbotko@qvmtest.com.devmerge|Australian Eastern Standard Time|GMT+10:00
+10:46:18.0 (375386)|EXECUTION_STARTED
+10:46:18.0 (381825)|CODE_UNIT_STARTED|[EXTERNAL]|066p00000004sMt|VF: /apex/NewOrder
+10:46:18.0 (6273473)|VF_APEX_CALL_START|[EXTERNAL]|01pp0000000EVH2|NewOrderControllerExt <init>
+10:46:18.0 (6290669)|SYSTEM_MODE_ENTER|true
+10:46:18.0 (6871389)|HEAP_ALLOCATE|[72]|Bytes:3
+10:46:18.0 (6932580)|HEAP_ALLOCATE|[77]|Bytes:152
+10:46:18.0 (6948971)|HEAP_ALLOCATE|[342]|Bytes:408
+10:46:18.0 (6965738)|HEAP_ALLOCATE|[355]|Bytes:408
+10:46:18.0 (6981695)|HEAP_ALLOCATE|[467]|Bytes:48
+10:46:18.0 (7014440)|HEAP_ALLOCATE|[139]|Bytes:6
+10:46:18.0 (7038871)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:3
+10:46:18.0 (7042873)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+10:46:18.0 (7056363)|METHOD_ENTRY|[1]|01pp0000000EVH2|NewOrderControllerExt.NewOrderControllerExt()
+10:46:18.0 (7064578)|STATEMENT_EXECUTE|[1]
+10:46:18.0 (7069780)|STATEMENT_EXECUTE|[1]
+10:46:18.0 (7076513)|METHOD_EXIT|[1]|NewOrderControllerExt
+10:46:18.0 (7096344)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+10:46:18.0 (7118801)|VARIABLE_SCOPE_BEGIN|[4]|this|NewOrderControllerExt|true|false
+10:46:18.0 (7173415)|VARIABLE_ASSIGNMENT|[4]|this|{}|0x2f8ad340
+10:46:18.0 (7180989)|VARIABLE_SCOPE_BEGIN|[4]|controller|ApexPages.StandardSetController|true|false
+10:46:18.0 (7334890)|VARIABLE_ASSIGNMENT|[4]|controller|"core.apexpages.components.framework.controller.SetOrientedStandardControllerImpl@2338a01e"|0x2338a01e
+10:46:18.0 (7344782)|STATEMENT_EXECUTE|[1]
+10:46:18.0 (7354400)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:6
+10:46:18.0 (7399022)|STATEMENT_EXECUTE|[5]
+10:46:18.0 (7419263)|VF_APEX_CALL_END|NewOrderControllerExt <init>
+10:46:18.59 (59129417)|CUMULATIVE_LIMIT_USAGE
+10:46:18.59 (59129417)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+10:46:18.59 (59129417)|TOTAL_EMAIL_RECIPIENTS_QUEUED|0
+10:46:18.59 (59129417)|STATIC_VARIABLE_LIST|
+  char[]:DigitTens:0
+  long:serialVersionUID:0
+  String:_sfdcAdditionalCodeLocations:0
+  double:MAX_VALUE:0
+  long:serialVersionUID:0
+  double:MIN_VALUE:0
+  int:SIZE:0
+  String:_sfdcAdditionalCodeLocations:0
+  double:NEGATIVE_INFINITY:0
+  int:MAX_VALUE:0
+  char[]:digits:0
+  double:NaN:0
+  String:_sfdcSuppressedCodeLocations:0
+  int:MIN_VALUE:0
+  char[]:DigitOnes:0
+  int:BYTES:0
+  int:MIN_EXPONENT:0
+  int[]:sizeTable:0
+  int:MAX_EXPONENT:0
+  int:SIZE:0
+  double:POSITIVE_INFINITY:0
+  double:MIN_NORMAL:0
+  int:BYTES:0
+
+10:46:18.59 (59129417)|CUMULATIVE_LIMIT_USAGE_END
+
+10:46:18.0 (59286556)|CODE_UNIT_FINISHED|VF: /apex/NewOrder
+10:46:18.0 (60556414)|EXECUTION_FINISHED
+10:46:18.63 (63025934)|CUMULATIVE_PROFILING_BEGIN
+10:46:18.63 (63025934)|CUMULATIVE_PROFILING|No profiling information for SOQL operations
+10:46:18.63 (63025934)|CUMULATIVE_PROFILING|No profiling information for SOSL operations
+10:46:18.63 (63025934)|CUMULATIVE_PROFILING|No profiling information for DML operations
+10:46:18.63 (63025934)|CUMULATIVE_PROFILING|method invocations|
+External entry point: public void <init>(ApexPages.StandardSetController): executed 1 time in 1 ms
+
+10:46:18.63 (63025934)|CUMULATIVE_PROFILING_END

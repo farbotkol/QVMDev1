@@ -40,6 +40,7 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>true</enableActivities>
@@ -47,6 +48,7 @@
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ReadWrite</externalSharingModel>
@@ -346,72 +348,9 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
         </picklistValues>
     </recordTypes>
     <recordTypes>
-        <fullName>Finding_Invoices</fullName>
+        <fullName>Finding_Transactions</fullName>
         <active>true</active>
-        <label>Finding Invoices</label>
-        <picklistValues>
-            <picklist>Batch_Type__c</picklist>
-            <values>
-                <fullName>CWW Annual Parks</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>CWW Qtr Drainage Charge</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>CWW Water Usage</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LH</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>MCC 1st Qtr Ins</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>MCC 2nd Qtr Ins</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>MCC 3rd Qtr Ins</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>MCC 4th Qtr Ins</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Metered Water %24</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PE</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SL</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Process_Range__c</picklist>
-            <values>
-                <fullName>Month</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Week</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-    </recordTypes>
-    <recordTypes>
-        <fullName>Invoices_Found</fullName>
-        <active>true</active>
-        <label>Invoices Found</label>
+        <label>Finding Transactions</label>
         <picklistValues>
             <picklist>Batch_Type__c</picklist>
             <values>
@@ -1229,6 +1168,69 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
             </values>
         </picklistValues>
     </recordTypes>
+    <recordTypes>
+        <fullName>Transactions_Found</fullName>
+        <active>true</active>
+        <label>Transactions Found</label>
+        <picklistValues>
+            <picklist>Batch_Type__c</picklist>
+            <values>
+                <fullName>CWW Annual Parks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CWW Qtr Drainage Charge</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CWW Water Usage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 1st Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 2nd Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 3rd Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 4th Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Metered Water %24</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Process_Range__c</picklist>
+            <values>
+                <fullName>Month</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Week</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
     <searchLayouts>
         <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
         <customTabListAdditionalFields>Batch_Type__c</customTabListAdditionalFields>
@@ -1241,12 +1243,23 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <webLinks>
-        <fullName>Find_Invoices</fullName>
+        <fullName>Download_ABA_File</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Download ABA File</masterLabel>
+        <openType>sidebar</openType>
+        <page>DownloadABAFilePage</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>Find_Transactions</fullName>
         <availability>online</availability>
         <description>This Button is for Generate Invoices.</description>
         <displayType>button</displayType>
         <linkType>javascript</linkType>
-        <masterLabel>Find Invoices</masterLabel>
+        <masterLabel>Find Transactions</masterLabel>
         <openType>onClickJavaScript</openType>
         <protected>false</protected>
         <url>{!REQUIRESCRIPT(&apos;/soap/ajax/31.0/connection.js&apos;)}

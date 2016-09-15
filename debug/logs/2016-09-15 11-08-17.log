@@ -1,0 +1,196 @@
+38.0 APEX_CODE,FINEST;APEX_PROFILING,FINEST;CALLOUT,FINEST;DB,FINEST;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,FINER;WORKFLOW,FINER
+11:08:16.0 (305278)|USER_INFO|[EXTERNAL]|00528000004DSLv|luke.farbotko@qvmtest.com.devmerge|Australian Eastern Standard Time|GMT+10:00
+11:08:16.0 (365736)|EXECUTION_STARTED
+11:08:16.0 (374843)|CODE_UNIT_STARTED|[EXTERNAL]|066p00000004sMt|VF: /apex/NewOrder
+11:08:16.0 (2808816)|VF_APEX_CALL_START|[EXTERNAL]|01pp0000000EVH2|NewOrderControllerExt <init>
+11:08:16.0 (2826550)|SYSTEM_MODE_ENTER|true
+11:08:16.0 (3457763)|HEAP_ALLOCATE|[72]|Bytes:3
+11:08:16.0 (3503243)|HEAP_ALLOCATE|[77]|Bytes:152
+11:08:16.0 (3518889)|HEAP_ALLOCATE|[342]|Bytes:408
+11:08:16.0 (3535153)|HEAP_ALLOCATE|[355]|Bytes:408
+11:08:16.0 (3563230)|HEAP_ALLOCATE|[467]|Bytes:48
+11:08:16.0 (3595624)|HEAP_ALLOCATE|[139]|Bytes:6
+11:08:16.0 (3619525)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:3
+11:08:16.0 (3624241)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+11:08:16.0 (3638945)|METHOD_ENTRY|[1]|01pp0000000EVH2|NewOrderControllerExt.NewOrderControllerExt()
+11:08:16.0 (3646878)|STATEMENT_EXECUTE|[1]
+11:08:16.0 (3652495)|STATEMENT_EXECUTE|[1]
+11:08:16.0 (3658986)|METHOD_EXIT|[1]|NewOrderControllerExt
+11:08:16.0 (3677610)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+11:08:16.0 (3699577)|VARIABLE_SCOPE_BEGIN|[4]|this|NewOrderControllerExt|true|false
+11:08:16.0 (3761132)|VARIABLE_ASSIGNMENT|[4]|this|{}|0x1b7f62e0
+11:08:16.0 (3768481)|VARIABLE_SCOPE_BEGIN|[4]|controller|ApexPages.StandardSetController|true|false
+11:08:16.0 (3908393)|VARIABLE_ASSIGNMENT|[4]|controller|"core.apexpages.components.framework.controller.SetOrientedStandardControllerImpl@7196981c"|0x7196981c
+11:08:16.0 (3918302)|STATEMENT_EXECUTE|[1]
+11:08:16.0 (3927716)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:6
+11:08:16.0 (3972305)|STATEMENT_EXECUTE|[5]
+11:08:16.0 (3991997)|VF_APEX_CALL_END|NewOrderControllerExt <init>
+11:08:16.0 (4088627)|VF_APEX_CALL_START|[EXTERNAL]|01pp0000000EVH2|NewOrderControllerExt invoke(Redirect)
+11:08:16.0 (4121131)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+11:08:16.0 (4129828)|VARIABLE_SCOPE_BEGIN|[9]|this|NewOrderControllerExt|true|false
+11:08:16.0 (4142977)|VARIABLE_ASSIGNMENT|[9]|this|{}|0x1b7f62e0
+11:08:16.0 (4154899)|STATEMENT_EXECUTE|[10]
+11:08:16.0 (4156694)|STATEMENT_EXECUTE|[11]
+11:08:16.0 (4160414)|VARIABLE_SCOPE_BEGIN|[11]|newPage|System.PageReference|true|false
+11:08:16.0 (4167458)|VARIABLE_ASSIGNMENT|[11]|newPage|null|
+11:08:16.0 (4169469)|STATEMENT_EXECUTE|[12]
+11:08:16.0 (4172008)|VARIABLE_SCOPE_BEGIN|[12]|devRecordTypeId|Id|false|false
+11:08:16.0 (4175616)|VARIABLE_ASSIGNMENT|[12]|devRecordTypeId|null
+11:08:16.0 (4177575)|STATEMENT_EXECUTE|[13]
+11:08:16.0 (4194583)|HEAP_ALLOCATE|[50]|Bytes:5
+11:08:16.0 (4218565)|HEAP_ALLOCATE|[56]|Bytes:5
+11:08:16.0 (4226987)|HEAP_ALLOCATE|[64]|Bytes:7
+11:08:16.0 (4338927)|HEAP_ALLOCATE|[13]|Bytes:106
+11:08:16.0 (4433062)|HEAP_ALLOCATE|[13]|Bytes:88
+11:08:16.0 (4456262)|HEAP_ALLOCATE|[13]|Bytes:6
+11:08:16.0 (4480818)|VARIABLE_SCOPE_BEGIN|[13]|returnUrl|String|false|false
+11:08:16.0 (4491779)|VARIABLE_ASSIGNMENT|[13]|returnUrl|"/006p0000001ePka"
+11:08:16.0 (4496437)|STATEMENT_EXECUTE|[14]
+11:08:16.0 (4498989)|STATEMENT_EXECUTE|[15]
+11:08:16.0 (4501065)|STATEMENT_EXECUTE|[16]
+11:08:16.0 (4504955)|HEAP_ALLOCATE|[16]|Bytes:12
+11:08:16.0 (4551540)|HEAP_ALLOCATE|[16]|Bytes:106
+11:08:16.0 (4606796)|HEAP_ALLOCATE|[16]|Bytes:136
+11:08:16.0 (4624445)|HEAP_ALLOCATE|[16]|Bytes:148
+11:08:16.0 (4646489)|USER_DEBUG|[16]|DEBUG|current PageSystem.PageReference[/apex/NewOrder?id=006p0000001ePka&new_order=New+Order&retURL=%2F006p0000001ePka&scontrolCaching=1&wrapMassAction=1]
+11:08:16.0 (4653350)|STATEMENT_EXECUTE|[17]
+11:08:16.0 (4656658)|HEAP_ALLOCATE|[17]|Bytes:5
+11:08:16.0 (4687444)|HEAP_ALLOCATE|[17]|Bytes:106
+11:08:16.0 (4714453)|HEAP_ALLOCATE|[17]|Bytes:88
+11:08:16.0 (4729051)|HEAP_ALLOCATE|[17]|Bytes:2
+11:08:16.0 (4756466)|HEAP_ALLOCATE|[17]|Bytes:20
+11:08:16.0 (4775155)|USER_DEBUG|[17]|DEBUG|aid :006p0000001ePka
+11:08:16.0 (4782834)|STATEMENT_EXECUTE|[18]
+11:08:16.0 (4814125)|HEAP_ALLOCATE|[18]|Bytes:106
+11:08:16.0 (4869673)|HEAP_ALLOCATE|[18]|Bytes:88
+11:08:16.0 (4903187)|HEAP_ALLOCATE|[18]|Bytes:4
+11:08:16.0 (4908845)|VARIABLE_SCOPE_BEGIN|[18]|accountId|Id|false|false
+11:08:16.0 (4999533)|VARIABLE_ASSIGNMENT|[18]|accountId|"006p0000001ePkaAAE"
+11:08:16.0 (5014141)|STATEMENT_EXECUTE|[21]
+11:08:16.0 (5018881)|HEAP_ALLOCATE|[21]|Bytes:67
+11:08:16.0 (5033012)|HEAP_ALLOCATE|[21]|Bytes:4
+11:08:16.0 (5042165)|HEAP_ALLOCATE|[21]|Bytes:7
+11:08:16.0 (5461525)|SOQL_EXECUTE_BEGIN|[21]|Aggregations:0|SELECT Id, RecordType.Name FROM Account WHERE id = :tmpVar1 LIMIT 1
+11:08:16.0 (5475134)|LIMIT_USAGE|[21]|SOQL|1|100
+11:08:16.0 (5507247)|LIMIT_USAGE|[21]|AGGS|0|300
+11:08:16.0 (13487854)|SOQL_EXECUTE_END|[21]|Rows:0
+11:08:16.0 (13505427)|LIMIT_USAGE|[21]|SOQL_ROWS|0|50000
+11:08:16.0 (13530623)|HEAP_ALLOCATE|[21]|Bytes:4
+11:08:16.0 (13546750)|HEAP_ALLOCATE|[21]|Bytes:0
+11:08:16.0 (13723449)|HEAP_ALLOCATE|[21]|Bytes:4
+11:08:16.0 (13742716)|HEAP_ALLOCATE|[21]|Bytes:33
+11:08:16.0 (13908597)|HEAP_ALLOCATE|[21]|Bytes:46
+11:08:16.0 (13960479)|VARIABLE_SCOPE_BEGIN|[39]|ex|Exception|true|false
+11:08:16.0 (14140731)|VARIABLE_ASSIGNMENT|[39]|ex|"common.apex.runtime.impl.ExecutionException: List has no rows for assignment to SObject"|0x9db9eb6
+11:08:16.0 (14154096)|STATEMENT_EXECUTE|[39]
+11:08:16.0 (14158026)|STATEMENT_EXECUTE|[41]
+11:08:16.0 (14243735)|HEAP_ALLOCATE|[41]|Bytes:106
+11:08:16.0 (14310555)|HEAP_ALLOCATE|[41]|Bytes:88
+11:08:16.0 (14368513)|HEAP_ALLOCATE|[41]|Bytes:4
+11:08:16.0 (14384226)|VARIABLE_SCOPE_BEGIN|[41]|orderId|Id|false|false
+11:08:16.0 (14462662)|VARIABLE_ASSIGNMENT|[41]|orderId|"006p0000001ePkaAAE"
+11:08:16.0 (14470260)|STATEMENT_EXECUTE|[42]
+11:08:16.0 (14475996)|HEAP_ALLOCATE|[42]|Bytes:65
+11:08:16.0 (14487777)|HEAP_ALLOCATE|[42]|Bytes:4
+11:08:16.0 (14810333)|SOQL_EXECUTE_BEGIN|[42]|Aggregations:0|SELECT Id, AccountId FROM Opportunity WHERE id = :tmpVar1 LIMIT 1
+11:08:16.0 (14822336)|LIMIT_USAGE|[42]|SOQL|2|100
+11:08:16.0 (14832530)|LIMIT_USAGE|[42]|AGGS|0|300
+11:08:16.0 (32608667)|SOQL_EXECUTE_END|[42]|Rows:1
+11:08:16.0 (32628166)|LIMIT_USAGE|[42]|SOQL_ROWS|1|50000
+11:08:16.0 (32655143)|HEAP_ALLOCATE|[42]|Bytes:8
+11:08:16.0 (32680293)|HEAP_ALLOCATE|[42]|Bytes:94
+11:08:16.0 (32758627)|HEAP_ALLOCATE|[42]|Bytes:8
+11:08:16.0 (32778232)|HEAP_ALLOCATE|[42]|Bytes:37
+11:08:16.0 (32879930)|HEAP_ALLOCATE|[42]|Bytes:16
+11:08:16.0 (32899273)|VARIABLE_SCOPE_BEGIN|[42]|opp|Opportunity|true|false
+11:08:16.0 (32955918)|VARIABLE_ASSIGNMENT|[42]|opp|{"s":1,"v":{"Id":"006p0000001ePkaAAE","AccountId":"001p000000Au37fAAB","RecordTypeId":"01228000000R97wAAC"}}|0x55619374
+11:08:16.0 (32968266)|STATEMENT_EXECUTE|[43]
+11:08:16.0 (32974396)|HEAP_ALLOCATE|[43]|Bytes:5
+11:08:16.0 (33995008)|HEAP_ALLOCATE|[43]|Bytes:4
+11:08:16.0 (34041964)|LIMIT_USAGE|[43]|RECORD_TYPE_DESCRIBES|1|100
+11:08:16.0 (37405275)|HEAP_ALLOCATE|[43]|Bytes:16
+11:08:16.0 (37423251)|HEAP_ALLOCATE|[43]|Bytes:19
+11:08:16.0 (37642008)|HEAP_ALLOCATE|[43]|Bytes:4
+11:08:16.0 (37817231)|VARIABLE_ASSIGNMENT|[43]|devRecordTypeId|"012p0000000CgVrAAK"
+11:08:16.0 (37827217)|STATEMENT_EXECUTE|[44]
+11:08:16.0 (37838112)|HEAP_ALLOCATE|[44]|Bytes:14
+11:08:16.0 (37841980)|HEAP_ALLOCATE|[44]|Bytes:5
+11:08:16.0 (37941366)|HEAP_ALLOCATE|[44]|Bytes:18
+11:08:16.0 (37953897)|HEAP_ALLOCATE|[44]|Bytes:5
+11:08:16.0 (37984262)|HEAP_ALLOCATE|[44]|Bytes:18
+11:08:16.0 (38003900)|HEAP_ALLOCATE|[44]|Bytes:76
+11:08:16.0 (38008287)|HEAP_ALLOCATE|[44]|Bytes:22
+11:08:16.0 (38016786)|HEAP_ALLOCATE|[44]|Bytes:18
+11:08:16.0 (38027536)|HEAP_ALLOCATE|[44]|Bytes:40
+11:08:16.0 (38034959)|HEAP_ALLOCATE|[44]|Bytes:116
+11:08:16.0 (38203900)|VARIABLE_ASSIGNMENT|[44]|newPage|"/801/e?aid=001p000000Au37fAAB&ent=Order&oid=006p0000001ePkaAAE&RecordType=012p0000000CgVrAAK&retURL=%2F006p0000001ePka"|0xcf811be
+11:08:16.0 (38214002)|STATEMENT_EXECUTE|[47]
+11:08:16.0 (38308008)|HEAP_ALLOCATE|[47]|Bytes:110
+11:08:16.0 (38397523)|VF_APEX_CALL_END|NewOrderControllerExt invoke(Redirect)
+11:08:16.41 (41921432)|CUMULATIVE_LIMIT_USAGE
+11:08:16.41 (41921432)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 2 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+11:08:16.41 (41921432)|TOTAL_EMAIL_RECIPIENTS_QUEUED|0
+11:08:16.41 (41921432)|STATIC_VARIABLE_LIST|
+  char[]:DigitTens:0
+  long:serialVersionUID:0
+  long:serialVersionUID:0
+  String:_sfdcAdditionalCodeLocations:0
+  double:MAX_VALUE:0
+  Boolean:FALSE:0
+  long:serialVersionUID:0
+  double:MIN_VALUE:0
+  int:SIZE:0
+  String:_sfdcAdditionalCodeLocations:0
+  double:NEGATIVE_INFINITY:0
+  int:MAX_VALUE:0
+  char[]:digits:0
+  double:NaN:0
+  Boolean:TRUE:0
+  String:_sfdcSuppressedCodeLocations:0
+  int:MIN_VALUE:0
+  char[]:DigitOnes:0
+  int:BYTES:0
+  int:MIN_EXPONENT:0
+  int[]:sizeTable:0
+  int:MAX_EXPONENT:0
+  int:SIZE:0
+  double:POSITIVE_INFINITY:0
+  double:MIN_NORMAL:0
+  int:BYTES:0
+
+11:08:16.41 (41921432)|CUMULATIVE_LIMIT_USAGE_END
+
+11:08:16.0 (42126288)|CODE_UNIT_FINISHED|VF: /apex/NewOrder
+11:08:16.0 (43576333)|EXECUTION_FINISHED
+11:08:16.46 (46154809)|CUMULATIVE_PROFILING_BEGIN
+11:08:16.46 (46154809)|CUMULATIVE_PROFILING|SOQL operations|
+Class.NewOrderControllerExt.Redirect: line 42, column 1: [SELECT Id, AccountId from Opportunity where id = :orderId LIMIT 1]: executed 1 time in 18 ms
+Class.NewOrderControllerExt.Redirect: line 21, column 1: [SELECT Id, RecordType.Name from Account where id = :accountId LIMIT 1]: executed 1 time in 9 ms
+
+11:08:16.46 (46154809)|CUMULATIVE_PROFILING|No profiling information for SOSL operations
+11:08:16.46 (46154809)|CUMULATIVE_PROFILING|No profiling information for DML operations
+11:08:16.46 (46154809)|CUMULATIVE_PROFILING|method invocations|
+External entry point: public System.PageReference Redirect(): executed 1 time in 34 ms
+Class.NewOrderControllerExt.Redirect: line 43, column 1: global Schema.DescribeSObjectResult getDescribe(): executed 2 times in 1 ms
+Class.NewOrderControllerExt.Redirect: line 16, column 1: global public static System.PageReference currentPage(): executed 3 times in 0 ms
+Class.NewOrderControllerExt.Redirect: line 17, column 1: global public static System.PageReference currentPage(): executed 4 times in 0 ms
+Class.NewOrderControllerExt.Redirect: line 18, column 1: global public static System.PageReference currentPage(): executed 3 times in 0 ms
+Class.NewOrderControllerExt.Redirect: line 41, column 1: global public static System.PageReference currentPage(): executed 3 times in 0 ms
+Class.NewOrderControllerExt.Redirect: line 44, column 1: public static String valueOf(Object): executed 3 times in 0 ms
+Class.NewOrderControllerExt.Redirect: line 13, column 1: global public static System.PageReference currentPage(): executed 3 times in 0 ms
+Class.NewOrderControllerExt.Redirect: line 47, column 1: global System.PageReference setRedirect(Boolean): executed 1 time in 0 ms
+
+11:08:16.46 (46154809)|CUMULATIVE_PROFILING_END

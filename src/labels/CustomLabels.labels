@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>ConfirmationQuestion</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ConfirmationQuestion</shortDescription>
+        <value>I/we agree to The Queen Victoria Market&apos;s terms and conditions below. Once you have submitted this form you will be re-directed to a confirmation page confirming your application submission has been successful. If you are not redirected to the confirmation page, please revise your application details and re-submit the form. If you need help submitting this form, please email qvm.events@qvm.com.au</value>
+    </labels>
+    <labels>
+        <fullName>Event_Confirmation_Question</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Event Confirmation Question</shortDescription>
+        <value>Please read and accept the below terms and conditions.</value>
+    </labels>
+    <labels>
+        <fullName>Generic_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Generic Error</shortDescription>
+        <value>Please contact QVM Customer Service at (03) 93205822 for further assistance.</value>
+    </labels>
+    <labels>
+        <fullName>Lead_Submission_Confirmation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Lead Submission Confirmation</shortDescription>
+        <value>Thanks for submitting your application for The Queen Victoria Market! We will be in touch if your application is successful.</value>
+    </labels>
+    <labels>
+        <fullName>NightMarketFood_VendorsHeading</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NightMarketFood VendorsHeading</shortDescription>
+        <value>Applications Open – Summer Night Market 2016/2017</value>
+    </labels>
+    <labels>
+        <fullName>NightMarketFood_VendorsHeadingDescription</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NightMarketFood VendorsHeadingDescription</shortDescription>
+        <value>Expression of Interest for Summer Night Market for Food Vendors for 2016/2017</value>
+    </labels>
+    <labels>
+        <fullName>NightMarketForStalls</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NightMarketForStalls</shortDescription>
+        <value>Applications Open – Summer Night Market 2016/2017</value>
+    </labels>
+    <labels>
+        <fullName>NightMarketForStallsDescription</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NightMarketForStallsDescription</shortDescription>
+        <value>Expression of Interest for Summer Night Market for Specialty Stalls for 2016/2017</value>
+    </labels>
+    <labels>
+        <fullName>SpecialEventHeading</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SpecialEventHeading</shortDescription>
+        <value>Apply for a Special Event</value>
+    </labels>
+    <labels>
+        <fullName>SpecialityEventDescription</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SpecialityEventDescription</shortDescription>
+        <value>Event Organiser Expression of Interest For Special Events</value>
+    </labels>
+</CustomLabels>

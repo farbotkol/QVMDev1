@@ -1,0 +1,20 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="1" >
+<![CDATA[<font face="Arial, sans-serif" size="4">Dear&nbsp;{!Lead.Name}</font>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="1" >
+<![CDATA[<p class="x_BasicParagraph" style="margin: 0cm 0cm 0.0001pt; line-height: 19.2px; text-align: justify; background-color: rgb(255, 255, 255);"><font face="Arial, sans-serif" size="4"><span class="x_CharacterStyle4" style="font-weight: bold;"><span lang="EN-US">Thank you for submitting your application.</span></span></font></p><p class="x_BasicParagraph" style="margin: 0cm 0cm 0.0001pt; line-height: 19.2px; text-align: justify; background-color: rgb(255, 255, 255);"><span class="x_CharacterStyle4" style="font-weight: bold;"><span lang="EN-US"><font face="Arial, sans-serif" size="4">&nbsp;</font></span></span><span style="font-family: Arial, sans-serif; font-size: large; line-height: 19.2px;">&nbsp;</span></p><p class="x_BasicParagraph" style="margin: 0cm 0cm 0.0001pt; line-height: 19.2px; text-align: justify; background-color: rgb(255, 255, 255);"><span class="x_CharacterStyle4" style="font-weight: bold;"><span lang="EN-US" style="font-weight: normal;"><font face="Arial, sans-serif" size="4">We will endeavor to notify every applicant of the outcome as soon as possible.</font></span></span></p>
+
+<p class="MsoNormal" style="font-size: 12pt; font-family: arial;"><span lang="EN-AU" style="line-height: 107%;"><font face="Arial, sans-serif" size="4"><br></font></span></p><p class="MsoNormal" style="font-size: 12pt; font-family: arial;"><span lang="EN-AU" style="line-height: 107%;"><font face="Arial, sans-serif" size="4">Sincerely,</font></span></p>
+
+<p class="MsoNormal" style="font-size: 12pt; font-family: arial;"><span lang="EN-AU" style="line-height: 107%;"><font face="Arial, sans-serif" size="4">Event Department<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" style="font-size: 12pt; font-family: arial;"><span lang="EN-AU" style="line-height: 107%;"><font face="Arial, sans-serif" size="4">Queen Victoria Market&nbsp;</font><font face="arial" style="font-size: 16pt;"><o:p></o:p></font></span></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="1" >
+<![CDATA[]]></td>
+</tr>
+</table>
