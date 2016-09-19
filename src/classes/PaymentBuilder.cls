@@ -28,7 +28,7 @@ global class PaymentBuilder
          }         
     }
     //---------------------- Processing transactions -Invoices and credit memo ----------------------------------------//
-    @future  
+ 
     Webservice static void processTransactions( Id batchJobId )
     {
         try
@@ -345,8 +345,19 @@ global class PaymentBuilder
                 	QBOPaymentResponse.Payment paymentInstance = new QBOPaymentResponse.Payment();
                 	QBOPaymentResponse.CustomerRef  custref = new QBOPaymentResponse.CustomerRef();
                 	custref.value = transObj.Customer_Reference__c;
+                    system.debug('test1');
                 	paymentInstance.CustomerRef  = custref; 
-                	paymentInstance.TotalAmt = transObj.TotalAmount__c;
+                    system.debug('test2');
+                	paymentInstance.TotalAmt = 0;
+                    if (transObj.Type__c == 'Invoice') 
+                    {
+                        system.debug('test3 : ' + transObj);
+                   		paymentInstance.TotalAmt += transObj.TotalAmount__c;
+              		}
+               		else
+                    {
+                   		paymentInstance.TotalAmt -= transObj.TotalAmount__c;
+               		}  
                 	//paymentInstance.PaymentRefNum = 
                
                 	List<QBOPaymentResponse.Line> invLines = new List<QBOPaymentResponse.Line>();

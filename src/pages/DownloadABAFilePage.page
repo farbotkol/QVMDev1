@@ -1,5 +1,6 @@
-<apex:page standardcontroller="Batch_Jobs__c" extensions="DownloadABAFileController" action="{!fetch}" contentType="application/octet-stream#Payments.aba" cache="false">
-0{!emptyString17}01{!qvmABAFileObj.Financial_Institution__c}{!emptyString7}{!UserName}{!qvmABAFileObj.User_Identification_Number__c}{!qvmABAFileObj.Description__c}{!qvmABAFileObj.Date_to_be_Processed__c}
-{!newLine}Next record here.
-
-</apex:page>
+<apex:page standardcontroller="Batch_Jobs__c" extensions="DownloadABAFileController" action="{!fetch}" contentType="application/octet-stream#Payments.aba" cache="false">0{!emptyString17}01{!financialInstitution}{!emptyString7}{!UserName}{!userIdentityNumber}{!Description}{!processingDate}{!emptyString40}{!newLine}
+<apex:repeat value="{!paymentList}" var="line">
+1{!line.Account__r.BSB_Number__c}{!line.Account__r.Bank_Account_Number__c}N13{!line.AmountText__c}{!line.Account__r.Name}{!lodgementReference}{!bsbNumber}{!accountNumber}{!nameOfRemitter}00000000{!newLine}
+</apex:repeat>
+1{!bsbNumber}{!accountNumber}N50{!credittotalAmount}{!UserName32}{!lodgementReference}{!bsbNumber}{!accountNumber}{!nameOfRemitter}00000000{!newLine}
+7999-999{!emptyString12}{!netTotalAmount}{!credittotalAmount}{!debitTotalAmount}{!emptyString24}{!totalRecordCount}{!emptyString40}{!newLine}{!lineFeed}</apex:page>

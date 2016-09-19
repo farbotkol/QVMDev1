@@ -1,21 +1,20 @@
 public without sharing class LeaveController {
     @AuraEnabled
     public static String getAccountId(){
-        String accId = [SELECT AccountId FROM User WHERE Id = :userinfo.getUserId()].Id;
-        //return accId;
-        return '001p000000DSVcL';
+        String accId = [SELECT AccountId FROM User WHERE Id = :userinfo.getUserId()].AccountId;
+        return accId;
     }
     @AuraEnabled
     public static List<Opportunity> getAccountBusiness() {
         
         String accId = LeaveController.getAccountId();
         if(accId != null){
-            List<Opportunity> accBusiness = [SELECT Id,Name,Leave_Remaining_Monday__c,Leave_Remaining_Tuesday__c,Leave_Remaining_Wednesday__c,
+            List<Opportunity> accBusiness = [SELECT Id,Name,RecordType.Name,Leave_Remaining_Monday__c,Leave_Remaining_Tuesday__c,Leave_Remaining_Wednesday__c,
                                              Leave_Remaining_Thursday__c,Leave_Remaining_Friday__c,Leave_Remaining_Saturday__c,Leave_Remaining_Sunday__c
                                              , (select id, Name,Leave_Date__c from Leave__r)
                                              FROM Opportunity
                                              WHERE AccountId  = :accId];
-            
+            System.debug('PP '+accBusiness.get(0).RecordType.Name);
             System.debug('accBusiness '+accBusiness);
             if(accBusiness != null){
                 return accBusiness;

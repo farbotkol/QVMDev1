@@ -1,122 +1,6 @@
 @isTest
 public class LeaveControllerTest {
 
-    private class Mock implements HttpCalloutMock {
-        public HTTPResponse respond(HTTPRequest req) {
-            
-            system.debug('hi there');
-            HTTPResponse res = new HTTPResponse();
-            res.setStatusCode(200);
-            
-            system.debug('MOCK : ' + req.getEndpoint());
-           
-            String json = '';
-            if (req.getEndpoint().contains('customer')){
-                
-                json = '{'+
-                '  \"Customer\": {'+
-                '    \"Taxable\": false,'+
-                '    \"Job\": false,'+
-                '    \"BillWithParent\": false,'+
-                '    \"Balance\": 0,'+
-                '    \"BalanceWithJobs\": 0,'+
-                '    \"CurrencyRef\": {'+
-                '      \"value\": \"AUD\",'+
-                '      \"name\": \"Australian Dollar\"'+
-                '    },'+
-                '    \"PreferredDeliveryMethod\": \"None\",'+
-                '    \"PrimaryTaxIdentifier\": \"XXXX2352345\",'+
-                '    \"domain\": \"QBO\",'+
-                '    \"sparse\": false,'+
-                '    \"Id\": \"89\",'+
-                '    \"SyncToken\": \"0\",'+
-                '    \"MetaData\": {'+
-                '      \"CreateTime\": \"2016-08-23T20:57:44-07:00\",'+
-                '      \"LastUpdatedTime\": \"2016-08-23T20:57:44-07:00\"'+
-                '    },'+
-                '    \"FullyQualifiedName\": \"www1\",'+
-                '    \"CompanyName\": \"www1\",'+
-                '    \"DisplayName\": \"www1\",'+
-                '    \"PrintOnCheckName\": \"www1\",'+
-                '    \"Active\": true'+
-                '  },'+
-                '  \"time\": \"2016-08-23T20:57:44.496-07:00\"'+
-                '}';
-            }
-            else if (req.getEndpoint().contains('query')){
-                 json = '{'+
-                    ''+
-                    '  \"QueryResponse\": {'+
-                    ''+
-                    '    \"Invoice\": ['+
-                    ''+
-                    '      {'+
-                    ''+
-                    '        \"sparse\": true,'+
-                    ''+
-                    '        \"Id\": \"224\",'+
-                    ''+
-                    '        \"DocNumber\": \"1029\",'+
-                    ''+
-                    '        \"TxnDate\": \"2016-08-11\",'+
-                    ''+
-                    '        \"LinkedTxn\": [],'+
-                    ''+
-                    '        \"Line\": [],'+
-                    ''+
-                    '        \"DueDate\": \"2016-09-10\",'+
-                    ''+
-                    '        \"TotalAmt\": 82.5,'+
-                    ''+
-                    '        \"Balance\": 82.5'+
-                    ''+
-                    '      },'+
-                    ''+
-                    '      {'+
-                    ''+
-                    '        \"sparse\": true,'+
-                    ''+
-                    '        \"Id\": \"8\",'+
-                    ''+
-                    '        \"DocNumber\": \"1004\",'+
-                    ''+
-                    '        \"TxnDate\": \"2016-07-19\",'+
-                    ''+
-                    '        \"LinkedTxn\": [],'+
-                    ''+
-                    '        \"Line\": [],'+
-                    ''+
-                    '        \"DueDate\": \"2016-08-07\",'+
-                    ''+
-                    '        \"TotalAmt\": 528.0,'+
-                    ''+
-                    '        \"Balance\": 0'+
-                    ''+
-                    '      }'+
-                    ''+
-                    '    ],'+
-                    ''+
-                    '    \"startPosition\": 1,'+
-                    ''+
-                    '    \"maxResults\": 2,'+
-                    ''+
-                    '    \"totalCount\": 2'+
-                    ''+
-                    '  },'+
-                    ''+
-                    '  \"time\": \"2016-09-01T22:34:11.245-07:00\"'+
-                    ''+
-                    '}';
-
-            }
-                        
-   
-            res.setBody(json);
-            
-            return res;
-        }
-    }
-    
     @isTest static void Test_GetAccountBusiness(){
         UserRole portalRole = [Select Id From UserRole Where PortalType = 'None' Limit 1];
         system.debug('portalRole is ' + portalRole);
@@ -139,15 +23,36 @@ public class LeaveControllerTest {
         system.debug('portalAccountOwner1 : ' + portalAccountOwner1);
         System.runAs ( portalAccountOwner1 ) {
             TestDataFactory.CreateOAuthServiceEntries();
-            Test.setMock(HttpCalloutMock.class, new Mock());
+            Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
             Account portalAccount1 = new Account(
                 Name = 'TestAccount',
                 OwnerId = portalAccountOwner1.Id,
-                QuickBooks_Id__c = '201'
+                QuickBooks_Id__c = '3'
             );
             
             Database.insert(portalAccount1);
             system.debug('portalAccount1 : ' + portalAccount1);
+            
+            TestDataFactory.createStallProductsAndGeneralPriceBook();
+            PriceBook2 PriceBook = [select Id from PriceBook2 where Name = 'General Merchandise' limit 1];
+            Id PriceBookId = PriceBook.Id;
+            
+            
+            Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Opportunity; 
+            Map<String,Schema.RecordTypeInfo> oppRecordTypeInfo = cfrSchema.getRecordTypeInfosByName(); 
+            Id oppRecordTypeId = oppRecordTypeInfo.get('SL').getRecordTypeId();
+            
+            Opportunity opp = new Opportunity(Name=portalAccount1.Name + ' Opportunity ' ,
+                                     RecordTypeid=oppRecordTypeId,
+                                     StageName='Prospecting',
+                                     CloseDate=System.today().addMonths(1),
+                                     AccountId=portalAccount1.Id,
+                                     Contracted_Leave__c=20,
+                                     Business_Status__c = 'Open',
+                                     pricebook2id=PriceBookId,
+                                     Uplift_Factor__c=1);
+        	insert opp;
+            
             
             Contact contact1 = new Contact(
                 FirstName = 'Firstname',
@@ -178,7 +83,7 @@ public class LeaveControllerTest {
         Test.startTest();
 		List<Opportunity> opp = new List<Opportunity>();        
         System.runas(user1){
-            Test.setMock(HttpCalloutMock.class, new Mock());
+            Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
             opp = LeaveController.getAccountBusiness();            
         }
         Test.stopTest();
@@ -189,7 +94,7 @@ public class LeaveControllerTest {
         TestDataFactory.CreateOAuthServiceEntries(); 
         TestDataFactory.createStallProductsAndGeneralPriceBook();
         List<Account> acc = TestDataFactory.createAccountsWithOpps(1,1,'SL');
-        Test.setMock(HttpCalloutMock.class, new Mock());
+        Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
         String Id = [SELECT ID from Opportunity LIMIT 1].Id;
         String leaveDate = '2080-09-14';
         Test.startTest();

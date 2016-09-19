@@ -24,7 +24,7 @@ public class TestDataFactory {
         Id accRecordTypeId = accRecordTypeInfo.get('Trader').getRecordTypeId();
         
         for(Integer i=0;i<numAccts;i++) {
-            Account a = new Account(Name='TestAccount' + i);
+            Account a = new Account(Name='TestAccountTEST1S' + i);
             a.RecordTypeId = accRecordTypeId;
             accts.add(a);
         }
@@ -383,7 +383,8 @@ public class TestDataFactory {
     {
         List<OrderItem> oi = new List<OrderItem>();
         //TestDataFactory.createStallProductsAndGeneralPriceBook();
-		List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1, 'SL');
+		//List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1, 'SL');
+		List<Account> accounts = [SELECT Id from Account];
         Stall__c stallObj = TestDataFactory.createSingleStallWithNoOpp();
         Id PriceBookId = Test.getStandardPricebookId();
         if(recordType == 'SL' || recordType == 'PE' ) 
@@ -416,6 +417,54 @@ public class TestDataFactory {
         }
         insert oi;
         return oi;
+        
+    }
+    
+    public static Order createPO()
+    {
+        Schema.DescribeSObjectResult acccCfrSchema = Schema.SObjectType.Account; 
+        Map<String,Schema.RecordTypeInfo> accRecordTypeInfo = acccCfrSchema.getRecordTypeInfosByName(); 
+        Id accRecordTypeId = accRecordTypeInfo.get('Supplier').getRecordTypeId();
+        
+        
+        Account a = new Account(Name='TestAccountSupplier');
+        a.RecordTypeId = accRecordTypeId;
+ 
+        insert a;
+        a.Supplier_Approved__c = true;
+        update a;
+        
+        //TestDataFactory.createStallProductsAndGeneralPriceBook();
+		List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1, 'SL');
+        Stall__c stallObj = TestDataFactory.createSingleStallWithNoOpp();
+        Id PriceBookId = Test.getStandardPricebookId();
+        
+        
+        List<PricebookEntry>  prods = [SELECT Id,UnitPrice FROM PricebookEntry where PriceBook2Id = :PriceBookId];
+        Opportunity opp = [SELECT ID FROM Opportunity LIMIT 1];
+        Order orderObj = new Order();
+       
+        orderObj.AccountId = a.Id;
+        orderObj.Status = 'Draft';
+        orderObj.EffectiveDate = Date.today();
+        orderObj.PriceBook2Id = PriceBookId;
+        insert orderObj;
+        
+        
+        System.debug('PriceBookId '+PriceBookId);
+        //System.debug('ProdId '+prod.Id);
+        OrderItem item = new OrderItem();
+        item.Leave__c = True;
+        item.Date__c = Date.today();
+        item.OrderId = orderObj.Id;
+        item.Stall__c = stallObj.Id;  
+        item.PricebookEntryId = prods[0].Id; 
+        item.Quantity = 1; 
+        item.UnitPrice = 123; 
+
+
+        insert item;
+        return orderObj;
         
     }
 
@@ -471,6 +520,23 @@ public class TestDataFactory {
 
     }
     
+    public static void CreateQvm_ABA_File_Generator()
+    {
+        Qvm_ABA_File_Generator__c aba = new Qvm_ABA_File_Generator__c();
+        aba.Name = 'ABA File Content';
+        aba.Name_Of_User__c =  'test';
+        aba.Financial_Institution__c =  'CBA';
+        aba.User_Identification_Number__c =  2464664;
+        aba.Description__c =  'TEST';
+        aba.Date_to_be_Processed__c =  171712;
+        aba.Lodgement_Reference__c =  'TEST';
+        aba.BSB_Number__c =  '222-222';
+        aba.Account_Number__c =  '3245423';
+        aba.Name_of_Remitter__c =  'TEST';
+
+		Insert aba;
+    }
+   
     
     public static void CreateOAuthServiceEntries()
     {

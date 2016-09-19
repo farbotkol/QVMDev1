@@ -3,6 +3,27 @@
     <customSettingsType>List</customSettingsType>
     <enableFeeds>false</enableFeeds>
     <fields>
+        <fullName>Account_Number__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Right justified, blank filled.</inlineHelpText>
+        <label>Account Number</label>
+        <length>12</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BSB_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>BSB Number</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Date_to_be_Processed__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Must be numeric in the formal of DDMMYY. Must be a valid date. Zero filled.</inlineHelpText>
@@ -38,12 +59,34 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Lodgement_Reference__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>All coded character set valid. Field must be left justified, and contain only the 16 character Employee Benefits Card number; for example 5550033890123456.No leading spaces, zeroes, hyphens or other characters can be included.</inlineHelpText>
+        <label>Lodgement Reference</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Name_Of_User__c</fullName>
         <description>Name of Use supplying file.</description>
         <externalId>false</externalId>
         <inlineHelpText>Must be User Preferred Specification as advised by User&apos;s FI. Left justified, blank filled. All coded character set valid. Must not be all blanks.</inlineHelpText>
         <label>Name Of User</label>
         <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Name_of_Remitter__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of originator of the entry. This may vary from Name of the User. All coded character set valid. Must not contain all blanks. Left justified, blank filled.</inlineHelpText>
+        <label>Name of Remitter</label>
+        <length>25</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>

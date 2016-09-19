@@ -10,6 +10,8 @@ private class LeadTriggerTest
 {
     static testMethod void testAsSystemAdmin()
     {
+        TestDataFactory.CreateOAuthServiceEntries();
+        Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
         Lead leadObj = new Lead();
         try
         {

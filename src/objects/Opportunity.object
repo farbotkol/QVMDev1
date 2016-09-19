@@ -1014,10 +1014,12 @@
         <picklist>
             <picklistValues>
                 <fullName>Apparel</fullName>
+                <color>#FFFF66</color>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
                 <fullName>Hardware</fullName>
+                <color>#33FFFF</color>
                 <default>false</default>
             </picklistValues>
             <picklistValues>

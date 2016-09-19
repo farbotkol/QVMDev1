@@ -156,14 +156,16 @@ global class InvoiceBuilder {
             ///
         }
         Insert errorLogsToInsert;// insert any errors
-        if (errorLogsToInsert.size()> 0 )
+        
+        // moved to batch final method
+        /*if (errorLogsToInsert.size()> 0 )
         {
             InvoiceBuilder.SetOrderRecordType('Error_Processing_Invoices', batchJobId);
         }
         else 
         {
             InvoiceBuilder.SetOrderRecordType('Invoices_Generated', batchJobId);
-        }
+        }*/
 		update ordersToUpdate;   // updatethe orders with the qboId
         return true;
     }
