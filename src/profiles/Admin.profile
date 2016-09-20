@@ -417,6 +417,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>StallMapControllerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>StallTriggerHelper</apexClass>
         <enabled>true</enabled>
     </classAccesses>

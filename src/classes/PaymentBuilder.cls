@@ -28,7 +28,8 @@ global class PaymentBuilder
          }         
     }
     //---------------------- Processing transactions -Invoices and credit memo ----------------------------------------//
- 
+   
+       
     Webservice static void processTransactions( Id batchJobId )
     {
         try

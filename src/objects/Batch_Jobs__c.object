@@ -1264,13 +1264,31 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
         <protected>false</protected>
         <url>{!REQUIRESCRIPT(&apos;/soap/ajax/31.0/connection.js&apos;)}
 {!REQUIRESCRIPT(&quot;/soap/ajax/31.0/apex.js&quot;)}
+{!REQUIRESCRIPT(&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js&quot;)}
 
 
 sforce.apex.execute(&quot;PaymentBuilder&quot;,&quot;UpdateBatchObject&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;});
 
-sforce.apex.execute(&quot;PaymentBuilder&quot;,&quot;processTransactions&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;});
 
+var requestBody =
+&apos;&lt;se:Envelope xmlns:se=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&lt;se:Header xmlns:sfns=&quot;http://soap.sforce.com/schemas/package/PaymentBuilder&quot;&gt;&lt;sfns:SessionHeader&gt;&lt;sessionId&gt;00Dp00000008oRZ!AQEAQDDnX2gspnd1LnSv0jp8yTjZjXvo4gkLC43RXnWaj71N9pFdlz1jjIgJfcTpaGnvww_n8EoHQT0A8sqE.9REPbveYTyf&lt;/sessionId&gt;&lt;/sfns:SessionHeader&gt;&lt;/se:Header&gt;&lt;se:Body&gt;&lt;processTransactions xmlns=&quot;http://soap.sforce.com/schemas/package/PaymentBuilder&quot;&gt;&lt;batchJobId&gt;{!Batch_Jobs__c.Id}&lt;/batchJobId&gt;&lt;/processTransactions&gt;&lt;/se:Body&gt;&lt;/se:Envelope&gt;&apos;
 
+$.ajax(
+ {
+  url : &apos;../services/Soap/package/PaymentBuilder&apos;,
+  type: &apos;POST&apos;,
+  data: requestBody,
+  headers:
+  {
+   &quot;SOAPAction&quot; :&apos;&quot;&quot;&apos;,
+   &quot;Content-Type&quot;:&quot;text/xml; charset=UTF-8&quot;
+  }
+ }
+);
+
+//sforce.apex.execute(&quot;PaymentBuilder&quot;,&quot;processTransactions&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;});
+
+alert(&apos;Searching for transaction (Invoices/Credit Notes) this will take Approx 2-3 Minutes&apos;);
 window.location.reload();</url>
     </webLinks>
     <webLinks>
@@ -1349,5 +1367,15 @@ sforce.apex.execute(&quot;PaymentBuilder&quot;,&quot;generatePayments&quot;,{bat
 
 
 window.location.reload();</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Refresh</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Refresh</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>window.location.reload();</url>
     </webLinks>
 </CustomObject>
