@@ -1271,7 +1271,7 @@ sforce.apex.execute(&quot;PaymentBuilder&quot;,&quot;UpdateBatchObject&quot;,{ba
 
 
 var requestBody =
-&apos;&lt;se:Envelope xmlns:se=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&lt;se:Header xmlns:sfns=&quot;http://soap.sforce.com/schemas/package/PaymentBuilder&quot;&gt;&lt;sfns:SessionHeader&gt;&lt;sessionId&gt;00Dp00000008oRZ!AQEAQDDnX2gspnd1LnSv0jp8yTjZjXvo4gkLC43RXnWaj71N9pFdlz1jjIgJfcTpaGnvww_n8EoHQT0A8sqE.9REPbveYTyf&lt;/sessionId&gt;&lt;/sfns:SessionHeader&gt;&lt;/se:Header&gt;&lt;se:Body&gt;&lt;processTransactions xmlns=&quot;http://soap.sforce.com/schemas/package/PaymentBuilder&quot;&gt;&lt;batchJobId&gt;{!Batch_Jobs__c.Id}&lt;/batchJobId&gt;&lt;/processTransactions&gt;&lt;/se:Body&gt;&lt;/se:Envelope&gt;&apos;
+&apos;&lt;se:Envelope xmlns:se=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&lt;se:Header xmlns:sfns=&quot;http://soap.sforce.com/schemas/package/PaymentBuilder&quot;&gt;&lt;sfns:SessionHeader&gt;&lt;sessionId&gt;{!GETSESSIONID()}&lt;/sessionId&gt;&lt;/sfns:SessionHeader&gt;&lt;/se:Header&gt;&lt;se:Body&gt;&lt;processTransactions  xmlns=&quot;http://soap.sforce.com/schemas/package/PaymentBuilder&quot;&gt;&lt;batchJobId&gt;{!Batch_Jobs__c.Id}&lt;/batchJobId&gt;&lt;/processTransactions&gt;&lt;/se:Body&gt;&lt;/se:Envelope&gt;&apos;
 
 $.ajax(
  {
@@ -1301,13 +1301,28 @@ window.location.reload();</url>
         <protected>false</protected>
         <url>{!REQUIRESCRIPT(&apos;/soap/ajax/31.0/connection.js&apos;)} 
 {!REQUIRESCRIPT(&quot;/soap/ajax/31.0/apex.js&quot;)} 
+{!REQUIRESCRIPT(&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js&quot;)}
+
+var requestBody =
+&apos;&lt;se:Envelope xmlns:se=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&lt;se:Header xmlns:sfns=&quot;http://soap.sforce.com/schemas/package/InvoiceBuilder&quot;&gt;&lt;sfns:SessionHeader&gt;&lt;sessionId&gt;{!GETSESSIONID()}&lt;/sessionId&gt;&lt;/sfns:SessionHeader&gt;&lt;/se:Header&gt;&lt;se:Body&gt;&lt;GenerateInvoices xmlns=&quot;http://soap.sforce.com/schemas/package/InvoiceBuilder&quot;&gt;&lt;batchJobId&gt;{!Batch_Jobs__c.Id}&lt;/batchJobId&gt;&lt;/GenerateInvoices&gt;&lt;/se:Body&gt;&lt;/se:Envelope&gt;&apos;
+
+$.ajax(
+ {
+  url : &apos;../services/Soap/package/InvoiceBuilder&apos;,
+  type: &apos;POST&apos;,
+  data: requestBody,
+  headers:
+  {
+   &quot;SOAPAction&quot; :&apos;&quot;&quot;&apos;,
+   &quot;Content-Type&quot;:&quot;text/xml; charset=UTF-8&quot;
+  }
+ }
+);
 
 
+//sforce.apex.execute(&quot;InvoiceBuilder&quot;,&quot;GenerateInvoices&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;}); 
 
-sforce.apex.execute(&quot;InvoiceBuilder&quot;,&quot;GenerateInvoices&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;}); 
-
-
-
+alert(&apos;Generating Invoices , Processing will take Approx 5-10 Minutes&apos;);
 
 window.location.reload();</url>
     </webLinks>
@@ -1341,11 +1356,31 @@ window.location.reload();</url>
         <protected>false</protected>
         <url>{!REQUIRESCRIPT(&apos;/soap/ajax/31.0/connection.js&apos;)}
 {!REQUIRESCRIPT(&quot;/soap/ajax/31.0/apex.js&quot;)}
+{!REQUIRESCRIPT(&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js&quot;)}
 
+sforce.apex.execute(&quot;OrderBuilder&quot;,&quot;UpdateBatchType&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;});
+
+
+var requestBody =
+&apos;&lt;se:Envelope xmlns:se=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&lt;se:Header xmlns:sfns=&quot;http://soap.sforce.com/schemas/package/OrderBuilder&quot;&gt;&lt;sfns:SessionHeader&gt;&lt;sessionId&gt;{!GETSESSIONID()}&lt;/sessionId&gt;&lt;/sfns:SessionHeader&gt;&lt;/se:Header&gt;&lt;se:Body&gt;&lt;GenerateOrders  xmlns=&quot;http://soap.sforce.com/schemas/package/OrderBuilder&quot;&gt;&lt;batchJobId&gt;{!Batch_Jobs__c.Id}&lt;/batchJobId&gt;&lt;/GenerateOrders&gt;&lt;/se:Body&gt;&lt;/se:Envelope&gt;&apos;
+
+$.ajax(
+ {
+  url : &apos;../services/Soap/package/OrderBuilder&apos;,
+  type: &apos;POST&apos;,
+  data: requestBody,
+  headers:
+  {
+   &quot;SOAPAction&quot; :&apos;&quot;&quot;&apos;,
+   &quot;Content-Type&quot;:&quot;text/xml; charset=UTF-8&quot;
+  }
+ }
+);
 
    
-sforce.apex.execute(&quot;OrderBuilder&quot;,&quot;GenerateOrders&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;});
+//sforce.apex.execute(&quot;OrderBuilder&quot;,&quot;GenerateOrders&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;});
 
+alert(&apos;Generating Orders, processind will take Approx 5-10 Minutes&apos;);
 
 window.location.reload();</url>
     </webLinks>
@@ -1359,12 +1394,31 @@ window.location.reload();</url>
         <protected>false</protected>
         <url>{!REQUIRESCRIPT(&apos;/soap/ajax/31.0/connection.js&apos;)}
 {!REQUIRESCRIPT(&quot;/soap/ajax/31.0/apex.js&quot;)}
+{!REQUIRESCRIPT(&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js&quot;)}
 
 
 sforce.apex.execute(&quot;PaymentBuilder&quot;,&quot;changeRecordTypegeneratePayments&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;});
-   
-sforce.apex.execute(&quot;PaymentBuilder&quot;,&quot;generatePayments&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;});
 
+var requestBody =
+&apos;&lt;se:Envelope xmlns:se=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&lt;se:Header xmlns:sfns=&quot;http://soap.sforce.com/schemas/package/PaymentBuilder&quot;&gt;&lt;sfns:SessionHeader&gt;&lt;sessionId&gt;{!GETSESSIONID()}&lt;/sessionId&gt;&lt;/sfns:SessionHeader&gt;&lt;/se:Header&gt;&lt;se:Body&gt;&lt;generatePayments xmlns=&quot;http://soap.sforce.com/schemas/package/PaymentBuilder&quot;&gt;&lt;batchJobId&gt;{!Batch_Jobs__c.Id}&lt;/batchJobId&gt;&lt;/generatePayments&gt;&lt;/se:Body&gt;&lt;/se:Envelope&gt;&apos;
+
+$.ajax(
+ {
+  url : &apos;../services/Soap/package/PaymentBuilder&apos;,
+  type: &apos;POST&apos;,
+  data: requestBody,
+  headers:
+  {
+   &quot;SOAPAction&quot; :&apos;&quot;&quot;&apos;,
+   &quot;Content-Type&quot;:&quot;text/xml; charset=UTF-8&quot;
+  }
+ }
+);
+
+
+alert(&apos;Generating Payments from found transaction (Invoices/Credit Notes) this will take Approx 5-10 Minutes&apos;);
+   
+//sforce.apex.execute(&quot;PaymentBuilder&quot;,&quot;generatePayments&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;});
 
 window.location.reload();</url>
     </webLinks>

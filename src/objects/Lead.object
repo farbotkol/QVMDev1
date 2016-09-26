@@ -2340,7 +2340,7 @@ MID(TEXT( Campaign__r.EndDate ), 9, 2)&amp;&quot;/&quot;&amp; MID(TEXT( Campaign
     </recordTypes>
     <recordTypes>
         <fullName>QVM_Retail_Tenancy</fullName>
-        <active>true</active>
+        <active>false</active>
         <businessProcess>QVM Retail Tenancy</businessProcess>
         <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
         <description>Retail Tenancy</description>

@@ -95,7 +95,7 @@ global class QBOPaymentResponse
 		public DepositToAccountRef PaymentMethodRef {get;set;} 
 		public String PaymentRefNum {get;set;} 
 		public Double TotalAmt {get;set;} 
-		public Integer UnappliedAmt {get;set;} 
+		public Double UnappliedAmt {get;set;} 
 		public Boolean ProcessPayment {get;set;} 
 		public String domain {get;set;} 
 		public Boolean sparse {get;set;} 

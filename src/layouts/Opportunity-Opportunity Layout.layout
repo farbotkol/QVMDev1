@@ -8,7 +8,7 @@
         <label>Opportunity Information</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>Majik_AccountNo__c</field>
             </layoutItems>
             <layoutItems>
@@ -98,6 +98,18 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Lifestyle_Groups__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Class__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Product_Category__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Terms__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

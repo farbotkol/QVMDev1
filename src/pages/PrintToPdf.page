@@ -34,7 +34,7 @@ Display: none;
                 size: letter;
                 margin: 25mm;
                 @top-center {
-                content: "Order Details";
+                content: "Puchase Order";
                 font-family: sans-serif;
                 font-size: 20px;
                 }
@@ -60,13 +60,13 @@ Display: none;
         <apex:form >
             <table width="75%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                    <th>Order Number : </th><td>{!Order.OrderNumber}</td>
+                    <th>Purchase Order Number : </th><td>{!Order.OrderNumber}</td>
                 </tr>
                 <tr>
                     <th>Account Name : </th><td>{!Order.Account.Name}</td> 
                 </tr>
                 <tr>
-                    <th>Order Start Date : </th><td><apex:outputText value="{0,date,MM/dd/yy}"><apex:param value="{!Order.EffectiveDate}"/></apex:outputText></td>
+                    <th>Date : </th><td><apex:outputText value="{0,date,MM/dd/yy}"><apex:param value="{!Order.EffectiveDate}"/></apex:outputText></td>
                 </tr>
                 <tr>
                     <th>Description      : </th><td>{!Order.Description}</td>
@@ -74,24 +74,26 @@ Display: none;
                 <tr>
                     <th>Order Amount     : </th><td>{!Order.TotalAmount}</td>
                 </tr>
-                <tr>
-                    <th>Shipping Address : </th><td>{!Order.ShippingStreet} {!Order.ShippingCity} {!Order.ShippingState} {!Order.ShippingCountry} {!Order.ShippingPostalCode}</td>
-                </tr>
+        
                 <tr>
                     <th> </th>
                 </tr>
             </table>
+            <br/>
+            <br/>
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                    <th style="font: bold 15px" align="center">Order Products</th>
+                    <th style="font: bold 15px" align="center">Order Items</th>
                 </tr>
             </table>
+            <hr/>
+            <br/>
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                     <td style="font: bold 12px">Product</td>
-                    <td style="font: bold 12px">Stall</td>
+                  
                     <td style="font: bold 12px">Date</td>
-                    <td style="font: bold 12px">Line Description</td>
+                    <td style="font: bold 12px">Description</td>
                     <td style="font: bold 12px">Quantity</td>
                     <td style="font: bold 12px" align="right">Total Price</td>
                 </tr>
@@ -99,7 +101,7 @@ Display: none;
                 <apex:repeat value="{!orderItems}" var="v">
                     <tr>
                         <td>{!v.PricebookEntry.Product2.Name}</td>
-                        <td>{!v.Stall__r.Name}</td>
+                     
                         <td><apex:outputText value="{0,date,MM/dd/yy}"><apex:param value="{!v.Date__c}"/></apex:outputText></td>
                         <td>{!v.Description}</td>
                         <td>{!v.Quantity}</td>

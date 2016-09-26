@@ -66,6 +66,18 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Batch_Jobs__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Batch Jobs</label>
+        <referenceTo>Batch_Jobs__c</referenceTo>
+        <relationshipLabel>Error Logs</relationshipLabel>
+        <relationshipName>Error_Logs</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Code__c</fullName>
         <externalId>false</externalId>
         <label>Code</label>

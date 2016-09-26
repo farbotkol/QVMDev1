@@ -11,10 +11,6 @@
         <label>Information</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>Week_Month_Of__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Description__c</field>
             </layoutItems>

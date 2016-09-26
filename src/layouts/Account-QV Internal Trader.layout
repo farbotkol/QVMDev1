@@ -48,23 +48,19 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Type</field>
+                <field>Print__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Ownership</field>
+                <field>Twitter__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Site</field>
+                <field>Instagram__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Description</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>NumberOfEmployees</field>
+                <field>Facebook__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -90,19 +86,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>E_Mail__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>First_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>QuickBooks_Id__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Def_Payment_Type__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -132,19 +120,22 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Def_Payment_Type__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Bank_Name__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Bank_Account_Number__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>BSB_Number__c</field>
             </layoutItems>
         </layoutColumns>
+        <layoutColumns/>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
@@ -259,10 +250,12 @@
         <customButtons>New_Order</customButtons>
         <excludeButtons>New</excludeButtons>
         <fields>ORDERS.ORDER_NUMBER</fields>
+        <fields>OPPORTUNITY.NAME</fields>
+        <fields>PRICEBOOK2.NAME</fields>
         <fields>ORDERS.STATUS</fields>
         <fields>ORDERS.EFFECTIVE_DATE</fields>
-        <fields>CONTRACT.CONTRACT_NUMBER</fields>
         <fields>ORDERS.TOTAL_AMOUNT</fields>
+        <fields>Ref__c</fields>
         <relatedList>RelatedOrderList</relatedList>
     </relatedLists>
     <relatedLists>

@@ -1,5 +1,20 @@
 global with sharing class OrderBuilder {
 
+        //---------------------- Changing Record Type to Finding Transactions record type ----------------------------------------//    
+    Webservice static void UpdateBatchType( Id batchJobId )
+    {   
+         try
+         {
+            ID findingRecordTypeID = Schema.SObjectType.Batch_Jobs__c.getRecordTypeInfosByName().get('Processing Orders').getRecordTypeId();
+         	Batch_Jobs__c batchJobObj = [SELECT id, Due_Before__c  FROM Batch_Jobs__c where id =:batchJobId LIMIT 1];
+         	batchJobObj.RecordTypeId =  findingRecordTypeID;
+         	update batchJobObj; 
+         }
+         catch( Exception Ex )
+         {
+            System.debug('Exception in UpdateBatchType():' + Ex.getMessage());
+         }         
+    }
     
     Webservice  static boolean GenerateOrders(Id batchJobId)
     {

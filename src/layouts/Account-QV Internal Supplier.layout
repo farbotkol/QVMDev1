@@ -18,43 +18,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
+                <field>ABN__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
                 <field>Name</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Trading_Name__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Trader_Status__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Def_Payment_Type__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Primary_Contact__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Type</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>AccountSource</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>AccountNumber</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Ownership</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Site</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -62,15 +30,15 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>NumberOfEmployees</field>
+                <field>Twitter__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>SMS_Opt_Out__c</field>
+                <field>Instagram__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>QuickBooks_Id__c</field>
+                <behavior>Edit</behavior>
+                <field>Facebook__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -79,32 +47,20 @@
                 <field>RecordTypeId</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Phone</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Mobile_Phone__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>E_Mail__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>ABN__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>First_Date__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>ParentId</field>
+                <behavior>Readonly</behavior>
+                <field>Supplier_Approved__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Supplier_Approved__c</field>
+                <field>QuickBooks_Id__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>ParentId</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>AccountNumber</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -127,23 +83,52 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Bank Details</label>
+        <label>Contact Details</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Primary_Contact__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>E_Mail__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Mobile_Phone__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>Phone</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns/>
+        <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Payment Details</label>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>Def_Payment_Type__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
                 <field>Bank_Name__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
+                <field>BSB_Number__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
                 <field>Bank_Account_Number__c</field>
             </layoutItems>
         </layoutColumns>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>BSB_Number__c</field>
-            </layoutItems>
-        </layoutColumns>
+        <layoutColumns/>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
@@ -217,14 +202,14 @@
             <sortOrder>5</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>FeedItem.ContentPost</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>7</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>FeedItem.TextPost</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>6</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.ContentPost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>7</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList>
@@ -261,10 +246,12 @@
         <customButtons>New_Purchase_Order</customButtons>
         <excludeButtons>New</excludeButtons>
         <fields>ORDERS.ORDER_NUMBER</fields>
+        <fields>OPPORTUNITY.NAME</fields>
+        <fields>PRICEBOOK2.NAME</fields>
         <fields>ORDERS.STATUS</fields>
         <fields>ORDERS.EFFECTIVE_DATE</fields>
-        <fields>CONTRACT.CONTRACT_NUMBER</fields>
         <fields>ORDERS.TOTAL_AMOUNT</fields>
+        <fields>Ref__c</fields>
         <relatedList>RelatedOrderList</relatedList>
     </relatedLists>
     <relatedLists>

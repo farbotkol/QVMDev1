@@ -216,6 +216,16 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Ref__c</fullName>
+        <externalId>false</externalId>
+        <label>Ref</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>ShipToContactId</fullName>
         <trackHistory>true</trackHistory>
         <type>Lookup</type>

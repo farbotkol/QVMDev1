@@ -41,10 +41,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Invoice_Nbr__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Paid_Amount__c</field>
             </layoutItems>
         </layoutColumns>

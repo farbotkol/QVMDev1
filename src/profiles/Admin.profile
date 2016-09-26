@@ -538,6 +538,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Facebook__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Fax</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -554,6 +559,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Industry</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Instagram__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -594,6 +604,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Primary_Contact__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Print__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -649,6 +664,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Trading_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Twitter__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1214,6 +1234,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Error_Log__c.Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Error_Log__c.Batch_Jobs__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1903,6 +1928,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Class__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.ContractId</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2068,6 +2098,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Product_Category__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.ROI_Analysis_Completed__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2109,6 +2144,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Start_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Terms__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2270,6 +2310,11 @@
         <editable>false</editable>
         <field>Order.QuoteId</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Order.Ref__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -2733,6 +2778,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Stall__c.Lease_Term__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Stall__c.Left__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2934,6 +2984,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Task.WhoId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Transaction__c.Account_Business__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3792,7 +3847,7 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Batch_Jobs__c.Transactions_Found</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
@@ -3817,11 +3872,6 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Lead.QVM_Property_Management</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>Lead.QVM_Retail_Tenancy</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>

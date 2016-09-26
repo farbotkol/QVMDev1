@@ -101,7 +101,7 @@ public class DownloadABAFileController
                  }                                                   
                  else
                  {
-                     paymentObj.Account__r.Bank_Account_Number__c = paymentObj.Account__r.Bank_Account_Number__c.leftPad(maxlengthAccountNumber);
+                     paymentObj.Account__r.Bank_Account_Number__c = paymentObj.Account__r.Bank_Account_Number__c.right(maxlengthAccountNumber).leftPad(maxlengthAccountNumber);
                  }
                      
                  Integer nTotalValue = Integer.valueOf(paymentObj.Total_Amount__c * 100); // total value without '$' 
@@ -127,7 +127,7 @@ public class DownloadABAFileController
              }                                                   
              else
              {
-             	accountNumber = qvmABAFileObj.Account_Number__c.leftPad(maxlengthAccountNumber);
+             	accountNumber = qvmABAFileObj.Account_Number__c.right(maxlengthAccountNumber).leftPad(maxlengthAccountNumber);
              }
              nameOfRemitter = qvmABAFileObj.Name_of_Remitter__c.left(maxlengthNameOfRemitter).rightPad(maxlengthNameOfRemitter); 
             

@@ -51,7 +51,7 @@ public class QBOProductList {
             
             //instance = new AccountFooRecordType();	
             
-            Object res =  crudHelper.query('SELECT * FROM ITEM WHERE Active = true and Sku != \' \'', QBOProductList.Class); 
+            Object res =  crudHelper.query('SELECT * FROM ITEM WHERE Active = true and Sku != \' \' MAXRESULTS 1000', QBOProductList.Class); 
         
             if (res instanceof QBOError)
             {

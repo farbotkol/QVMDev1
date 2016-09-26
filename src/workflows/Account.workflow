@@ -7,12 +7,8 @@
         <recipients>
             <type>accountOwner</type>
         </recipients>
-        <recipients>
-            <recipient>priyanka.manoharan@rxpservices.com</recipient>
-            <type>user</type>
-        </recipients>
         <senderType>CurrentUser</senderType>
-        <template>unfiled$public/Notify_Suppliers_Upon_Approval</template>
+        <template>QVM_Email_Templates/Supplier_Approved_Notice</template>
     </alerts>
     <alerts>
         <fullName>Email_Supplier_Upon_Rejection</fullName>

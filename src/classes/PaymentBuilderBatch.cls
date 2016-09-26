@@ -14,29 +14,43 @@ global class PaymentBuilderBatch implements Database.Batchable<sObject>, Databas
 	}
     global void execute(Database.BatchableContext BC, List<Payment__c>   scope) 
     {
+        List<Error_Log__c> errorLogsToInsert = new List<Error_Log__c>();
         QBOCRUDHelper crudHelper = new QBOCRUDHelper();	
         List<Payment__c> paymentsToUpdate = new List<Payment__c>();
                 
         for(Payment__c payment:scope) 
         {
-            QBOPaymentResponse paymentResponse;
-            Object response = crudHelper.upsertData('payment', payment.PaymentJson__c, QBOPaymentResponse.class)  ;
-            
-            if (response instanceof QBOError)
-            {
-                //log the error and move to next account
-                system.debug('Opp error :');
-                //ErrorLogHelper.LogAccountError(so, (QBOError)response);
-                continue;
+            try{
+                QBOPaymentResponse paymentResponse;
+                Object response = crudHelper.upsertData('payment', payment.PaymentJson__c, QBOPaymentResponse.class)  ;
+                
+                if (response instanceof QBOError)
+                {
+                    //log the error and move to next account
+                    system.debug('Opp error :');
+                   
+               
+                    continue;
+                }
+                else
+                {
+                    paymentResponse = (QBOPaymentResponse)response;
+                    payment.QuickBook_Id__c = paymentResponse.Payment.Id;
+                    paymentsToUpdate.add(payment);
+                }    
             }
-            else
-            {
-                paymentResponse = (QBOPaymentResponse)response;
-                payment.QuickBook_Id__c = paymentResponse.Payment.Id;
+            catch(Exception ex){
+                errorLogsToInsert.add(ErrorLogHelper.LogBatchJobError(batchJob, ex));
                 paymentsToUpdate.add(payment);
-            }    
+            }
+                
+           
         }
         insert  paymentsToUpdate;
+        if (errorLogsToInsert.size() > 0){
+            insert  errorLogsToInsert;
+        }
+        
         // loop through the results now to process the payments in qbo
 	}
     global void finish(Database.BatchableContext BC)

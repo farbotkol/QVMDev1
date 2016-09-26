@@ -50,6 +50,10 @@
                 <behavior>Edit</behavior>
                 <field>Website</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>LeadOppRecordTypeId__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
@@ -109,16 +113,7 @@
         <detailHeading>false</detailHeading>
         <editHeading>false</editHeading>
         <label>Description Information</label>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>RecordTypeId</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>LeadOppRecordTypeId__c</field>
-            </layoutItems>
-        </layoutColumns>
+        <layoutColumns/>
         <style>OneColumn</style>
     </layoutSections>
     <layoutSections>

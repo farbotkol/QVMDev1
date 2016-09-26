@@ -538,6 +538,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.Facebook__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.Fax</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -555,6 +560,11 @@
         <editable>true</editable>
         <field>Account.Industry</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Instagram__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -594,6 +604,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Primary_Contact__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Print__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -649,6 +664,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Trading_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Twitter__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1214,6 +1234,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Error_Log__c.Account__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Error_Log__c.Batch_Jobs__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1903,6 +1928,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Opportunity.Class__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Opportunity.ContractId</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -2067,6 +2097,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Product_Category__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.ROI_Analysis_Completed__c</field>
         <readable>true</readable>
@@ -2109,6 +2144,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Start_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Terms__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2269,6 +2309,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Order.QuoteId</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Order.Ref__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2733,6 +2778,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Stall__c.Lease_Term__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Stall__c.Left__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -2935,6 +2985,11 @@
         <editable>true</editable>
         <field>Task.WhoId</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Transaction__c.Account_Business__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -3564,11 +3619,6 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
-        <recordType>Lead.QVM_Retail_Tenancy</recordType>
-        <visible>false</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
         <recordType>Opportunity.Events</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
@@ -3617,6 +3667,10 @@
         <recordType>Stall__c.Permanent</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
+    <tabVisibilities>
+        <tab>standard-DuplicateRecordSet</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Idea</tab>
         <visibility>DefaultOn</visibility>

@@ -49,6 +49,10 @@
                 <behavior>Readonly</behavior>
                 <field>Batch_Job__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Ref__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -77,9 +81,6 @@
             </layoutItems>
             <layoutItems>
                 <customLink>Open_Invoice_PDF</customLink>
-            </layoutItems>
-            <layoutItems>
-                <customLink>Print_To_PDF</customLink>
             </layoutItems>
         </layoutColumns>
         <layoutColumns/>

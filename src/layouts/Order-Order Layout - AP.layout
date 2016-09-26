@@ -129,14 +129,10 @@
     <relatedLists>
         <fields>Product2</fields>
         <fields>ProductCode</fields>
-        <fields>Stall__c</fields>
         <fields>Date__c</fields>
         <fields>Description</fields>
         <fields>Quantity</fields>
         <fields>TotalPrice</fields>
-        <fields>Leave__c</fields>
-        <fields>Total__c</fields>
-        <fields>Formula_Total__c</fields>
         <relatedList>RelatedOrderItemList</relatedList>
         <sortField>Date__c</sortField>
         <sortOrder>Asc</sortOrder>

@@ -207,15 +207,6 @@
         <layoutColumns/>
         <style>CustomLinks</style>
     </layoutSections>
-    <relatedLists>
-        <fields>Product2</fields>
-        <fields>Quantity</fields>
-        <fields>UnitPrice</fields>
-        <fields>ListPrice</fields>
-        <fields>Leave__c</fields>
-        <fields>Total__c</fields>
-        <relatedList>OrderItem.Stall__c</relatedList>
-    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>

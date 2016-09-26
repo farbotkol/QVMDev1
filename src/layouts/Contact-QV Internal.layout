@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
     <customButtons>smagicinteract__Send_SMS</customButtons>
+    <excludeButtons>DataDotComClean</excludeButtons>
     <excludeButtons>DisableCustomerPortal</excludeButtons>
     <excludeButtons>DisablePartnerPortal</excludeButtons>
     <excludeButtons>DisablePrmSuperUser</excludeButtons>
     <excludeButtons>EnablePrmSuperUser</excludeButtons>
+    <excludeButtons>RequestUseSfdc</excludeButtons>
     <excludeButtons>Share</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
@@ -13,14 +15,6 @@
         <editHeading>true</editHeading>
         <label>Contact Information</label>
         <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Title</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>ContactExtId__c</field>
-            </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
                 <field>Name</field>
@@ -31,7 +25,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Job_Position__c</field>
+                <field>Phone</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>MobilePhone</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -47,55 +45,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>smagicinteract__SMSOptOut__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>AssistantName</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>AssistantPhone</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Birthdate</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Jigsaw</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Department</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Description</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>DoNotCall</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>HasOptedOutOfEmail</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Fax</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>HasOptedOutOfFax</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>LeadSource</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>OtherAddress</field>
+                <field>Description</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -105,23 +59,23 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>ReportsToId</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>LastCUUpdateDate</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Phone</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>MobilePhone</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Contact_Type__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>smagicinteract__SMSOptOut__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>DoNotCall</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>HasOptedOutOfFax</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>HasOptedOutOfEmail</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -137,7 +91,12 @@
                 <field>MailingAddress</field>
             </layoutItems>
         </layoutColumns>
-        <layoutColumns/>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>OtherAddress</field>
+            </layoutItems>
+        </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>

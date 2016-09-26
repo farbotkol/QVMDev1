@@ -1,6 +1,5 @@
 /*
 *****************************************************************************************
-Author: Resmi Ramakrishnan
 Date  : 07/09/2016
 Description : This class is using for generating payments from invoices and creditmemo.                  
 
@@ -11,6 +10,7 @@ global class PaymentBuilder
 { 
     public static List<Transaction__c> transactionListToInsert = new List<Transaction__c>(); 
     public static integer MAXRESULTS = 300;
+    
 
     //---------------------- Changing Record Type to Finding Transactions record type ----------------------------------------//    
     Webservice static void UpdateBatchObject( Id batchJobId )
@@ -32,6 +32,7 @@ global class PaymentBuilder
        
     Webservice static void processTransactions( Id batchJobId )
     {
+        System.debug('HELLO');
         try
         {
             getInvoices(batchJobId); 
@@ -114,6 +115,7 @@ global class PaymentBuilder
                  	// Set and Map declaration for getting OrderId from QuickBook's Id field 
                  	Set<String> setInvoiceQuickBookId = new Set<String>();
                  	Map<String, ID > mapOrderDetails = new map<String, ID>();
+                    Map<String,String>mapOrderAccountBusiness = new Map<String,String>();
                 
                  	for( QBOInvoice item : invs )
                 	{                  
@@ -130,17 +132,18 @@ global class PaymentBuilder
                 	}
                  	for( Account accObj: accList )
                  	{
-                     	mapAccountDetails.put( accObj.QuickBooks_Id__c, accObj.Id);
+                     	mapAccountDetails.put( accObj.QuickBooks_Id__c, accObj.Id);// Map for updating transaction Object's AccountId
                      	mapAccountDefPaymentType.put( accObj.QuickBooks_Id__c,accObj.Def_Payment_Type__c );
                  	}
                  	// getting order list
                  	if( !setInvoiceQuickBookId.isEmpty())
                  	{
-                    	orderList = [SELECT id, QuickBooksId__c from Order where QuickBooksId__c IN:setInvoiceQuickBookId];
+                    	orderList = [SELECT id,OpportunityId, QuickBooksId__c from Order where QuickBooksId__c IN:setInvoiceQuickBookId];
                  	}
                  	for( Order ordrObj: orderList )
                  	{
-                    	mapOrderDetails.put(ordrObj.QuickBooksId__c,ordrObj.Id);
+                    	mapOrderDetails.put(ordrObj.QuickBooksId__c,ordrObj.Id);// Map for updating transaction orderId
+                        mapOrderAccountBusiness.put(ordrObj.QuickBooksId__c,ordrObj.OpportunityId);//// Map for updating transaction opportunityId
                  	}
               
                  	for (QBOInvoice item : invs)
@@ -152,7 +155,6 @@ global class PaymentBuilder
                         	transObj.Balance__c = item.Balance;
                         	transObj.DocNumber__c = item.DocNumber;
                   
-                        	//transObj.DueDate__c = date.valueOf(item.DueDate);
                         	transObj.TotalAmount__c = item.TotalAmt;
                         	transObj.Batch_Jobs__c = batchJobId;
                         	transObj.TxnDate__c = date.valueOf(item.TxnDate);
@@ -160,8 +162,9 @@ global class PaymentBuilder
                                                                                     
                         	transObj.Customer_Reference__c = item.CustomerRef.value;
                         	//Getting Account id and Order id from maps.
-                        	transObj.Account__c = mapAccountDetails.get( item.CustomerRef.value );
-                       	    transObj.Order__c =  mapOrderDetails.get( item.id);
+                        	transObj.Account__c = mapAccountDetails.get( item.CustomerRef.value );// Updating transaction object's Account Id
+                       	    transObj.Order__c =  mapOrderDetails.get( item.id);// Updating transaction object's Order Id
+                            transObj.Account_Business__c = mapOrderAccountBusiness.get(item.id);// Updating transaction object's Account Bussiness
 
                         	if( mapAccountDefPaymentType.get(item.CustomerRef.value) == 'EFT')
                         	{
@@ -244,6 +247,7 @@ global class PaymentBuilder
                  	// Set and Map declaration for getting OrderId from QuickBook's Id field 
                  	Set<String> setInvoiceQuickBookId = new Set<String>();
                  	Map<String, ID > mapOrderDetails = new map<String, ID>();
+                    Map<String,String>mapOrderAccountBusiness = new Map<String,String>();
                 
                  	for( QBOInvoice item : invs )
                  	{                  
@@ -271,6 +275,7 @@ global class PaymentBuilder
                  	for( Order ordrObj: orderList )
                  	{
                     	mapOrderDetails.put(ordrObj.QuickBooksId__c,ordrObj.Id);
+                        mapOrderAccountBusiness.put( ordrObj.QuickBooksId__c,ordrObj.OpportunityId );
                  	}
               
                  	for (QBOInvoice item : invs)
@@ -293,11 +298,12 @@ global class PaymentBuilder
                         	//Getting Account id and Order id from maps.
                         	transObj.Account__c = mapAccountDetails.get( item.CustomerRef.value );
                         	transObj.Order__c =  mapOrderDetails.get( item.id);
+                            transObj.Account_Business__c = mapOrderAccountBusiness.get(item.id);
 
-                        	if( mapAccountDefPaymentType.get(item.CustomerRef.value) == 'EFT')
-                        	{
-                        		transactionListToInsert.add( transObj );  
-                        	}                        
+                        	//if( mapAccountDefPaymentType.get(item.CustomerRef.value) == 'EFT')
+                        	//{
+                        		transactionListToInsert.add( transObj );
+                        	//}                        
                      	}               
                 	 }                 
             	}       

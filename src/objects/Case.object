@@ -333,6 +333,51 @@
                 <controllingFieldValues>Accounts Query</controllingFieldValues>
                 <controllingFieldValues>General</controllingFieldValues>
             </picklistValues>
+            <picklistValues>
+                <fullName>1. 7 Days after due date</fullName>
+                <default>false</default>
+                <controllingFieldValues>Debtor Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2. 14 Days after due date</fullName>
+                <default>false</default>
+                <controllingFieldValues>Debtor Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3. 30 Days after due date</fullName>
+                <default>false</default>
+                <controllingFieldValues>Debtor Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4. Meeting Outcome</fullName>
+                <default>false</default>
+                <controllingFieldValues>Debtor Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5. Non Agreement / Absence (Letter of Default)</fullName>
+                <default>false</default>
+                <controllingFieldValues>Debtor Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6. 45 Days after due date</fullName>
+                <default>false</default>
+                <controllingFieldValues>Debtor Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7. Collection agency appointed</fullName>
+                <default>false</default>
+                <controllingFieldValues>Debtor Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8. Letter of Default advising of cancellation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Debtor Management</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9. &gt;60 Days/Cancel  Lease/ Legal Action</fullName>
+                <default>false</default>
+                <controllingFieldValues>Debtor Management</controllingFieldValues>
+            </picklistValues>
             <restrictedPicklist>true</restrictedPicklist>
             <sorted>false</sorted>
         </picklist>
@@ -405,6 +450,10 @@
             </picklistValues>
             <picklistValues>
                 <fullName>Events</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Debtor Management</fullName>
                 <default>false</default>
             </picklistValues>
             <sorted>false</sorted>
@@ -588,6 +637,42 @@
         <picklistValues>
             <picklist>Sub_Type__c</picklist>
             <values>
+                <fullName>1%2E 7 Days after due date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2%2E 14 Days after due date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3%2E 30 Days after due date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4%2E Meeting Outcome</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5%2E Non Agreement %2F Absence %28Letter of Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6%2E 45 Days after due date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7%2E Collection agency appointed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8%2E Letter of Default advising of cancellation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9%2E %3E60 Days%2FCancel  Lease%2F Legal Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Invoice Inquiry</fullName>
                 <default>false</default>
             </values>
@@ -616,6 +701,10 @@
             <picklist>Type</picklist>
             <values>
                 <fullName>Accounts Query</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debtor Management</fullName>
                 <default>false</default>
             </values>
             <values>

@@ -58,7 +58,6 @@ public class ErrorLogHelper {
     }
     
     
-        // Log Order errors
     public static Error_Log__c LogOrderError(Order order, Exception error){
         
         Error_Log__c errorLog = new Error_Log__c();
@@ -67,6 +66,20 @@ public class ErrorLogHelper {
         errorLog.Code__c = error.getLineNumber().format();
         errorLog.Type__c = 'SF Exception';
         errorLog.Order__c = order.Id;
+       
+
+        return errorLog;
+        
+    }
+    
+    public static Error_Log__c LogBatchJobError(ID jobId, Exception error){
+        
+        Error_Log__c errorLog = new Error_Log__c();
+        errorLog.Message__c = error.getMessage();
+        errorLog.Detail__c = error.getStackTraceString();
+        errorLog.Code__c = error.getLineNumber().format();
+        errorLog.Type__c = 'SF Exception';
+        errorLog.Batch_Jobs__c = jobId;
        
 
         return errorLog;

@@ -264,6 +264,58 @@
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Lease_Term__c</fullName>
+        <externalId>false</externalId>
+        <label>Lease Term</label>
+        <picklist>
+            <picklistValues>
+                <fullName>06</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1yr</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2yrs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3yrs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4yrs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5yrs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6yrs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7yrs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mnth</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>month to month</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>Left__c</fullName>
         <externalId>false</externalId>
         <label>Left</label>
@@ -437,7 +489,6 @@
                 <fullName>Nil</fullName>
                 <default>false</default>
             </picklistValues>
-            <restrictedPicklist>true</restrictedPicklist>
             <sorted>false</sorted>
         </picklist>
         <required>false</required>
@@ -799,6 +850,22 @@
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
+    <listViews>
+        <fullName>Sheds</fullName>
+        <columns>NAME</columns>
+        <columns>TuesdayTrader__c</columns>
+        <columns>ThursdayTrader__c</columns>
+        <columns>FridayTrader__c</columns>
+        <columns>SaturdayTrader__c</columns>
+        <columns>SundayTrader__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Stall__c.Casual</value>
+        </filters>
+        <label>Sheds</label>
+    </listViews>
     <nameField>
         <label>Stall Name</label>
         <trackHistory>false</trackHistory>
@@ -811,6 +878,49 @@
         <active>true</active>
         <description>Stall locations that can change trader on a day to day basis</description>
         <label>Casual</label>
+        <picklistValues>
+            <picklist>Lease_Term__c</picklist>
+            <values>
+                <fullName>06</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1yr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2yrs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3yrs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4yrs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5yrs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6yrs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7yrs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mnth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>month to month</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>Option_Terms__c</picklist>
             <values>
@@ -859,6 +969,49 @@
         <active>true</active>
         <description>Permanent stall locationc</description>
         <label>Permanent</label>
+        <picklistValues>
+            <picklist>Lease_Term__c</picklist>
+            <values>
+                <fullName>06</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1yr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2yrs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3yrs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4yrs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5yrs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6yrs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7yrs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mnth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>month to month</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>Option_Terms__c</picklist>
             <values>

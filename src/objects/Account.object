@@ -177,7 +177,7 @@
     <fields>
         <fullName>Def_Payment_Type__c</fullName>
         <externalId>false</externalId>
-        <label>Def Payment Type</label>
+        <label>Payment Type</label>
         <picklist>
             <picklistValues>
                 <fullName>CC</fullName>
@@ -217,6 +217,16 @@
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Facebook__c</fullName>
+        <externalId>false</externalId>
+        <label>Facebook</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -378,6 +388,16 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>Instagram__c</fullName>
+        <externalId>false</externalId>
+        <label>Instagram</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>IsCustomerPortal</fullName>
     </fields>
     <fields>
@@ -457,6 +477,14 @@
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Print__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Print</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>QuickBooks_Id__c</fullName>
@@ -556,6 +584,16 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Twitter__c</fullName>
+        <externalId>false</externalId>
+        <label>Twitter</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Type</fullName>
         <picklist>
             <picklistValues>
@@ -621,6 +659,7 @@
     <listViews>
         <fullName>AllAccounts</fullName>
         <columns>ACCOUNT.NAME</columns>
+        <columns>ACCOUNT.ACCOUNT_NUMBER</columns>
         <columns>ACCOUNT.RECORDTYPE</columns>
         <columns>ACCOUNT.ADDRESS1_STATE</columns>
         <columns>ACCOUNT.PHONE1</columns>
@@ -729,22 +768,6 @@
         </picklistValues>
         <picklistValues>
             <picklist>Def_Payment_Type__c</picklist>
-            <values>
-                <fullName>CC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>CQ</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>CS</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>DC</fullName>
-                <default>false</default>
-            </values>
             <values>
                 <fullName>EFT</fullName>
                 <default>false</default>
