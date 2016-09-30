@@ -23,6 +23,8 @@
                                
                 <p style="font-size:120%;"><br></br><b>Please upload images of your proposed product/s*</b></p><br></br>
                 <apex:variable var="count" value="{!1}"/>
+                <p style="font-size:90%;">These will be used for promotional material</p>
+                <p style="font-size:80%;">Accepted file types: jpg, png, pdf</p><br></br>
                 <apex:repeat value="{!AppSub.newAttachments}" var="newAtt">
                 <apex:pageBlockSection columns="1">
                    <apex:pageBlockSectionItem >
@@ -30,19 +32,19 @@
                         <apex:inputFile value="{!newAtt.body}" filename="{!newAtt.name}"/>
                    </apex:pageBlockSectionItem>
                     <apex:outputPanel >
-                    <p style="font-size:80%;">Accepted file types: jpg, png, pdf</p>
-                    <p style="font-size:90%;">These will be used for promotional material</p>
+                    <!--<p style="font-size:80%;">Accepted file types: jpg, png, pdf</p>
+                    <p style="font-size:90%;">These will be used for promotional material</p>-->
                      </apex:outputPanel>                    
                 </apex:pageBlockSection>
                 <apex:variable var="count" value="{!count + 1}"/>
                </apex:repeat>
                 
                                             
-                <p style="font-size:100%;"><br></br><b>Stall Display</b><br></br><br></br></p>
+                <p style="font-size:100%;"><br></br><b>Please upload an image of your proposed stall display</b><br></br><br></br></p>
                 <apex:inputFile style="width:100%" id="fileToUpload3" value="{!AppSub.fileBody3}" filename="{!AppSub.fileName3}" /> 
                 <p style="font-size:100%;"><br></br><b>Please upload an Australian Drivers Licence or passport*</b><br></br><br></br></p>
                 <apex:inputFile style="width:100%" id="fileToUpload4" value="{!AppSub.fileBody4}" filename="{!AppSub.fileName4}" /> 
-       </apex:outputPanel>
+       </apex:outputPanel><br></br>
        <apex:inputField value="{!AppSub.weblead.Additional_Information__c}" style="width:50%;"/>
        
        <p style="font-size:160%;border-top-style: double;border-right-style:null;border-bottom-style: double;border-left-style: null;border-width: 5px;border-color:#C1C5C7;">

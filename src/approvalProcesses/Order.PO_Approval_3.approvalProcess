@@ -110,8 +110,18 @@
             <name>Approve_PO</name>
             <type>FieldUpdate</type>
         </action>
+        <action>
+            <name>PO_Approval_Email</name>
+            <type>Alert</type>
+        </action>
     </finalApprovalActions>
     <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>PO_Rejected_Email</name>
+            <type>Alert</type>
+        </action>
+    </finalRejectionActions>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
     <label>PO Approval 3</label>
     <nextAutomatedApprover>

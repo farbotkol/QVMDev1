@@ -19,40 +19,42 @@
          <apex:outputLabel value="{!$ObjectType.Lead.fields.free_trade_initiatives__c.InlineHelpText}"/>
          <apex:inputField value="{!AppSub.weblead.free_trade_initiatives__c}" required="true"/>
 
-               <p style="font-size:120%;"><br></br><b>Please upload a minimum of three different images of your proposed product/s*</b></p><br></br>
+<p style="font-size:120%;"><br></br><b>Please upload a minimum of three different images of your proposed menu item/s*</b></p>
 
                                 
                 <apex:variable var="count" value="{!1}"/>
+                <p style="font-size:90%;">These images will be used for promotional material</p>
+                <p style="font-size:80%;">Accepted file types: jpg, png, pdf</p>
                 <apex:repeat value="{!AppSub.newAttachments}" var="newAtt">
-                <apex:pageBlockSection columns="1">
+                <apex:pageBlockSection columns="4">
                    <apex:pageBlockSectionItem >
                         <apex:outputLabel value="Product Image">  {!count} </apex:outputLabel>                        
                         <apex:inputFile value="{!newAtt.body}" filename="{!newAtt.name}"/>
                    </apex:pageBlockSectionItem>
                     <apex:outputPanel >
-                    <p style="font-size:80%;">Accepted file types: jpg, png, pdf</p>
-                    <p style="font-size:90%;">These will be used for promotional material</p>
+                   <!-- <p style="font-size:80%;">Accepted file types: jpg, png, pdf</p>-->
+                   <!-- <p style="font-size:90%;">These will be used for promotional material</p>-->
                      </apex:outputPanel>                    
                 </apex:pageBlockSection>
                 <apex:variable var="count" value="{!count + 1}"/>
                 </apex:repeat>
 
                 <apex:outputLabel value="{!$ObjectType.Lead.fields.Trading_Places__c.InlineHelpText}"/>
-                <apex:inputField value="{!AppSub.weblead.Trading_Places__c}" required="true"/>
+                <apex:inputField value="{!AppSub.weblead.Trading_Places__c}" required="true"/><br></br>
  
                 <apex:outputLabel value="{!$ObjectType.Lead.fields.Other_Equipments__c.InlineHelpText}"/> 
-                <apex:inputField value="{!AppSub.weblead.Other_Equipments__c}"/>   
+                <apex:inputField value="{!AppSub.weblead.Other_Equipments__c}" style="width:50%;height:100%"/><br></br>   
 
                 <apex:outputLabel value="{!$ObjectType.Lead.fields.Amount_Of_Gas_Bottles__c.InlineHelpText}"/> 
-                <apex:inputField value="{!AppSub.weblead.Amount_Of_Gas_Bottles__c}"/>   
+                <apex:inputField value="{!AppSub.weblead.Amount_Of_Gas_Bottles__c}"/><br></br>   
 
                 <apex:outputLabel value="{!$ObjectType.Lead.fields.Other_Cooking_Methods__c.InlineHelpText}"/>
-                <apex:inputField value="{!AppSub.weblead.Other_Cooking_Methods__c}"/>   
+                <apex:inputField value="{!AppSub.weblead.Other_Cooking_Methods__c}" style="width:50%;height:150%"/><br></br>
 
                 <p style="font-size:100%;"><br></br><b>Please upload a sketch or plan of your proposed stall layout*</b><br></br><br></br></p>
                 <apex:inputFile style="width:100%" id="fileToUpload3" value="{!AppSub.fileBody3}" filename="{!AppSub.fileName3}" /> 
                 
-                <p style="font-size:100%;"><br></br><b>Please upload an Australian Drivers Licence or passport*</b><br></br><br></br></p>
+                <p style="font-size:100%;"><br></br><b>Please upload an Australian Driver's License or passport*</b><br></br><br></br></p>
                 <apex:inputFile style="width:100%" id="fileToUpload4" value="{!AppSub.fileBody4}" filename="{!AppSub.fileName4}" /> 
 
                 <p style="font-size:100%;"><br></br><b>Please upload your Certificate of Currency covering up to $20,000,000*</b><br></br><br></br></p>

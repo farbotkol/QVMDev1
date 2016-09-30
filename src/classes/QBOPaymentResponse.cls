@@ -160,6 +160,8 @@ global class QBOPaymentResponse
 	}
 	
 	public class DepositToAccountRef {
+        
+        public DepositToAccountRef(){}
 		public String value {get;set;} 
 
 		public DepositToAccountRef(JSONParser parser) {

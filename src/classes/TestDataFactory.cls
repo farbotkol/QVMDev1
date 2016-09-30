@@ -200,6 +200,7 @@ public class TestDataFactory {
             pb.isActive=true;
             pb.SLPE__c = true;
             pb.Sku__c = '0000000';
+        	pb.PO_Pricebook__c = true;
             //pb.IsStandard  = true;
             insert pb;
         
@@ -777,6 +778,15 @@ public class TestDataFactory {
       csWebFormObj.Terms_And_Conditions_URL__c  = null;
       return csWebFormObj;
     }
-
-
+  /*  public static Order createOpportunityAndOrder()
+    {
+        Opportunity oppObj = new Opportunity();
+        oppObj.Name = 'Testopportunity';
+        
+        Order orderObj = new Order();
+        orderObj.OpportunityId = 
+        orderObj.
+        return createOrder;
+    }*/
+    
 }

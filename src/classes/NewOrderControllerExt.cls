@@ -1,5 +1,5 @@
 public class NewOrderControllerExt {
-	
+    
     
     public  NewOrderControllerExt(ApexPages.StandardSetController controller)
     {
@@ -40,11 +40,11 @@ public class NewOrderControllerExt {
             // we are in an opp 
              Id orderId = ApexPages.currentPage().getParameters().get('id') ;
              Opportunity opp  = [SELECT Id, AccountId from Opportunity where id = :orderId LIMIT 1];
-			 devRecordTypeId = Schema.SObjectType.Order.getRecordTypeInfosByName().get('Accounts Receivable').getRecordTypeId();	
+             devRecordTypeId = Schema.SObjectType.Order.getRecordTypeInfosByName().get('Accounts Receivable').getRecordTypeId();    
              newPage  = new PageReference('/801/e?retURL=' + returnUrl + '&aid=' + opp.AccountId + '&oid=' + opp.Id + '&ent=Order&RecordType=' + devRecordTypeId );
              
         }
         return  newPage.setRedirect(true);
-		// return null;
+        // return null;
     }
 }

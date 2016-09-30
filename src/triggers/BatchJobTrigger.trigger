@@ -10,7 +10,7 @@ trigger BatchJobTrigger on Batch_Jobs__c (after update) {
     
     for (Batch_Jobs__c job: jobs)
     {
-    	system.debug('job recordtype = ' + job.recordType.Name);
+        system.debug('job recordtype = ' + job.recordType.Name);
         if(job.recordType.Name == 'Finding Transactions')
         {
             PaymentBuilder.processTransactions(job.Id);

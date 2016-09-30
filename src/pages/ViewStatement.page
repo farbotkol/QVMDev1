@@ -3,32 +3,68 @@
         <head>
             <style>
                 @page {
-                size: letter;
-                margin: 25mm;
-                @top-center {
-                content: "Transaction Statement";
-                }
-                @bottom-center {
-                content: "Page " counter(page) " of " counter(pages);
-                }
+                    size: A4;
+                    margin: 40;
+                    @top-right {
+                        content: element(header);
+                    }
+                    
+                    @bottom-center {
+                        content: element(footer);
+                    }
                 }
                 .page-break {
-                display:block;
-                page-break-after:always;
+                    display:block;
+                    page-break-after:always;
                 }
                 body {
-                font-family: Arial Unicode MS;
-                font-size: 10px;
+                    font-family: sans-serif;
+                    font-size: 10px;
+                }
+                div.header {
+
+                    padding: 0px;
+                    width: 100%;
+                    text-align: right;
+                    position: running(header);
+                }
+                
+                div.footer {
+                    width: 100%;
+                    margin-left:-310px;
+                    margin-top: -138px;
+                    margin-right: 0px;
+                    margin-bottom: 0px;
+                	position: running(footer);
                 }
             </style>
         </head>
-        <apex:form >
-            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <div class="header">
+            <apex:image url="{!URLFOR($Resource.QVMHeaderFooter,
+                             'QVM_headers/QVM_header_1024.jpg')}" height="200px" />
+        </div>
+        
+        <div class="content">
+            <h1 align="center">
+                Transaction Statement
+            </h1>
+            
+            <table width="75%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                     <th>Customer Name : {!customerName}</th>
-                    <th align="right">Report Date : {!reportDate}</th>                    
+                </tr>
+                <br/>
+            <br/>
+                <tr>
+                    <th>Report Date : {!reportDate}</th>                    
                 </tr>
             </table>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                     <th>Date</th>
@@ -57,6 +93,10 @@
                     <th align="right">Total : {!total}</th>                    
                 </tr>
             </table>
-        </apex:form>
+        </div>
+        <div class="footer">
+            <apex:image url="{!URLFOR($Resource.QVMHeaderFooter,
+                             'QVM_headers/QVM_footer_1024.jpg')}" height="185px"/> 
+        </div>
     </html>
 </apex:page>

@@ -20,7 +20,7 @@
         </approvalActions>
         <assignedApprover>
             <approver>
-                <name>priyanka.manoharan@rxpservices.com</name>
+                <name>luke.farbotko@qvmtest.com</name>
                 <type>user</type>
             </approver>
             <whenMultipleApprovers>Unanimous</whenMultipleApprovers>
@@ -28,7 +28,7 @@
         <label>Suppliers Approval Step</label>
         <name>Suppliers_Approval_Step</name>
     </approvalStep>
-    <emailTemplate>unfiled$public/Supplier_Approval_Template</emailTemplate>
+    <emailTemplate>QVM_Email_Templates/Supplier_Approval_Template_html</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
         <criteriaItems>

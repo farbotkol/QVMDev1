@@ -36,7 +36,7 @@ public class HttpCalloutMockEngine implements HttpCalloutMock{
                 '  },'+
                 '  \"time\": \"2016-08-23T20:57:44.496-07:00\"'+
                 '}';
-           	res.setBody(json);           
+            res.setBody(json);           
   
         }
         if (req.getEndpoint().endsWith('customer?minorversion=4') 
@@ -414,44 +414,44 @@ public class HttpCalloutMockEngine implements HttpCalloutMock{
         if(req.getEndpoint().contains('query?query=select%20Id%2CDocNumber%2CTxnDate%2CTotalAmt%2CBalance%2CCustomerRef%20from%20CreditMemo'))
         {
             String json = '{'+
-		'  \"QueryResponse\": {'+
-		'    \"CreditMemo\": ['+
-		'      {'+
-		'        \"RemainingCredit\": 23.76,'+
-		'        \"sparse\": true,'+
-		'        \"Id\": \"2324\",'+
-		'        \"SyncToken\": \"0\",'+
-		'        \"DocNumber\": \"LCN--0000015089d\",'+
-		'        \"TxnDate\": \"2016-09-14\",'+
-		'        \"Line\": [],'+
-		'        \"CustomerRef\": {'+
-		'          \"value\": \"3\",'+
-		'          \"name\": \"Philip Wong\"'+
-		'        },'+
-		'        \"TotalAmt\": 23.76,'+
-		'        \"Balance\": 23.76'+
-		'      },'+
-		'      {'+
-		'        \"RemainingCredit\": 23.76,'+
-		'        \"sparse\": true,'+
-		'        \"Id\": \"2323\",'+
-		'        \"SyncToken\": \"0\",'+
-		'        \"DocNumber\": \"LCN--0000015088d\",'+
-		'        \"TxnDate\": \"2016-09-14\",'+
-		'        \"Line\": [],'+
-		'        \"CustomerRef\": {'+
-		'          \"value\": \"3\",'+
-		'          \"name\": \"Philip Wong\"'+
-		'        },'+
-		'        \"TotalAmt\": 23.76,'+
-		'        \"Balance\": 23.76'+
-		'      }'+
-		'    ],'+
-		'    \"startPosition\": 1,'+
-		'    \"maxResults\": 2'+
-		'  },'+
-		'  \"time\": \"2016-09-15T05:14:24.872-07:00\"'+
-		'}';
+        '  \"QueryResponse\": {'+
+        '    \"CreditMemo\": ['+
+        '      {'+
+        '        \"RemainingCredit\": 23.76,'+
+        '        \"sparse\": true,'+
+        '        \"Id\": \"2324\",'+
+        '        \"SyncToken\": \"0\",'+
+        '        \"DocNumber\": \"LCN--0000015089d\",'+
+        '        \"TxnDate\": \"2016-09-14\",'+
+        '        \"Line\": [],'+
+        '        \"CustomerRef\": {'+
+        '          \"value\": \"3\",'+
+        '          \"name\": \"Philip Wong\"'+
+        '        },'+
+        '        \"TotalAmt\": 23.76,'+
+        '        \"Balance\": 23.76'+
+        '      },'+
+        '      {'+
+        '        \"RemainingCredit\": 23.76,'+
+        '        \"sparse\": true,'+
+        '        \"Id\": \"2323\",'+
+        '        \"SyncToken\": \"0\",'+
+        '        \"DocNumber\": \"LCN--0000015088d\",'+
+        '        \"TxnDate\": \"2016-09-14\",'+
+        '        \"Line\": [],'+
+        '        \"CustomerRef\": {'+
+        '          \"value\": \"3\",'+
+        '          \"name\": \"Philip Wong\"'+
+        '        },'+
+        '        \"TotalAmt\": 23.76,'+
+        '        \"Balance\": 23.76'+
+        '      }'+
+        '    ],'+
+        '    \"startPosition\": 1,'+
+        '    \"maxResults\": 2'+
+        '  },'+
+        '  \"time\": \"2016-09-15T05:14:24.872-07:00\"'+
+        '}';
          res.setBody(json);
         }
         if(req.getEndpoint().endsWith('payment')){
@@ -539,7 +539,7 @@ public class HttpCalloutMockEngine implements HttpCalloutMock{
                 '  },'+
                 '  \"time\": \"2016-09-06T23:07:55.211-07:00\"'+
                 '}';
-         	res.setBody(json);
+            res.setBody(json);
         }
            
       

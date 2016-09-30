@@ -3,6 +3,5 @@
     <apiVersion>37.0</apiVersion>
     <availableInTouch>false</availableInTouch>
     <confirmationTokenRequired>false</confirmationTokenRequired>
-    <description>Default Force.com page for post-authentication errors</description>
     <label>Exception</label>
 </ApexPage>

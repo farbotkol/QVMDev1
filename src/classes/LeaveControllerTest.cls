@@ -51,7 +51,7 @@ public class LeaveControllerTest {
                                      Business_Status__c = 'Open',
                                      pricebook2id=PriceBookId,
                                      Uplift_Factor__c=1);
-        	insert opp;
+            insert opp;
             
             
             Contact contact1 = new Contact(
@@ -81,7 +81,7 @@ public class LeaveControllerTest {
             
         }
         Test.startTest();
-		List<Opportunity> opp = new List<Opportunity>();        
+        List<Opportunity> opp = new List<Opportunity>();        
         System.runas(user1){
             Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
             opp = LeaveController.getAccountBusiness();            

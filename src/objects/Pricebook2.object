@@ -55,6 +55,16 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>PO_Pricebook__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Only one price book should be check. this is used for purchase orders</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Only one price book should be check. this is used for purchase orders</inlineHelpText>
+        <label>PO Pricebook</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>SLPE__c</fullName>
         <defaultValue>false</defaultValue>
         <description>CHECK IF USED MY SL or PE</description>

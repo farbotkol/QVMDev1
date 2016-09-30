@@ -1,17 +1,17 @@
 public class QBOCreditMemoList {
-	public QBOCreditMemoList() {
-		
-	}
+    public QBOCreditMemoList() {
+        
+    }
 
-	public class QueryResponse
-	{
-    	@AuraEnabled
-	    public List<QBOInvoice> CreditMemo;
+    public class QueryResponse
+    {
         @AuraEnabled
-	    public Integer startPosition;
+        public List<QBOInvoice> CreditMemo;
         @AuraEnabled
-	    public Integer maxResults;
-	}	
+        public Integer startPosition;
+        @AuraEnabled
+        public Integer maxResults;
+    }   
 
     @AuraEnabled
     public QueryResponse queryResponse;

@@ -11,9 +11,9 @@ public without sharing class LeaveController {
         if(accId != null){
             List<Opportunity> accBusiness = [SELECT Id,Name,RecordType.Name,Leave_Remaining_Monday__c,Leave_Remaining_Tuesday__c,Leave_Remaining_Wednesday__c,
                                              Leave_Remaining_Thursday__c,Leave_Remaining_Friday__c,Leave_Remaining_Saturday__c,Leave_Remaining_Sunday__c
-                                             , (select id, Name,Leave_Date__c from Leave__r)
+                                             , (select id, Name,Leave_Date__c from Leave__r LIMIT 40)
                                              FROM Opportunity
-                                             WHERE AccountId  = :accId];
+                                             WHERE AccountId  = :accId AND RecordType.Name != 'Other'];
             System.debug('PP '+accBusiness.get(0).RecordType.Name);
             System.debug('accBusiness '+accBusiness);
             if(accBusiness != null){
@@ -25,6 +25,7 @@ public without sharing class LeaveController {
         else
             return null;
     }
+    
     
     @AuraEnabled
     public static void createLeave(String accBusinessId, String leaveDate) {

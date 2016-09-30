@@ -79,6 +79,39 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
+        <fullName>BSB_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>BSB Number</label>
+        <length>7</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bank_Account_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Bank Account Number</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bank_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Bank Name</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Budget_Confirmed__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -601,6 +634,39 @@
         <trackFeedHistory>true</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EFT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Perm_Stall__c</fullName>
@@ -1894,7 +1960,7 @@
             </values>
             <values>
                 <fullName>Open</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -2050,6 +2116,29 @@
             <values>
                 <fullName>Price</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EFT</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -2496,7 +2585,7 @@
             </values>
             <values>
                 <fullName>Open</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -2652,6 +2741,29 @@
             <values>
                 <fullName>Price</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EFT</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -3474,7 +3586,7 @@
             </values>
             <values>
                 <fullName>Open</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -3630,6 +3742,29 @@
             <values>
                 <fullName>Price</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EFT</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -4452,7 +4587,7 @@
             </values>
             <values>
                 <fullName>Open</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -4608,6 +4743,29 @@
             <values>
                 <fullName>Price</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EFT</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -5054,7 +5212,7 @@
             </values>
             <values>
                 <fullName>Open</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -5210,6 +5368,29 @@
             <values>
                 <fullName>Price</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EFT</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -6032,7 +6213,7 @@
             </values>
             <values>
                 <fullName>Open</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -6188,6 +6369,29 @@
             <values>
                 <fullName>Price</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EFT</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -7016,6 +7220,9 @@
         <searchFilterFields>ACCOUNT.NAME</searchFilterFields>
         <searchFilterFields>Trading_Name__c</searchFilterFields>
         <searchFilterFields>OPPORTUNITY.CLOSE_DATE</searchFilterFields>
+        <searchFilterFields>OPPORTUNITY.RECORDTYPE</searchFilterFields>
+        <searchFilterFields>Permitted_Use__c</searchFilterFields>
+        <searchFilterFields>Permitted_Use_Sub_Category__c</searchFilterFields>
         <searchResultsAdditionalFields>OPPORTUNITY.NAME</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ACCOUNT.NAME</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Trading_Name__c</searchResultsAdditionalFields>
@@ -7023,6 +7230,13 @@
         <searchResultsAdditionalFields>OPPORTUNITY.CLOSE_DATE</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>Friday_Leave</fullName>
+        <active>true</active>
+        <errorConditionFormula>Leave_Remaining_Friday__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>Leave_Taken_Friday__c</errorDisplayField>
+        <errorMessage>There is not enough Friday leave remaining for the year</errorMessage>
+    </validationRules>
     <validationRules>
         <fullName>Monday_Leave</fullName>
         <active>true</active>
@@ -7036,5 +7250,40 @@
         <errorConditionFormula>(RecordType.Name = &apos;SL&apos; || RecordType.Name = &apos;PE&apos;) &amp;&amp; Pricebook2.SLPE__c &lt;&gt; true</errorConditionFormula>
         <errorDisplayField>Pricebook2Id</errorDisplayField>
         <errorMessage>Price book not a valid Monday to Sunday option</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Saturday_Leave</fullName>
+        <active>true</active>
+        <errorConditionFormula>Leave_Remaining_Saturday__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>Leave_Taken_Saturday__c</errorDisplayField>
+        <errorMessage>There is not enough Saturday leave remaining for the year</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sunday_Leave</fullName>
+        <active>true</active>
+        <errorConditionFormula>Leave_Remaining_Sunday__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>Leave_Taken_Sunday__c</errorDisplayField>
+        <errorMessage>There is not enough Sunday leave remaining for the year</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Thursday_Leave</fullName>
+        <active>true</active>
+        <errorConditionFormula>Leave_Remaining_Thursday__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>Leave_Taken_Thursday__c</errorDisplayField>
+        <errorMessage>There is not enough Thursday leave remaining for the year</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Tuesday_Leave</fullName>
+        <active>true</active>
+        <errorConditionFormula>Leave_Remaining_Tuesday__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>Leave_Taken_Tuesday__c</errorDisplayField>
+        <errorMessage>There is not enough Tuesday leave remaining for the year</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Wednesday_Leave</fullName>
+        <active>true</active>
+        <errorConditionFormula>Leave_Remaining_Wednesday__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>Leave_Taken_Wednesday__c</errorDisplayField>
+        <errorMessage>There is not enough Wednesday leave remaining for the year</errorMessage>
     </validationRules>
 </CustomObject>

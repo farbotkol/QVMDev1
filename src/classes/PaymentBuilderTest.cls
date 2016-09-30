@@ -1,9 +1,10 @@
 @isTest 
 public class PaymentBuilderTest {
 
-	@isTest 
-    static void TestProcessTransactions() {
-    	TestDataFactory.CreateOAuthServiceEntries();
+    @isTest (SeeAllData=true) 
+    static void TestProcessTransactions() 
+    {
+        TestDataFactory.CreateOAuthServiceEntries();
         Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
 
         Schema.DescribeSObjectResult acccCfrSchema = Schema.SObjectType.Account; 
@@ -14,6 +15,27 @@ public class PaymentBuilderTest {
         a.QuickBooks_Id__c = '3';
         a.Def_Payment_Type__c = 'EFT';
         insert a;
+        
+        // Create Opportunity
+        Opportunity oppObj = new Opportunity();
+        OppObj.Name = 'Test Opportunity';
+        OppObj.Business_Status__c = 'Open';
+        OppObj.AccountId = a.id;
+        OppObj.CloseDate = date.parse('22/10/2016');
+        oppObj.Uplift_Factor__c = 1.0;
+        oppObj.Permitted_Use__c	= 'Hardware';
+        oppObj.Payment_Type__c = 'EFT';
+        oppObj.StageName = 'Closed Won';
+        insert oppObj;
+        
+        Order orderObj = new Order();
+        orderObj.AccountId  = a.id;
+        orderObj.OpportunityId =oppObj.id; 
+        orderObj.EffectiveDate = date.parse('22/09/2016');
+        orderObj.QuickBooksId__c = '100';
+        orderObj.Status = 'Draft';
+        //insert orderObj;
+  
         
         Batch_Jobs__c job = TestDataFactory.createSLBatchJob();
         
@@ -28,7 +50,7 @@ public class PaymentBuilderTest {
         
         test.startTest();
         
-		PaymentBuilder.processTransactions(job.Id);
+        PaymentBuilder.processTransactions(job.Id);
         
         test.stopTest();
         
@@ -39,9 +61,9 @@ public class PaymentBuilderTest {
 
     }
     
-    @isTest 
+    @isTest(SeeAllData=true) 
     static void TestGeneratePayments() {
-    	TestDataFactory.CreateOAuthServiceEntries();
+        TestDataFactory.CreateOAuthServiceEntries();
         Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
 
         Schema.DescribeSObjectResult acccCfrSchema = Schema.SObjectType.Account; 
@@ -96,7 +118,7 @@ public class PaymentBuilderTest {
         
         test.startTest();
         
-		PaymentBuilder.generatePayments(job.Id);
+        PaymentBuilder.generatePayments(job.Id);
         
         test.stopTest();
         
@@ -111,7 +133,7 @@ public class PaymentBuilderTest {
     
     @isTest 
     static void TestDownloadABAFileController() {
-    	TestDataFactory.CreateOAuthServiceEntries();
+        TestDataFactory.CreateOAuthServiceEntries();
         TestDataFactory.CreateQvm_ABA_File_Generator();
         Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
 
@@ -167,7 +189,7 @@ public class PaymentBuilderTest {
         
         test.startTest();
         
-		PaymentBuilder.generatePayments(job.Id);
+        PaymentBuilder.generatePayments(job.Id);
         
         test.stopTest();
         
@@ -180,6 +202,10 @@ public class PaymentBuilderTest {
         pg.fetch();
         system.assert(pmt.size()>0);
 
-
+    }
+    @isTest 
+    public static void ExceptionScenario()
+    {
+        
     }
 }

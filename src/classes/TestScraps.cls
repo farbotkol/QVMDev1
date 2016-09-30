@@ -3,7 +3,7 @@ public class TestScraps {
 
     @isTest 
     static void Test_ErrorLogHelper_LogAccountError(){
-    	
+        
         TestDataFactory.CreateOAuthServiceEntries();
         Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
 
@@ -17,17 +17,17 @@ public class TestScraps {
         insert a;
         
         String json = '{'+
-		'	\"Fault\": {'+
-		'		\"Error\": [{'+
-		'			\"Message\": \"Request has invalid or unsupported property\",'+
-		'			\"Detail\": \"Property Name:Unrecognized token \'gdhjfghj\': was expecting (\'true\', \'false\' or \'null\')\\n  specified is unsupported or invalid\",'+
-		'			\"code\": \"2010\"'+
-		'		}],'+
-		'		\"type\": \"ValidationFault\"'+
-		'	},'+
-		'	\"time\": \"2016-08-25T17:02:42.843-07:00\"'+
-		'}';
-		QBOError r = QBOError.parse(json);
+        '   \"Fault\": {'+
+        '       \"Error\": [{'+
+        '           \"Message\": \"Request has invalid or unsupported property\",'+
+        '           \"Detail\": \"Property Name:Unrecognized token \'gdhjfghj\': was expecting (\'true\', \'false\' or \'null\')\\n  specified is unsupported or invalid\",'+
+        '           \"code\": \"2010\"'+
+        '       }],'+
+        '       \"type\": \"ValidationFault\"'+
+        '   },'+
+        '   \"time\": \"2016-08-25T17:02:42.843-07:00\"'+
+        '}';
+        QBOError r = QBOError.parse(json);
         
         test.startTest();
        
@@ -40,8 +40,8 @@ public class TestScraps {
     
      @isTest 
     static void Test_ErrorLogHelper_LogOrderError(){
-    	
-            	TestDataFactory.CreateOAuthServiceEntries();
+        
+                TestDataFactory.CreateOAuthServiceEntries();
         Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
         TestDataFactory.createStallProductsAndGeneralPriceBook();
         Order order = TestDataFactory.createPO();
@@ -50,17 +50,17 @@ public class TestScraps {
         update order;
         
         String json = '{'+
-		'	\"Fault\": {'+
-		'		\"Error\": [{'+
-		'			\"Message\": \"Request has invalid or unsupported property\",'+
-		'			\"Detail\": \"Property Name:Unrecognized token \'gdhjfghj\': was expecting (\'true\', \'false\' or \'null\')\\n  specified is unsupported or invalid\",'+
-		'			\"code\": \"2010\"'+
-		'		}],'+
-		'		\"type\": \"ValidationFault\"'+
-		'	},'+
-		'	\"time\": \"2016-08-25T17:02:42.843-07:00\"'+
-		'}';
-		QBOError r = QBOError.parse(json);
+        '   \"Fault\": {'+
+        '       \"Error\": [{'+
+        '           \"Message\": \"Request has invalid or unsupported property\",'+
+        '           \"Detail\": \"Property Name:Unrecognized token \'gdhjfghj\': was expecting (\'true\', \'false\' or \'null\')\\n  specified is unsupported or invalid\",'+
+        '           \"code\": \"2010\"'+
+        '       }],'+
+        '       \"type\": \"ValidationFault\"'+
+        '   },'+
+        '   \"time\": \"2016-08-25T17:02:42.843-07:00\"'+
+        '}';
+        QBOError r = QBOError.parse(json);
         
         test.startTest();
        
@@ -73,7 +73,7 @@ public class TestScraps {
     
     @isTest 
     static void Test_ErrorLogHelper_LogOrderItemError(){
-    	
+        
          TestDataFactory.CreateOAuthServiceEntries();
         Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
         TestDataFactory.createStallProductsAndGeneralPriceBook();
@@ -85,17 +85,17 @@ public class TestScraps {
         OrderItem item = [SELECT id from OrderItem Limit 1];
         
         String json = '{'+
-		'	\"Fault\": {'+
-		'		\"Error\": [{'+
-		'			\"Message\": \"Request has invalid or unsupported property\",'+
-		'			\"Detail\": \"Property Name:Unrecognized token \'gdhjfghj\': was expecting (\'true\', \'false\' or \'null\')\\n  specified is unsupported or invalid\",'+
-		'			\"code\": \"2010\"'+
-		'		}],'+
-		'		\"type\": \"ValidationFault\"'+
-		'	},'+
-		'	\"time\": \"2016-08-25T17:02:42.843-07:00\"'+
-		'}';
-		QBOError r = QBOError.parse(json);
+        '   \"Fault\": {'+
+        '       \"Error\": [{'+
+        '           \"Message\": \"Request has invalid or unsupported property\",'+
+        '           \"Detail\": \"Property Name:Unrecognized token \'gdhjfghj\': was expecting (\'true\', \'false\' or \'null\')\\n  specified is unsupported or invalid\",'+
+        '           \"code\": \"2010\"'+
+        '       }],'+
+        '       \"type\": \"ValidationFault\"'+
+        '   },'+
+        '   \"time\": \"2016-08-25T17:02:42.843-07:00\"'+
+        '}';
+        QBOError r = QBOError.parse(json);
         
         test.startTest();
        

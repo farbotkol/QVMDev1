@@ -22,10 +22,10 @@ public class InvoiceBuilderTest {
         
        
         List<OrderItem> oi = TestDataFactory.createOrderItemWithLeave(1,'SL');
-		Test.startTest();
-     	
+        Test.startTest();
+        
        
-       	boolean result = InvoiceBuilder.GenerateInvoiceFromOrder(oi[0].OrderId);
+        boolean result = InvoiceBuilder.GenerateInvoiceFromOrder(oi[0].OrderId);
     
         Test.stopTest();
         
@@ -53,10 +53,10 @@ public class InvoiceBuilderTest {
         
        
         List<OrderItem> oi = TestDataFactory.createOrderItemWithLeave(1,'SL');
-		Test.startTest();
-     	
+        Test.startTest();
+        
        
-       	boolean result = InvoiceBuilder.GenerateInvoices(job.Id);
+        boolean result = InvoiceBuilder.GenerateInvoices(job.Id);
     
         Test.stopTest();
         

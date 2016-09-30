@@ -1,4 +1,4 @@
-public with sharing class LeaveTriggerHelper 
+public without sharing class LeaveTriggerHelper 
 {
 	
  
@@ -105,12 +105,12 @@ public with sharing class LeaveTriggerHelper
 	        	oppMap.put(currOpp.Id,currOpp);
 
 			}
-
+			System.debug('oppMap.values():' + oppMap.values());	
 			update oppMap.values();
 		}
 		catch(DMLException  ex)
 		{
-			//System.debug(ex);
+			System.debug(ex);
 			  //throw new LeaveException('Hello');
 
 

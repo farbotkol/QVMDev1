@@ -141,6 +141,15 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
+    <fields>
+        <fullName>Webhooks__c</fullName>
+        <externalId>false</externalId>
+        <label>Webhooks</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
     <label>Error Log</label>
     <listViews>
         <fullName>All</fullName>

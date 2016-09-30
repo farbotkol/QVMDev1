@@ -5,7 +5,7 @@ global class InvoiceBuilder {
         // update the batch to processing 
         InvoiceBuilder.SetOrderRecordType('Processing_Invoices', batchJobId);
 		// get the orders of the batch and batch process them
-        List<Order> orders = [SELECT Account.QuickBooks_Id__c,Batch_Job__c,Description,EffectiveDate, Opportunity.Terms__c
+        List<Order> orders = [SELECT Account.QuickBooks_Id__c,Batch_Job__c,Description,EffectiveDate, Opportunity.Terms__c, Opportunity.Payment_Type__c
                        		,EndDate,Id,OpportunityId,OrderNumber,QuickBooksId__c,Status,StatusCode , 
                         	(SELECT Date__c,Description,Formula_Total__c,ListPrice,OrderItemNumber
                              	,Quantity,ServiceDate,Total__c,UnitPrice,Stall__r.Name, PricebookEntry.Sku__c
@@ -25,7 +25,7 @@ global class InvoiceBuilder {
     Webservice static boolean GenerateInvoiceFromOrder(Id orderId)
     {
 
-        List<Order> orders = [SELECT Account.QuickBooks_Id__c,Batch_Job__c,Description,EffectiveDate, Opportunity.Terms__c
+        List<Order> orders = [SELECT Account.QuickBooks_Id__c,Batch_Job__c,Description,EffectiveDate, Opportunity.Terms__c, Opportunity.Payment_Type__c
                        		,EndDate,Id,OpportunityId,OrderNumber,QuickBooksId__c,Status,StatusCode , 
                         	(SELECT Date__c,Description,Formula_Total__c,ListPrice,OrderItemNumber
                              	,Quantity,ServiceDate,Total__c,UnitPrice,Stall__r.Name, PricebookEntry.Sku__c
@@ -77,6 +77,13 @@ global class InvoiceBuilder {
                 invoice.DueDate = ((DateTime)order.EffectiveDate.addDays(terms)).format('YYYY-MM-dd');
                 invoice.DocNumber = order.OrderNumber;
                 
+                if (order.Opportunity.Payment_Type__c == 'EFT')
+                {
+                    QBOInvoice.TaxCodeRef memo = new QBOInvoice.TaxCodeRef();
+                    memo.value = '!!!DO NOT PAY!!!\nThis Invoice will be paid by Driect Debit';
+                    invoice.CustomerMemo = memo;
+                }
+                
                 List<QBOInvoice.Line> invLines = new List<QBOInvoice.Line>();
                 for(OrderItem oi : order.OrderItems)
                 {
@@ -84,14 +91,19 @@ global class InvoiceBuilder {
                     QBOInvoice.Line line = new QBOInvoice.Line();
                     line.Amount = oi.Total__c;
                     line.Description = '';
-                    if (oi.Stall__r != null)
+                    if (oi.Stall__r != null && oi.Description != null)
                     {
-                        line.Description =  oi.PricebookEntry.Product2.Name + ' ' + oi.Stall__r.Name + ' ';
+                        line.Description =  oi.PricebookEntry.Product2.Name + ' ' + oi.Stall__r.Name;
                     } 
-                    if (oi.Description != null)
+                    else if (oi.Stall__r != null)
+                    {
+                        line.Description =  oi.PricebookEntry.Product2.Name + ' ' + oi.Stall__r.Name ;
+                    } 
+                    else if (oi.Description != null)
                     {
                         line.Description += oi.PricebookEntry.Product2.Name + ' ' +  oi.Description;  
                     }
+                    
                      
                     line.DetailType = 'SalesItemLineDetail';
                     QBOInvoice.SalesItemLineDetail lineDetail = new QBOInvoice.SalesItemLineDetail();

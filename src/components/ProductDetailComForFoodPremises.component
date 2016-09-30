@@ -13,30 +13,32 @@
          <apex:inputField value="{!AppSub.weblead.Product_Price_Range__c}"/>
                
          
-         <p style="font-size:120%;"><br></br><b>Please upload images of your proposed product/s*</b></p><br></br>
+         <p style="font-size:120%;"><br></br><b>Please upload images of your proposed product/s*</b></p>
           <apex:variable var="count" value="{!1}"/>
+          <p style="font-size:90%;">These will be used for promotional material</p>
+          <p style="font-size:80%;">Accepted file types: jpg, png, pdf</p>                   
                 <apex:repeat value="{!AppSub.newAttachments}" var="newAtt">
-                <apex:pageBlockSection columns="1">
+                <apex:pageBlockSection columns="2">
                    <apex:pageBlockSectionItem >
                         <apex:outputLabel value="Product Image">  {!count} </apex:outputLabel>                        
                         <apex:inputFile value="{!newAtt.body}" filename="{!newAtt.name}"/>
                    </apex:pageBlockSectionItem>
                     <apex:outputPanel >
-                    <p style="font-size:80%;">Accepted file types: jpg, png, pdf</p>
-                    <p style="font-size:90%;">These will be used for promotional material</p>
+                   <!-- <p style="font-size:80%;">Accepted file types: jpg, png, pdf</p>
+                    <p style="font-size:90%;">These will be used for promotional material</p>-->
                      </apex:outputPanel>                    
                 </apex:pageBlockSection>
                 <apex:variable var="count" value="{!count + 1}"/>
                </apex:repeat>
             
-         <p style="font-size:100%;"><br></br><b>Stall Display</b><br></br><br></br></p>
+         <p style="font-size:100%;"><br></br><b>Please upload an image of your proposed stall display</b><br></br><br></br></p>
          <apex:inputFile style="width:100%" id="fileToUpload3" value="{!AppSub.fileBody3}" filename="{!AppSub.fileName3}" /> 
          <p style="font-size:100%;"><br></br><b>Please upload an Australian Drivers Licence or passport*</b><br></br><br></br></p>
          <apex:inputFile style="width:100%" id="fileToUpload4" value="{!AppSub.fileBody4}" filename="{!AppSub.fileName4}" />
          <p style="font-size:100%;"><br></br><b>Please upload your Food Act Registration*</b><br></br><br></br></p>
          <apex:inputFile style="width:100%" id="fileToUpload5" value="{!AppSub.fileBody5}" filename="{!AppSub.fileName5}" /> 
          <p style="font-size:100%;"><br></br><b>Please upload your Food Safety Supervisor Certificate*</b><br></br><br></br></p>
-         <apex:inputFile style="width:100%" id="fileToUpload6" value="{!AppSub.fileBody6}" filename="{!AppSub.fileName6}" />
+         <apex:inputFile style="width:100%" id="fileToUpload6" value="{!AppSub.fileBody6}" filename="{!AppSub.fileName6}" /><br></br>
          <apex:inputField value="{!AppSub.weblead.Additional_Information__c}" style="width:50%;"/> 
          
          

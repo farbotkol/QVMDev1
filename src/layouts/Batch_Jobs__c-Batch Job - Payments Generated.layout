@@ -77,6 +77,17 @@
         <fields>QuickBook_Id__c</fields>
         <relatedList>Payment__c.Batch_Jobs__c</relatedList>
     </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Account__c</fields>
+        <fields>Account_Business__c</fields>
+        <fields>Balance__c</fields>
+        <fields>DocNumber__c</fields>
+        <fields>Invoice_QuickBookId__c</fields>
+        <fields>TotalAmount__c</fields>
+        <fields>Type__c</fields>
+        <relatedList>Transaction__c.Batch_Jobs__c</relatedList>
+    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>

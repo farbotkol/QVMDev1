@@ -15,7 +15,7 @@ public without sharing class Constants
 
     public static final String ADMIN_PROFILE ='System Administrator';
     
-    public static final String NO_AUSTRALIAN_LICENSE = 'ERROR: Please select Australian License';
+    public static final String NO_AUSTRALIAN_LICENSE = 'ERROR: Please upload a valid drivers license';
     public static final String NO_OPERATING_EXPENSE = 'ERROR: Please upload your total anticipated operating expenses for the event';
     public static final String NO_REVENUE_FILE = 'ERROR: Please upload your is the total anticipated revenue from your event';
     public static final String NO_BUDGET_FILE = 'ERROR: Please attach a copy of your budget showing any anticipated profit to this application';

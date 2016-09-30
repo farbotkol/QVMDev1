@@ -52,7 +52,7 @@ public class DownloadABAFileController
     
     public DownloadABAFileController( ApexPages.StandardController stdController )
     {        
-		batchlobObj = (Batch_Jobs__c)stdController.getRecord();      
+        batchlobObj = (Batch_Jobs__c)stdController.getRecord();      
         recId = stdController.getRecord().Id;
         paymentList = new List<Payment__c>();
         updatedPaymentList = new List<Payment__c>();
@@ -90,18 +90,18 @@ public class DownloadABAFileController
             processingDate = string.valueof(day + month + year).rightPad(maxLengthDate);
              Integer footerTotalAmount = 0;
             //Detail section Formatting
-             paymentList = [SELECT Total_Amount__c,Account__r.Name,Account__r.BSB_Number__c,Account__r.Bank_Account_Number__c FROM Payment__c where Batch_Jobs__c =:recId];
+             paymentList = [SELECT Total_Amount__c,Account__r.Name,BSB_Number__c,Bank_Account_Number__c FROM Payment__c where Batch_Jobs__c =:recId];
              for(Payment__c paymentObj : paymentList )
              {
-                 if ( paymentObj.Account__r.BSB_Number__c == null)
-                 	paymentObj.Account__r.BSB_Number__c = '000-000';
-                 if ( paymentObj.Account__r.Bank_Account_Number__c == null)
+                 if ( paymentObj.BSB_Number__c == null ||paymentObj.BSB_Number__c == 'null')
+                    paymentObj.BSB_Number__c = '000-000';
+                 if ( paymentObj.Bank_Account_Number__c == null || paymentObj.Bank_Account_Number__c == 'null' )
                  {
-                     paymentObj.Account__r.Bank_Account_Number__c = '         ';   
+                     paymentObj.Bank_Account_Number__c = '         ';   
                  }                                                   
                  else
                  {
-                     paymentObj.Account__r.Bank_Account_Number__c = paymentObj.Account__r.Bank_Account_Number__c.right(maxlengthAccountNumber).leftPad(maxlengthAccountNumber);
+                     paymentObj.Bank_Account_Number__c = paymentObj.Bank_Account_Number__c.right(maxlengthAccountNumber).leftPad(maxlengthAccountNumber);
                  }
                      
                  Integer nTotalValue = Integer.valueOf(paymentObj.Total_Amount__c * 100); // total value without '$' 
@@ -113,7 +113,7 @@ public class DownloadABAFileController
              }             
              // Custom setting's values for detail section
              lodgementReference = qvmABAFileObj.Lodgement_Reference__c.left(maxLengthlodgementReference).rightPad(maxLengthlodgementReference);
-             if(qvmABAFileObj.BSB_Number__c == null )
+             if(qvmABAFileObj.BSB_Number__c == null || qvmABAFileObj.BSB_Number__c == 'null')
              {
                  bsbNumber = '000-000';
              }
@@ -121,13 +121,13 @@ public class DownloadABAFileController
              {
                 bsbNumber = qvmABAFileObj.BSB_Number__c;
              }
-             if ( qvmABAFileObj.Account_Number__c == null )
+             if ( qvmABAFileObj.Account_Number__c == null || qvmABAFileObj.Account_Number__c == 'null')
              {
-             	accountNumber = '         ';   
+                accountNumber = '         ';   
              }                                                   
              else
              {
-             	accountNumber = qvmABAFileObj.Account_Number__c.right(maxlengthAccountNumber).leftPad(maxlengthAccountNumber);
+                accountNumber = qvmABAFileObj.Account_Number__c.right(maxlengthAccountNumber).leftPad(maxlengthAccountNumber);
              }
              nameOfRemitter = qvmABAFileObj.Name_of_Remitter__c.left(maxlengthNameOfRemitter).rightPad(maxlengthNameOfRemitter); 
             

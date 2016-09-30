@@ -293,7 +293,7 @@ public without sharing class ApplicationSubmissionExtension
                urlParameter == 'RetailTenancy' || urlParameter == 'ModularRetailUnit' || urlParameter == 'NightMarketSpecialityStalls' ||
                urlParameter == 'NightMarketFoodVendor' )
             {
-                ApexPages.Message checkLicense = new ApexPages.Message(ApexPages.Severity.ERROR,'ERROR: Please select Australian License');
+                ApexPages.Message checkLicense = new ApexPages.Message(ApexPages.Severity.ERROR,'ERROR: Please upload a valid drivers license');
                 ApexPages.addMessage(checkLicense);                
                 retVal = false;
             }                        

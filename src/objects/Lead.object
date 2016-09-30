@@ -895,24 +895,20 @@ MID(TEXT( Campaign__r.EndDate ), 9, 2)&amp;&quot;/&quot;&amp; MID(TEXT( Campaign
         <externalId>false</externalId>
         <inlineHelpText>Do you use charcoal or any other smoke generating cooking methods? Please describe in detail*</inlineHelpText>
         <label>Other Cooking Methods</label>
-        <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Other_Equipments__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Please itemise the equipment with amps/watts and other electrical equipment used in your operation.*</inlineHelpText>
         <label>Other Equipments</label>
-        <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Other_Product_Made_Place__c</fullName>
@@ -946,7 +942,7 @@ MID(TEXT( Campaign__r.EndDate ), 9, 2)&amp;&quot;/&quot;&amp; MID(TEXT( Campaign
         <fullName>Percentage_Of_Ingrediance__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>What percentage of your ingredients are sourced from the Queen Victoria Market?*</inlineHelpText>
-        <label>Percentage Of Ingrediance</label>
+        <label>Percentage Of Ingredience</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
@@ -1050,7 +1046,7 @@ MID(TEXT( Campaign__r.EndDate ), 9, 2)&amp;&quot;/&quot;&amp; MID(TEXT( Campaign
         <picklist>
             <picklistValues>
                 <fullName>Own Store</fullName>
-                <default>true</default>
+                <default>false</default>
             </picklistValues>
             <picklistValues>
                 <fullName>Third Party Retail Stores</fullName>
@@ -1077,12 +1073,12 @@ MID(TEXT( Campaign__r.EndDate ), 9, 2)&amp;&quot;/&quot;&amp; MID(TEXT( Campaign
         <fullName>Product_Price_Range__c</fullName>
         <externalId>false</externalId>
         <label>Product Price Range</label>
-        <precision>18</precision>
+        <length>50</length>
         <required>false</required>
-        <scale>0</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
-        <type>Currency</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Proposed_Date_Duration__c</fullName>
@@ -1118,7 +1114,8 @@ MID(TEXT( Campaign__r.EndDate ), 9, 2)&amp;&quot;/&quot;&amp; MID(TEXT( Campaign
     <fields>
         <fullName>Source_Of_Ingrediance__c</fullName>
         <externalId>false</externalId>
-        <label>Source Of Ingrediance</label>
+        <inlineHelpText>Do you and do you plan to source ingredients from the Queen Victoria Market?*</inlineHelpText>
+        <label>Source Of Ingredients</label>
         <picklist>
             <picklistValues>
                 <fullName>Yes</fullName>
@@ -1153,7 +1150,7 @@ MID(TEXT( Campaign__r.EndDate ), 9, 2)&amp;&quot;/&quot;&amp; MID(TEXT( Campaign
         <picklist>
             <picklistValues>
                 <fullName>Artisan Wares</fullName>
-                <default>true</default>
+                <default>false</default>
             </picklistValues>
             <picklistValues>
                 <fullName>Clothing &amp; Accessories</fullName>
@@ -1367,7 +1364,7 @@ MID(TEXT( Campaign__r.EndDate ), 9, 2)&amp;&quot;/&quot;&amp; MID(TEXT( Campaign
         <picklist>
             <picklistValues>
                 <fullName>Tuesday</fullName>
-                <default>true</default>
+                <default>false</default>
             </picklistValues>
             <picklistValues>
                 <fullName>Thursday</fullName>
@@ -1869,7 +1866,7 @@ MID(TEXT( Campaign__r.EndDate ), 9, 2)&amp;&quot;/&quot;&amp; MID(TEXT( Campaign
             <picklist>Stall_Category__c</picklist>
             <values>
                 <fullName>Artisan Wares</fullName>
-                <default>true</default>
+                <default>false</default>
             </values>
             <values>
                 <fullName>Clothing %26 Accessories</fullName>
@@ -1932,7 +1929,7 @@ MID(TEXT( Campaign__r.EndDate ), 9, 2)&amp;&quot;/&quot;&amp; MID(TEXT( Campaign
             </values>
             <values>
                 <fullName>Tuesday</fullName>
-                <default>true</default>
+                <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -2256,7 +2253,7 @@ MID(TEXT( Campaign__r.EndDate ), 9, 2)&amp;&quot;/&quot;&amp; MID(TEXT( Campaign
             <picklist>Stall_Category__c</picklist>
             <values>
                 <fullName>Artisan Wares</fullName>
-                <default>true</default>
+                <default>false</default>
             </values>
             <values>
                 <fullName>Clothing %26 Accessories</fullName>
@@ -2319,7 +2316,7 @@ MID(TEXT( Campaign__r.EndDate ), 9, 2)&amp;&quot;/&quot;&amp; MID(TEXT( Campaign
             </values>
             <values>
                 <fullName>Tuesday</fullName>
-                <default>true</default>
+                <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -2643,7 +2640,7 @@ MID(TEXT( Campaign__r.EndDate ), 9, 2)&amp;&quot;/&quot;&amp; MID(TEXT( Campaign
             <picklist>Stall_Category__c</picklist>
             <values>
                 <fullName>Artisan Wares</fullName>
-                <default>true</default>
+                <default>false</default>
             </values>
             <values>
                 <fullName>Clothing %26 Accessories</fullName>
@@ -2706,7 +2703,7 @@ MID(TEXT( Campaign__r.EndDate ), 9, 2)&amp;&quot;/&quot;&amp; MID(TEXT( Campaign
             </values>
             <values>
                 <fullName>Tuesday</fullName>
-                <default>true</default>
+                <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -2756,6 +2753,14 @@ MID(TEXT( Campaign__r.EndDate ), 9, 2)&amp;&quot;/&quot;&amp; MID(TEXT( Campaign
         <searchResultsAdditionalFields>LEAD.EMAIL</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWriteTransfer</sharingModel>
+    <validationRules>
+        <fullName>Other_Category_Field_Filled</fullName>
+        <active>true</active>
+        <description>Check Other Category Field Value filled if user select Stall Category as Other.</description>
+        <errorConditionFormula>AND( ISBLANK(Other_Category__c ),  INCLUDES( Stall_Category__c , &quot;Other&quot;))</errorConditionFormula>
+        <errorDisplayField>Other_Category__c</errorDisplayField>
+        <errorMessage>Please enter value in Other Category Field</errorMessage>
+    </validationRules>
     <webLinks>
         <fullName>GoogleMaps</fullName>
         <availability>online</availability>

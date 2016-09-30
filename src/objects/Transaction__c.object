@@ -54,14 +54,16 @@
     <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>Account_Business__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
         <label>Account Business</label>
-        <length>255</length>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Account__c</fullName>
@@ -199,7 +201,6 @@
         <fullName>All</fullName>
         <columns>NAME</columns>
         <columns>Batch_Jobs__c</columns>
-        <columns>Account_Business__c</columns>
         <columns>Account__c</columns>
         <columns>Order__c</columns>
         <columns>Invoice_QuickBookId__c</columns>

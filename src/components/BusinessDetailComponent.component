@@ -6,22 +6,30 @@
 </p><br></br><br></br>
 
 <apex:pageBlockSection columns="2" id="pbs1">
-    <apex:inputField value="{!AppSub.weblead.FirstName}" required="true"/>
-    <apex:inputField value="{!AppSub.weblead.Company}" required="true"/>
-    <apex:inputField value="{!AppSub.weblead.LastName}" required="true"/>   
-    <apex:inputField value="{!AppSub.weblead.ABN__c}" required="true"/>
-    <apex:inputField value="{!AppSub.weblead.Email}" required="true"/>
-    <apex:inputField value="{!AppSub.weblead.Phone}" required="true"/>
-    <apex:inputField value="{!AppSub.weblead.Street}" required="true"/>
-    <apex:inputField value="{!AppSub.weblead.City}" required="true"/>
-    <apex:inputField value="{!AppSub.weblead.State}" required="true"/>
-    <apex:inputField value="{!AppSub.weblead.PostalCode}" required="true"/>
-    <apex:inputField value="{!AppSub.weblead.Country}" required="true"/> 
-    <apex:inputField value="{!AppSub.weblead.Website }"/>        
-    <apex:inputField value="{!AppSub.weblead.Facebook__c}"/>
-    <apex:inputField value="{!AppSub.weblead.Twitter__c}"/> 
-    <apex:inputField value="{!AppSub.weblead.Instagram_Handle__c}"/>
-</apex:pageBlockSection><br></br><br></br>
+    <apex:inputField value="{!AppSub.weblead.FirstName}" required="true" tabOrderHint="1"/>
+    <apex:inputField value="{!AppSub.weblead.Street}" required="true" style="width: 168px;" tabOrderHint="6"/>
+    <apex:inputField value="{!AppSub.weblead.LastName}" required="true" tabOrderHint="2"/> 
+    <apex:inputField value="{!AppSub.weblead.City}" required="true" tabOrderHint="7"/>   
+    <apex:inputField value="{!AppSub.weblead.Phone}" required="true" tabOrderHint="3"/>
+    <apex:inputField value="{!AppSub.weblead.State}" required="true" tabOrderHint="8"/>  
+    <apex:inputField value="{!AppSub.weblead.MobilePhone}" tabOrderHint="4"/>
+    <apex:inputField value="{!AppSub.weblead.PostalCode}" required="true" tabOrderHint="9"/>
+    <apex:inputField value="{!AppSub.weblead.Email}" required="true" tabOrderHint="5"/>       
+    <apex:inputField value="{!AppSub.weblead.Country}" required="true" tabOrderHint="10"/> 
+</apex:pageBlockSection>
+
+<apex:outputPanel layout="block" styleClass="custom1">
+<apex:pageBlockSection columns="2" id="pbs5" title="Company Information" >   
+    <apex:inputField value="{!AppSub.weblead.Company}" required="true" tabOrderHint="11"/>
+    <apex:inputField value="{!AppSub.weblead.ABN__c}" required="true" tabOrderHint="14"/>
+    <apex:inputField value="{!AppSub.weblead.Website }" tabOrderHint="12"/>        
+    <apex:inputField value="{!AppSub.weblead.Facebook__c}" tabOrderHint="15"/>
+    <apex:inputField value="{!AppSub.weblead.Twitter__c}" tabOrderHint="13"/> 
+    <apex:inputField value="{!AppSub.weblead.Instagram_Handle__c}" tabOrderHint="16"/>
+</apex:pageBlockSection>
+</apex:outputPanel>
+<br></br><br></br>
+
 
 <apex:pageBlockSection rendered="{!$CurrentPage.parameters.type=='SpecialEvents'}" columns="1">
     <apex:outputLabel value="{!$ObjectType.Lead.fields.Business_Experience__c.InlineHelpText}" style="font-weight: bold;"/><br></br>

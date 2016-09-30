@@ -24,15 +24,17 @@
                 <p style="font-size:120%;"><br></br><b>Please upload a minimum of three different images of your proposed product/s*</b></p><br></br>
                                
                 <apex:variable var="count" value="{!1}"/>
+                <p style="font-size:90%;">These will be used for promotional material</p>
+                <p style="font-size:80%;">Accepted file types: jpg, png, pdf</p><br></br>
                 <apex:repeat value="{!AppSub.newAttachments}" var="newAtt">
-                <apex:pageBlockSection columns="1">
+                <apex:pageBlockSection columns="2">
                    <apex:pageBlockSectionItem >
                         <apex:outputLabel value="Product Image">  {!count} </apex:outputLabel>                        
                         <apex:inputFile value="{!newAtt.body}" filename="{!newAtt.name}"/>
                    </apex:pageBlockSectionItem>
                     <apex:outputPanel >
-                    <p style="font-size:80%;">Accepted file types: jpg, png, pdf</p>
-                    <p style="font-size:90%;">These will be used for promotional material</p>
+                   <!-- <p style="font-size:80%;">Accepted file types: jpg, png, pdf</p>
+                    <p style="font-size:90%;">These will be used for promotional material</p>-->
                      </apex:outputPanel>                    
                 </apex:pageBlockSection>
                 <apex:variable var="count" value="{!count + 1}"/>
@@ -51,7 +53,7 @@
        
        <apex:inputField value="{!AppSub.weblead.X1st_Stall_Location_Preference__c}"/>
        <apex:inputField value="{!AppSub.weblead.X2nd_Stall_Location_Preference__c}"/>
-       <apex:inputField value="{!AppSub.weblead.X3rd_Stall_Location_Preference__c}"/>
+       <apex:inputField value="{!AppSub.weblead.X3rd_Stall_Location_Preference__c}"/><br></br>
        <apex:inputField value="{!AppSub.weblead.Additional_Information__c}" style="width:50%;"/><br></br>
        
        

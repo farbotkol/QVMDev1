@@ -4,7 +4,7 @@ public class NewOrderControllerExtTest {
     
     @isTest static  void Test_NewOrderControllerExtAccountInit() {
 
-		TestDataFactory.createStallProductsAndGeneralPriceBook();
+        TestDataFactory.createStallProductsAndGeneralPriceBook();
         TestDataFactory.CreateOAuthServiceEntries();
         Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
         List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1, 'SL');
@@ -20,19 +20,19 @@ public class NewOrderControllerExtTest {
         ref.getParameters().put('retURL',opp.AccountId);
         Test.setCurrentPage(ref);
         
-		ApexPages.StandardSetController std = new ApexPages.StandardSetController(orders);
-		NewOrderControllerExt myNewOrderControllerExt = new NewOrderControllerExt(std);
+        ApexPages.StandardSetController std = new ApexPages.StandardSetController(orders);
+        NewOrderControllerExt myNewOrderControllerExt = new NewOrderControllerExt(std);
         
         PageReference pr = myNewOrderControllerExt.Redirect();
        
-		Test.stopTest();
+        Test.stopTest();
         System.assert(pr != null);
     
     }
     
     @isTest static  void Test_NewOrderControllerExtOppInit() {
 
-		TestDataFactory.createStallProductsAndGeneralPriceBook();
+        TestDataFactory.createStallProductsAndGeneralPriceBook();
         TestDataFactory.CreateOAuthServiceEntries();
         Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
         List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1, 'SL');
@@ -48,12 +48,12 @@ public class NewOrderControllerExtTest {
         ref.getParameters().put('retURL',opp.Id);
         Test.setCurrentPage(ref);
         
-		ApexPages.StandardSetController std = new ApexPages.StandardSetController(orders);
-		NewOrderControllerExt myNewOrderControllerExt = new NewOrderControllerExt(std);
+        ApexPages.StandardSetController std = new ApexPages.StandardSetController(orders);
+        NewOrderControllerExt myNewOrderControllerExt = new NewOrderControllerExt(std);
         
         PageReference pr = myNewOrderControllerExt.Redirect();
        
-		Test.stopTest();
+        Test.stopTest();
         System.assert(pr != null);
     
     }

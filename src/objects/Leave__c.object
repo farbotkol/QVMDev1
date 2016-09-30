@@ -88,6 +88,17 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>UniqueId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <label>UniqueId</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
         <fullName>test__c</fullName>
         <externalId>false</externalId>
         <formula>IF ((VALUE( MID( TEXT(  Now()), 12, 2 )) + 10)&gt; 8, 1, 0)</formula>

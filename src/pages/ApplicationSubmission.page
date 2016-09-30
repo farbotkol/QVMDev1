@@ -8,7 +8,7 @@ Description : VisualForce page for creating lead from public site.
 -->
 
 
-<apex:page standardController="Lead" extensions="ApplicationSubmissionExtension" title="Contact Us" showHeader="false" standardStylesheets="true">
+<apex:page standardController="Lead" extensions="ApplicationSubmissionExtension" title="QVM Forms" showHeader="false" standardStylesheets="true">
 <apex:includeScript value="https://code.jquery.com/jquery-3.1.0.min.js" />
 <apex:pageMessages id="msgbox2"/> 
 <!-- css styles -->
@@ -29,6 +29,26 @@ Description : VisualForce page for creating lead from public site.
     border-width: 5px;
     border-color:#C1C5C7;"
   }
+  
+   th  {
+     text-align: left !important;
+   }
+    
+    .bPageBlock .detailList .data2Col {
+    
+        padding-left: 0px;
+        text-align: left !important;
+        font-weight: bold;
+    }
+    
+    select {
+        width:250px;
+        color: #000;
+    }
+    .custom1 .pbSubheader {
+    background-color: #d9d9d9 !important;
+    }
+    
  </style>
 
 
@@ -40,7 +60,8 @@ Description : VisualForce page for creating lead from public site.
        // alert('inside the loop'+j$("input:checkbox[id$='acceptTermsId']").is(":checked"));
         if(j$("input:checkbox[id$='acceptTermsId']").is(":checked") == false )
         {   
-            alert('Please Accept the conditions before proceeding!!!!!!');                 
+            alert('Please accept our Terms & Conditions before submitting your application!!!!!!'); 
+            //jConfirm('Can you confirm this?', 'Confirmation Dialog');
             return false;
         }
         if(j$("input:checkbox[id$='acceptTermsId']").is(":checked") == true )
@@ -53,10 +74,16 @@ Description : VisualForce page for creating lead from public site.
 
 
 <!--Adding Components for each application form -->    
-
-<apex:form id="formid" >
+<div width="100%">
+    
+ 
+<apex:form id="formid" style="width:900px;margin: 0 auto; ">
+  <div align="Right">
+      <apex:image url="{!URLFOR($Resource.QVMHeaderFooter,
+                  'QVM_headers/QVM_header_1024.jpg')}" height="200" /> 
+    </div>
+   
   <apex:pageBlock id="pbid" >
-
     <c:HeadingComponent />
     <c:BusinessDetailComponent AppSub="{!theController}" />  
     <c:ProductDetailComponentForStall AppSub="{!theController}"/>
@@ -72,5 +99,10 @@ Description : VisualForce page for creating lead from public site.
 <div align="center" >
   <apex:commandButton value="SUBMIT" action="{!saveLead}"  onclick="return confirmation()"/>
 </div>
+    <div align="Right">
+      <apex:image url="{!URLFOR($Resource.QVMHeaderFooter,
+                  'QVM_headers/QVM_footer_1024.jpg')}" height="200" /> 
+    </div>
 </apex:form>
+   </div>
 </apex:page>
