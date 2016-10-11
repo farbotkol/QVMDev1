@@ -137,6 +137,7 @@ public with sharing class QuickBooksConnector {
         oaToken = NULL;
         
         try {
+            system.debug('TTTT user is' + UserInfo.getUserId() );
             oaToken = [
                     SELECT OAuthService__r.Name, OAuthService__r.Access_Token_Url__c,
                         OAuthService__r.Consumer_Key__c, OAuthService__r.Consumer_Secret__c,
@@ -145,6 +146,8 @@ public with sharing class QuickBooksConnector {
                     WHERE Owner__c = :UserInfo.getUserId()
                     AND Token__c = :EncodingUtil.urlEncode(p_Token, 'UTF-8')
                     AND Is_Access__c = false];
+            system.debug('TTTT token is' + oaToken );
+            
         
         } catch(System.QueryException e) {
             return false;

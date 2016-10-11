@@ -378,6 +378,31 @@
                 <default>false</default>
                 <controllingFieldValues>Debtor Management</controllingFieldValues>
             </picklistValues>
+            <picklistValues>
+                <fullName>Branding</fullName>
+                <default>false</default>
+                <controllingFieldValues>Marketing</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Co-op Marketing Program</fullName>
+                <default>false</default>
+                <controllingFieldValues>Marketing</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trader Hub</fullName>
+                <default>false</default>
+                <controllingFieldValues>Marketing</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+                <controllingFieldValues>Marketing</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <controllingFieldValues>Marketing</controllingFieldValues>
+            </picklistValues>
             <restrictedPicklist>true</restrictedPicklist>
             <sorted>false</sorted>
         </picklist>
@@ -673,11 +698,27 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Branding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Co-op Marketing Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Invoice Inquiry</fullName>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Safety Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social Media</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -686,6 +727,10 @@
             </values>
             <values>
                 <fullName>Statement Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trader Hub</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -802,11 +847,27 @@
         <picklistValues>
             <picklist>Sub_Type__c</picklist>
             <values>
+                <fullName>Branding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Co-op Marketing Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Invoice Inquiry</fullName>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Safety Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social Media</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -815,6 +876,10 @@
             </values>
             <values>
                 <fullName>Statement Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trader Hub</fullName>
                 <default>false</default>
             </values>
             <values>

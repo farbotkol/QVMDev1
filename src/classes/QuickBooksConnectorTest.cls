@@ -2,7 +2,8 @@
 public class QuickBooksConnectorTest {
        
         
-        @isTest static void Test_Constructor(){
+        @isTest static void Test_Constructor()
+        {
         
        
             TestDataFactory.CreateOAuthServiceEntries();
@@ -84,4 +85,50 @@ public class QuickBooksConnectorTest {
             Test.stopTest();
            
     }
+    // New modifications...
+     @isTest(SeeAllData=true)
+     static void Test_ConstructorWithotService()
+     {
+        
+         //
+         OAuthService__c service = new OAuthService__c();
+        service.Request_Token_URL__c = 'https://oauth.intuit.com/oauth/v1/get_request_token';
+        service.Authorization_URL__c = 'https://appcenter.intuit.com/Connect/Begin';
+        service.Access_Token_URL__c = 'https://oauth.intuit.com/oauth/v1/get_access_token';
+        service.BaseURL__c = 'https://sandbox-quickbooks.api.intuit.com/v3/company/';
+        service.CallbackUrl__c = 'https://cs31.salesforce.com/apex/QuickBooksLogin';
+        service.Consumer_Key__c = 'qyprdf5ltQR3fLoNbAq8rVXp2Y3cxK';
+        service.Consumer_Secret__c = 'gVblWDndfHuObNQY03aJjUgi7tFqYnQmJzZSsMp3';
+        service.Application_Token__c = 'af18d34bbd246b43c3b9781bd831b85be89b';
+        service.Name = 'QuickBooksAU';
+        
+        insert  service;
+         
+        OAuth_Token__c oaToken = new OAuth_Token__c();
+        oaToken.OAuthService__c = service.Id;
+        //oaToken.OAuthService__r.Consumer_Key__c = service.Consumer_Key__c;
+        //oaToken.OAuthService__r.Consumer_Secret__c = service.Consumer_Secret__c;
+        oaToken.Token__c = 'UTF-8';
+        oaToken.Secret__c = 'qyprdf5ltQR3fLoNbAq8rVXp2';
+        oaToken.Is_Access__c = false;
+        oaToken.Realm_Id__c = '67454209';
+         oaToken.Owner__c = UserInfo.getUserId();
+        
+        insert oaToken;
+         //
+           
+          Test.startTest();
+          QuickBooksConnector qbo = new QuickBooksConnector();
+          service.id = null;
+          //update service;
+          qbo.authorize();
+          Boolean boolValue = qbo.completeAuthorization('UTF-8','UTF-8','67454209');
+          qbo.fixToken();
+          Test.stopTest();
+           
+          System.assert(qbo.service != null);
+
+    }
+    
+    
 }

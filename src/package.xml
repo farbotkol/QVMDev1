@@ -18,6 +18,10 @@
     </types>
     <types>
         <members>*</members>
+        <name>AppMenu</name>
+    </types>
+    <types>
+        <members>*</members>
         <name>ApprovalProcess</name>
     </types>
     <types>
@@ -50,6 +54,10 @@
         <members>Contact</members>
         <members>ContentVersion</members>
         <members>Contract</members>
+        <members>ContractContactRole</members>
+        <members>DuplicateRecordItem</members>
+        <members>DuplicateRecordSet</members>
+        <members>EmailMessage</members>
         <members>Error_Log__c</members>
         <members>Event</members>
         <members>ExchangeUserMapping</members>
@@ -63,6 +71,7 @@
         <members>Invoice__c</members>
         <members>Lead</members>
         <members>Leave__c</members>
+        <members>LinkedArticle</members>
         <members>Macro</members>
         <members>MacroAction</members>
         <members>MacroInstruction</members>
@@ -86,6 +95,8 @@
         <members>QVM_Article__kav</members>
         <members>QVM_LH_FEE_SETTING__c</members>
         <members>QVM_Web_Form_Config__c</members>
+        <members>Quote</members>
+        <members>QuoteLineItem</members>
         <members>Qvm_ABA_File_Generator__c</members>
         <members>Site</members>
         <members>SocialPersona</members>
@@ -118,7 +129,7 @@
         <members>QVM_Email_Templates/Event_Lead_With_Campaign_Auto_Response</members>
         <members>QVM_Email_Templates/PO_Approval</members>
         <members>QVM_Email_Templates/Property_Lead_Auto_Response</members>
-        <members>QVM_Email_Templates/Supplier_Approved_Notice</members>
+        <members>unfiled$public</members>
         <members>unfiled$public/CommunityChangePasswordEmailTemplate</members>
         <members>unfiled$public/CommunityForgotPasswordEmailTemplate</members>
         <members>unfiled$public/CommunityWelcomeEmailTemplate</members>

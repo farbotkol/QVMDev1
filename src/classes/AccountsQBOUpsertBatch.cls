@@ -1,6 +1,11 @@
 global class AccountsQBOUpsertBatch implements Database.Batchable<sObject>,  Database.AllowsCallouts {
 	
 	List<Account> customers;
+    
+    global AccountsQBOUpsertBatch()
+    {
+        
+    }
 
 	
 	global AccountsQBOUpsertBatch(List<Account> items) {

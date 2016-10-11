@@ -283,5 +283,90 @@ public with sharing class QBOCRUDHelper {
         req.setTimeOut(120000);
         HTTPResponse res = http.send(req);
         
-    }  
+    } 
+    
+    @future(callout=true)
+    public static void callReconnectTocken()
+    {
+        try
+        {
+			QBOCRUDHelper ch = new QBOCRUDHelper();
+			ch.reconnectTocken();            
+        }
+        catch (Exception ex)
+        {
+            // ??????
+        }
+        
+    }
+    
+    public boolean reconnectTocken()
+    {
+        //https://appcenter.intuit.com/api/v1/Connection/Reconnect 
+         try
+        {
+            Http h = new Http();
+            
+            HttpRequest req = new HttpRequest();
+            req.setMethod('GET');
+            req.setHeader('Authorization', 'OAuth '+UserInfo.getSessionId());
+            req.setEndPoint('https://appcenter.intuit.com/api/v1/Connection/Reconnect');
+            req.setHeader('Content-Type', 'application/json');
+            req.setHeader('Accept', 'application/json;charset=UTF-8');
+            req.setTimeOut(120000);
+           
+            qbConnector.sign(req);
+            //req.setBody(jsonObj);
+            System.debug('::::: Request = ' + req);
+            
+            HttpResponse res;
+            //if(Test.isRunningTest()) {
+            //    res = new HttpResponse();
+            //} else { 
+            res = h.send(req);
+           // }
+            
+            String responseString = res.getBody();
+            
+            system.debug('$$$$$'+res);
+            System.debug('::::: response = ' + res.getbody());
+            
+            // Check if for errors, if there are errors then return a QBOError instead of expected apexType
+            if (res.getStatusCode() == 200) {
+                QBOReconnect recon = QBOReconnect.parse(responseString);
+                System.debug('::::: response class= ' + recon);
+                if (recon.ErrorCode == 0){
+                    // update current tocken in return true
+                    System.debug('::::: SHOULD UPDATE CURRENT CONNECTED TOCKEN HERE');
+                	OAuth_Token__c  tocken = [SELECT Token__c, Secret__c, Is_Access__c, Realm_Id__c
+                        FROM OAuth_Token__c 
+                        where OAuthService__r.Name = 'QuickBooksAU'                     
+                        Order by CreatedDate DESC
+                        LIMIT 1];
+                   tocken.Token__c = recon.OAuthToken;
+                   tocken.Secret__c = recon.OAuthTokenSecret;
+                 
+                   update tocken;
+                    
+                   System.debug('::::: TOCKEN UPDATED');
+                   return true; 
+                }
+                else{
+                    System.debug('::::: DO NOTHING');
+                    return false;                
+                }
+                
+					
+                 
+            }else{
+                return false;
+               
+            }
+            
+        }
+        catch(Exception ex)
+        {
+            return false;
+        }
+    }
 }

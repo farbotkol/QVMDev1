@@ -43,6 +43,10 @@
                 <behavior>Edit</behavior>
                 <field>Lifestyle_Groups__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Permitted_Use_Color__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -323,6 +327,9 @@
         </quickActionListItems>
     </quickActionList>
     <relatedLists>
+        <relatedList>RelatedContactRoleList</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>NAME</fields>
         <fields>Leave_Date__c</fields>
         <fields>Override__c</fields>
@@ -331,6 +338,8 @@
         <relatedList>Leave__c.Account_Business__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <customButtons>New_Order</customButtons>
+        <excludeButtons>New</excludeButtons>
         <fields>ORDERS.ORDER_NUMBER</fields>
         <fields>ORDERS.EFFECTIVE_DATE</fields>
         <fields>ORDERS.STATUS</fields>

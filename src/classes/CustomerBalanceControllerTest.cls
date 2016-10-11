@@ -182,4 +182,70 @@ public class CustomerBalanceControllerTest {
         System.assert(balance != null);
         
     }
+    
+    @isTest static void Test_GetCustomerBalanceQuickBookIdNull(){
+        UserRole portalRole = [Select Id From UserRole Where PortalType = 'None' Limit 1];
+        system.debug('portalRole is ' + portalRole);
+        User user1;
+        Profile profile1 = [Select Id from Profile where name = 'System Administrator'];
+        User portalAccountOwner1 = new User(
+            UserRoleId = portalRole.Id,
+            ProfileId = profile1.Id,
+            Username = System.now().millisecond() + 'test2@test.com',
+            Alias = 'alias',
+            Email='test.1@example.com',
+            EmailEncodingKey='UTF-8',
+            Firstname='Firstname',
+            Lastname='Lastname',
+            LanguageLocaleKey='en_US',
+            LocaleSidKey='en_GB',
+            TimeZoneSidKey='GMT'
+        );
+        Database.insert(portalAccountOwner1);
+        System.runAs ( portalAccountOwner1 ) {
+            TestDataFactory.CreateOAuthServiceEntries(); 
+            Test.setMock(HttpCalloutMock.class, new Mock());
+            Account portalAccount1 = new Account(
+                Name = 'TestAccount',
+                OwnerId = portalAccountOwner1.Id,
+                QuickBooks_Id__c = null
+            );
+            Database.insert(portalAccount1);
+            
+            Contact contact1 = new Contact(
+                FirstName = 'Firstname',
+                Lastname = 'Lastname',
+                AccountId = portalAccount1.Id,
+                Email = 'test@test.com'
+            );
+            Database.insert(contact1);
+            
+            Profile portalProfile = [SELECT Id FROM Profile WHERE Name='Trader' Limit 1];
+            user1 = new User(
+                Username = 'test12345@test.com',
+                ContactId = contact1.Id,
+                ProfileId = portalProfile.Id,
+                Alias = 'test123',
+                Email = 'test12345@test.com',
+                EmailEncodingKey = 'UTF-8',
+                LastName = 'Lastname',
+                CommunityNickname = 'test12345',
+                TimeZoneSidKey = 'America/Los_Angeles',
+                LocaleSidKey = 'en_GB',
+                LanguageLocaleKey = 'en_US'
+            );
+            Database.insert(user1);
+        }
+        
+        Double balance;
+        Test.startTest();
+        System.runas(user1){
+            Test.setMock(HttpCalloutMock.class, new Mock());                       
+            balance = CustomerBalanceController.getCustomerBalance();
+            
+        }
+        Test.stopTest();
+        System.assert(balance == null);
+        
+    }
 }

@@ -31,6 +31,30 @@ global class AccountQBOHelper {
             return null;
     }
     
+    Webservice  static string GetPOQBOUrl(Id qbID)
+    {
+        System.debug('JJJ'+qbID);
+        String qboUrl = GetQBOUrl();
+        String qboId = [SELECT QuickBooksId__c FROM Order WHERE Id = :qbID].QuickBooksId__c;
+        if(qboId != null ){            
+            return qboUrl+'/app/purchaseorder?txnId='+qboId;            
+        }
+        else
+            return null;
+    }
+    
+    Webservice  static string GetPaymentQBOUrl(Id qbID)
+    {
+        System.debug('JJJ'+qbID);
+        String qboUrl = GetQBOUrl();
+        String qboId = [SELECT QuickBook_Id__c FROM Payment__c WHERE Id = :qbID].QuickBook_Id__c;
+        if(qboId != null ){            
+            return qboUrl+'/app/recvpayment?txnId='+qboId;            
+        }
+        else
+            return null;
+    }
+    
     Webservice  static string GetQBOUrl(){
         String qboUrl = [SELECT QuickBooks_URL__c FROM OAuthService__c LIMIT 1].QuickBooks_URL__c;
         return qboUrl;

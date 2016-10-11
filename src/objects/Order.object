@@ -97,6 +97,16 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Balance_Due__c</fullName>
+        <externalId>false</externalId>
+        <label>Balance Due</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>Batch_Job__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -236,6 +246,16 @@
     </fields>
     <fields>
         <fullName>TotalAmount</fullName>
+    </fields>
+    <fields>
+        <fullName>Total_With_GST__c</fullName>
+        <externalId>false</externalId>
+        <label>Total With GST</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Total__c</fullName>
@@ -429,20 +449,20 @@ window.location.reload();</url>
         <fullName>Open_PO_in_QuickBooks</fullName>
         <availability>online</availability>
         <displayType>link</displayType>
-        <encodingKey>UTF-8</encodingKey>
-        <hasMenubar>false</hasMenubar>
-        <hasScrollbars>true</hasScrollbars>
-        <hasToolbar>false</hasToolbar>
-        <height>600</height>
-        <isResizable>true</isResizable>
-        <linkType>url</linkType>
+        <linkType>javascript</linkType>
         <masterLabel>Open PO in QuickBooks</masterLabel>
-        <openType>newWindow</openType>
-        <position>none</position>
+        <openType>onClickJavaScript</openType>
         <protected>false</protected>
-        <showsLocation>false</showsLocation>
-        <showsStatus>false</showsStatus>
-        <url>https://sandbox.qbo.intuit.com/app/purchaseorder?txnId={!Order.QuickBooksId__c}</url>
+        <url>{!REQUIRESCRIPT(&apos;/soap/ajax/31.0/connection.js&apos;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/31.0/apex.js&quot;)}
+
+
+
+var qboURL = sforce.apex.execute(&quot;AccountQBOHelper&quot;,&quot;GetPOQBOUrl&quot;,{qbID:&quot;{!Order.Id}&quot;});
+
+window.open(qboURL);
+
+//https://sandbox.qbo.intuit.com/app/purchaseorder?txnId={!Order.QuickBooksId__c}</url>
     </webLinks>
     <webLinks>
         <fullName>Open_in_QuickBooks</fullName>

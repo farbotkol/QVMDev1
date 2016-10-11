@@ -112,6 +112,56 @@ public class TestScraps {
         
         QBOInvoiceResponse qir = new QBOInvoiceResponse();
     }
+    // ------new changes
+     @isTest 
+    static void Test_LogBatchJobError()
+    {
+        TestDataFactory.CreateOAuthServiceEntries();
+        Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
+        TestDataFactory.createStallProductsAndGeneralPriceBook();
+        Batch_Jobs__c batchJob = TestDataFactory.createSLBatchJob();
+        
+        MyException e = new MyException() ;        
+        test.startTest();
+       
+        Error_Log__c log = ErrorLogHelper.LogBatchJobError(batchJob.Id,e);
+        
+        test.stopTest();
+        
+        System.assert(log != null);
+        
+    }
+    
+    @isTest 
+    static void Test_LogOrderItemError()
+    {
+        TestDataFactory.CreateOAuthServiceEntries();
+        Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
+        TestDataFactory.createStallProductsAndGeneralPriceBook();
+        Order order = TestDataFactory.createPO();
+        
+        order.PO_Approved__c = true;
+        update order;
+        
+        OrderItem item = [SELECT id from OrderItem Limit 1];
+        
+        
+        MyException e = new MyException() ;        
+        test.startTest();
+       
+        Error_Log__c log = ErrorLogHelper.LogOrderItemError(item,e);
+        
+        test.stopTest();
+        
+        System.assert(log != null);
+        
+    }
+    
+    public class MyException extends Exception
+    {
+        
+    }
+
     
     
 }

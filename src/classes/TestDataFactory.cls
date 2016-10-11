@@ -379,6 +379,27 @@ public class TestDataFactory {
         return bj;
        
     }
+    public static void createOrder(String recordType)
+    {
+    	List<Account> accounts = [SELECT Id from Account];
+        Id PriceBookId = Test.getStandardPricebookId();
+        if(recordType == 'SL' || recordType == 'PE' ) 
+        {
+            PriceBook2 PriceBook = [select Id from PriceBook2 where Name = 'General Merchandise' limit 1];
+            PriceBookId = PriceBook.Id;
+        }
+        Opportunity opp = [SELECT ID FROM Opportunity LIMIT 1];
+        Order orderObj = new Order();
+        orderObj.OpportunityId = opp.Id;
+        orderObj.AccountId = accounts.get(0).Id;
+        orderObj.Status = 'Draft';
+        orderObj.EffectiveDate = Date.today();
+        orderObj.PriceBook2Id = PriceBookId;
+        orderObj.QuickBooksId__c = '33876';
+        orderObj.Balance_Due__c = 0.00;
+        orderObj.Total_With_GST__c = 0.00;
+        insert orderObj;
+    }
     
     public static List<OrderItem> createOrderItemWithLeave(Integer numOrderItems, String recordType)
     {
@@ -788,5 +809,61 @@ public class TestDataFactory {
         orderObj.
         return createOrder;
     }*/
+    
+    public static Account createAccountTrader()
+    {
+        Schema.DescribeSObjectResult acccCfrSchema = Schema.SObjectType.Account; 
+        Map<String,Schema.RecordTypeInfo> accRecordTypeInfo = acccCfrSchema.getRecordTypeInfosByName(); 
+        Id accRecordTypeId = accRecordTypeInfo.get('Trader').getRecordTypeId();        
+        Account a = new Account(Name='TestAccount1');
+        a.RecordTypeId = accRecordTypeId;
+        a.QuickBooks_Id__c =  '100';
+        return a;
+   }
+    //Create Account Supplier.
+    public static Account createAccountSupplier()
+    {
+        Schema.DescribeSObjectResult acccCfrSchema = Schema.SObjectType.Account; 
+        Map<String,Schema.RecordTypeInfo> accRecordTypeInfo = acccCfrSchema.getRecordTypeInfosByName(); 
+        Id accRecordTypeId = accRecordTypeInfo.get('Supplier').getRecordTypeId();        
+        Account a = new Account(Name='TestAccount2');
+        a.RecordTypeId = accRecordTypeId;
+        a.QuickBooks_Id__c =  '101';
+        return a;
+   }
+   // Create Order.
+    public static order createOrder()
+    {
+        Opportunity opp = [SELECT ID FROM Opportunity LIMIT 1];
+        List<Account> accounts = [SELECT Id from Account];
+        PriceBook2 PriceBook = [select Id from PriceBook2 limit 1];
+        Order orderObj = new Order();
+        orderObj.OpportunityId = opp.Id;
+        orderObj.AccountId = accounts.get(0).Id;
+        orderObj.Status = 'Draft';
+        orderObj.EffectiveDate = Date.today();
+        orderObj.PriceBook2Id = PriceBook.Id;
+        orderObj.QuickBooksId__c = '100';
+        insert orderObj;
+        return orderObj;
+    }
+     // Create Order.
+    public static order createOrderQuickBookIdNull()
+    {
+        Opportunity opp = [SELECT ID FROM Opportunity LIMIT 1];
+        List<Account> accounts = [SELECT Id from Account];
+        PriceBook2 PriceBook = [select Id from PriceBook2 limit 1];
+        Order orderObj = new Order();
+        orderObj.OpportunityId = opp.Id;
+        orderObj.AccountId = accounts.get(0).Id;
+        orderObj.Status = 'Draft';
+        orderObj.EffectiveDate = Date.today();
+        orderObj.PriceBook2Id = PriceBook.Id;
+        orderObj.QuickBooksId__c = null;
+        insert orderObj;
+        return orderObj;
+    }
+    
+    
     
 }

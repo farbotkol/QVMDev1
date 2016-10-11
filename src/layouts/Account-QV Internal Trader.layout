@@ -54,6 +54,10 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>OwnerId</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>RecordTypeId</field>
             </layoutItems>
             <layoutItems>
@@ -276,10 +280,13 @@
     </relatedLists>
     <relatedLists>
         <fields>FULL_NAME</fields>
-        <fields>CONTACT.TITLE</fields>
-        <fields>CONTACT.EMAIL</fields>
         <fields>CONTACT.PHONE1</fields>
+        <fields>CONTACT.PHONE3</fields>
+        <fields>CONTACT.EMAIL</fields>
         <relatedList>RelatedContactList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <relatedList>RelatedAccountContactRoleList</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>OPPORTUNITY.NAME</fields>
@@ -357,6 +364,66 @@
     <relatedLists>
         <fields>NAME</fields>
         <relatedList>Payment__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RECORDTYPE</fields>
+        <fields>Batch_Type__c</fields>
+        <fields>Process_Range__c</fields>
+        <fields>From_Date__c</fields>
+        <fields>To_Date__c</fields>
+        <fields>Week_Month_Of__c</fields>
+        <fields>CREATEDBY_USER</fields>
+        <fields>CREATED_DATE</fields>
+        <relatedList>Batch_Jobs__c.Account_1__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RECORDTYPE</fields>
+        <fields>Batch_Type__c</fields>
+        <fields>Process_Range__c</fields>
+        <fields>From_Date__c</fields>
+        <fields>To_Date__c</fields>
+        <fields>Week_Month_Of__c</fields>
+        <fields>CREATEDBY_USER</fields>
+        <fields>CREATED_DATE</fields>
+        <relatedList>Batch_Jobs__c.Account_2__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RECORDTYPE</fields>
+        <fields>Batch_Type__c</fields>
+        <fields>Process_Range__c</fields>
+        <fields>From_Date__c</fields>
+        <fields>To_Date__c</fields>
+        <fields>Week_Month_Of__c</fields>
+        <fields>CREATEDBY_USER</fields>
+        <fields>CREATED_DATE</fields>
+        <relatedList>Batch_Jobs__c.Account_3__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RECORDTYPE</fields>
+        <fields>Batch_Type__c</fields>
+        <fields>Process_Range__c</fields>
+        <fields>From_Date__c</fields>
+        <fields>To_Date__c</fields>
+        <fields>Week_Month_Of__c</fields>
+        <fields>CREATEDBY_USER</fields>
+        <fields>CREATED_DATE</fields>
+        <relatedList>Batch_Jobs__c.Account_4__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RECORDTYPE</fields>
+        <fields>Batch_Type__c</fields>
+        <fields>Process_Range__c</fields>
+        <fields>From_Date__c</fields>
+        <fields>To_Date__c</fields>
+        <fields>Week_Month_Of__c</fields>
+        <fields>CREATEDBY_USER</fields>
+        <fields>CREATED_DATE</fields>
+        <relatedList>Batch_Jobs__c.Account_5__c</relatedList>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>

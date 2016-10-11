@@ -12,7 +12,7 @@ trigger OrderTrigger on Order (after update, before insert ) {
          }
     }
 
-    
+    // set default price book for POs
     if(trigger.isInsert && trigger.isBefore) {
         Id priceBookId = [SELECT Id FROM Pricebook2 WHERE PO_Pricebook__c = true LIMIT 1].Id;
         Id PORecordTypeID = Schema.SObjectType.Order.getRecordTypeInfosByName().get('Accounts Payable').getRecordTypeId();

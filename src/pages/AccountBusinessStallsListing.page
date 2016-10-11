@@ -5,7 +5,7 @@
 		<apex:pageBlockTable value="{!StallsFromQuery}" var="stall" columnsWidth="23%,11%,11%,11%,11%,11%,11%,11%"> 
 			<apex:column > 
 				<apex:facet name="header">Stall Name</apex:facet> 
-				<apex:outputText value="{!stall.Name}"/> 
+                <apex:outputLink value="/{!stall.id}" target="_parent">{!stall.Name}</apex:outputLink> 
 				<apex:facet name="footer">
                    <apex:inputField id="stall" value="{!Record.Stall__c}"/>
                 </apex:facet>

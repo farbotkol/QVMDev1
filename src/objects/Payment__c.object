@@ -177,4 +177,20 @@
     <pluralLabel>Payments</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Open_In_QuickBooks</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Open In QuickBooks</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&apos;/soap/ajax/31.0/connection.js&apos;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/31.0/apex.js&quot;)}
+
+
+var qboURL = sforce.apex.execute(&quot;AccountQBOHelper&quot;,&quot;GetPaymentQBOUrl&quot;,{qbID:&quot;{!Payment__c.Id}&quot;});
+
+window.open(qboURL);</url>
+    </webLinks>
 </CustomObject>

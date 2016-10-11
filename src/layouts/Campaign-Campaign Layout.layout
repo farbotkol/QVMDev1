@@ -231,6 +231,9 @@
         <fields>OPPORTUNITY.CLOSE_DATE</fields>
         <relatedList>Opportunity.Campaign__c</relatedList>
     </relatedLists>
+    <relatedLists>
+        <relatedList>RelatedAttachmentList</relatedList>
+    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>

@@ -5,8 +5,10 @@
 // and so can only be parsed with explicitly generated code, this option
 // was auto selected for you.
 
-public class QBOError {
-	public static void consumeObject(JSONParser parser) {
+public class QBOError 
+{
+	public static void consumeObject(JSONParser parser) 
+    {
 		Integer depth = 0;
 		do {
 			JSONToken curr = parser.getCurrentToken();
@@ -22,7 +24,8 @@ public class QBOError {
 
 	public Fault Fault {get;set;} 
 
-	public QBOError(JSONParser parser) {
+	public QBOError(JSONParser parser)
+    {
 		while (parser.nextToken() != JSONToken.END_OBJECT) {
 			if (parser.getCurrentToken() == JSONToken.FIELD_NAME) {
 				String text = parser.getText();

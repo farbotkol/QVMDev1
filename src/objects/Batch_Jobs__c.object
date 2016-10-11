@@ -53,6 +53,66 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
+        <fullName>Account_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account 1</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Batch Jobs</relationshipLabel>
+        <relationshipName>Batch_Jobs</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account 2</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Batch Jobs (Account2)</relationshipLabel>
+        <relationshipName>Batch_Jobs1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account 3</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Batch Jobs (Account3)</relationshipLabel>
+        <relationshipName>Batch_Jobs2</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_4__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account 4</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Batch Jobs (Account 4)</relationshipLabel>
+        <relationshipName>Batch_Jobs3</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_5__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account 5</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Batch Jobs (Account 5)</relationshipLabel>
+        <relationshipName>Batch_Jobs4</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Batch_Type__c</fullName>
         <description>The type of Licence that will be processed for this batch. Currently there are three types (SL(Monthy), PE (Weekly), LH(Monthy)</description>
         <externalId>false</externalId>
@@ -731,6 +791,69 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
         <fullName>New_Payments</fullName>
         <active>true</active>
         <label>New Payments</label>
+        <picklistValues>
+            <picklist>Batch_Type__c</picklist>
+            <values>
+                <fullName>CWW Annual Parks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CWW Qtr Drainage Charge</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CWW Water Usage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 1st Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 2nd Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 3rd Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 4th Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Metered Water %24</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Process_Range__c</picklist>
+            <values>
+                <fullName>Month</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Week</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>New_Payments_From_Accounts</fullName>
+        <active>true</active>
+        <label>New Payments From Accounts</label>
         <picklistValues>
             <picklist>Batch_Type__c</picklist>
             <values>

@@ -55,6 +55,10 @@
                 <behavior>Edit</behavior>
                 <field>Lifestyle_Groups__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Permitted_Use_Color__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -231,6 +235,9 @@
             <quickActionName>FeedItem.PollPost</quickActionName>
         </quickActionListItems>
     </quickActionList>
+    <relatedLists>
+        <relatedList>RelatedContactRoleList</relatedList>
+    </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
         <relatedList>Leave__c.Account_Business__c</relatedList>

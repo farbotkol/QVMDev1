@@ -17,7 +17,7 @@ global class PaymentBuilderBatch implements Database.Batchable<sObject>, Databas
         List<Error_Log__c> errorLogsToInsert = new List<Error_Log__c>();
         QBOCRUDHelper crudHelper = new QBOCRUDHelper();	
         List<Payment__c> paymentsToUpdate = new List<Payment__c>();
-                
+        system.debug('Scope:size' + scope.size());        
         for(Payment__c payment:scope) 
         {
             try{
@@ -46,6 +46,7 @@ global class PaymentBuilderBatch implements Database.Batchable<sObject>, Databas
                 
            
         }
+        System.debug('RRR:Payment before update' + paymentsToUpdate.size());
         insert  paymentsToUpdate;
         if (errorLogsToInsert.size() > 0){
             insert  errorLogsToInsert;

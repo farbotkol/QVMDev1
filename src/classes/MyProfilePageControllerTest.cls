@@ -44,4 +44,34 @@
             System.assert(existingPortalUser.fax == randFax);
         }
     }
+    static testMethod void testSaveAsGUEST()
+    {
+       Profile p = [SELECT Id FROM Profile WHERE Name='Standard User'];
+
+       User u = new User(Alias = 'standt1', Email='guestuser@testorg.com',EmailEncodingKey='UTF-8', LastName='Testing',
+                             LanguageLocaleKey='en_US',LocaleSidKey='en_US', ProfileId = p.Id,
+							 TimeZoneSidKey='America/Los_Angeles', UserName='guestuser@testorg.com');
+        
+        System.runAs(u) 
+        {
+            MyProfilePageController controller = new MyProfilePageController();
+            controller.save();
+        }
+    }
+    static testMethod void testSaveAsException()
+    {
+       Profile p = [SELECT Id FROM Profile WHERE Name='Standard User'];
+
+       User u = new User(Alias = 'standt1', Email='guestuser@testorg.com',EmailEncodingKey='UTF-8', LastName='Testing',
+                             LanguageLocaleKey='en_US',LocaleSidKey='en_US', ProfileId = p.Id,
+							 TimeZoneSidKey='America/Los_Angeles', UserName='guestuser@testorg.com');
+        
+        System.runAs(u) 
+        {
+            
+            MyProfilePageController controller = new MyProfilePageController();
+            controller.user.UserName = null;
+            controller.save();
+        }
+    }
 }

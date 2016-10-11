@@ -89,6 +89,9 @@
         <fields>SALES.ACCOUNT.NAME</fields>
         <fields>ORDERS.STATUS</fields>
         <fields>ORDERS.TOTAL_AMOUNT</fields>
+        <fields>QuickBooksId__c</fields>
+        <fields>Total_With_GST__c</fields>
+        <fields>Balance_Due__c</fields>
         <relatedList>Order.Batch_Job__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>

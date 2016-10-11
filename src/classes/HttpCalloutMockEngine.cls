@@ -454,6 +454,196 @@ public class HttpCalloutMockEngine implements HttpCalloutMock{
         '}';
          res.setBody(json);
         }
+        if(req.getEndpoint().contains('query?query=select%20line%20from%20payment%20where%20Id%20IN'))
+        {
+            String json = '{'+
+		'  \"QueryResponse\": {'+
+		'    \"Payment\": ['+
+		'      {'+
+		'        \"CustomerRef\": {'+
+		'          \"value\": \"1423\",'+
+		'          \"name\": \"Commonwealth Bank of Australia\"'+
+		'        },'+
+		'        \"DepositToAccountRef\": {'+
+		'          \"value\": \"185\"'+
+		'        },'+
+		'        \"TotalAmt\": 1311.08,'+
+		'        \"UnappliedAmt\": 0,'+
+		'        \"ProcessPayment\": false,'+
+		'        \"domain\": \"QBO\",'+
+		'        \"sparse\": false,'+
+		'        \"Id\": \"33898\",'+
+		'        \"SyncToken\": \"0\",'+
+		'        \"MetaData\": {'+
+		'          \"CreateTime\": \"2016-10-03T11:42:04-07:00\",'+
+		'          \"LastUpdatedTime\": \"2016-10-03T11:42:04-07:00\"'+
+		'        },'+
+		'        \"TxnDate\": \"2016-10-04\",'+
+		'        \"CurrencyRef\": {'+
+		'          \"value\": \"AUD\",'+
+		'          \"name\": \"Australian Dollar\"'+
+		'        },'+
+		'        \"Line\": ['+
+		'          {'+
+		'            \"Amount\": 1311.08,'+
+		'            \"LinkedTxn\": ['+
+		'              {'+
+		'                \"TxnId\": \"29656\",'+
+		'                \"TxnType\": \"Invoice\"'+
+		'              }'+
+		'            ],'+
+		'            \"LineEx\": {'+
+		'              \"any\": ['+
+		'                {'+
+		'                  \"name\": \"{http://schema.intuit.com/finance/v3}NameValue\",'+
+		'                  \"declaredType\": \"com.intuit.schema.finance.v3.NameValue\",'+
+		'                  \"scope\": \"javax.xml.bind.JAXBElement$GlobalScope\",'+
+		'                  \"value\": {'+
+		'                    \"Name\": \"txnId\",'+
+		'                    \"Value\": \"29656\"'+
+		'                  },'+
+		'                  \"nil\": false,'+
+		'                  \"globalScope\": true,'+
+		'                  \"typeSubstituted\": false'+
+		'                },'+
+		'                {'+
+		'                  \"name\": \"{http://schema.intuit.com/finance/v3}NameValue\",'+
+		'                  \"declaredType\": \"com.intuit.schema.finance.v3.NameValue\",'+
+		'                  \"scope\": \"javax.xml.bind.JAXBElement$GlobalScope\",'+
+		'                  \"value\": {'+
+		'                    \"Name\": \"txnOpenBalance\",'+
+		'                    \"Value\": \"1311.08\"'+
+		'                  },'+
+		'                  \"nil\": false,'+
+		'                  \"globalScope\": true,'+
+		'                  \"typeSubstituted\": false'+
+		'                },'+
+		'                {'+
+		'                  \"name\": \"{http://schema.intuit.com/finance/v3}NameValue\",'+
+		'                  \"declaredType\": \"com.intuit.schema.finance.v3.NameValue\",'+
+		'                  \"scope\": \"javax.xml.bind.JAXBElement$GlobalScope\",'+
+		'                  \"value\": {'+
+		'                    \"Name\": \"txnReferenceNumber\",'+
+		'                    \"Value\": \"00006359\"'+
+		'                  },'+
+		'                  \"nil\": false,'+
+		'                  \"globalScope\": true,'+
+		'                  \"typeSubstituted\": false'+
+		'                }'+
+		'              ]'+
+		'            }'+
+		'          }'+
+		'        ]'+
+		'      }'+
+		'    ],'+
+		'    \"startPosition\": 1,'+
+		'    \"maxResults\": 1'+
+		'  },'+
+		'  \"time\": \"2016-10-04T18:05:15.848-07:00\"'+
+		'}';
+            res.setBody(json);
+        }
+        if(req.getEndpoint().contains('query?query=select%20Id%2CTotalAmt%2CBalance%20from%20INVOICE%20where%20Id%20IN'))
+        {
+            String json = '{'+
+		'  \"QueryResponse\": {'+
+		'    \"Invoice\": ['+
+		'      {'+
+		'        \"Deposit\": 0,'+
+		'        \"AllowIPNPayment\": false,'+
+		'        \"AllowOnlinePayment\": false,'+
+		'        \"AllowOnlineCreditCardPayment\": false,'+
+		'        \"AllowOnlineACHPayment\": false,'+
+		'        \"domain\": \"QBO\",'+
+		'        \"sparse\": false,'+
+		'        \"Id\": \"33876\",'+
+		'        \"SyncToken\": \"1\",'+
+		'        \"MetaData\": {'+
+		'          \"CreateTime\": \"2016-09-27T22:37:07-07:00\",'+
+		'          \"LastUpdatedTime\": \"2016-09-28T22:25:15-07:00\"'+
+		'        },'+
+		'        \"CustomField\": ['+
+		'          {'+
+		'            \"DefinitionId\": \"1\",'+
+		'            \"Name\": \"Event Rep\",'+
+		'            \"Type\": \"StringType\"'+
+		'          }'+
+		'        ],'+
+		'        \"DocNumber\": \"00010973\",'+
+		'        \"TxnDate\": \"2016-09-28\",'+
+		'        \"CurrencyRef\": {'+
+		'          \"value\": \"AUD\",'+
+		'          \"name\": \"Australian Dollar\"'+
+		'        },'+
+		'        \"LinkedTxn\": ['+
+		'          {'+
+		'            \"TxnId\": \"33896\",'+
+		'            \"TxnType\": \"Payment\"'+
+		'          }'+
+		'        ],'+
+		'        \"Line\": ['+
+		'          {'+
+		'            \"Id\": \"1\",'+
+		'            \"LineNum\": 1,'+
+		'            \"Description\": \"Friday L              81\",'+
+		'            \"Amount\": 42.7,'+
+		'            \"DetailType\": \"SalesItemLineDetail\",'+
+		'            \"SalesItemLineDetail\": {'+
+		'              \"ServiceDate\": \"2016-09-28\",'+
+		'              \"ItemRef\": {'+
+		'                \"value\": \"71\",'+
+		'                \"name\": \"Open Stands - PE F&V Fees Fri\"'+
+		'              },'+
+		'              \"UnitPrice\": 42.7,'+
+		'              \"Qty\": 1,'+
+		'              \"TaxCodeRef\": {'+
+		'                \"value\": \"20\"'+
+		'              }'+
+		'            }'+
+		'          },'+
+		'          {'+
+		'            \"Amount\": 42.7,'+
+		'            \"DetailType\": \"SubTotalLineDetail\",'+
+		'            \"SubTotalLineDetail\": {}'+
+		'          }'+
+		'        ],'+
+		'        \"TxnTaxDetail\": {'+
+		'          \"TotalTax\": 4.27,'+
+		'          \"TaxLine\": ['+
+		'            {'+
+		'              \"Amount\": 4.27,'+
+		'              \"DetailType\": \"TaxLineDetail\",'+
+		'              \"TaxLineDetail\": {'+
+		'                \"TaxRateRef\": {'+
+		'                  \"value\": \"40\"'+
+		'                },'+
+		'                \"PercentBased\": true,'+
+		'                \"TaxPercent\": 10,'+
+		'                \"NetAmountTaxable\": 42.7'+
+		'              }'+
+		'            }'+
+		'          ]'+
+		'        },'+
+		'        \"CustomerRef\": {'+
+		'          \"value\": \"1522\",'+
+		'          \"name\": \"Test AccBusiness\"'+
+		'        },'+
+		'        \"DueDate\": \"2016-09-28\",'+
+		'        \"GlobalTaxCalculation\": \"TaxExcluded\",'+
+		'        \"TotalAmt\": 46.97,'+
+		'        \"PrintStatus\": \"NeedToPrint\",'+
+		'        \"EmailStatus\": \"NotSet\",'+
+		'        \"Balance\": 0'+
+		'      }'+
+		'    ],'+
+		'    \"startPosition\": 1,'+
+		'    \"maxResults\": 1,'+
+		'    \"totalCount\": 1'+
+		'  },'+
+		'  \"time\": \"2016-10-04T17:57:59.235-07:00\"'+
+		'}';
+            res.setBody(json);
+        }
         if(req.getEndpoint().endsWith('payment')){
             String json = '{'+
                 '  \"Payment\": {'+

@@ -59,6 +59,10 @@
                 <behavior>Edit</behavior>
                 <field>Lifestyle_Groups__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Permitted_Use_Color__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -330,6 +334,9 @@
             <quickActionName>FeedItem.PollPost</quickActionName>
         </quickActionListItems>
     </quickActionList>
+    <relatedLists>
+        <relatedList>RelatedContactRoleList</relatedList>
+    </relatedLists>
     <relatedLists>
         <customButtons>New_Order</customButtons>
         <excludeButtons>New</excludeButtons>

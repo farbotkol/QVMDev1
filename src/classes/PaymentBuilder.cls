@@ -15,7 +15,9 @@ global class PaymentBuilder
 
     //---------------------- Changing Record Type to Finding Transactions record type ----------------------------------------//    
     Webservice static void UpdateBatchObject( Id batchJobId )
-    {   
+    {  
+        system.debug('TTTTT' );
+        system.debug('RRRRR');
          try
          {
             ID findingRecordTypeID = Schema.SObjectType.Batch_Jobs__c.getRecordTypeInfosByName().get('Finding Transactions').getRecordTypeId();
@@ -33,11 +35,16 @@ global class PaymentBuilder
        
     Webservice static void processTransactions( Id batchJobId )
     {
-        System.debug('HELLO');
+        
         try
         {
-            getInvoices(batchJobId); 
-       		getCredits( batchJobId );        
+            System.debug('HELLO' );
+            List<String> accountQuickBookIdSet = new List<String>();
+            accountQuickBookIdSet = getSelectedAccountDetails(batchJobId);
+            
+            System.debug('TTTTTT selectedaccounts' + accountQuickBookIdSet.size() );
+            getInvoices(batchJobId,accountQuickBookIdSet); 
+       		getCredits( batchJobId,accountQuickBookIdSet );        
          
         	if( !transactionListToInsert.isEmpty())
         	{
@@ -51,17 +58,21 @@ global class PaymentBuilder
         }  
     } 
     //---------------------- Getting overdue Invoices from quickbook ----------------------------------------//
-     public static void getInvoices( Id batchJobId)
+     public static void getInvoices( Id batchJobId, List<String> accountQuickBookIdSet)
      {
+         
          try
          {
+            System.debug(Logginglevel.ERROR ,'Inside getInvoice');
          	QBOCRUDHelper crudHelper = new QBOCRUDHelper();         
          	Batch_Jobs__c batchJobObj = [SELECT id, Due_Before__c  FROM Batch_Jobs__c where id =:batchJobId LIMIT 1];
-         	integer position = 1;   
+         	integer position = 1;
+            
+            System.debug('RESMI:TTTT accountQuickBookIdSet' );                         
          	System.debug('RESMI:TTTT position' + position );
 		 	while (position != 0)
         	{
-             	system.debug('Inside While');
+             	system.debug('Inside While loop');
               	System.debug('RESMI:TTTT position' + position );
             	Date dueBeforeDate = batchJobObj.Due_Before__c;
              	String strDueBeforeDate = DateTime.newInstance(dueBeforeDate.year(),dueBeforeDate.month(),dueBeforeDate.day()).format('YYYY-MM-dd');
@@ -74,9 +85,25 @@ global class PaymentBuilder
              	else
              	{
                 	newStartingPosition =(position  * MAXRESULTS ) - MAXRESULTS + 1; 
-             	}             
-             	String queryString = 'select Id,DocNumber,TxnDate,DueDate,TotalAmt,Balance , CustomerRef from INVOICE where Balance != \'0\' and DueDate < \'' + String.escapeSingleQuotes(strDueBeforeDate)+'\' STARTPOSITION ' + newStartingPosition.format().Replace(',', '') +' MAXRESULTS ' + MAXRESULTS.format();
-             	System.debug('RESMI:TTTT qs' + queryString );
+             	}
+                
+                // Generate query string based on search method( selected Accounts or  Date).
+                String queryString;
+                if( accountQuickBookIdSet.size()>0)
+                {
+                    
+                    String CustemerReflist = string.join(accountQuickBookIdSet,',');
+                    CustemerReflist = '(' +CustemerReflist+')';
+                    system.debug('Searching By Accounts-invoice' + CustemerReflist);
+                    queryString = 'select Id,DocNumber,TxnDate,DueDate,TotalAmt,Balance , CustomerRef from INVOICE where CustomerRef IN '+CustemerReflist+' and Balance != \'0\' and DueDate < \'' + String.escapeSingleQuotes(strDueBeforeDate)+'\' STARTPOSITION ' + newStartingPosition.format().Replace(',', '') +' MAXRESULTS ' + MAXRESULTS.format();
+                    
+                }
+                else
+                {
+                    system.debug('Searching By DueDate');
+             		queryString = 'select Id,DocNumber,TxnDate,DueDate,TotalAmt,Balance , CustomerRef from INVOICE where Balance != \'0\' and DueDate < \'' + String.escapeSingleQuotes(strDueBeforeDate)+'\' STARTPOSITION ' + newStartingPosition.format().Replace(',', '') +' MAXRESULTS ' + MAXRESULTS.format();
+                }
+                System.debug('RESMI:TTTT qs' + queryString );
              	Object res =  crudHelper.query(queryString, QBOInvoiceList.Class);
                      
              	if (res instanceof QBOError)
@@ -186,7 +213,7 @@ global class PaymentBuilder
          
      }
      //---------------------- Getting Credits from quickbook  ----------------------------------------//
-     public static void getCredits( Id batchJobId)
+     public static void getCredits( Id batchJobId, List<String> accountQuickBookIdSet)
      {
          integer position = 1;              
          QBOCRUDHelper crudHelper = new QBOCRUDHelper();
@@ -209,14 +236,28 @@ global class PaymentBuilder
              	{
                 	newStartingPosition =(position  * MAXRESULTS ) - MAXRESULTS + 1; 
              	}       
-             
-             	String queryString = 'select Id,DocNumber,TxnDate,TotalAmt,Balance,CustomerRef from CreditMemo where Balance != \'0\'  STARTPOSITION ' + newStartingPosition.format().Replace(',', '') +' MAXRESULTS ' + MAXRESULTS.format();
-             	System.debug('RESMI:CCCC' + queryString );
+                
+                //create query String for credit memo based on search selection ( select  accounts or only due date)
+                String queryString; 
+                if( accountQuickBookIdSet.size()>0)
+                {
+                  String CustemerReflist = '(' +string.join(accountQuickBookIdSet,',') + ')';
+                  system.debug('Searching By Accounts- credit' + CustemerReflist);
+                  queryString = 'select Id,DocNumber,TxnDate,TotalAmt,Balance,CustomerRef from CreditMemo where CustomerRef IN '+CustemerReflist+' and Balance != \'0\'  STARTPOSITION ' + newStartingPosition.format().Replace(',', '') +' MAXRESULTS ' + MAXRESULTS.format();
+                    
+                }
+                else
+                {
+             		queryString = 'select Id,DocNumber,TxnDate,TotalAmt,Balance,CustomerRef from CreditMemo where Balance != \'0\'  STARTPOSITION ' + newStartingPosition.format().Replace(',', '') +' MAXRESULTS ' + MAXRESULTS.format();
+                }
+                System.debug('RESMI:CCCC' + queryString );
              	Object res =  crudHelper.query(queryString, QBOCreditMemoList.Class);
+                
+                System.debug('RESMI:CCCC response' + res );
                      
              	if (res instanceof QBOError)
              	{
-                	System.debug('RESMI:CCC:-error'  + (QBOError)res); 
+                	//System.debug('RESMI:CCC:-error'  + (QBOError)res); 
                 	position = 0;
              	}
              	else 
@@ -224,19 +265,19 @@ global class PaymentBuilder
                  	List<QBOInvoice> invs = ((QBOCreditMemoList)res).queryResponse.CreditMemo;
                  	if (invs == null || invs.size() == 0 )
                  	{
-                    	system.debug('exit loop: ');
+                    	//system.debug('exit loop: ');
                     	position = 0;
                     	break;  
                 	}
                  	if (invs.size() == MAXRESULTS)
                  	{
-                    	system.debug('position before :' + position);
+                    	//system.debug('position before :' + position);
                      	position++;
-                     	system.debug('position after :' + position);
+                     	//system.debug('position after :' + position);
                  	}
                  	else if  (invs.size()  > 0)
                  	{
-                    	system.debug('setting position to 0 its currenty:' + position);
+                    	//system.debug('setting position to 0 its currenty:' + position);
                      	position = 0;
                  	}
                                     
@@ -354,7 +395,7 @@ global class PaymentBuilder
             Set<String> oppSet = new Set<String>(); 
             Map< ID, Opportunity> opportunityMap = new Map< ID, Opportunity>();
             
-            System.debug('RESMI:TTT Progress log 3');
+           //System.debug('RESMI:TTT Progress log 3');
        		listOftransactions = [SELECT id,Account__c,Account_Business__c,Account_Business__r.Bank_Account_Number__c,
                                   Account_Business__r.BSB_Number__c,Customer_Reference__c,DocNumber__c,TotalAmount__c,Invoice_QuickBookId__c,
                                   Type__c from Transaction__c where Batch_Jobs__c =: batchJobId];
@@ -368,7 +409,7 @@ global class PaymentBuilder
                     
            		if ( paymentMap.containsKey(transObj.Account__c + transObj.Account_Business__r.BSB_Number__c + transObj.Account_Business__r.Bank_Account_Number__c) == false )// adding header and line item to payment object.
            		{
-                    System.Debug('RESMI:TTT 2');
+                    //System.Debug('RESMI:TTT 2');
                 	QBOPaymentResponse.Payment paymentInstance = new QBOPaymentResponse.Payment();
                 	QBOPaymentResponse.CustomerRef  custref = new QBOPaymentResponse.CustomerRef();
                    
@@ -413,7 +454,7 @@ global class PaymentBuilder
            		}
            		else// updating payment object with new line items
            		{
-                    System.Debug('RESMI:TTT 3');
+                   // System.Debug('RESMI:TTT 3');
                     
                 	QBOPaymentResponse.Payment paymentInstance = paymentMap.get( transObj.Account__c + transObj.Account_Business__r.BSB_Number__c + transObj.Account_Business__r.Bank_Account_Number__c);               
                		if (transObj.Type__c == 'Invoice')
@@ -465,9 +506,11 @@ global class PaymentBuilder
                 }
  
             	payments.add(pmt); 
-        	}         
+        	} 
+            system.debug('Payment list:' + payments.size());
         	if( !payments.isEmpty())
         	{
+                system.debug('Payment list:' + payments.size());
             	PaymentBuilderBatch batch = new PaymentBuilderBatch( payments,batchJobId); 
             	database.executebatch(batch,35);
         	}     
@@ -477,4 +520,33 @@ global class PaymentBuilder
             System.debug('Exception in generatePayments():' + Ex.getMessage());
         }                 
      }
+    //------------------------------- Get selected account information-----------------------------------------------------//
+    public static List<String> getSelectedAccountDetails( Id batchJobId )
+    {
+            System.debug('Inside getSelectedAccountDetails()');
+            List<String> setOfaccountQuickBookId = new List<String>();
+            Batch_Jobs__c batchJobObj = new Batch_Jobs__c();
+            batchJobObj = [SELECT id, Due_Before__c	, Account_1__r.QuickBooks_Id__c, Account_2__r.QuickBooks_Id__c, Account_3__r.QuickBooks_Id__c, Account_4__r.QuickBooks_Id__c ,Account_5__r.QuickBooks_Id__c from Batch_Jobs__c where id =:batchJobId LIMIT 1];
+            if( batchJobObj.Account_1__r.QuickBooks_Id__c != null)
+            {
+               setOfaccountQuickBookId.add('\'' + batchJobObj.Account_1__r.QuickBooks_Id__c +'\''); 
+            }
+            if( batchJobObj.Account_2__r.QuickBooks_Id__c != null)
+            {
+              setOfaccountQuickBookId.add('\'' + batchJobObj.Account_2__r.QuickBooks_Id__c +'\''); 
+            }
+            if( batchJobObj.Account_3__r.QuickBooks_Id__c != null )
+            {
+               setOfaccountQuickBookId.add('\'' + batchJobObj.Account_3__r.QuickBooks_Id__c+'\''); 
+            }
+            if( batchJobObj.Account_4__r.QuickBooks_Id__c != null )
+            {
+                setOfaccountQuickBookId.add('\'' + batchJobObj.Account_4__r.QuickBooks_Id__c +'\'');
+            }
+            if( batchJobObj.Account_5__r.QuickBooks_Id__c != null )
+            {
+              setOfaccountQuickBookId.add('\'' + batchJobObj.Account_5__r.QuickBooks_Id__c+'\'');  
+            }
+        return setOfaccountQuickBookId;
+    }
 }

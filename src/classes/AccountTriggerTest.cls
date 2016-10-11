@@ -43,6 +43,12 @@ public class AccountTriggerTest
         Test.stopTest();
         System.assert(accounts.size() != 0);
      }
+    
+     @isTest static  void Test_SupplierResponse() 
+     {
+        SupplierResponse  suppObj = new SupplierResponse();
+         suppObj.Vendor = null;
+     }
  
  ////////**********  Data Creation - Move to datafactory*********/////  
  
@@ -99,4 +105,5 @@ public class AccountTriggerTest
         insert accts;        
         return accts;
      }
+      
 }
