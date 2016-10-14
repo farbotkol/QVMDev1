@@ -521,17 +521,4 @@ var unrelatedObjectAPIName = &apos;&apos;;
 
 sendSMS(recordType, idToUpdate, userId, nameField, mobileField, optOutField, optOutDefaultValue, smsType, elementIdVar, packagePrefix, showUserDropDown, dialogTitle, cssUrl, unrelatedObjectAPIName);</url>
     </webLinks>
-    <webLinks>
-        <fullName>wbsendit__Add_Emails_to_List</fullName>
-        <availability>online</availability>
-        <description>Adds selected contacts to a subscriber list.</description>
-        <displayType>massActionButton</displayType>
-        <height>600</height>
-        <linkType>page</linkType>
-        <masterLabel>Add Contacts to Subscriber List</masterLabel>
-        <openType>sidebar</openType>
-        <page>wbsendit__AddContactSubscribersToList</page>
-        <protected>false</protected>
-        <requireRowSelection>true</requireRowSelection>
-    </webLinks>
 </CustomObject>

@@ -5,7 +5,7 @@ public class PrintToPDFController {
     public PrintToPDFController(ApexPages.StandardController controller){
         orderId = ApexPages.currentPage().getParameters().get('Id');
         orderItems = [SELECT PricebookEntry.Product2.Name,Stall__r.Name,Date__c,Description,Quantity,
-                                      UnitPrice,Formula_Total__c
+                                      UnitPrice,Formula_Total__c, Total__c
                                       FROM OrderItem 
         							  WHERE Order.Id = :orderId];
         

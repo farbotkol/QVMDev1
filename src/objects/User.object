@@ -61,18 +61,6 @@
         <trackFeedHistory>true</trackFeedHistory>
         <type>Hierarchy</type>
     </fields>
-    <fields>
-        <fullName>wbsendit__Campaign_Monitor_User__c</fullName>
-        <deprecated>false</deprecated>
-        <description>Used with the Campaign Monitor connector. Enter the users Campaign Monitor email address.</description>
-        <externalId>false</externalId>
-        <inlineHelpText>Used with the Campaign Monitor connector. Enter the users Campaign Monitor email address.</inlineHelpText>
-        <label>Campaign Monitor User</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Email</type>
-        <unique>false</unique>
-    </fields>
     <listViews>
         <fullName>ActiveUsers</fullName>
         <columns>FULL_NAME</columns>

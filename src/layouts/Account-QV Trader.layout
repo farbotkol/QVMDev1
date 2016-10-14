@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
+    <excludeButtons>DataDotComAccountInsights</excludeButtons>
+    <excludeButtons>DataDotComClean</excludeButtons>
     <excludeButtons>DisableCustomerPortalAccount</excludeButtons>
     <excludeButtons>DisablePartnerPortalAccount</excludeButtons>
     <excludeButtons>IncludeOffline</excludeButtons>
@@ -294,66 +295,6 @@
         <fields>Actor</fields>
         <fields>Comments</fields>
         <relatedList>RelatedProcessHistoryList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>RECORDTYPE</fields>
-        <fields>Batch_Type__c</fields>
-        <fields>Process_Range__c</fields>
-        <fields>From_Date__c</fields>
-        <fields>To_Date__c</fields>
-        <fields>Week_Month_Of__c</fields>
-        <fields>CREATEDBY_USER</fields>
-        <fields>CREATED_DATE</fields>
-        <relatedList>Batch_Jobs__c.Account_1__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>RECORDTYPE</fields>
-        <fields>Batch_Type__c</fields>
-        <fields>Process_Range__c</fields>
-        <fields>From_Date__c</fields>
-        <fields>To_Date__c</fields>
-        <fields>Week_Month_Of__c</fields>
-        <fields>CREATEDBY_USER</fields>
-        <fields>CREATED_DATE</fields>
-        <relatedList>Batch_Jobs__c.Account_2__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>RECORDTYPE</fields>
-        <fields>Batch_Type__c</fields>
-        <fields>Process_Range__c</fields>
-        <fields>From_Date__c</fields>
-        <fields>To_Date__c</fields>
-        <fields>Week_Month_Of__c</fields>
-        <fields>CREATEDBY_USER</fields>
-        <fields>CREATED_DATE</fields>
-        <relatedList>Batch_Jobs__c.Account_3__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>RECORDTYPE</fields>
-        <fields>Batch_Type__c</fields>
-        <fields>Process_Range__c</fields>
-        <fields>From_Date__c</fields>
-        <fields>To_Date__c</fields>
-        <fields>Week_Month_Of__c</fields>
-        <fields>CREATEDBY_USER</fields>
-        <fields>CREATED_DATE</fields>
-        <relatedList>Batch_Jobs__c.Account_4__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>RECORDTYPE</fields>
-        <fields>Batch_Type__c</fields>
-        <fields>Process_Range__c</fields>
-        <fields>From_Date__c</fields>
-        <fields>To_Date__c</fields>
-        <fields>Week_Month_Of__c</fields>
-        <fields>CREATEDBY_USER</fields>
-        <fields>CREATED_DATE</fields>
-        <relatedList>Batch_Jobs__c.Account_5__c</relatedList>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>

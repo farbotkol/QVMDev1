@@ -136,7 +136,7 @@ Display: none;
                         <td><apex:outputText value="{0,date,MM/dd/yy}"><apex:param value="{!v.Date__c}"/></apex:outputText></td>
                         <td>{!v.Description}</td>
                         <td>{!v.Quantity}</td>
-                        <td align="right">{!v.Formula_Total__c}</td>
+                        <td align="right">{!FLOOR(v.Quantity * v.UnitPrice)}</td>
                     </tr>
                 </apex:repeat>
             </table>
