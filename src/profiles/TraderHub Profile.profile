@@ -2540,7 +2540,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Order.Ref__c</field>
+        <field>Order.Reference__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>

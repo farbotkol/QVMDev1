@@ -139,17 +139,43 @@
             filter: alpha(opacity=40);
             cursor: pointer;
         }
+        .legendColor{
+        	position: absolute!important;
+            background: #fff;
+            color: #000;
+            display: block;
+            top:1190mm;
+            left:48mm;
+            border: 1px solid #464646!important;
+            margin:0px;
+            padding:0px;
+            
+        }
+        .legendColor table{
+        	border-spacing: 0px;
+            vertical-align: bottom;
+           
+            border-collapse: collapse;
+        }
+        .legendColor table tr td{    
+            min-width: 50px;
+            text-align:right;
+            font: 13px/18px Arial, sans-serif;
+            border-bottom:1px solid #464646;
+             padding:5px;
+        }
         </style>
      
-      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
            	
-    <script>
+    	<script>
   		$( function() {
           $( ".draggable" ).draggable({ containment: "#dropzone",cursor: "move",  snap: true ,
                                        stop: function( event, ui ) {
                                        var dpi = $('#dpidiv').outerWidth(true);
+                                       // mm = pixel*25.4/dpi    -----  demensions saved are based on mm unit
                                        CallApexMethod(ui.helper[0].id , (ui.helper[0].offsetWidth*25.4/dpi).toFixed(), (ui.helper[0].offsetHeight*25.4/dpi).toFixed(),(ui.position.left*25.4/dpi).toFixed(),(ui.position.top*25.4/dpi).toFixed()) ;
                            }})
           				   .resizable({  maxHeight: 250,
@@ -160,6 +186,7 @@
                                       	stop: function( event, ui ) {
                                             $(ui.helper[0].id).css("line-height",ui.helper[0].offsetHeight+"px");
                                          var dpi = $('#dpidiv').outerWidth(true);
+                                         // mm = pixel*25.4/dpi    -----  demensions saved are based on mm unit
 										 CallApexMethod(ui.helper[0].id , (ui.helper[0].offsetWidth*25.4/dpi).toFixed(), (ui.helper[0].offsetHeight*25.4/dpi).toFixed(),(ui.position.left*25.4/dpi).toFixed(),(ui.position.top*25.4/dpi).toFixed()) ;
                                       }
                             });
@@ -176,11 +203,7 @@
            <apex:outputPanel style="color:#4AA02C;font-weight:bold">
                   <apex:actionStatus id="fetchStatus" startText="Fetching..." stopText=""/>
               </apex:outputPanel> 
-         
-           <apex:pageBlockSection >
-                <apex:outputtext value="{!legendTable}" escape="false" id="tblHTML"/> 
-           </apex:pageBlockSection>
-        </apex:pageBlock>
+        </apex:pageBlock> 
         <apex:outputtext value="{!buildTable}" escape="false" id="tblHTML"/> 
         <apex:actionFunction name="CallApexMethod" action="{!UpdateAttributes}" onComplete=";">
             <apex:param name="stallid" value=""/>

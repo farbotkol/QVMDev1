@@ -56,6 +56,7 @@ public without sharing class ApplicationSubmissionExtension
     */ 
     public ApplicationSubmissionExtension(ApexPages.StandardController stdController) 
     {
+        system.debug('TEST');
         weblead = (Lead)stdController.getRecord();      
         recId = stdController.getRecord().Id; 
         isDisplay=true;
@@ -101,6 +102,7 @@ public without sharing class ApplicationSubmissionExtension
     */ 
     public PageReference saveLead()
     {
+        system.debug('weblead added');
          try 
          {                         
              if( weblead != null )
@@ -118,7 +120,7 @@ public without sharing class ApplicationSubmissionExtension
                 
                 setLeadFieldsBeforeInsert(); 
                 insert weblead; 
-               
+                system.debug('weblead added');
              }
              // This method is for inserting image list.
              insertImageList();
@@ -224,6 +226,7 @@ public without sharing class ApplicationSubmissionExtension
          }
          catch(System.DMLException e)
          {
+               system.debug('ERROR HAPPENED: ' + e.getMessage());
                ApexPages.addMessages(e);
                return null;
          }

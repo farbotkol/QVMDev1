@@ -275,7 +275,7 @@
         <fields>ORDERS.STATUS</fields>
         <fields>ORDERS.EFFECTIVE_DATE</fields>
         <fields>ORDERS.TOTAL_AMOUNT</fields>
-        <fields>Ref__c</fields>
+        <fields>Reference__c</fields>
         <relatedList>RelatedOrderList</relatedList>
     </relatedLists>
     <relatedLists>

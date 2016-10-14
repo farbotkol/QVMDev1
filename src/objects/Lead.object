@@ -942,7 +942,7 @@ MID(TEXT( Campaign__r.EndDate ), 9, 2)&amp;&quot;/&quot;&amp; MID(TEXT( Campaign
         <fullName>Percentage_Of_Ingrediance__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>What percentage of your ingredients are sourced from the Queen Victoria Market?*</inlineHelpText>
-        <label>Percentage Of Ingredience</label>
+        <label>Percentage of Ingredients</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>

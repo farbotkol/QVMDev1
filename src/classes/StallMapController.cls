@@ -25,8 +25,7 @@ public class StallMapController {
         stall.Left__c = double.valueOf(left.remove('mm')).intValue();
         stall.Top__c = double.valueOf(top.remove('mm')).intValue();
         update stall;
-        
-        
+
         return ;
         
     }
@@ -86,21 +85,21 @@ public class StallMapController {
             {
                 permittedUse = stalls.get(i).SaturdayTrader__r.Permitted_Use__c;
                 TraderName = stalls.get(i).SaturdayTrader__r.Name;
-                 backColor = stalls.get(i).SaturdayTrader__r.Permitted_Use_Color__c;
+                backColor = stalls.get(i).SaturdayTrader__r.Permitted_Use_Color__c;
                 
             }
             else if(selectedWeekdayRefresh == 'Sunday')
             {
                 permittedUse = stalls.get(i).SundayTrader__r.Permitted_Use__c;
                 TraderName = stalls.get(i).SundayTrader__r.Name;
-                 backColor = stalls.get(i).SundayTrader__r.Permitted_Use_Color__c;
+                backColor = stalls.get(i).SundayTrader__r.Permitted_Use_Color__c;
               
             }
             else if(selectedWeekdayRefresh == 'Tuesday')
             {
                 permittedUse = stalls.get(i).TuesdayTrader__r.Permitted_Use__c;
                 TraderName = stalls.get(i).TuesdayTrader__r.Name;
-                 backColor = stalls.get(i).TuesdayTrader__r.Permitted_Use_Color__c;
+                backColor = stalls.get(i).TuesdayTrader__r.Permitted_Use_Color__c;
                  
             }
             else if(selectedWeekdayRefresh == 'Thursday')
@@ -115,22 +114,26 @@ public class StallMapController {
             System.debug('YY Permitted Use '+permittedUse);
            
             String textToShow = '<h2>'+stalls.get(i).Name+'</h2>';
-       
+       		
+            /** Checking if stall is active **/
             if (stalls.get(i).IsActive__c){
+                
+                /** Checking if stall has been assigned to any account business (Checking permittedUse field not to be null) **/
                 if(permittedUse != null){
                     
-                    textToShow += '<p>'+TraderName+'<br/>'+permittedUse+'<br/><a  target="_blank" href="https://qvm--devmerge.cs31.my.salesforce.com/'+stalls.get(i).id+'" >See more</a></p>';
+                    textToShow += '<p>'+TraderName+'<br/>'+permittedUse+'<br/><a  target="_blank" href="/'+stalls.get(i).id+'" >See more</a></p>';
                     textToShowOnStall += '<br/><span style="font-size:11px;line-height:10px;">'+TraderName+'</span>';
     
                 }
                 else{
-                    textToShow += '<p>No trader assigned for this day.<br/><a  target="_blank" href="https://qvm--devmerge.cs31.my.salesforce.com/'+stalls.get(i).id+'" >See more</a></p>';
+                    textToShow += '<p>No trader assigned for this day.<br/><a  target="_blank" href="/'+stalls.get(i).id+'" >See more</a></p>';
                     backColor = '#767676'; 
                     
                 }
             }
             else{
-                 textToShow += '<p >This stall is not active.<br/><a  target="_blank" href="https://qvm--devmerge.cs31.my.salesforce.com/'+stalls.get(i).id+'" >See more</a></p>';
+                /** If stall isnot active, make the backColor black **/
+                 textToShow += '<p >This stall is not active.<br/><a  target="_blank" href="/'+stalls.get(i).id+'" >See more</a></p>';
                  backColor = '#000'; 
                  textColor ='#767676';
                 }
@@ -140,8 +143,36 @@ public class StallMapController {
                     '<span class="trigger" style=\' color:'+ textColor+';\'>'+textToShowOnStall+'</span><div id="tooltip"><div class="info">'+textToShow+'</div><a class="close">×</a>	</div></div>' ;
                 
         }
-        
+        /** Adding Legend table **/
+        tmp+='<div class=\' legendColor\' ><table >';
+        tmp+='<tr><td style="vertical-align: bottom;">Apparel</td><td><div style="background-color:#FF0000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td></tr>';
+        tmp+='<tr><td style="vertical-align: bottom;">Hardware</td><td><div   style="background-color:#00FF00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td></tr>';
+        tmp+='<tr><td style="vertical-align: bottom;">Botantical</td><td><div   style="background-color:#0000FF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td></tr>';
+        tmp+='<tr><td style="vertical-align: bottom;">Footwear</td><td><div   style="background-color:#800000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td></tr>';
+        tmp+='<tr><td style="vertical-align: bottom;">Fashion Accessories</td><td><div  style="background-color:#FFFF00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td>';
+        tmp+='<tr><td style="vertical-align: bottom;">Paper Products</td><td><div  style="background-color:#808000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td></tr>';
+        tmp+='<tr><td style="vertical-align: bottom;">Souvenirs</td><td><div  style="background-color:#008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td></tr>';
+        tmp+='<tr><td style="vertical-align: bottom;">Technology</td><td><div  style="background-color:#00FFFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td></tr>';
+        tmp+='<tr><td style="vertical-align: bottom;">Livestock/Pets</td><td><div  style="background-color:#000080;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td></tr>';
+        tmp+='<tr><td style="vertical-align: bottom;">Personal Care/Health</td><td><div  style="background-color:#FF00FF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td></tr>';
+        tmp+='<tr><td style="vertical-align: bottom;">Toys</td><td><div  style="background-color:#800080;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td></tr>';
+        tmp+='<tr><td style="vertical-align: bottom;">Homewares</td><td><div  style="background-color:#808080;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td></tr>';
+        tmp+='<tr><td style="vertical-align: bottom;">Materials/Craft Products</td><td><div  style="background-color:#C0C0C0;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td></tr>';
+        tmp+='<tr><td style="vertical-align: bottom;">Fresh Food</td><td><div style="background-color:#454545;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td></tr>';
+        tmp+='<tr><td style="vertical-align: bottom;">Prepared Food</td><td><div style="background-color:#454545;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td></tr>';
+        tmp+='<tr><td style="vertical-align: bottom;">Non-Consumables</td><td><div style="background-color:#999999;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td></tr>';
+        tmp+='<tr><td style="vertical-align: bottom;">Travel</td><td><div style="background-color:#CD5C5C;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td></tr>';
+        tmp+='<tr><td style="vertical-align: bottom;">Services</td><td><div style="background-color:#F08080;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td></tr>';
+        tmp+='<tr><td style="vertical-align: bottom;">Artists-Self Designed and Made</td><td><div style="background-color:#FA8072;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td></tr>';
+        tmp+='<tr><td style="vertical-align: bottom;">Events</td><td><div style="background-color:#E9967A;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td></tr>';
+        tmp+='<tr><td style="vertical-align: bottom;">Other</td><td><div style="background-color:#FFA07A;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td></tr>';
+        tmp+='<tr><td style="vertical-align: bottom;">Inactive</td><td><div style="background-color:#000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td></tr>';
+         tmp+='<tr><td style="vertical-align: bottom;">Not assigned</td><td><div style="background-color:#767676;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td></tr>';
+        tmp+='</table></div>';
+ 
+        //This is an emty div to calcuate dpi for conversion
         tmp += '</div><div id=\'dpidiv\' style=\'height: 1in; left: -100%; position: absolute; top: -100%; width: 1in;\'></div>';
+        
          System.debug('TABLE '+tmp);
         return tmp;
     }
@@ -151,54 +182,6 @@ public class StallMapController {
         return null;
     }
     
-	public String getlegendTable(){
-
-        String tmp ='<table style="border-spacing 5px;vertical-align: bottom;"><tr>';
-        tmp+='<td style="vertical-align: bottom;">Apparel</td>';
-        tmp+='<td style="vertical-align: bottom;">Hardware</td>';
-        tmp+='<td style="vertical-align: bottom;">Botantical</td>';
-        tmp+='<td style="vertical-align: bottom;">Footwear</td>';
-        tmp+='<td style="vertical-align: bottom;">Fashion Accessories</td>';
-        tmp+='<td style="vertical-align: bottom;">Paper Products</td>';
-        tmp+='<td style="vertical-align: bottom;">Souvenirs</td>';
-        tmp+='<td style="vertical-align: bottom;">Technology</td>';
-        tmp+='<td style="vertical-align: bottom;">Livestock/Pets</td>';
-        tmp+='<td style="vertical-align: bottom;">Personal Care/Health</td>';
-        tmp+='<td style="vertical-align: bottom;">Toys</td>';
-        tmp+='<td style="vertical-align: bottom;">Homewares</td>';
-        tmp+='<td style="vertical-align: bottom;">Materials/Craft Products</td>';
-        tmp+='<td style="vertical-align: bottom;">Fresh Food</td>';
-        tmp+='<td style="vertical-align: bottom;">Prepared Food</td>';
-        tmp+='<td style="vertical-align: bottom;">Non-Consumables</td>';
-        tmp+='<td style="vertical-align: bottom;">Travel</td>';
-        tmp+='<td style="vertical-align: bottom;">Services</td>';
-        tmp+='<td style="vertical-align: bottom;">Artists-Self Designed and Made</td>';
-        tmp+='<td style="vertical-align: bottom;">Events</td>';
-        tmp+='<td style="vertical-align: bottom;">Other</td>';
-        tmp+=' </tr><tr>';
-        tmp+='<td  style="background-color:#FF0000;"><br/></td>';
-        tmp+='<td  style="background-color:#00FF00;"><br/></td>';
-        tmp+='<td  style="background-color:#0000FF;"><br/></td>';
-        tmp+='<td  style="background-color:#800000;"><br/></td>';
-        tmp+='<td  style="background-color:#FFFF00;"><br/></td>';
-        tmp+='<td  style="background-color:#808000;"><br/></td>';
-        tmp+='<td  style="background-color:#008000;"><br/></td>';
-        tmp+='<td  style="background-color:#00FFFF;"><br/></td>';
-        tmp+='<td  style="background-color:#008080;"><br/></td>';
-        tmp+='<td  style="background-color:#000080;"><br/></td>';
- 		tmp+='<td  style="background-color:#FF00FF;"><br/></td>';
-        tmp+='<td  style="background-color:#800080;"><br/></td>';
-        tmp+='<td  style="background-color:#808080;"><br/></td>';
-        tmp+='<td  style="background-color:#C0C0C0;"><br/></td>';
-        tmp+='<td  style="background-color:#454545;"><br/></td>';
-        tmp+='<td  style="background-color:#999999;"><br/></td>';
-        tmp+='<td  style="background-color:#CD5C5C;"><br/></td>';
-        tmp+='<td  style="background-color:#F08080;"><br/></td>';
-        tmp+='<td  style="background-color:#FA8072;"><br/></td>';
-        tmp+='<td  style="background-color:#E9967A;"><br/></td>';
-        tmp+='<td  style="background-color:#FFA07A;"><br/></td>';
-        tmp+=' </tr></table>';
-        return tmp;
-   }
+	
 
 }

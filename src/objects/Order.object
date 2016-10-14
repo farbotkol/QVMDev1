@@ -226,9 +226,9 @@
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Ref__c</fullName>
+        <fullName>Reference__c</fullName>
         <externalId>false</externalId>
-        <label>Ref</label>
+        <label>Reference</label>
         <length>30</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
