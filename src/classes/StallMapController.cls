@@ -57,11 +57,11 @@ public class StallMapController {
         String tmp;
                
         List<Stall__c> stalls = [SELECT Name,Height__c,Left__c,Line_Height__c,Top__c,Width__c,IsActive__c,
-                                 FridayTrader__r.Permitted_Use__c,FridayTrader__r.Name, FridayTrader__r.Permitted_Use_Color__c,
-                                 SaturdayTrader__r.Permitted_Use__c,SaturdayTrader__r.Name,SaturdayTrader__r.Permitted_Use_Color__c,
-                                 SundayTrader__r.Permitted_Use__c,SundayTrader__r.Name,SundayTrader__r.Permitted_Use_Color__c,
-                                 TuesdayTrader__r.Permitted_Use__c,TuesdayTrader__r.Name,TuesdayTrader__r.Permitted_Use_Color__c,
-                                 ThursdayTrader__r.Permitted_Use__c,ThursdayTrader__r.Name,ThursdayTrader__r.Permitted_Use_Color__c
+                                 FridayTrader__r.Permitted_Use__c,FridayTrader__r.Name, FridayTrader__r.Permitted_Use_Color__c, FridayTrader__r.Permitted_Use_Sub_Category__c,
+                                 SaturdayTrader__r.Permitted_Use__c,SaturdayTrader__r.Name,SaturdayTrader__r.Permitted_Use_Color__c, SaturdayTrader__r.Permitted_Use_Sub_Category__c,
+                                 SundayTrader__r.Permitted_Use__c,SundayTrader__r.Name,SundayTrader__r.Permitted_Use_Color__c, SundayTrader__r.Permitted_Use_Sub_Category__c,
+                                 TuesdayTrader__r.Permitted_Use__c,TuesdayTrader__r.Name,TuesdayTrader__r.Permitted_Use_Color__c, TuesdayTrader__r.Permitted_Use_Sub_Category__c,
+                                 ThursdayTrader__r.Permitted_Use__c,ThursdayTrader__r.Name,ThursdayTrader__r.Permitted_Use_Color__c,  ThursdayTrader__r.Permitted_Use_Sub_Category__c
                                  FROM Stall__c 
                                  WHERE RecordType.Name = 'Casual' and Height__c <> null ];
         
@@ -71,6 +71,7 @@ public class StallMapController {
         For (integer i = 0; i <stalls.size(); i++){
             
             String permittedUse = '';
+            String subUse = '';
             String TraderName = '';
             String backColor ='#E2E2E5';
             string textToShowOnStall = '<b>'+stalls.get(i).Name+'</b>';
@@ -78,12 +79,14 @@ public class StallMapController {
             if(selectedWeekdayRefresh == 'Friday')
             {
                 permittedUse = stalls.get(i).FridayTrader__r.Permitted_Use__c;
+                subUse = stalls.get(i).FridayTrader__r.Permitted_Use_Sub_Category__c;
                 TraderName = stalls.get(i).FridayTrader__r.Name;
                 backColor = stalls.get(i).FridayTrader__r.Permitted_Use_Color__c;    
             }
             else if(selectedWeekdayRefresh == 'Saturday')
             {
                 permittedUse = stalls.get(i).SaturdayTrader__r.Permitted_Use__c;
+                subUse = stalls.get(i).SaturdayTrader__r.Permitted_Use_Sub_Category__c;
                 TraderName = stalls.get(i).SaturdayTrader__r.Name;
                 backColor = stalls.get(i).SaturdayTrader__r.Permitted_Use_Color__c;
                 
@@ -91,6 +94,7 @@ public class StallMapController {
             else if(selectedWeekdayRefresh == 'Sunday')
             {
                 permittedUse = stalls.get(i).SundayTrader__r.Permitted_Use__c;
+                subUse = stalls.get(i).SundayTrader__r.Permitted_Use_Sub_Category__c;
                 TraderName = stalls.get(i).SundayTrader__r.Name;
                 backColor = stalls.get(i).SundayTrader__r.Permitted_Use_Color__c;
               
@@ -98,6 +102,7 @@ public class StallMapController {
             else if(selectedWeekdayRefresh == 'Tuesday')
             {
                 permittedUse = stalls.get(i).TuesdayTrader__r.Permitted_Use__c;
+                subUse = stalls.get(i).TuesdayTrader__r.Permitted_Use_Sub_Category__c;
                 TraderName = stalls.get(i).TuesdayTrader__r.Name;
                 backColor = stalls.get(i).TuesdayTrader__r.Permitted_Use_Color__c;
                  
@@ -105,8 +110,10 @@ public class StallMapController {
             else if(selectedWeekdayRefresh == 'Thursday')
             {
                 permittedUse = stalls.get(i).ThursdayTrader__r.Permitted_Use__c;
+                subUse = stalls.get(i).ThursdayTrader__r.Permitted_Use_Sub_Category__c;
                 TraderName = stalls.get(i).ThursdayTrader__r.Name;
                 backColor = stalls.get(i).ThursdayTrader__r.Permitted_Use_Color__c;
+                
              
             }
             
@@ -121,8 +128,8 @@ public class StallMapController {
                 /** Checking if stall has been assigned to any account business (Checking permittedUse field not to be null) **/
                 if(permittedUse != null){
                     
-                    textToShow += '<p>'+TraderName+'<br/>'+permittedUse+'<br/><a  target="_blank" href="/'+stalls.get(i).id+'" >See more</a></p>';
-                    textToShowOnStall += '<br/><span style="font-size:11px;line-height:10px;">'+TraderName+'</span>';
+                    textToShow += '<p>'+TraderName+'<br/>'+permittedUse+'<br/>'+subUse+'<br/><a  target="_blank" href="/'+stalls.get(i).id+'" >See more</a></p>';
+                    textToShowOnStall += '<br/><span style="font-size:11px;line-height:10px;">'+TraderName+ '<br/>'+subUse+'</span>';
     
                 }
                 else{

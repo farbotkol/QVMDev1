@@ -71,7 +71,7 @@ global with sharing class OrderBuilder {
             List<Opportunity> opps = [select Id, Name, accountid
                      ,(select id, Monthly_Rent__c, Product__c from Perm_Stalls__r WHERE IsActive__c = TRUE)
                     from opportunity
-                    where id IN (select Tenant__c from Stall__c where Tenant__c  != null) and
+                    where id IN (select Tenant__c from Stall__c where Tenant__c  != null  AND Monthly_Rent__c  > 0) and
                      Business_Status__c = 'Open'
                     ];
 
