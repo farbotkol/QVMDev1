@@ -57,6 +57,15 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
         <label>Account 1</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Trader</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
         <referenceTo>Account</referenceTo>
         <relationshipLabel>Batch Jobs</relationshipLabel>
         <relationshipName>Batch_Jobs</relationshipName>
@@ -200,6 +209,49 @@ LH = Licence Holder</inlineHelpText>
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Payment_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The total amount that will be paid on the transactions</inlineHelpText>
+        <label>Payment Amount</label>
+        <summarizedField>Transaction__c.Signed_Balance__c</summarizedField>
+        <summaryForeignKey>Transaction__c.Batch_Jobs__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>EFT - Direct Debit
+CS - Cash
+CQ - Cheque
+CC - Credit Card</inlineHelpText>
+        <label>Payment Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>CS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EFT</fullName>
+                <default>true</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>Process_Range__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Are you processing for a month or a week</inlineHelpText>
@@ -223,6 +275,16 @@ LH = Licence Holder</inlineHelpText>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reference_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Reference Number</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>To_Date__c</fullName>
@@ -333,6 +395,21 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Process_Range__c</picklist>
             <values>
                 <fullName>Month</fullName>
@@ -392,6 +469,21 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
             </values>
             <values>
                 <fullName>SL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -459,6 +551,21 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Process_Range__c</picklist>
             <values>
                 <fullName>Month</fullName>
@@ -522,6 +629,21 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Process_Range__c</picklist>
             <values>
                 <fullName>Month</fullName>
@@ -581,6 +703,21 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
             </values>
             <values>
                 <fullName>SL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -649,6 +786,21 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Process_Range__c</picklist>
             <values>
                 <fullName>Month</fullName>
@@ -708,6 +860,21 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
             </values>
             <values>
                 <fullName>SL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -776,6 +943,21 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Process_Range__c</picklist>
             <values>
                 <fullName>Month</fullName>
@@ -835,6 +1017,21 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
             </values>
             <values>
                 <fullName>SL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -902,6 +1099,108 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EFT</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Process_Range__c</picklist>
+            <values>
+                <fullName>Month</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Week</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>No_Transactions_To_Pay</fullName>
+        <active>true</active>
+        <description>No Invoices /Cn Transactions To Pay</description>
+        <label>No Transactions To Pay</label>
+        <picklistValues>
+            <picklist>Batch_Type__c</picklist>
+            <values>
+                <fullName>CWW Annual Parks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CWW Qtr Drainage Charge</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CWW Water Usage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 1st Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 2nd Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 3rd Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC 4th Qtr Ins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Metered Water %24</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EFT</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Process_Range__c</picklist>
             <values>
                 <fullName>Month</fullName>
@@ -961,6 +1260,21 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
             </values>
             <values>
                 <fullName>SL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1028,6 +1342,21 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Process_Range__c</picklist>
             <values>
                 <fullName>Month</fullName>
@@ -1087,6 +1416,21 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
             </values>
             <values>
                 <fullName>SL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1154,6 +1498,21 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Process_Range__c</picklist>
             <values>
                 <fullName>Month</fullName>
@@ -1213,6 +1572,21 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
             </values>
             <values>
                 <fullName>SL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1280,6 +1654,21 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Process_Range__c</picklist>
             <values>
                 <fullName>Month</fullName>
@@ -1339,6 +1728,21 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
             </values>
             <values>
                 <fullName>SL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Type__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

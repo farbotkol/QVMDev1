@@ -731,8 +731,96 @@ public class HttpCalloutMockEngine implements HttpCalloutMock{
                 '}';
             res.setBody(json);
         }
+        if(req.getEndpoint().endsWith('payment/201?minorversion=4')){
+            String json = '{'+
+                '  \"Payment\": {'+
+                '    \"CustomerRef\": {'+
+                '      \"value\": \"67\",'+
+                '      \"name\": \"TEST DevMerge\"'+
+                '    },'+
+                '    \"DepositToAccountRef\": {'+
+                '      \"value\": \"128\"'+
+                '    },'+
+                '    \"PaymentMethodRef\": {'+
+                '      \"value\": \"8\"'+
+                '    },'+
+                '    \"PaymentRefNum\": \"xxxxxref123\",'+
+                '    \"TotalAmt\": 2.0,'+
+                '    \"UnappliedAmt\": 0,'+
+                '    \"ProcessPayment\": false,'+
+                '    \"domain\": \"QBO\",'+
+                '    \"sparse\": false,'+
+                '    \"Id\": \"178\",'+
+                '    \"SyncToken\": \"0\",'+
+                '    \"MetaData\": {'+
+                '      \"CreateTime\": \"2016-09-06T23:07:23-07:00\",'+
+                '      \"LastUpdatedTime\": \"2016-09-06T23:07:23-07:00\"'+
+                '    },'+
+                '    \"TxnDate\": \"2016-09-07\",'+
+                '    \"CurrencyRef\": {'+
+                '      \"value\": \"AUD\",'+
+                '      \"name\": \"Australian Dollar\"'+
+                '    },'+
+                '    \"PrivateNote\": \"test memo\",'+
+                '    \"Line\": ['+
+                '      {'+
+                '        \"Amount\": 2.0,'+
+                '        \"LinkedTxn\": ['+
+                '          {'+
+                '            \"TxnId\": \"172\",'+
+                '            \"TxnType\": \"Invoice\"'+
+                '          }'+
+                '        ],'+
+                '        \"LineEx\": {'+
+                '          \"any\": ['+
+                '            {'+
+                '              \"name\": \"{http://schema.intuit.com/finance/v3}NameValue\",'+
+                '              \"declaredType\": \"com.intuit.schema.finance.v3.NameValue\",'+
+                '              \"scope\": \"javax.xml.bind.JAXBElement$GlobalScope\",'+
+                '              \"value\": {'+
+                '                \"Name\": \"txnId\",'+
+                '                \"Value\": \"172\"'+
+                '              },'+
+                '              \"nil\": false,'+
+                '              \"globalScope\": true,'+
+                '              \"typeSubstituted\": false'+
+                '            },'+
+                '            {'+
+                '              \"name\": \"{http://schema.intuit.com/finance/v3}NameValue\",'+
+                '              \"declaredType\": \"com.intuit.schema.finance.v3.NameValue\",'+
+                '              \"scope\": \"javax.xml.bind.JAXBElement$GlobalScope\",'+
+                '              \"value\": {'+
+                '                \"Name\": \"txnOpenBalance\",'+
+                '                \"Value\": \"1513.16\"'+
+                '              },'+
+                '              \"nil\": false,'+
+                '              \"globalScope\": true,'+
+                '              \"typeSubstituted\": false'+
+                '            },'+
+                '            {'+
+                '              \"name\": \"{http://schema.intuit.com/finance/v3}NameValue\",'+
+                '              \"declaredType\": \"com.intuit.schema.finance.v3.NameValue\",'+
+                '              \"scope\": \"javax.xml.bind.JAXBElement$GlobalScope\",'+
+                '              \"value\": {'+
+                '                \"Name\": \"txnReferenceNumber\",'+
+                '                \"Value\": \"00000102\"'+
+                '              },'+
+                '              \"nil\": false,'+
+                '              \"globalScope\": true,'+
+                '              \"typeSubstituted\": false'+
+                '            }'+
+                '          ]'+
+                '        }'+
+                '      }'+
+                '    ]'+
+                '  },'+
+                '  \"time\": \"2016-09-06T23:07:55.211-07:00\"'+
+                '}';
+            res.setBody(json);
+        }
            
-      
+        system.debug('Mock res : ' + res.getBody());
+        system.debug('Mock res : ' + req.getEndpoint());
         
         return res;
     }

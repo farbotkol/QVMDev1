@@ -161,10 +161,11 @@
     <listViews>
         <fullName>All</fullName>
         <columns>NAME</columns>
-        <columns>Batch_Jobs__c</columns>
         <columns>Account__c</columns>
-        <columns>Customer_Reference__c</columns>
         <columns>Total_Amount__c</columns>
+        <columns>Batch_Jobs__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
@@ -175,7 +176,13 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Payments</pluralLabel>
-    <searchLayouts/>
+    <searchLayouts>
+        <customTabListAdditionalFields>Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Total_Amount__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Batch_Jobs__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <webLinks>
         <fullName>Open_In_QuickBooks</fullName>
@@ -192,5 +199,24 @@
 var qboURL = sforce.apex.execute(&quot;AccountQBOHelper&quot;,&quot;GetPaymentQBOUrl&quot;,{qbID:&quot;{!Payment__c.Id}&quot;});
 
 window.open(qboURL);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>View_Payment</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>View Payment</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/ViewPayment?paymentRef={!Payment__c.QuickBook_Id__c}</url>
     </webLinks>
 </CustomObject>

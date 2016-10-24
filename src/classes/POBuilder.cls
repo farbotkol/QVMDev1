@@ -38,6 +38,8 @@ global class POBuilder {
                 vendorRef.value = order.Account.QuickBooks_Id__c;
                 po.VendorRef = vendorRef;
                 po.Memo = order.Description;
+                po.GlobalTaxCalculation = 'TaxInclusive';
+
                 po.TxnDate = ((DateTime)order.EffectiveDate).format('YYYY-MM-dd');
                 po.DocNumber = order.OrderNumber;
                 
@@ -46,7 +48,7 @@ global class POBuilder {
                 {
                    
                     QBOPurchaseOrderResponse.Line line = new QBOPurchaseOrderResponse.Line();
-                    line.Amount = oi.UnitPrice * oi.Quantity;
+                    line.Amount = oi.UnitPrice * oi.Quantity / 1.1;
                     line.Description = '';
                     
                     if (oi.Description != null)

@@ -50,7 +50,7 @@ global class LeaveCreditNoteBuilder {
                 invoice.CustomerRef = custRef;
                 invoice.PrivateNote = item.Description;
                // invoice.DocNumber = item.OrderItemNumber + 'LCN';
-                invoice.TxnDate = ((DateTime)Date.today()).format('YYYY-MM-dd');
+                invoice.TxnDate = ((DateTime)item.Date__c).format('YYYY-MM-dd'); //  ((DateTime)Date.today()).format('YYYY-MM-dd');
                 
                 
                 List<QBOInvoice.Line> invLines = new List<QBOInvoice.Line>();
@@ -66,6 +66,8 @@ global class LeaveCreditNoteBuilder {
                 {
                     line.Description += item.Description;  
                 }
+                
+                invoice.DocNumber = 'L' + item.OrderItemNumber + '-' + line.Description.replace(' ', '');
                 
                 line.DetailType = 'SalesItemLineDetail';
                 QBOInvoice.SalesItemLineDetail lineDetail = new QBOInvoice.SalesItemLineDetail();

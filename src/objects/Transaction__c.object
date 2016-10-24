@@ -51,7 +51,7 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ReadWrite</externalSharingModel>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
         <fullName>Account_Business__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
@@ -82,7 +82,7 @@
         <fullName>Balance__c</fullName>
         <description>Balance data from Quick Book.</description>
         <externalId>false</externalId>
-        <label>Balance</label>
+        <label>Balance Payment</label>
         <precision>17</precision>
         <required>false</required>
         <scale>2</scale>
@@ -92,17 +92,19 @@
     </fields>
     <fields>
         <fullName>Batch_Jobs__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
         <description>Payment is the child Object and Batch Job is the parent object.</description>
         <externalId>false</externalId>
         <inlineHelpText>Select related Batch Job</inlineHelpText>
         <label>Batch Jobs</label>
         <referenceTo>Batch_Jobs__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
         <relationshipName>Payments</relationshipName>
-        <required>false</required>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Lookup</type>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <fields>
         <fullName>Customer_Reference__c</fullName>
@@ -164,6 +166,19 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Signed_Balance__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Type__c = &apos;Invoice&apos;,  Balance__c , Balance__c * -1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Signed Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>TotalAmount__c</fullName>
         <description>TotalAmount from Quickbook</description>
         <externalId>false</externalId>
@@ -216,5 +231,5 @@
     </nameField>
     <pluralLabel>Transactions</pluralLabel>
     <searchLayouts/>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>

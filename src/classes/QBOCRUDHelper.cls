@@ -138,7 +138,14 @@ public with sharing class QBOCRUDHelper {
         System.debug('::::: Response = (' + res.getStatusCode() + ')' + res.getBody());
         
         if (res.getStatusCode() == 200) {
-            return System.JSON.deserialize(responseString, apexType);
+            if (objType == 'Payment'){
+                return QBOPaymentResponse.parse(responseString);
+            }
+            else{
+                return System.JSON.deserialize(responseString, apexType);
+            }
+                
+            
         }else{
             //return System.JSON.deserialize(responseString, QBOError.class);
             if (res.getBody().contains('The request limit was reached'))

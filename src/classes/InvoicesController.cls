@@ -18,7 +18,7 @@ public without sharing class InvoicesController {
         
         String customerRef = InvoicesController.getCustomerReference();
         //  '005p0000000uK5d'
-        String queryString = 'select Id,DocNumber,TxnDate,DueDate,TotalAmt,Balance from INVOICE where CustomerRef =\'' + String.escapeSingleQuotes(customerRef)+'\'';
+        String queryString = 'select Id,DocNumber,TxnDate,DueDate,TotalAmt,Balance from INVOICE where CustomerRef =\'' + String.escapeSingleQuotes(customerRef)+'\' OrderBy TxnDate DESC';
         
         System.debug('InvoicesController queryString :' + queryString);
         
@@ -41,7 +41,7 @@ public without sharing class InvoicesController {
             List<QBOInvoice> invsToShow = new List<QBOInvoice>();
             for (QBOInvoice item : invs)
             {
-                if(Date.today() > Date.valueOf(item.DueDate.substring(0,10)))
+                if(Date.today() > Date.valueOf(item.DueDate.substring(0,10)) && item.Balance > 0)
                 {
                     item.overdue = true; 
                 }

@@ -28,8 +28,10 @@ global class TransactionBuilderBatch implements Database.Batchable<sObject>
     {
         try
         {
-            Schema.SObjectField f = Transaction__c.Fields.Invoice_QuickBookId__c;
-         	Database.UpsertResult [] cr = Database.upsert((List<Transaction__c>)scope, f, false); 
+            //Schema.SObjectField f = Transaction__c.Fields.Invoice_QuickBookId__c;
+         	//Database.UpsertResult [] cr = Database.upsert((List<Transaction__c>)scope, f, false); 
+         	//
+         	INSERT scope;
         }
         catch( Exception Ex )
         {

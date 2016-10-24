@@ -328,6 +328,10 @@
                 <fullName>Draft</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Error</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
     </recordTypes>
     <recordTypes>
@@ -343,6 +347,10 @@
             </values>
             <values>
                 <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Error</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -469,7 +477,7 @@ window.open(qboURL);
         <availability>online</availability>
         <displayType>link</displayType>
         <linkType>javascript</linkType>
-        <masterLabel>Open Inovice in QuickBooks</masterLabel>
+        <masterLabel>Open Invoice in QuickBooks</masterLabel>
         <openType>onClickJavaScript</openType>
         <protected>false</protected>
         <url>{!REQUIRESCRIPT(&apos;/soap/ajax/31.0/connection.js&apos;)}

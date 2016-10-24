@@ -56,7 +56,7 @@
         <reevaluateOnChange>true</reevaluateOnChange>
     </fieldUpdates>
     <rules>
-        <fullName>Update Mobile Format</fullName>
+        <fullName>Update Lead Mobile Format</fullName>
         <actions>
             <name>UpdateMobileFormat</name>
             <type>FieldUpdate</type>
@@ -68,11 +68,11 @@
             <operation>startsWith</operation>
             <value>+61</value>
         </criteriaItems>
-        <description>Updates the mobile format to be SMS Magic compliant format from +61409947864 to 61409947864</description>
+        <description>Updates the Lead mobile format to be SMS Magic compliant format from +61409947864 to 61409947864</description>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
     <rules>
-        <fullName>UpdateMobileFormat2</fullName>
+        <fullName>Update Lead Mobile Format2</fullName>
         <actions>
             <name>MobileUpdateNumber</name>
             <type>FieldUpdate</type>
@@ -81,9 +81,9 @@
         <criteriaItems>
             <field>Lead.MobilePhone</field>
             <operation>startsWith</operation>
-            <value>0</value>
+            <value>04</value>
         </criteriaItems>
-        <description>Updates mobile phone from 0409947864 to 61409947864 for SMS Magic</description>
+        <description>Updates Lead mobile phone from 0409947864 to 61409947864 for SMS Magic</description>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
 </Workflow>

@@ -207,6 +207,10 @@
                 <fullName>EFT</fullName>
                 <default>false</default>
             </picklistValues>
+            <picklistValues>
+                <fullName>BPay</fullName>
+                <default>false</default>
+            </picklistValues>
             <restrictedPicklist>true</restrictedPicklist>
             <sorted>false</sorted>
         </picklist>
@@ -813,8 +817,16 @@
         <picklistValues>
             <picklist>Def_Payment_Type__c</picklist>
             <values>
-                <fullName>EFT</fullName>
+                <fullName>BPay</fullName>
                 <default>false</default>
+            </values>
+            <values>
+                <fullName>CS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EFT</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -1335,6 +1347,7 @@
         <customTabListAdditionalFields>Majik_AccountNo__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.TYPE</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.PHONE1</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACCOUNT.RECORDTYPE</customTabListAdditionalFields>
         <listViewButtons>Send_Bulk_SMS</listViewButtons>
         <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Trading_Name__c</lookupDialogsAdditionalFields>
@@ -1489,6 +1502,10 @@ loadJqueryDynamically();
 function showPage() { 
 
 var records = {!GETRECORDIDS($ObjectType.Contact)}; 
+alert (records);
+console.log(&apos;contacts&apos;);
+console.log(records);
+
 if (records[0] == null) 
 { 
 alert(&quot;Please select at least one Account.&quot;) 

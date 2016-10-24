@@ -50,7 +50,21 @@ global class PaymentBuilder
         	{
             	TransactionBuilderBatch batch = new TransactionBuilderBatch( transactionListToInsert,batchJobId); 
             	database.executebatch(batch,50);
-        	}    
+        	}   
+            else
+            {
+                // CHANGE RECORD Type - There are no transactios found
+                //         	// Getting Record Type - Transactions Found.
+                ID foundRecordTypeID = Schema.SObjectType.Batch_Jobs__c.getRecordTypeInfosByName().get('No Transactions To Pay').getRecordTypeId();        
+                Batch_Jobs__c batchJobObj = [SELECT id,Transaction_Count__c  FROM Batch_Jobs__c where id =:batchJobId LIMIT 1];         
+                if( batchJobObj != null )
+                {
+                    // Changing Record Type Id to Transactions Found.
+                    batchJobObj.RecordTypeId =  foundRecordTypeID;
+                    batchJobObj.Transaction_Count__c = 0;
+                    update batchJobObj;
+                }  
+            }
         }
         catch( Exception Ex )
         {
@@ -65,7 +79,7 @@ global class PaymentBuilder
          {
             System.debug(Logginglevel.ERROR ,'Inside getInvoice');
          	QBOCRUDHelper crudHelper = new QBOCRUDHelper();         
-         	Batch_Jobs__c batchJobObj = [SELECT id, Due_Before__c  FROM Batch_Jobs__c where id =:batchJobId LIMIT 1];
+         	Batch_Jobs__c batchJobObj = [SELECT id, Due_Before__c , Payment_Type__c FROM Batch_Jobs__c where id =:batchJobId LIMIT 1];
          	integer position = 1;
             
             System.debug('RESMI:TTTT accountQuickBookIdSet' );                         
@@ -105,7 +119,7 @@ global class PaymentBuilder
                 }
                 System.debug('RESMI:TTTT qs' + queryString );
              	Object res =  crudHelper.query(queryString, QBOInvoiceList.Class);
-                     
+                System.debug('crudHelper.query: ' + res ); 
              	if (res instanceof QBOError)
              	{
                 	System.debug('RESMI:TTTT:-error'  + (QBOError)res); 
@@ -195,12 +209,20 @@ global class PaymentBuilder
                         	transObj.Account__c = mapAccountDetails.get( item.CustomerRef.value );// Updating transaction object's Account Id
                        	    transObj.Order__c =  mapOrderDetails.get( item.id);// Updating transaction object's Order Id
                             transObj.Account_Business__c = mapOrderAccountBusiness.get(item.id);// Updating transaction object's Account Bussiness
-
+ 
+                            System.debug('HERE 1: ' );
+                            
                         	//if( mapAccountDefPaymentType.get(item.CustomerRef.value) == 'EFT')
-                        	if( mapAccountBusinessDefPayment.get(item.id) == 'EFT')
+                        	if( mapAccountBusinessDefPayment.get(item.id) == 'EFT' && (batchJobObj.Payment_Type__c == 'EFT' 
+                                                                                       || batchJobObj.Payment_Type__c  == '' 
+                                                                                       || batchJobObj.Payment_Type__c  == NULL) )
                         	{
                         		transactionListToInsert.add( transObj );  
-                        	}                        
+                        	} 
+                            else If(batchJobObj.Payment_Type__c != 'EFT'  && batchJobObj.Payment_Type__c  != '' && batchJobObj.Payment_Type__c  != NULL)
+                            {
+                                transactionListToInsert.add( transObj );  
+                            }
                      	}               
                  	}                 
             	}       
@@ -234,7 +256,7 @@ global class PaymentBuilder
              	}
              	else
              	{
-                	newStartingPosition =(position  * MAXRESULTS ) - MAXRESULTS + 1; 
+                	newStartingPosition =(position * MAXRESULTS ) - MAXRESULTS + 1; 
              	}       
                 
                 //create query String for credit memo based on search selection ( select  accounts or only due date)
@@ -282,7 +304,8 @@ global class PaymentBuilder
                  	}
                                     
                  	List<Account> accList = new List<Account>();
-                 	List<Order> orderList = new List<Order>();
+                    /// NEEDS TO BE ORDER ITEMS orderList
+                 	List<OrderItem> orderItem = new List<OrderItem>();
                  
                  	// Set and Map declaration for getting AccountId from Quickbook's Customer Ref's value field.
                  	Set<String> setQuickBookID = new Set<String>();
@@ -315,12 +338,14 @@ global class PaymentBuilder
                  	// getting order list
                  	if( !setInvoiceQuickBookId.isEmpty())
                  	{
-                     	orderList = [SELECT id, QuickBooksId__c from Order where QuickBooksId__c IN:setInvoiceQuickBookId];
+                     	orderItem = [SELECT id, QuickBooksId__c , Order.OpportunityId from OrderItem where QuickBooksId__c IN:setInvoiceQuickBookId];
+                        system.debug('HERE ### orderItem: ' + orderItem);
                  	}
-                 	for( Order ordrObj: orderList )
+                 	for( OrderItem ordrObj: orderItem )
                  	{
-                    	mapOrderDetails.put(ordrObj.QuickBooksId__c,ordrObj.Id);//map for updating transaction object's orderID
-                        mapOrderAccountBusiness.put( ordrObj.QuickBooksId__c,ordrObj.OpportunityId );// map for updating transaction object's opportunityID
+                        
+                    	mapOrderDetails.put(ordrObj.QuickBooksId__c,ordrObj.Order.Id);//map for updating transaction object's orderID
+                        mapOrderAccountBusiness.put( ordrObj.QuickBooksId__c,ordrObj.Order.OpportunityId );// map for updating transaction object's opportunityID
                  	}
               
                  	for (QBOInvoice item : invs)
@@ -387,6 +412,17 @@ global class PaymentBuilder
                              FROM Qvm_ABA_File_Generator__c where Name = 'ABA File Content' LIMIT 1];
             System.debug('RESMI:TTT Progress log 2');
             
+            Batch_Jobs__c batchJobObj = [SELECT id, Due_Before__c , Payment_Type__c, Reference_Number__c FROM Batch_Jobs__c where id =:batchJobId LIMIT 1];
+            
+            String paymentType = batchJobObj.Payment_Type__c;
+            if(paymentType == '' || paymentType == null){
+                paymentType = 'EFT';
+            }
+               
+            
+            //get the payment type for the QBO payment 
+            QBO_Payment_Type__mdt payType =  [select ID , QBO_Id__c FROM QBO_Payment_Type__mdt WHERE 	DeveloperName = :paymentType limit 1];
+            
      		Map< string, QBOPaymentResponse.Payment> paymentMap = new map< string, QBOPaymentResponse.Payment>();// Used to build the paymnet  
         	List<Payment__c> payments = new List<Payment__c>();// used to hold the payments in an SObject which can be passsed to a batch for processing 
        		List<Transaction__c	> listOftransactions = new List<Transaction__c>();
@@ -398,7 +434,9 @@ global class PaymentBuilder
            //System.debug('RESMI:TTT Progress log 3');
        		listOftransactions = [SELECT id,Account__c,Account_Business__c,Account_Business__r.Bank_Account_Number__c,
                                   Account_Business__r.BSB_Number__c,Customer_Reference__c,DocNumber__c,TotalAmount__c,Invoice_QuickBookId__c,
-                                  Type__c from Transaction__c where Batch_Jobs__c =: batchJobId];
+                                  Type__c, Balance__c 
+                                  
+                                  from Transaction__c where Batch_Jobs__c =: batchJobId];
             
             system.debug('RESMI:TTT Progress log 4' + listOftransactions.size());
      	               
@@ -413,10 +451,16 @@ global class PaymentBuilder
                 	QBOPaymentResponse.Payment paymentInstance = new QBOPaymentResponse.Payment();
                 	QBOPaymentResponse.CustomerRef  custref = new QBOPaymentResponse.CustomerRef();
                    
+                    
                 	custref.value = transObj.Customer_Reference__c;
                     system.debug('test1');
                 	paymentInstance.CustomerRef  = custref;
                     paymentInstance.PrivateNote = transObj.Account_Business__r.BSB_Number__c + ':' + transObj.Account_Business__r.Bank_Account_Number__c;
+					paymentInstance.PaymentRefNum  = batchJobObj.Reference_Number__c;                  
+                    QBOPaymentResponse.DepositToAccountRef payTypeRef = new QBOPaymentResponse.DepositToAccountRef();
+                    payTypeRef.value = payType.QBO_Id__c;
+                    paymentInstance.PaymentMethodRef = payTypeRef;
+                    
                     if (qvmABAFileObj.Deposit_Account_Id__c != null)
                     {
                         QBOPaymentResponse.DepositToAccountRef depositTo = new QBOPaymentResponse.DepositToAccountRef();
@@ -428,17 +472,17 @@ global class PaymentBuilder
                 	paymentInstance.TotalAmt = 0;
                     if (transObj.Type__c == 'Invoice') 
                     {
-                   		paymentInstance.TotalAmt += transObj.TotalAmount__c;
+                   		paymentInstance.TotalAmt += transObj.Balance__c;
               		}
                		else
                     {
-                   		paymentInstance.TotalAmt -= transObj.TotalAmount__c;
+                   		paymentInstance.TotalAmt -= transObj.Balance__c;
                		}   
                
                 	List<QBOPaymentResponse.Line> invLines = new List<QBOPaymentResponse.Line>();
                 	QBOPaymentResponse.Line line = new QBOPaymentResponse.Line();
                 
-                	line.Amount = transObj.TotalAmount__c;
+                	line.Amount = transObj.Balance__c;
                
                 	List<QBOPaymentResponse.LinkedTxn> LinkedTxnLines = new List<QBOPaymentResponse.LinkedTxn> ();
                 
@@ -454,20 +498,20 @@ global class PaymentBuilder
            		}
            		else// updating payment object with new line items
            		{
-                   // System.Debug('RESMI:TTT 3');
+                    System.Debug('RESMI:TTT 3');
                     
                 	QBOPaymentResponse.Payment paymentInstance = paymentMap.get( transObj.Account__c + transObj.Account_Business__r.BSB_Number__c + transObj.Account_Business__r.Bank_Account_Number__c);               
                		if (transObj.Type__c == 'Invoice')
                     {
-                   		paymentInstance.TotalAmt += transObj.TotalAmount__c;
+                   		paymentInstance.TotalAmt += transObj.Balance__c;
               		}
                		else
                     {
-                   		paymentInstance.TotalAmt -= transObj.TotalAmount__c;
+                   		paymentInstance.TotalAmt -= transObj.Balance__c;
                		}                              
                		List<QBOPaymentResponse.Line> invLines = new List<QBOPaymentResponse.Line>();
                 	QBOPaymentResponse.Line line = new QBOPaymentResponse.Line();                                              
-                	line.Amount = transObj.TotalAmount__c;                               
+                	line.Amount = transObj.Balance__c;                               
                		List<QBOPaymentResponse.LinkedTxn> LinkedTxnLines = new List<QBOPaymentResponse.LinkedTxn> (); 
                
                 	QBOPaymentResponse.LinkedTxn linkedTxnObj = new QBOPaymentResponse.LinkedTxn();

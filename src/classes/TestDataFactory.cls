@@ -1,7 +1,6 @@
 @isTest
 public class TestDataFactory {
     
-
     public static List<Account> createAccountsWithOpps(Integer numAccts, Integer numOppsPerAcct, string recordType ) {
 
         Id PriceBookId = Test.getStandardPricebookId();
@@ -88,10 +87,6 @@ public class TestDataFactory {
         return stall;
     }
 
-
-
-
-
     public static Stall__c createSingleStallWithNoOpp()
     {
 
@@ -121,7 +116,6 @@ public class TestDataFactory {
 
         return stall;
     }
-
 
     public static Stall__c createPermStallWithNoOpp()
     {
@@ -188,9 +182,6 @@ public class TestDataFactory {
 
         return stall;
     }
-
-
-
 
     public static void createStallProductsAndGeneralPriceBook()
     {
@@ -285,7 +276,6 @@ public class TestDataFactory {
             
     }
 
-
     public static Product2 createPremStallProducts()
     {
 
@@ -312,10 +302,7 @@ public class TestDataFactory {
 
         
     }
-
-
-
-
+    
     public static Batch_Jobs__c createSLBatchJob()
     {
 
@@ -336,7 +323,6 @@ public class TestDataFactory {
         return bj;
        
     }
-
 
     public static Batch_Jobs__c createLHBatchJob()
     {
@@ -379,6 +365,7 @@ public class TestDataFactory {
         return bj;
        
     }
+    
     public static void createOrder(String recordType)
     {
     	List<Account> accounts = [SELECT Id from Account];
@@ -559,7 +546,6 @@ public class TestDataFactory {
 		Insert aba;
     }
    
-    
     public static void CreateOAuthServiceEntries()
     {
         OAuthService__c service = new OAuthService__c();
@@ -618,7 +604,7 @@ public class TestDataFactory {
         return accts;
   }
 
-  /*
+    /*
       * @description       Test method to create a Lead.                       
       * @param             NA 
       * @return            Lead Object
@@ -633,6 +619,7 @@ public class TestDataFactory {
         leadRecord.Status='New Application';             
         return leadRecord ;   
     }
+    
     /*
       * @description       Test method to create a Lead with No Identity Files.                       
       * @param             NA 
@@ -665,6 +652,48 @@ public class TestDataFactory {
                             username = lastName + System.currentTimeMillis() + Constants.USER_POSTFIX );
         return usr;      
     } 
+    
+    /*
+      * @description       This method creates test contact for unit testing.                           
+      * @param             lastName , profileId, roleId, emailAddress    
+      * @return            Contact - Returns the contact object
+      * @throws            NA
+    */
+    public static Contact createContact(String accountName, String firstName, String lastName, String emailAddress)
+    {
+        Account newAccount = new Account (name = accountName,
+                                          BillingCity ='TestCity',
+                                          BillingCountry ='TestCountry',
+                                          BillingStreet ='TestStreet',
+                                          BillingPostalCode ='t3stcd3'
+                                         );
+        insert newAccount;
+		Contact contact = new Contact (FirstName = firstName,
+                                       LastName = lastName,
+                                       AccountId = newAccount.Id,
+                                       Email = emailAddress
+                                      );
+        insert contact;
+        return contact;       
+    } 
+    /*
+      * @description       This method creates test contact for unit testing.                           
+      * @param             lastName , profileId, roleId, emailAddress    
+      * @return            Contact - Returns the contact object
+      * @throws            NA
+    */
+    public static Opportunity createOpportunity(Id accountId)
+    {
+        Opportunity opportunity = new Opportunity (AccountId = accountId,
+                                                      Name = 'TestOpportunity',
+                                                   StageName = 'TestStage',
+                                                   CloseDate = System.today()
+                                                     );
+        insert opportunity;
+
+        return opportunity;
+    } 
+    
     /*
       * @description       This method creates custom setting data for QVM_Web_Form_Config__c name is MerchandiseStall .                           
       * @param             NA  
@@ -685,6 +714,7 @@ public class TestDataFactory {
       csWebFormObj.Terms_And_Conditions_URL__c  = null;
       return csWebFormObj;
     }
+    
     /*
       * @description       This method creates custom setting data for QVM_Web_Form_Config__c name is FruitAndVegetableTrading.                           
       * @param             NA  
@@ -705,6 +735,7 @@ public class TestDataFactory {
       csWebFormObj.Terms_And_Conditions_URL__c  = null;
       return csWebFormObj;
     }  
+    
     /*
       * @description       This method creates LeadObject with all required data for Application Submission.                           
       * @param             NA  
@@ -721,6 +752,7 @@ public class TestDataFactory {
         leadRecord.Email = 'resmi.ramakrishnan@rxpservices.com';                    
         return leadRecord ; 
     }
+    
    /*
       * @description       This method is using to create Campaign
       * @param             NA  
@@ -732,6 +764,7 @@ public class TestDataFactory {
          Campaign s = new Campaign ( Name = 'TestCampaign' );
          return s;
     }
+    
     /*
       * @description       This method creates custom setting data for QVM_Web_Form_Config__c name is NightMarketSpecialityStalls.                           
       * @param             NA  
@@ -754,6 +787,7 @@ public class TestDataFactory {
       csWebFormObj.Terms_And_Conditions_URL__c  = 'www.qvm.com.au';
       return csWebFormObj;
     }
+    
     /*
       * @description       This method creates custom setting data for QVM_Web_Form_Config__c name is SpecialEvents.                           
       * @param             NA  
@@ -776,7 +810,9 @@ public class TestDataFactory {
       csWebFormObj.Maximum_Number_Of_Images_Required__c = 0;
       csWebFormObj.Terms_And_Conditions_URL__c  = 'www.qvm.com.au';
       return csWebFormObj;
-    }/*
+    }
+    
+    /*
       * @description       This method creates custom setting data for QVM_Web_Form_Config__c name is NightMarketFoodVendor.                           
       * @param             NA  
       * @return            NA
@@ -799,7 +835,8 @@ public class TestDataFactory {
       csWebFormObj.Terms_And_Conditions_URL__c  = null;
       return csWebFormObj;
     }
-  /*  public static Order createOpportunityAndOrder()
+    
+  	/*  public static Order createOpportunityAndOrder()
     {
         Opportunity oppObj = new Opportunity();
         oppObj.Name = 'Testopportunity';
@@ -809,7 +846,6 @@ public class TestDataFactory {
         orderObj.
         return createOrder;
     }*/
-    
     public static Account createAccountTrader()
     {
         Schema.DescribeSObjectResult acccCfrSchema = Schema.SObjectType.Account; 
@@ -820,6 +856,7 @@ public class TestDataFactory {
         a.QuickBooks_Id__c =  '100';
         return a;
    }
+    
     //Create Account Supplier.
     public static Account createAccountSupplier()
     {
@@ -831,6 +868,7 @@ public class TestDataFactory {
         a.QuickBooks_Id__c =  '101';
         return a;
    }
+    
    // Create Order.
     public static order createOrder()
     {
@@ -847,6 +885,7 @@ public class TestDataFactory {
         insert orderObj;
         return orderObj;
     }
+    
      // Create Order.
     public static order createOrderQuickBookIdNull()
     {
@@ -863,7 +902,4 @@ public class TestDataFactory {
         insert orderObj;
         return orderObj;
     }
-    
-    
-    
 }

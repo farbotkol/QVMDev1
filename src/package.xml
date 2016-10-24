@@ -46,9 +46,14 @@
         <members>Campaign</members>
         <members>CampaignMember</members>
         <members>Case</members>
+        <members>CaseContactRole</members>
         <members>Contact</members>
         <members>ContentVersion</members>
         <members>Contract</members>
+        <members>ContractContactRole</members>
+        <members>DuplicateRecordItem</members>
+        <members>DuplicateRecordSet</members>
+        <members>EmailMessage</members>
         <members>Error_Log__c</members>
         <members>Event</members>
         <members>ExchangeUserMapping</members>
@@ -62,6 +67,7 @@
         <members>Invoice__c</members>
         <members>Lead</members>
         <members>Leave__c</members>
+        <members>LinkedArticle</members>
         <members>Macro</members>
         <members>MacroAction</members>
         <members>MacroInstruction</members>
@@ -85,6 +91,8 @@
         <members>QVM_Article__kav</members>
         <members>QVM_LH_FEE_SETTING__c</members>
         <members>QVM_Web_Form_Config__c</members>
+        <members>Quote</members>
+        <members>QuoteLineItem</members>
         <members>Qvm_ABA_File_Generator__c</members>
         <members>Site</members>
         <members>SocialPersona</members>
@@ -112,7 +120,48 @@
         <name>CustomTab</name>
     </types>
     <types>
-        <members>*</members>
+        <members>QVM_Email_Templates</members>
+        <members>QVM_Email_Templates/Event_Lead_Auto_Response</members>
+        <members>QVM_Email_Templates/Event_Lead_With_Campaign_Auto_Response</members>
+        <members>QVM_Email_Templates/PO_Approval</members>
+        <members>QVM_Email_Templates/PO_Approved</members>
+        <members>QVM_Email_Templates/PO_Rejected</members>
+        <members>QVM_Email_Templates/Property_Lead_Auto_Response</members>
+        <members>QVM_Email_Templates/Supplier_Approval_Template_html</members>
+        <members>QVM_Email_Templates/Supplier_Approved_Notice</members>
+        <members>QVM_Email_Templates/test</members>
+        <members>unfiled$public</members>
+        <members>unfiled$public/CommunityChangePasswordEmailTemplate</members>
+        <members>unfiled$public/CommunityForgotPasswordEmailTemplate</members>
+        <members>unfiled$public/CommunityWelcomeEmailTemplate</members>
+        <members>unfiled$public/ContactFollowUpSAMPLE</members>
+        <members>unfiled$public/LeadsNewassignmentnotificationSAMPLE</members>
+        <members>unfiled$public/LeadsWebtoLeademailresponseSAMPLE</members>
+        <members>unfiled$public/Notify_Suppliers_Upon_Approval</members>
+        <members>unfiled$public/Notify_Suppliers_Upon_Rejection</members>
+        <members>unfiled$public/SUPPORTCaseResponsewithSolutionSAMPLE</members>
+        <members>unfiled$public/SUPPORTCaseescalationnotificationSAMPLE</members>
+        <members>unfiled$public/SUPPORTNewassignmentnotificationSAMPLE</members>
+        <members>unfiled$public/SUPPORTSelfServiceNewCommentNotificationSAMPLE</members>
+        <members>unfiled$public/SUPPORTSelfServiceNewCommentSAMPLE</members>
+        <members>unfiled$public/SUPPORTSelfServiceNewUserLoginInformationSAMPLE</members>
+        <members>unfiled$public/SUPPORTSelfServiceNewUserLoginSAMPLE</members>
+        <members>unfiled$public/SUPPORTSelfServiceResetPasswordSAMPLE</members>
+        <members>unfiled$public/SUPPORTSelfServiceResetPasswordSAMPLE2</members>
+        <members>unfiled$public/SUPPORTWebtoCaseemailresponseSAMPLE</members>
+        <members>unfiled$public/Sample_CallNoAnswer</members>
+        <members>unfiled$public/Sample_CustomerInterest</members>
+        <members>unfiled$public/Sample_DealClosed</members>
+        <members>unfiled$public/Sample_GreatMeetingYou</members>
+        <members>unfiled$public/Sample_HappyBirthday</members>
+        <members>unfiled$public/Sample_MeetOnsite</members>
+        <members>unfiled$public/Sample_NewAccountManager</members>
+        <members>unfiled$public/Sample_NextSteps</members>
+        <members>unfiled$public/Sample_OutofOffice</members>
+        <members>unfiled$public/Sample_Promotion</members>
+        <members>unfiled$public/Sample_Reconnecting</members>
+        <members>unfiled$public/Sample_ScheduleMeeting</members>
+        <members>unfiled$public/Supplier_Approval_Template</members>
         <name>EmailTemplate</name>
     </types>
     <types>
@@ -159,10 +208,6 @@
         <members>*</members>
         <name>RemoteSiteSetting</name>
     </types>
-   <!-- <types>
-        <members>*</members>
-        <name>ReportType</name>
-    </types>-->
     <types>
         <members>*</members>
         <name>Role</name>

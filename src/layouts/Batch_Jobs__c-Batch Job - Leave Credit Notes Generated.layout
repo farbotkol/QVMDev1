@@ -61,6 +61,7 @@
     </layoutSections>
     <relatedLists>
         <fields>Product2</fields>
+        <fields>Stall__c</fields>
         <fields>Quantity</fields>
         <fields>UnitPrice</fields>
         <fields>ListPrice</fields>

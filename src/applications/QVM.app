@@ -14,4 +14,5 @@
     <tab>Stall_Map</tab>
     <tab>Stalls_Avaliable_today</tab>
     <tab>standard-Campaign</tab>
+    <tab>OAuth_Token__c</tab>
 </CustomApplication>

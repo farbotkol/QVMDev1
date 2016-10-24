@@ -183,7 +183,6 @@ global class QBOPaymentResponse
 	
 	public Payment Payment {get;set;} 
 	
-
 	public QBOPaymentResponse(JSONParser parser) {
 		while (parser.nextToken() != JSONToken.END_OBJECT) {
 			if (parser.getCurrentToken() == JSONToken.FIELD_NAME) {
@@ -282,7 +281,7 @@ global class QBOPaymentResponse
 						if (text == 'any') {
 							any_Z = new List<Any_Z>();
 							while (parser.nextToken() != JSONToken.END_ARRAY) {
-								any_Z.add(new Any_Z(parser));
+								any_Z.add(new Any_Z(parser));  
 							}
 						} else {
 							System.debug(LoggingLevel.WARN, 'LineEx consuming unrecognized property: '+text);
@@ -321,7 +320,6 @@ global class QBOPaymentResponse
 			}
 		}
 	}
-	
 	
 	public static QBOPaymentResponse parse(String json) {
 		return new QBOPaymentResponse(System.JSON.createParser(json));

@@ -628,7 +628,7 @@
     <fields>
         <fullName>Majik_AccountNo__c</fullName>
         <displayFormat>QVMB-{000000}</displayFormat>
-        <externalId>false</externalId>
+        <externalId>true</externalId>
         <label>Majik AccountNo</label>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -653,6 +653,18 @@
         <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile__c</fullName>
+        <description>Primary Mobile</description>
+        <externalId>false</externalId>
+        <formula>Primary_Contact__r.MobilePhone</formula>
+        <label>Mobile</label>
+        <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
@@ -753,32 +765,68 @@
         <picklist>
             <controllingField>Permitted_Use__c</controllingField>
             <picklistValues>
-                <fullName>Mens</fullName>
+                <fullName>Australian</fullName>
                 <default>false</default>
-                <controllingFieldValues>Apparel</controllingFieldValues>
-                <controllingFieldValues>Footwear</controllingFieldValues>
+                <controllingFieldValues>Souvenirs</controllingFieldValues>
             </picklistValues>
             <picklistValues>
-                <fullName>Ladies</fullName>
+                <fullName>Automotive</fullName>
                 <default>false</default>
-                <controllingFieldValues>Apparel</controllingFieldValues>
-                <controllingFieldValues>Footwear</controllingFieldValues>
+                <controllingFieldValues>Hardware</controllingFieldValues>
             </picklistValues>
             <picklistValues>
-                <fullName>Mixed</fullName>
+                <fullName>Bags/Wallets</fullName>
                 <default>false</default>
-                <controllingFieldValues>Apparel</controllingFieldValues>
-                <controllingFieldValues>Footwear</controllingFieldValues>
+                <controllingFieldValues>Fashion Accessories</controllingFieldValues>
             </picklistValues>
             <picklistValues>
-                <fullName>Sports</fullName>
+                <fullName>Bakery</fullName>
                 <default>false</default>
-                <controllingFieldValues>Apparel</controllingFieldValues>
+                <controllingFieldValues>Fresh Food</controllingFieldValues>
             </picklistValues>
             <picklistValues>
-                <fullName>Hosiery/Socks/Underwear</fullName>
+                <fullName>Bathroom</fullName>
                 <default>false</default>
-                <controllingFieldValues>Apparel</controllingFieldValues>
+                <controllingFieldValues>Homewares</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Belts</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fashion Accessories</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Books</fullName>
+                <default>false</default>
+                <controllingFieldValues>Paper Products</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Butcher</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fresh Food</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Café</fullName>
+                <default>false</default>
+                <controllingFieldValues>Prepared Food</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Camping</fullName>
+                <default>false</default>
+                <controllingFieldValues>Travel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cards/Wrap</fullName>
+                <default>false</default>
+                <controllingFieldValues>Paper Products</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Charactatures</fullName>
+                <default>false</default>
+                <controllingFieldValues>Artists-Self Designed and Made</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Children</fullName>
+                <default>false</default>
             </picklistValues>
             <picklistValues>
                 <fullName>Children&apos;s</fullName>
@@ -787,14 +835,99 @@
                 <controllingFieldValues>Footwear</controllingFieldValues>
             </picklistValues>
             <picklistValues>
-                <fullName>Themed/Novelty</fullName>
+                <fullName>Computer</fullName>
                 <default>false</default>
-                <controllingFieldValues>Apparel</controllingFieldValues>
+                <controllingFieldValues>Technology</controllingFieldValues>
             </picklistValues>
             <picklistValues>
-                <fullName>Services</fullName>
+                <fullName>Construction/remote</fullName>
                 <default>false</default>
-                <controllingFieldValues>Apparel</controllingFieldValues>
+                <controllingFieldValues>Toys</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cookware</fullName>
+                <default>false</default>
+                <controllingFieldValues>Homewares</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cosmetics</fullName>
+                <default>false</default>
+                <controllingFieldValues>Personal Care/Health</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Craft</fullName>
+                <default>false</default>
+                <controllingFieldValues>Materials/Craft Products</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Decorator</fullName>
+                <default>false</default>
+                <controllingFieldValues>Homewares</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deli</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fresh Food</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Educational</fullName>
+                <default>false</default>
+                <controllingFieldValues>Toys</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Eggs/Poultry</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fresh Food</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Engraving</fullName>
+                <default>false</default>
+                <controllingFieldValues>Services</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Eye testing</fullName>
+                <default>false</default>
+                <controllingFieldValues>Services</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Eyewear</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fashion Accessories</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fabrics</fullName>
+                <default>false</default>
+                <controllingFieldValues>Materials/Craft Products</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fish/Seafood</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fresh Food</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Flower</fullName>
+                <default>false</default>
+                <controllingFieldValues>Botantical</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Food Court</fullName>
+                <default>false</default>
+                <controllingFieldValues>Prepared Food</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fragrances</fullName>
+                <default>false</default>
+                <controllingFieldValues>Personal Care/Health</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fruit/Veg</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fresh Food</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Games/Puzzles</fullName>
+                <default>false</default>
+                <controllingFieldValues>Toys</controllingFieldValues>
             </picklistValues>
             <picklistValues>
                 <fullName>Garden</fullName>
@@ -807,213 +940,9 @@
                 <controllingFieldValues>Hardware</controllingFieldValues>
             </picklistValues>
             <picklistValues>
-                <fullName>Automotive</fullName>
+                <fullName>General Grocery</fullName>
                 <default>false</default>
-                <controllingFieldValues>Hardware</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Plants</fullName>
-                <default>false</default>
-                <controllingFieldValues>Botantical</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Flower</fullName>
-                <default>false</default>
-                <controllingFieldValues>Botantical</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Children</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Hats/Gloves/Scarfs</fullName>
-                <default>false</default>
-                <controllingFieldValues>Fashion Accessories</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Eyewear</fullName>
-                <default>false</default>
-                <controllingFieldValues>Fashion Accessories</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Jewellery</fullName>
-                <default>false</default>
-                <controllingFieldValues>Fashion Accessories</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Belts</fullName>
-                <default>false</default>
-                <controllingFieldValues>Fashion Accessories</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Bags/Wallets</fullName>
-                <default>false</default>
-                <controllingFieldValues>Fashion Accessories</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Hair</fullName>
-                <default>false</default>
-                <controllingFieldValues>Fashion Accessories</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Cards/Wrap</fullName>
-                <default>false</default>
-                <controllingFieldValues>Paper Products</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Stationary</fullName>
-                <default>false</default>
-                <controllingFieldValues>Paper Products</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Party Product</fullName>
-                <default>false</default>
-                <controllingFieldValues>Paper Products</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Books</fullName>
-                <default>false</default>
-                <controllingFieldValues>Paper Products</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Australian</fullName>
-                <default>false</default>
-                <controllingFieldValues>Souvenirs</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Vintage</fullName>
-                <default>false</default>
-                <controllingFieldValues>Souvenirs</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Signage</fullName>
-                <default>false</default>
-                <controllingFieldValues>Souvenirs</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>International</fullName>
-                <default>false</default>
-                <controllingFieldValues>Souvenirs</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Handheld</fullName>
-                <default>false</default>
-                <controllingFieldValues>Technology</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Computer</fullName>
-                <default>false</default>
-                <controllingFieldValues>Technology</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Software</fullName>
-                <default>false</default>
-                <controllingFieldValues>Technology</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Service</fullName>
-                <default>false</default>
-                <controllingFieldValues>Technology</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Pets and Accessories</fullName>
-                <default>false</default>
-                <controllingFieldValues>Livestock/Pets</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Poultry</fullName>
-                <default>false</default>
-                <controllingFieldValues>Livestock/Pets</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Cosmetics</fullName>
-                <default>false</default>
-                <controllingFieldValues>Personal Care/Health</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Personal Care</fullName>
-                <default>false</default>
-                <controllingFieldValues>Personal Care/Health</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Fragrances</fullName>
-                <default>false</default>
-                <controllingFieldValues>Personal Care/Health</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Soft</fullName>
-                <default>false</default>
-                <controllingFieldValues>Toys</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Games/Puzzles</fullName>
-                <default>false</default>
-                <controllingFieldValues>Toys</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Construction/remote</fullName>
-                <default>false</default>
-                <controllingFieldValues>Toys</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Educational</fullName>
-                <default>false</default>
-                <controllingFieldValues>Toys</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Secondhand</fullName>
-                <default>false</default>
-                <controllingFieldValues>Toys</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Cookware</fullName>
-                <default>false</default>
-                <controllingFieldValues>Homewares</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Tabletop</fullName>
-                <default>false</default>
-                <controllingFieldValues>Homewares</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Bathroom</fullName>
-                <default>false</default>
-                <controllingFieldValues>Homewares</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Storage</fullName>
-                <default>false</default>
-                <controllingFieldValues>Homewares</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Decorator</fullName>
-                <default>false</default>
-                <controllingFieldValues>Homewares</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Outdoor</fullName>
-                <default>false</default>
-                <controllingFieldValues>Homewares</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Soft Furnishing</fullName>
-                <default>false</default>
-                <controllingFieldValues>Homewares</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Small Electrical Appliances</fullName>
-                <default>false</default>
-                <controllingFieldValues>Homewares</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Novelty</fullName>
-                <default>false</default>
-                <controllingFieldValues>Homewares</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Fabrics</fullName>
-                <default>false</default>
-                <controllingFieldValues>Materials/Craft Products</controllingFieldValues>
+                <controllingFieldValues>Fresh Food</controllingFieldValues>
             </picklistValues>
             <picklistValues>
                 <fullName>Haberdashery</fullName>
@@ -1021,99 +950,19 @@
                 <controllingFieldValues>Materials/Craft Products</controllingFieldValues>
             </picklistValues>
             <picklistValues>
-                <fullName>Craft</fullName>
+                <fullName>Hair</fullName>
                 <default>false</default>
-                <controllingFieldValues>Materials/Craft Products</controllingFieldValues>
+                <controllingFieldValues>Fashion Accessories</controllingFieldValues>
             </picklistValues>
             <picklistValues>
-                <fullName>Deli</fullName>
+                <fullName>Handheld</fullName>
                 <default>false</default>
-                <controllingFieldValues>Fresh Food</controllingFieldValues>
+                <controllingFieldValues>Technology</controllingFieldValues>
             </picklistValues>
             <picklistValues>
-                <fullName>Butcher</fullName>
+                <fullName>Hats/Gloves/Scarfs</fullName>
                 <default>false</default>
-                <controllingFieldValues>Fresh Food</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Fish/Seafood</fullName>
-                <default>false</default>
-                <controllingFieldValues>Fresh Food</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Bakery</fullName>
-                <default>false</default>
-                <controllingFieldValues>Fresh Food</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Patisserie</fullName>
-                <default>false</default>
-                <controllingFieldValues>Fresh Food</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Nuts/Dried Food</fullName>
-                <default>false</default>
-                <controllingFieldValues>Fresh Food</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Fruit/Veg</fullName>
-                <default>false</default>
-                <controllingFieldValues>Fresh Food</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Eggs/Poultry</fullName>
-                <default>false</default>
-                <controllingFieldValues>Fresh Food</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Wine</fullName>
-                <default>false</default>
-                <controllingFieldValues>Fresh Food</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>General Grocery</fullName>
-                <default>false</default>
-                <controllingFieldValues>Fresh Food</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Café</fullName>
-                <default>false</default>
-                <controllingFieldValues>Prepared Food</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Food Court</fullName>
-                <default>false</default>
-                <controllingFieldValues>Prepared Food</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Take Away/Open Air</fullName>
-                <default>false</default>
-                <controllingFieldValues>Prepared Food</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Smoking</fullName>
-                <default>false</default>
-                <controllingFieldValues>Non-Consumables</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Camping</fullName>
-                <default>false</default>
-                <controllingFieldValues>Travel</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Luggage and Accessories</fullName>
-                <default>false</default>
-                <controllingFieldValues>Travel</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Promotional Stands</fullName>
-                <default>false</default>
-                <controllingFieldValues>Travel</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Engraving</fullName>
-                <default>false</default>
-                <controllingFieldValues>Services</controllingFieldValues>
+                <controllingFieldValues>Fashion Accessories</controllingFieldValues>
             </picklistValues>
             <picklistValues>
                 <fullName>Health/Wellbeing</fullName>
@@ -1121,24 +970,14 @@
                 <controllingFieldValues>Services</controllingFieldValues>
             </picklistValues>
             <picklistValues>
-                <fullName>Eye testing</fullName>
+                <fullName>Hosiery/Socks/Underwear</fullName>
                 <default>false</default>
-                <controllingFieldValues>Services</controllingFieldValues>
+                <controllingFieldValues>Apparel</controllingFieldValues>
             </picklistValues>
             <picklistValues>
-                <fullName>Charactatures</fullName>
+                <fullName>International</fullName>
                 <default>false</default>
-                <controllingFieldValues>Artists-Self Designed and Made</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Photographer</fullName>
-                <default>false</default>
-                <controllingFieldValues>Artists-Self Designed and Made</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Painting and Drawing</fullName>
-                <default>false</default>
-                <controllingFieldValues>Artists-Self Designed and Made</controllingFieldValues>
+                <controllingFieldValues>Souvenirs</controllingFieldValues>
             </picklistValues>
             <picklistValues>
                 <fullName>Jeweller</fullName>
@@ -1146,19 +985,42 @@
                 <controllingFieldValues>Artists-Self Designed and Made</controllingFieldValues>
             </picklistValues>
             <picklistValues>
-                <fullName>Other Medium</fullName>
+                <fullName>Jewellery</fullName>
                 <default>false</default>
-                <controllingFieldValues>Artists-Self Designed and Made</controllingFieldValues>
+                <controllingFieldValues>Fashion Accessories</controllingFieldValues>
             </picklistValues>
             <picklistValues>
-                <fullName>NightMarket Food</fullName>
+                <fullName>Ladies</fullName>
                 <default>false</default>
-                <controllingFieldValues>Events</controllingFieldValues>
+                <controllingFieldValues>Apparel</controllingFieldValues>
+                <controllingFieldValues>Footwear</controllingFieldValues>
             </picklistValues>
             <picklistValues>
-                <fullName>NightMarket General</fullName>
+                <fullName>Luggage and Accessories</fullName>
                 <default>false</default>
-                <controllingFieldValues>Events</controllingFieldValues>
+                <controllingFieldValues>Travel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mens</fullName>
+                <default>false</default>
+                <controllingFieldValues>Apparel</controllingFieldValues>
+                <controllingFieldValues>Footwear</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mixed</fullName>
+                <default>false</default>
+                <controllingFieldValues>Apparel</controllingFieldValues>
+                <controllingFieldValues>Footwear</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Novelty</fullName>
+                <default>false</default>
+                <controllingFieldValues>Homewares</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nuts/Dried Food</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fresh Food</controllingFieldValues>
             </picklistValues>
             <picklistValues>
                 <fullName>Other</fullName>
@@ -1166,6 +1028,166 @@
                 <controllingFieldValues>Events</controllingFieldValues>
                 <controllingFieldValues>Livestock/Pets</controllingFieldValues>
                 <controllingFieldValues>Other</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Medium</fullName>
+                <default>false</default>
+                <controllingFieldValues>Artists-Self Designed and Made</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Outdoor</fullName>
+                <default>false</default>
+                <controllingFieldValues>Homewares</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Painting and Drawing</fullName>
+                <default>false</default>
+                <controllingFieldValues>Artists-Self Designed and Made</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Party Product</fullName>
+                <default>false</default>
+                <controllingFieldValues>Paper Products</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Patisserie</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fresh Food</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Personal Care</fullName>
+                <default>false</default>
+                <controllingFieldValues>Personal Care/Health</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pets and Accessories</fullName>
+                <default>false</default>
+                <controllingFieldValues>Livestock/Pets</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Photographer</fullName>
+                <default>false</default>
+                <controllingFieldValues>Artists-Self Designed and Made</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Plants</fullName>
+                <default>false</default>
+                <controllingFieldValues>Botantical</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Poultry</fullName>
+                <default>false</default>
+                <controllingFieldValues>Livestock/Pets</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Promotional Stands</fullName>
+                <default>false</default>
+                <controllingFieldValues>Travel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Secondhand</fullName>
+                <default>false</default>
+                <controllingFieldValues>Toys</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service</fullName>
+                <default>false</default>
+                <controllingFieldValues>Technology</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Services</fullName>
+                <default>false</default>
+                <controllingFieldValues>Apparel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Signage</fullName>
+                <default>false</default>
+                <controllingFieldValues>Souvenirs</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Small Electrical Appliances</fullName>
+                <default>false</default>
+                <controllingFieldValues>Homewares</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Smoking</fullName>
+                <default>false</default>
+                <controllingFieldValues>Non-Consumables</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Soft</fullName>
+                <default>false</default>
+                <controllingFieldValues>Toys</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Soft Furnishing</fullName>
+                <default>false</default>
+                <controllingFieldValues>Homewares</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Software</fullName>
+                <default>false</default>
+                <controllingFieldValues>Technology</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sports</fullName>
+                <default>false</default>
+                <controllingFieldValues>Apparel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stationary</fullName>
+                <default>false</default>
+                <controllingFieldValues>Paper Products</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Storage</fullName>
+                <default>false</default>
+                <controllingFieldValues>Homewares</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Summer Night Market - Food</fullName>
+                <default>false</default>
+                <controllingFieldValues>Events</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Summer Night Market - General</fullName>
+                <default>false</default>
+                <controllingFieldValues>Events</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tabletop</fullName>
+                <default>false</default>
+                <controllingFieldValues>Homewares</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Away/Open Air</fullName>
+                <default>false</default>
+                <controllingFieldValues>Prepared Food</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Themed/Novelty</fullName>
+                <default>false</default>
+                <controllingFieldValues>Apparel</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vintage</fullName>
+                <default>false</default>
+                <controllingFieldValues>Souvenirs</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wine</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fresh Food</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Winter Night Market - Food</fullName>
+                <default>false</default>
+                <controllingFieldValues>Events</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Winter Night Market - General</fullName>
+                <default>false</default>
+                <controllingFieldValues>Events</controllingFieldValues>
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
@@ -1626,6 +1648,17 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>SMS_Opt_Out__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Created by SMS Magic</description>
+        <externalId>false</externalId>
+        <label>SMS Opt Out</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Season_Fee__c</fullName>
         <externalId>false</externalId>
         <label>Season Fee</label>
@@ -1959,6 +1992,7 @@
         <columns>ACCOUNT.NAME</columns>
         <columns>Trading_Name__c</columns>
         <columns>OPPORTUNITY.RECORDTYPE</columns>
+        <columns>Mobile__c</columns>
         <columns>Class__c</columns>
         <columns>Permitted_Use__c</columns>
         <columns>CORE.USERS.FULL_NAME</columns>
@@ -2242,15 +2276,23 @@
         <picklistValues>
             <picklist>Permitted_Use_Sub_Category__c</picklist>
             <values>
-                <fullName>NightMarket Food</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>NightMarket General</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summer Night Market - Food</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summer Night Market - General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Winter Night Market - Food</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Winter Night Market - General</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4869,15 +4911,15 @@
         <picklistValues>
             <picklist>Permitted_Use_Sub_Category__c</picklist>
             <values>
-                <fullName>NightMarket Food</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>NightMarket General</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summer Night Market - Food</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summer Night Market - General</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -7302,6 +7344,7 @@
         <customTabListAdditionalFields>OPPORTUNITY.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>OPPORTUNITY.CLOSE_DATE</customTabListAdditionalFields>
+        <listViewButtons>Send_Bulk_SMS</listViewButtons>
         <lookupDialogsAdditionalFields>OPPORTUNITY.NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Trading_Name__c</lookupDialogsAdditionalFields>
@@ -7327,7 +7370,7 @@
         <searchResultsAdditionalFields>OPPORTUNITY.RECORDTYPE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>OPPORTUNITY.CLOSE_DATE</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>Read</sharingModel>
+    <sharingModel>ReadWrite</sharingModel>
     <validationRules>
         <fullName>Friday_Leave</fullName>
         <active>true</active>
@@ -7384,4 +7427,126 @@
         <errorDisplayField>Leave_Taken_Wednesday__c</errorDisplayField>
         <errorMessage>There is not enough Wednesday leave remaining for the year</errorMessage>
     </validationRules>
+    <webLinks>
+        <fullName>Send_Bulk_SMS</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Send Bulk SMS</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+ 
+function loadJqueryDynamically(){
+ 
+    var newscript = document.createElement(&apos;script&apos;); 
+    newscript.type = &apos;text/javascript&apos;; 
+    newscript.async = false; 
+    newscript.src = &apos;{!URLFOR(&apos;/resource/smagicinteract__smJQuery/js/jquery-1.10.2.js&apos;)}&apos;; 
+    (document.getElementsByTagName(&apos;head&apos;)[0]||document.getElementsByTagName(&apos;body&apos;)[0]).appendChild(newscript); 
+ 
+    var newscript1 = document.createElement(&apos;script&apos;); 
+    newscript1.type = &apos;text/javascript&apos;; 
+    newscript1.async = false; 
+    newscript1.src = &apos;{!URLFOR(&apos;/resource/smagicinteract__smJQuery/js/jquery-ui-1.10.4.custom.min.js&apos;)} &apos;; 
+    (document.getElementsByTagName(&apos;head&apos;)[0]||document.getElementsByTagName(&apos;body&apos;)[0]).appendChild(newscript1); 
+ 
+    var newscript2 = document.createElement(&apos;script&apos;); 
+    newscript2.type = &apos;text/javascript&apos;; 
+    newscript2.async = false; 
+    newscript2.src = &apos;{!URLFOR(&apos;/resource/smagicinteract__sendSMSJS&apos;)}&apos;; 
+    (document.getElementsByTagName(&apos;head&apos;)[0]||document.getElementsByTagName(&apos;body&apos;)[0]).appendChild(newscript2); 
+    newscript2.onload = showPage; 
+ 
+} 
+ 
+loadJqueryDynamically(); 
+ 
+function showPage(){
+ 
+    var records = {!GETRECORDIDS($ObjectType.Opportunity)}; 
+    if (records[0] == null){ 
+        alert(&quot;Please select at least one account.&quot;) 
+    }
+    else{
+        var packagePrefix = &quot;smagicinteract__&quot;; 
+        var recordType = &quot;Opportunity&quot;; 
+        var recordIds = &quot;&quot;; 
+        var nameField = &apos;Name&apos;; 
+        var mobileField = &apos;Mobile__c&apos;; 
+        var optOutField = &apos;&apos;; 
+        var optOutDefaultValue = &apos;yes&apos;; 
+        var smsType = &apos;&apos;; 
+        var userId = &apos;{!$User.Id}&apos;; 
+        var elementIdVar = &apos;&apos;; 
+        var showUserDropDown = false; 
+        var dialogTitle = &apos;&apos;; 
+        var queryString = &apos;&apos;; 
+ 
+        for (var n in records){
+            if(n == &apos;remove&apos; || n == &apos;indexOf&apos;) continue; 
+            recordIds = recordIds + records[n]; 
+ 
+            if (n != records.length-1){
+                recordIds = recordIds + &quot;,&quot;; 
+            }
+        }
+ 
+        var cssUrl = &apos;{!URLFOR(&apos;/resource/smagicinteract__smJQuery/css/sm-theme/jquery-ui-1.10.4.custom.min.css&apos;)}&apos;; 
+ 
+        if({!$Permission.smagicinteract__AllowToSendBulkMessage}){
+            sendSMS(recordType, recordIds, userId, nameField, mobileField, optOutField, optOutDefaultValue, smsType, elementIdVar, packagePrefix, showUserDropDown, dialogTitle, cssUrl); 
+        }
+        else{
+            alert(&apos;You cannot Send SMS. Please contact system admin&apos;); 
+        }
+ 
+    }
+ 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Send_SMS</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Send SMS</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+{!REQUIRESCRIPT(&apos;/resource/smagicinteract__smJQuery/js/jquery-1.10.2.js&apos;)} 
+{!REQUIRESCRIPT(&apos;/resource/smagicinteract__smJQuery/js/jquery-ui-1.10.4.custom.min.js&apos;)} 
+{!REQUIRESCRIPT(&quot;/resource/smagicinteract__sendSMSJS&quot;)} 
+ 
+var packagePrefix = &quot;smagicinteract__&quot;; 
+var recordType = &apos;Opportunity&apos;; 
+var idToUpdate = &apos;{!Opportunity.Id}&apos;; 
+var nameField = &apos;Name&apos;; 
+var mobileField = &apos;Mobile__c&apos;; 
+var optOutField = &apos;&apos;; 
+var optOutDefaultValue = &apos;no&apos;; 
+var smsType = &apos;popup&apos;; // for pop up, use value -&apos;popup&apos; 
+var userId = &apos;{!$User.Id}&apos;; 
+var elementIdVar = &apos;&apos;; 
+var showUserDropDown = false; 
+var dialogTitle = &apos;&apos;; 
+var cssUrl = &apos;{!URLFOR(&apos;/resource/smagicinteract__smJQuery/css/sm-theme/jquery-ui-1.10.4.custom.min.css&apos;)}&apos;; 
+ 
+sendSMS(recordType, idToUpdate, userId, nameField, mobileField, optOutField, optOutDefaultValue, smsType, elementIdVar, packagePrefix, showUserDropDown, dialogTitle, cssUrl); 
+ 
+/* 
+ 
+Details of parameters which can be modified : 
+recordType - include the object API name. 
+idToUpdate - include the object ID of the object used. 
+mobileField - use the field name which contain mobile phone of the record. 
+optOutField - use the field which contains opt out preference of the record. 
+smsType - this parameter can be used to sepcify the type of interface required. For Visualforce page, it should be left blank. For popup, its value should be &apos;popup&apos;. 
+dialogTitle - you can mention the name of pop up dialogue box in this parameter. 
+optOutDefaultValue = use this field to set the default value of opt out 
+*/</url>
+    </webLinks>
 </CustomObject>
