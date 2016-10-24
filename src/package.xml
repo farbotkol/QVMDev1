@@ -95,7 +95,6 @@
         <members>QuoteLineItem</members>
         <members>Qvm_ABA_File_Generator__c</members>
         <members>Site</members>
-        <members>SocialPersona</members>
         <members>Solution</members>
         <members>Stall__c</members>
         <members>StreamingChannel</members>
@@ -130,7 +129,6 @@
         <members>QVM_Email_Templates/Supplier_Approval_Template_html</members>
         <members>QVM_Email_Templates/Supplier_Approved_Notice</members>
         <members>QVM_Email_Templates/test</members>
-        <members>unfiled$public</members>
         <members>unfiled$public/CommunityChangePasswordEmailTemplate</members>
         <members>unfiled$public/CommunityForgotPasswordEmailTemplate</members>
         <members>unfiled$public/CommunityWelcomeEmailTemplate</members>

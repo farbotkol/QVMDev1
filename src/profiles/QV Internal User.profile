@@ -3496,12 +3496,8 @@
     <layoutAssignments>
         <layout>QuoteLineItem-Quote Line Item Layout</layout>
     </layoutAssignments>
-    <layoutAssignments>
-        <layout>SocialPersona-Social Persona Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>SocialPost-Social Post Layout</layout>
-    </layoutAssignments>
+
+
     <layoutAssignments>
         <layout>Solution-Solution Layout</layout>
     </layoutAssignments>
