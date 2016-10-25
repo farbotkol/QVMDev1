@@ -615,7 +615,7 @@
         <fullName>QVM_Record_Type</fullName>
         <active>true</active>
         <businessProcess>QVM Support Process</businessProcess>
-        <label>QVM Record Type</label>
+        <label>QVM Case</label>
         <picklistValues>
             <picklist>Origin</picklist>
             <values>
@@ -804,7 +804,7 @@
         <fullName>Trader_Record_Type</fullName>
         <active>true</active>
         <businessProcess>Traders Support Process</businessProcess>
-        <label>Trader Record Type</label>
+        <label>Trader Case</label>
         <picklistValues>
             <picklist>Origin</picklist>
             <values>

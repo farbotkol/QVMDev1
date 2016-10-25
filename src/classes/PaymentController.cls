@@ -26,7 +26,7 @@ public class PaymentController {
                     if(paymentTypes.size()>0){
                 	paymentMethod = paymentTypes[0].DeveloperName;    
                     }else{
-                    paymentMethod = 'EFT';
+                    	paymentMethod = 'EFT';
                     }
                 }else{
                     paymentMethod = 'EFT';

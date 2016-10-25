@@ -2567,6 +2567,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>OrderItem.Total_GST__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>OrderItem.Total__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -2653,6 +2658,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Product2.Family</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Product2.GST_Inclusive__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2838,11 +2848,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>QuoteLineItem.TotalPrice</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>SocialPersona.SourceApp</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>

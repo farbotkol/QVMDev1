@@ -685,10 +685,16 @@ public class TestDataFactory {
     public static Opportunity createOpportunity(Id accountId)
     {
         Opportunity opportunity = new Opportunity (AccountId = accountId,
-                                                      Name = 'TestOpportunity',
-                                                   StageName = 'TestStage',
+                                                   Name = 'TestOpportunity',
+                                                   Business_Status__c = 'Open',
+                                                   Uplift_Factor__c = 1.0,
+                                                   Permitted_Use__c	= 'Hardware',
+                                                   Payment_Type__c = 'EFT',
+                                                   StageName = 'Closed Won',
                                                    CloseDate = System.today()
                                                      );
+        
+        
         insert opportunity;
 
         return opportunity;

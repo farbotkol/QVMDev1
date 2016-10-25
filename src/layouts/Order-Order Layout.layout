@@ -116,12 +116,12 @@
     </layoutSections>
     <relatedLists>
         <fields>Product2</fields>
-        <fields>Date__c</fields>
         <fields>Stall__c</fields>
-        <fields>Quantity</fields>
-        <fields>UnitPrice</fields>
+        <fields>Date__c</fields>
         <fields>Description</fields>
+        <fields>Quantity</fields>
         <fields>Total__c</fields>
+        <fields>Total_GST__c</fields>
         <fields>Leave__c</fields>
         <relatedList>RelatedOrderItemList</relatedList>
         <sortField>Date__c</sortField>

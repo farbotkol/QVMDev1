@@ -261,6 +261,7 @@
         <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
+        <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>Invoice_Status__c</fields>
         <fields>Invoice_Date__c</fields>

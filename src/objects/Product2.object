@@ -75,6 +75,14 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>GST_Inclusive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>GST Inclusive</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>IsActive</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -116,6 +124,7 @@
         <columns>PRODUCT2.DESCRIPTION</columns>
         <columns>PRODUCT2.FAMILY</columns>
         <columns>SKU__c</columns>
+        <columns>GST_Inclusive__c</columns>
         <filterScope>Everything</filterScope>
         <label>All Products</label>
     </listViews>

@@ -468,7 +468,6 @@ global class PaymentBuilder
                         paymentInstance.DepositToAccountRef = depositTo;
                     }
                     	
-                    system.debug('test2');
                 	paymentInstance.TotalAmt = 0;
                     if (transObj.Type__c == 'Invoice') 
                     {

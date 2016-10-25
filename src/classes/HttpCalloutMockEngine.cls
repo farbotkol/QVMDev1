@@ -41,6 +41,7 @@ public class HttpCalloutMockEngine implements HttpCalloutMock{
         }
         if (req.getEndpoint().endsWith('customer?minorversion=4') 
             || req.getEndpoint().endsWith('customer/3?minorversion=4')
+            || req.getEndpoint().endsWith('customer/100?minorversion=4')
             || req.getEndpoint().endsWith('customer?operation=update&minorversion=4'))
         {
             String json = '{'+
@@ -230,7 +231,8 @@ public class HttpCalloutMockEngine implements HttpCalloutMock{
                 '  }}'; 
             res.setBody(json);
         }
-        if(req.getEndpoint().endsWith('vendor?minorversion=4')){
+        if(req.getEndpoint().endsWith('vendor?minorversion=4') ||
+          	req.getEndpoint().endsWith('vendor/101?minorversion=4')){
             String json = '{\"Vendor\":'+
                 '{'+
                 '    \"BillAddr\": {'+

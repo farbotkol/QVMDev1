@@ -138,8 +138,8 @@
         <fields>Description</fields>
         <fields>Quantity</fields>
         <fields>Total__c</fields>
+        <fields>Total_GST__c</fields>
         <fields>Leave__c</fields>
-        <fields>Status__c</fields>
         <relatedList>RelatedOrderItemList</relatedList>
         <sortField>Date__c</sortField>
         <sortOrder>Asc</sortOrder>

@@ -1,6 +1,7 @@
 @isTest(SeeAllData=true)
 public class AccountQBOHelperTest 
 {
+    /*
       private class TraderMock implements HttpCalloutMock
       { 
         public HTTPResponse respond(HTTPRequest req) 
@@ -44,7 +45,6 @@ public class AccountQBOHelperTest
             return res;
         }
     }
-    
     private class MockSupplier implements HttpCalloutMock 
     {
         public HTTPResponse respond(HTTPRequest req) {
@@ -87,7 +87,7 @@ public class AccountQBOHelperTest
            
             return res;
         }
-    }    
+    }   */
     // Trader
     @isTest static void validateGetAccountQBOUrlTrader() 
     {
@@ -95,7 +95,8 @@ public class AccountQBOHelperTest
         traderAccobj = TestDataFactory.createAccountTrader();
         insert traderAccobj;
         TestDataFactory.CreateOAuthServiceEntries();
-        Test.setMock(HttpCalloutMock.class, new TraderMock());
+        Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
+        //Test.setMock(HttpCalloutMock.class, new TraderMock());
         String tstring = AccountQBOHelper.GetAccountQBOUrl(traderAccobj.id); 
         system.assertNotEquals(tstring, null);
     }
@@ -107,9 +108,47 @@ public class AccountQBOHelperTest
         supplierAccobj = TestDataFactory.createAccountSupplier();
         insert supplierAccobj;
         TestDataFactory.CreateOAuthServiceEntries();
-        Test.setMock(HttpCalloutMock.class, new MockSupplier());
+        Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
+        //Test.setMock(HttpCalloutMock.class, new MockSupplier());
         String sString =  AccountQBOHelper.GetAccountQBOUrl(supplierAccobj.id);
         system.assertNotEquals(sString, null);
+         
+    }
+    
+    // Supplier
+    @isTest static void validateGetPOQBOUrl() 
+    {
+        Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
+        
+        TestDataFactory.createStallProductsAndGeneralPriceBook();
+        List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1,'SL');
+        TestDataFactory.createOrder('SL');
+        Order order =  [Select Id,QuickBooksId__c from Order LIMIT 1];
+        order.QuickBooksId__c = '234';
+        update order;
+        system.debug('MIKEL: ' + order);
+        String sString =  AccountQBOHelper.GetPOQBOUrl(order.Id);
+        system.assertNotEquals(sString, null);
+        /*
+        //Test.setMock(HttpCalloutMock.class, new MockSupplier());
+        Account acc = new Account();
+        acc.Name = 'acc';
+        insert acc;
+        Order order = new Order();
+        order.AccountId = acc.Id;
+        order.EffectiveDate = Date.today();
+        order..Status = 'Accounts_Payable';
+        order.QuickBooksId__c ='12345';
+        insert order;
+        
+        test.startTest();
+        
+        system.debug('MIKEL: ' + order);
+        
+        
+        test.stopTest();
+        
+        system.assertNotEquals(sString, null);*/
          
     }
     @isTest static void validateGetInvoiceQBOUrl()
