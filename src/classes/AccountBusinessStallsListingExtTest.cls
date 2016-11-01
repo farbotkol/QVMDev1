@@ -1,7 +1,7 @@
 @isTest
 private class AccountBusinessStallsListingExtTest {
     
-private class Mock implements HttpCalloutMock {
+/*private class Mock implements HttpCalloutMock {
         public HTTPResponse respond(HTTPRequest req) {
             
             system.debug('hi there');
@@ -43,12 +43,12 @@ private class Mock implements HttpCalloutMock {
             return res;
         }
     }
-    
+  */  
 
     @isTest static  void Test_AccountBusinessStallsListingExt() {
 		TestDataFactory.createStallProductsAndGeneralPriceBook();
         TestDataFactory.CreateOAuthServiceEntries();
-        Test.setMock(HttpCalloutMock.class, new Mock());
+        Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
         Test.startTest();
         List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1, 'SL');
 

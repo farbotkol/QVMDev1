@@ -25,6 +25,10 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
     </actionOverrides>
@@ -1502,9 +1506,6 @@ loadJqueryDynamically();
 function showPage() { 
 
 var records = {!GETRECORDIDS($ObjectType.Contact)}; 
-alert (records);
-console.log(&apos;contacts&apos;);
-console.log(records);
 
 if (records[0] == null) 
 { 

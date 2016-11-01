@@ -223,7 +223,4 @@ public class StatementControllerTest
     {
         QBOStatement.getQBOStatementFromJSON(null);
     }
-   
-    
-   
 }

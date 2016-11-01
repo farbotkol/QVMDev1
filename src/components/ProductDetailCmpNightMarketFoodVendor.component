@@ -57,10 +57,18 @@
                 <p style="font-size:100%;"><br></br><b>Please upload an Australian Driver's License or passport*</b><br></br><br></br></p>
                 <apex:inputFile style="width:100%" id="fileToUpload4" value="{!AppSub.fileBody4}" filename="{!AppSub.fileName4}" /> 
 
-                <p style="font-size:100%;"><br></br><b>Please upload your Certificate of Currency covering up to $20,000,000*</b><br></br><br></br></p>
+                <p style="font-size:100%;"><br></br><b>Please upload your Certificate of Currency covering up to $20,000,000*</b></p>
+					<p style="font-size:90%;">
+                    <i>*Disclaimer: If you do not currently hold a Certificate of Currency please upload a blank file</i><br></br><br></br>
+					</p>
                 <apex:inputFile style="width:100%" id="fileToUpload5" value="{!AppSub.fileBody5}" filename="{!AppSub.fileName5}" /> 
                 
-                <p style="font-size:100%;"><br></br><b>Please upload your Certificate of Registration of Food Premises*</b><br></br><br></br></p>
+                <p style="font-size:100%;"><br></br><b>Please upload your Certificate of Registration of Food Premises*</b></p>
+					<p style="font-size:90%;">
+                    <i>*Disclaimer: If you do not currently hold a Certificate of registration of Food premises please upload a blank file</i><br></br><br></br>
+					</p>
+
+ 
                 <apex:inputFile style="width:100%" id="fileToUpload6" value="{!AppSub.fileBody6}" filename="{!AppSub.fileName6}" />
 
  

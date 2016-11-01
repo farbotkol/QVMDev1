@@ -100,6 +100,7 @@ public class AccountQBOHelperTest
         String tstring = AccountQBOHelper.GetAccountQBOUrl(traderAccobj.id); 
         system.assertNotEquals(tstring, null);
     }
+    
     // Supplier
     @isTest static void validateGetAccountQBOUrlSupplier() 
     {
@@ -129,40 +130,34 @@ public class AccountQBOHelperTest
         system.debug('MIKEL: ' + order);
         String sString =  AccountQBOHelper.GetPOQBOUrl(order.Id);
         system.assertNotEquals(sString, null);
-        /*
-        //Test.setMock(HttpCalloutMock.class, new MockSupplier());
-        Account acc = new Account();
-        acc.Name = 'acc';
-        insert acc;
-        Order order = new Order();
-        order.AccountId = acc.Id;
-        order.EffectiveDate = Date.today();
-        order..Status = 'Accounts_Payable';
-        order.QuickBooksId__c ='12345';
-        insert order;
-        
-        test.startTest();
-        
-        system.debug('MIKEL: ' + order);
-        
-        
-        test.stopTest();
-        
-        system.assertNotEquals(sString, null);*/
-         
     }
+    
+    // Supplier
+    @isTest static void validateGetPaymentQBOUrl() 
+    {
+        Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
+        
+        TestDataFactory.createStallProductsAndGeneralPriceBook();
+        List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1,'SL');
+        Payment__c payment = TestDataFactory.createPayment(accounts.get(0).Id);
+        String sString =  AccountQBOHelper.GetPaymentQBOUrl(payment.Id);
+        system.assertNotEquals(sString, null);
+    }
+    
     @isTest static void validateGetInvoiceQBOUrl()
     {
         Order ordObj = TestDataFactory.createOrder();
         String s = AccountQBOHelper.GetInvoiceQBOUrl(ordObj.id);
         system.assertNotEquals(s, null);
     }
+    
     @isTest static void validateGetInvoiceQBOUrlNullScenario()
     {
         Order ordObj = TestDataFactory.createOrderQuickBookIdNull();
         String s = AccountQBOHelper.GetInvoiceQBOUrl(ordObj.id);
         system.assertEquals(s, null);
     }
+    
     @isTest static void validateFinish()
     {
         AccountsQBOUpsertBatch newbatchObj = new AccountsQBOUpsertBatch();

@@ -6,4 +6,6 @@
     <tab>Transaction__c</tab>
     <tab>Payment__c</tab>
     <tab>Stall_Map</tab>
+    <tab>Recieve_Payment</tab>
+    <tab>Free_Day__c</tab>
 </CustomApplication>

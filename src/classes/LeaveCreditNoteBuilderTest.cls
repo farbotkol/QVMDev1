@@ -1,6 +1,6 @@
 @isTest
 public class LeaveCreditNoteBuilderTest {
-    
+    /*
     private class Mock implements HttpCalloutMock {
         public HTTPResponse respond(HTTPRequest req) {
             
@@ -73,12 +73,12 @@ public class LeaveCreditNoteBuilderTest {
             
             return res;
         }
-    }
+    }*/
     
     @isTest static void TestGenerateLeaveCreditNotes(){
         TestDataFactory.createStallProductsAndGeneralPriceBook();
         TestDataFactory.CreateOAuthServiceEntries();
-        Test.setMock(HttpCalloutMock.class, new Mock());
+        Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
         List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1, 'SL');
         
         Opportunity opp = [select id, name, Stall__c from Opportunity limit 1];
@@ -87,7 +87,7 @@ public class LeaveCreditNoteBuilderTest {
         Batch_Jobs__c job = TestDataFactory.createSLBatchJobLCN();
         Test.startTest();
         boolean result = LeaveCreditNoteBuilder.GenerateLeaveCreditNotes(job.Id);
-        
+        System.assert(result);
         Test.stopTest();
     }
     
@@ -95,7 +95,7 @@ public class LeaveCreditNoteBuilderTest {
         
         TestDataFactory.createStallProductsAndGeneralPriceBook();
         TestDataFactory.CreateOAuthServiceEntries();
-        Test.setMock(HttpCalloutMock.class, new Mock());
+        Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
         List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1, 'SL');
         
         Opportunity opp = [select id, name, Stall__c from Opportunity limit 1];
@@ -106,6 +106,7 @@ public class LeaveCreditNoteBuilderTest {
         Test.startTest();
         Map<string, QBOProductList.Item >  productMap = new Map<string, QBOProductList.Item  >();
         boolean resultSuccess = LeaveCreditNoteBuilder.GenerateLeaveCreditNotes(null);
+        System.assert(resultSuccess);
         Test.stopTest();
         
         

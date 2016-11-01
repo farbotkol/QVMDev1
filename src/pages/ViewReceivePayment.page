@@ -1,0 +1,3 @@
+<apex:page standardController="Batch_Jobs__c" extensions="ReceivePaymentController" action="{!Redirect}">
+    Auto selecting Batch Job....... 
+</apex:page>

@@ -47,6 +47,7 @@ public class StallMapController {
         return weekdays;
     }
     
+    public Integer isEditable {get; set;}
     
     public String getbuildTable(){
         
@@ -144,8 +145,11 @@ public class StallMapController {
                  backColor = '#000'; 
                  textColor ='#767676';
                 }
-                
-            tmp += '<div class=\'ui-widget-content room draggable resize-drag container \' style=\' background-color:'+ backColor+'; width:'+stalls.get(i).Width__c+'mm; height:'+stalls.get(i).Height__c+
+            string draggable = '';
+            if (isEditable ==1){
+                draggable ='draggable';
+            }
+            tmp += '<div class=\'ui-widget-content room '+draggable+' resize-drag container \' style=\' background-color:'+ backColor+'; width:'+stalls.get(i).Width__c+'mm; height:'+stalls.get(i).Height__c+
                    'mm;  top:'+stalls.get(i).Top__c+'mm; left:'+stalls.get(i).Left__c+'mm;\'  data-x='+stalls.get(i).Left__c+' data-y='+stalls.get(i).Top__c+' id='+stalls.get(i).id+'>'+
                     '<span class="trigger" style=\' color:'+ textColor+';\'>'+textToShowOnStall+'</span><div id="tooltip"><div class="info">'+textToShow+'</div><a class="close">×</a>	</div></div>' ;
                 
@@ -189,6 +193,11 @@ public class StallMapController {
         return null;
     }
     
-	
+	public pageReference edit(){
+        isEditable = 1;
+         getbuildTable();
+        return null;
+    }
+    
 
 }

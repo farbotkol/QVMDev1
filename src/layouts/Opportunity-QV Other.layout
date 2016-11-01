@@ -41,12 +41,12 @@
                 <field>CloseDate</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>Permitted_Use__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Stall_Or_Product_Concept__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>Permitted_Use__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -251,14 +251,11 @@
         <customButtons>New_Order</customButtons>
         <excludeButtons>New</excludeButtons>
         <fields>ORDERS.ORDER_NUMBER</fields>
-        <fields>ORDERS.EFFECTIVE_DATE</fields>
         <fields>ORDERS.STATUS</fields>
+        <fields>ORDERS.EFFECTIVE_DATE</fields>
         <fields>Total__c</fields>
-        <fields>ORDERS.CREATED_DATE</fields>
-        <fields>ORDERS.ACTIVATED_DATE</fields>
+        <fields>Total_With_GST__c</fields>
         <relatedList>RelatedOrderList</relatedList>
-        <sortField>ORDERS.CREATED_DATE</sortField>
-        <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
         <excludeButtons>New</excludeButtons>
@@ -269,15 +266,6 @@
         <fields>Account__c</fields>
         <fields>Paid__c</fields>
         <relatedList>Invoice__c.Account_Business__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>Annual_Rent__c</fields>
-        <fields>Monthly_Rent__c</fields>
-        <fields>Lease_Commence__c</fields>
-        <fields>Lease_Expiry__c</fields>
-        <fields>Bond_Amount__c</fields>
-        <relatedList>Stall__c.Tenant__c</relatedList>
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedFileList</relatedList>

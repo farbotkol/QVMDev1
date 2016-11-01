@@ -200,9 +200,11 @@
         	<apex:selectOptions value="{!weekdayRefreshOptions}"></apex:selectOptions>
         </apex:selectList>
           <apex:commandButton status="fetchStatus" value="Refresh" action="{!refresh}" title="Refresh Page"/>
+           <apex:commandButton status="fetchStatus" action="{!edit}" value="Edit" title="Refresh Page" />
            <apex:outputPanel style="color:#4AA02C;font-weight:bold">
                   <apex:actionStatus id="fetchStatus" startText="Fetching..." stopText=""/>
               </apex:outputPanel> 
+            
         </apex:pageBlock> 
         <apex:outputtext value="{!buildTable}" escape="false" id="tblHTML"/> 
         <apex:actionFunction name="CallApexMethod" action="{!UpdateAttributes}" onComplete=";">

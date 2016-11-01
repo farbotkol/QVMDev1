@@ -159,73 +159,84 @@ global with sharing class OrderBuilder {
         Insert ordersToCreate;
 
         //Orders orders = [select id from Orders where ] ;
+        //List<Free_Day__c> freeDays = [SELECT Date__c FROM Free_Day__c WHERE ];
+		//Map<Free_Day__c, Date__c> m = new Map<Free_Day__c, Date__c>([SELECT Date__c FROM Free_Day__c]);
+        //List<Free_Day__c> myList=[select Date__c,Name from Free_Day__c];
+        
+        Map<Date, String> freesMap = new Map<Date, String>();
+
+        for(Free_Day__c freeDay:[select Date__c,Name from Free_Day__c]){
+            freesMap.put(freeDay.Date__c, freeDay.Name);
+        }
 
         List<OrderItem> orderItemsToCreate  = new List<OrderItem>();
         For(Order order : ordersToCreate)
         {
-
             Date dateIndex = startDate;
             while(dateIndex <= endDate)
             {
-                String dayOfWeek = ((Datetime)dateIndex).format('EEEE'); 
-                List<Stall__c> stalls;
-                if (dayOfWeek == 'Monday') 
+                if(!freesMap.containsKey(dateIndex))
                 {
-                    stalls = oppMap.get(order.OpportunityId).MondayStalls__r;
-                }       
-                else if (dayOfWeek == 'Tuesday') 
-                {
-                    stalls = oppMap.get(order.OpportunityId).TuesdayStalls__r;
-                }   
-                else if (dayOfWeek == 'Wednesday')
-                {
-                    stalls = oppMap.get(order.OpportunityId).WednesdayStalls__r;
-                }   
-                else if (dayOfWeek == 'Thursday')
-                {
-                    stalls = oppMap.get(order.OpportunityId).ThursdayStalls__r;
-                }                           
-                else if (dayOfWeek == 'Friday')
-                {
-                    stalls = oppMap.get(order.OpportunityId).FridayStalls__r;
-                }       
-                else if (dayOfWeek == 'Saturday')
-                {  
-                    stalls = oppMap.get(order.OpportunityId).SaturdayStalls__r;
-                }   
-                else if (dayOfWeek == 'Sunday')
-                {
-                    stalls = oppMap.get(order.OpportunityId).SundayStalls__r;
-                }   
-
                 
-                // here we need to handle leave requirments
-                for (Stall__c stall : stalls)
-                {
-                    system.debug('order : ' + order.Id); 
-                    system.debug('opp : ' + oppMap.get(order.OpportunityId));
-                    system.debug('pricebook id : ' + oppMap.get(order.OpportunityId).Pricebook2Id);
-                    system.debug('dayOfWeek : ' + dayOfWeek);
-                    system.debug('PricebookEntryId :' + pricebookEntriesMap.get(dayOfWeek + (String)oppMap.get(order.OpportunityId).Pricebook2Id ).Id); 
-                    // create an order line
-                    OrderItem ordItm =new OrderItem();
-                    // detirmine the key to use to get the prive book entry for this day
-                    String val = dayOfWeek + (String)oppMap.get(order.OpportunityId).Pricebook2Id ; 
+                    String dayOfWeek = ((Datetime)dateIndex).format('EEEE'); 
+                    List<Stall__c> stalls;
+                    if (dayOfWeek == 'Monday') 
+                    {
+                        stalls = oppMap.get(order.OpportunityId).MondayStalls__r;
+                    }       
+                    else if (dayOfWeek == 'Tuesday') 
+                    {
+                        stalls = oppMap.get(order.OpportunityId).TuesdayStalls__r;
+                    }   
+                    else if (dayOfWeek == 'Wednesday')
+                    {
+                        stalls = oppMap.get(order.OpportunityId).WednesdayStalls__r;
+                    }   
+                    else if (dayOfWeek == 'Thursday')
+                    {
+                        stalls = oppMap.get(order.OpportunityId).ThursdayStalls__r;
+                    }                           
+                    else if (dayOfWeek == 'Friday')
+                    {
+                        stalls = oppMap.get(order.OpportunityId).FridayStalls__r;
+                    }       
+                    else if (dayOfWeek == 'Saturday')
+                    {  
+                        stalls = oppMap.get(order.OpportunityId).SaturdayStalls__r;
+                    }   
+                    else if (dayOfWeek == 'Sunday')
+                    {
+                        stalls = oppMap.get(order.OpportunityId).SundayStalls__r;
+                    }   
+    
                     
-                    String leaveKey =  dateIndex + (String)order.OpportunityId; 
-                    ordItm.Date__c = dateIndex;
-                    ordItm.PricebookEntryId = pricebookEntriesMap.get(val).Id;// + (String)oppMap.get(oppMap).Pricebook2Id
-                    
-                    ordItm.OrderId = order.Id;
-                    ordItm.UnitPrice =  pricebookEntriesMap.get(val).UnitPrice;
-                    ordItm.Quantity = 1;
-                    ordItm.Stall__c = stall.Id;
-                    If(leaveEntriesMap.containsKey(leaveKey))
-                    ordItm.Leave__c = true;
-                    orderItemsToCreate.add(ordItm);
-
+                    // here we need to handle leave requirments
+                    for (Stall__c stall : stalls)
+                    {
+                        system.debug('order : ' + order.Id); 
+                        system.debug('opp : ' + oppMap.get(order.OpportunityId));
+                        system.debug('pricebook id : ' + oppMap.get(order.OpportunityId).Pricebook2Id);
+                        system.debug('dayOfWeek : ' + dayOfWeek);
+                        system.debug('PricebookEntryId :' + pricebookEntriesMap.get(dayOfWeek + (String)oppMap.get(order.OpportunityId).Pricebook2Id ).Id); 
+                        // create an order line
+                        OrderItem ordItm =new OrderItem();
+                        // detirmine the key to use to get the prive book entry for this day
+                        String val = dayOfWeek + (String)oppMap.get(order.OpportunityId).Pricebook2Id ; 
+                        
+                        String leaveKey =  dateIndex + (String)order.OpportunityId; 
+                        ordItm.Date__c = dateIndex;
+                        ordItm.PricebookEntryId = pricebookEntriesMap.get(val).Id;// + (String)oppMap.get(oppMap).Pricebook2Id
+                        
+                        ordItm.OrderId = order.Id;
+                        ordItm.UnitPrice =  pricebookEntriesMap.get(val).UnitPrice;
+                        ordItm.Quantity = 1;
+                        ordItm.Stall__c = stall.Id;
+                        If(leaveEntriesMap.containsKey(leaveKey))
+                        ordItm.Leave__c = true;
+                        orderItemsToCreate.add(ordItm);
+    
+                    }
                 }
-
                 dateIndex = dateIndex.addDays(1);
             }
             

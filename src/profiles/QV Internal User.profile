@@ -137,6 +137,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>CommunitiesTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Constants</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -445,11 +449,23 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ReceivePaymentController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ReceivePaymentControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ScheduleReconnect</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>ScheduleUpdatePrimaryContact</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ScheduleableTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -3389,6 +3405,9 @@
         <layout>FeedItem-Feed Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Free_Day__c-Free Day Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Global-Global Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -3501,8 +3520,12 @@
     <layoutAssignments>
         <layout>QuoteLineItem-Quote Line Item Layout</layout>
     </layoutAssignments>
-
-
+    <layoutAssignments>
+        <layout>SocialPersona-Social Persona Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SocialPost-Social Post Layout</layout>
+    </layoutAssignments>
     <layoutAssignments>
         <layout>Solution-Solution Layout</layout>
     </layoutAssignments>
@@ -3873,6 +3896,10 @@
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
+        <apexPage>ViewReceivePayment</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>ViewStatement</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
@@ -4063,6 +4090,10 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>Free_Day__c</tab>
+        <visibility>DefaultOff</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>Invoice__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
@@ -4072,6 +4103,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Payment__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Recieve_Payment</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>

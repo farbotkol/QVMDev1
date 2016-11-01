@@ -1,10 +1,11 @@
 @isTest
 public class InvoicesControllerTest {
     
-    private class Mock implements HttpCalloutMock {
+    /*private class Mock implements HttpCalloutMock {
         public HTTPResponse respond(HTTPRequest req) {
             
             system.debug('hi there');
+            system.debug('hi there'+req);
             HTTPResponse res = new HTTPResponse();
             res.setStatusCode(200);
             
@@ -115,7 +116,7 @@ public class InvoicesControllerTest {
             
             return res;
         }
-    }
+    }*/
     
     @isTest static void Test_GetInvoices(){
         UserRole portalRole = [Select Id From UserRole Where PortalType = 'None' Limit 1];
@@ -139,7 +140,7 @@ public class InvoicesControllerTest {
         system.debug('portalAccountOwner1 : ' + portalAccountOwner1);
         System.runAs ( portalAccountOwner1 ) {
             TestDataFactory.CreateOAuthServiceEntries(); 
-            Test.setMock(HttpCalloutMock.class, new Mock());
+            Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
             Account portalAccount1 = new Account(
                 Name = 'TestAccount',
                 OwnerId = portalAccountOwner1.Id,
@@ -181,10 +182,11 @@ public class InvoicesControllerTest {
         List<QBOInvoice> qboInvoices = new List<QBOInvoice>();        
         System.runas(user1){
             
-            Test.setMock(HttpCalloutMock.class, new Mock());
+            Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
             QBOInvoiceList qbo = new QBOInvoiceList();
             system.debug('Try to get mock invoices : ');
             qboInvoices = InvoicesController.getInvoices();
+            system.debug('Try to get mock invoices : ' + qboInvoices);
             
         }
         Test.stopTest();

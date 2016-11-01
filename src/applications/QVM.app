@@ -15,4 +15,6 @@
     <tab>Stalls_Avaliable_today</tab>
     <tab>standard-Campaign</tab>
     <tab>OAuth_Token__c</tab>
+    <tab>Recieve_Payment</tab>
+    <tab>Free_Day__c</tab>
 </CustomApplication>

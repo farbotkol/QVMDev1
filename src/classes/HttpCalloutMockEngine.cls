@@ -42,7 +42,8 @@ public class HttpCalloutMockEngine implements HttpCalloutMock{
         if (req.getEndpoint().endsWith('customer?minorversion=4') 
             || req.getEndpoint().endsWith('customer/3?minorversion=4')
             || req.getEndpoint().endsWith('customer/100?minorversion=4')
-            || req.getEndpoint().endsWith('customer?operation=update&minorversion=4'))
+            || req.getEndpoint().endsWith('customer?operation=update&minorversion=4')
+           	|| req.getEndpoint().endsWith('customer/201?minorversion=4'))
         {
             String json = '{'+
                 '  \"Customer\": {'+
@@ -103,7 +104,75 @@ public class HttpCalloutMockEngine implements HttpCalloutMock{
                 '}';
             res.setBody(json);
         }
-        if(req.getEndpoint().endsWith('invoice')){
+        if(req.getEndpoint().contains('query?query=select%20Id%2CDocNumber'))
+        {
+            String json = '{'+
+                    ''+
+                    '  \"QueryResponse\": {'+
+                    ''+
+                    '    \"Invoice\": ['+
+                    ''+
+                    '      {'+
+                    ''+
+                    '        \"sparse\": true,'+
+                    ''+
+                    '        \"Id\": \"224\",'+
+                    ''+
+                    '        \"DocNumber\": \"1029\",'+
+                    ''+
+                    '        \"TxnDate\": \"2016-08-11\",'+
+                    ''+
+                    '        \"LinkedTxn\": [],'+
+                    ''+
+                    '        \"Line\": [],'+
+                    ''+
+                    '        \"DueDate\": \"2016-09-10\",'+
+                    ''+
+                    '        \"TotalAmt\": 82.5,'+
+                    ''+
+                    '        \"Balance\": 82.5'+
+                    ''+
+                    '      },'+
+                    ''+
+                    '      {'+
+                    ''+
+                    '        \"sparse\": true,'+
+                    ''+
+                    '        \"Id\": \"8\",'+
+                    ''+
+                    '        \"DocNumber\": \"1004\",'+
+                    ''+
+                    '        \"TxnDate\": \"2016-07-19\",'+
+                    ''+
+                    '        \"LinkedTxn\": [],'+
+                    ''+
+                    '        \"Line\": [],'+
+                    ''+
+                    '        \"DueDate\": \"2016-08-07\",'+
+                    ''+
+                    '        \"TotalAmt\": 528.0,'+
+                    ''+
+                    '        \"Balance\": 0'+
+                    ''+
+                    '      }'+
+                    ''+
+                    '    ],'+
+                    ''+
+                    '    \"startPosition\": 1,'+
+                    ''+
+                    '    \"maxResults\": 2,'+
+                    ''+
+                    '    \"totalCount\": 2'+
+                    ''+
+                    '  },'+
+                    ''+
+                    '  \"time\": \"2016-09-01T22:34:11.245-07:00\"'+
+                    ''+
+                    '}';
+            res.setBody(json);
+        }
+        if(req.getEndpoint().endsWith('invoice')
+           || req.getEndpoint().endsWith('invoice/201/pdf')){
             String json = '{\"Invoice\": '+
             '{'+
             '    \"Deposit\": 0,'+

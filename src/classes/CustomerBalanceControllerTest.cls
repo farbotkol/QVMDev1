@@ -1,6 +1,6 @@
 @isTest
 public class CustomerBalanceControllerTest {
-    
+    /*
       private class Mock implements HttpCalloutMock {
         public HTTPResponse respond(HTTPRequest req) {
             
@@ -115,7 +115,7 @@ public class CustomerBalanceControllerTest {
             
             return res;
         }
-    }
+    }*/
     
     @isTest static void Test_GetCustomerBalance(){
         UserRole portalRole = [Select Id From UserRole Where PortalType = 'None' Limit 1];
@@ -137,8 +137,8 @@ public class CustomerBalanceControllerTest {
         );
         Database.insert(portalAccountOwner1);
         System.runAs ( portalAccountOwner1 ) {
-            TestDataFactory.CreateOAuthServiceEntries(); 
-            Test.setMock(HttpCalloutMock.class, new Mock());
+            TestDataFactory.CreateOAuthServiceEntries();  
+            Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());//new Mock());
             Account portalAccount1 = new Account(
                 Name = 'TestAccount',
                 OwnerId = portalAccountOwner1.Id,
@@ -173,8 +173,8 @@ public class CustomerBalanceControllerTest {
         
         Double balance;
         Test.startTest();
-        System.runas(user1){
-            Test.setMock(HttpCalloutMock.class, new Mock());                       
+        System.runas(user1){ 
+            Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());//new Mock());  
             balance = CustomerBalanceController.getCustomerBalance();
             
         }
@@ -204,7 +204,7 @@ public class CustomerBalanceControllerTest {
         Database.insert(portalAccountOwner1);
         System.runAs ( portalAccountOwner1 ) {
             TestDataFactory.CreateOAuthServiceEntries(); 
-            Test.setMock(HttpCalloutMock.class, new Mock());
+            Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());//new Mock());
             Account portalAccount1 = new Account(
                 Name = 'TestAccount',
                 OwnerId = portalAccountOwner1.Id,
@@ -240,7 +240,7 @@ public class CustomerBalanceControllerTest {
         Double balance;
         Test.startTest();
         System.runas(user1){
-            Test.setMock(HttpCalloutMock.class, new Mock());                       
+            Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());//new Mock());                 
             balance = CustomerBalanceController.getCustomerBalance();
             
         }

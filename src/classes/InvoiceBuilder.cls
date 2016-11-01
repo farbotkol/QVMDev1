@@ -103,6 +103,10 @@ global class InvoiceBuilder {
                     {
                         line.Description += oi.PricebookEntry.Product2.Name + ' ' +  oi.Description;  
                     }
+                    else if (line.Description == '' && (oi.Description == null || oi.Description == ''))
+                    {
+                        line.Description += oi.PricebookEntry.Product2.Name;  
+                    }
                     
                      
                     line.DetailType = 'SalesItemLineDetail';

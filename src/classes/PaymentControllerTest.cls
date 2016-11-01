@@ -18,7 +18,7 @@ public class PaymentControllerTest {
 		
         Test.stopTest();        
     }
-    
+    /*
       private class StatementTestMock implements HttpCalloutMock
       {
         public HTTPResponse respond(HTTPRequest req) 
@@ -168,7 +168,6 @@ public class PaymentControllerTest {
          return res;
         }
     }
-    
     private class StatementErrorTestMock implements HttpCalloutMock
       {
         public HTTPResponse respond(HTTPRequest req) 
@@ -181,6 +180,8 @@ public class PaymentControllerTest {
          return res;
         }
     }
+    */
+	
     
     static testMethod void PositiveConditions()
     {
@@ -206,7 +207,7 @@ public class PaymentControllerTest {
     static testMethod void ErrorConditions()
     {
         TestDataFactory.CreateOAuthServiceEntries();
-        Test.setMock(HttpCalloutMock.class, new StatementErrorTestMock());
+        Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
         
         Test.setCurrentPage(Page.ViewPayment);
         ApexPages.currentPage().getParameters().put('paymentRef', '201');

@@ -1,6 +1,6 @@
 @isTest
 private class OrderBuilderTest {
-
+	/*
     private class Mock implements HttpCalloutMock {
         public HTTPResponse respond(HTTPRequest req) {
             
@@ -43,6 +43,17 @@ private class OrderBuilderTest {
             return res;
         }
     }
+    */
+    @isTest static void TestUpdateBatchType(){
+        Batch_Jobs__c batchJob = TestDataFactory.createSLBatchJob();
+        OrderBuilder.UpdateBatchType( batchJob.Id );
+        ID findingRecordTypeID = Schema.SObjectType.Batch_Jobs__c.getRecordTypeInfosByName().get('Processing Orders').getRecordTypeId();
+        
+        Batch_Jobs__c batchJobObjFromDatabase = [SELECT RecordTypeId FROM Batch_Jobs__c where id =:batchJob.Id LIMIT 1];
+
+        System.assertNotEquals(batchJob.RecordTypeId, findingRecordTypeID);
+        System.assertEquals(batchJobObjFromDatabase.RecordTypeId, findingRecordTypeID);
+    }
     
     @isTest static void TestGenerateOrdersSL() {
         
@@ -50,7 +61,8 @@ private class OrderBuilderTest {
         List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1, 'SL');
 
         TestDataFactory.CreateOAuthServiceEntries();
-        Test.setMock(HttpCalloutMock.class, new Mock());
+        
+        Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
         
 
         Opportunity opp = [select id, name, Stall__c from Opportunity limit 1];
@@ -69,10 +81,8 @@ private class OrderBuilderTest {
     
         Test.stopTest();
         
-            
-
+        System.assert(result);
         //System.assert(opp3.Leave_Taken_This_Year__c == 0);
-
     }
 
     
@@ -80,7 +90,7 @@ private class OrderBuilderTest {
         List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1, 'LH');
 
         TestDataFactory.CreateOAuthServiceEntries();
-        Test.setMock(HttpCalloutMock.class, new Mock());
+        Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
         
         TestDataFactory.createStallProductsAndGeneralPriceBook();
 
@@ -96,14 +106,13 @@ private class OrderBuilderTest {
         Test.stopTest();
     
         //System.assert(opp3.Leave_Taken_This_Year__c == 0);
-
     }
     
     @isTest static void TestGenerateOrdersFees() {
         List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1, 'LH');
 
         TestDataFactory.CreateOAuthServiceEntries();
-        Test.setMock(HttpCalloutMock.class, new Mock());
+        Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
         
         TestDataFactory.createStallProductsAndGeneralPriceBook();
 
@@ -120,7 +129,5 @@ private class OrderBuilderTest {
         Test.stopTest();
     
         //System.assert(opp3.Leave_Taken_This_Year__c == 0);
-
     }
-    
 }

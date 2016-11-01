@@ -125,6 +125,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>CommunitiesTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Constants</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -433,11 +437,23 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ReceivePaymentController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ReceivePaymentControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ScheduleReconnect</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>ScheduleUpdatePrimaryContact</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ScheduleableTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -3375,6 +3391,10 @@
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
+        <apexPage>ViewReceivePayment</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>ViewStatement</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
@@ -3527,6 +3547,10 @@
         <visibility>None</visibility>
     </tabSettings>
     <tabSettings>
+        <tab>Free_Day__c</tab>
+        <visibility>None</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>Invoice__c</tab>
         <visibility>None</visibility>
     </tabSettings>
@@ -3540,6 +3564,10 @@
     </tabSettings>
     <tabSettings>
         <tab>Payment__c</tab>
+        <visibility>None</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Recieve_Payment</tab>
         <visibility>None</visibility>
     </tabSettings>
     <tabSettings>

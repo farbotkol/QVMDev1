@@ -184,13 +184,21 @@
     <tab>Transaction__c</tab>
     <tab>Payment__c</tab>
     <tab>Stall_Map</tab>
+    <tab>Recieve_Payment</tab>
+    <tab>Free_Day__c</tab>
     <tabLimitConfig>
         <maxNumberOfPrimaryTabs>10</maxNumberOfPrimaryTabs>
         <maxNumberOfSubTabs>10</maxNumberOfSubTabs>
     </tabLimitConfig>
     <workspaceMappings>
         <mapping>
+            <tab>Free_Day__c</tab>
+        </mapping>
+        <mapping>
             <tab>Payment__c</tab>
+        </mapping>
+        <mapping>
+            <tab>Recieve_Payment</tab>
         </mapping>
         <mapping>
             <tab>Stall_Map</tab>

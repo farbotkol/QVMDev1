@@ -29,6 +29,10 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
     </actionOverrides>
@@ -162,6 +166,7 @@
     </fields>
     <fields>
         <fullName>EffectiveDate</fullName>
+        <inlineHelpText>For Trader invoices, this is the date the payment terms start</inlineHelpText>
         <trackHistory>true</trackHistory>
     </fields>
     <fields>

@@ -41,7 +41,7 @@ public class NewOrderControllerExt {
              Id orderId = ApexPages.currentPage().getParameters().get('id') ;
              Opportunity opp  = [SELECT Id, AccountId from Opportunity where id = :orderId LIMIT 1];
              devRecordTypeId = Schema.SObjectType.Order.getRecordTypeInfosByName().get('Accounts Receivable').getRecordTypeId();    
-             newPage  = new PageReference('/801/e?retURL=' + returnUrl + '&aid=' + opp.AccountId + '&oid=' + opp.Id + '&ent=Order&RecordType=' + devRecordTypeId );
+             newPage  = new PageReference('/801/e?retURL=' + returnUrl + '&aid=' + opp.AccountId + '&oid=' + opp.Id + '&ent=Order&RecordType=' + devRecordTypeId + '&Status=Draft&');
              
         }
         return  newPage.setRedirect(true);

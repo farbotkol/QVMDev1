@@ -648,7 +648,8 @@ public class TestDataFactory {
                             emailencodingkey = Constants.ENCODE_KEY, lastname = lastName,
                             timezonesidkey = Constants.TIME_ZONE,
                             languagelocalekey = Constants.LOCALE_KEY,
-                            localesidkey = Constants.LOCALE_KEY, profileid = profileId,
+                            localesidkey = Constants.LOCALE_KEY, 
+                            profileid = profileId,
                             username = lastName + System.currentTimeMillis() + Constants.USER_POSTFIX );
         return usr;      
     } 
@@ -691,13 +692,23 @@ public class TestDataFactory {
                                                    Permitted_Use__c	= 'Hardware',
                                                    Payment_Type__c = 'EFT',
                                                    StageName = 'Closed Won',
-                                                   CloseDate = System.today()
-                                                     );
+                                                   CloseDate = System.today());
         
         
         insert opportunity;
 
         return opportunity;
+    } 
+    
+    public static Payment__c createPayment(Id accountId)
+    {
+        Payment__c payment = new Payment__c ();
+        payment.Account__c = accountId;
+        payment.QuickBook_Id__c = '12345';
+        
+        insert payment;
+
+        return payment;
     } 
     
     /*

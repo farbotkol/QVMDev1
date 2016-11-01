@@ -366,14 +366,11 @@
         <customButtons>New_Order</customButtons>
         <excludeButtons>New</excludeButtons>
         <fields>ORDERS.ORDER_NUMBER</fields>
-        <fields>ORDERS.EFFECTIVE_DATE</fields>
         <fields>ORDERS.STATUS</fields>
+        <fields>ORDERS.EFFECTIVE_DATE</fields>
         <fields>Total__c</fields>
-        <fields>ORDERS.CREATED_DATE</fields>
-        <fields>ORDERS.ACTIVATED_DATE</fields>
+        <fields>Total_With_GST__c</fields>
         <relatedList>RelatedOrderList</relatedList>
-        <sortField>ORDERS.CREATED_DATE</sortField>
-        <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>

@@ -1,6 +1,6 @@
 @isTest
 public class ViewPDFControllerTest {
-	
+	/*
     private class Mock implements HttpCalloutMock {
         public HTTPResponse respond(HTTPRequest req) {
             
@@ -43,10 +43,11 @@ public class ViewPDFControllerTest {
             return res;
         }
     }
-    
+    */
     @isTest static void TestPDF(){
+        TestDataFactory.createStallProductsAndGeneralPriceBook();
         TestDataFactory.CreateOAuthServiceEntries();
-        Test.setMock(HttpCalloutMock.class, new Mock());
+        Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
         Test.setCurrentPage(Page.ViewPDF);
         ApexPages.currentPage().getParameters().put('objectType', 'invoice');
         ApexPages.currentPage().getParameters().put('invoiceId', '201');

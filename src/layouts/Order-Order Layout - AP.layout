@@ -40,14 +40,6 @@
                 <behavior>Readonly</behavior>
                 <field>TotalAmount</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Balance_Due__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Total_With_GST__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -61,14 +53,6 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>ActivatedDate</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>PoDate</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>PoNumber</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -140,9 +124,7 @@
         <fields>Date__c</fields>
         <fields>Description</fields>
         <fields>Quantity</fields>
-        <fields>Total__c</fields>
-        <fields>Total_GST__c</fields>
-        <fields>Leave__c</fields>
+        <fields>TotalPrice</fields>
         <relatedList>RelatedOrderItemList</relatedList>
         <sortField>Date__c</sortField>
         <sortOrder>Asc</sortOrder>
