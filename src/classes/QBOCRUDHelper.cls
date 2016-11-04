@@ -78,7 +78,7 @@ public with sharing class QBOCRUDHelper {
      * h.report('CustomerBalanceDetail','customer=207&arpaid=All',QBOCustomerBalanceDetail.class);
      */
     public object report(string reportType, string paramSting, type apexType) {
-         
+        paramSting = paramSting.replace(',', '%2C'); 
         Http h = new Http();
         
         HttpRequest req = new HttpRequest();

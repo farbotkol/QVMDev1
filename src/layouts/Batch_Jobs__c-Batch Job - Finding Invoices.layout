@@ -104,6 +104,7 @@
         <fields>Account__c</fields>
         <fields>Account_Business__c</fields>
         <fields>Balance__c</fields>
+        <fields>Outstanding_Balance__c</fields>
         <fields>DocNumber__c</fields>
         <fields>Invoice_QuickBookId__c</fields>
         <fields>TotalAmount__c</fields>

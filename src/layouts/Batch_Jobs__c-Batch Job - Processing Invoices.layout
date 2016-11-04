@@ -55,6 +55,39 @@
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>false</detailHeading>
+        <editHeading>false</editHeading>
+        <label>Reports</label>
+        <layoutColumns>
+            <layoutItems>
+                <reportChartComponent>
+                    <cacheData>false</cacheData>
+                    <contextFilterableField>FK_CUSTENT_ID</contextFilterableField>
+                    <hideOnError>false</hideOnError>
+                    <includeContext>true</includeContext>
+                    <reportName>Batch_Job_Summary</reportName>
+                    <showTitle>false</showTitle>
+                    <size>SMALL</size>
+                </reportChartComponent>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <reportChartComponent>
+                    <cacheData>false</cacheData>
+                    <contextFilterableField>FK_CUSTENT_ID</contextFilterableField>
+                    <hideOnError>false</hideOnError>
+                    <includeContext>true</includeContext>
+                    <reportName>Batch_Job_Invoice_Processing</reportName>
+                    <showTitle>false</showTitle>
+                    <size>SMALL</size>
+                </reportChartComponent>
+            </layoutItems>
+        </layoutColumns>
+        <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
         <editHeading>true</editHeading>

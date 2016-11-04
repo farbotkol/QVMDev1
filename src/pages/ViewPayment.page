@@ -50,30 +50,43 @@
             <h1 align="center">
                 Payment Recipt {!myId}
             </h1>
-            <h2>
+            <!--<h2>
                 Account: {!paymentResponse.Payment.CustomerRef.name}<br/>
-                Date: {!paymentDate}<br/>
-                Payment Method: {!paymentMethod}<br/>
-            </h2>
-            <!--<table width="75%" border="0" cellspacing="0" cellpadding="0">
+                
+            </h2>-->
+            <table width="75%" border="0" cellspacing="0" cellpadding="0">
+                <br/>
                 <tr>
-                    <th>Customer Name : {!customerName}</th>
+                    <th>Salesforce Id: </th><td>{!account.Majik_AccountNo__c}</td>
+                </tr>
+                <tr>
+                    <th>Account Number: </th><td>{!account.AccountNumber}</td>
+                </tr>
+                <tr>
+                    <th>Payment Method: </th><td>{!paymentMethod}</td>
                 </tr>
                 <br/>
-            <br/>
                 <tr>
-                    <th>Report Date : {!reportDate}</th>                    
+                    <th>{!paymentResponse.Payment.CustomerRef.name}</th>
                 </tr>
-            </table>-->
+                <tr>
+                    <td>{!account.BillingStreet}</td>
+                </tr>
+                <tr>
+                    <td>{!account.BillingCity}</td>
+                </tr>
+                <tr>
+                    <td>{!account.BillingPostalCode}, {!account.BillingState}</td>
+                </tr>
+                <br/>
+                <tr>
+                    <th>Date: {!paymentDate}</th> 
+                </tr>
+            </table>
             <br/>
             <br/>
             <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
+    
             <!--{!paymentResponse.Payment.PaymentRefNum}<br/>
             {!paymentResponse.Payment.domain}<br/>
             {!paymentResponse.Payment.PrivateNote}<br/>..?
@@ -83,7 +96,7 @@
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                     <th>Reference Number</th>
-                    <th align="center">Txn Type</th>
+                    <th align="center">Transaction Type</th>
                     <th align="right">Amount</th>
                 </tr>
                 

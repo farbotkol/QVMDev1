@@ -126,6 +126,18 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Balance_Receeded__c</fullName>
+        <description>The amount paid by customer</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The amount paid by customer</inlineHelpText>
+        <label>Amount Received</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>Batch_Type__c</fullName>
         <description>The type of Licence that will be processed for this batch. Currently there are three types (SL(Monthy), PE (Weekly), LH(Monthy)</description>
         <externalId>false</externalId>
@@ -186,6 +198,21 @@ LH = Licence Holder</inlineHelpText>
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>Credit_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Credit Notes</label>
+        <summarizedField>Transaction__c.TotalAmount__c</summarizedField>
+        <summaryFilterItems>
+            <field>Transaction__c.Type__c</field>
+            <operation>equals</operation>
+            <value>CreditMemo</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Transaction__c.Batch_Jobs__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
         <fullName>Description__c</fullName>
         <externalId>false</externalId>
         <label>Description</label>
@@ -211,6 +238,16 @@ LH = Licence Holder</inlineHelpText>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Outstanding_Balance__c</fullName>
+        <externalId>false</externalId>
+        <label>Outstanding Balance</label>
+        <summarizedField>Transaction__c.Outstanding_Balance__c</summarizedField>
+        <summaryForeignKey>Transaction__c.Batch_Jobs__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
     </fields>
     <fields>
         <fullName>Payment_Amount__c</fullName>
@@ -566,6 +603,10 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
             </values>
             <values>
                 <fullName>CS</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>EFT</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1357,6 +1398,10 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
             </values>
             <values>
                 <fullName>CS</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>EFT</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1669,6 +1714,10 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
             </values>
             <values>
                 <fullName>CS</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>EFT</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1747,6 +1796,10 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
             </values>
             <values>
                 <fullName>CS</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>EFT</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1773,6 +1826,22 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
         <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Prevent_Negative_Paying</fullName>
+        <active>false</active>
+        <description>Prevents the customer paying a negative value.</description>
+        <errorConditionFormula>IF( Balance_Receeded__c &lt;  0 , true, false)</errorConditionFormula>
+        <errorDisplayField>Balance_Receeded__c</errorDisplayField>
+        <errorMessage>Cannot pay a negative value.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prevent_Overpaying</fullName>
+        <active>true</active>
+        <description>Prevents the customer paying more than the owed amount.</description>
+        <errorConditionFormula>IF( Balance_Receeded__c &gt; Outstanding_Balance__c , true, false)</errorConditionFormula>
+        <errorDisplayField>Balance_Receeded__c</errorDisplayField>
+        <errorMessage>Cannot pay more than the amount owed.</errorMessage>
+    </validationRules>
     <webLinks>
         <fullName>Download_ABA_File</fullName>
         <availability>online</availability>

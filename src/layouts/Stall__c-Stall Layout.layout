@@ -19,10 +19,6 @@
                 <behavior>Required</behavior>
                 <field>StallId__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>MCC_Cust_No__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

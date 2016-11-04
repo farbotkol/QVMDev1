@@ -93,6 +93,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>BatchJobTriggerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>CaseAfterInsertTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -876,7 +880,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Batch_Jobs__c.Balance_Receeded__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Batch_Jobs__c.Batch_Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Batch_Jobs__c.Credit_Notes__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -892,6 +906,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Batch_Jobs__c.From_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Batch_Jobs__c.Outstanding_Balance__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3233,6 +3252,11 @@
         <editable>true</editable>
         <field>Transaction__c.Order__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Transaction__c.Outstanding_Balance__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>

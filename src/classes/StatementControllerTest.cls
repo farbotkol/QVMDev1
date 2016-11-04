@@ -5,11 +5,14 @@ public class StatementControllerTest
     {
         TestDataFactory.CreateOAuthServiceEntries();
         Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
-        Test.setCurrentPage(Page.ViewStatement);
-        ApexPages.currentPage().getParameters().put('customerRef', '201');
-        Test.startTest();
-        Account acc = new Account();
+        Test.setCurrentPage(Page.ViewStatement);        
+        Account acc = TestDataFactory.createAccountSupplier();
+       	insert acc;
         ApexPages.StandardController sc = new ApexPages.StandardController(acc);
+        ApexPages.currentPage().getParameters().put('customerRef', '201');
+        ApexPages.currentPage().getParameters().put('accountId', acc.Id);
+        Test.startTest();
+
         StatementController con = new StatementController(sc);
         String totalVal = con.total;
         String customerNameVal = con.customerName;
@@ -19,7 +22,7 @@ public class StatementControllerTest
     }
     //   RESMI new changes..
     
-      private class StatementTestMock implements HttpCalloutMock
+      /*private class StatementTestMock implements HttpCalloutMock
       {
         public HTTPResponse respond(HTTPRequest req) 
         {            
@@ -180,38 +183,44 @@ public class StatementControllerTest
          res.setBody(json);           
          return res;
         }
-    }
+    }*/
     
     static testMethod void PositiveConditions()
     {
     	TestDataFactory.CreateOAuthServiceEntries();
-        Test.setMock(HttpCalloutMock.class, new StatementTestMock());
+        Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
         
         Test.setCurrentPage(Page.ViewStatement);
-        ApexPages.currentPage().getParameters().put('customerRef', '201');
+        Account acc = TestDataFactory.createAccountSupplier();
+       	insert acc;
         Test.startTest();
-        Account acc = new Account();
         ApexPages.StandardController sc = new ApexPages.StandardController(acc);
+        ApexPages.currentPage().getParameters().put('customerRef', '201');
+        ApexPages.currentPage().getParameters().put('accountId', acc.Id);
         StatementController con = new StatementController(sc);
         String totalVal = con.total;
         String customerNameVal = con.customerName;
         String reportDate = con.reportDate;
         List<QBOStatement> qboStatements = con.getStatements();
+        system.debug('sdfdsfs22222222222' + con);
         Test.stopTest();
-        List<QBOStatement> statementList = new List<QBOStatement>();
-        statementList = con.getStatements();
-        system.assert(statementList.size()>0);
+        //List<QBOStatement> statementList = new List<QBOStatement>();
+        //statementList = con.getStatements();
+        //system.debug('sdfdsfs' + statementList);
+        system.assert(qboStatements.size()>0);
     }
     static testMethod void ErrorConditions()
     {
         TestDataFactory.CreateOAuthServiceEntries();
-        Test.setMock(HttpCalloutMock.class, new StatementErrorTestMock());
+        Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
         
         Test.setCurrentPage(Page.ViewStatement);
-        ApexPages.currentPage().getParameters().put('customerRef', '201');
-        Test.startTest();
-        Account acc = new Account();
+        Account acc = TestDataFactory.createAccountSupplier();
+       	insert acc;
         ApexPages.StandardController sc = new ApexPages.StandardController(acc);
+        ApexPages.currentPage().getParameters().put('customerRef', '201');
+        ApexPages.currentPage().getParameters().put('accountId', acc.Id);
+        Test.startTest();
         StatementController con = new StatementController(sc);
         String totalVal = con.total;
         String customerNameVal = con.customerName;

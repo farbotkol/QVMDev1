@@ -1598,6 +1598,6 @@ sendSMS(recordType, idToUpdate, userId, nameField, mobileField, optOutField, opt
         <protected>false</protected>
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
-        <url>/apex/ViewStatement?customerRef={!Account.QuickBooks_Id__c}</url>
+        <url>/apex/ViewStatement?customerRef={!Account.QuickBooks_Id__c}&amp;accountId={!Account.Id}</url>
     </webLinks>
 </CustomObject>

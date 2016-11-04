@@ -85,6 +85,57 @@ private class OrderBuilderTest {
         //System.assert(opp3.Leave_Taken_This_Year__c == 0);
     }
 
+    @isTest static void TestGenerateOrdersSLExcludingFreeDays() {
+        
+        TestDataFactory.createStallProductsAndGeneralPriceBook();
+        List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1, 'SL');
+        TestDataFactory.CreateOAuthServiceEntries();
+        
+        Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
+        
+
+        Opportunity opp = [select id, name, Stall__c from Opportunity limit 1];
+        TestDataFactory.createSingleStall(opp);
+		List<Date> dates = new List<Date>();
+        Date day1 = System.today().addDays(1);
+        Date day2 = System.today().addDays(2);
+        Date day3 = System.today().addDays(3);
+        Date day5 = System.today().addDays(5);
+        dates.add(day1);
+        dates.add(day2);
+        dates.add(day3);
+        dates.add(day5);
+        TestDataFactory.createFreeDays(dates);
+
+        Batch_Jobs__c job = TestDataFactory.createSLBatchJob();
+        Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Batch_Jobs__c; 
+        Map<String,Schema.RecordTypeInfo> BatchJobsTypeInfo = cfrSchema.getRecordTypeInfosByName(); 
+        Id rtId = BatchJobsTypeInfo.get('New Orders/Invoices').getRecordTypeId();
+            
+        system.debug('TEST : ' + rtId);
+
+        Test.startTest();
+     
+        boolean result = OrderBuilder.GenerateOrders(job.Id);
+        
+        List<OrderItem> orders = [SELECT Id,Date__c FROM OrderItem];
+    	boolean exists = false;
+        for(OrderItem order : orders){
+            if(order.Date__c == day1 || 
+               order.Date__c == day2 || 
+               order.Date__c == day3 || 
+               order.Date__c == day5 ){
+                   exists = true;
+                   break;
+               }
+        }
+        System.assert(!exists);
+        
+        Test.stopTest();
+        
+        System.assert(result);
+        //System.assert(opp3.Leave_Taken_This_Year__c == 0);
+    }
     
     @isTest static void TestGenerateOrdersLH() {
         List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1, 'LH');

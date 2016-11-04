@@ -1,7 +1,7 @@
 public class ReceivePaymentController {
     
-    public ReceivePaymentController(ApexPages.StandardSetController controller){
-        
+    public ReceivePaymentController(ApexPages.StandardController controller){
+        //
     }
     
     public PageReference Redirect()

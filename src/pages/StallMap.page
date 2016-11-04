@@ -39,7 +39,7 @@
         .container #tooltip {
             position: relative;
             width: 250px;
-            height: 100px;
+            height: 115px;
             background: #0d6f8a;
             margin-bottom: 20px;
             left: 10px;

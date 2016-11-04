@@ -194,7 +194,7 @@ CASE( PricebookEntry.Product2.ProductCode ,
     <fields>
         <fullName>Total_GST__c</fullName>
         <externalId>false</externalId>
-        <formula>IF( PricebookEntry.Product2.GST_Inclusive__c  ,1.1, 1) *  Total__c</formula>
+        <formula>IF( PricebookEntry.Product2.GST_Inclusive__c = false ,1.1, 1) *  Total__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Total (GST)</label>
         <precision>18</precision>

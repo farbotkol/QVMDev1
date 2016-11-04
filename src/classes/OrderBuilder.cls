@@ -139,21 +139,33 @@ global with sharing class OrderBuilder {
 
         for (Opportunity opp : opps)
         {
-            Order order = new Order();
-            order.AccountId = opp.AccountId;
-            order.OpportunityId = opp.Id;
-            order.EffectiveDate = startDate;
-            order.EndDate = endDate;
-            order.Status = 'Draft';
-            order.Description = description;
-            order.Pricebook2Id = opp.Pricebook2Id;
-            if (batchJobId != null)
+            if (opp.MondayStalls__r.size()  > 0 
+                || opp.TuesdayStalls__r.size()  > 0
+                || opp.WednesdayStalls__r.size()  > 0
+                || opp.ThursdayStalls__r.size()  > 0
+                || opp.FridayStalls__r.size()  > 0
+                || opp.SaturdayStalls__r.size()  > 0
+                || opp.SundayStalls__r.size()  > 0
+               )
             {
-                order.Batch_Job__c =  batchJobId;
-            }
-            
+                system.debug('opp stuff' + opp);
+                Order order = new Order();
+                order.AccountId = opp.AccountId;
+                order.OpportunityId = opp.Id;
+                order.EffectiveDate = startDate;
+                order.EndDate = endDate;
+                order.Status = 'Draft';
+                order.Description = description;
+                order.Pricebook2Id = opp.Pricebook2Id;
+                if (batchJobId != null)
+                {
+                    order.Batch_Job__c =  batchJobId;
+                }
+                
 
-            ordersToCreate.add(order);
+                ordersToCreate.add(order);
+            }
+     
         }
 
         Insert ordersToCreate;
@@ -213,11 +225,11 @@ global with sharing class OrderBuilder {
                     // here we need to handle leave requirments
                     for (Stall__c stall : stalls)
                     {
-                        system.debug('order : ' + order.Id); 
-                        system.debug('opp : ' + oppMap.get(order.OpportunityId));
-                        system.debug('pricebook id : ' + oppMap.get(order.OpportunityId).Pricebook2Id);
-                        system.debug('dayOfWeek : ' + dayOfWeek);
-                        system.debug('PricebookEntryId :' + pricebookEntriesMap.get(dayOfWeek + (String)oppMap.get(order.OpportunityId).Pricebook2Id ).Id); 
+                        //system.debug('order : ' + order.Id); 
+                        //system.debug('opp : ' + oppMap.get(order.OpportunityId));
+                        //system.debug('pricebook id : ' + oppMap.get(order.OpportunityId).Pricebook2Id);
+                        //system.debug('dayOfWeek : ' + dayOfWeek);
+                        //system.debug('PricebookEntryId :' + pricebookEntriesMap.get(dayOfWeek + (String)oppMap.get(order.OpportunityId).Pricebook2Id ).Id); 
                         // create an order line
                         OrderItem ordItm =new OrderItem();
                         // detirmine the key to use to get the prive book entry for this day
@@ -244,7 +256,7 @@ global with sharing class OrderBuilder {
 
         OrderBuilderBatch batch = new OrderBuilderBatch(orderItemsToCreate,  batchJobId); 
 
-        database.executebatch(batch,150);
+        database.executebatch(batch,200);
 
         //Insert orderItemsToCreate;
 

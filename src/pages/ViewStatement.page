@@ -52,11 +52,27 @@
             </h1>
             
             <table width="75%" border="0" cellspacing="0" cellpadding="0">
-                <tr>
-                    <th>Customer Name : {!customerName}</th>
-                </tr>
                 <br/>
-            <br/>
+                <tr>
+                    <th>Salesforce Id: </th><td>{!Account.Majik_AccountNo__c}</td>
+                </tr>
+                <tr>
+                    <th>Account Number: </th><td>{!Account.AccountNumber}</td>
+                </tr>
+            	<br/>
+                <tr>
+                    <th>{!customerName}</th>
+                </tr>
+                <tr>
+                    <td>{!Account.BillingStreet}</td>
+                </tr>
+                 <tr>
+                    <td>{!Account.BillingCity}</td>
+                </tr>
+                 <tr>
+                    <td>{!Account.BillingPostalCode}, {!Account.BillingState}</td>
+                </tr>
+            	<br/>
                 <tr>
                     <th>Report Date : {!reportDate}</th>                    
                 </tr>

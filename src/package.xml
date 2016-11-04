@@ -63,6 +63,7 @@
         <members>ForecastingOwnerAdjustment</members>
         <members>ForecastingQuota</members>
         <members>ForecastingTypeToCategory</members>
+        <members>Free_Day__c</members>
         <members>Idea</members>
         <members>Invoice__c</members>
         <members>Lead</members>
@@ -129,6 +130,7 @@
         <members>QVM_Email_Templates/Supplier_Approval_Template_html</members>
         <members>QVM_Email_Templates/Supplier_Approved_Notice</members>
         <members>QVM_Email_Templates/test</members>
+        <members>unfiled$public</members>
         <members>unfiled$public/CommunityChangePasswordEmailTemplate</members>
         <members>unfiled$public/CommunityForgotPasswordEmailTemplate</members>
         <members>unfiled$public/CommunityWelcomeEmailTemplate</members>
@@ -161,14 +163,6 @@
         <members>unfiled$public/Sample_ScheduleMeeting</members>
         <members>unfiled$public/Supplier_Approval_Template</members>
         <name>EmailTemplate</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>Flow</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>FlowDefinition</name>
     </types>
     <types>
         <members>*</members>

@@ -85,14 +85,15 @@
         <label>Custom Links</label>
         <layoutColumns>
             <layoutItems>
-                <customLink>Open_in_QuickBooks</customLink>
-            </layoutItems>
-            <layoutItems>
                 <customLink>Open_Invoice_PDF</customLink>
             </layoutItems>
         </layoutColumns>
         <layoutColumns/>
-        <layoutColumns/>
+        <layoutColumns>
+            <layoutItems>
+                <customLink>Open_in_QuickBooks</customLink>
+            </layoutItems>
+        </layoutColumns>
         <style>CustomLinks</style>
     </layoutSections>
     <layoutSections>

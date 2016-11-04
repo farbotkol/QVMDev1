@@ -74,14 +74,15 @@
         <label>Custom Links</label>
         <layoutColumns>
             <layoutItems>
-                <customLink>Open_In_QuickBooks</customLink>
-            </layoutItems>
-            <layoutItems>
                 <customLink>View_Payment</customLink>
             </layoutItems>
         </layoutColumns>
         <layoutColumns/>
-        <layoutColumns/>
+        <layoutColumns>
+            <layoutItems>
+                <customLink>Open_In_QuickBooks</customLink>
+            </layoutItems>
+        </layoutColumns>
         <style>CustomLinks</style>
     </layoutSections>
     <relatedLists>

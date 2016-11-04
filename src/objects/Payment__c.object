@@ -221,6 +221,6 @@ window.open(qboURL);</url>
         <protected>false</protected>
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
-        <url>/apex/ViewPayment?paymentRef={!Payment__c.QuickBook_Id__c}</url>
+        <url>/apex/ViewPayment?paymentRef={!Payment__c.QuickBook_Id__c}&amp;accountId={!Payment__c.AccountId__c }</url>
     </webLinks>
 </CustomObject>

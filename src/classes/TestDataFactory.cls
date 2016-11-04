@@ -874,6 +874,18 @@ public class TestDataFactory {
         return a;
    }
     
+    public static List<Free_Day__c> createFreeDays(List<Date> dates){
+        List<Free_Day__c> days = new List<Free_Day__c>();
+        for(Date day: dates){
+        	Free_Day__c freeDay = new Free_Day__c();
+            freeDay.Date__c = day;
+            freeDay.Name = 'Holiday';
+            days.add(freeDay);
+        }
+        insert days;
+        return days;
+    }
+    
     //Create Account Supplier.
     public static Account createAccountSupplier()
     {

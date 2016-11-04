@@ -170,6 +170,17 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Outstanding_Balance__c</fullName>
+        <externalId>false</externalId>
+        <label>Outstanding Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>Signed_Balance__c</fullName>
         <externalId>false</externalId>
         <formula>IF( Type__c = &apos;Invoice&apos;,  Balance__c , Balance__c * -1)</formula>

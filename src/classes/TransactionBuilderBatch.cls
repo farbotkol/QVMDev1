@@ -9,13 +9,15 @@ Description : This is the transaction batch class for PaymentBuilder.
 global class TransactionBuilderBatch implements Database.Batchable<sObject>
 {
 	List<Transaction__c> transList = new List<Transaction__c>();
-    Id batchJob;
+    Id mybatchJobId;
     integer transactionCount =0;
+    decimal Balance_Receded = 0 ;
     
-    global TransactionBuilderBatch( List<Transaction__c> items_i, ID batchJobId ) 
+    global TransactionBuilderBatch( List<Transaction__c> items_i, ID batchJobId, decimal Default_Balance_Receded) 
     {
 		transList = items_i;
-        batchJob = batchJobId;
+        mybatchJobId = batchJobId;
+        Balance_Receded = Default_Balance_Receded;
         transactionCount = transList.size();
 	}
     global List<Transaction__c> start( Database.BatchableContext BC ) 
@@ -42,9 +44,21 @@ global class TransactionBuilderBatch implements Database.Batchable<sObject>
     {
         try
         {
+            Batch_Jobs__c batchjob = [select id,Balance_Receeded__c,Outstanding_Balance__c,	Payment_Amount__c from Batch_Jobs__c where id = :mybatchJobId];
+            
+            system.debug('Default_Balance_Receded: ' + Balance_Receded);
+            //system.debug(Balance_Receded.setScale(2) + ' : ' + batchjob.Outstanding_Balance__c + ' : ' + batchJob.Payment_Amount__c);
+
+            if(Balance_Receded.setScale(2) <= batchjob.Outstanding_Balance__c){
+                batchjob.Balance_Receeded__c = Balance_Receded.setScale(2);
+            }else{
+                batchjob.Balance_Receeded__c = batchjob.Outstanding_Balance__c;
+            }
+            update  batchjob ;
+
         	// Getting Record Type - Transactions Found.
         	ID foundRecordTypeID = Schema.SObjectType.Batch_Jobs__c.getRecordTypeInfosByName().get('Transactions Found').getRecordTypeId();        
-        	Batch_Jobs__c batchJobObj = [SELECT id,Transaction_Count__c  FROM Batch_Jobs__c where id =:batchJob LIMIT 1];         
+        	Batch_Jobs__c batchJobObj = [SELECT id,Transaction_Count__c  FROM Batch_Jobs__c where id = :mybatchJobId ];         
          	if( batchJobObj != null )
          	{
             	// Changing Record Type Id to Transactions Found.

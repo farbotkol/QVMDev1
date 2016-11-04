@@ -10,6 +10,7 @@ global class PaymentBuilder
 { 
     
     public static List<Transaction__c> transactionListToInsert = new List<Transaction__c>(); 
+    public static Decimal Default_Balance_Receded = 0;
     public static integer MAXRESULTS = 300;
     
 
@@ -48,8 +49,15 @@ global class PaymentBuilder
          
         	if( !transactionListToInsert.isEmpty())
         	{
-            	TransactionBuilderBatch batch = new TransactionBuilderBatch( transactionListToInsert,batchJobId); 
+            	TransactionBuilderBatch batch = new TransactionBuilderBatch( transactionListToInsert,batchJobId, Default_Balance_Receded); 
             	database.executebatch(batch,50);
+
+                Batch_Jobs__c batchjob = [select id,Balance_Receeded__c from Batch_Jobs__c where id = :batchJobId];
+                
+                system.debug('Default_Balance_Receded: ' + Default_Balance_Receded);
+                batchjob.Balance_Receeded__c = Default_Balance_Receded.setScale(2);
+                update  batchjob ;
+
         	}   
             else
             {
@@ -197,6 +205,8 @@ global class PaymentBuilder
                         	Transaction__c transObj = new Transaction__c();
                         	transObj.Invoice_QuickBookId__c = item.Id; 
                         	transObj.Balance__c = item.Balance;
+                            transObj.Outstanding_Balance__c = item.Balance;
+                            Default_Balance_Receded += item.Balance;
                         	transObj.DocNumber__c = item.DocNumber;
                   
                         	transObj.TotalAmount__c = item.TotalAmt;
@@ -354,7 +364,9 @@ global class PaymentBuilder
                      	{
                         	Transaction__c transObj = new Transaction__c	();
                         	transObj.Invoice_QuickBookId__c = item.Id; 
-                        	transObj.Balance__c = item.Balance;
+                            transObj.Balance__c = item.Balance * -1;
+                            transObj.Outstanding_Balance__c = item.Balance * -1;
+                            Default_Balance_Receded -= item.Balance;
                         	transObj.DocNumber__c = item.DocNumber;
                          
                         	transObj.Type__c	= 'CreditMemo';
@@ -434,7 +446,7 @@ global class PaymentBuilder
            //System.debug('RESMI:TTT Progress log 3');
        		listOftransactions = [SELECT id,Account__c,Account_Business__c,Account_Business__r.Bank_Account_Number__c,
                                   Account_Business__r.BSB_Number__c,Customer_Reference__c,DocNumber__c,TotalAmount__c,Invoice_QuickBookId__c,
-                                  Type__c, Balance__c 
+                                  Type__c, Balance__c ,     Outstanding_Balance__c
                                   
                                   from Transaction__c where Batch_Jobs__c =: batchJobId];
             
@@ -500,17 +512,17 @@ global class PaymentBuilder
                     System.Debug('RESMI:TTT 3');
                     
                 	QBOPaymentResponse.Payment paymentInstance = paymentMap.get( transObj.Account__c + transObj.Account_Business__r.BSB_Number__c + transObj.Account_Business__r.Bank_Account_Number__c);               
-               		if (transObj.Type__c == 'Invoice')
-                    {
+               		//if (transObj.Type__c == 'Invoice')
+                    //{
                    		paymentInstance.TotalAmt += transObj.Balance__c;
-              		}
-               		else
-                    {
-                   		paymentInstance.TotalAmt -= transObj.Balance__c;
-               		}                              
+              		//}
+               		//else
+                   // {
+                   		//paymentInstance.TotalAmt += transObj.Balance__c;
+               		//}                              
                		List<QBOPaymentResponse.Line> invLines = new List<QBOPaymentResponse.Line>();
                 	QBOPaymentResponse.Line line = new QBOPaymentResponse.Line();                                              
-                	line.Amount = transObj.Balance__c;                               
+                	line.Amount = math.abs(transObj.Balance__c);                               
                		List<QBOPaymentResponse.LinkedTxn> LinkedTxnLines = new List<QBOPaymentResponse.LinkedTxn> (); 
                
                 	QBOPaymentResponse.LinkedTxn linkedTxnObj = new QBOPaymentResponse.LinkedTxn();

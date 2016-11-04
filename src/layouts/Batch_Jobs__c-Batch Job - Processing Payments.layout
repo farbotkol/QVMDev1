@@ -59,7 +59,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Payment_Amount__c</field>
+                <field>Outstanding_Balance__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Credit_Notes__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -116,6 +120,7 @@
         <fields>Account__c</fields>
         <fields>Account_Business__c</fields>
         <fields>Balance__c</fields>
+        <fields>Outstanding_Balance__c</fields>
         <fields>DocNumber__c</fields>
         <fields>Invoice_QuickBookId__c</fields>
         <fields>TotalAmount__c</fields>
