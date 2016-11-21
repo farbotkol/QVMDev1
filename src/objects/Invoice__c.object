@@ -226,6 +226,10 @@
                 <fullName>GSTI</fullName>
                 <default>false</default>
             </picklistValues>
+            <picklistValues>
+                <fullName>EXMPT</fullName>
+                <default>false</default>
+            </picklistValues>
             <restrictedPicklist>true</restrictedPicklist>
             <sorted>false</sorted>
         </picklist>

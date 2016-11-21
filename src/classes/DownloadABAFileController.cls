@@ -90,7 +90,8 @@ public class DownloadABAFileController
             processingDate = string.valueof(day + month + year).rightPad(maxLengthDate);
              Integer footerTotalAmount = 0;
             //Detail section Formatting
-             paymentList = [SELECT Total_Amount__c,Account__r.Name,BSB_Number__c,Bank_Account_Number__c FROM Payment__c where Batch_Jobs__c =:recId];
+             paymentList = [SELECT Total_Amount__c,Account__r.Name,BSB_Number__c,Bank_Account_Number__c 
+                        FROM Payment__c where Batch_Jobs__c =:recId AND ( Batch_Jobs__r.Payment_Type__c = 'EFT' OR   Batch_Jobs__r.Payment_Type__c = '' )];
              for(Payment__c paymentObj : paymentList )
              {
                  if ( paymentObj.BSB_Number__c == null ||paymentObj.BSB_Number__c == 'null')

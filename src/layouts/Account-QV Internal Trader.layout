@@ -83,6 +83,13 @@
                 <behavior>Readonly</behavior>
                 <field>QuickBooks_Id__c</field>
             </layoutItems>
+            <layoutItems>
+                <height>15</height>
+                <page>CustomerBalanceVFP</page>
+                <showLabel>true</showLabel>
+                <showScrollbars>false</showScrollbars>
+                <width>100%</width>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
@@ -266,11 +273,11 @@
         <excludeButtons>New</excludeButtons>
         <fields>ORDERS.ORDER_NUMBER</fields>
         <fields>OPPORTUNITY.NAME</fields>
-        <fields>PRICEBOOK2.NAME</fields>
         <fields>ORDERS.STATUS</fields>
         <fields>ORDERS.EFFECTIVE_DATE</fields>
-        <fields>ORDERS.TOTAL_AMOUNT</fields>
-        <fields>Reference__c</fields>
+        <fields>Total__c</fields>
+        <fields>Total_With_GST__c</fields>
+        <fields>Balance_Due__c</fields>
         <relatedList>RelatedOrderList</relatedList>
         <sortField>ORDERS.ORDER_NUMBER</sortField>
         <sortOrder>Desc</sortOrder>

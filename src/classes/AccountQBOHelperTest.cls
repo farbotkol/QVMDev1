@@ -1,4 +1,4 @@
-@isTest(SeeAllData=true)
+@isTest
 public class AccountQBOHelperTest 
 {
     /*
@@ -88,6 +88,7 @@ public class AccountQBOHelperTest
             return res;
         }
     }   */
+    
     // Trader
     @isTest static void validateGetAccountQBOUrlTrader() 
     {
@@ -127,8 +128,9 @@ public class AccountQBOHelperTest
         Order order =  [Select Id,QuickBooksId__c from Order LIMIT 1];
         order.QuickBooksId__c = '234';
         update order;
-        system.debug('MIKEL: ' + order);
+        TestDataFactory.CreateOAuthServiceEntries();
         String sString =  AccountQBOHelper.GetPOQBOUrl(order.Id);
+        //system.assert(sString == 'hello/app/purchaseorder?txnId=234');
         system.assertNotEquals(sString, null);
     }
     
@@ -136,25 +138,37 @@ public class AccountQBOHelperTest
     @isTest static void validateGetPaymentQBOUrl() 
     {
         Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
-        
+        TestDataFactory.CreateOAuthServiceEntries();
         TestDataFactory.createStallProductsAndGeneralPriceBook();
         List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1,'SL');
         Payment__c payment = TestDataFactory.createPayment(accounts.get(0).Id);
+        system.debug('validateGetPaymentQBOUrl: ' + payment);
         String sString =  AccountQBOHelper.GetPaymentQBOUrl(payment.Id);
+        system.debug('validateGetPaymentQBOUrl: ' + sString);
         system.assertNotEquals(sString, null);
     }
     
     @isTest static void validateGetInvoiceQBOUrl()
     {
+        Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
+        TestDataFactory.CreateOAuthServiceEntries();
+        TestDataFactory.createStallProductsAndGeneralPriceBook();
+        TestDataFactory.createAccountsWithOpps(1, 1, 'SL');
         Order ordObj = TestDataFactory.createOrder();
         String s = AccountQBOHelper.GetInvoiceQBOUrl(ordObj.id);
+        system.debug('ONE: ' + s);
         system.assertNotEquals(s, null);
     }
     
     @isTest static void validateGetInvoiceQBOUrlNullScenario()
     {
+        Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
+        TestDataFactory.CreateOAuthServiceEntries();
+        TestDataFactory.createStallProductsAndGeneralPriceBook();
+        TestDataFactory.createAccountsWithOpps(1, 1, 'SL');
         Order ordObj = TestDataFactory.createOrderQuickBookIdNull();
         String s = AccountQBOHelper.GetInvoiceQBOUrl(ordObj.id);
+        system.debug('TWO: ' + s);
         system.assertEquals(s, null);
     }
     

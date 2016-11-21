@@ -20,10 +20,10 @@ global class POBuilder {
         QBOCRUDHelper qbo = new QBOCRUDHelper();
         //create map of quick books products to map against the salesforce products by Sku Id
         QBOProductList products = QBOProductList.getInstance();
-        Map<string, QBOProductList.Item >  productMap = new Map<string, QBOProductList.Item  >(); 
+        Map<string, QBOProductList.Item >  productMap = new Map<string, QBOProductList.Item>(); 
         for (QBOProductList.Item item : products.QueryResponse.Item)
         {
-            productMap.put(item.Sku, item);  
+            productMap.put(item.Sku, item);
         }
         system.debug('productMap: ' + productMap);
         
@@ -46,7 +46,6 @@ global class POBuilder {
                 List<QBOPurchaseOrderResponse.Line> invLines = new List<QBOPurchaseOrderResponse.Line>();
                 for(OrderItem oi : order.OrderItems)
                 {
-                   
                     QBOPurchaseOrderResponse.Line line = new QBOPurchaseOrderResponse.Line();
                     line.Amount = oi.UnitPrice * oi.Quantity / 1.1;
                     line.Description = '';
@@ -60,11 +59,11 @@ global class POBuilder {
                     QBOPurchaseOrderResponse.ItemBasedExpenseLineDetail lineDetail = new QBOPurchaseOrderResponse.ItemBasedExpenseLineDetail();
 
                     lineDetail.UnitPrice = oi.UnitPrice;
-                    lineDetail.Qty = oi.Quantity;  
+                    lineDetail.Qty = oi.Quantity;
                     
                     QBOProductList.Item item = productMap.get(oi.PricebookEntry.Sku__c);
-                    string taxCodeRefValue = '10';// defaults to handle unmapped senarios 10 is GST 
-                    string itemRefValue = '1';  // defaults to handle unmapped senarios 1 is SERVCICE 
+                    string taxCodeRefValue = '10';// defaults to handle unmapped senarios 10 is GST
+                    string itemRefValue = '1';  // defaults to handle unmapped senarios 1 is SERVCICE
                     
                     if (item != null)
                     {

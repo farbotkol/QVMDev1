@@ -33,16 +33,16 @@
                 <field>Primary_Contact__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>Permitted_Use__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Start_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
                 <field>CloseDate</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>Permitted_Use__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -249,6 +249,7 @@
         <fields>ORDERS.EFFECTIVE_DATE</fields>
         <fields>Total__c</fields>
         <fields>Total_With_GST__c</fields>
+        <fields>Balance_Due__c</fields>
         <relatedList>RelatedOrderList</relatedList>
     </relatedLists>
     <relatedLists>
@@ -297,7 +298,7 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>Transaction__c.Account_Business__c</relatedList>
+        <relatedList>Change_Request__c.Opportunity__c</relatedList>
     </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>

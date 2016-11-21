@@ -182,7 +182,6 @@ public class PaymentControllerTest {
     }
     */
 	
-    
     static testMethod void PositiveConditions()
     {
     	TestDataFactory.CreateOAuthServiceEntries();
@@ -220,5 +219,26 @@ public class PaymentControllerTest {
         String paymentMethod = con.paymentMethod;
         List<QBOPaymentResponse.Line> lines = con.getLines();
         Test.stopTest();
+    }
+    
+    static testMethod void TestAccount()
+    {
+        TestDataFactory.CreateOAuthServiceEntries();
+        Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
+        TestDataFactory.createStallProductsAndGeneralPriceBook();
+        Account acc = TestDataFactory.createAccountsWithOpps(1, 1, 'SL')[0];
+        update acc;
+        Test.setCurrentPage(Page.ViewPayment);
+        ApexPages.currentPage().getParameters().put('paymentRef', '201');
+        ApexPages.currentPage().getParameters().put('accountId', acc.Id);
+        Test.startTest();
+        ApexPages.StandardController sc = new ApexPages.StandardController(acc);
+        PaymentController con = new PaymentController(sc);
+        QBOPaymentResponse paymentResponse = con.paymentResponse;
+        String myId = con.myId;
+        String paymentMethod = con.paymentMethod;
+        List<QBOPaymentResponse.Line> lines = con.getLines();
+        Test.stopTest();
+        system.assert(con.account != null);
     }
 }

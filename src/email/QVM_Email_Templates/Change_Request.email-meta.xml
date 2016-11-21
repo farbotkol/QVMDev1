@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>QVM_Header</letterhead>
+    <name>Change Request</name>
+    <style>freeForm</style>
+    <subject>Change Request from {!User.FirstName} {!User.LastName}</subject>
+    <textOnly>Hi {!Change_Request__c.Approver__c},
+
+{!User.FirstName} {!User.LastName} would like you to approve a change request.
+
+Details:
+{!Change_Request__c.Change_Description__c}
+
+Go to link below to approve/ reject the change request.
+{!Change_Request__c.Link}</textOnly>
+    <type>html</type>
+</EmailTemplate>

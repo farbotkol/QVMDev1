@@ -48,7 +48,7 @@ global class AccountQBOHelper {
         System.debug('JJJ'+qbID);
         String qboUrl = GetQBOUrl();
         String qboId = [SELECT QuickBook_Id__c FROM Payment__c WHERE Id = :qbID].QuickBook_Id__c;
-        if(qboId != null ){            
+        if(qboId != null ){
             return qboUrl+'/app/recvpayment?txnId='+qboId;            
         }
         else

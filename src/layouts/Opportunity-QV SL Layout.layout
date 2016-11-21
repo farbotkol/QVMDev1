@@ -350,6 +350,7 @@
         <fields>ORDERS.EFFECTIVE_DATE</fields>
         <fields>Total__c</fields>
         <fields>Total_With_GST__c</fields>
+        <fields>Balance_Due__c</fields>
         <relatedList>RelatedOrderList</relatedList>
     </relatedLists>
     <relatedLists>
@@ -406,7 +407,7 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>Transaction__c.Account_Business__c</relatedList>
+        <relatedList>Change_Request__c.Opportunity__c</relatedList>
     </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>

@@ -417,6 +417,14 @@
                 <default>false</default>
                 <controllingFieldValues>Marketing</controllingFieldValues>
             </picklistValues>
+            <picklistValues>
+                <fullName>Bank Details</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contact Details</fullName>
+                <default>false</default>
+            </picklistValues>
             <restrictedPicklist>true</restrictedPicklist>
             <sorted>false</sorted>
         </picklist>
@@ -493,6 +501,10 @@
             </picklistValues>
             <picklistValues>
                 <fullName>Debtor Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Update Account Details</fullName>
                 <default>false</default>
             </picklistValues>
             <sorted>false</sorted>
@@ -861,11 +873,19 @@
         <picklistValues>
             <picklist>Sub_Type__c</picklist>
             <values>
+                <fullName>Bank Details</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Branding</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Co-op Marketing Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Details</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -933,6 +953,10 @@
             </values>
             <values>
                 <fullName>Operation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Update Account Details</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

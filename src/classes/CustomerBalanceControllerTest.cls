@@ -125,7 +125,7 @@ public class CustomerBalanceControllerTest {
         User portalAccountOwner1 = new User(
             UserRoleId = portalRole.Id,
             ProfileId = profile1.Id,
-            Username = System.now().millisecond() + 'test2@test.com',
+            Username = System.now().millisecond() + 'test2adgda@test.com',
             Alias = 'alias',
             Email='test.1@example.com',
             EmailEncodingKey='UTF-8',
@@ -191,7 +191,7 @@ public class CustomerBalanceControllerTest {
         User portalAccountOwner1 = new User(
             UserRoleId = portalRole.Id,
             ProfileId = profile1.Id,
-            Username = System.now().millisecond() + 'test2@test.com',
+            Username = System.now().millisecond() + 'test2eqter@test.com',
             Alias = 'alias',
             Email='test.1@example.com',
             EmailEncodingKey='UTF-8',

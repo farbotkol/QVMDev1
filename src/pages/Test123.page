@@ -1,0 +1,23 @@
+<apex:page >
+    
+    <style>
+        th {
+        color: white;
+        background: #add8e6;
+   
+        }
+    </style> 
+    
+    <table style="width: 100%">
+  <tr>
+    <th align="right" >Month</th>
+    <th align="left">Savings</th>
+  </tr>
+  <tr>
+    <td align="right">January</td>
+    <td style="text-align: right;">$100</td>
+  </tr>
+</table>
+    
+    
+</apex:page>

@@ -183,6 +183,8 @@ public class TestDataFactory {
         return stall;
     }
 
+    
+    
     public static void createStallProductsAndGeneralPriceBook()
     {
 
@@ -303,9 +305,78 @@ public class TestDataFactory {
         
     }
     
+    public static List<Transaction__c> createTransactions(){
+        List<Transaction__c> trans = new List<Transaction__c>();
+        createContact('accountName', 'firstName', 'lastName', 'emailAddress@gma.com');
+        Account a =  [SELECT Id, RecordTypeId, QuickBooks_Id__c, Def_Payment_Type__c FROM Account LIMIT 1];
+        
+        a.QuickBooks_Id__c = '3';
+        a.Def_Payment_Type__c = 'EFT';
+        UPDATE a;
+        
+		Opportunity opp = createOpportunity(a.Id);
+        
+        Batch_Jobs__c job = createSLBatchJob();
+        
+        job.Due_Before__c = Date.today();
+        Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Batch_Jobs__c; 
+        Map<String,Schema.RecordTypeInfo> BatchJobsTypeInfo = cfrSchema.getRecordTypeInfosByName(); 
+        Id rtId = BatchJobsTypeInfo.get('New Payments').getRecordTypeId();
+        job.RecordTypeId = rtId;
+        Update job;
+        
+        PaymentBuilder.changeRecordTypegeneratePayments(job.Id);
+        
+        Transaction__c transInv = new Transaction__c();
+        transInv.Account__c = a.Id;
+        transInv.Account_Business__c = opp.Id;
+        transInv.Customer_Reference__c = '3';
+        transInv.DocNumber__c = '123';
+        transInv.TotalAmount__c = 1000;
+        transInv.Invoice_QuickBookId__c = '2';
+        transInv.Balance__c = 1000;
+        transInv.Outstanding_Balance__c = 1000;
+        transInv.Type__c = 'Invoice';
+        transInv.Batch_Jobs__c = job.Id; 
+        insert transInv;
+        trans.add(transInv);
+        
+        Transaction__c transInv2 = new Transaction__c();
+        transInv2.Account__c = a.Id;
+        transInv2.Account_Business__c = opp.Id;
+        transInv2.Customer_Reference__c = '3';
+        transInv2.TotalAmount__c = 600;
+        transInv2.DocNumber__c = '124';
+        transInv2.Invoice_QuickBookId__c = '4';
+        transInv2.Balance__c = 600;
+        transInv2.Outstanding_Balance__c = 600;
+        transInv2.Type__c = 'Invoice';
+        transInv2.Batch_Jobs__c = job.Id;
+        insert transInv2;     
+        trans.add(transInv2);
+        
+        Transaction__c transCN = new Transaction__c();
+        transCN.Account__c = a.Id;
+        transCN.Account_Business__c = opp.Id;
+        transCN.Customer_Reference__c = '3';
+        transCN.TotalAmount__c = 200;
+        transCN.DocNumber__c = '124cn';
+        transCN.Invoice_QuickBookId__c = '5';
+        transCN.Balance__c = 200;
+        transCN.Outstanding_Balance__c = -200;
+        transCN.Type__c = 'CreditMemo';
+        transCN.Batch_Jobs__c = job.Id;
+        insert transCN;
+        trans.add(transCN);
+        
+        PaymentBuilder.generatePayments(job.Id);
+        
+        return trans;
+        
+    }
+    
     public static Batch_Jobs__c createSLBatchJob()
     {
-
         Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Batch_Jobs__c; 
         Map<String,Schema.RecordTypeInfo> BatchJobsTypeInfo = cfrSchema.getRecordTypeInfosByName(); 
         Id rtId = BatchJobsTypeInfo.get('New Orders/Invoices').getRecordTypeId();
@@ -366,7 +437,7 @@ public class TestDataFactory {
        
     }
     
-    public static void createOrder(String recordType)
+    public static Order createOrder(String recordType)
     {
     	List<Account> accounts = [SELECT Id from Account];
         Id PriceBookId = Test.getStandardPricebookId();
@@ -386,6 +457,7 @@ public class TestDataFactory {
         orderObj.Balance_Due__c = 0.00;
         orderObj.Total_With_GST__c = 0.00;
         insert orderObj;
+        return orderObj;
     }
     
     public static List<OrderItem> createOrderItemWithLeave(Integer numOrderItems, String recordType)
@@ -457,8 +529,8 @@ public class TestDataFactory {
         orderObj.Status = 'Draft';
         orderObj.EffectiveDate = Date.today();
         orderObj.PriceBook2Id = PriceBookId;
+        orderObj.OpportunityId = opp.Id;
         insert orderObj;
-        
         
         System.debug('PriceBookId '+PriceBookId);
         //System.debug('ProdId '+prod.Id);
@@ -470,9 +542,9 @@ public class TestDataFactory {
         item.PricebookEntryId = prods[0].Id; 
         item.Quantity = 1; 
         item.UnitPrice = 123; 
+		insert item;
+        System.debug('riceBookPId '+item);
 
-
-        insert item;
         return orderObj;
         
     }

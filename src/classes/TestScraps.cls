@@ -41,7 +41,7 @@ public class TestScraps {
      @isTest 
     static void Test_ErrorLogHelper_LogOrderError(){
         
-                TestDataFactory.CreateOAuthServiceEntries();
+        TestDataFactory.CreateOAuthServiceEntries();
         Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
         TestDataFactory.createStallProductsAndGeneralPriceBook();
         Order order = TestDataFactory.createPO();

@@ -1,0 +1,17 @@
+<apex:page StandardController="Account" extensions="CustomerBalanceController">
+    
+    <style type="text/css">
+        .hasMotif {margin: 0 !important;}
+    </style>
+<div>
+     
+{!CustomerBalanceVFP}
+    
+    
+</div>   
+    
+    
+
+    
+
+</apex:page>

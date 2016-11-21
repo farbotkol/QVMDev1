@@ -263,10 +263,10 @@ LH = Licence Holder</inlineHelpText>
     <fields>
         <fullName>Payment_Type__c</fullName>
         <externalId>false</externalId>
-        <inlineHelpText>EFT - Direct Debit
-CS - Cash
+        <inlineHelpText>CS - Cash
 CQ - Cheque
-CC - Credit Card</inlineHelpText>
+CC - Credit Card
+EFT - Direct Debit</inlineHelpText>
         <label>Payment Type</label>
         <picklist>
             <picklistValues>
@@ -367,6 +367,7 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
         <columns>NAME</columns>
         <columns>Batch_Type__c</columns>
         <columns>RECORDTYPE</columns>
+        <columns>Payment_Type__c</columns>
         <columns>Process_Range__c</columns>
         <columns>From_Date__c</columns>
         <columns>To_Date__c</columns>
@@ -1866,30 +1867,37 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
 {!REQUIRESCRIPT(&quot;/soap/ajax/31.0/apex.js&quot;)}
 {!REQUIRESCRIPT(&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js&quot;)}
 
+var btnService = document.getElementsByName(&apos;find_transactions&apos;)[0];
+btnService.setAttribute(&apos;class&apos;, &apos;btnDisabled&apos;);
+btnService.value = &apos;Processing...&apos;;
 
-sforce.apex.execute(&quot;PaymentBuilder&quot;,&quot;UpdateBatchObject&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;});
+if(btnService.disabled == false){
+
+ btnService.disabled = true;
+
+ sforce.apex.execute(&quot;PaymentBuilder&quot;,&quot;UpdateBatchObject&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;});
 
 
-var requestBody =
+ var requestBody =
 &apos;&lt;se:Envelope xmlns:se=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&lt;se:Header xmlns:sfns=&quot;http://soap.sforce.com/schemas/package/PaymentBuilder&quot;&gt;&lt;sfns:SessionHeader&gt;&lt;sessionId&gt;{!GETSESSIONID()}&lt;/sessionId&gt;&lt;/sfns:SessionHeader&gt;&lt;/se:Header&gt;&lt;se:Body&gt;&lt;processTransactions  xmlns=&quot;http://soap.sforce.com/schemas/package/PaymentBuilder&quot;&gt;&lt;batchJobId&gt;{!Batch_Jobs__c.Id}&lt;/batchJobId&gt;&lt;/processTransactions&gt;&lt;/se:Body&gt;&lt;/se:Envelope&gt;&apos;
 
-$.ajax(
- {
-  url : &apos;../services/Soap/package/PaymentBuilder&apos;,
-  type: &apos;POST&apos;,
-  data: requestBody,
-  headers:
+ $.ajax(
   {
-   &quot;SOAPAction&quot; :&apos;&quot;&quot;&apos;,
-   &quot;Content-Type&quot;:&quot;text/xml; charset=UTF-8&quot;
+   url : &apos;../services/Soap/package/PaymentBuilder&apos;,
+   type: &apos;POST&apos;,
+   data: requestBody,
+   headers:
+   {
+    &quot;SOAPAction&quot; :&apos;&quot;&quot;&apos;,
+    &quot;Content-Type&quot;:&quot;text/xml; charset=UTF-8&quot;
+   }
   }
- }
-);
+ );
 
-//sforce.apex.execute(&quot;PaymentBuilder&quot;,&quot;processTransactions&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;});
-
-alert(&apos;Searching for transaction (Invoices/Credit Notes) this will take Approx 2-3 Minutes&apos;);
-window.location.reload();</url>
+ //sforce.apex.execute(&quot;PaymentBuilder&quot;,&quot;processTransactions&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;});
+ alert(&apos;Searching for transaction (Invoices/Credit Notes) this will take Approx 2-3 Minutes&apos;);
+ window.location.reload();
+}</url>
     </webLinks>
     <webLinks>
         <fullName>Generate_Invoices</fullName>
@@ -1903,28 +1911,37 @@ window.location.reload();</url>
 {!REQUIRESCRIPT(&quot;/soap/ajax/31.0/apex.js&quot;)} 
 {!REQUIRESCRIPT(&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js&quot;)}
 
-var requestBody =
-&apos;&lt;se:Envelope xmlns:se=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&lt;se:Header xmlns:sfns=&quot;http://soap.sforce.com/schemas/package/InvoiceBuilder&quot;&gt;&lt;sfns:SessionHeader&gt;&lt;sessionId&gt;{!GETSESSIONID()}&lt;/sessionId&gt;&lt;/sfns:SessionHeader&gt;&lt;/se:Header&gt;&lt;se:Body&gt;&lt;GenerateInvoices xmlns=&quot;http://soap.sforce.com/schemas/package/InvoiceBuilder&quot;&gt;&lt;batchJobId&gt;{!Batch_Jobs__c.Id}&lt;/batchJobId&gt;&lt;/GenerateInvoices&gt;&lt;/se:Body&gt;&lt;/se:Envelope&gt;&apos;
+var btnService = document.getElementsByName(&apos;generate_invoices&apos;)[0];
+btnService.setAttribute(&apos;class&apos;, &apos;btnDisabled&apos;);
+btnService.value = &apos;Processing...&apos;;
 
-$.ajax(
- {
-  url : &apos;../services/Soap/package/InvoiceBuilder&apos;,
-  type: &apos;POST&apos;,
-  data: requestBody,
-  headers:
+if(btnService.disabled == false){
+
+  btnService.disabled = true;
+
+ var requestBody =
+ &apos;&lt;se:Envelope xmlns:se=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&lt;se:Header xmlns:sfns=&quot;http://soap.sforce.com/schemas/package/InvoiceBuilder&quot;&gt;&lt;sfns:SessionHeader&gt;&lt;sessionId&gt;{!GETSESSIONID()}&lt;/sessionId&gt;&lt;/sfns:SessionHeader&gt;&lt;/se:Header&gt;&lt;se:Body&gt;&lt;GenerateInvoices xmlns=&quot;http://soap.sforce.com/schemas/package/InvoiceBuilder&quot;&gt;&lt;batchJobId&gt;{!Batch_Jobs__c.Id}&lt;/batchJobId&gt;&lt;/GenerateInvoices&gt;&lt;/se:Body&gt;&lt;/se:Envelope&gt;&apos;
+
+ $.ajax(
   {
-   &quot;SOAPAction&quot; :&apos;&quot;&quot;&apos;,
-   &quot;Content-Type&quot;:&quot;text/xml; charset=UTF-8&quot;
+   url : &apos;../services/Soap/package/InvoiceBuilder&apos;,
+   type: &apos;POST&apos;,
+   data: requestBody,
+   headers:
+   {
+    &quot;SOAPAction&quot; :&apos;&quot;&quot;&apos;,
+    &quot;Content-Type&quot;:&quot;text/xml; charset=UTF-8&quot;
+   }
   }
- }
-);
+ );
 
 
-//sforce.apex.execute(&quot;InvoiceBuilder&quot;,&quot;GenerateInvoices&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;}); 
+ //sforce.apex.execute(&quot;InvoiceBuilder&quot;,&quot;GenerateInvoices&quot;,{batchJobId:&quot; {!Batch_Jobs__c.Id}&quot;}); 
 
-alert(&apos;Generating Invoices , Processing will take Approx 5-10 Minutes&apos;);
+ alert(&apos;Generating Invoices , Processing will take Approx 5-10 Minutes&apos;);
 
-window.location.reload();</url>
+ window.location.reload();
+}</url>
     </webLinks>
     <webLinks>
         <fullName>Generate_Leave_Credit_Notes</fullName>
@@ -1938,13 +1955,21 @@ window.location.reload();</url>
 {!REQUIRESCRIPT(&quot;/soap/ajax/31.0/apex.js&quot;)}
 
 
+var btnService = document.getElementsByName(&apos;generate_leave_credit_notes&apos;)[0];
+btnService.setAttribute(&apos;class&apos;, &apos;btnDisabled&apos;);
+btnService.value = &apos;Processing...&apos;;
 
-sforce.apex.execute(&quot;LeaveCreditNoteBuilder&quot;,&quot;GenerateLeaveCreditNotes&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;});
+if(btnService.disabled == false){
+
+ btnService.disabled = true;
+
+ sforce.apex.execute(&quot;LeaveCreditNoteBuilder&quot;,&quot;GenerateLeaveCreditNotes&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;});
 
 
 
 
-window.location.reload();</url>
+ window.location.reload();
+}</url>
     </webLinks>
     <webLinks>
         <fullName>Generate_Orders</fullName>
@@ -1958,31 +1983,41 @@ window.location.reload();</url>
 {!REQUIRESCRIPT(&quot;/soap/ajax/31.0/apex.js&quot;)}
 {!REQUIRESCRIPT(&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js&quot;)}
 
-sforce.apex.execute(&quot;OrderBuilder&quot;,&quot;UpdateBatchType&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;});
+
+var btnService = document.getElementsByName(&apos;generate_orders&apos;)[0];
+btnService.setAttribute(&apos;class&apos;, &apos;btnDisabled&apos;);
+btnService.value = &apos;Processing...&apos;;
+
+if(btnService.disabled == false){
+
+ btnService.disabled = true;
+
+ sforce.apex.execute(&quot;OrderBuilder&quot;,&quot;UpdateBatchType&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;});
 
 
-var requestBody =
-&apos;&lt;se:Envelope xmlns:se=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&lt;se:Header xmlns:sfns=&quot;http://soap.sforce.com/schemas/package/OrderBuilder&quot;&gt;&lt;sfns:SessionHeader&gt;&lt;sessionId&gt;{!GETSESSIONID()}&lt;/sessionId&gt;&lt;/sfns:SessionHeader&gt;&lt;/se:Header&gt;&lt;se:Body&gt;&lt;GenerateOrders  xmlns=&quot;http://soap.sforce.com/schemas/package/OrderBuilder&quot;&gt;&lt;batchJobId&gt;{!Batch_Jobs__c.Id}&lt;/batchJobId&gt;&lt;/GenerateOrders&gt;&lt;/se:Body&gt;&lt;/se:Envelope&gt;&apos;
+ var requestBody =
+ &apos;&lt;se:Envelope xmlns:se=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&lt;se:Header xmlns:sfns=&quot;http://soap.sforce.com/schemas/package/OrderBuilder&quot;&gt;&lt;sfns:SessionHeader&gt;&lt;sessionId&gt;{!GETSESSIONID()}&lt;/sessionId&gt;&lt;/sfns:SessionHeader&gt;&lt;/se:Header&gt;&lt;se:Body&gt;&lt;GenerateOrders  xmlns=&quot;http://soap.sforce.com/schemas/package/OrderBuilder&quot;&gt;&lt;batchJobId&gt;{!Batch_Jobs__c.Id}&lt;/batchJobId&gt;&lt;/GenerateOrders&gt;&lt;/se:Body&gt;&lt;/se:Envelope&gt;&apos;
 
-$.ajax(
- {
-  url : &apos;../services/Soap/package/OrderBuilder&apos;,
-  type: &apos;POST&apos;,
-  data: requestBody,
-  headers:
+ $.ajax(
   {
-   &quot;SOAPAction&quot; :&apos;&quot;&quot;&apos;,
-   &quot;Content-Type&quot;:&quot;text/xml; charset=UTF-8&quot;
+   url : &apos;../services/Soap/package/OrderBuilder&apos;,
+   type: &apos;POST&apos;,
+   data: requestBody,
+   headers:
+   {
+    &quot;SOAPAction&quot; :&apos;&quot;&quot;&apos;,
+    &quot;Content-Type&quot;:&quot;text/xml; charset=UTF-8&quot;
+   }
   }
- }
-);
+ );
 
    
-//sforce.apex.execute(&quot;OrderBuilder&quot;,&quot;GenerateOrders&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;});
+ //sforce.apex.execute(&quot;OrderBuilder&quot;,&quot;GenerateOrders&quot;,{batchJobId:&quot; {!Batch_Jobs__c.Id}&quot;});
 
-alert(&apos;Generating Orders, processind will take Approx 5-10 Minutes&apos;);
+ alert(&apos;Generating Orders, processind will take Approx 5-10 Minutes&apos;);
 
-window.location.reload();</url>
+ window.location.reload();
+}</url>
     </webLinks>
     <webLinks>
         <fullName>Generate_Payments</fullName>
@@ -1996,31 +2031,38 @@ window.location.reload();</url>
 {!REQUIRESCRIPT(&quot;/soap/ajax/31.0/apex.js&quot;)}
 {!REQUIRESCRIPT(&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js&quot;)}
 
+var btnService = document.getElementsByName(&apos;generate_payments&apos;)[0];
+btnService.setAttribute(&apos;class&apos;, &apos;btnDisabled&apos;);
+btnService.value = &apos;Processing...&apos;;
 
-sforce.apex.execute(&quot;PaymentBuilder&quot;,&quot;changeRecordTypegeneratePayments&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;});
+if(btnService.disabled == false){
 
-var requestBody =
-&apos;&lt;se:Envelope xmlns:se=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&lt;se:Header xmlns:sfns=&quot;http://soap.sforce.com/schemas/package/PaymentBuilder&quot;&gt;&lt;sfns:SessionHeader&gt;&lt;sessionId&gt;{!GETSESSIONID()}&lt;/sessionId&gt;&lt;/sfns:SessionHeader&gt;&lt;/se:Header&gt;&lt;se:Body&gt;&lt;generatePayments xmlns=&quot;http://soap.sforce.com/schemas/package/PaymentBuilder&quot;&gt;&lt;batchJobId&gt;{!Batch_Jobs__c.Id}&lt;/batchJobId&gt;&lt;/generatePayments&gt;&lt;/se:Body&gt;&lt;/se:Envelope&gt;&apos;
+ btnService.disabled = true;
+ sforce.apex.execute(&quot;PaymentBuilder&quot;,&quot;changeRecordTypegeneratePayments&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;});
 
-$.ajax(
- {
-  url : &apos;../services/Soap/package/PaymentBuilder&apos;,
-  type: &apos;POST&apos;,
-  data: requestBody,
-  headers:
+ var requestBody =
+ &apos;&lt;se:Envelope xmlns:se=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&lt;se:Header xmlns:sfns=&quot;http://soap.sforce.com/schemas/package/PaymentBuilder&quot;&gt;&lt;sfns:SessionHeader&gt;&lt;sessionId&gt;{!GETSESSIONID()}&lt;/sessionId&gt;&lt;/sfns:SessionHeader&gt;&lt;/se:Header&gt;&lt;se:Body&gt;&lt;generatePayments xmlns=&quot;http://soap.sforce.com/schemas/package/PaymentBuilder&quot;&gt;&lt;batchJobId&gt;{!Batch_Jobs__c.Id}&lt;/batchJobId&gt;&lt;/generatePayments&gt;&lt;/se:Body&gt;&lt;/se:Envelope&gt;&apos;
+
+ $.ajax(
   {
-   &quot;SOAPAction&quot; :&apos;&quot;&quot;&apos;,
-   &quot;Content-Type&quot;:&quot;text/xml; charset=UTF-8&quot;
+   url : &apos;../services/Soap/package/PaymentBuilder&apos;,
+   type: &apos;POST&apos;,
+   data: requestBody,
+   headers:
+   {
+    &quot;SOAPAction&quot; :&apos;&quot;&quot;&apos;,
+    &quot;Content-Type&quot;:&quot;text/xml; charset=UTF-8&quot;
+   }
   }
- }
-);
+ );
 
 
-alert(&apos;Generating Payments from found transaction (Invoices/Credit Notes) this will take Approx 5-10 Minutes&apos;);
+ alert(&apos;Generating Payments from found transaction (Invoices/Credit Notes) this will  take Approx 5-10 Minutes&apos;);
    
-//sforce.apex.execute(&quot;PaymentBuilder&quot;,&quot;generatePayments&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;});
+ //sforce.apex.execute(&quot;PaymentBuilder&quot;,&quot;generatePayments&quot;,{batchJobId:&quot; {!Batch_Jobs__c.Id}&quot;});
 
-window.location.reload();</url>
+ window.location.reload();
+}</url>
     </webLinks>
     <webLinks>
         <fullName>Refresh</fullName>

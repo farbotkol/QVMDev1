@@ -6,8 +6,8 @@ public class PaymentBuilderTest {
     {
         TestDataFactory.CreateOAuthServiceEntries();
         Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
-
-        Schema.DescribeSObjectResult acccCfrSchema = Schema.SObjectType.Account; 
+        TestDataFactory.createStallProductsAndGeneralPriceBook();
+        Schema.DescribeSObjectResult acccCfrSchema = Schema.SObjectType.Account;
         Map<String,Schema.RecordTypeInfo> accRecordTypeInfo = acccCfrSchema.getRecordTypeInfosByName(); 
         Id accRecordTypeId = accRecordTypeInfo.get('Trader').getRecordTypeId();
         Account a = new Account(Name='TestAccount');
@@ -27,14 +27,22 @@ public class PaymentBuilderTest {
         oppObj.Payment_Type__c = 'EFT';
         oppObj.StageName = 'Closed Won';
         insert oppObj;
-        
+        /*
         Order orderObj = new Order();
         orderObj.AccountId  = a.id;
         orderObj.OpportunityId =oppObj.id; 
         orderObj.EffectiveDate = date.parse('22/09/2016');
-        orderObj.QuickBooksId__c = '100';
+        orderObj.QuickBooksId__c = '208';
         orderObj.Status = 'Draft';
-        //insert orderObj;
+        orderObj.Balance_Due__c = 0.00;
+        orderObj.Total_With_GST__c = 0.00;
+        orderObj.PriceBook2Id = '123';
+        insert orderObj;
+        */
+        Order order = TestDataFactory.createOrder('SL');
+        order.QuickBooksId__c = '208';
+        //orderObj.QuickBooksId__c = '100';
+        update order;
   
         
         Batch_Jobs__c job = TestDataFactory.createSLBatchJob();
@@ -55,7 +63,7 @@ public class PaymentBuilderTest {
         test.stopTest();
         
         List<Transaction__c> trans = [select id from Transaction__c];
-        
+        system.debug('TestMikel: '+ trans.size());
         system.assert(trans.size()>0);
 
 

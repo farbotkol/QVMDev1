@@ -24,7 +24,7 @@ global class PaymentBuilder
             ID findingRecordTypeID = Schema.SObjectType.Batch_Jobs__c.getRecordTypeInfosByName().get('Finding Transactions').getRecordTypeId();
          	Batch_Jobs__c batchJobObj = [SELECT id, Due_Before__c  FROM Batch_Jobs__c where id =:batchJobId LIMIT 1];
          	batchJobObj.RecordTypeId =  findingRecordTypeID;
-         	update batchJobObj; 
+         	update batchJobObj;
          }
          catch( Exception Ex )
          {
@@ -36,7 +36,6 @@ global class PaymentBuilder
        
     Webservice static void processTransactions( Id batchJobId )
     {
-        
         try
         {
             System.debug('HELLO' );
@@ -86,11 +85,11 @@ global class PaymentBuilder
          try
          {
             System.debug(Logginglevel.ERROR ,'Inside getInvoice');
-         	QBOCRUDHelper crudHelper = new QBOCRUDHelper();         
+         	QBOCRUDHelper crudHelper = new QBOCRUDHelper();
          	Batch_Jobs__c batchJobObj = [SELECT id, Due_Before__c , Payment_Type__c FROM Batch_Jobs__c where id =:batchJobId LIMIT 1];
          	integer position = 1;
             
-            System.debug('RESMI:TTTT accountQuickBookIdSet' );                         
+            System.debug('RESMI:TTTT accountQuickBookIdSet' );
          	System.debug('RESMI:TTTT position' + position );
 		 	while (position != 0)
         	{
@@ -186,10 +185,11 @@ global class PaymentBuilder
                      	mapAccountDetails.put( accObj.QuickBooks_Id__c, accObj.Id);// Map for updating transaction Object's AccountId
                         //mapAccountDefPaymentType.put( accObj.QuickBooks_Id__c,accObj.Def_Payment_Type__c );
                  	}
-                 	// getting order list
+                 	// getting order list          
                  	if( !setInvoiceQuickBookId.isEmpty())
                  	{
                     	orderList = [SELECT id,OpportunityId,Opportunity.Payment_Type__c,QuickBooksId__c from Order where QuickBooksId__c IN:setInvoiceQuickBookId];
+                    	List<Order> oers = [SELECT id,OpportunityId,Opportunity.Payment_Type__c,QuickBooksId__c from Order ];
                  	}
                  	for( Order ordrObj: orderList )
                  	{
@@ -200,7 +200,7 @@ global class PaymentBuilder
               
                  	for (QBOInvoice item : invs)
                  	{
-                    	if( item != null )
+                    	if( item != null && mapOrderAccountBusiness.get(item.id) != null)
                      	{
                         	Transaction__c transObj = new Transaction__c();
                         	transObj.Invoice_QuickBookId__c = item.Id; 
@@ -220,7 +220,7 @@ global class PaymentBuilder
                        	    transObj.Order__c =  mapOrderDetails.get( item.id);// Updating transaction object's Order Id
                             transObj.Account_Business__c = mapOrderAccountBusiness.get(item.id);// Updating transaction object's Account Bussiness
  
-                            System.debug('HERE 1: ' );
+                            System.debug('HERE 1: ' +  mapAccountBusinessDefPayment.get(item.id) + ' -- ' + batchJobObj.Payment_Type__c + '::'+item.id);
                             
                         	//if( mapAccountDefPaymentType.get(item.CustomerRef.value) == 'EFT')
                         	if( mapAccountBusinessDefPayment.get(item.id) == 'EFT' && (batchJobObj.Payment_Type__c == 'EFT' 
@@ -229,7 +229,8 @@ global class PaymentBuilder
                         	{
                         		transactionListToInsert.add( transObj );  
                         	} 
-                            else If(batchJobObj.Payment_Type__c != 'EFT'  && batchJobObj.Payment_Type__c  != '' && batchJobObj.Payment_Type__c  != NULL)
+                            else If(batchJobObj.Payment_Type__c != 'EFT'  && batchJobObj.Payment_Type__c  != '' 
+                                    										&& batchJobObj.Payment_Type__c  != NULL)
                             {
                                 transactionListToInsert.add( transObj );  
                             }
@@ -360,7 +361,7 @@ global class PaymentBuilder
               
                  	for (QBOInvoice item : invs)
                  	{
-                     	if( item != null )
+                     	if( item != null && mapOrderAccountBusiness.get(item.id) != null)
                      	{
                         	Transaction__c transObj = new Transaction__c	();
                         	transObj.Invoice_QuickBookId__c = item.Id; 

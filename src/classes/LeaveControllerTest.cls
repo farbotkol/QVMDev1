@@ -9,7 +9,7 @@ public class LeaveControllerTest {
         User portalAccountOwner1 = new User(
             UserRoleId = portalRole.Id,
             ProfileId = profile1.Id,
-            Username = System.now().millisecond() + 'test2@test.com',
+            Username = System.now().millisecond() + 'test2sdfsdf@test.com',
             Alias = 'alias',
             Email='test.1@example.com',
             EmailEncodingKey='UTF-8',

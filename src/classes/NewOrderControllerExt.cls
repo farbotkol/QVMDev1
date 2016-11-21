@@ -32,7 +32,7 @@ public class NewOrderControllerExt {
              }
              //      retURL=%2F001p000000Df4Gr&aid=001p000000Df4Gr&sfdc.override=1
              //801/e?retURL=%2F001p000000Df4Gr&aid=001p000000Df4Gr&RecordType=012p0000000CgVq&ent=Order
-             newPage  = new PageReference('/801/e?retURL=' + returnUrl + '&aid=' + accountId + '&ent=Order&RecordType=' + devRecordTypeId );
+             newPage  = new PageReference('/801/e?retURL=' + returnUrl + '&aid=' + accountId + '&ent=Order&RecordType=' + devRecordTypeId + '&Status=Draft&');
              
         }
         catch(Exception ex)

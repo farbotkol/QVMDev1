@@ -23,7 +23,7 @@ private class ScheduleableTest {
         insert accContactRole;
 
       // Schedule the test job
-      String jobId = System.schedule('ScheduleUpdatePrimaryContact',
+      String jobId = System.schedule('ScheduleUpdatePrimaryContact_Banana',
                         CRON_EXP, 
                         new ScheduleUpdatePrimaryContact());
          
