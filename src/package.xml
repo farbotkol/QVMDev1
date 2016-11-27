@@ -131,7 +131,6 @@
         <members>QVM_Email_Templates/Supplier_Approval_Template_html</members>
         <members>QVM_Email_Templates/Supplier_Approved_Notice</members>
         <members>QVM_Email_Templates/test</members>
-        <members>unfiled$public</members>
         <members>unfiled$public/CommunityChangePasswordEmailTemplate</members>
         <members>unfiled$public/CommunityForgotPasswordEmailTemplate</members>
         <members>unfiled$public/CommunityWelcomeEmailTemplate</members>

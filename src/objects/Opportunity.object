@@ -85,6 +85,26 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
+        <fullName>Are_Products_Aust_made__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Are Products Australian made?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Are_the_Products_Made_In_Melbourne__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Are the Products Made In Melbourne?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>BSB_Number__c</fullName>
         <externalId>false</externalId>
         <label>BSB Number</label>
@@ -116,6 +136,30 @@
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Box_Hire_Supplier__c</fullName>
+        <externalId>false</externalId>
+        <label>Box Hire Supplier</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Box_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Box Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
@@ -282,6 +326,17 @@
     <fields>
         <fullName>ExpectedRevenue</fullName>
         <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Generational_Business__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Has this business been handed down form family generations?</inlineHelpText>
+        <label>Generational Business</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>IsPrivate</fullName>
@@ -560,6 +615,19 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Length_of_Tenure__c</fullName>
+        <externalId>false</externalId>
+        <label>Length of Tenure(Yrs)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Lifestyle_Groups__c</fullName>
         <externalId>false</externalId>
         <label>Lifestyle Groups</label>
@@ -685,6 +753,44 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>No_Of_Workers__c</fullName>
+        <externalId>false</externalId>
+        <label>No. Of Workers</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_boxes__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label># of boxes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Offers_personification_customisation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Does the trader offer  personalisation or customisation of the product?</inlineHelpText>
+        <label>Offers personalisation/customisation</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>OwnerId</fullName>
@@ -1320,6 +1426,30 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>Power_Usage__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Does this stall use power?</inlineHelpText>
+        <label>Power Usage</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Power_Used_For__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the power used for within the stall?</inlineHelpText>
+        <label>Power Used For</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Pricebook2Id</fullName>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
@@ -1663,6 +1793,17 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Schedule_C__c</fullName>
+        <externalId>false</externalId>
+        <label>Schedule C</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
         <fullName>Season_Fee__c</fullName>
         <externalId>false</externalId>
         <label>Season Fee</label>
@@ -1822,6 +1963,37 @@
         <visibleLines>4</visibleLines>
     </fields>
     <fields>
+        <fullName>Stall_Configuration__c</fullName>
+        <externalId>false</externalId>
+        <label>Stall Configuration</label>
+        <picklist>
+            <picklistValues>
+                <fullName>360</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Walk-In</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Corner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lease Line</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
         <fullName>Stall_Fee__c</fullName>
         <externalId>false</externalId>
         <label>Stall Fee</label>
@@ -1943,6 +2115,28 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Trestle_Supplier__c</fullName>
+        <externalId>false</externalId>
+        <label>Trestle Supplier</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Trestle__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Trestle</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Type</fullName>
         <picklist>
             <picklistValues>
@@ -1972,6 +2166,118 @@
         <scale>6</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Use_of_Stall_Space__c</fullName>
+        <externalId>false</externalId>
+        <label>% Use of Stall Space</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Uses_Box_Hire__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Uses Box Hire</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Uses_Vehicle__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Uses Vehicle</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Offsite_Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle Offsite Location</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Offsite__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Vehicle Offsite</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Onsite_Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle Onsite Location</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Onsite__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Vehicle Onsite</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Workers_pack_up_down__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Workers pack up/down</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>of_tables__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label># of tables</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
@@ -2642,6 +2948,25 @@
             </values>
             <values>
                 <fullName>Toys %26 Gifts</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stall_Configuration__c</picklist>
+            <values>
+                <fullName>360</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lease Line</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Walk-In</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3647,6 +3972,25 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Stall_Configuration__c</picklist>
+            <values>
+                <fullName>360</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lease Line</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Walk-In</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Terms__c</picklist>
             <values>
                 <fullName>0</fullName>
@@ -4648,6 +4992,25 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Stall_Configuration__c</picklist>
+            <values>
+                <fullName>360</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lease Line</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Walk-In</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Terms__c</picklist>
             <values>
                 <fullName>0</fullName>
@@ -5269,6 +5632,25 @@
             </values>
             <values>
                 <fullName>Toys %26 Gifts</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stall_Configuration__c</picklist>
+            <values>
+                <fullName>360</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lease Line</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Walk-In</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -6274,6 +6656,25 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Stall_Configuration__c</picklist>
+            <values>
+                <fullName>360</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lease Line</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Walk-In</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Terms__c</picklist>
             <values>
                 <fullName>0</fullName>
@@ -7271,6 +7672,25 @@
             </values>
             <values>
                 <fullName>Toys %26 Gifts</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stall_Configuration__c</picklist>
+            <values>
+                <fullName>360</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lease Line</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Walk-In</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

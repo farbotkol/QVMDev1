@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalPicklist xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Global picklist of offenses</description>
+    <globalPicklistValues>
+        <fullName>Failure of stallholder to follow directions of Market Officer</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Forklift use breaching rules</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Forklift use without permit</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Forklift use without safety vest</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Forklift use without spotter</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Use of stalls</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <masterLabel>Offense</masterLabel>
+    <sorted>false</sorted>
+</GlobalPicklist>

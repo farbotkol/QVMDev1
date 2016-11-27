@@ -109,6 +109,20 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Account_Business__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account Business</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>AssetId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
@@ -176,6 +190,17 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Offense__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Offense</globalPicklist>
+        <label>Offense</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Origin</fullName>
@@ -425,6 +450,56 @@
                 <fullName>Contact Details</fullName>
                 <default>false</default>
             </picklistValues>
+            <picklistValues>
+                <fullName>Permitted Use</fullName>
+                <default>false</default>
+                <controllingFieldValues>Operation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parking</fullName>
+                <default>false</default>
+                <controllingFieldValues>Operation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OH&amp;S and Forklift</fullName>
+                <default>false</default>
+                <controllingFieldValues>Operation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stall Boundaries</fullName>
+                <default>false</default>
+                <controllingFieldValues>Operation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Market Rules &amp; Regulations</fullName>
+                <default>false</default>
+                <controllingFieldValues>Operation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Litter</fullName>
+                <default>false</default>
+                <controllingFieldValues>Operation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Set-Up &amp; Pack-Up</fullName>
+                <default>false</default>
+                <controllingFieldValues>Operation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Disputes</fullName>
+                <default>false</default>
+                <controllingFieldValues>Operation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Storage Boxes</fullName>
+                <default>false</default>
+                <controllingFieldValues>Operation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Awning</fullName>
+                <default>false</default>
+                <controllingFieldValues>Operation</controllingFieldValues>
+            </picklistValues>
             <restrictedPicklist>true</restrictedPicklist>
             <sorted>false</sorted>
         </picklist>
@@ -628,10 +703,310 @@
     <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
     <recordTypeTrackHistory>true</recordTypeTrackHistory>
     <recordTypes>
+        <fullName>Notice_of_Breach</fullName>
+        <active>true</active>
+        <businessProcess>QVM Support Process</businessProcess>
+        <description>Notice of assessment for trader infringements</description>
+        <label>Notice of Breach</label>
+        <picklistValues>
+            <picklist>Offense</picklist>
+            <values>
+                <fullName>Failure of stallholder to follow directions of Market Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift use breaching rules</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift use without permit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift use without safety vest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift use without spotter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Use of stalls</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chatter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QVM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Complex functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Existing problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User didn%27t attend training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Type__c</picklist>
+            <values>
+                <fullName>1%2E 7 Days after due date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2%2E 14 Days after due date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3%2E 30 Days after due date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4%2E Meeting Outcome</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5%2E Non Agreement %2F Absence %28Letter of Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6%2E 45 Days after due date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7%2E Collection agency appointed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8%2E Letter of Default advising of cancellation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9%2E %3E60 Days%2FCancel  Lease%2F Legal Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bank Details</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Branding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Co-op Marketing Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Details</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disputes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invoice Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Litter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Rules %26 Regulations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OH%26S and Forklift</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Permitted Use</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Safety Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set-Up %26 Pack-Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spread</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stall Boundaries</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Statement Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storage Boxes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trader Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>infringements - Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>infringements - Spread</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Accounts Query</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debtor Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Events</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Feature Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Location Change</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maintenance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Question</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Update Account Details</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
         <fullName>QVM_Record_Type</fullName>
         <active>true</active>
         <businessProcess>QVM Support Process</businessProcess>
         <label>QVM Case</label>
+        <picklistValues>
+            <picklist>Offense</picklist>
+            <values>
+                <fullName>Failure of stallholder to follow directions of Market Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift use breaching rules</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift use without permit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift use without safety vest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift use without spotter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Use of stalls</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>Origin</picklist>
             <values>
@@ -724,6 +1099,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Awning</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Branding</fullName>
                 <default>false</default>
             </values>
@@ -732,7 +1111,23 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Disputes</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Invoice Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Litter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Rules %26 Regulations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OH%26S and Forklift</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -740,7 +1135,19 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Parking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Permitted Use</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Safety Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set-Up %26 Pack-Up</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -752,7 +1159,15 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Stall Boundaries</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Statement Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storage Boxes</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -821,6 +1236,33 @@
         <active>true</active>
         <businessProcess>Traders Support Process</businessProcess>
         <label>Trader Case</label>
+        <picklistValues>
+            <picklist>Offense</picklist>
+            <values>
+                <fullName>Failure of stallholder to follow directions of Market Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift use breaching rules</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift use without permit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift use without safety vest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift use without spotter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Use of stalls</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>Origin</picklist>
             <values>

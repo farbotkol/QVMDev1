@@ -46,6 +46,10 @@
                 <behavior>Edit</behavior>
                 <field>Contact_Type__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Is_Family_Member__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

@@ -1,40 +1,40 @@
 <apex:page standardController="Opportunity" extensions="AccountBusinessStallsListingExt">
 
-	<apex:form >
-	  <input type="hidden" name="key" value="{!Opportunity.Perm_Stall__c}" /> 
-			  		
-		<apex:pageBlock mode="maindetail" id="resultPanel"> 
-			<apex:pageBlockTable value="{!PermStallsFromQuery}" var="stall" columnsWidth="16%,21%,21%,21%,21%"> 
-				<apex:column > 
-					<apex:facet name="header">Actions</apex:facet> 
-					<a href="/{!stall.ID}/e?retURL=/{!record.ID}" target="_parent">Edit</a>
-				</apex:column> 
-				<apex:column > 
-					<apex:facet name="header">Stall Name</apex:facet> 
-					<apex:outputText value="{!stall.Name}"/> 
-					<apex:facet name="footer">
-			               <apex:inputField id="stall" value="{!Record.Perm_Stall__c}"/>
-		            </apex:facet>
-				</apex:column> 
-				<apex:column > 
-					<apex:facet name="header">Annual Rent</apex:facet> 
-					<apex:outputText value="{!stall.Annual_Rent__c}"/> 
-					<apex:facet name="footer"> <apex:commandButton action="{!AddPerm}" value="Add" id="theButton2"/></apex:facet>
-				</apex:column> 
-				<apex:column > 
-					<apex:facet name="header">Area</apex:facet> 
-					<apex:outputText value="{!stall.Area_Square_Meters__c}"/> 
-				</apex:column> 
-				<apex:column > 
-					<apex:facet name="header">Is Active</apex:facet> 
-					<apex:outputText value="{!stall.IsActive__c}"/> 
-				</apex:column> 
-				 
-				
-			</apex:pageBlockTable> 
-			
-		</apex:pageBlock> 
-	</apex:form>
+    <apex:form >
+      <input type="hidden" name="key" value="{!Opportunity.Perm_Stall__c}" /> 
+                    
+        <apex:pageBlock mode="maindetail" id="resultPanel"> 
+            <apex:pageBlockTable value="{!PermStallsFromQuery}" var="stall" columnsWidth="16%,21%,21%,21%,21%"> 
+                <apex:column > 
+                    <apex:facet name="header">Actions</apex:facet> 
+                    <a href="/{!stall.ID}/e?retURL=/{!record.ID}" target="_parent">Edit</a>
+                </apex:column> 
+                <apex:column > 
+                    <apex:facet name="header">Stall Name</apex:facet> 
+                    <apex:outputText value="{!stall.Name}"/> 
+                    <apex:facet name="footer">
+                           <apex:inputField id="stall" value="{!Record.Perm_Stall__c}"/>
+                    </apex:facet>
+                </apex:column> 
+                <apex:column > 
+                    <apex:facet name="header">Annual Rent</apex:facet> 
+                    <apex:outputText value="{!stall.Annual_Rent__c}"/> 
+                    <apex:facet name="footer"> <apex:commandButton action="{!AddPerm}" value="Add" id="theButton2"/></apex:facet>
+                </apex:column> 
+                <apex:column > 
+                    <apex:facet name="header">Area</apex:facet> 
+                    <apex:outputText value="{!stall.Area_Square_Meters__c}"/> 
+                </apex:column> 
+                <apex:column > 
+                    <apex:facet name="header">Is Active</apex:facet> 
+                    <apex:outputText value="{!stall.IsActive__c}"/> 
+                </apex:column> 
+                 
+                
+            </apex:pageBlockTable> 
+            
+        </apex:pageBlock> 
+    </apex:form>
 
 
 

@@ -1,0 +1,91 @@
+<apex:page standardController="Account" extensions="StatementController" renderAs="pdf" standardStylesheets="false" showHeader="false" applyBodyTag="false" applyHtmlTag="false">
+    <html>
+        <head>
+            <style>
+                @page {
+                    size: A4;
+                    margin: 40;
+                    @top-right {
+                        content: element(header);
+                    }
+                    
+                    @bottom-center {
+                        content: element(footer);
+                    }
+                }
+                .page-break {
+                    display:block;
+                    page-break-after:always;
+                }
+                body {
+                    font-family: sans-serif;
+                    font-size: 10px;
+                }
+                div.header {
+					position:absolute;
+                    margin-top: -40px;
+                	z-index: -1;
+                    padding: 0px;
+                    width: 100%;
+                    text-align: right;
+                    
+                }
+                
+                div.footer {
+                    width: 100%;
+                    margin-left:-310px;
+                    margin-top: -138px;
+                    margin-right: 0px;
+                    margin-bottom: 0px;
+                	position: running(footer);
+                }
+            </style>
+        </head>
+        <div class="header">
+            <apex:image url="{!URLFOR($Resource.QVMHeaderFooter,
+                             'QVM_headers/QVM_header_1024.jpg')}" height="200px" />
+        </div>
+        
+        <div class="content">
+            <h1 align="center">
+                Notice of Breach
+            </h1>
+            
+            <h2>
+                Issues to:
+            </h2>
+            
+            <table width="75%" border="0" cellspacing="0" cellpadding="0">
+                <br/>
+                <tr>
+                    <th>Salesforce Id: </th><td>{!Account.Majik_AccountNo__c}</td>
+                </tr>
+                <tr>
+                    <th>Account Number: </th><td>{!Account.AccountNumber}</td>
+                </tr>
+            	<br/>
+                <tr>
+                    <th>{!customerName}</th>
+                </tr>
+                <tr>
+                    <td>{!Account.BillingStreet}</td>
+                </tr>
+                 <tr>
+                    <td>{!Account.BillingCity}</td>
+                </tr>
+                 <tr>
+                    <td>{!Account.BillingPostalCode}, {!Account.BillingState}</td>
+                </tr>
+            	<br/>
+                <tr>
+                    <th>Report Date : {!reportDate}</th>                    
+                </tr>
+            </table>
+            
+        </div>
+        <div class="footer">
+            <apex:image url="{!URLFOR($Resource.QVMHeaderFooter,
+                             'QVM_headers/QVM_footer_1024.jpg')}" height="185px"/> 
+        </div>
+    </html>
+</apex:page>
