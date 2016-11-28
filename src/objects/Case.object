@@ -192,6 +192,40 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
+        <fullName>Offense_Rule_Lookup__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Offense Rule Lookup</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.Offense__c</field>
+                <operation>equals</operation>
+                <valueField>Offense_Rule__c.Offense__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Offense_Rule__c</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Offense_Rule__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Rules</globalPicklist>
+        <label>Offense Rule</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>Offense__c</fullName>
         <externalId>false</externalId>
         <globalPicklist>Offense</globalPicklist>
@@ -297,6 +331,18 @@
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Rule_Description__c</fullName>
+        <externalId>false</externalId>
+        <formula>Offense_Rule_Lookup__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Rule Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Status</fullName>
@@ -715,6 +761,18 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Forklift carrying passenger</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift use - crossing footway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift use - hours and locations</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Forklift use breaching rules</fullName>
                 <default>false</default>
             </values>
@@ -731,7 +789,39 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Incorrect stowing or use of storage boxes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Permitted use</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remedy timeframe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set up %26 Packdown of stalls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trading outside stall boundaries</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unhygienic behaviour</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Use of stalls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicles being driven incorrectly in Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicles parked incorrectly in Market</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -789,6 +879,137 @@
             </values>
             <values>
                 <fullName>User didn%27t attend training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rules</picklist>
+            <values>
+                <fullName>Directions%3A PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Directions%3A SL1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Directions%3A SL2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Displays and Stalls%3A PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift%3A Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift%3A Permit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift%3A Safety Vest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift%3A Spotter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklifts - Footway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklifts%3A Footway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklifts%3A Passenger</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Rules Regulations%3A Rules for conduct PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Permitted Activities PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Permitted Activities%3A SL1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Permitted Activities%3A SL2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remedy%3A Immediate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remedy%3A One week</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remedy%3A Two weeks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set Up %26 Pack Down%3A PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set Up %26 Pack Down%3A SL1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set Up %26 Pack Down%3A SL2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stall Boundaries%3A PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stall Boundaries%3A SL1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stall Boundaries%3A SL2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storage Boxes%3A PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storage Boxes%3A SL1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storage Boxes%3A SL2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicles - Moving%3A PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicles - Moving%3A SL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicles - Parking%3A PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicles - Parking%3A SL1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicles - Parking%3A SL2</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1061,6 +1282,137 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Rules</picklist>
+            <values>
+                <fullName>Directions%3A PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Directions%3A SL1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Directions%3A SL2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Displays and Stalls%3A PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift%3A Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift%3A Permit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift%3A Safety Vest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift%3A Spotter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklifts - Footway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklifts%3A Footway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklifts%3A Passenger</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Rules Regulations%3A Rules for conduct PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Permitted Activities PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Permitted Activities%3A SL1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Permitted Activities%3A SL2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remedy%3A Immediate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remedy%3A One week</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remedy%3A Two weeks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set Up %26 Pack Down%3A PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set Up %26 Pack Down%3A SL1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set Up %26 Pack Down%3A SL2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stall Boundaries%3A PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stall Boundaries%3A SL1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stall Boundaries%3A SL2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storage Boxes%3A PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storage Boxes%3A SL1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storage Boxes%3A SL2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicles - Moving%3A PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicles - Moving%3A SL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicles - Parking%3A PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicles - Parking%3A SL1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicles - Parking%3A SL2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Sub_Type__c</picklist>
             <values>
                 <fullName>1%2E 7 Days after due date</fullName>
@@ -1309,6 +1661,137 @@
             </values>
             <values>
                 <fullName>User didn%27t attend training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rules</picklist>
+            <values>
+                <fullName>Directions%3A PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Directions%3A SL1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Directions%3A SL2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Displays and Stalls%3A PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift%3A Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift%3A Permit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift%3A Safety Vest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklift%3A Spotter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklifts - Footway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklifts%3A Footway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forklifts%3A Passenger</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Rules Regulations%3A Rules for conduct PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Permitted Activities PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Permitted Activities%3A SL1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Permitted Activities%3A SL2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remedy%3A Immediate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remedy%3A One week</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remedy%3A Two weeks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set Up %26 Pack Down%3A PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set Up %26 Pack Down%3A SL1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set Up %26 Pack Down%3A SL2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stall Boundaries%3A PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stall Boundaries%3A SL1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stall Boundaries%3A SL2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storage Boxes%3A PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storage Boxes%3A SL1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storage Boxes%3A SL2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicles - Moving%3A PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicles - Moving%3A SL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicles - Parking%3A PE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicles - Parking%3A SL1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicles - Parking%3A SL2</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

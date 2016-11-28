@@ -8,4 +8,5 @@
     <tab>Stall_Map</tab>
     <tab>Recieve_Payment</tab>
     <tab>Free_Day__c</tab>
+    <tab>Offense_Rule__c</tab>
 </CustomApplication>

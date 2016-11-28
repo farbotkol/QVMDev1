@@ -25,7 +25,7 @@
     </taskdef>
 	
     <!-- Test out deploy and retrieve verbs for package 'mypkg' -->
-    <target name="test" depends="RemoveUnwantedMetadata">
+    <target name="DeployUAT" depends="RemoveUnwantedMetadata">
       <!-- Upload the contents of the "mypkg" package -->
       <sf:deploy username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="src" rollbackOnError="true"/>
       <!--<mkdir dir="retrieveOutput"/>-->
@@ -35,9 +35,9 @@
 
 
         <!-- Test out deploy and retrieve verbs for package 'mypkg' -->
-    <target name="testProd" depends="RemoveUnwantedMetadata">
+    <target name="DeployProd" depends="RemoveUnwantedMetadata">
       <!-- Upload the contents of the "mypkg" package -->
-      <sf:deploy username="${sfprod.username}" password="${sfprod.password}" sessionId="${sf.sessionId}" serverurl="${sfprod.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="src" rollbackOnError="true"  checkOnly="false" />
+      <sf:deploy username="${sfprod.username}" password="${sfprod.password}" sessionId="${sf.sessionId}" serverurl="${sfprod.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="src" rollbackOnError="true"  checkOnly="true" />
       <!--<mkdir dir="retrieveOutput"/>-->
       <!-- Retrieve the contents into another directory -->
       <!--<sf:retrieve username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="retrieveOutput" packageNames="MyPkg"/>-->

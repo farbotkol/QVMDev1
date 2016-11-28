@@ -14,4 +14,5 @@
     <tab>Recieve_Payment</tab>
     <tab>standard-report</tab>
     <tab>standard-Dashboard</tab>
+    <tab>Offense_Rule__c</tab>
 </CustomApplication>

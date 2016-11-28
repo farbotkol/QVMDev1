@@ -6,6 +6,10 @@
         <default>false</default>
     </globalPicklistValues>
     <globalPicklistValues>
+        <fullName>Use of stalls</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
         <fullName>Forklift use breaching rules</fullName>
         <default>false</default>
     </globalPicklistValues>
@@ -22,7 +26,47 @@
         <default>false</default>
     </globalPicklistValues>
     <globalPicklistValues>
-        <fullName>Use of stalls</fullName>
+        <fullName>Forklift use - hours and locations</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Forklift use - crossing footway</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Forklift carrying passenger</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Unhygienic behaviour</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Permitted use</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Remedy timeframe</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Set up &amp; Packdown of stalls</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Trading outside stall boundaries</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Incorrect stowing or use of storage boxes</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Vehicles being driven incorrectly in Market</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Vehicles parked incorrectly in Market</fullName>
         <default>false</default>
     </globalPicklistValues>
     <masterLabel>Offense</masterLabel>

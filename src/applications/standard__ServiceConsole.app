@@ -179,9 +179,13 @@
     <tab>Stall_Map</tab>
     <tab>Recieve_Payment</tab>
     <tab>Free_Day__c</tab>
+    <tab>Offense_Rule__c</tab>
     <workspaceMappings>
         <mapping>
             <tab>Free_Day__c</tab>
+        </mapping>
+        <mapping>
+            <tab>Offense_Rule__c</tab>
         </mapping>
         <mapping>
             <tab>Payment__c</tab>

@@ -228,6 +228,9 @@
             <quickActionName>LogACall</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
+            <quickActionName>NewContact</quickActionName>
+        </quickActionListItems>
+        <quickActionListItems>
             <quickActionName>NewTask</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
@@ -267,6 +270,16 @@
         <fields>Account__c</fields>
         <fields>Paid__c</fields>
         <relatedList>Invoice__c.Account_Business__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>CASES.RECORDTYPE</fields>
+        <fields>CASES.CASE_NUMBER</fields>
+        <fields>CASES.SUBJECT</fields>
+        <fields>CASES.TYPE</fields>
+        <fields>Sub_Type__c</fields>
+        <fields>Offense__c</fields>
+        <fields>Offense_Rule__c</fields>
+        <relatedList>Case.Account_Business__c</relatedList>
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedFileList</relatedList>
