@@ -46,10 +46,6 @@
         <default>false</default>
     </globalPicklistValues>
     <globalPicklistValues>
-        <fullName>Remedy timeframe</fullName>
-        <default>false</default>
-    </globalPicklistValues>
-    <globalPicklistValues>
         <fullName>Set up &amp; Packdown of stalls</fullName>
         <default>false</default>
     </globalPicklistValues>
@@ -67,6 +63,10 @@
     </globalPicklistValues>
     <globalPicklistValues>
         <fullName>Vehicles parked incorrectly in Market</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Remedy timeframe</fullName>
         <default>false</default>
     </globalPicklistValues>
     <masterLabel>Offense</masterLabel>

@@ -1,4 +1,4 @@
-<apex:page standardController="Account" extensions="StatementController" renderAs="pdf" standardStylesheets="false" showHeader="false" applyBodyTag="false" applyHtmlTag="false">
+<apex:page standardController="Case" renderAs="pdf" standardStylesheets="false" showHeader="false" applyBodyTag="false" applyHtmlTag="false">
     <html>
         <head>
             <style>
@@ -52,34 +52,30 @@
             </h1>
             
             <h2>
-                Issues to:
+                Issued to: 
             </h2>
+            <br/>
+            
+            Dear Queen Victoria Market License holder, <br/><br/>
+            
+            This notice is to advise that you are hereby in breach of the terms and conditions of the Licence granted to you by Queen Victoria Market Pty. Ltd. Particulars of the breach are set out below:
             
             <table width="75%" border="0" cellspacing="0" cellpadding="0">
                 <br/>
                 <tr>
-                    <th>Salesforce Id: </th><td>{!Account.Majik_AccountNo__c}</td>
+                    <th>Applicable Licence Section</th>
                 </tr>
                 <tr>
-                    <th>Account Number: </th><td>{!Account.AccountNumber}</td>
+                    <td>{!Case.Rule_Description__c}</td>
+                </tr>
+                <tr>
+                    <td>{!Case.Remedy__c}</td>
+                </tr>
+               <tr>
+                    <td>{!Case.Remedy_Rule__c}</td>
                 </tr>
             	<br/>
-                <tr>
-                    <th>{!customerName}</th>
-                </tr>
-                <tr>
-                    <td>{!Account.BillingStreet}</td>
-                </tr>
-                 <tr>
-                    <td>{!Account.BillingCity}</td>
-                </tr>
-                 <tr>
-                    <td>{!Account.BillingPostalCode}, {!Account.BillingState}</td>
-                </tr>
-            	<br/>
-                <tr>
-                    <th>Report Date : {!reportDate}</th>                    
-                </tr>
+                
             </table>
             
         </div>

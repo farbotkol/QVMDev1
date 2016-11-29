@@ -24,14 +24,4 @@
         </criteriaItems>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
-    <rules>
-        <fullName>Retrieve Offense Rule Description</fullName>
-        <active>false</active>
-        <criteriaItems>
-            <field>Case.Offense_Rule__c</field>
-            <operation>notEqual</operation>
-        </criteriaItems>
-        <description>Retrieve the rule description for the chosen offense.</description>
-        <triggerType>onCreateOrTriggeringUpdate</triggerType>
-    </rules>
 </Workflow>

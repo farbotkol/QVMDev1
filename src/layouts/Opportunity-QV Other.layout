@@ -278,7 +278,6 @@
         <fields>CASES.TYPE</fields>
         <fields>Sub_Type__c</fields>
         <fields>Offense__c</fields>
-        <fields>Offense_Rule__c</fields>
         <relatedList>Case.Account_Business__c</relatedList>
     </relatedLists>
     <relatedLists>
