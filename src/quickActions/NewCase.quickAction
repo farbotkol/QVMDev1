@@ -29,5 +29,6 @@
     </quickActionLayout>
     <standardLabel>New</standardLabel>
     <targetObject>Case</targetObject>
+    <targetRecordType>Case.Notice_of_Breach</targetRecordType>
     <type>Create</type>
 </QuickAction>

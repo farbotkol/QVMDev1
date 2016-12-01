@@ -97,6 +97,8 @@
         <apex:param name="secondParam" assignTo="{!aStall}" value="" />
 
     </apex:actionFunction>
-
     </apex:form>
+    <script>
+    setFocus = function() { return; }
+    </script>
 </apex:page>

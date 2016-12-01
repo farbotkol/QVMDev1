@@ -328,6 +328,31 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
+        <fullName>Forklift_QVM_Licence_No__c</fullName>
+        <externalId>false</externalId>
+        <label>Forklift QVM Licence No</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Forklift_Registration_No__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>State Registration No of Vehicle</inlineHelpText>
+        <label>Forklift Registration No</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Generational_Business__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -2193,6 +2218,17 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Uses_Fork_Lift__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Does the trader use a forklift?</inlineHelpText>
+        <label>Uses Fork Lift</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Uses_Vehicle__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -2203,9 +2239,45 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Vehicle_1_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle 1 Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_2_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle 2 Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_2_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle 2 Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Vehicle_Number__c</fullName>
         <externalId>false</externalId>
-        <label>Vehicle Number</label>
+        <label>Vehicle 1 Number</label>
         <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -2253,6 +2325,16 @@
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <label>Vehicle Onsite</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>WholesaleOnSite__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Wholesale on site ?</label>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>

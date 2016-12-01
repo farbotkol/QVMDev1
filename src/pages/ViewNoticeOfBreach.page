@@ -1,4 +1,4 @@
-<apex:page standardController="Case" renderAs="pdf" standardStylesheets="false" showHeader="false" applyBodyTag="false" applyHtmlTag="false">
+<apex:page standardController="Case"  renderAs="pdf" standardStylesheets="false" showHeader="false" applyBodyTag="false" applyHtmlTag="false">
     <html>
         <head>
             <style>
@@ -19,7 +19,7 @@
                 }
                 body {
                     font-family: sans-serif;
-                    font-size: 10px;
+                    font-size: 12px;
                 }
                 div.header {
 					position:absolute;
@@ -47,13 +47,73 @@
         </div>
         
         <div class="content">
-            <h1 align="center">
+            
+	            
+            <h1 align="center" style="Color:Red">
                 Notice of Breach
             </h1>
-            
-            <h2>
-                Issued to: 
+            <h2 align="center" style="Color:Red">
+                Queen Victoria Market Licence
             </h2>
+            
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <br/>
+                <tr>
+                    <th>Infringement No:</th>
+                    <td>{!Case.CaseNumber}</td>
+                    <td style="padding-left: 90px">Queen Victoria Market Pty Ltd</td>
+                </tr>
+                <tr>
+                    <th>Notice Date:</th>
+                    <td>
+                        <apex:outputText value="{0, date, MMMM d','  yyyy}">
+    						<apex:param value="{!Case.CreatedDate}" /> 
+						</apex:outputText>
+                        <td style="padding-left: 90px">PO Box 12415</td>
+					</td>
+                </tr>
+               	<tr>
+                    <th>Breach Date/Time:</th>
+                    <td>
+                        <apex:outputText value="{0, date, MMMM d','  yyyy 'at' HH:mm}">
+    						<apex:param value="{!Case.BreachDateAndTime__c}" /> 
+						</apex:outputText>
+                    </td>
+                    <td style="padding-left: 90px">ABECKETT STREET VIC 8006</td>
+                </tr>
+                <tr>
+                    <th>Location:</th>
+                    <td>{!Case.Location__c}</td>
+                </tr>
+               	<tr>
+                    <th>Clause Breached:</th>
+                    <td>{!Case.ClauseBreached__c}</td>
+                </tr>
+            </table>
+            
+            <br/>
+            <tr>
+                <th style="padding-right: 41px">
+                    Issued to: 
+                </th>
+            
+                <td>{!Case.Account.Name}</td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>{!Case.Account.BillingStreet}</td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>{!Case.Account.BillingState} {!Case.Account.BillingCity} {!Case.Account.BillingPostalCode}</td>
+            </tr>
+            <tr>
+            	<td><!--Address--></td>
+            </tr>
+           
+            
             <br/>
             
             Dear Queen Victoria Market License holder, <br/><br/>
@@ -77,11 +137,53 @@
             	<br/>
                 
             </table>
+            <br/>
+    		<br/>
+            <br/>
+    		<br/>
+            <br/>
+    		
+            Signed and dated:
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            _______________________________________________________________
+            <br/>
+            <apex:outputText value="{0, date, MMMM d','  yyyy}">
+    						<apex:param value="{!today()}" /> 
+						</apex:outputText>
+            <br/>
+            <br/>
+            <br/>
+            Failure to comply with this notice within the prescribed time may result in further legal action, suspension, and/or termination of the Licence. This notice will be relied upon by Queen Victoria Market Pty Ltd in its deliberations as to whether any further term of occupancy (if applicable) will be granted to you.
+            <div style="page-break-after:always;"></div>
+            
+    	 
+    	 <apex:repeat value="{!Case.Feeds}" var="att" >
+             <apex:outputPanel rendered="{!att.Type=='ContentPost'}">
+            
+             <br/>
+             <table width="100%" style="table-layout:fixed;">
+                    <tr>
+                    	<td><apex:image width="90%" url="/sfc/servlet.shepherd/version/download/{!att.RelatedRecordId}"/></td>
+                    	<td style="vertical-align: top;">{!att.Body}</td>
+                	</tr> 
+                     
+                  
+                 
+             </table>    
+             
+             <br/>
+             </apex:outputPanel>
+    	 </apex:repeat>
+    
+ 
             
         </div>
-        <div class="footer">
-            <apex:image url="{!URLFOR($Resource.QVMHeaderFooter,
-                             'QVM_headers/QVM_footer_1024.jpg')}" height="185px"/> 
-        </div>
+        
+        
+        
     </html>
 </apex:page>

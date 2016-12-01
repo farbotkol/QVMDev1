@@ -1,20 +1,22 @@
 {
-    "username": "luke.farbotko@qvmtest.com.devmerge", 
-    "environment": "sandbox", 
-    "project_name": "QVM", 
-    "workspace": "C:/MavensMate", 
-    "org_url": "", 
-    "namespace": "", 
-    "id": "48BUY09K9EXDPJUUT1BTCKZXB3UP2R0C", 
-    "metadata_container": "1dcp0000000Co39AAC", 
+    "username": "luke.farbotko@qvmtest.com.devmerge",
+    "environment": "sandbox",
+    "project_name": "QVM",
+    "workspace": "C:/MavensMate",
+    "org_url": "",
+    "namespace": "",
+    "id": "48BUY09K9EXDPJUUT1BTCKZXB3UP2R0C",
+    "metadata_container": "1dcp0000000Co39AAC",
     "subscription": [
-        "ApexClass", 
-        "ApexComponent", 
-        "ApexPage", 
-        "ApexTrigger", 
-        "CustomObject", 
-        "Layout", 
-        "Profile", 
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "CustomObject",
+        "Layout",
+        "Profile",
         "StaticResource"
-    ]
+    ],
+    "orgType": "sandbox",
+    "instanceUrl": "https://qvm--DevMerge.cs31.my.salesforce.com"
 }

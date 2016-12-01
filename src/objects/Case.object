@@ -109,6 +109,30 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Account_Business_Class__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Account_Business__r.Class__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Business Class</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Business_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Account_Business__r.Start_Date__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Business Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Account_Business__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -130,11 +154,35 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>BreachDateAndTime__c</fullName>
+        <description>Date and time of the breach.</description>
+        <externalId>false</externalId>
+        <label>Breach Date/Time</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
         <fullName>BusinessHoursId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ClauseBreached__c</fullName>
+        <description>Code of the breached clause.</description>
+        <externalId>false</externalId>
+        <label>Clause Breached</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>ClosedDate</fullName>
@@ -192,27 +240,17 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
-        <fullName>Offense_Rule_Lookup__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
+        <fullName>Location__c</fullName>
+        <description>Location of breach</description>
         <externalId>false</externalId>
-        <label>Offense Rule Lookup</label>
-        <lookupFilter>
-            <active>true</active>
-            <filterItems>
-                <field>$Source.Offense__c</field>
-                <operation>equals</operation>
-                <valueField>Offense_Rule__c.Offense__c</valueField>
-            </filterItems>
-            <isOptional>false</isOptional>
-        </lookupFilter>
-        <referenceTo>Offense_Rule__c</referenceTo>
-        <relationshipLabel>Cases</relationshipLabel>
-        <relationshipName>Cases</relationshipName>
+        <label>Breach Location</label>
+        <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Lookup</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Offense_Rule_Picklist__c</fullName>
@@ -2517,8 +2555,27 @@
         <fullName>case_type_required</fullName>
         <active>true</active>
         <description>A case type is required for routing purposes</description>
-        <errorConditionFormula>ISBLANK(TEXT(Type))</errorConditionFormula>
+        <errorConditionFormula>AND(ISBLANK(TEXT(Type)), $RecordType.Id &lt;&gt; &quot;012p00000000aBv&quot;)</errorConditionFormula>
         <errorDisplayField>Type</errorDisplayField>
         <errorMessage>A case type must be selected</errorMessage>
     </validationRules>
+    <webLinks>
+        <fullName>Print_Breach_Notice</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Print Breach Notice</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/ViewNoticeOfBreach?id={!Case.Id}</url>
+    </webLinks>
 </CustomObject>
