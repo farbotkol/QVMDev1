@@ -3637,7 +3637,7 @@
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>StallsAvaliableToday</apexPage>
+        <apexPage>StallsAvailableToday</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
@@ -3857,7 +3857,7 @@
         <visibility>None</visibility>
     </tabSettings>
     <tabSettings>
-        <tab>Recieve_Payment</tab>
+        <tab>Receive_Payment</tab>
         <visibility>None</visibility>
     </tabSettings>
     <tabSettings>
@@ -3869,7 +3869,7 @@
         <visibility>None</visibility>
     </tabSettings>
     <tabSettings>
-        <tab>Stalls_Avaliable_today</tab>
+        <tab>Stalls_Available_today</tab>
         <visibility>None</visibility>
     </tabSettings>
     <tabSettings>

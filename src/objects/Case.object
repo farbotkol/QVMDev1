@@ -2555,7 +2555,7 @@
         <fullName>case_type_required</fullName>
         <active>true</active>
         <description>A case type is required for routing purposes</description>
-        <errorConditionFormula>AND(ISBLANK(TEXT(Type)), $RecordType.Id &lt;&gt; &quot;012p00000000aBv&quot;)</errorConditionFormula>
+        <errorConditionFormula>AND(ISBLANK(TEXT(Type)), RecordType.DeveloperName &lt;&gt; &quot;Notice_of_Breach&quot;)</errorConditionFormula>
         <errorDisplayField>Type</errorDisplayField>
         <errorMessage>A case type must be selected</errorMessage>
     </validationRules>

@@ -10,8 +10,8 @@
     <tab>standard-Case</tab>
     <tab>Stall__c</tab>
     <tab>Stall_Map</tab>
-    <tab>Stalls_Avaliable_today</tab>
-    <tab>Recieve_Payment</tab>
+    <tab>Stalls_Available_today</tab>
+    <tab>Receive_Payment</tab>
     <tab>standard-report</tab>
     <tab>standard-Dashboard</tab>
     <tab>Offense_Rule__c</tab>

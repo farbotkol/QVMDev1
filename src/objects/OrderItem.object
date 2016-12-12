@@ -219,4 +219,11 @@ CASE( PricebookEntry.Product2.ProductCode ,
         <fullName>UnitPrice</fullName>
         <trackHistory>false</trackHistory>
     </fields>
+    <validationRules>
+        <fullName>NoStall_IF_NoUplift</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISNULL(Order.Opportunity.Uplift_Factor__c ) &amp;&amp;  NOT(ISBLANK(Stall__c))</errorConditionFormula>
+        <errorDisplayField>Stall__c</errorDisplayField>
+        <errorMessage>Cant have a stall on this order that has no Uplift factor</errorMessage>
+    </validationRules>
 </CustomObject>

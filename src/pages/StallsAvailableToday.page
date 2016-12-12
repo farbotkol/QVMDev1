@@ -1,0 +1,271 @@
+<apex:page controller="StallsAvaliableTodayController" showHeader="false" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">    
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <style>
+        th {
+        color: white;
+        background: #add8e6;
+        }
+        
+        table td, table td * {
+        
+        table-layout: fixed;
+        vertical-align: top;
+        }
+    </style>        
+
+    <head>
+      <META http-equiv="refresh" content="20"/>
+
+      <title>Stalls Available Today</title>
+      <apex:stylesheet value="{!URLFOR($Resource.SLDSQVM, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+    </head>    
+
+  <body>    
+
+    <!-- REQUIRED SLDS WRAPPER -->
+    <div class="QVM">    
+
+      <!-- MASTHEAD -->
+    <div style="clear: both" class="slds-text-heading--label slds-m-bottom--small">
+        <h1 style="float: left">General stalls available today</h1>
+        <br/>
+    </div>
+      <!-- / MASTHEAD -->    
+
+      <!-- PRIMARY CONTENT WRAPPER -->
+        
+      <div class="slds-grid slds-col">
+         
+        
+          <table style="width: 100%;">
+              <td>
+          
+          <!-- Separate tables for each column -->
+          <table style="border-style: solid;">
+              <th style="text-align: center;">C</th>
+              <apex:repeat value="{!CStallsAvailableTodayPairedNames}" var="stall" id="repeatC_names">
+                  <tr style="border: solid;">
+                    <td style="text-align: center;">
+                        <apex:outputText value="{!stall}" id="stall" style="display: inline-block;"/>
+                    </td>
+                  </tr>
+              </apex:repeat>
+            </table>
+                  
+              </td><td>
+          
+          <table style="border-style: solid;">
+              <th style="text-align: center;">D</th>
+              <apex:repeat value="{!DStallsAvailableTodayPairedNames}" var="stall" id="repeatD">
+                  <tr style="border: solid;">
+                    <td style="text-align: center;">
+                        <apex:outputText value="{!stall}" id="stall" style="display: inline-block;"/>
+                    </td>
+                  </tr>
+              </apex:repeat>
+            </table>
+              
+              </td><td>
+          
+          <table style="border-style: solid;">
+              <th style="text-align: center;">E</th>
+              <apex:repeat value="{!EStallsAvailableTodayPairedNames}" var="stall" id="repeatE">
+                  <tr style="border: solid;">
+                    <td style="text-align: center;">
+                        <apex:outputText value="{!stall}" id="stall" style="display: inline-block;"/>
+                    </td>
+                  </tr>
+              </apex:repeat>
+            </table>
+              
+              </td><td>
+          
+          <table style="border-style: solid;">
+              <th style="text-align: center;">J</th>
+              <apex:repeat value="{!JStallsAvailableTodayPairedNames}" var="stall" id="repeatJ">
+                  <tr style="border: solid;">
+                    <td style="text-align: center;">
+                        <apex:outputText value="{!stall}" id="stall" style="display: inline-block;"/>
+                    </td>
+                  </tr>
+              </apex:repeat>
+            </table>
+              
+              </td><td>
+
+          
+          <table style="border-style: solid;">
+              <th style="text-align: center;">K</th>
+              <apex:repeat value="{!KStallsAvailableTodayPairedNames}" var="stall" id="repeatK">
+                  <tr style="border: solid;">
+                    <td style="text-align: center;">
+                        <apex:outputText value="{!stall}" id="stall" style="display: inline-block;"/>
+                    </td>
+                  </tr>
+              </apex:repeat>
+            </table>
+              
+              </td><td>
+          
+          <table style="border-style: solid;">
+              <th style="text-align: center;">RK</th>
+              <apex:repeat value="{!RKStallsAvailableTodayPairedNames}" var="stall" id="repeatRK">
+                  <tr style="border: solid;">
+                    <td style="text-align: center;">
+                        <apex:outputText value="{!stall}" id="stall" style="display: inline-block;"/>
+                    </td>
+                  </tr>
+              </apex:repeat>
+            </table>
+              
+              </td><td>
+          
+          <table style="border-style: solid;">
+              <th style="text-align: center;">RL</th>
+              <apex:repeat value="{!RLStallsAvailableTodayPairedNames}" var="stall" id="repeatRL">
+                  <tr style="border: solid;">
+                    <td style="text-align: center;">
+                        <apex:outputText value="{!stall}" id="stall" style="display: inline-block;"/>
+                    </td>
+                  </tr>
+              </apex:repeat>
+            </table>
+              
+              </td><td>
+          
+          
+          
+          
+          
+          <table style="border-style: solid;">
+              <th style="text-align: center;">L</th>
+              <apex:repeat value="{!LStallsAvailableTodayPairedNames}" var="stall" id="repeatL">
+                  <tr style="border: solid;">
+                    <td style="text-align: center;">
+                        <apex:outputText value="{!stall}" id="stall" style="display: inline-block;"/>
+                    </td>
+                  </tr>
+              </apex:repeat>
+            </table>
+              
+              </td><td>
+              
+              <table style="border-style: solid;">
+              <th style="text-align: center;">Other</th>
+
+            </table>
+              
+              </td>
+              <tr>
+              <td colspan="9">
+
+                  
+                  
+                  
+                    
+          
+          <!-- FRUIT AND VEG STALLS-->
+          
+                  <hr/>
+        <div style="clear: both" class="slds-text-heading--label slds-m-bottom--small">
+        <h1 style="float: left">Fruit and Vegetable stalls available today</h1>
+        <br/>
+    </div>
+        
+    
+          
+
+          
+          <table style="width: 55.6%;">
+              
+              <td>
+          
+          <table style="border-style: solid;">
+              <th style="text-align: center;">Other</th>
+              <apex:repeat value="{!OtherStallsAvailableTodayPairedNames}" var="stall" id="repeatOther">
+                  <tr style="border: solid;">
+                    <td style="text-align: center;">
+                        <apex:outputText value="{!stall}" id="stall" style="display: inline-block;"/>
+                    </td>
+                  </tr>
+              </apex:repeat>
+            </table>
+              
+              </td><td>
+              
+              
+          <table style="border-style: solid; " align="right" >
+              <th style="text-align: center;">A</th>
+              <apex:repeat value="{!AStallsAvailableTodayPairedNames}" var="stall" id="repeatA">
+                  <tr style="border: solid;">
+                    <td style="text-align: center;">
+                        <apex:outputText value="{!stall}" id="stall" style="display: inline-block;"/>
+                    </td>
+                  </tr>
+              </apex:repeat>
+            </table>
+                  
+                  </td><td>
+          
+          <table style="border-style: solid;" align="right">
+              <th style="text-align: center;">B</th>
+              <apex:repeat value="{!BStallsAvailableTodayPairedNames}" var="stall" id="repeatB">
+                  <tr style="border: solid;">
+                    <td style="text-align: center;">
+                        <apex:outputText value="{!stall}" id="stall" style="display: inline-block;"/>
+                    </td>
+                  </tr>
+              </apex:repeat>
+            </table>
+              
+              </td><td>
+          
+          <table style="border-style: solid;" align="right">
+              <th style="text-align: center;">H</th>
+              <apex:repeat value="{!HStallsAvailableTodayPairedNames}" var="stall" id="repeatH">
+                  <tr style="border: solid;">
+                    <td style="text-align: center;">
+                        <apex:outputText value="{!stall}" id="stall" style="display: inline-block;"/>
+                    </td>
+                  </tr>
+              </apex:repeat>
+            </table>
+              
+              </td><td>
+          
+          <table style="border-style: solid;" align="right">
+              <th style="text-align: center;">I</th>
+              <apex:repeat value="{!IStallsAvailableTodayPairedNames}" var="stall" id="repeatI">
+                  <tr style="border: solid;">
+                    <td style="text-align: center;">
+                        <apex:outputText value="{!stall}" id="stall" style="display: inline-block;"/>
+                    </td>
+                  </tr>
+              </apex:repeat>
+            </table>
+              
+              </td>
+              
+              
+          </table>
+                  
+                  </td>
+              
+              </tr>
+              
+              </table>
+        
+          
+             
+
+      </div>
+      <!-- / PRIMARY CONTENT WRAPPER -->    
+
+    </div>
+    <!-- / REQUIRED SLDS WRAPPER -->  
+
+  </body>
+</html>
+</apex:page>
