@@ -230,6 +230,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>NoticeOfBreachController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>OpportunityTriggerHelper</apexClass>
         <enabled>true</enabled>
     </classAccesses>

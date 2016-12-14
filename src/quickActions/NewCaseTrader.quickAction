@@ -4,6 +4,7 @@
         <field>Status</field>
         <literalValue>New</literalValue>
     </fieldOverrides>
+    <label>Trader Case</label>
     <optionsCreateFeedItem>true</optionsCreateFeedItem>
     <quickActionLayout>
         <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
@@ -36,7 +37,6 @@
         </quickActionLayoutColumns>
         <quickActionLayoutColumns/>
     </quickActionLayout>
-    <standardLabel>New</standardLabel>
     <targetObject>Case</targetObject>
     <targetRecordType>Case.Trader_Record_Type</targetRecordType>
     <type>Create</type>
