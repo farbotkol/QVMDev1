@@ -15,13 +15,238 @@
   	  	      <fileset dir="${src.dir}/profiles" includes="**/*.profile" />
   	  		</replaceregexp>
 
-
   	  		<replaceregexp match="^    &lt;userPermissions&gt;\n        &lt;enabled&gt;true&lt;/enabled&gt;\n        &lt;name&gt;EditHtmlTemplates&lt;/name&gt;\n    &lt;/userPermissions&gt;$" replace="" flags="gm" byline="false">
-  	  	      <fileset dir="${src.dir}/permissionsetS" includes="**/*.permissionset" />
+  	  	      <fileset dir="${src.dir}/permissionsets" includes="**/*.permissionset" />
   	  		</replaceregexp>
 
 
-  	  	  		
+
+
+<!--Spring17-->
+
+<!--Profiles-->
+
+          <replaceregexp match="^    &lt;userPermissions&gt;\n        &lt;enabled&gt;true&lt;/enabled&gt;\n        &lt;name&gt;ManageHealthCheck&lt;/name&gt;\n    &lt;/userPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/profiles" includes="**/*.profile" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;userPermissions&gt;\n        &lt;enabled&gt;true&lt;/enabled&gt;\n        &lt;name&gt;SubscribeToLightningReports&lt;/name&gt;\n    &lt;/userPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/profiles" includes="**/*.profile" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;true&lt;/editable&gt;\n        &lt;field&gt;Product2.DisplayUrl&lt;/field&gt;\n        &lt;readable&gt;true&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/profiles" includes="**/*.profile" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;true&lt;/editable&gt;\n        &lt;field&gt;Product2.ExternalDataSourceId&lt;/field&gt;\n        &lt;readable&gt;true&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/profiles" includes="**/*.profile" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;userPermissions&gt;\n        &lt;enabled&gt;true&lt;/enabled&gt;\n        &lt;name&gt;ViewHealthCheck&lt;/name&gt;\n    &lt;/userPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/profiles" includes="**/*.profile" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;true&lt;/editable&gt;\n        &lt;field&gt;Product2.ExternalId&lt;/field&gt;\n        &lt;readable&gt;true&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/profiles" includes="**/*.profile" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;true&lt;/editable&gt;\n        &lt;field&gt;Product2.QuantityUnitOfMeasure&lt;/field&gt;\n        &lt;readable&gt;true&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/profiles" includes="**/*.profile" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Campaign.NumberOfContacts&lt;/field&gt;\n        &lt;readable&gt;true&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/profiles" includes="**/*.profile" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Campaign.NumberOfConvertedLeads&lt;/field&gt;\n        &lt;readable&gt;true&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/profiles" includes="**/*.profile" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Campaign.NumberOfResponses&lt;/field&gt;\n        &lt;readable&gt;true&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/profiles" includes="**/*.profile" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Campaign.AmountAllOpportunities&lt;/field&gt;\n        &lt;readable&gt;true&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/profiles" includes="**/*.profile" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Campaign.AmountWonOpportunities&lt;/field&gt;\n        &lt;readable&gt;true&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/profiles" includes="**/*.profile" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Campaign.NumberOfOpportunities&lt;/field&gt;\n        &lt;readable&gt;true&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/profiles" includes="**/*.profile" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Campaign.NumberOfWonOpportunities&lt;/field&gt;\n        &lt;readable&gt;true&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/profiles" includes="**/*.profile" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Campaign.NumberOfLeads&lt;/field&gt;\n        &lt;readable&gt;true&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/profiles" includes="**/*.profile" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Case.BusinessHoursId&lt;/field&gt;\n        &lt;readable&gt;false&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/profiles" includes="**/*.profile" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;true&lt;/editable&gt;\n        &lt;field&gt;Case.BusinessHoursId&lt;/field&gt;\n        &lt;readable&gt;true&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/profiles" includes="**/*.profile" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;true&lt;/editable&gt;\n        &lt;field&gt;Opportunity.Probability&lt;/field&gt;\n        &lt;readable&gt;true&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/profiles" includes="**/*.profile" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;true&lt;/editable&gt;\n        &lt;field&gt;Order.TotalAmount&lt;/field&gt;\n        &lt;readable&gt;true&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/profiles" includes="**/*.profile" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Order.TotalAmount&lt;/field&gt;\n        &lt;readable&gt;true&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/profiles" includes="**/*.profile" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;tabVisibilities&gt;\n        &lt;tab&gt;standard-Quote&lt;/tab&gt;\n        &lt;visibility&gt;DefaultOn&lt;/visibility&gt;\n    &lt;/tabVisibilities&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/profiles" includes="**/*.profile" />
+          </replaceregexp>
+
+
+
+<!--PermissionSets -->
+
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Product2.DisplayUrl&lt;/field&gt;\n        &lt;readable&gt;false&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/permissionsets" includes="**/*.permissionset" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;userPermissions&gt;\n        &lt;enabled&gt;true&lt;/enabled&gt;\n        &lt;name&gt;ViewHealthCheck&lt;/name&gt;\n    &lt;/userPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/permissionsets" includes="**/*.permissionset" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;tabSettings&gt;\n        &lt;tab&gt;standard-Quote&lt;/tab&gt;\n        &lt;visibility&gt;None&lt;/visibility&gt;\n    &lt;/tabSettings&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/permissionsets" includes="**/*.permissionset" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Product2.ExternalDataSourceId&lt;/field&gt;\n        &lt;readable&gt;false&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/permissionsets" includes="**/*.permissionset" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Product2.ExternalId&lt;/field&gt;\n        &lt;readable&gt;false&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/permissionsets" includes="**/*.permissionset" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Product2.QuantityUnitOfMeasure&lt;/field&gt;\n        &lt;readable&gt;false&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/permissionsets" includes="**/*.permissionset" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Campaign.NumberOfContacts&lt;/field&gt;\n        &lt;readable&gt;false&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/permissionsets" includes="**/*.permissionset" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Campaign.NumberOfConvertedLeads&lt;/field&gt;\n        &lt;readable&gt;false&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/permissionsets" includes="**/*.permissionset" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Campaign.NumberOfResponses&lt;/field&gt;\n        &lt;readable&gt;false&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/permissionsets" includes="**/*.permissionset" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Campaign.AmountAllOpportunities&lt;/field&gt;\n        &lt;readable&gt;false&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/permissionsets" includes="**/*.permissionset" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Campaign.AmountWonOpportunities&lt;/field&gt;\n        &lt;readable&gt;false&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/permissionsets" includes="**/*.permissionset" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Campaign.NumberOfOpportunities&lt;/field&gt;\n        &lt;readable&gt;false&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/permissionsets" includes="**/*.permissionset" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Campaign.NumberOfWonOpportunities&lt;/field&gt;\n        &lt;readable&gt;false&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/permissionsets" includes="**/*.permissionset" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Campaign.NumberOfLeads&lt;/field&gt;\n        &lt;readable&gt;false&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/permissionsets" includes="**/*.permissionset" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Case.BusinessHoursId&lt;/field&gt;\n        &lt;readable&gt;false&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/permissionsets" includes="**/*.permissionset" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Opportunity.Probability&lt;/field&gt;\n        &lt;readable&gt;false&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/permissionsets" includes="**/*.permissionset" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fieldPermissions&gt;\n        &lt;editable&gt;false&lt;/editable&gt;\n        &lt;field&gt;Order.TotalAmount&lt;/field&gt;\n        &lt;readable&gt;false&lt;/readable&gt;\n    &lt;/fieldPermissions&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/permissionsets" includes="**/*.permissionset" />
+          </replaceregexp>
+
+
+<!--Objects -->
+
+          <replaceregexp match="^    &lt;actionOverrides&gt;\n        &lt;actionName&gt;ActivateOrder&lt;/actionName&gt;\n        &lt;type&gt;Default&lt;/type&gt;\n    &lt;/actionOverrides&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/objects" includes="**/*.object" />
+          </replaceregexp>
+
+          <replaceregexp match="^        &lt;customTabListAdditionalFields&gt;\w*.\w*&lt;/customTabListAdditionalFields&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/objects" includes="**/*.object" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fields&gt;\n        &lt;fullName&gt;DisplayUrl&lt;/fullName&gt;\n        &lt;trackHistory&gt;false&lt;/trackHistory&gt;\n    &lt;/fields&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/objects" includes="**/*.object" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;actionOverrides&gt;\n        &lt;actionName&gt;List&lt;/actionName&gt;\n        &lt;type&gt;Default&lt;/type&gt;\n    &lt;/actionOverrides&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/objects" includes="**/*.object" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fields&gt;\n        &lt;fullName&gt;ExternalDataSourceId&lt;/fullName&gt;\n        &lt;trackHistory&gt;false&lt;/trackHistory&gt;\n        &lt;type&gt;Lookup&lt;/type&gt;\n    &lt;/fields&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/objects" includes="**/*.object" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fields&gt;\n        &lt;fullName&gt;ExternalId&lt;/fullName&gt;\n        &lt;trackHistory&gt;false&lt;/trackHistory&gt;\n    &lt;/fields&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/objects" includes="**/*.object" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;fields&gt;\n        &lt;fullName&gt;QuantityUnitOfMeasure&lt;/fullName&gt;\n        &lt;picklist&gt;\n            &lt;picklistValues&gt;\n                &lt;fullName&gt;Each&lt;/fullName&gt;\n                &lt;default&gt;false&lt;/default&gt;\n            &lt;/picklistValues&gt;\n            &lt;sorted&gt;false&lt;/sorted&gt;\n        &lt;/picklist&gt;\n        &lt;trackHistory&gt;false&lt;/trackHistory&gt;\n        &lt;type&gt;Picklist&lt;/type&gt;\n    &lt;/fields&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/objects" includes="**/*.object" />
+          </replaceregexp>
+
+          <replaceregexp match="^    &lt;actionOverrides&gt;\n        &lt;actionName&gt;Tab&lt;/actionName&gt;\n        &lt;type&gt;Default&lt;/type&gt;\n    &lt;/actionOverrides&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/objects" includes="**/*.object" />
+          </replaceregexp>
+
+          <replaceregexp match="^        &lt;filterScope&gt;Mine&lt;/filterScope&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/objects" includes="**/*.object" />
+          </replaceregexp>
+
+
+<!--Layouts -->
+
+          <replaceregexp match="^        &lt;platformActionListItems&gt;\n            &lt;actionName&gt;SendEmail&lt;/actionName&gt;\n            &lt;actionType&gt;QuickAction&lt;/actionType&gt;\n            &lt;sortOrder&gt;\d*&lt;/sortOrder&gt;\n        &lt;/platformActionListItems&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/layouts" includes="**/*.layout" />
+          </replaceregexp>
+
+          <replaceregexp match="^        &lt;quickActionListItems&gt;\n            &lt;quickActionName&gt;SendEmail&lt;/quickActionName&gt;\n        &lt;/quickActionListItems&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/layouts" includes="**/*.layout" />
+          </replaceregexp>
+
+          <replaceregexp match="^        &lt;platformActionListItems&gt;\n            &lt;actionName&gt;SendEmail&lt;/actionName&gt;\n            &lt;actionType&gt;StandardButton&lt;/actionType&gt;\n            &lt;sortOrder&gt;\d&lt;/sortOrder&gt;\n        &lt;/platformActionListItems&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/layouts" includes="**/*.layout" />
+          </replaceregexp>
+
+<!--quickActions-->
+          <replaceregexp match="^    &lt;targetObject&gt;OutgoingEmail&lt;/targetObject&gt;$" replace="" flags="gm" byline="false">
+              <fileset dir="${src.dir}/quickActions" includes="**/*.quickAction" />
+          </replaceregexp>
+
+<!--Spring17-->
+
+
+
+
   	  	<echo message="deleting Social-Post related files that we don't want to deploy..." />
   	  	     <delete file="${src.dir}/workflows/SocialPost.workflow"/>
   	  	     <delete file="${src.dir}/layouts/SocialPost-Social Post Layout.layout"/>
