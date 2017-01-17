@@ -217,10 +217,10 @@
           <replaceregexp match="^    &lt;actionOverrides&gt;\n        &lt;actionName&gt;Tab&lt;/actionName&gt;\n        &lt;type&gt;Default&lt;/type&gt;\n    &lt;/actionOverrides&gt;$" replace="" flags="gm" byline="false">
               <fileset dir="${src.dir}/objects" includes="**/*.object" />
           </replaceregexp>
-
+<!--
           <replaceregexp match="^        &lt;filterScope&gt;Mine&lt;/filterScope&gt;$" replace="" flags="gm" byline="false">
-              <fileset dir="${src.dir}/objects" includes="**/*.object" />
-          </replaceregexp>
+              <fileset dir="${src.dir}/objects" includes="**/Quote.object" />
+          </replaceregexp>-->
 
 
 <!--Layouts -->
@@ -241,7 +241,6 @@
           <replaceregexp match="^    &lt;targetObject&gt;OutgoingEmail&lt;/targetObject&gt;$" replace="" flags="gm" byline="false">
               <fileset dir="${src.dir}/quickActions" includes="**/*.quickAction" />
           </replaceregexp>
-
 <!--Spring17-->
 
 
