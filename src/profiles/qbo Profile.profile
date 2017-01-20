@@ -919,6 +919,8 @@
         <field>Campaign.ActualCost</field>
         <readable>true</readable>
     </fieldPermissions>
+
+
     <fieldPermissions>
         <editable>true</editable>
         <field>Campaign.BudgetedCost</field>
@@ -1009,6 +1011,12 @@
         <field>Campaign.IsActive</field>
         <readable>true</readable>
     </fieldPermissions>
+
+
+
+
+
+
     <fieldPermissions>
         <editable>true</editable>
         <field>Campaign.NumberSent</field>
@@ -1064,6 +1072,17 @@
         <field>Case.BreachDateAndTime__c</field>
         <readable>false</readable>
     </fieldPermissions>
+
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.CCTV__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Case_Requester__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>Case.ClauseBreached__c</field>
@@ -1096,6 +1115,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Case.Immediate_Action_Taken__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Case.IsClosedOnCreate</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1103,6 +1127,11 @@
         <editable>false</editable>
         <field>Case.IsEscalated</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Location2__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -1256,6 +1285,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Contact.Drivers_Licence_Expiry_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Contact.Drivers_Licence_No__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1268,6 +1302,11 @@
         <editable>true</editable>
         <field>Contact.Fax</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.Forklift_Licence_Expiry_Date__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -2226,7 +2265,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Opportunity.Forklift_QVM_Licence_Expiry_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Opportunity.Forklift_QVM_Licence_No__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Forklift_Registration_Expiry_Date__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2424,6 +2473,7 @@
         <field>Opportunity.Primary_Contact__c</field>
         <readable>false</readable>
     </fieldPermissions>
+
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Product_Category__c</field>
@@ -2759,6 +2809,7 @@
         <field>Order.ShippingAddress</field>
         <readable>true</readable>
     </fieldPermissions>
+
     <fieldPermissions>
         <editable>false</editable>
         <field>Order.Total_With_GST__c</field>
@@ -2934,6 +2985,9 @@
         <field>Product2.Description</field>
         <readable>true</readable>
     </fieldPermissions>
+
+
+
     <fieldPermissions>
         <editable>true</editable>
         <field>Product2.Family</field>
@@ -2949,6 +3003,7 @@
         <field>Product2.ProductCode</field>
         <readable>true</readable>
     </fieldPermissions>
+
     <fieldPermissions>
         <editable>false</editable>
         <field>Product2.SKU__c</field>
@@ -3612,7 +3667,11 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Case-Case Layout</layout>
-        <recordType>Case.Notice_of_Breach</recordType>
+        <recordType>Case.Notice_of_Breach_Case</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Case-Case Layout</layout>
+        <recordType>Case.OHS_Case</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Case-Case Layout</layout>
@@ -3777,12 +3836,8 @@
     <layoutAssignments>
         <layout>QuoteLineItem-Quote Line Item Layout</layout>
     </layoutAssignments>
-    <layoutAssignments>
-        <layout>SocialPersona-Social Persona Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>SocialPost-Social Post Layout</layout>
-    </layoutAssignments>
+
+
     <layoutAssignments>
         <layout>Solution-Solution Layout</layout>
     </layoutAssignments>
@@ -4111,7 +4166,12 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
-        <recordType>Case.Notice_of_Breach</recordType>
+        <recordType>Case.Notice_of_Breach_Case</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Case.OHS_Case</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
@@ -4197,6 +4257,7 @@
         <tab>standard-Idea</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
+
     <tabVisibilities>
         <tab>standard-WorkBadge</tab>
         <visibility>DefaultOn</visibility>

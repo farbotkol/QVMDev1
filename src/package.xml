@@ -51,7 +51,7 @@
         <members>Contract</members>
         <members>ContractContactRole</members>
         <members>DuplicateRecordItem</members>
-        <members>DuplicateRecordSet</members>
+        <!--<members>DuplicateRecordSet</members>-->
         <members>EmailMessage</members>
         <members>Error_Log__c</members>
         <members>Event</members>
@@ -67,7 +67,7 @@
         <members>Invoice__c</members>
         <members>Lead</members>
         <members>Leave__c</members>
-        <members>LinkedArticle</members>
+        <!--<members>LinkedArticle</members>-->
         <members>Macro</members>
         <members>MacroAction</members>
         <members>MacroInstruction</members>
@@ -92,7 +92,7 @@
         <members>QVM_Article__kav</members>
         <members>QVM_LH_FEE_SETTING__c</members>
         <members>QVM_Web_Form_Config__c</members>
-        <members>Quote</members>
+        <!--<members>Quote</members>-->
         <members>QuoteLineItem</members>
         <members>Qvm_ABA_File_Generator__c</members>
         <members>Site</members>
@@ -193,10 +193,10 @@
         <members>*</members>
         <name>Queue</name>
     </types>
-    <types>
+    <!--<types>
         <members>*</members>
         <name>QuickAction</name>
-    </types>
+    </types>-->
     <types>
         <members>*</members>
         <name>RemoteSiteSetting</name>

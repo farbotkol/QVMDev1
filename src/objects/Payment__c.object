@@ -24,10 +24,7 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
@@ -36,10 +33,7 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -181,11 +175,11 @@
     </nameField>
     <pluralLabel>Payments</pluralLabel>
     <searchLayouts>
-        <customTabListAdditionalFields>Account__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Total_Amount__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Batch_Jobs__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
-        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+
+
+
+
+
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <webLinks>

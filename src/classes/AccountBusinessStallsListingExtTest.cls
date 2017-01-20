@@ -49,21 +49,24 @@ private class AccountBusinessStallsListingExtTest {
 		TestDataFactory.createStallProductsAndGeneralPriceBook();
         TestDataFactory.CreateOAuthServiceEntries();
         Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
-        Test.startTest();
         List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1, 'SL');
+        Test.startTest();
 
         Opportunity opp = [select id, name, Stall__c from Opportunity limit 1];
 
-
+		system.debug(':D:');
 
         TestDataFactory.createSingleStallWithNoOpp();
+		system.debug(':F:');
         TestDataFactory.createPermStallWithNoOpp();
 
+		system.debug(':G:');
 
         Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Stall__c; 
         Map<String,Schema.RecordTypeInfo> stallTypeInfo = cfrSchema.getRecordTypeInfosByName(); 
         Id rtId = stallTypeInfo.get('Casual').getRecordTypeId();
         
+		system.debug(':H:');
         Stall__c stall =  [select id, name  from Stall__c where RecordTypeid = :rtId limit 1];
 
 
@@ -71,6 +74,7 @@ private class AccountBusinessStallsListingExtTest {
         
         Stall__c permStall =  [select id, name  from Stall__c where RecordTypeid = :prtId limit 1];
 
+		system.debug(':J:');
 
         ApexPages.StandardController sc = new ApexPages.StandardController(opp);
         AccountBusinessStallsListingExt controller = new AccountBusinessStallsListingExt(sc);
@@ -88,8 +92,10 @@ private class AccountBusinessStallsListingExtTest {
         controller.saturday = true;
         controller.sunday = true;
 
+		system.debug(':K:');
         PageReference pr =  controller.Add();
 
+		system.debug(':L:');
         System.assert(pr == null);
 
         controller.aStall = stall.Id;
@@ -124,11 +130,14 @@ private class AccountBusinessStallsListingExtTest {
         controller.UpdateStall();
 
 
+		system.debug(':Z:');
         controller.getPermStallsFromQuery();
+		system.debug(':X:');
         controller.SetPermOppStall(permStall);
+		system.debug(':C:');
         pr =  controller.AddPerm();
-		Test.stopTest();
         System.assert(pr == null);
+		Test.stopTest();
     }
     
 }

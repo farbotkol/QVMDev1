@@ -16,10 +16,7 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
@@ -32,10 +29,7 @@
         <actionName>SelfServSelect</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -102,9 +96,9 @@
         <label>All Unreviewed Solutions</label>
     </listViews>
     <searchLayouts>
-        <customTabListAdditionalFields>SOLUTION.ISSUE</customTabListAdditionalFields>
-        <customTabListAdditionalFields>SOLUTION.SOLUTION_NUMBER</customTabListAdditionalFields>
-        <customTabListAdditionalFields>SOLUTION.STATUS</customTabListAdditionalFields>
+
+
+
         <customTabListAdditionalFields>CORE.USERS.ALIAS</customTabListAdditionalFields>
         <lookupDialogsAdditionalFields>SOLUTION.ISSUE</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>SOLUTION.SOLUTION_NUMBER</lookupDialogsAdditionalFields>

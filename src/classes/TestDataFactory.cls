@@ -9,7 +9,7 @@ public class TestDataFactory {
             PriceBook2 PriceBook = [select Id from PriceBook2 where Name = 'General Merchandise' limit 1];
             PriceBookId = PriceBook.Id;
         }
-        
+        system.debug(':a:');
         Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Opportunity; 
         Map<String,Schema.RecordTypeInfo> oppRecordTypeInfo = cfrSchema.getRecordTypeInfosByName(); 
 
@@ -17,7 +17,7 @@ public class TestDataFactory {
 
         List<Account> accts = new List<Account>();
         
-        
+        system.debug(':s:');
         Schema.DescribeSObjectResult acccCfrSchema = Schema.SObjectType.Account; 
         Map<String,Schema.RecordTypeInfo> accRecordTypeInfo = acccCfrSchema.getRecordTypeInfosByName(); 
         Id accRecordTypeId = accRecordTypeInfo.get('Trader').getRecordTypeId();
@@ -28,7 +28,7 @@ public class TestDataFactory {
             accts.add(a);
         }
         insert accts;
-        
+        system.debug(':d:');
         List<Opportunity> opps = new List<Opportunity>();
         for (Integer j=0;j<numAccts;j++) {
             Account acct = accts[j];
@@ -45,9 +45,10 @@ public class TestDataFactory {
                                        Uplift_Factor__c=1));
             }
         }
+        system.debug(':f:');
         // Insert all opportunities for all accounts.
         insert opps;
-        
+        system.debug(':g:');
         return accts;
     }
 

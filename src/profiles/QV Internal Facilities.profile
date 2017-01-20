@@ -918,6 +918,8 @@
         <field>Campaign.ActualCost</field>
         <readable>true</readable>
     </fieldPermissions>
+
+
     <fieldPermissions>
         <editable>true</editable>
         <field>Campaign.BudgetedCost</field>
@@ -1008,6 +1010,12 @@
         <field>Campaign.IsActive</field>
         <readable>true</readable>
     </fieldPermissions>
+
+
+
+
+
+
     <fieldPermissions>
         <editable>true</editable>
         <field>Campaign.NumberSent</field>
@@ -1063,6 +1071,17 @@
         <field>Case.BreachDateAndTime__c</field>
         <readable>true</readable>
     </fieldPermissions>
+
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.CCTV__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Case_Requester__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.ClauseBreached__c</field>
@@ -1094,6 +1113,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Immediate_Action_Taken__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Case.IsClosedOnCreate</field>
         <readable>true</readable>
@@ -1101,6 +1125,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.IsEscalated</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Location2__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1255,6 +1284,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.Drivers_Licence_Expiry_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.Drivers_Licence_No__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1266,6 +1300,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Fax</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Forklift_Licence_Expiry_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2225,7 +2264,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Forklift_QVM_Licence_Expiry_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Forklift_QVM_Licence_No__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Forklift_Registration_Expiry_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2423,6 +2472,7 @@
         <field>Opportunity.Primary_Contact__c</field>
         <readable>true</readable>
     </fieldPermissions>
+
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Product_Category__c</field>
@@ -2758,6 +2808,7 @@
         <field>Order.ShippingAddress</field>
         <readable>true</readable>
     </fieldPermissions>
+
     <fieldPermissions>
         <editable>true</editable>
         <field>Order.Total_With_GST__c</field>
@@ -2933,6 +2984,9 @@
         <field>Product2.Description</field>
         <readable>true</readable>
     </fieldPermissions>
+
+
+
     <fieldPermissions>
         <editable>true</editable>
         <field>Product2.Family</field>
@@ -2948,6 +3002,7 @@
         <field>Product2.ProductCode</field>
         <readable>true</readable>
     </fieldPermissions>
+
     <fieldPermissions>
         <editable>true</editable>
         <field>Product2.SKU__c</field>
@@ -3619,7 +3674,11 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Case-Notice of Breach Layout</layout>
-        <recordType>Case.Notice_of_Breach</recordType>
+        <recordType>Case.Notice_of_Breach_Case</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Case-OHS Layout</layout>
+        <recordType>Case.OHS_Case</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>CaseClose-Close Case Layout</layout>
@@ -3784,12 +3843,8 @@
     <layoutAssignments>
         <layout>QuoteLineItem-Quote Line Item Layout</layout>
     </layoutAssignments>
-    <layoutAssignments>
-        <layout>SocialPersona-Social Persona Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>SocialPost-Social Post Layout</layout>
-    </layoutAssignments>
+
+
     <layoutAssignments>
         <layout>Solution-Solution Layout</layout>
     </layoutAssignments>
@@ -4170,7 +4225,7 @@
     </pageAccesses>
     <pageAccesses>
         <apexPage>ViewNoticeOfBreach</apexPage>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
         <apexPage>ViewPDF</apexPage>
@@ -4291,7 +4346,12 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
-        <recordType>Case.Notice_of_Breach</recordType>
+        <recordType>Case.Notice_of_Breach_Case</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Case.OHS_Case</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
@@ -4420,6 +4480,7 @@
         <tab>standard-Product2</tab>
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
+
     <userLicense>Salesforce</userLicense>
     <userPermissions>
         <enabled>true</enabled>
@@ -4569,6 +4630,7 @@
         <enabled>true</enabled>
         <name>SubmitMacrosAllowed</name>
     </userPermissions>
+
     <userPermissions>
         <enabled>true</enabled>
         <name>TransferAnyEntity</name>

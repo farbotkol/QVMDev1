@@ -93,12 +93,12 @@ public class LeaveControllerTest {
     @isTest static void Test_CreateLeave(){
         TestDataFactory.CreateOAuthServiceEntries(); 
         TestDataFactory.createStallProductsAndGeneralPriceBook();
-        List<Account> acc = TestDataFactory.createAccountsWithOpps(1,1,'SL');
         Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
+        List<Account> acc = TestDataFactory.createAccountsWithOpps(1,1,'SL');
         String Id = [SELECT ID from Opportunity LIMIT 1].Id;
         String leaveDate = '2080-09-14';
-        Test.startTest();
         LeaveController.createLeave(Id,leaveDate);  
+        Test.startTest();
         Test.stopTest();
     }
     

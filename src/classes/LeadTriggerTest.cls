@@ -19,8 +19,7 @@ private class LeadTriggerTest
              User adminUser = TestDataFactory.createUser('Admin',prof.id,'admin@advdev.org');
              system.runAs( adminUser )
              {
-                Test.startTest();
-                leadObj = TestDataFactory.CreateLead( );  
+                 leadObj = TestDataFactory.CreateLead( );  
                      
                 
                 if( leadObj != null )
@@ -34,6 +33,8 @@ private class LeadTriggerTest
                 lc.setConvertedStatus('Qualified');
                 
                 Database.LeadConvertResult lcr = Database.convertLead(lc);
+                Test.startTest();
+                
                 System.assert(lcr.isSuccess());
                 
                 Opportunity convertedOpp = [SELECT id,Primary_Contact__c  FROM Opportunity  where id=:leadObj.ConvertedOpportunityId LIMIT 1];

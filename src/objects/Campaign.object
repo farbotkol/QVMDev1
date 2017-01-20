@@ -28,10 +28,7 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
@@ -40,10 +37,7 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -259,9 +253,9 @@
         <label>My Active Campaigns</label>
     </listViews>
     <searchLayouts>
-        <customTabListAdditionalFields>CAMPAIGN.NAME</customTabListAdditionalFields>
-        <customTabListAdditionalFields>CAMPAIGN.STATUS</customTabListAdditionalFields>
-        <customTabListAdditionalFields>CAMPAIGN.START_DATE</customTabListAdditionalFields>
+
+
+
         <lookupDialogsAdditionalFields>CAMPAIGN.NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CAMPAIGN.CAMPAIGN_TYPE</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CAMPAIGN.START_DATE</lookupDialogsAdditionalFields>

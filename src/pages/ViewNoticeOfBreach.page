@@ -31,6 +31,10 @@
                     
                 }
                 
+                img {
+                    image-orientation: from-image;
+                }
+                
                 div.footer {
                     width: 100%;
                     margin-left:-310px;
@@ -121,21 +125,29 @@
             <table width="75%" border="0" cellspacing="0" cellpadding="0">
                 <br/>
                 <tr>
+                    <td>{!SubjectTitle} {!SubjectDescription}</td>
+                </tr>
+                <tr>
+                    <td>{!DescriptionTitle} {!DescriptionDescription}</td>
+                </tr>
+                <tr>
                     <th>Applicable Licence Section</th>
                 </tr>
                 <tr>
                     <td>{!Case.Rule_Description__c}</td>
                 </tr>
                 <tr>
-                    <td>{!Case.Remedy__c}</td>
+                    <th>{!Case.Remedy__c}</th>
                 </tr>
                <tr>
                     <td>{!Case.Remedy_Rule__c}</td>
-                </tr>
+                </tr> 
             	<br/>
                 
             </table>
-            <br/>
+    		<br/>
+    		<br/>
+    		<br/>
     		<br/>
             <br/>
     		<br/>
@@ -158,23 +170,17 @@
             Failure to comply with this notice within the prescribed time may result in further legal action, suspension, and/or termination of the Licence. This notice will be relied upon by Queen Victoria Market Pty Ltd in its deliberations as to whether any further term of occupancy (if applicable) will be granted to you.
             <div style="page-break-after:always;"></div>
            
-    	Subject:
-    		<br/>
-    	 {!Case.Subject}
-    		<br/>
-    	Description:
-    		<br/>
-    	 {!Case.Description}
-    		<br/>
     	 <apex:repeat value="{!Case.Feeds}" var="att" >
              <apex:outputPanel rendered="{!att.Type=='ContentPost'}">
             
              <br/>
              <table width="100%" style="table-layout:fixed;">
-                    <tr>
-                    	<td><apex:image width="90%" url="/sfc/servlet.shepherd/version/download/{!att.RelatedRecordId}"/></td>
-                    	<td style="vertical-align: top;">{!att.Body}</td>
-                	</tr>
+                 <tr>
+                     <td><apex:image width="90%" url="/sfc/servlet.shepherd/version/download/{!att.RelatedRecordId}"/></td>
+                 </tr>
+                 <tr>
+                     <td>{!att.Body}</td>
+                 </tr>
              </table>    
              
              <br/>

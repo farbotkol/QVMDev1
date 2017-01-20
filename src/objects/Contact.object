@@ -44,10 +44,7 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>ListClean</actionName>
         <type>Default</type>
@@ -68,10 +65,7 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -173,6 +167,15 @@
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
+        <fullName>Drivers_Licence_Expiry_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Drivers Licence Expiry Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Drivers_Licence_No__c</fullName>
         <externalId>false</externalId>
         <label>Drivers Licence No.</label>
@@ -192,6 +195,15 @@
         <fullName>Fax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Forklift_Licence_Expiry_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Forklift Licence Expiry Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>Forklift_Licence_No__c</fullName>
@@ -393,9 +405,9 @@
         <label>My Contacts</label>
     </listViews>
     <searchLayouts>
-        <customTabListAdditionalFields>FULL_NAME</customTabListAdditionalFields>
-        <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
-        <customTabListAdditionalFields>CONTACT.PHONE1</customTabListAdditionalFields>
+
+
+
         <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
         <lookupFilterFields>FULL_NAME</lookupFilterFields>

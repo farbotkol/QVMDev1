@@ -28,10 +28,7 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>ListClean</actionName>
         <type>Default</type>
@@ -48,10 +45,7 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -1345,13 +1339,7 @@
         </picklistValues>
     </recordTypes>
     <searchLayouts>
-        <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Trading_Name__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Trader_Status__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Majik_AccountNo__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>ACCOUNT.TYPE</customTabListAdditionalFields>
-        <customTabListAdditionalFields>ACCOUNT.PHONE1</customTabListAdditionalFields>
-        <customTabListAdditionalFields>ACCOUNT.RECORDTYPE</customTabListAdditionalFields>
+
         <listViewButtons>Send_Bulk_SMS</listViewButtons>
         <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Trading_Name__c</lookupDialogsAdditionalFields>

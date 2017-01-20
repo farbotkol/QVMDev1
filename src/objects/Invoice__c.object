@@ -24,10 +24,7 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
@@ -36,10 +33,7 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -292,12 +286,12 @@
     </nameField>
     <pluralLabel>Invoices</pluralLabel>
     <searchLayouts>
-        <customTabListAdditionalFields>Invoice_Status__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Invoice_Date__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Due_Date__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Account__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Account_Business__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Paid__c</customTabListAdditionalFields>
+
+
+
+
+
+
         <lookupDialogsAdditionalFields>Invoice_Status__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Invoice_Date__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Account__c</lookupDialogsAdditionalFields>

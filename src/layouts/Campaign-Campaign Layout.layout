@@ -200,6 +200,7 @@
         <quickActionListItems>
             <quickActionName>Campaign.Child_Campaign</quickActionName>
         </quickActionListItems>
+
     </quickActionList>
     <relatedLists>
         <fields>MEMBER_TYPE</fields>

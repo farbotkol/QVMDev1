@@ -204,11 +204,8 @@
             <actionType>QuickAction</actionType>
             <sortOrder>6</sortOrder>
         </platformActionListItems>
-        <platformActionListItems>
-            <actionName>SendEmail</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>7</sortOrder>
-        </platformActionListItems>
+
+
     </platformActionList>
     <quickActionList>
         <quickActionListItems>
@@ -232,6 +229,7 @@
         <quickActionListItems>
             <quickActionName>FeedItem.LinkPost</quickActionName>
         </quickActionListItems>
+
     </quickActionList>
     <relatedLists>
         <relatedList>RelatedContactRoleList</relatedList>

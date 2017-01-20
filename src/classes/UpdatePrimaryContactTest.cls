@@ -72,10 +72,7 @@ public class UpdatePrimaryContactTest {
         
         TestDataFactory.CreateOAuthServiceEntries();
         Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
-        
-        Test.startTest();
-        
-        Contact contact = TestDataFactory.createContact('TestAccountName', 
+                Contact contact = TestDataFactory.createContact('TestAccountName', 
                                                          'TestFirstName', 
                                                          'TestLastName',
                                                          'TestEmail@mail.com');
@@ -87,18 +84,18 @@ public class UpdatePrimaryContactTest {
         insert oppContactRole;
         
         UpdatePrimaryContact.startUpdate();
+        Test.startTest();
+
         List<Opportunity> opportunities = [Select Primary_Contact__c From Opportunity Where Primary_Contact__c = :oppContactRole.ContactId];
-        Test.stopTest();
         System.assert(opportunities[0] != null);
+        Test.stopTest();
     }
     
     @isTest static void AddedSecondaryContactToOpportunityContactRole(){
         
         TestDataFactory.CreateOAuthServiceEntries();
         Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
-        
-        Test.startTest();
-        
+                
         Contact contact = TestDataFactory.createContact('TestAccountName', 
                                                          'TestFirstName', 
                                                          'TestLastName',
@@ -125,9 +122,11 @@ public class UpdatePrimaryContactTest {
         insert oppContactRole2;
         
         UpdatePrimaryContact.startUpdate();
+        Test.startTest();
+
         
         List<Opportunity> opportunities = [Select Primary_Contact__c From Opportunity Where Primary_Contact__c = :oppContactRole.ContactId];
-        Test.stopTest();
         System.assert(opportunities[0] != null);
+        Test.stopTest();
     }
 }

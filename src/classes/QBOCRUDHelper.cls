@@ -236,8 +236,9 @@ public with sharing class QBOCRUDHelper {
             ///company/:companyId/customer
             //req.setEndpoint('https://qbo.intuit.com/qbo1/resource/customer/v2/' + oaToken.Realm_Id__c);
             req.setEndPoint(qbConnector.service.BaseURL__c + qbConnector.oaToken.Realm_Id__c + '/' + objTable);
+            
             req.setHeader('Content-Type', 'application/json');
-            req.setHeader('Accept', 'application/json');
+            req.setHeader('Accept', 'application/json                                                                                                                        ');
             //application/json;charset=UTF-8
             req.setTimeOut(120000);
            
@@ -250,7 +251,7 @@ public with sharing class QBOCRUDHelper {
             //    res = new HttpResponse();
             //} else { 
                 res = h.send(req);
-           // }
+            //}
             
             String responseString = res.getBody();
             
@@ -275,10 +276,9 @@ public with sharing class QBOCRUDHelper {
         }
         catch(Exception ex)
         {
+            system.debug('hello world:' + ex.getMessage());
             return System.JSON.deserialize(ex.getMessage(), QBOError.class);
         }
-          
-        
     }
     
     public static void sleep(Integer sleepSeconds) {

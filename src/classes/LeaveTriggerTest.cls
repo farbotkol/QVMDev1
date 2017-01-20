@@ -6,9 +6,9 @@ private class LeaveTriggerTest {
         TestDataFactory.CreateOAuthServiceEntries();
         
         Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
+        List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1, 'SL');
         Test.startTest();
        
-        List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1, 'SL');
 
 
         Opportunity opp = [select id, name, Stall__c from Opportunity limit 1];

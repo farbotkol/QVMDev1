@@ -12,10 +12,7 @@
         <actionName>Edit</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>SaveEdit</actionName>
         <type>Default</type>

@@ -29,6 +29,6 @@
         <quickActionLayoutColumns/>
     </quickActionLayout>
     <targetObject>Case</targetObject>
-    <targetRecordType>Case.Notice_of_Breach</targetRecordType>
+    <targetRecordType>Case.Notice_of_Breach_Case</targetRecordType>
     <type>Create</type>
 </QuickAction>

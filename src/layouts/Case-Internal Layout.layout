@@ -20,6 +20,10 @@
                 <behavior>Edit</behavior>
                 <field>Account_Business__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Case_Requester__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

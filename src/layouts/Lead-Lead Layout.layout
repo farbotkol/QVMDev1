@@ -171,11 +171,7 @@
             <actionType>QuickAction</actionType>
             <sortOrder>7</sortOrder>
         </platformActionListItems>
-        <platformActionListItems>
-            <actionName>SendEmail</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>8</sortOrder>
-        </platformActionListItems>
+
         <platformActionListItems>
             <actionName>FeedItem.TextPost</actionName>
             <actionType>QuickAction</actionType>
@@ -186,6 +182,7 @@
             <actionType>QuickAction</actionType>
             <sortOrder>10</sortOrder>
         </platformActionListItems>
+
     </platformActionList>
     <quickActionList>
         <quickActionListItems>
@@ -212,6 +209,7 @@
         <quickActionListItems>
             <quickActionName>FeedItem.ContentNote</quickActionName>
         </quickActionListItems>
+
     </quickActionList>
     <relatedContent>
         <relatedContentItems>
