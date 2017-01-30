@@ -227,6 +227,8 @@ public with sharing class QBOCRUDHelper {
     */
     public object upsertData(string objTable, string jsonObj, type apexType)
     {
+        
+        jsonObj = jsonObj.replace('Type_Z', 'Type') ;
         try
         {
             Http h = new Http();

@@ -916,6 +916,9 @@ public class HttpCalloutMockEngine implements HttpCalloutMock{
                 '           \"ColTitle\": \"No.\",'+
                 '           \"ColType\": \"doc_num\"'+
                 '       }, {'+
+                '           \"ColTitle\": \"accountBusiness\",'+
+                '           \"ColType\": \"sales_cust1\"'+
+                '       }, {'+
                 '           \"ColTitle\": \"Due Date\",'+
                 '           \"ColType\": \"due_date\"'+
                 '       }, {'+
@@ -947,6 +950,8 @@ public class HttpCalloutMockEngine implements HttpCalloutMock{
                 '                   \"value\": \"\"'+
                 '               }, {'+
                 '                   \"value\": \"\"'+
+                '               }, {'+
+                '                   \"value\": \"\"'+
                 '               }]'+
                 '           },'+
                 '           \"Rows\": {'+
@@ -956,6 +961,8 @@ public class HttpCalloutMockEngine implements HttpCalloutMock{
                 '                   }, {'+
                 '                       \"value\": \"Invoice\",'+
                 '                       \"id\": \"31829\"'+
+                '                   }, {'+
+                '                       \"value\": \"9201\"'+
                 '                   }, {'+
                 '                       \"value\": \"9201\"'+
                 '                   }, {'+
@@ -974,6 +981,8 @@ public class HttpCalloutMockEngine implements HttpCalloutMock{
                 '                   }, {'+
                 '                       \"value\": \"Invoice\",'+
                 '                       \"id\": \"31573\"'+
+                '                   }, {'+
+                '                       \"value\": \"8848\"'+
                 '                   }, {'+
                 '                       \"value\": \"8848\"'+
                 '                   }, {'+
@@ -998,6 +1007,8 @@ public class HttpCalloutMockEngine implements HttpCalloutMock{
                 '               }, {'+
                 '                   \"value\": \"\"'+
                 '               }, {'+
+                '                   \"value\": \"\"'+
+                '               }, {'+
                 '                   \"value\": \".00\"'+
                 '               }, {'+
                 '                   \"value\": \".00\"'+
@@ -1010,6 +1021,8 @@ public class HttpCalloutMockEngine implements HttpCalloutMock{
                 '           \"Summary\": {'+
                 '               \"ColData\": [{'+
                 '                   \"value\": \"TOTAL\"'+
+                '               }, {'+
+                '                   \"value\": \"\"'+
                 '               }, {'+
                 '                   \"value\": \"\"'+
                 '               }, {'+

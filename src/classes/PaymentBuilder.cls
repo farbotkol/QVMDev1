@@ -48,9 +48,17 @@ global class PaymentBuilder
          
         	if( !transactionListToInsert.isEmpty())
         	{
-            	TransactionBuilderBatch batch = new TransactionBuilderBatch( transactionListToInsert,batchJobId, Default_Balance_Receded); 
-            	database.executebatch(batch,50);
-
+                if ( transactionListToInsert.size() > 50	)
+                {
+                    TransactionBuilderBatch batch = new TransactionBuilderBatch( transactionListToInsert,batchJobId, Default_Balance_Receded); 
+                    database.executebatch(batch,50);
+				}
+                else 
+                {
+                    insert transactionListToInsert;
+                    finishTransactionBuilding(batchJobId,transactionListToInsert.size(), Default_Balance_Receded);
+                } 
+                //Huh!!!
                 Batch_Jobs__c batchjob = [select id,Balance_Receeded__c from Batch_Jobs__c where id = :batchJobId];
                 
                 system.debug('Default_Balance_Receded: ' + Default_Balance_Receded);
@@ -78,6 +86,42 @@ global class PaymentBuilder
             System.debug('Exception in processTransactions():' + Ex.getMessage());
         }  
     } 
+    
+    
+    public static void finishTransactionBuilding(id mybatchJobId, integer transactionCount, decimal Balance_Receded)
+    {
+        try
+        {
+            Batch_Jobs__c batchjob = [select id,Balance_Receeded__c,Outstanding_Balance__c,	Payment_Amount__c from Batch_Jobs__c where id = :mybatchJobId];
+            
+            system.debug('Default_Balance_Receded: ' + Balance_Receded);
+            //system.debug(Balance_Receded.setScale(2) + ' : ' + batchjob.Outstanding_Balance__c + ' : ' + batchJob.Payment_Amount__c);
+
+            if(Balance_Receded.setScale(2) <= batchjob.Outstanding_Balance__c){
+                batchjob.Balance_Receeded__c = Balance_Receded.setScale(2);
+            }else{
+                batchjob.Balance_Receeded__c = batchjob.Outstanding_Balance__c;
+            }
+            update  batchjob ;
+
+        	// Getting Record Type - Transactions Found.
+        	ID foundRecordTypeID = Schema.SObjectType.Batch_Jobs__c.getRecordTypeInfosByName().get('Transactions Found').getRecordTypeId();        
+        	Batch_Jobs__c batchJobObj = [SELECT id,Transaction_Count__c  FROM Batch_Jobs__c where id = :mybatchJobId ];         
+         	if( batchJobObj != null )
+         	{
+            	// Changing Record Type Id to Transactions Found.
+            	batchJobObj.RecordTypeId =  foundRecordTypeID;
+            	batchJobObj.Transaction_Count__c = transactionCount;
+            	update batchJobObj;
+         	}  
+        }
+        catch( Exception Ex )
+        {
+            System.debug('Exception in TransactionBuilderBatch finish():' + Ex.getMessage());
+        }
+    }
+    
+    
     //---------------------- Getting overdue Invoices from quickbook ----------------------------------------//
      public static void getInvoices( Id batchJobId, List<String> accountQuickBookIdSet)
      {
@@ -188,8 +232,10 @@ global class PaymentBuilder
                  	// getting order list          
                  	if( !setInvoiceQuickBookId.isEmpty())
                  	{
+                        System.debug('setInvoiceQuickBookId size :' + setInvoiceQuickBookId.size());
+                        System.debug('setInvoiceQuickBookId :' + setInvoiceQuickBookId);
                     	orderList = [SELECT id,OpportunityId,Opportunity.Payment_Type__c,QuickBooksId__c from Order where QuickBooksId__c IN:setInvoiceQuickBookId];
-                    	List<Order> oers = [SELECT id,OpportunityId,Opportunity.Payment_Type__c,QuickBooksId__c from Order ];
+                    	//List<Order> oers = [SELECT id,OpportunityId,Opportunity.Payment_Type__c,QuickBooksId__c from Order ];
                  	}
                  	for( Order ordrObj: orderList )
                  	{

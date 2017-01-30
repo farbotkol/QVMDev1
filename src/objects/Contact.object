@@ -105,6 +105,23 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Age__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( NOT( ISBLANK( Date_Of_Birth__c) ) ,
+  IF( DATE( 2000 , MONTH( Date_Of_Birth__c) , DAY( Date_Of_Birth__c) ) &lt;= DATE( 2000 , MONTH( TODAY() ) , DAY( TODAY() ) ),
+     YEAR (Today()) - YEAR ( Date_Of_Birth__c ),
+     YEAR (Today()) - YEAR ( Date_Of_Birth__c) -1 ),
+  null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Age</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>AssistantName</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -150,6 +167,15 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Date_Of_Birth__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Of Birth</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>Department</fullName>
@@ -579,5 +605,18 @@ var cssUrl = &apos;{!URLFOR(&apos;/resource/smagicinteract__smJQuery/css/sm-them
 var unrelatedObjectAPIName = &apos;&apos;;
 
 sendSMS(recordType, idToUpdate, userId, nameField, mobileField, optOutField, optOutDefaultValue, smsType, elementIdVar, packagePrefix, showUserDropDown, dialogTitle, cssUrl, unrelatedObjectAPIName);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>wbsendit__Add_Emails_to_List</fullName>
+        <availability>online</availability>
+        <description>Adds selected contacts to a subscriber list.</description>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Add Contacts to Subscriber List</masterLabel>
+        <openType>sidebar</openType>
+        <page>wbsendit__AddContactSubscribersToList</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
     </webLinks>
 </CustomObject>

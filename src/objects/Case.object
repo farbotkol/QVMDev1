@@ -148,6 +148,61 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Body_Part__c</fullName>
+        <externalId>false</externalId>
+        <label>Body Part</label>
+        <picklist>
+            <controllingField>Sub_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Arms</fullName>
+                <default>false</default>
+                <controllingFieldValues>Body Part</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Back</fullName>
+                <default>false</default>
+                <controllingFieldValues>Body Part</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Feet</fullName>
+                <default>false</default>
+                <controllingFieldValues>Body Part</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hands</fullName>
+                <default>false</default>
+                <controllingFieldValues>Body Part</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Head</fullName>
+                <default>false</default>
+                <controllingFieldValues>Body Part</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Legs</fullName>
+                <default>false</default>
+                <controllingFieldValues>Body Part</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Neck</fullName>
+                <default>false</default>
+                <controllingFieldValues>Body Part</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shoulders</fullName>
+                <default>false</default>
+                <controllingFieldValues>Body Part</controllingFieldValues>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>BreachDateAndTime__c</fullName>
         <description>Date and time of the breach.</description>
         <externalId>false</externalId>
@@ -268,6 +323,40 @@
         <visibleLines>5</visibleLines>
     </fields>
     <fields>
+        <fullName>Injured_Person_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Injured Person Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Contractor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trader</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Visitor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>IsClosedOnCreate</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -278,22 +367,6 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-    </fields>
-    <fields>
-        <fullName>Location2__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <description>Location of breach or OHS incident</description>
-        <externalId>false</externalId>
-        <inlineHelpText>Stall Location</inlineHelpText>
-        <label>Location</label>
-        <referenceTo>Stall__c</referenceTo>
-        <relationshipLabel>Cases</relationshipLabel>
-        <relationshipName>Cases</relationshipName>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Location__c</fullName>
@@ -522,6 +595,52 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>Other_Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Location</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Deli Lane</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Elizabeth Street</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Franklin Street</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Peel Street</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Queens Street</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>String Bean Alley</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Therry Street</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Victoria Street</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>OwnerId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
@@ -534,6 +653,146 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Person_Involved_City__c</fullName>
+        <externalId>false</externalId>
+        <label>Person Involved City</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Person_Involved_Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Person Involved Country</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Person_Involved_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Person Involved Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Person_Involved_First_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Person Involved First Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Person_Involved_Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Person Involved Last Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Person_Involved_Mobile__c</fullName>
+        <externalId>false</externalId>
+        <label>Person Involved Mobile</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Person_Involved_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Person Involved Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Person_Involved_State_Province__c</fullName>
+        <externalId>false</externalId>
+        <label>Person Involved State/Province</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Person_Involved_Street__c</fullName>
+        <externalId>false</externalId>
+        <label>Person Involved Street</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Person_Involved_Zip_Postal_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Person Involved Zip/Postal Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Person_Reporting_Incident__c</fullName>
+        <externalId>false</externalId>
+        <label>Person Reporting Incident</label>
+        <picklist>
+            <picklistValues>
+                <fullName>QVM Security 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QVM Security 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QVM Security 3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Priority</fullName>
@@ -626,6 +885,16 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>Review_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Review Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Rule_Description__c</fullName>
         <externalId>false</externalId>
         <label>Rule Description</label>
@@ -635,6 +904,22 @@
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Stall_Location__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Location of breach or OHS incident</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stall Location</inlineHelpText>
+        <label>Stall Location</label>
+        <referenceTo>Stall__c</referenceTo>
+        <relationshipLabel>StallCases</relationshipLabel>
+        <relationshipName>StallCases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Status</fullName>
@@ -677,39 +962,6 @@
         <label>Sub Type</label>
         <picklist>
             <controllingField>Type</controllingField>
-            <picklistValues>
-                <fullName>infringements - Other</fullName>
-                <default>false</default>
-                <controllingFieldValues>General</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>infringements - Spread</fullName>
-                <default>false</default>
-                <controllingFieldValues>General</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Invoice Inquiry</fullName>
-                <default>false</default>
-                <controllingFieldValues>Accounts Query</controllingFieldValues>
-                <controllingFieldValues>General</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Safety Issue</fullName>
-                <default>false</default>
-                <controllingFieldValues>General</controllingFieldValues>
-                <controllingFieldValues>Maintenance</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Spread</fullName>
-                <default>false</default>
-                <controllingFieldValues>General</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Statement Request</fullName>
-                <default>false</default>
-                <controllingFieldValues>Accounts Query</controllingFieldValues>
-                <controllingFieldValues>General</controllingFieldValues>
-            </picklistValues>
             <picklistValues>
                 <fullName>1. 7 Days after due date</fullName>
                 <default>false</default>
@@ -756,9 +1008,27 @@
                 <controllingFieldValues>Debtor Management</controllingFieldValues>
             </picklistValues>
             <picklistValues>
+                <fullName>Awning</fullName>
+                <default>false</default>
+                <controllingFieldValues>Operation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bank Details</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Body Part</fullName>
+                <default>false</default>
+                <controllingFieldValues>Incident  - Injury</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
                 <fullName>Branding</fullName>
                 <default>false</default>
                 <controllingFieldValues>Marketing</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contact Details</fullName>
+                <default>false</default>
             </picklistValues>
             <picklistValues>
                 <fullName>Co-op Marketing Program</fullName>
@@ -766,86 +1036,12 @@
                 <controllingFieldValues>Marketing</controllingFieldValues>
             </picklistValues>
             <picklistValues>
-                <fullName>Trader Hub</fullName>
-                <default>false</default>
-                <controllingFieldValues>Marketing</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Social Media</fullName>
-                <default>false</default>
-                <controllingFieldValues>Marketing</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Other</fullName>
-                <default>false</default>
-                <controllingFieldValues>Incident  - Injury</controllingFieldValues>
-                <controllingFieldValues>Marketing</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Bank Details</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Contact Details</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Permitted Use</fullName>
-                <default>false</default>
-                <controllingFieldValues>Operation</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Parking</fullName>
-                <default>false</default>
-                <controllingFieldValues>Operation</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>OH&amp;S and Forklift</fullName>
-                <default>false</default>
-                <controllingFieldValues>Operation</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Stall Boundaries</fullName>
-                <default>false</default>
-                <controllingFieldValues>Operation</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Market Rules &amp; Regulations</fullName>
-                <default>false</default>
-                <controllingFieldValues>Operation</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Litter</fullName>
-                <default>false</default>
-                <controllingFieldValues>Operation</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Set-Up &amp; Pack-Up</fullName>
-                <default>false</default>
-                <controllingFieldValues>Operation</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
                 <fullName>Disputes</fullName>
                 <default>false</default>
                 <controllingFieldValues>Operation</controllingFieldValues>
             </picklistValues>
             <picklistValues>
-                <fullName>Storage Boxes</fullName>
-                <default>false</default>
-                <controllingFieldValues>Operation</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Awning</fullName>
-                <default>false</default>
-                <controllingFieldValues>Operation</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>LTI</fullName>
-                <default>false</default>
-                <controllingFieldValues>Incident  - Injury</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>MTI</fullName>
+                <fullName>Environmental</fullName>
                 <default>false</default>
                 <controllingFieldValues>Incident  - Injury</controllingFieldValues>
             </picklistValues>
@@ -855,12 +1051,7 @@
                 <controllingFieldValues>Incident  - Injury</controllingFieldValues>
             </picklistValues>
             <picklistValues>
-                <fullName>No Treatment</fullName>
-                <default>false</default>
-                <controllingFieldValues>Incident  - Injury</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Non-Work</fullName>
+                <fullName>Fatality</fullName>
                 <default>false</default>
                 <controllingFieldValues>Incident  - Injury</controllingFieldValues>
             </picklistValues>
@@ -870,9 +1061,70 @@
                 <controllingFieldValues>Incident  - Injury</controllingFieldValues>
             </picklistValues>
             <picklistValues>
+                <fullName>infringements - Other</fullName>
+                <default>false</default>
+                <controllingFieldValues>General</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>infringements - Spread</fullName>
+                <default>false</default>
+                <controllingFieldValues>General</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Invoice Inquiry</fullName>
+                <default>false</default>
+                <controllingFieldValues>Accounts Query</controllingFieldValues>
+                <controllingFieldValues>General</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Litter</fullName>
+                <default>false</default>
+                <controllingFieldValues>Operation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LTI</fullName>
+                <default>false</default>
+                <controllingFieldValues>Incident  - Injury</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Market Rules &amp; Regulations</fullName>
+                <default>false</default>
+                <controllingFieldValues>Operation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MTI</fullName>
+                <default>false</default>
+                <controllingFieldValues>Incident  - Injury</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
                 <fullName>Near Miss</fullName>
                 <default>false</default>
                 <controllingFieldValues>Incident  - Injury</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non-Work</fullName>
+                <default>false</default>
+                <controllingFieldValues>Incident  - Injury</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Treatment</fullName>
+                <default>false</default>
+                <controllingFieldValues>Incident  - Injury</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OH&amp;S and Forklift</fullName>
+                <default>false</default>
+                <controllingFieldValues>Operation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parking</fullName>
+                <default>false</default>
+                <controllingFieldValues>Operation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Permitted Use</fullName>
+                <default>false</default>
+                <controllingFieldValues>Operation</controllingFieldValues>
             </picklistValues>
             <picklistValues>
                 <fullName>Property Damage</fullName>
@@ -880,9 +1132,57 @@
                 <controllingFieldValues>Incident  - Injury</controllingFieldValues>
             </picklistValues>
             <picklistValues>
-                <fullName>Environmental</fullName>
+                <fullName>Roof Leak</fullName>
+                <default>false</default>
+                <controllingFieldValues>Maintenance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Safety Issue</fullName>
+                <default>false</default>
+                <controllingFieldValues>General</controllingFieldValues>
+                <controllingFieldValues>Maintenance</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Set-Up &amp; Pack-Up</fullName>
+                <default>false</default>
+                <controllingFieldValues>Operation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+                <controllingFieldValues>Marketing</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Spread</fullName>
+                <default>false</default>
+                <controllingFieldValues>General</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stall Boundaries</fullName>
+                <default>false</default>
+                <controllingFieldValues>Operation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Statement Request</fullName>
+                <default>false</default>
+                <controllingFieldValues>Accounts Query</controllingFieldValues>
+                <controllingFieldValues>General</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Storage Boxes</fullName>
+                <default>false</default>
+                <controllingFieldValues>Operation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trader Hub</fullName>
+                <default>false</default>
+                <controllingFieldValues>Marketing</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
                 <default>false</default>
                 <controllingFieldValues>Incident  - Injury</controllingFieldValues>
+                <controllingFieldValues>Marketing</controllingFieldValues>
             </picklistValues>
             <restrictedPicklist>true</restrictedPicklist>
             <sorted>false</sorted>
@@ -981,6 +1281,61 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
     </fields>
+    <fields>
+        <fullName>Why_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Why 1</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Why_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Why 2</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Why_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Why 3</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Why_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Why 4</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Why_5__c</fullName>
+        <externalId>false</externalId>
+        <label>Why 5</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
     <listViews>
         <fullName>AllOpenCases</fullName>
         <filterScope>Everything</filterScope>
@@ -1075,6 +1430,15 @@
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>OHS_Department_Queue_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OHS Department Queue</label>
+        <queue>OHS_Department_Queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>Operations_Department_Queue_Case</fullName>
         <filterScope>Queue</filterScope>
         <label>Operations Department Queue</label>
@@ -1110,6 +1474,41 @@
         <description>Notice of assessment for trader infringements</description>
         <label>Notice of Breach Case</label>
         <picklistValues>
+            <picklist>Body_Part__c</picklist>
+            <values>
+                <fullName>Arms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Back</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Feet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neck</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shoulders</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>CCTV__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -1117,6 +1516,29 @@
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Injured_Person_Category__c</picklist>
+            <values>
+                <fullName>Contractor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trader</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visitor</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1327,6 +1749,56 @@
             <values>
                 <fullName>Web</fullName>
                 <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Other_Location__c</picklist>
+            <values>
+                <fullName>Deli Lane</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Elizabeth Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Franklin Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peel Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queens Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>String Bean Alley</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Therry Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victoria Street</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Person_Reporting_Incident__c</picklist>
+            <values>
+                <fullName>QVM Security 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QVM Security 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QVM Security 3</fullName>
+                <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -1568,6 +2040,41 @@
         <description>Incident reporting (staff, traders, customers)</description>
         <label>OHS Case</label>
         <picklistValues>
+            <picklist>Body_Part__c</picklist>
+            <values>
+                <fullName>Arms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Back</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Feet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neck</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shoulders</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>CCTV__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -1575,6 +2082,29 @@
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Injured_Person_Category__c</picklist>
+            <values>
+                <fullName>Contractor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trader</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visitor</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1788,6 +2318,56 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Other_Location__c</picklist>
+            <values>
+                <fullName>Deli Lane</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Elizabeth Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Franklin Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peel Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queens Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>String Bean Alley</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Therry Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victoria Street</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Person_Reporting_Incident__c</picklist>
+            <values>
+                <fullName>QVM Security 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QVM Security 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QVM Security 3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Priority</picklist>
             <values>
                 <fullName>High</fullName>
@@ -1839,11 +2419,19 @@
         <picklistValues>
             <picklist>Sub_Type__c</picklist>
             <values>
+                <fullName>Body Part</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Environmental</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>FAI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fatality</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1894,6 +2482,41 @@
         <description>Internal case</description>
         <label>QVM Case</label>
         <picklistValues>
+            <picklist>Body_Part__c</picklist>
+            <values>
+                <fullName>Arms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Back</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Feet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neck</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shoulders</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>CCTV__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -1901,6 +2524,29 @@
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Injured_Person_Category__c</picklist>
+            <values>
+                <fullName>Contractor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trader</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visitor</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2070,6 +2716,56 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Other_Location__c</picklist>
+            <values>
+                <fullName>Deli Lane</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Elizabeth Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Franklin Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peel Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queens Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>String Bean Alley</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Therry Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victoria Street</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Person_Reporting_Incident__c</picklist>
+            <values>
+                <fullName>QVM Security 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QVM Security 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QVM Security 3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Priority</picklist>
             <values>
                 <fullName>High</fullName>
@@ -2201,6 +2897,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Roof Leak</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Safety Issue</fullName>
                 <default>false</default>
             </values>
@@ -2300,6 +3000,41 @@
         <description>Trader case logged via the Trader Hub</description>
         <label>Trader Case</label>
         <picklistValues>
+            <picklist>Body_Part__c</picklist>
+            <values>
+                <fullName>Arms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Back</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Feet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neck</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shoulders</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>CCTV__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -2307,6 +3042,29 @@
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Injured_Person_Category__c</picklist>
+            <values>
+                <fullName>Contractor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trader</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visitor</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2472,6 +3230,56 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Other_Location__c</picklist>
+            <values>
+                <fullName>Deli Lane</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Elizabeth Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Franklin Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peel Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queens Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>String Bean Alley</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Therry Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victoria Street</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Person_Reporting_Incident__c</picklist>
+            <values>
+                <fullName>QVM Security 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QVM Security 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QVM Security 3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Priority</picklist>
             <values>
                 <fullName>High</fullName>
@@ -2613,6 +3421,10 @@
     </recordTypes>
     <searchLayouts>
 
+
+
+
+
         <lookupDialogsAdditionalFields>CASES.CASE_NUMBER</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CASES.SUBJECT</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>NAME</lookupDialogsAdditionalFields>
@@ -2640,10 +3452,18 @@
     </searchLayouts>
     <sharingModel>ReadWriteTransfer</sharingModel>
     <validationRules>
-        <fullName>case_type_required</fullName>
+        <fullName>Breach_Incident_Location</fullName>
         <active>true</active>
+        <description>At least one location needs to be entered for &apos;Notice of Breach Case&apos; and &apos;OHS Case&apos; record types - &apos;Stall Location&apos; or &apos;Other Location&apos;.</description>
+        <errorConditionFormula>(RecordTypeId = &apos;012p00000000aBv&apos; || RecordTypeId = &apos;012p00000000cMv&apos;) &amp;&amp; 
+(ISBLANK(Stall_Location__c)  &amp;&amp; ISBLANK(TEXT(Other_Location__c)))</errorConditionFormula>
+        <errorMessage>At least one location needs to be entered - &apos;Stall Location&apos; or &apos;Other Location&apos;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>case_type_required</fullName>
+        <active>false</active>
         <description>A case type is required for routing purposes</description>
-        <errorConditionFormula>AND(ISBLANK(TEXT(Type)), RecordType.DeveloperName &lt;&gt; &quot;Notice_of_Breach&quot;)</errorConditionFormula>
+        <errorConditionFormula>AND(ISBLANK(TEXT(Type)), RecordType.DeveloperName &lt;&gt; &quot;Notice_of_Breach_Case&quot;)</errorConditionFormula>
         <errorDisplayField>Type</errorDisplayField>
         <errorMessage>A case type must be selected</errorMessage>
     </validationRules>

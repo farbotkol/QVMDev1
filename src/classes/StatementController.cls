@@ -32,8 +32,8 @@ public class StatementController {
             }
         }
         if(customerRef != null){
-            try{
-                Object res =  crudHelper.report('CustomerBalanceDetail','customer=' + String.escapeSingleQuotes(customerRef) +'&arpaid=All&sort_by=tx_date&sort_order=descend&columns=tx_date,txn_type,doc_num,due_date,subt_amount,subt_open_bal,rbal_open_bal',QBOCustomerBalanceDetail.class); 
+            try{//sales_cust1
+                Object res =  crudHelper.report('CustomerBalanceDetail','customer=' + String.escapeSingleQuotes(customerRef) +'&arpaid=All&sort_by=tx_date&sort_order=descend&columns=tx_date,txn_type,doc_num,due_date,subt_amount,subt_open_bal,rbal_open_bal,sales_cust1',QBOCustomerBalanceDetail.class); 
                 
                 if (res instanceof QBOError)
                 {
@@ -45,7 +45,8 @@ public class StatementController {
                     QBOCustomerBalanceDetail theReport = (QBOCustomerBalanceDetail)res;                    
 
 
-                    System.debug('theReport : ' + account);
+                    System.debug('theAccount : ' + account);
+                     System.debug('theReport : ' + theReport);
                     customerName = theReport.Rows.Row[0].Header.ColData[0].value;
                     total = theReport.Rows.Row[0].Summary.ColData[4].value;
                     reportDate = formatDate(theReport.Header.Option[0].Value);
@@ -60,6 +61,7 @@ public class StatementController {
                         //Works in the Tests? What is this!
                         statement.tx_date = formatDate(statement.tx_date);
                         statement.due_date = formatDate(statement.due_date);
+                      
                         listStatements.add(statement);
                     }
                     statements = listStatements;

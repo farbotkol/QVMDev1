@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to creator when &apos;Review Date&apos; is 3 months away</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>QVM_Header</letterhead>
+    <name>OHS Case: &apos;Review Date&apos;</name>
+    <style>freeForm</style>
+    <subject>Review Date is 3 Months Away</subject>
+    <textOnly>Dear {!Case.CreatedBy}
+
+Review Date on Case {!Case.CaseNumber} is 3 months away!
+
+Case Subject: {!Case.Subject}
+Case Type: {!Case.Type}
+Review Date: {!Case.Review_Date__c}
+
+Case Description:
+{!Case.Description}
+
+Link to the case:
+{!Case.Link}</textOnly>
+    <type>html</type>
+</EmailTemplate>

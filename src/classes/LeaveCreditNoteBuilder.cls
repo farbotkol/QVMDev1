@@ -7,7 +7,7 @@ global class LeaveCreditNoteBuilder {
         // get the orders of the batch and batch process them
         List<OrderItem> orderItems = [SELECT Date__c,Description,Formula_Total__c,ListPrice,OrderItemNumber
                                		  ,Quantity,ServiceDate,Total__c,UnitPrice,Stall__r.Name, PricebookEntry.Sku__c,
-                                      Order.Account.QuickBooks_Id__c, Status__c , Batch_Jobs__c, QuickBooksId__c
+                                      Order.Account.QuickBooks_Id__c, Status__c , Batch_Jobs__c, QuickBooksId__c, Order.Opportunity.Majik_AccountNo__c
                                		  FROM OrderItem
                                		  WHERE (Batch_Jobs__r.Id = '' or Batch_Jobs__r.Id  = :batchJobId) and QuickBooksId__c ='' and Leave__c = True];
         
@@ -52,6 +52,20 @@ global class LeaveCreditNoteBuilder {
                // invoice.DocNumber = item.OrderItemNumber + 'LCN';
                 invoice.TxnDate = ((DateTime)item.Date__c).format('YYYY-MM-dd'); //  ((DateTime)Date.today()).format('YYYY-MM-dd');
                 
+                
+                // Add Majic number to the first custom field so that it can be used on the statements
+                List<QBOInvoice.CustomField> customFieldList  = new   List<QBOInvoice.CustomField>();
+                QBOInvoice.CustomField customField1  = new QBOInvoice.CustomField();
+                customField1.DefinitionId = '1';
+                customField1.Name = 'AccountBusiness';
+                customField1.StringValue = item.order.Opportunity.Majik_AccountNo__c;
+                customField1.Type_Z = 'StringType';
+                
+                customFieldList.add(customField1);
+                
+                invoice.CustomField = customFieldList;
+                
+                ////////////////////////////////////
                 
                 List<QBOInvoice.Line> invLines = new List<QBOInvoice.Line>();
                 

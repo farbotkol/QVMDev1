@@ -364,6 +364,31 @@ MID(TEXT( Campaign__r.EndDate ), 9, 2)&amp;&quot;/&quot;&amp; MID(TEXT( Campaign
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>DB_Created_Date_without_Time__c</fullName>
+        <description>This is a field that is installed by and used with the Adoption Dashboard AppExchange package. If your org already has a similar field, you can change the reports that are part of the Adoption Dashboard package to use your custom field and then delete this field.</description>
+        <externalId>false</externalId>
+        <formula>CreatedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DB Created Date without Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DB_Lead_Age__c</fullName>
+        <description>This is a field that is installed by and used with the Adoption Dashboard AppExchange package. If your org already has a similar field, you can change the reports that are part of the Adoption Dashboard package to use your custom field and then delete this field.</description>
+        <externalId>false</externalId>
+        <formula>NOW() - LastModifiedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DB Lead Age</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Description</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -1785,10 +1810,6 @@ MID(TEXT( Campaign__r.EndDate ), 9, 2)&amp;&quot;/&quot;&amp; MID(TEXT( Campaign
                 <default>false</default>
             </values>
             <values>
-                <fullName>Island Stall Standard</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>L Shed stalls and laneway</fullName>
                 <default>false</default>
             </values>
@@ -2723,11 +2744,6 @@ MID(TEXT( Campaign__r.EndDate ), 9, 2)&amp;&quot;/&quot;&amp; MID(TEXT( Campaign
     </recordTypes>
     <searchLayouts>
 
-
-
-
-
-
         <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>LEAD.COMPANY</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>LEAD.LEAD_SOURCE</lookupDialogsAdditionalFields>
@@ -2932,5 +2948,18 @@ var cssUrl = &apos;{!URLFOR(&apos;/resource/smagicinteract__smJQuery/css/sm-them
 var unrelatedObjectAPIName = &apos;&apos;;
 
 sendSMS(recordType, idToUpdate, userId, nameField, mobileField, optOutField, optOutDefaultValue, smsType, elementIdVar, packagePrefix, showUserDropDown, dialogTitle, cssUrl, unrelatedObjectAPIName);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>wbsendit__Add_Emails_to_List</fullName>
+        <availability>online</availability>
+        <description>Add selected leads to a subscriber list.</description>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Add Leads to Subscriber List</masterLabel>
+        <openType>sidebar</openType>
+        <page>wbsendit__AddLeadSubscribersToList</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
     </webLinks>
 </CustomObject>

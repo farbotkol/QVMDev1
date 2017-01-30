@@ -13,6 +13,8 @@ public class QBOStatement {
     public String subt_home_open_bal {get;set;}
     @AuraEnabled
     public String rbal_home_open_bal {get;set;}
+    @AuraEnabled
+    public String accountBusiness {get;set;}
     
     public QBOStatement() {
         
@@ -20,15 +22,19 @@ public class QBOStatement {
     
     public static QBOStatement getQBOStatementFromJSON(QBOCustomerBalanceDetail.Row row) {
         
+        
+        system.debug('row:::' + row);
         if(row!=null){
             QBOStatement obj = new QBOStatement();            
             obj.tx_date = row.ColData[0].value;
             obj.txn_type = row.ColData[1].value;
             obj.doc_num = row.ColData[2].value;
-            obj.due_date = row.ColData[3].value;
-            obj.subt_home_amount = row.ColData[4].value;
-            obj.subt_home_open_bal = row.ColData[5].value;
-            obj.rbal_home_open_bal = row.ColData[6].value;
+            obj.accountBusiness = row.ColData[3].value;
+            obj.due_date = row.ColData[4].value;
+            obj.subt_home_amount = row.ColData[5].value;
+            obj.subt_home_open_bal = row.ColData[6].value;
+            obj.rbal_home_open_bal = row.ColData[7].value;
+            
             return obj;
         }
         return null;

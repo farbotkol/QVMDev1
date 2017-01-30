@@ -428,7 +428,7 @@
         <fullName>Majik_AccountNo__c</fullName>
         <displayFormat>QVM-{000000}</displayFormat>
         <externalId>true</externalId>
-        <label>Majik AccountNo</label>
+        <label>Account No.</label>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </fields>

@@ -421,6 +421,8 @@ public class QBOInvoice {
 		@AuraEnabled public String Type_Z {get;set;} // in json: Type
 		@AuraEnabled public String StringValue {get;set;} 
 
+        public CustomField(){}
+        
 		public CustomField(JSONParser parser) {
 			while (parser.nextToken() != JSONToken.END_OBJECT) {
 				if (parser.getCurrentToken() == JSONToken.FIELD_NAME) {

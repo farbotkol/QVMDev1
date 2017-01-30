@@ -220,9 +220,10 @@
     <relatedLists>
         <fields>CASES.CASE_NUMBER</fields>
         <fields>CASES.SUBJECT</fields>
+        <fields>CASES.RECORDTYPE</fields>
         <fields>CASES.TYPE</fields>
         <fields>Sub_Type__c</fields>
-        <relatedList>Case.Location2__c</relatedList>
+        <relatedList>Case.Stall_Location__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

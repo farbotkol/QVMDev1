@@ -6,7 +6,7 @@ global class InvoiceBuilder {
         InvoiceBuilder.SetOrderRecordType('Processing_Invoices', batchJobId);
 		// get the orders of the batch and batch process them
         List<Order> orders = [SELECT Account.QuickBooks_Id__c,Batch_Job__c,Description,EffectiveDate, Opportunity.Terms__c, Opportunity.Payment_Type__c
-                       		,EndDate,Id,OpportunityId,OrderNumber,QuickBooksId__c,Status,StatusCode , 
+                       		,EndDate,Id,OpportunityId,OrderNumber,QuickBooksId__c,Status,StatusCode , Opportunity.Majik_AccountNo__c, 
                         	(SELECT Date__c,Description,Formula_Total__c,ListPrice,OrderItemNumber
                              	,Quantity,ServiceDate,Total__c,UnitPrice,Stall__r.Name, PricebookEntry.Sku__c
                              , PricebookEntry.Product2.Name
@@ -26,7 +26,7 @@ global class InvoiceBuilder {
     {
 
         List<Order> orders = [SELECT Account.QuickBooks_Id__c,Batch_Job__c,Description,EffectiveDate, Opportunity.Terms__c, Opportunity.Payment_Type__c
-                       		,EndDate,Id,OpportunityId,OrderNumber,QuickBooksId__c,Status,StatusCode , 
+                       		,EndDate,Id,OpportunityId,OrderNumber,QuickBooksId__c,Status,StatusCode , Opportunity.Majik_AccountNo__c, 
                         	(SELECT Date__c,Description,Formula_Total__c,ListPrice,OrderItemNumber
                              	,Quantity,ServiceDate,Total__c,UnitPrice,Stall__r.Name, PricebookEntry.Sku__c
                                 ,PricebookEntry.Product2.Name
@@ -66,6 +66,21 @@ global class InvoiceBuilder {
                 custRef.value = order.Account.QuickBooks_Id__c;
                 invoice.CustomerRef = custRef;
                 invoice.PrivateNote = order.Description;
+                
+                // Add Majic number to the first custom field so that it can be used on the statements
+                List<QBOInvoice.CustomField> customFieldList  = new   List<QBOInvoice.CustomField>();
+                QBOInvoice.CustomField customField1  = new QBOInvoice.CustomField();
+                customField1.DefinitionId = '1';
+                customField1.Name = 'AccountBusiness';
+                customField1.StringValue = order.Opportunity.Majik_AccountNo__c;
+                customField1.Type_Z = 'StringType';
+                
+                customFieldList.add(customField1);
+                
+                invoice.CustomField = customFieldList;
+                
+                ////////////////////////////////////
+                
                 integer terms = 14;
                 if(order.Opportunity.Terms__c !=null)
                 {

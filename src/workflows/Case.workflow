@@ -10,6 +10,36 @@
         <senderType>CurrentUser</senderType>
         <template>QVM_Email_Templates/CaseClosed</template>
     </alerts>
+    <alerts>
+        <fullName>Review_Date_Email_Alert_for_OHS_Cases</fullName>
+        <description>&apos;Review Date&apos; Email Alert for OHS Cases</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>petros.kosonen@qvm.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QVM_Email_Templates/OHS_Case_Review_Date</template>
+    </alerts>
+    <rules>
+        <fullName>%27Review Date%27 is 3 months away</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Review_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Notify Petros Kosonen when &apos;Review Date&apos; in OHS case is 3 months away</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Review_Date_Email_Alert_for_OHS_Cases</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Case.Review_Date__c</offsetFromField>
+            <timeLength>-90</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
     <rules>
         <fullName>Case Closed</fullName>
         <actions>

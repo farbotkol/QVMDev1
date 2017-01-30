@@ -125,19 +125,25 @@
             <table width="75%" border="0" cellspacing="0" cellpadding="0">
                 <br/>
                 <tr>
-                    <td>{!SubjectTitle} {!SubjectDescription}</td>
+                    <th><b>Subject</b></th>
                 </tr>
                 <tr>
-                    <td>{!DescriptionTitle} {!DescriptionDescription}</td>
+                    <td>{!SubjectDescription} </td>
                 </tr>
                 <tr>
-                    <th>Applicable Licence Section</th>
+                    <th><br/><b>Description</b></th>
+                </tr>
+                <tr>
+                	<td>{!DescriptionDescription}</td>
+                </tr>
+                <tr>
+                    <th><br/>Applicable Licence Section</th>
                 </tr>
                 <tr>
                     <td>{!Case.Rule_Description__c}</td>
                 </tr>
                 <tr>
-                    <th>{!Case.Remedy__c}</th>
+                    <th><br/>{!Case.Remedy__c}</th>
                 </tr>
                <tr>
                     <td>{!Case.Remedy_Rule__c}</td>
@@ -179,7 +185,7 @@
                      <td><apex:image width="90%" url="/sfc/servlet.shepherd/version/download/{!att.RelatedRecordId}"/></td>
                  </tr>
                  <tr>
-                     <td>{!att.Body}</td>
+                     <td><apex:outputText value="{!att.Body}" escape="false"></apex:outputText></td>
                  </tr>
              </table>    
              

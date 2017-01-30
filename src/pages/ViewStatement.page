@@ -56,9 +56,9 @@
                 <tr>
                     <th>Salesforce Id: </th><td>{!Account.Majik_AccountNo__c}</td>
                 </tr>
-                <tr>
+                <!--<tr>
                     <th>Account Number: </th><td>{!Account.AccountNumber}</td>
-                </tr>
+                </tr>-->
             	<br/>
                 <tr>
                     <th>{!customerName}</th>
@@ -86,6 +86,7 @@
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                     <th>Date</th>
+                    <th>Account No.</th>
                     <th>Transaction Type</th>
                     <th>Document Number</th>
                     <th>Due Date</th>
@@ -97,6 +98,7 @@
                 <apex:repeat value="{!Statements}" var="v">
                     <tr>
                         <td>{!v.tx_date}</td>
+                        <td>{!v.accountBusiness}</td>
                         <td>{!v.txn_type}</td>
                         <td>{!v.doc_num}</td>
                         <td>{!v.due_date}</td>

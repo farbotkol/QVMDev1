@@ -123,8 +123,12 @@
                 <field>Location__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>Location2__c</field>
+                <behavior>Edit</behavior>
+                <field>Stall_Location__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Other_Location__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

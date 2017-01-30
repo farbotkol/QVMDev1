@@ -42,11 +42,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Drivers_Licence_Expiry_Date__c</field>
+                <field>Date_Of_Birth__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Forklift_Licence_Expiry_Date__c</field>
+                <behavior>Readonly</behavior>
+                <field>Age__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -88,7 +88,17 @@
                 <field>Forklift_Licence_No__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>OneColumn</style>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Drivers_Licence_Expiry_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Forklift_Licence_Expiry_Date__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -223,6 +233,31 @@
 
     </quickActionList>
     <relatedLists>
+        <customButtons>wbsendit__Add_Contact_to_Email_List</customButtons>
+        <customButtons>wbsendit__View_Contact_in_CM</customButtons>
+        <customButtons>wbsendit__Unsubscribe_All</customButtons>
+        <excludeButtons>New</excludeButtons>
+        <fields>NAME</fields>
+        <fields>wbsendit__Date_Subscribed__c</fields>
+        <fields>wbsendit__Email__c</fields>
+        <fields>wbsendit__State__c</fields>
+        <relatedList>wbsendit__Subscription__c.wbsendit__Contact__c</relatedList>
+        <sortField>wbsendit__Date_Subscribed__c</sortField>
+        <sortOrder>Desc</sortOrder>
+    </relatedLists>
+    <relatedLists>
+        <excludeButtons>New</excludeButtons>
+        <fields>NAME</fields>
+        <fields>wbsendit__Campaign_Report__c</fields>
+        <fields>wbsendit__Activity_Date__c</fields>
+        <fields>wbsendit__Email_Address__c</fields>
+        <fields>wbsendit__Bounce_Reason__c</fields>
+        <fields>wbsendit__URL_Clicked__c</fields>
+        <relatedList>wbsendit__Campaign_Activity__c.wbsendit__Contact__c</relatedList>
+        <sortField>wbsendit__Activity_Date__c</sortField>
+        <sortOrder>Desc</sortOrder>
+    </relatedLists>
+    <relatedLists>
         <fields>OPPORTUNITY.NAME</fields>
         <fields>ACCOUNT.NAME</fields>
         <fields>OPPORTUNITY.CLOSE_DATE</fields>
@@ -257,6 +292,9 @@
         <fields>EVENT.LOCATION</fields>
         <fields>CORE.USERS.FULL_NAME</fields>
         <relatedList>RelatedHistoryList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <relatedList>RelatedEntityHistoryList</relatedList>
     </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>

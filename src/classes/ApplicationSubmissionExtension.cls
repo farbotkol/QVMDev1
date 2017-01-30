@@ -16,30 +16,51 @@ public without sharing class ApplicationSubmissionExtension
      
      private Integer intMinimumImages;
      private Integer intMaximumImages;
-     public List<Attachment> newAttachments {get; set;}
+    
+     private transient List<Attachment> newAttachmentsPrivate;
+     public   List<Attachment> newAttachments 
+     {
+         get {
+            if( newAttachmentsPrivate == null ) 
+            {
+                newAttachmentsPrivate=new List<Attachment>();
+                for (Integer idx=0; idx<5; idx++)
+                {
+                    newAttachmentsPrivate.add(new Attachment());
+                }    
+                
+            }
+            return newAttachmentsPrivate;
+    	 }
+         set 
+         {
+             
+             newAttachmentsPrivate = value; 
+         }
+     }
 
 
      public string fileName3 {  get;set; }
-     public Blob fileBody3 {    get;set;  }
+     public transient Blob fileBody3 {    get;set;  }
      public string fileName4 {  get;set; }
-     public Blob fileBody4 {    get;set;  }
+     public transient Blob fileBody4 {    get;set;  }
      public string fileName5 {  get;set; }
-     public Blob fileBody5 {    get;set;  }
+     public transient Blob fileBody5 {    get;set;  }
      public string fileName6 {  get;set; }
-     public Blob fileBody6 {    get;set;  }
+     public transient Blob fileBody6 {    get;set;  }
      public boolean isDisplay   {get;set;}
 
      public String Revenue {get;set;}
-     public Blob RevenueBody {get;set;}
+     public transient Blob RevenueBody {get;set;}
 
      public String EventExpense { get;set;}
-     public Blob eventExpenseBody {get;set;}
+     public transient Blob eventExpenseBody {get;set;}
 
      public String Budget {get;set;}
-     public Blob BudgetBody {get;set;}
+     public transient Blob BudgetBody {get;set;}
      
      public ApplicationSubmissionExtension theController{get;set;}
-     private String urlParameter;
+     public String urlParameter;
      public QVM_Web_Form_Config__c qvmWebConfigObj{get;set;}
      
      public Boolean acceptanceTextFlag{get;set;}
@@ -78,6 +99,7 @@ public without sharing class ApplicationSubmissionExtension
         {
             newAttachments.add(new Attachment());
         }
+		
         
         
         if( qvmWebConfigObj.Terms_And_Conditions_URL__c  == null )
@@ -368,9 +390,11 @@ public without sharing class ApplicationSubmissionExtension
      * @return            NA
      * @throws            NA
     */ 
+    
     private Boolean validateImageFileInput( Integer minimumImages )
     {
         Boolean retVal = true;
+       
         for(Integer i=0; i< minimumImages; i++)
         {
             if( newAttachments.size() > 0 )
@@ -393,7 +417,7 @@ public without sharing class ApplicationSubmissionExtension
      * @return            NA
      * @throws            NA
     */ 
-    public void insertImageList()
+   public void insertImageList()
     {    
         Integer filenameCount = 1;
         List<Attachment> toInsert=new List<Attachment>();
@@ -408,8 +432,8 @@ public without sharing class ApplicationSubmissionExtension
             filenameCount++;
         }
         insert toInsert;
-        newAttachments.clear();
-        newAttachments.add(new Attachment());      
+        //newAttachments.clear();
+        //newAttachments.add(new Attachment());      
     }
     
     /*

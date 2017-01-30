@@ -478,6 +478,31 @@
 
     </quickActionList>
     <relatedLists>
+        <customButtons>wbsendit__Add_Lead_to_Email_List</customButtons>
+        <customButtons>wbsendit__View_Lead_in_Campaign_Monitor</customButtons>
+        <customButtons>wbsendit__Unsubscribe_All</customButtons>
+        <excludeButtons>New</excludeButtons>
+        <fields>NAME</fields>
+        <fields>wbsendit__Date_Subscribed__c</fields>
+        <fields>wbsendit__Email__c</fields>
+        <fields>wbsendit__State__c</fields>
+        <relatedList>wbsendit__Subscription__c.wbsendit__Lead__c</relatedList>
+        <sortField>wbsendit__Date_Subscribed__c</sortField>
+        <sortOrder>Desc</sortOrder>
+    </relatedLists>
+    <relatedLists>
+        <excludeButtons>New</excludeButtons>
+        <fields>NAME</fields>
+        <fields>wbsendit__Campaign_Report__c</fields>
+        <fields>wbsendit__Activity_Date__c</fields>
+        <fields>wbsendit__Email_Address__c</fields>
+        <fields>wbsendit__Bounce_Reason__c</fields>
+        <fields>wbsendit__URL_Clicked__c</fields>
+        <relatedList>wbsendit__Campaign_Activity__c.wbsendit__Lead__c</relatedList>
+        <sortField>wbsendit__Activity_Date__c</sortField>
+        <sortOrder>Desc</sortOrder>
+    </relatedLists>
+    <relatedLists>
         <relatedList>RelatedFileList</relatedList>
     </relatedLists>
     <relatedLists>
