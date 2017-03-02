@@ -4,11 +4,14 @@
          <p class ="pa"><br></br><b>PRODUCT DETAILS</b><br></br><br></br></p>       
          <apex:outputLabel value="{!$ObjectType.Lead.fields.Food_Theme__c.InlineHelpText}"/>
          <apex:inputField value="{!AppSub.weblead.Food_Theme__c}" required="true"/>
-         <p style="font-size:100%;"><br></br><b>Outline how you intend to prepare your food; onsite/offsite, what area of the stall, what is involved and how this can add to the theatre of the stall*</b><br></br><br></br></p>
+         <p style="font-size:100%;"><br></br><b>Outline how you intend to prepare your food; onsite/offsite, what area of the stall, what is involved and how this can add to the theatre of the stall and engagement with customers*</b><br></br><br></br></p>
          <apex:inputField value="{!AppSub.weblead.Unique_Selling_Point__c}" style="width:50%;" required="true"/>
 
          <apex:outputLabel value="{!$ObjectType.Lead.fields.Menu_and_Price__c.InlineHelpText}"/>
          <apex:inputField value="{!AppSub.weblead.Menu_and_Price__c}" style="width:50%;"/>
+
+        <apex:outputLabel value="{!$ObjectType.Lead.fields.Diatary_Options__c.InlineHelpText}"/>
+        <apex:inputField value="{!AppSub.weblead.Diatary_Options__c}" style="width:50%;" /><br></br>
 
          <apex:outputLabel value="{!$ObjectType.Lead.fields.Source_Of_Ingrediance__c.InlineHelpText}"/>
          <apex:inputField value="{!AppSub.weblead.Source_Of_Ingrediance__c}" required="true"/>
@@ -28,16 +31,22 @@
                 <apex:repeat value="{!AppSub.newAttachments}" var="newAtt">
                 <apex:pageBlockSection columns="4">
                    <apex:pageBlockSectionItem >
-                        <apex:outputLabel value="Product Image">  {!count} </apex:outputLabel>                        
+                        <apex:outputLabel value="Product Image">  {!count} </apex:outputLabel>
                         <apex:inputFile value="{!newAtt.body}" filename="{!newAtt.name}"/>
                    </apex:pageBlockSectionItem>
                     <apex:outputPanel >
-                   <!-- <p style="font-size:80%;">Accepted file types: jpg, png, pdf</p>-->
-                   <!-- <p style="font-size:90%;">These will be used for promotional material</p>-->
-                     </apex:outputPanel>                    
+                     </apex:outputPanel>
                 </apex:pageBlockSection>
                 <apex:variable var="count" value="{!count + 1}"/>
                 </apex:repeat>
+
+                <p style="font-size:120%;"><br></br><b>Please upload a minimum of two different images of your proposed stall*</b></p>
+                <p style="font-size:90%;">These images will be used for promotional material</p>
+                <p style="font-size:80%;">Accepted file types: jpg, png, pdf</p>
+
+                <apex:inputFile style="width:100%" id="fileToUpload7" value="{!AppSub.fileBody7}" filename="{!AppSub.fileName7}" /><br></br>
+                <apex:inputFile style="width:100%" id="fileToUpload8" value="{!AppSub.fileBody8}" filename="{!AppSub.fileName8}" /><br></br>
+
 
                 <apex:outputLabel value="{!$ObjectType.Lead.fields.Trading_Places__c.InlineHelpText}"/>
                 <apex:inputField value="{!AppSub.weblead.Trading_Places__c}" required="true"/><br></br>
@@ -55,9 +64,14 @@
                 <apex:inputFile style="width:100%" id="fileToUpload3" value="{!AppSub.fileBody3}" filename="{!AppSub.fileName3}" /> 
                 
                 <p style="font-size:100%;"><br></br><b>Please upload an Australian Driver's License or passport*</b><br></br><br></br></p>
-                <apex:inputFile style="width:100%" id="fileToUpload4" value="{!AppSub.fileBody4}" filename="{!AppSub.fileName4}" /> 
+                <apex:inputFile style="width:100%" id="fileToUpload4" value="{!AppSub.fileBody4}" filename="{!AppSub.fileName4}" />
 
-                <p style="font-size:100%;"><br></br><b>Please upload your Certificate of Currency covering up to $20,000,000*</b></p>
+                <p style="font-size:100%;"><br></br><b>Please nominate two references*</b><br></br><br></br></p>
+                <apex:inputField value="{!AppSub.weblead.References__c}" style="width:50%;" /><br></br>
+
+
+
+                <p style="font-size:100%;"><br></br><b>Please upload your Public Liability certificate covering up to $20,000,000*</b></p>
 					<p style="font-size:90%;">
                     <i>*Disclaimer: If you do not currently hold a Certificate of Currency please upload a blank file</i><br></br><br></br>
 					</p>
@@ -65,7 +79,7 @@
                 
                 <p style="font-size:100%;"><br></br><b>Please upload your Certificate of Registration of Food Premises*</b></p>
 					<p style="font-size:90%;">
-                    <i>*Disclaimer: If you do not currently hold a Certificate of registration of Food premises please upload a blank file</i><br></br><br></br>
+                    <i>(If successful you must include QVM P/L as an interested party)</i><br></br><i>If you are already operating at other venues please provide a copy of your current food act registration.</i><br></br>
 					</p>
 
  

@@ -17,13 +17,20 @@
         <name>ApexTrigger</name>
     </types>
     <types>
-        <members>Account.Suppliers_Approval</members>
-        <members>Change_Request__c.Change_Request</members>
-        <members>Order.PO_Approval_3</members>
+        <members>*</members>
         <name>ApprovalProcess</name>
     </types>
     <types>
         <members>QVM</members>
+        <members>Service_Console</members>
+        <members>standard__Chatter</members>
+        <members>standard__Community</members>
+        <members>standard__DataAssessment</members>
+        <members>standard__Marketing</members>
+        <members>standard__Platform</members>
+        <members>standard__Sales</members>
+        <members>standard__Service</members>
+        <members>standard__ServiceConsole</members>
         <name>CustomApplication</name>
     </types>
     <types>
@@ -86,6 +93,7 @@
         <members>ProfileSkill</members>
         <members>ProfileSkillEndorsement</members>
         <members>ProfileSkillUser</members>
+        <members>QBO_Class__c</members>
         <members>QBO_Payment_Type__mdt</members>
         <members>QVM_Article__kav</members>
         <members>QVM_LH_FEE_SETTING__c</members>
@@ -98,6 +106,7 @@
         <members>StreamingChannel</members>
         <members>Task</members>
         <members>Transaction__c</members>
+        <members>TransitionStall__c</members>
         <members>User</members>
         <members>WorkBadge</members>
         <members>WorkBadgeDefinition</members>
@@ -122,14 +131,14 @@
         <members>QVM_Email_Templates/Change_Request</members>
         <members>QVM_Email_Templates/Event_Lead_Auto_Response</members>
         <members>QVM_Email_Templates/Event_Lead_With_Campaign_Auto_Response</members>
+        <members>QVM_Email_Templates/OHS_Case_Review_Date</members>
         <members>QVM_Email_Templates/PO_Approval</members>
         <members>QVM_Email_Templates/PO_Approved</members>
         <members>QVM_Email_Templates/PO_Rejected</members>
         <members>QVM_Email_Templates/Property_Lead_Auto_Response</members>
+        <members>QVM_Email_Templates/QVM_Property_Management_Application_Rejected</members>
         <members>QVM_Email_Templates/Supplier_Approval_Template_html</members>
         <members>QVM_Email_Templates/Supplier_Approved_Notice</members>
-        <members>QVM_Email_Templates/test</members>
-        <members>QVM_Email_Templates/OHS_Case_Review_Date</members>
         <members>unfiled$public/CommunityChangePasswordEmailTemplate</members>
         <members>unfiled$public/CommunityForgotPasswordEmailTemplate</members>
         <members>unfiled$public/CommunityWelcomeEmailTemplate</members>
@@ -192,15 +201,63 @@
         <name>Queue</name>
     </types>
     <types>
+        <members>Account.Child_Account</members>
+        <members>Campaign.Child_Campaign</members>
+        <members>Case.NewChildCase</members>
+        <members>CollaborationGroup.NewGroupMember</members>
+        <members>CollaborationGroup.NewGroupRecord</members>
+        <members>FeedItem.EscalateQFIToCase</members>
+        <members>FeedItem.NewTaskFromFeedItem</members>
+        <members>Follow_Up</members>
+        <members>LogACall</members>
+        <members>NewAccount</members>
+        <members>NewCase</members>
+        <members>NewCaseNoticeOfBreach</members>
+        <members>NewCaseTrader</members>
+        <members>NewContact</members>
+        <members>NewEvent</members>
+        <members>NewGroup</members>
+        <members>NewLead</members>
+        <members>NewOpportunity</members>
+        <members>NewTask</members>
+        <members>OHS_Case</members>
+        <members>Task.Defer</members>
+        <members>Task.Defer_0</members>
+        <members>Task.Defer_1</members>
+        <members>Task.Defer_2</members>
+        <members>Task.Defer_3</members>
+        <members>Task.Defer_4</members>
+        <members>Task.Defer_5</members>
+        <members>Task.EditDescription</members>
+        <members>Task.EditDescription_0</members>
+        <members>Task.EditDescription_1</members>
+        <members>Task.EditDescription_2</members>
+        <members>Task.EditDescription_3</members>
+        <members>Task.EditDescription_4</members>
+        <members>Task.EditDescription_5</members>
+        <members>Task.UpdatePriority</members>
+        <members>Task.UpdatePriority_0</members>
+        <members>Task.UpdatePriority_1</members>
+        <members>Task.UpdatePriority_2</members>
+        <members>Task.UpdatePriority_3</members>
+        <members>Task.UpdatePriority_4</members>
+        <members>Task.UpdatePriority_5</members>
+        <members>Task.UpdateStatus</members>
+        <members>Task.UpdateStatus_0</members>
+        <members>Task.UpdateStatus_1</members>
+        <members>Task.UpdateStatus_2</members>
+        <members>Task.UpdateStatus_3</members>
+        <members>Task.UpdateStatus_4</members>
+        <members>Task.UpdateStatus_5</members>
+        <name>QuickAction</name>
+    </types>
+    <types>
         <members>*</members>
         <name>RemoteSiteSetting</name>
     </types>
     <types>
-        <members>System</members>
-        <members>System/Batch_Job_Invoice_Processing</members>
-        <members>System/Batch_Job_Summary</members>
-        <members>System/Batch_Orders_Processed</members>
-        <name>Report</name>
+        <members>Account_Businesses_with_Orders_and_Lines</members>
+        <name>ReportType</name>
     </types>
     <types>
         <members>*</members>
@@ -240,6 +297,7 @@
         <members>MacroInstruction</members>
         <members>OAuthService__c</members>
         <members>OAuth_Token__c</members>
+        <members>Offense_Rule__c</members>
         <members>Opportunity</members>
         <members>OpportunityLineItem</members>
         <members>Order</members>
@@ -250,6 +308,7 @@
         <members>ProfileSkill</members>
         <members>ProfileSkillEndorsement</members>
         <members>ProfileSkillUser</members>
+        <members>QBO_Class__c</members>
         <members>QBO_Payment_Type__mdt</members>
         <members>QVM_Article__kav</members>
         <members>QVM_LH_FEE_SETTING__c</members>
@@ -264,6 +323,7 @@
         <members>StreamingChannel</members>
         <members>Task</members>
         <members>Transaction__c</members>
+        <members>TransitionStall__c</members>
         <members>User</members>
         <members>UserLicense</members>
         <members>WorkBadge</members>

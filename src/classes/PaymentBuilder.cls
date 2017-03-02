@@ -130,7 +130,7 @@ global class PaymentBuilder
          {
             System.debug(Logginglevel.ERROR ,'Inside getInvoice');
          	QBOCRUDHelper crudHelper = new QBOCRUDHelper();
-         	Batch_Jobs__c batchJobObj = [SELECT id, Due_Before__c , Payment_Type__c FROM Batch_Jobs__c where id =:batchJobId LIMIT 1];
+         	Batch_Jobs__c batchJobObj = [SELECT id, Due_Before__c , Payment_Type__c , Process_Bonds__c FROM Batch_Jobs__c where id =:batchJobId LIMIT 1];
          	integer position = 1;
             
             System.debug('RESMI:TTTT accountQuickBookIdSet' );
@@ -205,6 +205,7 @@ global class PaymentBuilder
                  	Map<String, ID > mapAccountDetails = new Map<String, ID>();
                  	//Map <String,String> mapAccountDefPaymentType = new Map<String,String>();
                  	Map<String,String> mapAccountBusinessDefPayment = new Map<String,String>();
+                    Map<String,Boolean> mapOrderIsBond = new Map<String,Boolean>();
                  
                  	// Set and Map declaration for getting OrderId from QuickBook's Id field 
                  	Set<String> setInvoiceQuickBookId = new Set<String>();
@@ -234,7 +235,7 @@ global class PaymentBuilder
                  	{
                         System.debug('setInvoiceQuickBookId size :' + setInvoiceQuickBookId.size());
                         System.debug('setInvoiceQuickBookId :' + setInvoiceQuickBookId);
-                    	orderList = [SELECT id,OpportunityId,Opportunity.Payment_Type__c,QuickBooksId__c from Order where QuickBooksId__c IN:setInvoiceQuickBookId];
+                    	orderList = [SELECT id,OpportunityId,Opportunity.Payment_Type__c,QuickBooksId__c, Bond__c from Order where QuickBooksId__c IN:setInvoiceQuickBookId];
                     	//List<Order> oers = [SELECT id,OpportunityId,Opportunity.Payment_Type__c,QuickBooksId__c from Order ];
                  	}
                  	for( Order ordrObj: orderList )
@@ -242,11 +243,13 @@ global class PaymentBuilder
                     	mapOrderDetails.put(ordrObj.QuickBooksId__c,ordrObj.Id);// Map for updating transaction orderId
                         mapOrderAccountBusiness.put(ordrObj.QuickBooksId__c,ordrObj.OpportunityId);//// Map for updating transaction opportunityId
                  	    mapAccountBusinessDefPayment.put(ordrObj.QuickBooksId__c,ordrObj.Opportunity.Payment_Type__c );
+                        mapOrderIsBond.put(ordrObj.QuickBooksId__c,ordrObj.Bond__c );
+                        
                     }
               
                  	for (QBOInvoice item : invs)
                  	{
-                    	if( item != null && mapOrderAccountBusiness.get(item.id) != null)
+                    	if( item != null && mapOrderAccountBusiness.get(item.id) != null && mapOrderIsBond.get(item.id) == batchJobObj.Process_Bonds__c )
                      	{
                         	Transaction__c transObj = new Transaction__c();
                         	transObj.Invoice_QuickBookId__c = item.Id; 
@@ -299,7 +302,12 @@ global class PaymentBuilder
          
          try
          {
-         	Batch_Jobs__c batchJobObj = [SELECT id, Due_Before__c  FROM Batch_Jobs__c where id =:batchJobId LIMIT 1];
+         	Batch_Jobs__c batchJobObj = [SELECT id, Due_Before__c , Process_Bonds__c  FROM Batch_Jobs__c where id =:batchJobId LIMIT 1];
+
+            if (batchJobObj.Process_Bonds__c == true) 
+            {
+                return;
+            }
            
 		 	while (position != 0)
          	{
@@ -367,7 +375,7 @@ global class PaymentBuilder
                  	// Set and Map declaration for getting AccountId from Quickbook's Customer Ref's value field.
                  	Set<String> setQuickBookID = new Set<String>();
                  	Map<String, ID > mapAccountDetails = new Map<String, ID>();
-                	//Map <String,String> mapAccountDefPaymentType = new Map<String,String>();
+                	Map <String,String> mapAccountDefPaymentType = new Map<String,String>();
                  
                  	// Set and Map declaration for getting OrderId from QuickBook's Id field 
                  	Set<String> setInvoiceQuickBookId = new Set<String>();
@@ -390,7 +398,7 @@ global class PaymentBuilder
                  	for( Account accObj: accList )
                  	{
                      	mapAccountDetails.put( accObj.QuickBooks_Id__c, accObj.Id);
-                     	//mapAccountDefPaymentType.put( accObj.QuickBooks_Id__c,accObj.Def_Payment_Type__c );
+                     	mapAccountDefPaymentType.put( accObj.QuickBooks_Id__c,accObj.Def_Payment_Type__c );
                  	}
                  	// getting order list
                  	if( !setInvoiceQuickBookId.isEmpty())
@@ -429,10 +437,10 @@ global class PaymentBuilder
                         	transObj.Order__c =  mapOrderDetails.get( item.id);// Updating transaction orderId
                             transObj.Account_Business__c = mapOrderAccountBusiness.get(item.id);// Updating transaction object's Account Business
 
-                        	//if( mapAccountDefPaymentType.get(item.CustomerRef.value) == 'EFT')
-                        	//{
+                        	if( mapAccountDefPaymentType.get(item.CustomerRef.value) == 'EFT')
+                        	{
                         		transactionListToInsert.add( transObj );
-                        	//}                        
+                        	}                        
                      	}               
                 	 }                 
             	}       
@@ -467,11 +475,26 @@ global class PaymentBuilder
         try
         {
             System.debug('RESMI:TTT Progress log 1');
-            Qvm_ABA_File_Generator__c qvmABAFileObj = [SELECT Deposit_Account_Id__c
-                             FROM Qvm_ABA_File_Generator__c where Name = 'ABA File Content' LIMIT 1];
-            System.debug('RESMI:TTT Progress log 2');
             
-            Batch_Jobs__c batchJobObj = [SELECT id, Due_Before__c , Payment_Type__c, Reference_Number__c FROM Batch_Jobs__c where id =:batchJobId LIMIT 1];
+            
+            Batch_Jobs__c batchJobObj = [SELECT id, Due_Before__c , Payment_Type__c, Reference_Number__c, Process_Bonds__c FROM Batch_Jobs__c where id =:batchJobId LIMIT 1];
+
+            Qvm_ABA_File_Generator__c qvmABAFileObj ;
+
+            if (batchJobObj.Process_Bonds__c == false)
+            {
+                qvmABAFileObj = [SELECT Deposit_Account_Id__c
+                             FROM Qvm_ABA_File_Generator__c where Name = 'ABA File Content' LIMIT 1];
+            }
+            else 
+            {
+                qvmABAFileObj = [SELECT Deposit_Account_Id__c
+                             FROM Qvm_ABA_File_Generator__c where Name = 'ABA File Content Bond' LIMIT 1];    
+            }
+
+
+            
+            System.debug('RESMI:TTT Progress log 2');
             
             String paymentType = batchJobObj.Payment_Type__c;
             if(paymentType == '' || paymentType == null){

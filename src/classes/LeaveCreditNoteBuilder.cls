@@ -169,7 +169,7 @@ global class LeaveCreditNoteBuilder {
         if (batchJobId != null)
         {
             Batch_Jobs__c job = [SELECT Batch_Type__c,From_Date__c,Id,Name,Process_Range__c
-                                 ,RecordType.Name,To_Date__c,Week_Month_Of__c 
+                                 ,RecordType.DeveloperName,To_Date__c,Week_Month_Of__c 
                                  FROM Batch_Jobs__c 
                                  WHERE Id = :batchJobId LIMIT 1];
             

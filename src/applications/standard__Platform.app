@@ -10,7 +10,9 @@
     <tab>Transaction__c</tab>
     <tab>Payment__c</tab>
     <tab>Stall_Map</tab>
-    <tab>Recieve_Payment</tab>
+    <tab>Receive_Payment</tab>
     <tab>Free_Day__c</tab>
     <tab>Offense_Rule__c</tab>
+    <tab>TransitionMap</tab>
+    <tab>TransitionStall__c</tab>
 </CustomApplication>

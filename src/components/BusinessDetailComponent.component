@@ -2,7 +2,7 @@
 <apex:attribute name="AppSub" description="AppSub" type="ApplicationSubmissionExtension" required="true"/>
 
 <p style="font-size:160%;border-top-style: double;border-right-style:null;border-bottom-style: double;border-left-style: null;border-width: 5px;border-color:#C1C5C7;">
-<br/><b>BUSINESS DETAILS</b><br/><br/>
+<br/><b>APPLICANT DETAILS</b><br/><br/>
 </p><br></br><br></br>
 
 <apex:pageBlockSection columns="2" id="pbs1">
@@ -19,9 +19,9 @@
 </apex:pageBlockSection>
 
 <apex:outputPanel layout="block" styleClass="custom1">
-<apex:pageBlockSection columns="2" id="pbs5" title="Company Information" >   
-    <apex:inputField value="{!AppSub.weblead.Company}" required="true" tabOrderHint="11"/>
-    <apex:inputField value="{!AppSub.weblead.ABN__c}" required="true" tabOrderHint="14"/>
+    <apex:pageBlockSection columns="2" id="pbs5" title="Business/Company Information" >   
+    <apex:inputField value="{!AppSub.weblead.Company}" label="Businesss, Company OR Personal Name (for License and Invoices)"  required="true" tabOrderHint="11"/>
+    <apex:inputField value="{!AppSub.weblead.ABN__c}" required="true" tabOrderHint="14" html-placeholder="ABN without spaces"/>
     <apex:inputField value="{!AppSub.weblead.Website }" tabOrderHint="12"/>        
     <apex:inputField value="{!AppSub.weblead.Facebook__c}" tabOrderHint="15"/>
     <apex:inputField value="{!AppSub.weblead.Twitter__c}" tabOrderHint="13"/> 

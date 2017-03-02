@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-
+    <actionOverrides>
+        <actionName>ActivateOrder</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>Approve</actionName>
         <type>Default</type>
@@ -29,7 +32,10 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
@@ -46,7 +52,10 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -92,6 +101,49 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Actual_Value_or_Service_Goods__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The actual value of the good / services to be paid</inlineHelpText>
+        <label>Actual Value or Service/Goods</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Value_Met__c</fullName>
+        <externalId>false</externalId>
+        <formula>Approved_UpTo__c &gt;  TotalAmount</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Approval Value Met</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Approved_UpTo__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Approved UpTo</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Approved_Value__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Read Only Value that what approved.</inlineHelpText>
+        <label>Approved Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>Balance_Due__c</fullName>
         <externalId>false</externalId>
         <label>Balance Due</label>
@@ -121,6 +173,15 @@
     <fields>
         <fullName>BillingAddress</fullName>
         <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Bond__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>If this invoice is for a then bond this field. This is used to direct when the Drawdown be made out to.</inlineHelpText>
+        <label>Bond</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>CompanyAuthorizedById</fullName>
@@ -163,6 +224,15 @@
     <fields>
         <fullName>EndDate</fullName>
         <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Goods_Services_Recieved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Have the goods or Services been received</inlineHelpText>
+        <label>Goods/Services Recieved</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>IsReductionOrder</fullName>
@@ -268,6 +338,18 @@
     <fields>
         <fullName>Type</fullName>
         <picklist>
+            <picklistValues>
+                <fullName>Goods</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Goods and Services</fullName>
+                <default>false</default>
+            </picklistValues>
             <sorted>false</sorted>
         </picklist>
         <trackHistory>true</trackHistory>
@@ -329,6 +411,21 @@
                 <default>false</default>
             </values>
         </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Goods</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Goods and Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Services</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
     </recordTypes>
     <recordTypes>
         <fullName>Accounts_Receivable</fullName>
@@ -356,10 +453,10 @@
         </picklistValues>
     </recordTypes>
     <searchLayouts>
-
+        <customTabListAdditionalFields>ORDERS.ORDER_NUMBER</customTabListAdditionalFields>
         <customTabListAdditionalFields>SALES.ACCOUNT.NAME</customTabListAdditionalFields>
-
-
+        <customTabListAdditionalFields>ORDERS.STATUS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ORDERS.TOTAL_AMOUNT</customTabListAdditionalFields>
         <lookupDialogsAdditionalFields>ORDERS.ORDER_NUMBER</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CONTRACT.OWNERALIAS</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>ORDERS.ORDER_NUMBER</lookupPhoneDialogsAdditionalFields>
@@ -372,6 +469,18 @@
         <searchResultsAdditionalFields>CONTRACT.CONTRACT_NUMBER</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Approved_Value_greater_then_order_value</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF( AND( Goods_Services_Recieved__c = TRUE,  Approved_Value__c &lt;  TotalAmount ) , TRUE, FALSE)</errorConditionFormula>
+        <errorMessage>The Order Amount is greater then the Approved Amount. Approval is required the the Order Amount</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Value_greater_then_zero</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF( AND( Goods_Services_Recieved__c = TRUE, TotalAmount &lt;= 0 ) , TRUE, FALSE)</errorConditionFormula>
+        <errorMessage>For goods / services to be recieved the order must have a value greater then zero. Please add order lines and submit the PO for approval before flaging goods / services as recieved</errorMessage>
+    </validationRules>
     <webLinks>
         <fullName>Create_Invoice</fullName>
         <availability>online</availability>

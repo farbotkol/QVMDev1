@@ -54,6 +54,9 @@
        <apex:inputField value="{!AppSub.weblead.X1st_Stall_Location_Preference__c}"/>
        <apex:inputField value="{!AppSub.weblead.X2nd_Stall_Location_Preference__c}"/>
        <apex:inputField value="{!AppSub.weblead.X3rd_Stall_Location_Preference__c}"/><br></br>
+
+		 
+	   <apex:inputField value="{!AppSub.weblead.Permanent_or_Casual__c}" label="Are you applying for a permanent stall (14 weeks) or casual?" style="width:50%;"/><br></br>
        <apex:inputField value="{!AppSub.weblead.Additional_Information__c}" style="width:50%;"/><br></br>
        
        

@@ -15,4 +15,7 @@
     <tab>standard-report</tab>
     <tab>standard-Dashboard</tab>
     <tab>Offense_Rule__c</tab>
+    <tab>TransitionMap</tab>
+    <tab>QBO_Class__c</tab>
+    <tab>TransitionStall__c</tab>
 </CustomApplication>

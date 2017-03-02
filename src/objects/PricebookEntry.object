@@ -31,6 +31,18 @@
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
     <fields>
+        <fullName>Default_QBO_Class__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>The default QBO class that will be used when this product is used</inlineHelpText>
+        <label>Default QBO Class</label>
+        <referenceTo>QBO_Class__c</referenceTo>
+        <relationshipLabel>Price Book Entries</relationshipLabel>
+        <relationshipName>Price_Book_Entries</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>IsActive</fullName>
     </fields>
     <fields>

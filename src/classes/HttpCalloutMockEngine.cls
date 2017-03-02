@@ -1043,7 +1043,27 @@ public class HttpCalloutMockEngine implements HttpCalloutMock{
                 '}';
             res.setBody(json);
         }
-           
+        if (req.getEndpoint().contains('class?minorversion=4')){
+            String json = '{'+
+                '  \"Class\": {'+
+                '    \"Name\": \"DELETE ME\",'+
+                '    \"SubClass\": false,'+
+                '    \"FullyQualifiedName\": \"DELETE ME\",'+
+                '    \"Active\": true,'+
+                '    \"domain\": \"QBO\",'+
+                '    \"sparse\": false,'+
+                '    \"Id\": \"1400000000000285172\",'+
+                '    \"SyncToken\": \"0\",'+
+                '    \"MetaData\": {'+
+                '      \"CreateTime\": \"2017-02-13T20:35:06-08:00\",'+
+                '      \"LastUpdatedTime\": \"2017-02-13T20:35:06-08:00\"'+
+                '    }'+
+                '  },'+
+                '  \"time\": \"2017-02-13T20:35:06.777-08:00\"'+
+                '}';
+            res.setBody(json);
+        }
+           //class?minorversion=4
         system.debug('Mock res : ' + res.getBody());
         system.debug('Mock res : ' + req.getEndpoint());
         

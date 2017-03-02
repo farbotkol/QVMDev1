@@ -18,10 +18,10 @@ public class NewOrderControllerExt {
              Id accountId = ApexPages.currentPage().getParameters().get('id') ;
              
             
-             Account acct = [SELECT Id, RecordType.Name from Account where id = :accountId LIMIT 1];
+             Account acct = [SELECT Id, RecordType.DeveloperName from Account where id = :accountId LIMIT 1];
              system.debug('acct: ' + acct);
             
-             if (acct.RecordType.Name == 'Trader')
+             if (acct.RecordType.DeveloperName == 'Trader')
              {
                  devRecordTypeId = Schema.SObjectType.Order.getRecordTypeInfosByName().get('Accounts Receivable').getRecordTypeId();
               

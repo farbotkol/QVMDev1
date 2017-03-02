@@ -51,6 +51,18 @@
                 <behavior>Edit</behavior>
                 <field>Balance_Receeded__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Payment_Total__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Invoice_Total__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Process_Bonds__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -96,16 +108,19 @@
     <relatedLists>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
+        <fields>Total_Amount__c</fields>
         <fields>Account__c</fields>
         <fields>Customer_Reference__c</fields>
-        <fields>Total_Amount__c</fields>
         <fields>QuickBook_Id__c</fields>
         <relatedList>Payment__c.Batch_Jobs__c</relatedList>
+        <sortField>QuickBook_Id__c</sortField>
+        <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
         <fields>Account__c</fields>
         <fields>Account_Business__c</fields>
+        <fields>Order__c</fields>
         <fields>Balance__c</fields>
         <fields>Outstanding_Balance__c</fields>
         <fields>DocNumber__c</fields>

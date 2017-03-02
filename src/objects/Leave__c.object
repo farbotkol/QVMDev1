@@ -24,7 +24,10 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
@@ -33,7 +36,10 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -75,6 +81,15 @@
         <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Over_65_and_36_Degree_Day__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>This is to be selected if the previous days 6PM news indicates if the next days forecast if 36 degrees or above and if the owner of the business if over 65.</inlineHelpText>
+        <label>Over 65 and 36 Degree Day</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Override__c</fullName>
@@ -125,6 +140,13 @@
 		,false)</errorConditionFormula>
         <errorDisplayField>Leave_Date__c</errorDisplayField>
         <errorMessage>Leave must be submitted before 8am on the day of the leave</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Excessive_Heat_Eligibility</fullName>
+        <active>true</active>
+        <description>Only Account Businesses that have been flagged as eligible for excessive heat policy can have can take leave based on this policy</description>
+        <errorConditionFormula>Account_Business__r.Excessive_Heat_Eligable__c = false &amp;&amp; Over_65_and_36_Degree_Day__c = true</errorConditionFormula>
+        <errorMessage>Only Account Businesses that have been flagged as eligible for the excessive heat policy can have can take leave based on this policy. If this account business should be eligible then please update the account business with the correct details.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Leave_before_today</fullName>

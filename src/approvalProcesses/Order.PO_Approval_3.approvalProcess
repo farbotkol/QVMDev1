@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
-    <active>true</active>
+    <active>false</active>
     <allowRecall>true</allowRecall>
     <allowedSubmitters>
         <type>owner</type>
@@ -20,6 +20,14 @@
             </approver>
         </assignedApprover>
         <description>Stage 1 Approval Upto 5k</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>User.Approval_Managers_Threshold__c</field>
+                <operation>lessOrEqual</operation>
+                <value>5000</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
         <label>Stage 1 Approval Upto 5k</label>
         <name>Stage_1_Approval_Upto_5k</name>
     </approvalStep>
@@ -114,8 +122,12 @@
             <name>PO_Approval_Email</name>
             <type>Alert</type>
         </action>
+        <action>
+            <name>Update_Approved_Value</name>
+            <type>FieldUpdate</type>
+        </action>
     </finalApprovalActions>
-    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
     <finalRejectionActions>
         <action>
             <name>PO_Rejected_Email</name>

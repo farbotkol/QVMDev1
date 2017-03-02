@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>QVM_Header</letterhead>
+    <name>QVM Property Management Application Rejected</name>
+    <style>freeForm</style>
+    <subject>Expression of Interest Application Rejected</subject>
+    <textOnly>Dear {!Lead.FirstName},
+
+Thank you for your Expression of Interest to trade at Queen Victoria Market.
+
+Unfortunately, your application is unsuccessful, but it will be kept on file should any future opportunities arise.
+
+
+Regards,
+Queen Victoria Market Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

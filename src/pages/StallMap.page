@@ -1,4 +1,4 @@
-<apex:page controller="StallMapController" sidebar="false" showHeader="false">
+<apex:page id="stallMapPage" controller="StallMapController" sidebar="false" showHeader="false">
     <head>
         <title>QVM Map</title>
         <style>
@@ -6,14 +6,22 @@
         .room {
             text-align: center
         }
+            
+        body {
+            background-image: url({!imageURL});
+            background-size: 5500px;
+            background-position: 0px 0px;
+            background-repeat: no-repeat;
+        }
+            
         form {
             font: 13px/18px Arial, sans-serif
         }
         .floorplan {
-            background: #ebecec;
-            height: 6500px;
+            /*background: #ebecec;*/
+            height: 11500px;
             position: relative;
-            width: 1000mm
+            width: 5500px;
         }
         .room {
             position: absolute!important;
@@ -24,11 +32,177 @@
             font-family: Arial;
             font-size: 11px;
             padding-top: 5px;
+            
+        
         }
         .draggable {
             -ms-touch-action: none;
             touch-action: none
+            
         }
+            
+        rotate {
+            -webkit-transform: rotate({!rotationValueString});
+            -moz-transform: rotate({!rotationValueString});
+            -o-transform: rotate({!rotationValueString});
+            -ms-transform: rotate({!rotationValueString});
+            transform: rotate({!rotationValueString});
+        }
+            
+        .rotation0 {
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+            
+        .rotation5 {
+            -webkit-transform: rotate(5deg);
+            -moz-transform: rotate(5deg);
+            -o-transform: rotate(5deg);
+            -ms-transform: rotate(5deg);
+            transform: rotate(5deg);
+        }
+            
+        .rotation10 {
+            -webkit-transform: rotate(10deg);
+            -moz-transform: rotate(10deg);
+            -o-transform: rotate(10deg);
+            -ms-transform: rotate(10deg);
+            transform: rotate(10deg);
+        }
+        
+        .rotation15 {
+            -webkit-transform: rotate(15deg);
+            -moz-transform: rotate(15deg);
+            -o-transform: rotate(15deg);
+            -ms-transform: rotate(15deg);
+            transform: rotate(15deg);
+        }
+            
+        .rotation20 {
+            -webkit-transform: rotate(20deg);
+            -moz-transform: rotate(20deg);
+            -o-transform: rotate(20deg);
+            -ms-transform: rotate(20deg);
+            transform: rotate(20deg);
+        }
+            
+            
+        .rotation25 {
+            -webkit-transform: rotate(25deg);
+            -moz-transform: rotate(25deg);
+            -o-transform: rotate(25deg);
+            -ms-transform: rotate(25deg);
+            transform: rotate(25deg);
+        }
+            
+            
+        .rotation30 {
+            -webkit-transform: rotate(30deg);
+            -moz-transform: rotate(30deg);
+            -o-transform: rotate(30deg);
+            -ms-transform: rotate(30deg);
+            transform: rotate(30deg);
+        }
+        .rotation35 {
+            -webkit-transform: rotate(35deg);
+            -moz-transform: rotate(35deg);
+            -o-transform: rotate(35deg);
+            -ms-transform: rotate(0deg);
+            transform: rotate(35deg);
+        }
+        .rotation40 {
+            -webkit-transform: rotate(40deg);
+            -moz-transform: rotate(40deg);
+            -o-transform: rotate(40deg);
+            -ms-transform: rotate(40deg);
+            transform: rotate(40deg);
+        }
+            
+        .rotation45 {
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+        
+        .rotation90 {
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+            
+        .rotation315 {
+            -webkit-transform: rotate(315deg);
+            -moz-transform: rotate(315deg);
+            -o-transform: rotate(315deg);
+            -ms-transform: rotate(315deg);
+            transform: rotate(315deg);
+        }
+            
+        .rotation320 {
+            -webkit-transform: rotate(320deg);
+            -moz-transform: rotate(320deg);
+            -o-transform: rotate(320deg);
+            -ms-transform: rotate(320deg);
+            transform: rotate(320deg);
+        }
+        .rotation325 {
+            -webkit-transform: rotate(325deg);
+            -moz-transform: rotate(325deg);
+            -o-transform: rotate(325deg);
+            -ms-transform: rotate(325deg);
+            transform: rotate(325deg);
+        }
+        .rotation330 {
+            -webkit-transform: rotate(330deg);
+            -moz-transform: rotate(330deg);
+            -o-transform: rotate(330deg);
+            -ms-transform: rotate(330deg);
+            transform: rotate(330deg);
+        }
+        .rotation335 {
+            -webkit-transform: rotate(335deg);
+            -moz-transform: rotate(335deg);
+            -o-transform: rotate(335deg);
+            -ms-transform: rotate(335deg);
+            transform: rotate(335deg);
+        }
+        .rotation340 {
+            -webkit-transform: rotate(340deg);
+            -moz-transform: rotate(340deg);
+            -o-transform: rotate(340deg);
+            -ms-transform: rotate(340deg);
+            transform: rotate(340deg);
+        }
+        .rotation345 {
+            -webkit-transform: rotate(345deg);
+            -moz-transform: rotate(345deg);
+            -o-transform: rotate(345deg);
+            -ms-transform: rotate(345deg);
+            transform: rotate(345deg);
+        }
+        .rotation350 {
+            -webkit-transform: rotate(350deg);
+            -moz-transform: rotate(350deg);
+            -o-transform: rotate(350deg);
+            -ms-transform: rotate(350deg);
+            transform: rotate(350deg);
+        }
+        .rotation355 {
+            -webkit-transform: rotate(355deg);
+            -moz-transform: rotate(355deg);
+            -o-transform: rotate(355deg);
+            -ms-transform: rotate(355deg);
+            transform: rotate(355deg);
+        }
+           
+            
         .resize-drag {
             box-sizing: border-box
         }
@@ -140,7 +314,7 @@
             cursor: pointer;
         }
         .legendColor{
-        	position: absolute!important;
+            position: absolute!important;
             background: #fff;
             color: #000;
             display: block;
@@ -152,7 +326,7 @@
             
         }
         .legendColor table{
-        	border-spacing: 0px;
+            border-spacing: 0px;
             vertical-align: bottom;
            
             border-collapse: collapse;
@@ -164,55 +338,245 @@
             border-bottom:1px solid #464646;
              padding:5px;
         }
+            
+        
+            
         </style>
      
-		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
-           	
-    	<script>
-  		$( function() {
-          $( ".draggable" ).draggable({ containment: "#dropzone",cursor: "move",  snap: true ,
-                                       stop: function( event, ui ) {
-                                       var dpi = $('#dpidiv').outerWidth(true);
-                                       // mm = pixel*25.4/dpi    -----  demensions saved are based on mm unit
-                                       CallApexMethod(ui.helper[0].id , (ui.helper[0].offsetWidth*25.4/dpi).toFixed(), (ui.helper[0].offsetHeight*25.4/dpi).toFixed(),(ui.position.left*25.4/dpi).toFixed(),(ui.position.top*25.4/dpi).toFixed()) ;
-                           }})
-          				   .resizable({  maxHeight: 250,
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+            
+        <script>
+        
+        // var rotating = false;
+        var rotation = 0;
+        var currentid = 0;
+        var previd = 0;
+        var dragging = false;
+        var rotationIncrement = 5;
+        
+        
+        
+        var snapvalue = false;
+        
+        if (localStorage.getItem("snapvalue") != null) 
+        {
+            snapvalue = localStorage.getItem("snapvalue");
+            console.log("LOCALSTORGE IS: "+localStorage.getItem("snapvalue"));
+        }
+        console.log("SNAPVALUE IS: "+snapvalue);
+        var snapvalueBool = Boolean(snapvalue=="true");
+        //var snapvalueBool = true;
+        console.log("SNAPVALUEBOOL IS: "+snapvalueBool);
+        //localStorage.setItem("snapvalue", snapvalue);
+        //document.getElementById("snapStatus").value = snapvalue;
+        
+        $( function() {
+            
+              $( ".draggable" ).draggable({ containment: "#dropzone"
+                                           ,cursor: "move"
+                                           ,snap: snapvalueBool
+                                           /*,stack: ".room"*/
+                                           ,stop: function( event, ui ) {
+                                                    var dpi = $('#dpidiv').outerWidth(true);
+                                                    // mm = pixel*25.4/dpi    -----  demensions saved are based on mm unit
+                                                    console.log("REACHED DRAGGABLE: dpi = "+dpi);
+                                               		dragging = true;
+                                                    CallApexMethod(ui.helper[0].id , (ui.helper[0].offsetWidth*25.4/dpi).toFixed(), (ui.helper[0].offsetHeight*25.4/dpi).toFixed(),(ui.position.left*25.4/dpi).toFixed(),(ui.position.top*25.4/dpi).toFixed()) ;
+                           							
+                                           }})
+                           .resizable({  maxHeight: 250,
                                           maxWidth: 350,
                                           minHeight: 10,
                                           minWidth: 10,
-                                       	containment: "#dropzone",
-                                      	stop: function( event, ui ) {
+                                        containment: "#dropzone",
+                                        stop: function( event, ui ) {
                                             $(ui.helper[0].id).css("line-height",ui.helper[0].offsetHeight+"px");
                                          var dpi = $('#dpidiv').outerWidth(true);
                                          // mm = pixel*25.4/dpi    -----  demensions saved are based on mm unit
-										 CallApexMethod(ui.helper[0].id , (ui.helper[0].offsetWidth*25.4/dpi).toFixed(), (ui.helper[0].offsetHeight*25.4/dpi).toFixed(),(ui.position.left*25.4/dpi).toFixed(),(ui.position.top*25.4/dpi).toFixed()) ;
+                                         console.log("REACHED RESIZABLE");
+                                         dragging = true;
+                                         CallApexMethod(ui.helper[0].id , (ui.helper[0].offsetWidth*25.4/dpi).toFixed(), (ui.helper[0].offsetHeight*25.4/dpi).toFixed(),(ui.position.left*25.4/dpi).toFixed(),(ui.position.top*25.4/dpi).toFixed()) ;
                                       }
                             });
-  		});
-  	</script>
+            
+            	
+            
+            jQuery.fn.rotate = function(id, degrees) {
+                console.log("REACHED ROTATE, ROTATION IS "+rotation);
+                
+                console.log("CURRENT ID IS: "+currentid);
+                $(this).css({'transform' : 'rotate('+ degrees +'deg)'});
+                UpdateRotation(currentid, rotation);	//needs parameters
+               
+            };
+
+
+            
+            $('.draggable').click(function() {
+                if (!dragging) {
+                    
+                currentid = $(this).attr('id');
+                if (currentid == previd)
+                {
+                    rotation += rotationIncrement;
+                }    
+                    
+                
+                if ((rotation > 45) && (rotation < 315))
+                {
+					rotation = 315;
+                }
+                if (rotation >= 360)
+                {
+					rotation = rotation-360;
+                }
+                
+                
+                previd = currentid;
+                
+                //console.log('Item Rotation: 'rotate_degree($(this)));
+                
+                
+                
+                $(this).rotate(currentid, rotation);
+                    }
+                dragging = false;
+            });
+            
+            /*
+                            var target = $('#target')
+                            target.mousedown(function() {
+                                console.log("REACHED ROTATING");
+                                if (rotating == false)
+                                {
+                                    rotating = true;
+                                }
+                                else
+                                {
+                                    rotating = false;
+                                }
+                            })
+                
+                            $(document).mousemove(function(e) {
+                                if (rotating) {
+                        
+                                    var mouse_x = e.pageX;
+                                    var mouse_y = e.pageY;
+                                    var radians = Math.atan2(mouse_x - 10, mouse_y - 10);
+                                    var degree = (radians * (180 / Math.PI) * -1) + 90;
+                                    target.css('-moz-transform', 'rotate(' + degree + 'deg)');
+                                    target.css('-moz-transform-origin', '0% 40%');
+                                    target.css('-webkit-transform', 'rotate(' + degree + 'deg)');
+                                    target.css('-webkit-transform-origin', '0% 40%');
+                                    target.css('-o-transform', 'rotate(' + degree + 'deg)');
+                                    target.css('-o-transform-origin', '0% 40%');
+                                    target.css('-ms-transform', 'rotate(' + degree + 'deg)');
+                                    target.css('-ms-transform-origin', '0% 40%');
+                                }
+                            })
+         */
+                            
+        });   
+        
+    </script>
     </head>
-    <apex:form >
+    
+    <apex:form id="mapForm">
+        <div style="position:fixed; z-index: 100; bottom:0px; right:0px;">
        <apex:pageBlock >
+           
+               
        <apex:outputLabel value="  Weekday to Refresh: " for="weekdayRefresh" />
         <apex:selectList id="selectedWeekdayRefresh" value="{!selectedWeekdayRefresh}" size="1" multiselect="false" label="Select a day" >
-        	<apex:selectOptions value="{!weekdayRefreshOptions}"></apex:selectOptions>
+            <apex:selectOptions value="{!weekdayRefreshOptions}"></apex:selectOptions>
         </apex:selectList>
           <apex:commandButton status="fetchStatus" value="Refresh" action="{!refresh}" title="Refresh Page"/>
-           <apex:commandButton status="fetchStatus" action="{!edit}" value="Edit" title="Refresh Page" />
+           <apex:commandButton status="fetchStatus" action="{!edit}" value="Edit" title="Refresh Page"/>
+           
+           <input type="button" value="Toggle Snap" class="btn" onclick="toggleSnap()" />
+           
+           <input type="button" value="Back to Salesforce" class="btn" onclick="toHomePage()" />
+           
+           
+           <br/>
+           <input type="button" value="Upload Map Image" class="btn" onclick="toUploadPage()" />
+           
+           <div class="snapStatus"></div>
+           
+          
+           
+           
+           <script>
+           var message = "";
+           if (snapvalueBool == false)
+           {
+               message = "Snap is off";
+           }
+           else if (snapvalueBool == true)
+           {
+               message = "Snap is on";
+           }
+           
+           $('.snapStatus').html(message);
+           
+           function toUploadPage(){
+            	// create case, etc.
+            	window.location.href='./apex/StallMapUpload';
+        	}
+           function toHomePage(){
+            	// create case, etc.
+            	window.location.href='/';
+        	}
+           function toggleSnap(){
+               //toggle snapvalue
+               if (snapvalue == "false")
+                   {
+                       snapvalue = "true";
+                   }
+               else 
+                   {
+                       snapvalue = "false";
+                   }
+                localStorage.setItem("snapvalue", snapvalue);
+               console.log("SNAPVALUE JUST BEFORE RELOAD IS: "+snapvalue);
+            	location.reload();            
+        	}
+           
+           
+           </script>
+           <apex:pageMessages />
+   
+
+     
+        
+    		
+           
+           
+           
+           
+           
            <apex:outputPanel style="color:#4AA02C;font-weight:bold">
                   <apex:actionStatus id="fetchStatus" startText="Fetching..." stopText=""/>
               </apex:outputPanel> 
             
         </apex:pageBlock> 
+         </div>
+        
         <apex:outputtext value="{!buildTable}" escape="false" id="tblHTML"/> 
         <apex:actionFunction name="CallApexMethod" action="{!UpdateAttributes}" onComplete=";">
             <apex:param name="stallid" value=""/>
-			<apex:param name="width" value=""/>
+            <apex:param name="width" value=""/>
             <apex:param name="height" value=""/>
             <apex:param name="left" value=""/>
             <apex:param name="top" value=""/>
+            <!-- <apex:param name="rotation" value="0"/> -->
+        </apex:actionFunction>
+        
+        <apex:actionFunction name="UpdateRotation" action="{!UpdateRotation}" onComplete=";">
+            <apex:param name="stallidrotation" value=""/>
+            <apex:param name="rotation" value=""/>
         </apex:actionFunction>
     </apex:form>
 </apex:page>

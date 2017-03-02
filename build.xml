@@ -24,7 +24,7 @@
         </classpath>
     </taskdef>
 	
-    <!-- Test out deploy and retrieve verbs for package 'mypkg' -->
+    <!-- Test out deploy and retrieve verbs for package 'mypkg' depends="RemoveUnwantedMetadata" -->
     <target name="DeployUAT" depends="RemoveUnwantedMetadata">
       <!-- Upload the contents of the "mypkg" package -->
       <sf:deploy username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="src" rollbackOnError="true"/>

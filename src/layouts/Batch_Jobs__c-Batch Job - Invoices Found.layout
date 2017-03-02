@@ -50,6 +50,14 @@
                 <behavior>Readonly</behavior>
                 <field>Credit_Notes__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Invoice_Total__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Process_Bonds__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -97,6 +105,7 @@
         <fields>NAME</fields>
         <fields>Account__c</fields>
         <fields>Account_Business__c</fields>
+        <fields>Order__c</fields>
         <fields>Balance__c</fields>
         <fields>Outstanding_Balance__c</fields>
         <fields>DocNumber__c</fields>

@@ -23,7 +23,7 @@
     </alerts>
     <rules>
         <fullName>%27Review Date%27 is 3 months away</fullName>
-        <active>false</active>
+        <active>true</active>
         <criteriaItems>
             <field>Case.Review_Date__c</field>
             <operation>notEqual</operation>

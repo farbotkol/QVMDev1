@@ -42,6 +42,7 @@ public class QBOPurchaseOrderResponse {
 	public class ItemBasedExpenseLineDetail {
 		public String BillableStatus;
 		public Reference ItemRef;
+        public Reference ClassRef;
 		public Decimal  UnitPrice;
 		public Decimal  Qty;
 		public TaxCodeRef TaxCodeRef;

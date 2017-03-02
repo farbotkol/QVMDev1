@@ -5,7 +5,8 @@
     <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>CampaignId__c</fullName>
-        <description>Campaign Id to which this Web form needs to be linked</description>
+        <description>Campaign Id to which this Web form needs to be linked
+Used to assign the Campaign Name in email alerts</description>
         <externalId>false</externalId>
         <label>CampaignId</label>
         <length>15</length>

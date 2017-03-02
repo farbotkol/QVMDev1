@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <customButtons>Create_Invoice</customButtons>
-    <excludeButtons>Activate</excludeButtons>
+    <excludeButtons>ActivateOrder</excludeButtons>
+    <excludeButtons>Deactivate</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -27,11 +27,15 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>EndDate</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Description</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>EndDate</field>
+                <field>Reference__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
@@ -46,12 +50,12 @@
                 <field>Balance_Due__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Reference__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Batch_Job__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Bond__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -134,8 +138,9 @@
     </layoutSections>
     <relatedLists>
         <fields>Product2</fields>
-        <fields>Stall__c</fields>
         <fields>Date__c</fields>
+        <fields>Stall__c</fields>
+        <fields>QBO_Class__c</fields>
         <fields>Description</fields>
         <fields>Quantity</fields>
         <fields>Total__c</fields>

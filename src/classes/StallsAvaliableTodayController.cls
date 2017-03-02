@@ -9,7 +9,7 @@ public with sharing class StallsAvaliableTodayController {
                     FROM OrderItem
                     WHERE Date__c = TODAY AND Leave__c = FALSE
                     AND Stall__c  != NULL)  
-                and RecordType.Name = 'Casual'
+                and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
                 order by Name 
                 LIMIT 1000];
@@ -185,7 +185,7 @@ public with sharing class StallsAvaliableTodayController {
                     FROM OrderItem
                     WHERE Date__c = TODAY AND Leave__c = FALSE
                     AND Stall__c  != NULL)  
-                and RecordType.Name = 'Casual'
+                and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
                 and ShedId__c = 'A'
                 order by StallId__c 
@@ -200,7 +200,7 @@ public with sharing class StallsAvaliableTodayController {
                     FROM OrderItem
                     WHERE Date__c = TODAY AND Leave__c = FALSE
                     AND Stall__c  != NULL)  
-                and RecordType.Name = 'Casual'
+                and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
                 and ShedId__c = 'B'
                 order by StallId__c 
@@ -215,7 +215,7 @@ public with sharing class StallsAvaliableTodayController {
                     FROM OrderItem
                     WHERE Date__c = TODAY AND Leave__c = FALSE
                     AND Stall__c  != NULL)  
-                and RecordType.Name = 'Casual'
+                and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
                 and ShedId__c = 'C'
                 order by StallId__c 
@@ -230,7 +230,7 @@ public with sharing class StallsAvaliableTodayController {
                     FROM OrderItem
                     WHERE Date__c = TODAY AND Leave__c = FALSE
                     AND Stall__c  != NULL)  
-                and RecordType.Name = 'Casual'
+                and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
                 and ShedId__c = 'D'
                 order by StallId__c 
@@ -245,7 +245,7 @@ public with sharing class StallsAvaliableTodayController {
                     FROM OrderItem
                     WHERE Date__c = TODAY AND Leave__c = FALSE
                     AND Stall__c  != NULL)  
-                and RecordType.Name = 'Casual'
+                and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
                 and ShedId__c = 'E'
                 order by StallId__c 
@@ -260,7 +260,7 @@ public with sharing class StallsAvaliableTodayController {
                     FROM OrderItem
                     WHERE Date__c = TODAY AND Leave__c = FALSE
                     AND Stall__c  != NULL)  
-                and RecordType.Name = 'Casual'
+                and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
                 and ShedId__c = 'H'
                 order by StallId__c 
@@ -275,7 +275,7 @@ public with sharing class StallsAvaliableTodayController {
                     FROM OrderItem
                     WHERE Date__c = TODAY AND Leave__c = FALSE
                     AND Stall__c  != NULL)  
-                and RecordType.Name = 'Casual'
+                and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
                 and ShedId__c = 'I'
                 order by StallId__c 
@@ -290,7 +290,7 @@ public with sharing class StallsAvaliableTodayController {
                     FROM OrderItem
                     WHERE Date__c = TODAY AND Leave__c = FALSE
                     AND Stall__c  != NULL)  
-                and RecordType.Name = 'Casual'
+                and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
                 and ShedId__c = 'J'
                 order by StallId__c 
@@ -305,7 +305,7 @@ public with sharing class StallsAvaliableTodayController {
                     FROM OrderItem
                     WHERE Date__c = TODAY AND Leave__c = FALSE
                     AND Stall__c  != NULL)  
-                and RecordType.Name = 'Casual'
+                and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
                 and ShedId__c = 'K'
                 order by StallId__c 
@@ -320,7 +320,7 @@ public with sharing class StallsAvaliableTodayController {
                     FROM OrderItem
                     WHERE Date__c = TODAY AND Leave__c = FALSE
                     AND Stall__c  != NULL)  
-                and RecordType.Name = 'Casual'
+                and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
                 and ShedId__c = 'L'
                 order by StallId__c 
@@ -335,7 +335,7 @@ public with sharing class StallsAvaliableTodayController {
                     FROM OrderItem
                     WHERE Date__c = TODAY AND Leave__c = FALSE
                     AND Stall__c  != NULL)  
-                and RecordType.Name = 'Casual'
+                and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
                 and ShedId__c = 'RK'
                 order by StallId__c 
@@ -350,7 +350,7 @@ public with sharing class StallsAvaliableTodayController {
                     FROM OrderItem
                     WHERE Date__c = TODAY AND Leave__c = FALSE
                     AND Stall__c  != NULL)  
-                and RecordType.Name = 'Casual'
+                and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
                 and ShedId__c = 'RL'
                 order by StallId__c 
@@ -365,7 +365,7 @@ public with sharing class StallsAvaliableTodayController {
                     FROM OrderItem
                     WHERE Date__c = TODAY AND Leave__c = FALSE
                     AND Stall__c  != NULL)  
-                and RecordType.Name = 'Casual'
+                and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
                 and (ShedId__c <> 'A' AND ShedId__c <> 'B' AND ShedId__c <> 'C' AND ShedId__c <> 'D' AND ShedId__c <> 'E' AND ShedId__c <> 'J' AND ShedId__c <> 'K' AND ShedId__c <> 'L' AND ShedId__c <> 'RK' AND ShedId__c <> 'RL' AND ShedId__c <> 'H' AND ShedId__c <> 'I')
                 order by StallId__c  

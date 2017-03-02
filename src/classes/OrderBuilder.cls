@@ -23,7 +23,7 @@ global with sharing class OrderBuilder {
         system.debug('Processing batchJobId: ' + batchJobId);
         // get current batch job
         Batch_Jobs__c job = [SELECT Batch_Type__c,From_Date__c,Id,Name,Process_Range__c
-                            ,RecordType.Name,To_Date__c,Week_Month_Of__c , Description__c
+                            ,RecordType.DeveloperName,To_Date__c,Week_Month_Of__c , Description__c
                             FROM Batch_Jobs__c 
                             WHERE Id = :batchJobId LIMIT 1];
 
@@ -105,6 +105,16 @@ global with sharing class OrderBuilder {
         list<PricebookEntry> pricebookEntries = [SELECT  Id,ProductCode,IsActive,Name,Pricebook2Id,Product2Id,UnitPrice,UseStandardPrice 
                                          FROM PricebookEntry
                                          WHERE  IsActive = true];
+        
+        /*list<QBO_Class__c> qboClasses = [Select Id, Name, QBOId__c from QBO_Class__c 
+        
+        Map<String, Id> qboClassMap = new  Map<String, Id>();
+        
+        for(QBO_Class__c cls: qboClasses)
+        {
+            
+            qboClassMap.put(cls.Name ,cls.Id);
+        }*/
 
         // create map of leave to ref here 
         list<Leave__c> leaveEntries = [SELECT Id, Leave_Date__c, Account_Business__c
@@ -237,7 +247,23 @@ global with sharing class OrderBuilder {
                         
                         String leaveKey =  dateIndex + (String)order.OpportunityId; 
                         ordItm.Date__c = dateIndex;
-                        ordItm.PricebookEntryId = pricebookEntriesMap.get(val).Id;// + (String)oppMap.get(oppMap).Pricebook2Id
+                        ordItm.PricebookEntryId = pricebookEntriesMap.get(val).Id;// + (String)oppMap.get(oppMap).Pricebook2Id.
+                        
+                        /*
+                        try
+                        {
+                            Id qboClassId =  qboClassMap.get(dayOfWeek);
+                            system.debug('dayofweek : ' + dayOfWeek + ' : ' + qboClassId); 
+                            if (qboClassId != null)
+                            {
+                                ordItm.QBO_Class__c = qboClassId;
+                            }
+                        }
+                        Catch (Exception Ex)
+                        {
+                            // Classes for Days of week not set up.?? what to do ??
+                        }*/
+                        
                         
                         ordItm.OrderId = order.Id;
                         ordItm.UnitPrice =  pricebookEntriesMap.get(val).UnitPrice;
@@ -270,7 +296,17 @@ global with sharing class OrderBuilder {
     */
     public static boolean GenerateOrdersFromAllocatedPermStalls(Date startDate, Date endDate, List<Opportunity> opps, id batchJobId, string description)
     {
-
+		/*QBO_Class__c qboClass ;
+       	try
+        {
+        	qboClass = [Select Id, Name, QBOId__c from QBO_Class__c 
+                                         where name = 'LH'];
+        }
+        catch(Exception ex)
+        {}
+        // Hmm hard coded LH, Should be custom setting in the event that Finance want this changed .
+        */
+        
         //get the avaliable pricebook entries for perm stall and put in map for looking up by the product id
         Id standardPriceBookId = PriceBookUtils.getStdPricebookId();
 
@@ -325,6 +361,13 @@ global with sharing class OrderBuilder {
                 ordItm.UnitPrice =  stall.Monthly_Rent__c;
                 ordItm.Quantity = 1;
                 ordItm.Stall__c = stall.Id;
+                
+                /*if (qboClass != null)
+                {
+                    ordItm.QBO_Class__c = qboClass.Id;
+                }*/
+              
+                
                 orderItemsToCreate.add(ordItm);
             }
 
@@ -342,8 +385,18 @@ global with sharing class OrderBuilder {
     */
     public static boolean GenerateFeeOrders(Date startDate, Date endDate, List<Opportunity> opps, id batchJobId, string description, string fieldName)
     {
-
-        
+		
+        /*QBO_Class__c qboClass ;
+        try
+        {
+        	qboClass = [Select Id, Name, QBOId__c from QBO_Class__c 
+                                         where name = 'LH'];
+        }
+        catch(Exception ex)
+        {}
+        // Hmm hard coded LH, Should be custom setting in the event that Finance want this changed .
+        */
+        //system.debug('QBO_Class__c' + QBO_Class__c.Id);
         QVM_LH_FEE_SETTING__c setting = QVM_LH_FEE_SETTING__c.getValues(fieldName);
 
         List<Order> ordersToCreate = new List<Order>();
@@ -372,6 +425,8 @@ global with sharing class OrderBuilder {
                 order.EndDate = endDate;
                 order.Status = 'Draft';
                 order.Description = description;
+                
+               
                 // Perm products can be gathered from the standard pricebook as they will0 have $0 prices
                 order.Pricebook2Id =  PriceBookUtils.getStdPricebookId();
                 if (batchJobId != null)
@@ -400,6 +455,13 @@ global with sharing class OrderBuilder {
                     ordItm.Quantity = 1;
                     ordItm.Description = fieldName;
                     ordItm.Stall__c = stall.Id;
+                    
+                    /*
+                    if (qboClass != null)
+                    {
+                        ordItm.QBO_Class__c = qboClass.Id;
+                    }
+                    */
                     orderItemsToCreate.add(ordItm);
                 }
             }

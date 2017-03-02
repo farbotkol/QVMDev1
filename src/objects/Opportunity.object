@@ -24,7 +24,10 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
@@ -33,7 +36,10 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -344,6 +350,17 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Excessive_Heat_Eligable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Select this check box if the trader is eligible for to benefit from the Excessive Heat Policy</inlineHelpText>
+        <label>Excessive Heat Eligibility</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>ExpectedRevenue</fullName>
         <trackTrending>false</trackTrending>
     </fields>
@@ -408,6 +425,17 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Is_Trial__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this trader currently on a trial</inlineHelpText>
+        <label>Trial Trader</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Last_Inv_Date__c</fullName>
@@ -2200,6 +2228,17 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Trial_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>When with the traders trial period end</inlineHelpText>
+        <label>Trial End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>Type</fullName>
@@ -7887,9 +7926,9 @@
         </picklistValues>
     </recordTypes>
     <searchLayouts>
-
-
-
+        <customTabListAdditionalFields>OPPORTUNITY.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OPPORTUNITY.CLOSE_DATE</customTabListAdditionalFields>
         <listViewButtons>Send_Bulk_SMS</listViewButtons>
         <lookupDialogsAdditionalFields>OPPORTUNITY.NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
@@ -7911,10 +7950,13 @@
         <searchFilterFields>Permitted_Use__c</searchFilterFields>
         <searchFilterFields>Permitted_Use_Sub_Category__c</searchFilterFields>
         <searchResultsAdditionalFields>OPPORTUNITY.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Majik_AccountNo__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ACCOUNT.NAME</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Trading_Name__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>OPPORTUNITY.RECORDTYPE</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>OPPORTUNITY.CLOSE_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Business_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.FULL_NAME</searchResultsAdditionalFields>
+        <searchResultsCustomButtons>Send_Bulk_SMS</searchResultsCustomButtons>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <validationRules>
@@ -7958,6 +8000,13 @@
         <errorConditionFormula>Leave_Remaining_Thursday__c &lt; 0</errorConditionFormula>
         <errorDisplayField>Leave_Taken_Thursday__c</errorDisplayField>
         <errorMessage>There is not enough Thursday leave remaining for the year</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Trial_must_have_an_end_date</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF (Is_Trial__c = TRUE &amp;&amp;   ISBLANK(Trial_End_Date__c)  , TRUE, FALSE)</errorConditionFormula>
+        <errorDisplayField>Trial_End_Date__c</errorDisplayField>
+        <errorMessage>Trial traders must have a trial end date.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Tuesday_Leave</fullName>

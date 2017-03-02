@@ -23,6 +23,12 @@ public class QBOInvoice {
 	public class BillAddr {
 		@AuraEnabled public String Id {get;set;} 
 		@AuraEnabled public String CountrySubDivisionCode {get;set;} 
+		@AuraEnabled public String Line1 {get;set;} 
+		@AuraEnabled public String Line2 {get;set;} 
+		@AuraEnabled public String Line3 {get;set;} 
+
+
+		public BillAddr() {}
 
 		public BillAddr(JSONParser parser) {
 			while (parser.nextToken() != JSONToken.END_OBJECT) {

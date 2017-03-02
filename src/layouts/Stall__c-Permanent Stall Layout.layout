@@ -41,7 +41,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>MCC_Cust_No__c</field>
+                <field>Rotationdeg__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -144,6 +144,10 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>MCC_Cust_No__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>MCC_1st_Qtr_Ins__c</field>
             </layoutItems>
             <layoutItems>
@@ -219,10 +223,11 @@
     </relatedLists>
     <relatedLists>
         <fields>CASES.CASE_NUMBER</fields>
+        <fields>NAME</fields>
         <fields>CASES.SUBJECT</fields>
-        <fields>CASES.RECORDTYPE</fields>
         <fields>CASES.TYPE</fields>
         <fields>Sub_Type__c</fields>
+        <fields>CASES.CREATED_DATE_DATE_ONLY</fields>
         <relatedList>Case.Stall_Location__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>

@@ -1,0 +1,20 @@
+<apex:component controller="FileUploadController">  
+
+    <apex:pageMessages />
+   
+
+     
+        
+    
+
+          <apex:outputLabel value="File Name" for="fileName"/>
+          <apex:inputText value="{!document.name}" id="fileName"/>
+       
+          <apex:outputLabel value="" for="file"/>
+          <apex:inputFile value="{!document.body}" filename="{!document.name}" id="file"/>
+    
+    <apex:commandButton action="{!upload}" value="Save"/>
+      
+
+
+</apex:component>

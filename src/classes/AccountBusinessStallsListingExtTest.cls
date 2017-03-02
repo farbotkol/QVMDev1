@@ -64,13 +64,13 @@ private class AccountBusinessStallsListingExtTest {
 
         Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Stall__c; 
         Map<String,Schema.RecordTypeInfo> stallTypeInfo = cfrSchema.getRecordTypeInfosByName(); 
-        Id rtId = stallTypeInfo.get('Casual').getRecordTypeId();
+        Id rtId = stallTypeInfo.get('Licence').getRecordTypeId();
         
 		system.debug(':H:');
         Stall__c stall =  [select id, name  from Stall__c where RecordTypeid = :rtId limit 1];
 
 
-        Id prtId = stallTypeInfo.get('Permanent').getRecordTypeId();
+        Id prtId = stallTypeInfo.get('Lease').getRecordTypeId();
         
         Stall__c permStall =  [select id, name  from Stall__c where RecordTypeid = :prtId limit 1];
 

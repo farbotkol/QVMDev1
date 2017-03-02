@@ -61,6 +61,16 @@
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Day_Of_Week__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(MOD(  Date__c  - DATE(1900, 1, 6), 7), 0, &quot;Saturday&quot;, 1, &quot;Sunday&quot;, 2,&quot;Monday&quot;, 3, &quot;Tuesday&quot;, 4, &quot;Wednesday&quot;, 5, &quot;Thursday&quot;, 6,&quot;Friday&quot;,&quot;&quot;)</formula>
+        <label>Day Of Week</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Description</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -115,6 +125,30 @@ CASE( PricebookEntry.Product2.ProductCode ,
     </fields>
     <fields>
         <fullName>ProductCode</fullName>
+    </fields>
+    <fields>
+        <fullName>QBO_Class_Id__c</fullName>
+        <description>USED FOR SYSTEM INTEGRATION WITH QBO</description>
+        <externalId>false</externalId>
+        <formula>QBO_Class__r.QBOId__c</formula>
+        <label>QBO Class Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>QBO_Class__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>The reporting class that is used by finance for reporting the Chart of account at a finer level</inlineHelpText>
+        <label>QBO Class</label>
+        <referenceTo>QBO_Class__c</referenceTo>
+        <relationshipLabel>Order Products</relationshipLabel>
+        <relationshipName>Order_Products</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Quantity</fullName>
@@ -194,7 +228,7 @@ CASE( PricebookEntry.Product2.ProductCode ,
     <fields>
         <fullName>Total_GST__c</fullName>
         <externalId>false</externalId>
-        <formula>IF( PricebookEntry.Product2.GST_Inclusive__c = false ,1.1, 1) *  Total__c</formula>
+        <formula>IF( PricebookEntry.Product2.GST_Inclusive__c = true ,1.1, 1.1) *  Total__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Total (GST)</label>
         <precision>18</precision>
@@ -225,5 +259,13 @@ CASE( PricebookEntry.Product2.ProductCode ,
         <errorConditionFormula>ISNULL(Order.Opportunity.Uplift_Factor__c ) &amp;&amp;  NOT(ISBLANK(Stall__c))</errorConditionFormula>
         <errorDisplayField>Stall__c</errorDisplayField>
         <errorMessage>Cant have a stall on this order that has no Uplift factor</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PO_Details_must_have_a_class_provided</fullName>
+        <active>true</active>
+        <description>PO Details must have a class provided</description>
+        <errorConditionFormula>IF( NOT( ISBLANK(Order.AccountId ))&amp;&amp;  ISBLANK(QBO_Class__c) &amp;&amp;    ISBLANK( Order.OpportunityId) , true, false)</errorConditionFormula>
+        <errorDisplayField>QBO_Class__c</errorDisplayField>
+        <errorMessage>Purchase Order line details must have a QBO Class provided</errorMessage>
     </validationRules>
 </CustomObject>

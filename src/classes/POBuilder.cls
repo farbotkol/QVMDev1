@@ -7,7 +7,7 @@ global class POBuilder {
         List<Order> orders = [SELECT Account.QuickBooks_Id__c,Batch_Job__c,Description,EffectiveDate
                        		,EndDate,Id,OpportunityId,OrderNumber,QuickBooksId__c,Status,StatusCode , 
                         	(SELECT Date__c,Description,Formula_Total__c,ListPrice,OrderItemNumber
-                             	,Quantity,ServiceDate,Total__c,UnitPrice,Stall__r.Name, PricebookEntry.Sku__c
+                             	,Quantity,ServiceDate,Total__c,UnitPrice,Stall__r.Name, PricebookEntry.Sku__c, QBO_Class_Id__c
                         	 FROM OrderItems)
                        FROM Order 
                        WHERE Id = :orderId];
@@ -38,6 +38,7 @@ global class POBuilder {
                 vendorRef.value = order.Account.QuickBooks_Id__c;
                 po.VendorRef = vendorRef;
                 po.Memo = order.Description;
+                po.POStatus = 'Open';
                 po.GlobalTaxCalculation = 'TaxInclusive';
 
                 po.TxnDate = ((DateTime)order.EffectiveDate).format('YYYY-MM-dd');
@@ -72,6 +73,13 @@ global class POBuilder {
                         {
                             taxCodeRefValue = item.PurchaseTaxCodeRef.value;
                         }
+                    }
+                    
+                    if (oi.QBO_Class_Id__c != null && oi.QBO_Class_Id__c != '')
+                    {
+                        QBOPurchaseOrderResponse.Reference classRef  = new QBOPurchaseOrderResponse.Reference();
+                    	classRef.value = oi.QBO_Class_Id__c;
+                    	lineDetail.ClassRef = classRef;
                     }
                     
                     QBOPurchaseOrderResponse.TaxCodeRef taxCodeRef = new QBOPurchaseOrderResponse.TaxCodeRef();

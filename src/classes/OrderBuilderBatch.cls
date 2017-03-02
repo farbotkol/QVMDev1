@@ -20,7 +20,7 @@ global class OrderBuilderBatch implements Database.Batchable<sObject> {
 	global void finish(Database.BatchableContext BC) {
 			//UPDATE THE BATCH JOB TO 'Orders_Generated'
 	 	Batch_Jobs__c job = [SELECT Batch_Type__c,From_Date__c,Id,Name,Process_Range__c
-						,RecordType.Name,To_Date__c,Week_Month_Of__c 
+						,RecordType.DeveloperName,To_Date__c,Week_Month_Of__c 
 						FROM Batch_Jobs__c 
 						WHERE Id = :batchJob LIMIT 1];
 

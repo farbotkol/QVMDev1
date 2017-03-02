@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GlobalPicklist xmlns="http://soap.sforce.com/2006/04/metadata">
     <globalPicklistValues>
-        <fullName>Island Stall Standard</fullName>
+        <fullName>Casual</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Readers/Masseurs</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>3 x 3 Mtr Corner Stall</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>2.4 x 2.4 Mtr Corner Stall</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Other (Fillout Additional Info)</fullName>
         <default>false</default>
     </globalPicklistValues>
     <globalPicklistValues>
@@ -13,15 +29,11 @@
         <default>false</default>
     </globalPicklistValues>
     <globalPicklistValues>
-        <fullName>Casual</fullName>
-        <default>false</default>
-    </globalPicklistValues>
-    <globalPicklistValues>
-        <fullName>Readers/Masseurs</fullName>
-        <default>false</default>
-    </globalPicklistValues>
-    <globalPicklistValues>
         <fullName>Additional Information</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Island Stall Standard</fullName>
         <default>false</default>
     </globalPicklistValues>
     <masterLabel>Preferred Stall Locations</masterLabel>

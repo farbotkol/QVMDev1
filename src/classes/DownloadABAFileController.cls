@@ -76,11 +76,27 @@ public class DownloadABAFileController
                                      
         try
         {
+
+            Batch_Jobs__c batchJobObjData = [SELECT id, Due_Before__c , Payment_Type__c, Reference_Number__c, Process_Bonds__c FROM Batch_Jobs__c where id =:batchlobObj.Id LIMIT 1];
+
+
              // Query data from custom setting.
-             qvmABAFileObj = [SELECT Financial_Institution__c,Name_Of_User__c,
+             if (batchJobObjData.Process_Bonds__c == false)
+             {
+
+                qvmABAFileObj = [SELECT Financial_Institution__c,Name_Of_User__c,
                              User_Identification_Number__c,Description__c,Date_to_be_Processed__c,
                              Lodgement_Reference__c,BSB_Number__c,Account_Number__c,Name_of_Remitter__c 
                              FROM Qvm_ABA_File_Generator__c where Name = 'ABA File Content' LIMIT 1]; 
+             }
+             else
+             {
+                 qvmABAFileObj = [SELECT Financial_Institution__c,Name_Of_User__c,
+                             User_Identification_Number__c,Description__c,Date_to_be_Processed__c,
+                             Lodgement_Reference__c,BSB_Number__c,Account_Number__c,Name_of_Remitter__c 
+                             FROM Qvm_ABA_File_Generator__c where Name = 'ABA File Content Bond' LIMIT 1]; 
+             }
+            
              // Header section Formatting
              financialInstitution = qvmABAFileObj.Financial_Institution__c.rightPad(maxLengthFinancialInst);
              UserName = qvmABAFileObj.Name_Of_User__c.rightPad(maxLengthUserName);

@@ -48,6 +48,14 @@ public without sharing class ApplicationSubmissionExtension
      public transient Blob fileBody5 {    get;set;  }
      public string fileName6 {  get;set; }
      public transient Blob fileBody6 {    get;set;  }
+    // added 8/2/17 Matthew Armstrong
+    //-----------------------------------------------
+     public string fileName7 {  get;set; }
+     public transient Blob fileBody7 {    get;set;  }
+     public string fileName8 {  get;set; }
+     public transient Blob fileBody8 {    get;set;  }
+    //----------------------------------------------
+
      public boolean isDisplay   {get;set;}
 
      public String Revenue {get;set;}
@@ -207,6 +215,49 @@ public without sharing class ApplicationSubmissionExtension
                   insert myAttachment; 
                 }         
              }
+            // added 8/2/17 Matthew Armstrong
+             //-------------------------------------------------------------------------
+             if(fileBody7 != null && fileName7 != null)
+             {
+                 Attachment myAttachment  = new Attachment();
+                 myAttachment.Body = fileBody7;
+                 if( urlParameter == 'NightMarketFoodVendor')
+                 {
+                     myAttachment.Name = 'Stall Image 1'+getFileNameExtension(fileName7);
+                 }
+                 else
+                 {
+                     myAttachment.Name = 'Stall Image 1' +getFileNameExtension(fileName7);
+                 }
+
+                 myAttachment.ParentId = weblead.id;
+                 if( myAttachment != null)
+                 {
+                     insert myAttachment;
+                 }
+             }
+
+             if(fileBody8 != null && fileName8 != null)
+             {
+                 Attachment myAttachment  = new Attachment();
+                 myAttachment.Body = fileBody8;
+                 if( urlParameter == 'NightMarketFoodVendor')
+                 {
+                     myAttachment.Name = 'Stall Image 2'+getFileNameExtension(fileName8);
+                 }
+                 else
+                 {
+                     myAttachment.Name = 'Stall Image 2' +getFileNameExtension(fileName8);
+                 }
+
+                 myAttachment.ParentId = weblead.id;
+                 if( myAttachment != null)
+                 {
+                     insert myAttachment;
+                 }
+             }
+            //----------------------------------------------------------------
+
              if(eventExpenseBody!= null && EventExpense != null)
              {
                 Attachment myAttachment  = new Attachment();

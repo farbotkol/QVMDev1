@@ -177,9 +177,11 @@
     <tab>Transaction__c</tab>
     <tab>Payment__c</tab>
     <tab>Stall_Map</tab>
-    <tab>Recieve_Payment</tab>
+    <tab>Receive_Payment</tab>
     <tab>Free_Day__c</tab>
     <tab>Offense_Rule__c</tab>
+    <tab>TransitionMap</tab>
+    <tab>TransitionStall__c</tab>
     <workspaceMappings>
         <mapping>
             <tab>Free_Day__c</tab>
@@ -191,13 +193,19 @@
             <tab>Payment__c</tab>
         </mapping>
         <mapping>
-            <tab>Recieve_Payment</tab>
+            <tab>Receive_Payment</tab>
         </mapping>
         <mapping>
             <tab>Stall_Map</tab>
         </mapping>
         <mapping>
             <tab>Transaction__c</tab>
+        </mapping>
+        <mapping>
+            <tab>TransitionMap</tab>
+        </mapping>
+        <mapping>
+            <tab>TransitionStall__c</tab>
         </mapping>
         <mapping>
             <tab>standard-Account</tab>

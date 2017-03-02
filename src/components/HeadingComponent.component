@@ -1,7 +1,7 @@
 <apex:component >    
        <apex:pageBlockSection rendered="{!$CurrentPage.parameters.type=='MerchandiseStall'}" columns="1">
-           <p class="p"><b>APPLY FOR A SPECIALLY MERCHANDISE STALL</b></p>
-           <p class="p"><b>Expression of Interest for Queen Victoria Market for Speciality Stalls</b></p> 
+           <p class="p"><b>APPLY FOR A SPECIALTY MERCHANDISE STALL</b></p>
+           <p class="p"><b>Expression of Interest for Queen Victoria Market for Specialty Stalls</b></p> 
         </apex:pageBlockSection>
         <apex:pageBlockSection rendered="{!$CurrentPage.parameters.type=='FoodTrading'}" columns="1">
         <p class="p"><b>APPLY FOR A FOOD PREMISES</b></p>

@@ -58,9 +58,45 @@ public class TestDataFactory {
 
         Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Stall__c; 
         Map<String,Schema.RecordTypeInfo> stallTypeInfo = cfrSchema.getRecordTypeInfosByName(); 
-        Id rtId = stallTypeInfo.get('Casual').getRecordTypeId();
+        Id rtId = stallTypeInfo.get('Licence').getRecordTypeId();
             
         Stall__c stall = new Stall__c();
+        stall.RecordTypeid = rtId;
+        stall.ShedId__c = 'A' ;
+        stall.StallId__c = '1';
+
+        stall.StallId__c = '1';
+        stall.name = 'A1';
+
+        stall.FridayMultiplier__c = 1;
+        stall.FridayTrader__c = accBus.Id;
+        stall.IsActive__c = true;
+        stall.MondayTrader__c = accBus.Id;
+        stall.SaturdayMultiplier__c = 1;
+        stall.SaturdayTrader__c = accBus.Id;
+        stall.SundayMultiplier__c = 1;
+        stall.SundayTrader__c = accBus.Id;
+        stall.ThursdayMultiplier__c = 1;
+        stall.ThursdayTrader__c = accBus.Id;
+        stall.TuesdayMultiplier__c = 1;
+        stall.TuesdayTrader__c = accBus.Id;
+        stall.WednesdayMultiplier__c = 1;
+        stall.WednesdayTrader__c = accBus.Id; 
+
+        Insert stall;
+
+        return stall;
+    }
+    
+    public static TransitionStall__c createSingleTransitionStall(Opportunity accBus)
+    {
+
+
+        Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.TransitionStall__c; 
+        Map<String,Schema.RecordTypeInfo> stallTypeInfo = cfrSchema.getRecordTypeInfosByName(); 
+        Id rtId = stallTypeInfo.get('Licence').getRecordTypeId();
+            
+        TransitionStall__c stall = new TransitionStall__c();
         stall.RecordTypeid = rtId;
         stall.ShedId__c = 'A' ;
         stall.StallId__c = '1';
@@ -93,7 +129,7 @@ public class TestDataFactory {
 
         Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Stall__c; 
         Map<String,Schema.RecordTypeInfo> stallTypeInfo = cfrSchema.getRecordTypeInfosByName(); 
-        Id rtId = stallTypeInfo.get('Casual').getRecordTypeId();
+        Id rtId = stallTypeInfo.get('Licence').getRecordTypeId();
             
 
 
@@ -123,7 +159,7 @@ public class TestDataFactory {
 
         Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Stall__c; 
         Map<String,Schema.RecordTypeInfo> stallTypeInfo = cfrSchema.getRecordTypeInfosByName(); 
-        Id rtId = stallTypeInfo.get('Permanent').getRecordTypeId();
+        Id rtId = stallTypeInfo.get('Lease').getRecordTypeId();
             
 
 
@@ -155,7 +191,7 @@ public class TestDataFactory {
 
         Schema.DescribeSObjectResult cfrSchema = Schema.SObjectType.Stall__c; 
         Map<String,Schema.RecordTypeInfo> stallTypeInfo = cfrSchema.getRecordTypeInfosByName(); 
-        Id rtId = stallTypeInfo.get('Permanent').getRecordTypeId();
+        Id rtId = stallTypeInfo.get('Lease').getRecordTypeId();
             
 
 
@@ -689,7 +725,8 @@ public class TestDataFactory {
         leadRecord.LastName='TestLastName';
         leadRecord.FirstName='TestFirstName';
         leadRecord.Company='TestCompany';
-        leadRecord.Status='New Application';             
+        leadRecord.Status='New Application';
+        leadRecord.ABN__C = '11111111111';
         return leadRecord ;   
     }
     
@@ -705,7 +742,8 @@ public class TestDataFactory {
         leadRecord.LastName='TestLastName';
         leadRecord.FirstName='TestFirstName';
         leadRecord.Company='TestCompany';
-        leadRecord.Status='New Application';             
+        leadRecord.Status='New Application';
+        leadRecord.ABN__C = '11111111111';
         return leadRecord ;   
     }
     
@@ -775,10 +813,15 @@ public class TestDataFactory {
     
     public static Payment__c createPayment(Id accountId)
     {
+
+        Batch_Jobs__c batch =  createMCCBatchJob();
+
         Payment__c payment = new Payment__c ();
         payment.Account__c = accountId;
         payment.QuickBook_Id__c = '12345';
-        
+        payment.Batch_Jobs__c = batch.Id;
+
+
         insert payment;
 
         return payment;
@@ -839,7 +882,8 @@ public class TestDataFactory {
         leadRecord.FirstName='TestFirstName';
         leadRecord.Company='TestCompany';
         leadRecord.Status='New Application'; 
-        leadRecord.Email = 'resmi.ramakrishnan@rxpservices.com';                    
+        leadRecord.Email = 'resmi.ramakrishnan@rxpservices.com';
+        leadRecord.ABN__C = '11111111111';
         return leadRecord ; 
     }
     

@@ -66,7 +66,8 @@ public without sharing class LeaveTriggerHelper
 			AggregateResult[] groupedResults = [select Account_Business__c, count(id)cnt
 							, DAY_IN_WEEK(Leave_Date__c )day 
 							from Leave__c
-							where Leave_Date__c = THIS_YEAR and Account_Business__c in  :oppset 
+							where Leave_Date__c = THIS_YEAR and Over_65_and_36_Degree_Day__c = false 
+                                                and Account_Business__c in  :oppset 
 							group by Account_Business__c, DAY_IN_WEEK(Leave_Date__c )];
 			for (AggregateResult ar : groupedResults)  
 			{

@@ -24,7 +24,10 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
@@ -33,7 +36,10 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -214,6 +220,7 @@
     </fields>
     <fields>
         <fullName>Height__c</fullName>
+        <defaultValue>18</defaultValue>
         <externalId>false</externalId>
         <label>Height</label>
         <precision>18</precision>
@@ -315,6 +322,7 @@
     </fields>
     <fields>
         <fullName>Left__c</fullName>
+        <defaultValue>5</defaultValue>
         <externalId>false</externalId>
         <label>Left</label>
         <precision>18</precision>
@@ -387,7 +395,7 @@
     </fields>
     <fields>
         <fullName>MCC_Cust_No__c</fullName>
-        <externalId>false</externalId>
+        <externalId>true</externalId>
         <label>MCC Cust No.</label>
         <length>20</length>
         <required>false</required>
@@ -565,6 +573,19 @@
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Rotationdeg__c</fullName>
+        <description>Rotation in degrees (multiple of 5)</description>
+        <externalId>false</externalId>
+        <label>Rotationdeg</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>SaturdayMultiplier__c</fullName>
         <defaultValue>1</defaultValue>
         <description>The Multiplier rate that will be added to the base rate for Saturday</description>
@@ -724,6 +745,7 @@
     </fields>
     <fields>
         <fullName>Top__c</fullName>
+        <defaultValue>5</defaultValue>
         <externalId>false</externalId>
         <label>Top</label>
         <precision>18</precision>
@@ -818,6 +840,7 @@
     </fields>
     <fields>
         <fullName>Width__c</fullName>
+        <defaultValue>36</defaultValue>
         <externalId>false</externalId>
         <label>Width</label>
         <precision>18</precision>
@@ -849,6 +872,31 @@
         <label>All</label>
     </listViews>
     <listViews>
+        <fullName>Permanent_Stalls</fullName>
+        <booleanFilter>1</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Product__c</columns>
+        <columns>Tenant__c</columns>
+        <columns>Annual_Rent__c</columns>
+        <columns>MCC_1st_Qtr_Ins__c</columns>
+        <columns>MCC_2nd_Qtr_Ins__c</columns>
+        <columns>MCC_3rd_Qtr_Ins__c</columns>
+        <columns>MCC_4th_Qtr_Ins__c</columns>
+        <columns>MCC_Cust_No__c</columns>
+        <columns>Metered_Water__c</columns>
+        <columns>CWW_Annual_Parks__c</columns>
+        <columns>CWW_Customer_No__c</columns>
+        <columns>CWW_Qtr_Drainage_Charge__c</columns>
+        <columns>CWW_Water_Usage__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Stall__c.Permanent</value>
+        </filters>
+        <label>Lease Stalls (LH)</label>
+    </listViews>
+    <listViews>
         <fullName>Sheds</fullName>
         <columns>NAME</columns>
         <columns>TuesdayTrader__c</columns>
@@ -856,13 +904,18 @@
         <columns>FridayTrader__c</columns>
         <columns>SaturdayTrader__c</columns>
         <columns>SundayTrader__c</columns>
+        <columns>Tuesday_Active_Price__c</columns>
+        <columns>Thursday_Active_Price__c</columns>
+        <columns>Friday_Active_Price__c</columns>
+        <columns>Saturday_Active_Price__c</columns>
+        <columns>Sunday_Active_Price__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>RECORDTYPE</field>
             <operation>equals</operation>
             <value>Stall__c.Casual</value>
         </filters>
-        <label>Sheds</label>
+        <label>Licence Stalls (PE / SL)</label>
     </listViews>
     <nameField>
         <label>Stall Name</label>
@@ -875,7 +928,7 @@
         <fullName>Casual</fullName>
         <active>true</active>
         <description>Stall locations that can change trader on a day to day basis</description>
-        <label>Casual</label>
+        <label>Licence</label>
         <picklistValues>
             <picklist>Lease_Term__c</picklist>
             <values>
@@ -965,8 +1018,8 @@
     <recordTypes>
         <fullName>Permanent</fullName>
         <active>true</active>
-        <description>Permanent stall locationc</description>
-        <label>Permanent</label>
+        <description>Permanent stall locations</description>
+        <label>Lease</label>
         <picklistValues>
             <picklist>Lease_Term__c</picklist>
             <values>
@@ -1054,8 +1107,8 @@
         </picklistValues>
     </recordTypes>
     <searchLayouts>
-
-
+        <customTabListAdditionalFields>Annual_Rent__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IsActive__c</customTabListAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

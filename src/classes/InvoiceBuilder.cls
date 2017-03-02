@@ -6,10 +6,13 @@ global class InvoiceBuilder {
         InvoiceBuilder.SetOrderRecordType('Processing_Invoices', batchJobId);
 		// get the orders of the batch and batch process them
         List<Order> orders = [SELECT Account.QuickBooks_Id__c,Batch_Job__c,Description,EffectiveDate, Opportunity.Terms__c, Opportunity.Payment_Type__c
-                       		,EndDate,Id,OpportunityId,OrderNumber,QuickBooksId__c,Status,StatusCode , Opportunity.Majik_AccountNo__c, 
+                       		,EndDate,Id,OpportunityId,OrderNumber,QuickBooksId__c,Status,StatusCode , Account.Name,
+                            Account.BillingAddress,Account.BillingCity ,Account.BillingCountry,Account.BillingGeocodeAccuracy,Account.BillingLatitude,Account.BillingLongitude
+                            ,Account.BillingPostalCode,Account.BillingState,Account.BillingStreet
+                            , Opportunity.Majik_AccountNo__c, Opportunity.RecordType.DeveloperName, Batch_Job__r.Batch_Type__c,
                         	(SELECT Date__c,Description,Formula_Total__c,ListPrice,OrderItemNumber
                              	,Quantity,ServiceDate,Total__c,UnitPrice,Stall__r.Name, PricebookEntry.Sku__c
-                             , PricebookEntry.Product2.Name
+                             , PricebookEntry.Product2.Name,  QBO_Class_Id__c
                         	 FROM OrderItems)
                        FROM Order 
                        WHERE Batch_Job__c  = :batchJobId and Total__c > 0 and QuickBooksId__c = ''];
@@ -26,10 +29,13 @@ global class InvoiceBuilder {
     {
 
         List<Order> orders = [SELECT Account.QuickBooks_Id__c,Batch_Job__c,Description,EffectiveDate, Opportunity.Terms__c, Opportunity.Payment_Type__c
-                       		,EndDate,Id,OpportunityId,OrderNumber,QuickBooksId__c,Status,StatusCode , Opportunity.Majik_AccountNo__c, 
+                       		,EndDate,Id,OpportunityId,OrderNumber,QuickBooksId__c,Status,StatusCode , Account.Name
+                            , Account.BillingAddress,Account.BillingCity ,Account.BillingCountry,Account.BillingGeocodeAccuracy,Account.BillingLatitude
+                            ,Account.BillingLongitude ,Account.BillingPostalCode,Account.BillingState,Account.BillingStreet
+                            , Opportunity.Majik_AccountNo__c, Opportunity.RecordType.DeveloperName , Batch_Job__r.Batch_Type__c,
                         	(SELECT Date__c,Description,Formula_Total__c,ListPrice,OrderItemNumber
                              	,Quantity,ServiceDate,Total__c,UnitPrice,Stall__r.Name, PricebookEntry.Sku__c
-                                ,PricebookEntry.Product2.Name
+                                ,PricebookEntry.Product2.Name, QBO_Class_Id__c
                         	 FROM OrderItems)
                        FROM Order 
                        WHERE Id = :orderId];
@@ -66,6 +72,12 @@ global class InvoiceBuilder {
                 custRef.value = order.Account.QuickBooks_Id__c;
                 invoice.CustomerRef = custRef;
                 invoice.PrivateNote = order.Description;
+
+                QBOInvoice.BillAddr billingAddress = new QBOInvoice.BillAddr();
+                billingAddress.Line1 = order.Account.Name;
+                billingAddress.Line2 = order.Account.BillingStreet;
+                billingAddress.Line3 = order.Account.BillingCity + ' ' + order.Account.BillingState + ' ' + order.Account.BillingPostalCode ;
+                invoice.BillAddr = billingAddress;
                 
                 // Add Majic number to the first custom field so that it can be used on the statements
                 List<QBOInvoice.CustomField> customFieldList  = new   List<QBOInvoice.CustomField>();
@@ -88,14 +100,26 @@ global class InvoiceBuilder {
                         terms = integer.valueof(order.Opportunity.Terms__c);
                     }catch(Exception ex){}
                 }
-                invoice.TxnDate = ((DateTime)order.EffectiveDate).format('YYYY-MM-dd');
-                invoice.DueDate = ((DateTime)order.EffectiveDate.addDays(terms)).format('YYYY-MM-dd');
-                invoice.DocNumber = order.OrderNumber;
+                
+                if ( order.Opportunity.RecordType.DeveloperName == 'LH' &&  order.Batch_Job__c != null && order.Batch_Job__r.Batch_Type__c == 'LH')
+                {
+                   //LH invoices are due on the effective date and the transaction date is back dated
+                   invoice.TxnDate = ((DateTime)order.EffectiveDate.addDays(terms * -1)).format('YYYY-MM-dd');
+                   invoice.DueDate = ((DateTime)order.EffectiveDate).format('YYYY-MM-dd');
+                }
+                else
+                {
+                   invoice.TxnDate = ((DateTime)order.EffectiveDate).format('YYYY-MM-dd');
+                   invoice.DueDate = ((DateTime)order.EffectiveDate.addDays(terms)).format('YYYY-MM-dd');
+                    
+                }
+                
+                invoice.DocNumber = order.OrderNumber; 
                 
                 if (order.Opportunity.Payment_Type__c == 'EFT')
                 {
                     QBOInvoice.TaxCodeRef memo = new QBOInvoice.TaxCodeRef();
-                    memo.value = '!!!DO NOT PAY!!!\nThis Invoice will be paid by Driect Debit';
+                    memo.value = 'This Invoice will be paid by Direct Debit';
                     invoice.CustomerMemo = memo;
                 }
                 
@@ -132,12 +156,12 @@ global class InvoiceBuilder {
                     // uplift and multiplier
                     if (oi.Total__c != oi.UnitPrice * oi.Quantity)
                     {
-                        lineDetail.UnitPrice = oi.Total__c;
+                        lineDetail.UnitPrice = oi.Total__c.setScale(2);
                         lineDetail.Qty = 1;  
                     }
                     else
                     {
-                        lineDetail.UnitPrice = oi.UnitPrice;
+                        lineDetail.UnitPrice = oi.UnitPrice.setScale(2);
                         lineDetail.Qty = oi.Quantity;  
                     }
                     
@@ -152,6 +176,13 @@ global class InvoiceBuilder {
                         {
                             taxCodeRefValue = item.SalesTaxCodeRef.value;
                         }
+                    }
+                    
+                    if (oi.QBO_Class_Id__c != null && oi.QBO_Class_Id__c != '')
+                    {
+                        QBOInvoice.Reference classRef  = new QBOInvoice.Reference();
+                    	classRef.value = oi.QBO_Class_Id__c;
+                    	lineDetail.ClassRef = classRef;
                     }
                     
                     QBOInvoice.TaxCodeRef taxCodeRef = new QBOInvoice.TaxCodeRef();
@@ -209,14 +240,17 @@ global class InvoiceBuilder {
 		update ordersToUpdate;   // updatethe orders with the qboId
         return true;
     }
-    
+    Webservice static void UpdateBatchType( Id batchJobId )
+    {  
+		   InvoiceBuilder.SetOrderRecordType('Processing_Invoices', batchJobId);
+    }
     
     public static void SetOrderRecordType(String DeveloperName, Id batchJobId)
     {
          if (batchJobId != null)
          {
              Batch_Jobs__c job = [SELECT Batch_Type__c,From_Date__c,Id,Name,Process_Range__c
-                                 ,RecordType.Name,To_Date__c,Week_Month_Of__c 
+                                 ,RecordType.DeveloperName,To_Date__c,Week_Month_Of__c 
                                  FROM Batch_Jobs__c 
                                  WHERE Id = :batchJobId LIMIT 1];
             

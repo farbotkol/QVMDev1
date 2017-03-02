@@ -4,12 +4,12 @@ global class AccountQBOHelper {
     {
         String qboUrl = GetQBOUrl();
 
-        Account acc = [SELECT RecordType.Name,QuickBooks_Id__c FROM Account WHERE Id = :recID];
+        Account acc = [SELECT RecordType.DeveloperName,QuickBooks_Id__c FROM Account WHERE Id = :recID];
         if(acc != null ){
-            If(acc.RecordType.Name.equals('Trader')){
+            If(acc.RecordType.DeveloperName.equals('Trader')){
                 return qboUrl+'/app/customerdetail?nameId='+acc.QuickBooks_Id__c;
             }
-            else if(acc.RecordType.Name.equals('Supplier')){
+            else if(acc.RecordType.DeveloperName.equals('Supplier')){
                 return qboUrl+'/app/vendordetail?nameId='+acc.QuickBooks_Id__c;
             }
             else
@@ -77,7 +77,7 @@ global class AccountQBOHelper {
                                       Primary_Contact__r.Email,QuickBooks_Id__c
                                       ,RecordTypeId,ShippingAddress,ShippingCity,ShippingCountry
                                       ,ShippingGeocodeAccuracy,ShippingLatitude,ShippingLongitude,ShippingPostalCode,ShippingState
-                                      ,ShippingStreet,SicDesc,SystemModstamp,Trader_Status__c,Trading_Name__c,Type,Website 
+                                      ,ShippingStreet,SicDesc,SystemModstamp,Trader_Status__c,Trading_Name__c,Type,Website , E_Mail__c
                                   FROM Account
                                   WHERE Id IN :scope
                                  ];
@@ -135,8 +135,15 @@ global class AccountQBOHelper {
             
             //Primary EmailAddress
             QBOCustomer.PrimaryEmailAddr pEmail = new QBOCustomer.PrimaryEmailAddr();
-            pEmail.Address = so.Primary_Contact__r.Email;
-            customer.PrimaryEmailAddr = pEmail  ; 
+            if (so.E_Mail__c != null)
+            {
+                pEmail.Address = so.E_Mail__c;
+            }
+            else
+            {
+                pEmail.Address = so.Primary_Contact__r.Email;
+       		}
+            customer.PrimaryEmailAddr = pEmail; 
             
             //WebAddress
             QBOCustomer.WebAddr webAddress = new QBOCustomer.WebAddr();
@@ -241,7 +248,7 @@ global class AccountQBOHelper {
                                       ,OwnerId,ParentId,Phone,PhotoUrl,Primary_Contact__c,
                                       Primary_Contact__r.Salutation,Primary_Contact__r.FirstName,Primary_Contact__r.MiddleName, 
                                       Primary_Contact__r.LastName,Primary_Contact__r.Suffix, 
-                                      Primary_Contact__r.Email,QuickBooks_Id__c
+                                      Primary_Contact__r.Email,QuickBooks_Id__c, E_Mail__c
                                       ,RecordTypeId,ShippingAddress,ShippingCity,ShippingCountry
                                       ,ShippingGeocodeAccuracy,ShippingLatitude,ShippingLongitude,ShippingPostalCode,ShippingState
                                       ,ShippingStreet,SicDesc,SystemModstamp,Trader_Status__c,Trading_Name__c,Type,Website 
@@ -300,7 +307,7 @@ global class AccountQBOHelper {
             
             //Primary EmailAddress
             Supplier.PrimaryEmailAddr pEmail = new Supplier.PrimaryEmailAddr();
-            pEmail.Address = so.Primary_Contact__r.Email;
+            pEmail.Address = so.E_Mail__c;
             Supplier.PrimaryEmailAddr = pEmail  ;
             
             //WebAddress

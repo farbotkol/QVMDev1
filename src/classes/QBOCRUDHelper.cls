@@ -142,6 +142,8 @@ public with sharing class QBOCRUDHelper {
                 return QBOPaymentResponse.parse(responseString);
             }
             else{
+                
+        		responseString = responseString.replace('Class', 'Class_Z') ;
                 return System.JSON.deserialize(responseString, apexType);
             }
                 
@@ -229,6 +231,7 @@ public with sharing class QBOCRUDHelper {
     {
         
         jsonObj = jsonObj.replace('Type_Z', 'Type') ;
+        jsonObj = jsonObj.replace('Class_Z', 'Class') ;
         try
         {
             Http h = new Http();
@@ -262,6 +265,7 @@ public with sharing class QBOCRUDHelper {
             
             // Check if for errors, if there are errors then return a QBOError instead of expected apexType
             if (res.getStatusCode() == 200) {
+                responseString = responseString.replace('Class', 'Class_Z');// new from luke
                 return System.JSON.deserialize(responseString, apexType);
             }else{
                 if (res.getBody().contains('The request limit was reached'))

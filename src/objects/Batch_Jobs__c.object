@@ -24,7 +24,10 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
@@ -33,7 +36,10 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -234,6 +240,21 @@ LH = Licence Holder</inlineHelpText>
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Invoice_Total__c</fullName>
+        <externalId>false</externalId>
+        <label>Invoice Total</label>
+        <summarizedField>Transaction__c.Outstanding_Balance__c</summarizedField>
+        <summaryFilterItems>
+            <field>Transaction__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Invoice</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Transaction__c.Batch_Jobs__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
         <fullName>Outstanding_Balance__c</fullName>
         <externalId>false</externalId>
         <label>Outstanding Balance</label>
@@ -250,6 +271,16 @@ LH = Licence Holder</inlineHelpText>
         <label>Payment Amount</label>
         <summarizedField>Transaction__c.Signed_Balance__c</summarizedField>
         <summaryForeignKey>Transaction__c.Batch_Jobs__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Total__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Total</label>
+        <summarizedField>Payment__c.Total_Amount__c</summarizedField>
+        <summaryForeignKey>Payment__c.Batch_Jobs__c</summaryForeignKey>
         <summaryOperation>sum</summaryOperation>
         <trackTrending>false</trackTrending>
         <type>Summary</type>
@@ -285,6 +316,15 @@ EFT - Direct Debit</inlineHelpText>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Process_Bonds__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Select this if you are are only processing bond payments. If this value is turned off all other invoice type will be processed</inlineHelpText>
+        <label>Process Bonds</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Process_Range__c</fullName>
@@ -1811,14 +1851,14 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
         </picklistValues>
     </recordTypes>
     <searchLayouts>
-
-
-
-
-
-
-
-
+        <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Batch_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Process_Range__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>From_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>To_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Week_Month_Of__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <validationRules>
@@ -1831,7 +1871,7 @@ DATE( YEAR( Week_Month_Of__c ), MONTH ( Week_Month_Of__c ) + 1, 1 ) - 1
     </validationRules>
     <validationRules>
         <fullName>Prevent_Overpaying</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Prevents the customer paying more than the owed amount.</description>
         <errorConditionFormula>IF( Balance_Receeded__c &gt; Outstanding_Balance__c , true, false)</errorConditionFormula>
         <errorDisplayField>Balance_Receeded__c</errorDisplayField>
@@ -1912,6 +1952,8 @@ btnService.value = &apos;Processing...&apos;;
 if(btnService.disabled == false){
 
   btnService.disabled = true;
+
+sforce.apex.execute(&quot;InvoiceBuilder&quot;,&quot;UpdateBatchType&quot;,{batchJobId:&quot;{!Batch_Jobs__c.Id}&quot;}); 
 
  var requestBody =
  &apos;&lt;se:Envelope xmlns:se=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&lt;se:Header xmlns:sfns=&quot;http://soap.sforce.com/schemas/package/InvoiceBuilder&quot;&gt;&lt;sfns:SessionHeader&gt;&lt;sessionId&gt;{!GETSESSIONID()}&lt;/sessionId&gt;&lt;/sfns:SessionHeader&gt;&lt;/se:Header&gt;&lt;se:Body&gt;&lt;GenerateInvoices xmlns=&quot;http://soap.sforce.com/schemas/package/InvoiceBuilder&quot;&gt;&lt;batchJobId&gt;{!Batch_Jobs__c.Id}&lt;/batchJobId&gt;&lt;/GenerateInvoices&gt;&lt;/se:Body&gt;&lt;/se:Envelope&gt;&apos;

@@ -531,6 +531,13 @@
             "xmlName": "PathAssistant"
         },
         {
+            "directoryName": "LeadConvertSettings",
+            "inFolder": false,
+            "metaFile": false,
+            "suffix": "LeadConvertSetting",
+            "xmlName": "LeadConvertSettings"
+        },
+        {
             "directoryName": "cachePartitions",
             "inFolder": false,
             "metaFile": false,

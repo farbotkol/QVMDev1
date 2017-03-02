@@ -1,0 +1,21 @@
+<apex:page controller="StallMapController" sidebar="false" showHeader="false">
+    
+    <apex:form >
+    
+	<apex:inputFile value="{!document.body}" filename="{!document.name}" id="file"/>	
+	<apex:commandButton action="{!upload}" value="Upload Image"/>
+    <input type="button" value="Back to Map" class="btn" onclick="toMainPage()" />
+    <apex:pageMessages />
+    
+    
+	
+    </apex:form>
+    
+    <script>
+    	function toMainPage(){
+
+            // create case, etc.
+            window.location.href='./apex/StallMap';
+        }
+    </script>
+</apex:page>
