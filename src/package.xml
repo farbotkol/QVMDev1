@@ -21,6 +21,11 @@
         <name>ApprovalProcess</name>
     </types>
     <types>
+        <members>Case</members>
+        <members>Lead</members>
+        <name>AssignmentRules</name>
+    </types>
+    <types>
         <members>QVM</members>
         <members>Service_Console</members>
         <members>standard__Chatter</members>
@@ -126,7 +131,6 @@
         <name>CustomTab</name>
     </types>
     <types>
-        <members>QVM_Email_Templates</members>
         <members>QVM_Email_Templates/CaseClosed</members>
         <members>QVM_Email_Templates/Change_Request</members>
         <members>QVM_Email_Templates/Event_Lead_Auto_Response</members>
@@ -139,6 +143,7 @@
         <members>QVM_Email_Templates/QVM_Property_Management_Application_Rejected</members>
         <members>QVM_Email_Templates/Supplier_Approval_Template_html</members>
         <members>QVM_Email_Templates/Supplier_Approved_Notice</members>
+        <members>unfiled$public</members>
         <members>unfiled$public/CommunityChangePasswordEmailTemplate</members>
         <members>unfiled$public/CommunityForgotPasswordEmailTemplate</members>
         <members>unfiled$public/CommunityWelcomeEmailTemplate</members>

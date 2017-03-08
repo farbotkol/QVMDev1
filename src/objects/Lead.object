@@ -48,10 +48,7 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>ListClean</actionName>
         <type>Default</type>
@@ -64,10 +61,7 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -2871,7 +2865,7 @@ MID(TEXT( Campaign__r.EndDate ), 9, 2)&amp;&quot;/&quot;&amp; MID(TEXT( Campaign
         </picklistValues>
     </recordTypes>
     <searchLayouts>
-        <customTabListAdditionalFields>FULL_NAME</customTabListAdditionalFields>
+
         <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>LEAD.COMPANY</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>LEAD.LEAD_SOURCE</lookupDialogsAdditionalFields>

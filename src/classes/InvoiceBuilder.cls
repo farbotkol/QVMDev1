@@ -114,7 +114,7 @@ global class InvoiceBuilder {
                     
                 }
                 
-                invoice.DocNumber = order.OrderNumber; 
+                invoice.DocNumber = order.OrderNumber + '-0'; 
                 
                 if (order.Opportunity.Payment_Type__c == 'EFT')
                 {

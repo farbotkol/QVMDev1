@@ -81,7 +81,16 @@ global class LeaveCreditNoteBuilder {
                     line.Description += item.Description;  
                 }
                 
-                invoice.DocNumber = 'L' + item.OrderItemNumber + '-' + line.Description.replace(' ', '');
+                try
+                {
+                    invoice.DocNumber = 'L' + String.valueOf(Integer.valueOf(item.OrderItemNumber)) + '-' + line.Description.replace(' ', '');
+                    
+                }
+                catch (Exception ex)
+                {
+                    invoice.DocNumber = 'L' + item.OrderItemNumber + '-' + line.Description.replace(' ', '');
+                }
+                
                 
                 line.DetailType = 'SalesItemLineDetail';
                 QBOInvoice.SalesItemLineDetail lineDetail = new QBOInvoice.SalesItemLineDetail();

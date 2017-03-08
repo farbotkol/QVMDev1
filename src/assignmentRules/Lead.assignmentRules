@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>WebLead Assignment</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <assignedTo>Events_Department_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>QVM Events</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Food_Fruit_and_Veg</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>QVM Property Management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Application_Type__c</field>
+                <operation>equals</operation>
+                <value>FoodTrading,FruitAndVegetableTrading</value>
+            </criteriaItems>
+            <template>unfiled$public/LeadsNewassignmentnotificationSAMPLE</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Retail_Tenancy_and_Modular_Units</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>QVM Property Management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Application_Type__c</field>
+                <operation>equals</operation>
+                <value>RetailTenancy,ModularRetailUnit</value>
+            </criteriaItems>
+            <template>unfiled$public/LeadsNewassignmentnotificationSAMPLE</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Merchandise_Stalls</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.Application_Type__c</field>
+                <operation>equals</operation>
+                <value>MerchandiseStall</value>
+            </criteriaItems>
+            <template>unfiled$public/LeadsNewassignmentnotificationSAMPLE</template>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

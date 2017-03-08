@@ -22,7 +22,7 @@
     </actionOverrides>
 
     <actionOverrides>
-        <actionName>NewProfileSkillEndorsement</actionName>
+        <actionName>New</actionName>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
@@ -35,22 +35,6 @@
         <type>Default</type>
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <enableFeeds>true</enableFeeds>
-    <fields>
-        <fullName>ProfileSkillUserId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>MasterDetail</type>
-    </fields>
-    <fields>
-        <fullName>UserId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <searchLayouts>
-        <searchResultsAdditionalFields>User</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>CreatedDate</searchResultsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>ControlledByParent</sharingModel>
+    <enableFeeds>false</enableFeeds>
+    <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

@@ -24,10 +24,7 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
@@ -36,10 +33,7 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -294,7 +288,7 @@
     </fields>
     <fields>
         <fullName>Contracted_Leave__c</fullName>
-        <defaultValue>0</defaultValue>
+        <defaultValue>4</defaultValue>
         <description>The number of days leave the Trader has for the year</description>
         <externalId>false</externalId>
         <label>Contracted Leave Weeks</label>
@@ -7926,9 +7920,9 @@
         </picklistValues>
     </recordTypes>
     <searchLayouts>
-        <customTabListAdditionalFields>OPPORTUNITY.NAME</customTabListAdditionalFields>
-        <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
-        <customTabListAdditionalFields>OPPORTUNITY.CLOSE_DATE</customTabListAdditionalFields>
+
+
+
         <listViewButtons>Send_Bulk_SMS</listViewButtons>
         <lookupDialogsAdditionalFields>OPPORTUNITY.NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>

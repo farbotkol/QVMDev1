@@ -44,10 +44,7 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>ListClean</actionName>
         <type>Default</type>
@@ -68,10 +65,7 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -437,9 +431,9 @@
         <label>My Contacts</label>
     </listViews>
     <searchLayouts>
-        <customTabListAdditionalFields>FULL_NAME</customTabListAdditionalFields>
-        <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
-        <customTabListAdditionalFields>CONTACT.PHONE1</customTabListAdditionalFields>
+
+
+
         <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
         <lookupFilterFields>FULL_NAME</lookupFilterFields>

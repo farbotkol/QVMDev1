@@ -36,10 +36,7 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>MassClose</actionName>
         <type>Default</type>
@@ -52,10 +49,7 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -485,6 +479,20 @@ Petros Kosonen.</inlineHelpText>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Lead_Cases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Location__c</fullName>
@@ -1423,7 +1431,23 @@ Petros Kosonen.</inlineHelpText>
                 <fullName>Other</fullName>
                 <default>false</default>
                 <controllingFieldValues>Food</controllingFieldValues>
+                <controllingFieldValues>IT request</controllingFieldValues>
                 <controllingFieldValues>Incident - Injury</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Password reset</fullName>
+                <default>false</default>
+                <controllingFieldValues>IT request</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hardware request</fullName>
+                <default>false</default>
+                <controllingFieldValues>IT request</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Software request</fullName>
+                <default>false</default>
+                <controllingFieldValues>IT request</controllingFieldValues>
             </picklistValues>
             <picklistValues>
                 <fullName>Hazard</fullName>
@@ -1587,6 +1611,10 @@ Petros Kosonen.</inlineHelpText>
                 <fullName>Website Update</fullName>
                 <default>false</default>
             </picklistValues>
+            <picklistValues>
+                <fullName>IT request</fullName>
+                <default>false</default>
+            </picklistValues>
             <sorted>false</sorted>
         </picklist>
         <trackFeedHistory>false</trackFeedHistory>
@@ -1711,6 +1739,15 @@ Petros Kosonen.</inlineHelpText>
         <filterScope>Queue</filterScope>
         <label>Finance Department Queue</label>
         <queue>Finance_Department_Queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>IT_department_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>IT department</label>
+        <queue>IT_department</queue>
         <sharedTo>
             <allInternalUsers></allInternalUsers>
         </sharedTo>
@@ -3359,6 +3396,10 @@ Petros Kosonen.</inlineHelpText>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Hardware request</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Invoice Query</fullName>
                 <default>false</default>
             </values>
@@ -3403,6 +3444,10 @@ Petros Kosonen.</inlineHelpText>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Password reset</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Permitted Use</fullName>
                 <default>false</default>
             </values>
@@ -3424,6 +3469,10 @@ Petros Kosonen.</inlineHelpText>
             </values>
             <values>
                 <fullName>Social Media</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Software request</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -3487,6 +3536,10 @@ Petros Kosonen.</inlineHelpText>
             </values>
             <values>
                 <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT request</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -3968,12 +4021,12 @@ Petros Kosonen.</inlineHelpText>
         </picklistValues>
     </recordTypes>
     <searchLayouts>
-        <customTabListAdditionalFields>CASES.CASE_NUMBER</customTabListAdditionalFields>
-        <customTabListAdditionalFields>NAME</customTabListAdditionalFields>
-        <customTabListAdditionalFields>CASES.SUBJECT</customTabListAdditionalFields>
-        <customTabListAdditionalFields>CASES.TYPE</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Sub_Type__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>CASES.CREATED_DATE_DATE_ONLY</customTabListAdditionalFields>
+
+
+
+
+
+
         <lookupDialogsAdditionalFields>CASES.CASE_NUMBER</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CASES.SUBJECT</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>NAME</lookupDialogsAdditionalFields>

@@ -24,18 +24,12 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -46,19 +40,9 @@
         <fullName>Description</fullName>
         <trackHistory>false</trackHistory>
     </fields>
-    <fields>
-        <fullName>DisplayUrl</fullName>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>ExternalDataSourceId</fullName>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>ExternalId</fullName>
-        <trackHistory>false</trackHistory>
-    </fields>
+
+
+
     <fields>
         <fullName>Family</fullName>
         <picklist>
@@ -111,18 +95,7 @@
         <fullName>ProductCode</fullName>
         <trackHistory>false</trackHistory>
     </fields>
-    <fields>
-        <fullName>QuantityUnitOfMeasure</fullName>
-        <picklist>
-            <picklistValues>
-                <fullName>Each</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
-        <trackHistory>false</trackHistory>
-        <type>Picklist</type>
-    </fields>
+
     <fields>
         <fullName>SKU__c</fullName>
         <description>QBO Product code</description>
@@ -158,9 +131,9 @@
         <label>All Products</label>
     </listViews>
     <searchLayouts>
-        <customTabListAdditionalFields>PRODUCT2.NAME</customTabListAdditionalFields>
-        <customTabListAdditionalFields>PRODUCT2.CUSTOMER_PRODUCT_ID</customTabListAdditionalFields>
-        <customTabListAdditionalFields>PRODUCT2.DESCRIPTION</customTabListAdditionalFields>
+
+
+
         <lookupDialogsAdditionalFields>PRODUCT2.NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>PRODUCT2.CUSTOMER_PRODUCT_ID</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>PRODUCT2.DESCRIPTION</lookupDialogsAdditionalFields>
