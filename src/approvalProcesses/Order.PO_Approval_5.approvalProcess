@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
-    <active>false</active>
+    <active>true</active>
     <allowRecall>true</allowRecall>
     <allowedSubmitters>
         <type>owner</type>
@@ -14,35 +14,90 @@
     </approvalPageFields>
     <approvalStep>
         <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Approved_Upto_5000</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
         <assignedApprover>
             <approver>
                 <type>userHierarchyField</type>
             </approver>
         </assignedApprover>
         <description>Stage 1 Approval Upto 5k</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>User.Approval_Managers_Threshold__c</field>
+                <operation>lessOrEqual</operation>
+                <value>5000</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
         <label>Stage 1 Approval Upto 5k</label>
         <name>Stage_1_Approval_Upto_5k</name>
     </approvalStep>
     <approvalStep>
-        <allowDelegate>false</allowDelegate>
+        <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Approved_Value_to_10000</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
         <assignedApprover>
             <approver>
                 <type>userHierarchyField</type>
             </approver>
         </assignedApprover>
-        <description>Stage 2 Approval Upto 25k</description>
+        <description>Approval Upto 10k</description>
         <entryCriteria>
             <criteriaItems>
-                <field>Order.TotalAmount</field>
-                <operation>greaterOrEqual</operation>
-                <value>5000</value>
+                <field>User.Approval_Managers_Threshold__c</field>
+                <operation>lessOrEqual</operation>
+                <value>10000</value>
             </criteriaItems>
             <criteriaItems>
-                <field>User.Manager</field>
-                <operation>notEqual</operation>
+                <field>Order.Approval_Value_Met__c</field>
+                <operation>equals</operation>
+                <value>False</value>
             </criteriaItems>
         </entryCriteria>
-        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>10k Approval</label>
+        <name>X10k_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Approved_Upto_25000</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <type>userHierarchyField</type>
+            </approver>
+        </assignedApprover>
+        <description>Approval Stage 2 Upto 25k</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2</booleanFilter>
+            <criteriaItems>
+                <field>User.Approval_Managers_Threshold__c</field>
+                <operation>lessOrEqual</operation>
+                <value>25000</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Order.Approval_Value_Met__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
         <label>Stage 2 Approval Upto 25k</label>
         <name>Stage_2_Approval_Upto_25k</name>
         <rejectBehavior>
@@ -51,25 +106,31 @@
     </approvalStep>
     <approvalStep>
         <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Approved_Upto_50000</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
         <assignedApprover>
             <approver>
                 <type>userHierarchyField</type>
             </approver>
         </assignedApprover>
-        <description>Stage 3 Approval  Upto 50k</description>
         <entryCriteria>
             <criteriaItems>
-                <field>Order.TotalAmount</field>
-                <operation>greaterThan</operation>
-                <value>25000</value>
+                <field>Order.Approval_Value_Met__c</field>
+                <operation>equals</operation>
+                <value>False</value>
             </criteriaItems>
             <criteriaItems>
-                <field>User.Manager</field>
-                <operation>notEqual</operation>
+                <field>User.Approval_Managers_Threshold__c</field>
+                <operation>lessOrEqual</operation>
+                <value>50000</value>
             </criteriaItems>
         </entryCriteria>
-        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
-        <label>Stage 3 Approval  Upto 50k</label>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Stage 3 Approval Upto 50k</label>
         <name>Stage_3_Approval_Upto_50k</name>
         <rejectBehavior>
             <type>RejectRequest</type>
@@ -77,47 +138,32 @@
     </approvalStep>
     <approvalStep>
         <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Approved_Upto_10000000</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
         <assignedApprover>
             <approver>
                 <type>userHierarchyField</type>
             </approver>
         </assignedApprover>
-        <description>Stage 4 Approval  Upto 100k</description>
+        <description>Stage 4 Approval &gt; 50K</description>
         <entryCriteria>
             <criteriaItems>
-                <field>Order.TotalAmount</field>
-                <operation>greaterThan</operation>
-                <value>50000</value>
+                <field>Order.Approval_Value_Met__c</field>
+                <operation>equals</operation>
+                <value>False</value>
             </criteriaItems>
             <criteriaItems>
-                <field>User.Manager</field>
-                <operation>notEqual</operation>
+                <field>User.Approval_Managers_Threshold__c</field>
+                <operation>lessOrEqual</operation>
+                <value>10000000</value>
             </criteriaItems>
         </entryCriteria>
-        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
-        <label>Stage 4 Approval  Upto 100k</label>
-        <name>Stage_4_Approval_Upto_100k</name>
-        <rejectBehavior>
-            <type>RejectRequest</type>
-        </rejectBehavior>
-    </approvalStep>
-    <approvalStep>
-        <allowDelegate>false</allowDelegate>
-        <assignedApprover>
-            <approver>
-                <type>userHierarchyField</type>
-            </approver>
-        </assignedApprover>
-        <description>Board Level Approval &gt; 100k</description>
-        <entryCriteria>
-            <criteriaItems>
-                <field>Order.TotalAmount</field>
-                <operation>greaterOrEqual</operation>
-                <value>100000</value>
-            </criteriaItems>
-        </entryCriteria>
-        <label>Board Level Approval &gt; 100k</label>
-        <name>Board_Level_Approval_100k</name>
+        <label>Stage 4 Approval  gtr 50k</label>
+        <name>Stage_4_Approval_gtr_50k</name>
         <rejectBehavior>
             <type>RejectRequest</type>
         </rejectBehavior>
@@ -140,8 +186,12 @@
             <name>PO_Approval_Email</name>
             <type>Alert</type>
         </action>
+        <action>
+            <name>Update_Approved_Value</name>
+            <type>FieldUpdate</type>
+        </action>
     </finalApprovalActions>
-    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
     <finalRejectionActions>
         <action>
             <name>PO_Rejected_Email</name>
@@ -149,7 +199,13 @@
         </action>
     </finalRejectionActions>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
-    <label>PO Approval 3 v2</label>
+    <initialSubmissionActions>
+        <action>
+            <name>Approved_Upto_0</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>PO Approval 5</label>
     <nextAutomatedApprover>
         <useApproverFieldOfRecordOwner>false</useApproverFieldOfRecordOwner>
         <userHierarchyField>Manager</userHierarchyField>

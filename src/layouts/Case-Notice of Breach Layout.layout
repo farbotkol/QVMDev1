@@ -101,7 +101,7 @@
                 <field>Offense_Rule_Picklist__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
+                <behavior>Edit</behavior>
                 <field>Rule_Description__c</field>
             </layoutItems>
             <layoutItems>

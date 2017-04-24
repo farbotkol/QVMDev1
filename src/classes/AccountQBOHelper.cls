@@ -146,9 +146,9 @@ global class AccountQBOHelper {
             customer.PrimaryEmailAddr = pEmail; 
             
             //WebAddress
-            QBOCustomer.WebAddr webAddress = new QBOCustomer.WebAddr();
-            webAddress.URI = so.Website;
-            customer.WebAddr = webAddress  ;      
+            //QBOCustomer.WebAddr webAddress = new QBOCustomer.WebAddr();
+            //webAddress.URI = so.Website;
+            //customer.WebAddr = webAddress  ;      
             
             // Billing Address
             QBOCustomer.Address billAddr = new QBOCustomer.Address();

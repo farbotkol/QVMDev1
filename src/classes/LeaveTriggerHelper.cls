@@ -14,9 +14,13 @@ public without sharing class LeaveTriggerHelper
 
 			for (Leave__c item : leave)
 			{
-				oppset.add(item.Account_Business__c);
-				dateset.add(item.Leave_Date__c );
-				leaveMap.put(item.Account_Business__c + item.Leave_Date__c.format(), item);
+				If (item.In_Valid__c == false)
+				{
+					oppset.add(item.Account_Business__c);
+					dateset.add(item.Leave_Date__c );
+					leaveMap.put(item.Account_Business__c + item.Leave_Date__c.format(), item);
+				}
+				
 			}
 
 			System.debug('Getting orderItems');
@@ -65,8 +69,8 @@ public without sharing class LeaveTriggerHelper
 
 			AggregateResult[] groupedResults = [select Account_Business__c, count(id)cnt
 							, DAY_IN_WEEK(Leave_Date__c )day 
-							from Leave__c
-							where Leave_Date__c = THIS_YEAR and Over_65_and_36_Degree_Day__c = false 
+							from Leave__c 
+							where Leave_Date__c = THIS_YEAR and Over_65_and_36_Degree_Day__c = false and in_valid__c = false 
                                                 and Account_Business__c in  :oppset 
 							group by Account_Business__c, DAY_IN_WEEK(Leave_Date__c )];
 			for (AggregateResult ar : groupedResults)  

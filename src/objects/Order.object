@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-
+    <actionOverrides>
+        <actionName>ActivateOrder</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>Approve</actionName>
         <type>Default</type>
@@ -29,7 +32,10 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
@@ -46,7 +52,10 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -57,8 +66,8 @@
         <fullName>AccountId</fullName>
         <lookupFilter>
             <active>true</active>
-            <booleanFilter>1 OR (2 AND 3)</booleanFilter>
-            <errorMessage>Account Supplier has not been approved for Purchase Orders</errorMessage>
+            <booleanFilter>1 OR (2 AND 3 AND 4)</booleanFilter>
+            <errorMessage>Account Supplier has not been approved for Purchase Orders or the supplier account has been CLOSED</errorMessage>
             <filterItems>
                 <field>Account.RecordType.DeveloperName</field>
                 <operation>equals</operation>
@@ -73,6 +82,11 @@
                 <field>Account.Supplier_Approved__c</field>
                 <operation>equals</operation>
                 <value>True</value>
+            </filterItems>
+            <filterItems>
+                <field>Account.Supplier_Status__c</field>
+                <operation>notEqual</operation>
+                <value>Closed</value>
             </filterItems>
             <isOptional>false</isOptional>
         </lookupFilter>
@@ -221,7 +235,7 @@
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <inlineHelpText>Have the goods or Services been received</inlineHelpText>
-        <label>Goods/Services Recieved</label>
+        <label>Goods/Services Received</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
     </fields>
@@ -381,6 +395,22 @@
         <filterScope>Everything</filterScope>
         <label>All Orders</label>
     </listViews>
+    <listViews>
+        <fullName>Orders_to_be_processed_by_AR</fullName>
+        <columns>ORDERS.ORDER_NUMBER</columns>
+        <columns>SALES.ACCOUNT.NAME</columns>
+        <columns>ORDERS.TOTAL_AMOUNT</columns>
+        <columns>ORDERS.EFFECTIVE_DATE</columns>
+        <columns>ORDERS.STATUS</columns>
+        <columns>CONTRACT.CONTRACT_NUMBER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ORDERS.STATUS</field>
+            <operation>equals</operation>
+            <value>Confirmed for Invoicing</value>
+        </filters>
+        <label>Orders to be processed by AR</label>
+    </listViews>
     <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <recordTypes>
         <fullName>Accounts_Payable</fullName>
@@ -444,10 +474,10 @@
         </picklistValues>
     </recordTypes>
     <searchLayouts>
-
+        <customTabListAdditionalFields>ORDERS.ORDER_NUMBER</customTabListAdditionalFields>
         <customTabListAdditionalFields>SALES.ACCOUNT.NAME</customTabListAdditionalFields>
-
-
+        <customTabListAdditionalFields>ORDERS.STATUS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ORDERS.TOTAL_AMOUNT</customTabListAdditionalFields>
         <lookupDialogsAdditionalFields>ORDERS.ORDER_NUMBER</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CONTRACT.OWNERALIAS</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>ORDERS.ORDER_NUMBER</lookupPhoneDialogsAdditionalFields>
@@ -469,7 +499,7 @@
     <validationRules>
         <fullName>Value_greater_then_zero</fullName>
         <active>true</active>
-        <errorConditionFormula>IF( AND( Goods_Services_Recieved__c = TRUE, TotalAmount &lt;= 0 ) , TRUE, FALSE)</errorConditionFormula>
+        <errorConditionFormula>IF( AND( Goods_Services_Recieved__c = TRUE,  PO_Approved__c = FALSE ) , TRUE, FALSE)</errorConditionFormula>
         <errorMessage>For goods / services to be recieved the order must have a value greater then zero. Please add order lines and submit the PO for approval before flaging goods / services as recieved</errorMessage>
     </validationRules>
     <webLinks>

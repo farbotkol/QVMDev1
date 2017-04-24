@@ -24,7 +24,10 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
@@ -33,7 +36,10 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -52,6 +58,14 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
+        <fullName>AWOL__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>AWOL</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Account_Business__c</fullName>
         <description>The account business (Opp) that the leave is allocated against</description>
         <externalId>false</externalId>
@@ -65,6 +79,15 @@
         <trackTrending>false</trackTrending>
         <type>MasterDetail</type>
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>In_Valid__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Leave that is still charged but does not contribute to annual leave balance</inlineHelpText>
+        <label>Invalid</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Leave_Date__c</fullName>
@@ -96,7 +119,7 @@
     </fields>
     <fields>
         <fullName>UniqueId__c</fullName>
-        <caseSensitive>false</caseSensitive>
+        <caseSensitive>true</caseSensitive>
         <externalId>false</externalId>
         <label>UniqueId</label>
         <length>50</length>

@@ -33,7 +33,7 @@ public class StatementController {
         }
         if(customerRef != null){
             try{//sales_cust1
-                Object res =  crudHelper.report('CustomerBalanceDetail','customer=' + String.escapeSingleQuotes(customerRef) +'&arpaid=All&sort_by=tx_date&sort_order=descend&columns=tx_date,txn_type,doc_num,due_date,subt_amount,subt_open_bal,rbal_open_bal,sales_cust1',QBOCustomerBalanceDetail.class); 
+                Object res =  crudHelper.report('CustomerBalanceDetail','customer=' + String.escapeSingleQuotes(customerRef) +'&arpaid=All&sort_by=tx_date&columns=tx_date,txn_type,doc_num,due_date,subt_amount,subt_open_bal,rbal_open_bal,sales_cust1',QBOCustomerBalanceDetail.class); 
                 
                 if (res instanceof QBOError)
                 {

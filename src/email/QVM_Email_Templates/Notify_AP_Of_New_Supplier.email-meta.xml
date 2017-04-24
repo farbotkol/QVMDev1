@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notify AP Of New Supplier</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>QVM_Header</letterhead>
+    <name>Notify AP Of New Supplier</name>
+    <style>freeForm</style>
+    <subject>New Supplier - Bank Details</subject>
+    <textOnly>A new supplier has been created in Salesforce and Quickbooks. Their bank details will need to be update with the following.
+
+Supplier Name: {!Account.Name}
+BSB Number: {!Account.BSB_Number__c}
+Account No.: {!Account.Bank_Account_Number__c}</textOnly>
+    <type>html</type>
+</EmailTemplate>

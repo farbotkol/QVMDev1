@@ -20,7 +20,7 @@
          <apex:inputField value="{!AppSub.weblead.Percentage_Of_Ingrediance__c}" required="true"/>
 
          <apex:outputLabel value="{!$ObjectType.Lead.fields.free_trade_initiatives__c.InlineHelpText}"/>
-         <apex:inputField value="{!AppSub.weblead.free_trade_initiatives__c}" required="true"/>
+         <apex:inputField value="{!AppSub.weblead.free_trade_initiatives__c}"/>
 
 <p style="font-size:120%;"><br></br><b>Please upload a minimum of three different images of your proposed menu item/s*</b></p>
 

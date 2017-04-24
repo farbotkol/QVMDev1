@@ -404,6 +404,9 @@
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
+                <emptySpace>true</emptySpace>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Leave_Remaining_Monday__c</field>
             </layoutItems>
@@ -443,6 +446,34 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Casual_Trading_Days__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>DOF_Monday__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>DOF_Tuesday__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>DOF_Wednesday__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>DOF_Thursday__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>DOF_Friday__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>DOF_Saturday__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>DOF_Sunday__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns/>
@@ -514,8 +545,11 @@
             <actionType>QuickAction</actionType>
             <sortOrder>6</sortOrder>
         </platformActionListItems>
-
-
+        <platformActionListItems>
+            <actionName>SendEmail</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>7</sortOrder>
+        </platformActionListItems>
     </platformActionList>
     <quickActionList>
         <quickActionListItems>
@@ -551,7 +585,9 @@
         <quickActionListItems>
             <quickActionName>FeedItem.PollPost</quickActionName>
         </quickActionListItems>
-
+        <quickActionListItems>
+            <quickActionName>SendEmail</quickActionName>
+        </quickActionListItems>
     </quickActionList>
     <relatedLists>
         <relatedList>RelatedContactRoleList</relatedList>
@@ -563,7 +599,10 @@
         <fields>UPDATEDBY_USER</fields>
         <fields>LAST_UPDATE</fields>
         <fields>Over_65_and_36_Degree_Day__c</fields>
+        <fields>In_Valid__c</fields>
         <relatedList>Leave__c.Account_Business__c</relatedList>
+        <sortField>Leave_Date__c</sortField>
+        <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
         <customButtons>New_Order</customButtons>

@@ -1,6 +1,7 @@
 public with sharing class StallsAvaliableTodayController {
 
 	 public String laneID{get;set;}
+     
     
 	 public List<Stall__c> getStallsAvaliableToday() {
 
@@ -17,7 +18,8 @@ public with sharing class StallsAvaliableTodayController {
     }
     
     public List<String> pairingCalculations(List<Stall__c> stallList) {
-        Integer i=0;
+        Integer prevStallID=0;	//Incrementing integer to cycle through all stall IDs
+        Boolean prevWasJoint = false;
         String pairedName;
         List<String> pairedStallNameList = new List<String>();	//stores the string pairings of site names
         List<Integer> intStallNameList = new List<Integer>();	//stores the integer siteID values for sorting
@@ -45,48 +47,101 @@ public with sharing class StallsAvaliableTodayController {
         
         
 		for (Integer currStallID : intStallNameList) {
-            if ((math.mod(i,2)!=0))	//Check the previous stallID was odd and the current stallID is one above the previously recorded one
+            if ((math.mod(prevStallID,2)==1))	//If previous stalls id is ODD
             {
-                if (currStallID == i+1)
-                {
-                    //A vacant pairing is here
-                    pairedName = i+'-'+string.valueOf(currStallID);
-                    pairedStallNameList.add(pairedName);
+                if (currStallID == prevStallID+1)	//if CURRENT stalls id is equal to PREVIOUS stalls id PLUS ONE (therefore even, and concurrent with the prev)
+                {  
+                    
+                         //REMOVE THE LAST ADDITION TO THE PAIREDSTALLNAMELIST
+                         
+                        if ((pairedStallNameList.size()>0) && (prevWasJoint == false))
+                        {
+                            pairedStallNameList.remove(pairedStallNameList.size()-1);
+                        }
+                   		pairedName = prevStallID+'-'+string.valueOf(currStallID);	//AN AVAILABLE ODD-EVEN PAIRING IS HERE
+                    	pairedStallNameList.add(pairedName);
+                    	prevWasJoint = true;
+                    
+                   
                 }
-                else {	//If not a vacant pairing, add the previous single one to the list
-                    pairedStallNameList.add(string.valueOf(i));
-                } 
+                else if (currStallID != prevStallID+1)	//if CURRENT stalls id is NOT EQUAL to PREVIOUS stalls id PLUS ONE
+                {													
+                    //if (math.mod(currStallID,2)==0)
+                    //{
+                    	pairedName = string.valueOf(currStallID);	//ADD IT AS A SINGLETON
+                 		pairedStallNameList.add(pairedName);
+                        prevWasJoint = false;
+                    //}
+                    
+                }
             }
-            i = currStallID;	//Update the previous entry
+            else if ((math.mod(prevStallID,2)==0))	//If PREVIOUS stalls id is EVEN
+            {
+                if (currStallID != prevStallID+1)		//if CURRENT stalls id is NOT equal to PREVIOUS stalls id PLUS ONE
+                {													
+                    pairedName = string.valueOf(currStallID);	
+                    pairedStallNameList.add(pairedName);
+                    prevWasJoint = false;
+                   
+                }
+                else 	//CURRENT stalls id IS equal to PREVIOUS stalls id PLUS ONE, so it is a joint addition
+                {
+                    pairedName = string.valueOf(currStallID);
+                    pairedStallNameList.add(pairedName);
+                    prevWasJoint = false;
+                   //prevWasJoint = true;
+                }
+            }
+            
+            prevStallID = currStallID;	//Set the PREVIOUS id to the CURRENT id
         }
         
         return pairedStallNameList;
         
+    }
+	
+    
+    // NEW METHOD FOR MAKING A LIST OF UNPAIRED STALLS
+    public List<String> unpairedList(List<Stall__c> stallList) {
+        Integer i=0;
+        String pairedName;
+        List<String> unpairedStallNameList = new List<String>();	//stores the string pairings of site names
+        List<Integer> intStallNameList = new List<Integer>();	//stores the integer siteID values for sorting
         
-        /*
-        
-        for (Stall__c s : stallList) {
-            if ((math.mod(i,2)!=0))	//Check the previous stallID was odd and the current stallID is one above the previously recorded one
+        try 
+        {
+            for (Stall__c stall : stallList)
             {
-                if (integer.valueOf(s.StallId__c) == i+1)
-                {
-                    //A vacant pairing is here
-                    pairedName = i+'-'+s.StallId__c;
-                    pairedStallNameList.add(pairedName);
-                }
-                else {	//If not a vacant pairing, add the previous single one to the list
-                    pairedStallNameList.add(string.valueOf(i));
-                } 
+                intStallNameList.add(Integer.valueOf(stall.StallId__c));	//populate integer list of siteIDs
             }
-            i = integer.valueOf(s.StallId__c);	//Update the previous entry
+                
+            intStallNameList.sort();	//sort the site numbers into order by int siteID value            
         }
-
-		return pairedStallNameList;
-        */
+        catch (exception e)
+        {
+            //StallID__c cannot safely convert to integer values. Treat them as strings
+            stallList.sort();
+            for (Stall__c stall : stallList)
+            {
+                unpairedStallNameList.add(stall.Name);
+            }
+            
+            return unpairedStallNameList;
+        }
         
         
+		for (Integer currStallID : intStallNameList) {
+            
+                    unpairedStallNameList.add(string.valueOf(currStallID));
+                
+        }
+        
+        return unpairedStallNameList;
     }
     
+    
+    
+    //Use pairingCalculations() method to display paired stalls, use unpairedList() method to display unpaired stalls
     public List<String> getAStallsAvailableTodayPairedNames() {
         List<Stall__c> stallList = new List<Stall__c>();
         stallList = getAStallsAvaliableToday();
@@ -103,8 +158,11 @@ public with sharing class StallsAvaliableTodayController {
     
     public List<String> getCStallsAvailableTodayPairedNames() {
         List<Stall__c> stallList = new List<Stall__c>();
-        stallList = getCStallsAvaliableToday();
+        //stallList = getCStallsAvaliableToday();
+
+        //return pairingCalculations(stallList);
         
+        stallList = getCStallsAvaliableToday();
         return pairingCalculations(stallList);
     }
     
@@ -113,6 +171,7 @@ public with sharing class StallsAvaliableTodayController {
         stallList = getDStallsAvaliableToday();
         
         return pairingCalculations(stallList);
+        
     }
     
     public List<String> getEStallsAvailableTodayPairedNames() {
@@ -162,6 +221,7 @@ public with sharing class StallsAvaliableTodayController {
         stallList = getRKStallsAvaliableToday();
         
         return pairingCalculations(stallList);
+      
     }
     
     public List<String> getRLStallsAvailableTodayPairedNames() {
@@ -187,6 +247,7 @@ public with sharing class StallsAvaliableTodayController {
                     AND Stall__c  != NULL)  
                 and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
+                and isAvailableToday__c = 1
                 and ShedId__c = 'A'
                 order by StallId__c 
                 LIMIT 1000];
@@ -202,6 +263,7 @@ public with sharing class StallsAvaliableTodayController {
                     AND Stall__c  != NULL)  
                 and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
+                and isAvailableToday__c = 1
                 and ShedId__c = 'B'
                 order by StallId__c 
                 LIMIT 1000];
@@ -217,6 +279,7 @@ public with sharing class StallsAvaliableTodayController {
                     AND Stall__c  != NULL)  
                 and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
+                and isAvailableToday__c = 1
                 and ShedId__c = 'C'
                 order by StallId__c 
                 LIMIT 1000];
@@ -232,6 +295,7 @@ public with sharing class StallsAvaliableTodayController {
                     AND Stall__c  != NULL)  
                 and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
+                and isAvailableToday__c = 1
                 and ShedId__c = 'D'
                 order by StallId__c 
                 LIMIT 1000];
@@ -247,6 +311,7 @@ public with sharing class StallsAvaliableTodayController {
                     AND Stall__c  != NULL)  
                 and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
+                and isAvailableToday__c = 1
                 and ShedId__c = 'E'
                 order by StallId__c 
                 LIMIT 1000];
@@ -262,6 +327,7 @@ public with sharing class StallsAvaliableTodayController {
                     AND Stall__c  != NULL)  
                 and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
+                and isAvailableToday__c = 1
                 and ShedId__c = 'H'
                 order by StallId__c 
                 LIMIT 1000];
@@ -277,6 +343,7 @@ public with sharing class StallsAvaliableTodayController {
                     AND Stall__c  != NULL)  
                 and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
+                and isAvailableToday__c = 1
                 and ShedId__c = 'I'
                 order by StallId__c 
                 LIMIT 1000];
@@ -292,6 +359,7 @@ public with sharing class StallsAvaliableTodayController {
                     AND Stall__c  != NULL)  
                 and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
+                and isAvailableToday__c = 1
                 and ShedId__c = 'J'
                 order by StallId__c 
                 LIMIT 1000];
@@ -307,6 +375,7 @@ public with sharing class StallsAvaliableTodayController {
                     AND Stall__c  != NULL)  
                 and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
+                and isAvailableToday__c = 1
                 and ShedId__c = 'K'
                 order by StallId__c 
                 LIMIT 1000];
@@ -322,6 +391,7 @@ public with sharing class StallsAvaliableTodayController {
                     AND Stall__c  != NULL)  
                 and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
+                and isAvailableToday__c = 1
                 and ShedId__c = 'L'
                 order by StallId__c 
                 LIMIT 1000];
@@ -337,6 +407,7 @@ public with sharing class StallsAvaliableTodayController {
                     AND Stall__c  != NULL)  
                 and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
+                and isAvailableToday__c = 1
                 and ShedId__c = 'RK'
                 order by StallId__c 
                 LIMIT 1000];
@@ -352,6 +423,7 @@ public with sharing class StallsAvaliableTodayController {
                     AND Stall__c  != NULL)  
                 and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
+                and isAvailableToday__c = 1
                 and ShedId__c = 'RL'
                 order by StallId__c 
                 LIMIT 1000];
@@ -367,6 +439,7 @@ public with sharing class StallsAvaliableTodayController {
                     AND Stall__c  != NULL)  
                 and RecordType.DeveloperName = 'Casual'
                 and IsActive__c = true
+                and isAvailableToday__c = 1
                 and (ShedId__c <> 'A' AND ShedId__c <> 'B' AND ShedId__c <> 'C' AND ShedId__c <> 'D' AND ShedId__c <> 'E' AND ShedId__c <> 'J' AND ShedId__c <> 'K' AND ShedId__c <> 'L' AND ShedId__c <> 'RK' AND ShedId__c <> 'RL' AND ShedId__c <> 'H' AND ShedId__c <> 'I')
                 order by StallId__c  
                 LIMIT 1000];

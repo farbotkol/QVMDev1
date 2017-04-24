@@ -7,7 +7,8 @@ global class POBuilder {
         List<Order> orders = [SELECT Account.QuickBooks_Id__c,Batch_Job__c,Description,EffectiveDate
                        		,EndDate,Id,OpportunityId,OrderNumber,QuickBooksId__c,Status,StatusCode , 
                         	(SELECT Date__c,Description,Formula_Total__c,ListPrice,OrderItemNumber
-                             	,Quantity,ServiceDate,Total__c,UnitPrice,Stall__r.Name, PricebookEntry.Sku__c, QBO_Class_Id__c
+                             	,Quantity,ServiceDate,Total__c,UnitPrice,Stall__r.Name, PricebookEntry.Sku__c,
+                             PricebookEntry.Product2.GST_Free__c ,QBO_Class_Id__c
                         	 FROM OrderItems)
                        FROM Order 
                        WHERE Id = :orderId];
@@ -48,7 +49,18 @@ global class POBuilder {
                 for(OrderItem oi : order.OrderItems)
                 {
                     QBOPurchaseOrderResponse.Line line = new QBOPurchaseOrderResponse.Line();
-                    line.Amount = oi.UnitPrice * oi.Quantity / 1.1;
+                    
+                    if (oi.PricebookEntry.Product2.GST_Free__c == false)
+                    {
+                        line.Amount = oi.UnitPrice * oi.Quantity / 1.1;
+                    }
+                    else
+                    {
+                        line.Amount = oi.UnitPrice  * oi.Quantity ;
+                    }
+                    
+                    
+                    
                     line.Description = '';
                     
                     if (oi.Description != null)

@@ -66,6 +66,10 @@
         <default>false</default>
     </globalPicklistValues>
     <globalPicklistValues>
+        <fullName>Other</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
         <fullName>Remedy timeframe</fullName>
         <default>false</default>
     </globalPicklistValues>

@@ -35,7 +35,9 @@
             
         </apex:pageBlock> 
     </apex:form>
-
+    <script>
+    setFocus = function() { return; }
+    </script>
 
 
 </apex:page>

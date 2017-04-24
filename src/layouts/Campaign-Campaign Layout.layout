@@ -273,7 +273,9 @@
         <quickActionListItems>
             <quickActionName>Campaign.Child_Campaign</quickActionName>
         </quickActionListItems>
-
+        <quickActionListItems>
+            <quickActionName>SendEmail</quickActionName>
+        </quickActionListItems>
     </quickActionList>
     <relatedLists>
         <customButtons>wbsendit__Send_to_Email_List</customButtons>

@@ -14,7 +14,7 @@
                 <apex:facet name="header">Monday</apex:facet> 
                   <div>
                        <apex:image id="theImageMon" onclick="updateStall('Monday', '{!stall.Id}')" value="{!If(stall.MondayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.MondayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}" width="25" height="25"/>
-                       {!If(stall.MondayTrader__c = Record.Id, '$', '')}{!If(stall.MondayTrader__c = Record.Id, stall.Monday_Active_Price__c, '')} 
+                       {!If(stall.MondayTrader__c = Record.Id, '$', '')}{!If(stall.MondayTrader__c = Record.Id, ROUND(stall.Monday_Active_Price__c, 2), '')} 
                     </div> 
                  <apex:facet name="footer">
                     <apex:inputcheckbox id="monday" value="{!monday}"/>
@@ -24,7 +24,7 @@
                 <apex:facet name="header">Tuesday</apex:facet> 
                 <div>
                     <apex:image id="theImageTues" onclick="updateStall('Tuesday', '{!stall.Id}')" value="{!If(stall.TuesdayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.TuesdayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}" width="25" height="25"/>
-                    {!If(stall.TuesdayTrader__c = Record.Id, '$', '')}{!If(stall.TuesdayTrader__c = Record.Id, stall.Tuesday_Active_Price__c, '')} 
+                    {!If(stall.TuesdayTrader__c = Record.Id, '$', '')}{!If(stall.TuesdayTrader__c = Record.Id, ROUND(stall.Tuesday_Active_Price__c , 2), '')} 
                 </div>
                  
                  <apex:facet name="footer">
@@ -35,7 +35,7 @@
                 <apex:facet name="header">Wednesday</apex:facet> 
                 <div>
                     <apex:image id="theImageWednes" onclick="updateStall('Wednesday', '{!stall.Id}')" value="{!If(stall.WednesdayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.WednesdayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}" width="25" height="25"/>
-                    {!If(stall.WednesdayTrader__c = Record.Id, '$', '')}{!If(stall.WednesdayTrader__c = Record.Id, stall.Wednesday_Active_Price__c, '')} 
+                    {!If(stall.WednesdayTrader__c = Record.Id, '$', '')}{!If(stall.WednesdayTrader__c = Record.Id, ROUND(stall.Wednesday_Active_Price__c, 2), '')} 
                 </div>
                  
                  <apex:facet name="footer">
@@ -47,7 +47,7 @@
                 
                 <div>
                      <apex:image id="theImageThurs" onclick="updateStall('Thursday', '{!stall.Id}')" value="{!If(stall.ThursdayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.ThursdayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}" width="25" height="25"/>
-                    {!If(stall.ThursdayTrader__c = Record.Id, '$', '')}{!If(stall.ThursdayTrader__c = Record.Id, stall.Thursday_Active_Price__c, '')} 
+                    {!If(stall.ThursdayTrader__c = Record.Id, '$', '')}{!If(stall.ThursdayTrader__c = Record.Id, ROUND(stall.Thursday_Active_Price__c, 2), '')} 
                 </div>
                   
                 <apex:facet name="footer">
@@ -59,7 +59,7 @@
                  
                 <div>
                      <apex:image id="theImageFri" onclick="updateStall('Friday', '{!stall.Id}')" value="{!If(stall.FridayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.FridayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}" width="25" height="25"/>
-                    {!If(stall.FridayTrader__c = Record.Id, '$', '')}{!If(stall.FridayTrader__c = Record.Id, stall.Friday_Active_Price__c, '')} 
+                    {!If(stall.FridayTrader__c = Record.Id, '$', '')}{!If(stall.FridayTrader__c = Record.Id, ROUND(stall.Friday_Active_Price__c , 2), '')} 
                 </div> 
                 <apex:facet name="footer">
                    <apex:inputcheckbox id="friday" value="{!friday}"/>
@@ -70,7 +70,7 @@
                  
                 <div>
                      <apex:image id="theImageSat" onclick="updateStall('Saturday', '{!stall.Id}')" value="{!If(stall.SaturdayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.SaturdayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}" width="25" height="25"/>
-                    {!If(stall.SaturdayTrader__c = Record.Id, '$', '')}{!If(stall.SaturdayTrader__c = Record.Id, stall.Saturday_Active_Price__c, '')} 
+                    {!If(stall.SaturdayTrader__c = Record.Id, '$', '')}{!If(stall.SaturdayTrader__c = Record.Id, ROUND(stall.Saturday_Active_Price__c, 2), '')} 
                 </div>  
                 <apex:facet name="footer">
                    <apex:inputcheckbox id="saturday" value="{!saturday}"/>
@@ -80,7 +80,7 @@
                 <apex:facet name="header">Sunday</apex:facet> 
                 <div>
                      <apex:image id="theImageSun" onclick="updateStall('Sunday', '{!stall.Id}')" value="{!If(stall.SundayTrader__c = Record.Id, '/img/permissions_confirm16.gif', If(stall.SundayTrader__c != '' ,'/img/permissions_deny16.gif', '/img/checkbox_unchecked.gif'))}" width="25" height="25"/>
-                    {!If(stall.SundayTrader__c = Record.Id, '$', '')}{!If(stall.SundayTrader__c = Record.Id, stall.Sunday_Active_Price__c, '')} 
+                    {!If(stall.SundayTrader__c = Record.Id, '$', '')}{!If(stall.SundayTrader__c = Record.Id, ROUND(stall.Sunday_Active_Price__c , 2), '')} 
                 </div>
                 <apex:facet name="footer">
                    <apex:inputcheckbox id="sunday" value="{!sunday}"/>

@@ -28,7 +28,10 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
@@ -37,7 +40,10 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>Terminate</actionName>
         <type>Default</type>
@@ -217,10 +223,10 @@
         <label>My In Approval Contracts</label>
     </listViews>
     <searchLayouts>
-
-
+        <customTabListAdditionalFields>CONTRACT.CONTRACT_NUMBER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CONTRACT.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>SALES.ACCOUNT.NAME</customTabListAdditionalFields>
-
+        <customTabListAdditionalFields>CONTRACT.STATUS</customTabListAdditionalFields>
         <lookupDialogsAdditionalFields>CONTRACT.CONTRACT_NUMBER</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CONTRACT.NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CORE.USERS.ALIAS</lookupDialogsAdditionalFields>

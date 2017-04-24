@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
+        <fullName>Email_AP</fullName>
+        <description>Email AP</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>athena.haikalis@qvm.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>info@qvm.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QVM_Email_Templates/Notify_AP_Of_New_Supplier</template>
+    </alerts>
+    <alerts>
         <fullName>Email_Supplier_Upon_Approval</fullName>
         <description>Email Supplier Upon Approval</description>
         <protected>false</protected>

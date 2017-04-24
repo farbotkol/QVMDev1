@@ -44,7 +44,10 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>ListClean</actionName>
         <type>Default</type>
@@ -65,7 +68,10 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -258,6 +264,17 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Interpreter_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Whether or not the contact requires a language Interpreter to be communicated with.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Whether or not the contact requires a language Interpreter to be communicated with.</inlineHelpText>
+        <label>Interpreter Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Is_Family_Member__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -282,6 +299,18 @@
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Language__c</fullName>
+        <description>The language that an interpreter is required for.</description>
+        <externalId>false</externalId>
+        <globalPicklist>Languages</globalPicklist>
+        <inlineHelpText>The language that an interpreter is required for.</inlineHelpText>
+        <label>Language</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>LastCURequestDate</fullName>
@@ -431,9 +460,9 @@
         <label>My Contacts</label>
     </listViews>
     <searchLayouts>
-
-
-
+        <customTabListAdditionalFields>FULL_NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CONTACT.PHONE1</customTabListAdditionalFields>
         <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
         <lookupFilterFields>FULL_NAME</lookupFilterFields>

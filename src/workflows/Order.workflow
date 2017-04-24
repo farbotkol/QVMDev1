@@ -84,6 +84,15 @@
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Update_Approved_Value_to_10000</fullName>
+        <field>Approved_UpTo__c</field>
+        <formula>10000</formula>
+        <name>Update Approved Value to 10000</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Update_Order_Owner_to_Finance</fullName>
         <field>OwnerId</field>
         <lookupValue>luke.farbotko@qvmtest.com</lookupValue>

@@ -17,7 +17,9 @@
         <name>ApexTrigger</name>
     </types>
     <types>
-        <members>*</members>
+        <members>Account.Suppliers_Approval</members>
+        <members>Order.PO_Approval_4</members>
+        <members>Order.PO_Approval_5</members>
         <name>ApprovalProcess</name>
     </types>
     <types>
@@ -131,19 +133,22 @@
         <name>CustomTab</name>
     </types>
     <types>
+        <members>QVM_Email_Templates</members>
         <members>QVM_Email_Templates/CaseClosed</members>
         <members>QVM_Email_Templates/Change_Request</members>
         <members>QVM_Email_Templates/Event_Lead_Auto_Response</members>
         <members>QVM_Email_Templates/Event_Lead_With_Campaign_Auto_Response</members>
+        <members>QVM_Email_Templates/Forklift_Registration_Expiry_Date_Reminder</members>
+        <members>QVM_Email_Templates/Notify_AP_Of_New_Supplier</members>
         <members>QVM_Email_Templates/OHS_Case_Review_Date</members>
         <members>QVM_Email_Templates/PO_Approval</members>
         <members>QVM_Email_Templates/PO_Approved</members>
         <members>QVM_Email_Templates/PO_Rejected</members>
         <members>QVM_Email_Templates/Property_Lead_Auto_Response</members>
+        <members>QVM_Email_Templates/QVM_Events_Management_Application_Rejected</members>
         <members>QVM_Email_Templates/QVM_Property_Management_Application_Rejected</members>
         <members>QVM_Email_Templates/Supplier_Approval_Template_html</members>
         <members>QVM_Email_Templates/Supplier_Approved_Notice</members>
-        <members>unfiled$public</members>
         <members>unfiled$public/CommunityChangePasswordEmailTemplate</members>
         <members>unfiled$public/CommunityForgotPasswordEmailTemplate</members>
         <members>unfiled$public/CommunityWelcomeEmailTemplate</members>
@@ -152,16 +157,6 @@
         <members>unfiled$public/LeadsWebtoLeademailresponseSAMPLE</members>
         <members>unfiled$public/Notify_Suppliers_Upon_Approval</members>
         <members>unfiled$public/Notify_Suppliers_Upon_Rejection</members>
-        <members>unfiled$public/SUPPORTCaseResponsewithSolutionSAMPLE</members>
-        <members>unfiled$public/SUPPORTCaseescalationnotificationSAMPLE</members>
-        <members>unfiled$public/SUPPORTNewassignmentnotificationSAMPLE</members>
-        <members>unfiled$public/SUPPORTSelfServiceNewCommentNotificationSAMPLE</members>
-        <members>unfiled$public/SUPPORTSelfServiceNewCommentSAMPLE</members>
-        <members>unfiled$public/SUPPORTSelfServiceNewUserLoginInformationSAMPLE</members>
-        <members>unfiled$public/SUPPORTSelfServiceNewUserLoginSAMPLE</members>
-        <members>unfiled$public/SUPPORTSelfServiceResetPasswordSAMPLE</members>
-        <members>unfiled$public/SUPPORTSelfServiceResetPasswordSAMPLE2</members>
-        <members>unfiled$public/SUPPORTWebtoCaseemailresponseSAMPLE</members>
         <members>unfiled$public/Sample_CallNoAnswer</members>
         <members>unfiled$public/Sample_CustomerInterest</members>
         <members>unfiled$public/Sample_DealClosed</members>
@@ -322,7 +317,6 @@
         <members>QuoteLineItem</members>
         <members>Qvm_ABA_File_Generator__c</members>
         <members>Site</members>
-        <members>SocialPersona</members>
         <members>Solution</members>
         <members>Stall__c</members>
         <members>StreamingChannel</members>

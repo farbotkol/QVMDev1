@@ -82,15 +82,15 @@
         <style>CustomLinks</style>
     </layoutSections>
     <relatedLists>
+        <fields>Account_Business__c</fields>
         <fields>Product2</fields>
         <fields>Stall__c</fields>
         <fields>Quantity</fields>
-        <fields>UnitPrice</fields>
-        <fields>ListPrice</fields>
-        <fields>TotalPrice</fields>
         <fields>QuickBooksId__c</fields>
         <fields>Leave__c</fields>
         <fields>Status__c</fields>
+        <fields>Total__c</fields>
+        <fields>Total_GST__c</fields>
         <relatedList>OrderItem.Batch_Jobs__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>

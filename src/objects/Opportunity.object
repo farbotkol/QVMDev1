@@ -24,7 +24,10 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
@@ -33,7 +36,10 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -77,6 +83,18 @@
         <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Approved_Permitted_Use__c</fullName>
+        <description>Approved Permitted Use - Used for events free text</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Approved Permitted Use that appeared on the contract</inlineHelpText>
+        <label>Approved Permitted Use</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Are_Products_Aust_made__c</fullName>
@@ -265,6 +283,18 @@
                 <fullName>XX</fullName>
                 <default>false</default>
             </picklistValues>
+            <picklistValues>
+                <fullName>SNM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WNM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MB</fullName>
+                <default>false</default>
+            </picklistValues>
             <sorted>false</sorted>
         </picklist>
         <required>false</required>
@@ -326,6 +356,76 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>DOF_Friday__c</fullName>
+        <externalId>false</externalId>
+        <label>DOF Friday</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DOF_Monday__c</fullName>
+        <externalId>false</externalId>
+        <label>DOF Monday</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DOF_Saturday__c</fullName>
+        <externalId>false</externalId>
+        <label>DOF Saturday</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DOF_Sunday__c</fullName>
+        <externalId>false</externalId>
+        <label>DOF Sunday</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DOF_Thursday__c</fullName>
+        <externalId>false</externalId>
+        <label>DOF Thursday</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DOF_Tuesday__c</fullName>
+        <externalId>false</externalId>
+        <label>DOF Tuesday</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DOF_Wednesday__c</fullName>
+        <externalId>false</externalId>
+        <label>DOF Wednesday</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>Description</fullName>
@@ -2575,6 +2675,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>MB</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>NM</fullName>
                 <default>false</default>
             </values>
@@ -2592,6 +2696,14 @@
             </values>
             <values>
                 <fullName>SL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SNM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WNM</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -3227,6 +3339,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>MB</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>NM</fullName>
                 <default>false</default>
             </values>
@@ -3244,6 +3360,14 @@
             </values>
             <values>
                 <fullName>SL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SNM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WNM</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -4247,6 +4371,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>MB</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>NM</fullName>
                 <default>false</default>
             </values>
@@ -4264,6 +4392,14 @@
             </values>
             <values>
                 <fullName>SL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SNM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WNM</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -5267,6 +5403,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>MB</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>NM</fullName>
                 <default>false</default>
             </values>
@@ -5284,6 +5424,14 @@
             </values>
             <values>
                 <fullName>SL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SNM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WNM</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -5911,6 +6059,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>MB</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>NM</fullName>
                 <default>false</default>
             </values>
@@ -5928,6 +6080,14 @@
             </values>
             <values>
                 <fullName>SL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SNM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WNM</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -6931,6 +7091,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>MB</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>NM</fullName>
                 <default>false</default>
             </values>
@@ -6948,6 +7112,14 @@
             </values>
             <values>
                 <fullName>SL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SNM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WNM</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -7920,9 +8092,9 @@
         </picklistValues>
     </recordTypes>
     <searchLayouts>
-
-
-
+        <customTabListAdditionalFields>OPPORTUNITY.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OPPORTUNITY.CLOSE_DATE</customTabListAdditionalFields>
         <listViewButtons>Send_Bulk_SMS</listViewButtons>
         <lookupDialogsAdditionalFields>OPPORTUNITY.NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>

@@ -1,0 +1,6 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[A new supplier has been created in Salesforce and Quickbooks. Their bank details will need to be update with the following.<div><br></div><div>Supplier Name: {!Account.Name}</div><div>BSB Number:&nbsp;{!Account.BSB_Number__c}</div><div>Account No.:&nbsp;{!Account.Bank_Account_Number__c}</div>]]></td>
+</tr>
+</table>

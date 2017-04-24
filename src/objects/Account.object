@@ -28,7 +28,10 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>ListClean</actionName>
         <type>Default</type>
@@ -45,7 +48,10 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -463,6 +469,20 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Open_Account_Businesses__c</fullName>
+        <externalId>false</externalId>
+        <label>Open Account Businesses</label>
+        <summaryFilterItems>
+            <field>Opportunity.Business_Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
         <fullName>OwnerId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
@@ -597,6 +617,27 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Supplier_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Supplier Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>TickerSymbol</fullName>
@@ -1026,6 +1067,17 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Supplier_Status__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Trader_Status__c</picklist>
             <values>
                 <fullName>Closed</fullName>
@@ -1317,6 +1369,17 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Supplier_Status__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Trader_Status__c</picklist>
             <values>
                 <fullName>Closed</fullName>
@@ -1372,7 +1435,7 @@
         </picklistValues>
     </recordTypes>
     <searchLayouts>
-
+        <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
         <listViewButtons>Send_Bulk_SMS</listViewButtons>
         <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Trading_Name__c</lookupDialogsAdditionalFields>
@@ -1410,6 +1473,13 @@
         <errorConditionFormula>AND(  AND( LEN( BSB_Number__c )  &gt; 0, LEN( BSB_Number__c ) &lt;= 7 ), (OR(NOT(ISNUMBER(LEFT( BSB_Number__c , 3)) ),  NOT( ISNUMBER( RIGHT( BSB_Number__c , 3) ) ),  NOT( MID( BSB_Number__c , 4, 1)  =  &apos;-&apos; )    )))</errorConditionFormula>
         <errorDisplayField>BSB_Number__c</errorDisplayField>
         <errorMessage>Please enter a valid BSB number [XXX-XXX where X is a number]</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cant_close_with_open_Account_Businesses</fullName>
+        <active>true</active>
+        <description>For an account to be closed it must have all account business be closed</description>
+        <errorConditionFormula>IF( TEXT(Trader_Status__c) = &quot;Closed&quot; &amp;&amp;  Open_Account_Businesses__c  &gt; 0 , True, False)</errorConditionFormula>
+        <errorMessage>For an account to be closed all related account businesses MUST be closed</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>GoogleMaps</fullName>

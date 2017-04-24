@@ -18,7 +18,10 @@ global class LeaveCreditNoteBuilderBatch implements Database.Batchable<sObject>,
     
     global void finish(Database.BatchableContext BC) {
         
-        
+         ///TESTING OUT SOMETHING NEW 
+        System.debug('here we are : ');
+        //PaymentBuilder.getInvoices(batchJob,new List<String>()); 
+        //PaymentBuilder.getCredits( batchJob,new List<String>());    
         
     }
 }

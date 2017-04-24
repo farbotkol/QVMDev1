@@ -44,9 +44,21 @@
             <field>Email</field>
             <type>email</type>
         </recipients>
+        <recipients>
+            <field>Email_Reference1__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Email_Reference2__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Nominated_Event_Organiser_Email__c</field>
+            <type>email</type>
+        </recipients>
         <senderAddress>info@qvm.com.au</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
-        <template>QVM_Email_Templates/QVM_Property_Management_Application_Rejected</template>
+        <template>QVM_Email_Templates/QVM_Events_Management_Application_Rejected</template>
     </alerts>
     <fieldUpdates>
         <fullName>MobileUpdateNumber</fullName>
@@ -67,6 +79,26 @@
         <protected>false</protected>
         <reevaluateOnChange>true</reevaluateOnChange>
     </fieldUpdates>
+    <rules>
+        <fullName>QVM Event Management Application Rejected</fullName>
+        <actions>
+            <name>QVM_Property_Management_Application_Rejected</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>equals</operation>
+            <value>Unsuccessful</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>QVM Events</value>
+        </criteriaItems>
+        <description>If Lead Record Type = &apos;QVM Events&apos; and Lead Status = &apos;Unsuccessful&apos;, send an email to a lead notifying that their EOI application was unsuccessful.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
     <rules>
         <fullName>QVM Property Management Application Rejected</fullName>
         <actions>

@@ -537,6 +537,7 @@ global class PaymentBuilder
                 	custref.value = transObj.Customer_Reference__c;
                     system.debug('test1');
                 	paymentInstance.CustomerRef  = custref;
+                    paymentInstance.TxnDate = ((DateTime)Date.today()).format('YYYY-MM-dd');
                     paymentInstance.PrivateNote = transObj.Account_Business__r.BSB_Number__c + ':' + transObj.Account_Business__r.Bank_Account_Number__c;
 					paymentInstance.PaymentRefNum  = batchJobObj.Reference_Number__c;                  
                     QBOPaymentResponse.DepositToAccountRef payTypeRef = new QBOPaymentResponse.DepositToAccountRef();

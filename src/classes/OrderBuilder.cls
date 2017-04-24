@@ -119,7 +119,7 @@ global with sharing class OrderBuilder {
         // create map of leave to ref here 
         list<Leave__c> leaveEntries = [SELECT Id, Leave_Date__c, Account_Business__c
                                     FROM Leave__c
-                                    WHERE   Account_Business__r.RecordTypeId = :processTypeId];
+                                    WHERE  In_Valid__c = false and Account_Business__r.RecordTypeId = :processTypeId  AND Leave_Date__c >= :startDate AND  Leave_Date__c <= :endDate];
         
         System.debug('PPPP leaveEntries : ' + leaveEntries );
                                     

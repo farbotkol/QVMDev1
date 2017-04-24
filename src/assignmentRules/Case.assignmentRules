@@ -11,6 +11,7 @@
                 <operation>equals</operation>
                 <value>IT request</value>
             </criteriaItems>
+            <template>unfiled$public/SUPPORTNewassignmentnotificationSAMPLE</template>
         </ruleEntry>
         <ruleEntry>
             <assignedTo>Finance_Department_Queue</assignedTo>
@@ -91,6 +92,15 @@
                 <value>OHS Case</value>
             </criteriaItems>
             <template>unfiled$public/SUPPORTNewassignmentnotificationSAMPLE</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Operations_Department_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Notice of Breach Case</value>
+            </criteriaItems>
         </ruleEntry>
         <ruleEntry>
             <assignedTo>Operations_Department_Queue</assignedTo>

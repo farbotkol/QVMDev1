@@ -16,7 +16,10 @@
         <actionName>Edit</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
@@ -25,7 +28,10 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -101,10 +107,10 @@
         <label>All Price Books</label>
     </listViews>
     <searchLayouts>
-
-
-
-
+        <customTabListAdditionalFields>PRICEBOOK2.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PRICEBOOK2.DESCRIPTION</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PRICEBOOK2.LAST_UPDATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PRICEBOOK2.IS_ACTIVE</customTabListAdditionalFields>
         <lookupDialogsAdditionalFields>PRICEBOOK2.NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>PRICEBOOK2.DESCRIPTION</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>PRICEBOOK2.LAST_UPDATE</lookupDialogsAdditionalFields>

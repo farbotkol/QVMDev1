@@ -39,6 +39,10 @@
     </entryCriteria>
     <finalApprovalActions>
         <action>
+            <name>Email_AP</name>
+            <type>Alert</type>
+        </action>
+        <action>
             <name>Email_Supplier_Upon_Approval</name>
             <type>Alert</type>
         </action>

@@ -24,7 +24,10 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
@@ -33,7 +36,10 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -792,6 +798,17 @@
         <type>Currency</type>
     </fields>
     <fields>
+        <fullName>Water_Meter_Number__c</fullName>
+        <externalId>true</externalId>
+        <label>Water Meter Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>WednesdayMultiplier__c</fullName>
         <defaultValue>1</defaultValue>
         <description>The Multiplier rate that will be added to the base rate for Wednesday</description>
@@ -844,6 +861,98 @@
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>isAvailableToday__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( MOD(  TODAY()  - DATE(1900, 1, 7), 7), 0,IF(isNotAvailableSunday__c = TRUE, 0, 1), 1, IF(isNotAvailableMonday__c = TRUE, 0, 1), 2, IF(isNotAvailableTuesday__c = TRUE, 0, 1), 3,
+IF(isNotAvailableWednesday__c = TRUE, 0, 1), 4, IF(isNotAvailableThursday__c = TRUE, 0, 1), 5, IF(isNotAvailableFriday__c = TRUE, 0, 1), 6, IF(isNotAvailableSaturday__c = TRUE, 0, 1), IF(isNotAvailableMonday__c = TRUE, 0, 1))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>isAvailableToday</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>isNotAvailableFriday__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Stall is not available on Fridays?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stall is not available on Fridays?</inlineHelpText>
+        <label>Not Available Friday</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>isNotAvailableMonday__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Stall is not available on Mondays?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stall is not available on Mondays?</inlineHelpText>
+        <label>Not Available Monday</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>isNotAvailableSaturday__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Stall is not available on Saturdays?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stall is not available on Saturdays?</inlineHelpText>
+        <label>Not Available Saturday</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>isNotAvailableSunday__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Stall not available on Sundays?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stall not available on Sundays?</inlineHelpText>
+        <label>Not Available Sunday</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>isNotAvailableThursday__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Stall is not available on Thursdays?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stall is not available on Thursdays?</inlineHelpText>
+        <label>Not Available Thursday</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>isNotAvailableTuesday__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Stall is not available on Tuesdays?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stall is not available on Tuesdays?</inlineHelpText>
+        <label>Not Available Tuesday</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>isNotAvailableWednesday__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Stall is not available on Wednesdays?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stall is not available on Wednesdays?</inlineHelpText>
+        <label>Not Available Wednesday</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <label>Stall</label>
     <listViews>
@@ -1101,8 +1210,8 @@
         </picklistValues>
     </recordTypes>
     <searchLayouts>
-
-
+        <customTabListAdditionalFields>Annual_Rent__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IsActive__c</customTabListAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
 </CustomObject>
