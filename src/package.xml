@@ -17,7 +17,6 @@
         <name>ApexTrigger</name>
     </types>
     <types>
-        <members>Account.Suppliers_Approval</members>
         <members>Order.PO_Approval_4</members>
         <members>Order.PO_Approval_5</members>
         <name>ApprovalProcess</name>

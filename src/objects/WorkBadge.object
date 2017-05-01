@@ -8,18 +8,12 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -48,11 +42,11 @@
         <type>MasterDetail</type>
     </fields>
     <searchLayouts>
-        <customTabListAdditionalFields>ImageUrl</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Definition</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Message</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Giver</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Recipient</customTabListAdditionalFields>
+
+
+
+
+
         <lookupDialogsAdditionalFields>ImageUrl</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Definition</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Message</lookupDialogsAdditionalFields>

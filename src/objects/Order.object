@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>ActivateOrder</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>Approve</actionName>
         <type>Default</type>
@@ -32,10 +29,7 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
@@ -52,10 +46,7 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -66,13 +57,8 @@
         <fullName>AccountId</fullName>
         <lookupFilter>
             <active>true</active>
-            <booleanFilter>1 OR (2 AND 3 AND 4)</booleanFilter>
-            <errorMessage>Account Supplier has not been approved for Purchase Orders or the supplier account has been CLOSED</errorMessage>
-            <filterItems>
-                <field>Account.RecordType.DeveloperName</field>
-                <operation>equals</operation>
-                <value>Trader</value>
-            </filterItems>
+            <booleanFilter>(1 AND 2 AND 3 AND 4) OR (5 AND 6)</booleanFilter>
+            <errorMessage>Supplier Must Be Approved and not Closed.</errorMessage>
             <filterItems>
                 <field>Account.RecordType.DeveloperName</field>
                 <operation>equals</operation>
@@ -87,6 +73,21 @@
                 <field>Account.Supplier_Status__c</field>
                 <operation>notEqual</operation>
                 <value>Closed</value>
+            </filterItems>
+            <filterItems>
+                <field>$Source.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Accounts Payable</value>
+            </filterItems>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Trader</value>
+            </filterItems>
+            <filterItems>
+                <field>$Source.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Accounts Receivable</value>
             </filterItems>
             <isOptional>false</isOptional>
         </lookupFilter>
@@ -474,10 +475,10 @@
         </picklistValues>
     </recordTypes>
     <searchLayouts>
-        <customTabListAdditionalFields>ORDERS.ORDER_NUMBER</customTabListAdditionalFields>
+
         <customTabListAdditionalFields>SALES.ACCOUNT.NAME</customTabListAdditionalFields>
-        <customTabListAdditionalFields>ORDERS.STATUS</customTabListAdditionalFields>
-        <customTabListAdditionalFields>ORDERS.TOTAL_AMOUNT</customTabListAdditionalFields>
+
+
         <lookupDialogsAdditionalFields>ORDERS.ORDER_NUMBER</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CONTRACT.OWNERALIAS</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>ORDERS.ORDER_NUMBER</lookupPhoneDialogsAdditionalFields>

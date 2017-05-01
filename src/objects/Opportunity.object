@@ -24,10 +24,7 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
@@ -36,10 +33,7 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -73,6 +67,16 @@
     <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>AccountId</fullName>
+        <lookupFilter>
+            <active>false</active>
+            <errorMessage>Leads can only be converted to Trader Accounts / Account Businesses can only be added to Trader Accounts</errorMessage>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Trader</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
@@ -8092,9 +8096,9 @@
         </picklistValues>
     </recordTypes>
     <searchLayouts>
-        <customTabListAdditionalFields>OPPORTUNITY.NAME</customTabListAdditionalFields>
-        <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
-        <customTabListAdditionalFields>OPPORTUNITY.CLOSE_DATE</customTabListAdditionalFields>
+
+
+
         <listViewButtons>Send_Bulk_SMS</listViewButtons>
         <lookupDialogsAdditionalFields>OPPORTUNITY.NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
@@ -8166,6 +8170,13 @@
         <errorConditionFormula>Leave_Remaining_Thursday__c &lt; 0</errorConditionFormula>
         <errorDisplayField>Leave_Taken_Thursday__c</errorDisplayField>
         <errorMessage>There is not enough Thursday leave remaining for the year</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Trader_Accounts_Only</fullName>
+        <active>true</active>
+        <description>Opportunities/Account Businesses can only be added to Trader Accounts</description>
+        <errorConditionFormula>Account.RecordType.DeveloperName &lt;&gt; &apos;Trader&apos;</errorConditionFormula>
+        <errorMessage>Leads can only be converted to Trader Accounts /  Account Businesses can only be added to Trader Accounts. The Account you have selected is a Supplier Account</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Trial_must_have_an_end_date</fullName>

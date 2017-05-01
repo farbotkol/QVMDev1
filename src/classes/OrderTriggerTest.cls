@@ -1,6 +1,6 @@
 @isTest public class OrderTriggerTest {
     @isTest 
-    static void TestGenerateOrdersAndInvoicesSL() {
+    static void TestGeneratePuchaseOrder() {
         TestDataFactory.CreateOAuthServiceEntries();
         Test.setMock(HttpCalloutMock.class, new HttpCalloutMockEngine());
         TestDataFactory.createStallProductsAndGeneralPriceBook();

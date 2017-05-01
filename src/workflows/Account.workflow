@@ -61,6 +61,76 @@
         <protected>false</protected>
         <reevaluateOnChange>true</reevaluateOnChange>
     </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Supplier_name_with_Prefix</fullName>
+        <field>Name</field>
+        <formula>Name + &quot; (Supplier)&quot;</formula>
+        <name>Update Supplier name with Prefix</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_non_valid_ABNs_for_BQO</fullName>
+        <description>Updates ABNs that do not conform to valid ABNs in QBO To 00000000000</description>
+        <field>ABN__c</field>
+        <formula>&quot;00000000000&quot;</formula>
+        <name>Update non valid ABNs for BQO</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>ABN NA To 000</fullName>
+        <actions>
+            <name>Update_non_valid_ABNs_for_BQO</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 OR 2 or 3 or 4</booleanFilter>
+        <criteriaItems>
+            <field>Account.ABN__c</field>
+            <operation>contains</operation>
+            <value>NA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.ABN__c</field>
+            <operation>contains</operation>
+            <value>N/A</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.ABN__c</field>
+            <operation>contains</operation>
+            <value>na</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.ABN__c</field>
+            <operation>contains</operation>
+            <value>n/a</value>
+        </criteriaItems>
+        <description>Updates not numeric ABNs to 00000000000</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Suppliers Rename with postfix</fullName>
+        <actions>
+            <name>Update_Supplier_name_with_Prefix</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Supplier</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Name</field>
+            <operation>notContain</operation>
+            <value>(Supplier)</value>
+        </criteriaItems>
+        <description>Add &quot;(Supplier)&quot; Post fix to the name of all supplier accounts</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
     <rules>
         <fullName>Update Account Mobile Format</fullName>
         <actions>

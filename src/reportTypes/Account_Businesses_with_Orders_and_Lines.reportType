@@ -2,7 +2,7 @@
 <ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
     <baseObject>Opportunity</baseObject>
     <category>opportunities</category>
-    <deployed>false</deployed>
+    <deployed>true</deployed>
     <description>Account Businesses with  Orders and Lines</description>
     <join>
         <join>

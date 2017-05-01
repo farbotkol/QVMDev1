@@ -36,10 +36,7 @@
         <actionName>Follow</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>MassClose</actionName>
         <type>Default</type>
@@ -52,10 +49,7 @@
         <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
+
     <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
@@ -1436,7 +1430,6 @@ Petros Kosonen.</inlineHelpText>
             <picklistValues>
                 <fullName>Other</fullName>
                 <default>false</default>
-                <controllingFieldValues>Coffee Run</controllingFieldValues>
                 <controllingFieldValues>Food</controllingFieldValues>
                 <controllingFieldValues>IT request</controllingFieldValues>
                 <controllingFieldValues>Incident - Injury</controllingFieldValues>
@@ -1459,80 +1452,45 @@ Petros Kosonen.</inlineHelpText>
             <picklistValues>
                 <fullName>Latte</fullName>
                 <default>false</default>
-                <controllingFieldValues>Coffee Run</controllingFieldValues>
             </picklistValues>
             <picklistValues>
                 <fullName>Cappuccino</fullName>
                 <default>false</default>
-                <controllingFieldValues>Coffee Run</controllingFieldValues>
             </picklistValues>
             <picklistValues>
                 <fullName>Long Black</fullName>
                 <default>false</default>
-                <controllingFieldValues>Coffee Run</controllingFieldValues>
             </picklistValues>
             <picklistValues>
                 <fullName>Short Black</fullName>
                 <default>false</default>
-                <controllingFieldValues>Coffee Run</controllingFieldValues>
             </picklistValues>
             <picklistValues>
                 <fullName>Chai Latte</fullName>
                 <default>false</default>
-                <controllingFieldValues>Coffee Run</controllingFieldValues>
             </picklistValues>
             <picklistValues>
                 <fullName>Tea</fullName>
                 <default>false</default>
-                <controllingFieldValues>Coffee Run</controllingFieldValues>
             </picklistValues>
             <picklistValues>
                 <fullName>Hot Chocolate</fullName>
                 <default>false</default>
-                <controllingFieldValues>Coffee Run</controllingFieldValues>
             </picklistValues>
             <picklistValues>
                 <fullName>Tea - Black</fullName>
                 <default>false</default>
-                <controllingFieldValues>Coffee Run</controllingFieldValues>
             </picklistValues>
             <picklistValues>
                 <fullName>Tea - White</fullName>
                 <default>false</default>
-                <controllingFieldValues>Coffee Run</controllingFieldValues>
             </picklistValues>
             <picklistValues>
                 <fullName>Green Tea</fullName>
                 <default>false</default>
-                <controllingFieldValues>Coffee Run</controllingFieldValues>
             </picklistValues>
             <picklistValues>
                 <fullName>Peppermint Tea</fullName>
-                <default>false</default>
-                <controllingFieldValues>Coffee Run</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Nosie Compliant</fullName>
-                <default>false</default>
-                <controllingFieldValues>Environment</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Cleaning Complaint</fullName>
-                <default>false</default>
-                <controllingFieldValues>Environment</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Sustainability Enquiry</fullName>
-                <default>false</default>
-                <controllingFieldValues>Environment</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Waste Management Enquiry</fullName>
-                <default>false</default>
-                <controllingFieldValues>Environment</controllingFieldValues>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Hazard</fullName>
                 <default>false</default>
             </picklistValues>
             <restrictedPicklist>true</restrictedPicklist>
@@ -1697,18 +1655,10 @@ Petros Kosonen.</inlineHelpText>
                 <fullName>IT request</fullName>
                 <default>false</default>
             </picklistValues>
-            <picklistValues>
-                <fullName>Coffee Run</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Environment</fullName>
-                <default>false</default>
-            </picklistValues>
             <sorted>false</sorted>
         </picklist>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
     </fields>
@@ -2954,10 +2904,6 @@ Petros Kosonen.</inlineHelpText>
         <picklistValues>
             <picklist>Sub_Type__c</picklist>
             <values>
-                <fullName>Cleaning Complaint</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Environmental</fullName>
                 <default>false</default>
             </values>
@@ -2994,10 +2940,6 @@ Petros Kosonen.</inlineHelpText>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Nosie Compliant</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Other</fullName>
                 <default>false</default>
             </values>
@@ -3009,21 +2951,9 @@ Petros Kosonen.</inlineHelpText>
                 <fullName>Regulatory Activity</fullName>
                 <default>false</default>
             </values>
-            <values>
-                <fullName>Sustainability Enquiry</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Waste Management Enquiry</fullName>
-                <default>false</default>
-            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Type</picklist>
-            <values>
-                <fullName>Environment</fullName>
-                <default>false</default>
-            </values>
             <values>
                 <fullName>Hazard</fullName>
                 <default>false</default>
@@ -3681,10 +3611,6 @@ Petros Kosonen.</inlineHelpText>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Coffee Run</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Customer Feedback</fullName>
                 <default>false</default>
             </values>
@@ -4187,12 +4113,7 @@ Petros Kosonen.</inlineHelpText>
         </picklistValues>
     </recordTypes>
     <searchLayouts>
-        <customTabListAdditionalFields>CASES.CASE_NUMBER</customTabListAdditionalFields>
-        <customTabListAdditionalFields>NAME</customTabListAdditionalFields>
-        <customTabListAdditionalFields>CASES.SUBJECT</customTabListAdditionalFields>
-        <customTabListAdditionalFields>CASES.TYPE</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Sub_Type__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>CASES.CREATED_DATE_DATE_ONLY</customTabListAdditionalFields>
+
         <lookupDialogsAdditionalFields>CASES.CASE_NUMBER</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CASES.SUBJECT</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>NAME</lookupDialogsAdditionalFields>

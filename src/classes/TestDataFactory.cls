@@ -224,9 +224,13 @@ public class TestDataFactory {
     
     public static void createStallProductsAndGeneralPriceBook()
     {
+            QBO_Class__c qboClass = new QBO_Class__c();
+            qboClass.name = 'TEST';
+            Insert  qboClass;
 
             PriceBook2 pb = new PriceBook2();
             pb.name = 'General Merchandise';
+
             pb.isActive=true;
             pb.SLPE__c = true;
             pb.Sku__c = '0000000';
@@ -544,41 +548,62 @@ public class TestDataFactory {
         Map<String,Schema.RecordTypeInfo> accRecordTypeInfo = acccCfrSchema.getRecordTypeInfosByName(); 
         Id accRecordTypeId = accRecordTypeInfo.get('Supplier').getRecordTypeId();
         
+
+        //QBO_Class__c qboClass = new QBO_Class__c();
+        //qboClass.name = 'TEST1';
+        //Insert  qboClass;
+
+        QBO_Class__c qboclass = [SELECT Name, Id, Active__c
+                                  FROM QBO_Class__c LIMIT 1];
+        //qboclass.Name = 'LH1';
+        //insert qboclass;
         
         Account a = new Account(Name='TestAccountSupplier');
         a.RecordTypeId = accRecordTypeId;
  
         insert a;
         a.Supplier_Approved__c = true;
+        a.Supplier_Status__c = 'Open';
         update a;
         
         //TestDataFactory.createStallProductsAndGeneralPriceBook();
 		List<Account> accounts = TestDataFactory.createAccountsWithOpps(1,1, 'SL');
         Stall__c stallObj = TestDataFactory.createSingleStallWithNoOpp();
-        Id PriceBookId = Test.getStandardPricebookId();
+        //Id PriceBookId = Test.getStandardPricebookId();
+
+        Id PriceBookId  = [SELECT Id FROM Pricebook2 WHERE PO_Pricebook__c = true LIMIT 1].Id;
         
         
         List<PricebookEntry>  prods = [SELECT Id,UnitPrice FROM PricebookEntry where PriceBook2Id = :PriceBookId];
+        System.debug('prods: '+ prods);  
         Opportunity opp = [SELECT ID FROM Opportunity LIMIT 1];
         Order orderObj = new Order();
-       
+        Schema.DescribeSObjectResult orderCfrSchema = Schema.SObjectType.Order; 
+        Map<String,Schema.RecordTypeInfo> orderRecordTypeInfo = orderCfrSchema.getRecordTypeInfosByName(); 
+        Id poRecordTypeId = orderRecordTypeInfo.get('Accounts Payable').getRecordTypeId();// New
+        
+        orderObj.RecordTypeId = poRecordTypeId;
         orderObj.AccountId = a.Id;
         orderObj.Status = 'Draft';
         orderObj.EffectiveDate = Date.today();
         orderObj.PriceBook2Id = PriceBookId;
         orderObj.OpportunityId = opp.Id;
         insert orderObj;
+
+        System.debug('orderObj: '+ orderObj); 
         
         System.debug('PriceBookId '+PriceBookId);
         //System.debug('ProdId '+prod.Id);
         OrderItem item = new OrderItem();
-        item.Leave__c = True;
+        //item.Leave__c = False;
         item.Date__c = Date.today();
         item.OrderId = orderObj.Id;
-        item.Stall__c = stallObj.Id;  
+        item.QBO_Class__c = qboclass.Id;
+        //item.Stall__c = stallObj.Id;  
         item.PricebookEntryId = prods[0].Id; 
         item.Quantity = 1; 
         item.UnitPrice = 123; 
+        System.debug('item123 '+ item);
 		insert item;
         System.debug('riceBookPId '+item);
 
